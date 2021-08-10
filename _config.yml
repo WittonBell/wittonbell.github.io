@@ -32,8 +32,8 @@ url: 'https://wittonbell.github.io'
 github:
   username: wittonbell             # change to your github username
 
-#twitter:
-#  username: twitter_username            # change to your twitter username
+twitter:
+  username: wittonbell             # change to your twitter username
 
 social:
   # Change to your full name.
