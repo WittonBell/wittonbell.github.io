@@ -19,7 +19,7 @@ timezone: Asia/Shanghai
 
 title: WittonBell                          # the main title
 
-tagline: Chengdu, SiChuan, China   # it will display as the sub-title
+tagline: Chengdu, China   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
