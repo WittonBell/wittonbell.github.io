@@ -1,10 +1,11 @@
 ​---
 layout: post
-title:  "解决：pip is configured with locations that require TLS/SSL"
+title:  "解决：pip is configured with locations that require TLS"
 date:   2020-10-29 10:14:52 +0800
 categories: [编程语言, python]
 tags: [python, pip, TLS, SSL]
 ---
+
 在使用pip进行软件包安装的时候出现问题：
 ```bash
 WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
