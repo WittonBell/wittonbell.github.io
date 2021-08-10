@@ -32,8 +32,8 @@ url: 'https://wittonbell.github.io'
 github:
   username: wittonbell             # change to your github username
 
-#twitter:
-#  username: twitter_username            # change to your twitter username
+csdn:
+  username: witton            # change to your CSDN username
 
 social:
   # Change to your full name.
@@ -42,7 +42,7 @@ social:
   email: witton@163.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    #- https://twitter.com/username      # change to your twitter homepage
+    - https://blog.csdn.net     # change to your csdn homepage
     - https://github.com/wittonbell       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
