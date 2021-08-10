@@ -81,7 +81,7 @@
   {% endif %}
 
   <li class="page-item {% unless paginator.next_page_path %}disabled{% endunless %}">
-    <a class="page-link btn-box-shadow" href="{{ next_url }}/" aria-label="next-page">
+    <a class="page-link btn-box-shadow" href="{% if paginator.next_page_path == paginator.total_pages %}{{ next_url }}{% else %}{{ next_url }}/{% endif %}" aria-label="next-page">
       <i class="fas fa-angle-right"></i>
     </a>
   </li>
