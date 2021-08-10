@@ -6,6 +6,8 @@ categories: Linux
 tags: [CheckInstall, RPM, 安装包]
 ---
 
+TOC{:toc}
+
 # 一、下载并安装CheckInstall
 1. RPM安装包
 目前最新的包为1.62版，CentOS 6.X的RPM安装包可以下载[checkinstall-1.6.2-1.cnt6.x86_64.rpm](ftp://ftp.pbone.net/mirror/rnd.rajven.net/centos/6.5/os/x86_64/checkinstall-1.6.2-1.cnt6.x86_64.rpm)
