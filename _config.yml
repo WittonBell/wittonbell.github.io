@@ -64,6 +64,8 @@ google_analytics:
 baidu_analytics:
   id: '217ba3dc2603b31ad5559afc8e520fc5'
 
+busuanzi: true
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,

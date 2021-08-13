@@ -4,15 +4,28 @@
 
 <footer class="d-flex w-100 justify-content-center">
   <div class="d-flex justify-content-between align-items-center">
-    <div class="footer-left">
+
       <p class="mb-0">
         © 2005-{{ 'now' | date: "%Y" }}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>，转载请附上原文链接.
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>，转载请附上原文链接。
         {% if site.data.locales[lang].copyright.brief %}
         <span data-toggle="tooltip" data-placement="top"
           title="{{ site.data.locales[lang].copyright.verbose }}">{{ site.data.locales[lang].copyright.brief }}</span>
         {% endif %}
+		
+		{% if jekyll.environment == 'production' %}
+		  {% if site.busuanzi %}
+			<span id="busuanzi_container_site_uv">
+				<span id="busuanzi_value_site_uv" class="far fa-user" data-toggle="tooltip" data-placement="bottom" title data-original-title="本站总访问人数"> </span>
+			</span>
+			
+			<span/>
+			<span id="busuanzi_container_site_pv">
+				<span id="busuanzi_value_site_pv" class="far fa-eye"  data-toggle="tooltip" data-placement="bottom" title data-original-title="本站总访问量"> </span>
+			</span>
+	      {% endif %}
+	    {% endif %}
       </p>
-    </div>
+ 
   </div> <!-- div.d-flex -->
 </footer>
