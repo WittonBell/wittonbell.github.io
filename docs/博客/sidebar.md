@@ -1,0 +1,37 @@
+- 编程
+  - 编程语言
+    - C
+      - [C语言随机数](docs/博客/编程/语言/C/2020-10-21-C语言随机数.md)
+      - [如何用C API遍历Lua脚本中的表](docs/博客/编程/语言/C/2007-05-22-如何用C遍历Lua脚本中的表.md)
+    - C++
+      - [C++实现Go的defer功能](docs/博客/编程/语言/C++/2021-07-08-C++实现Go的defer功能.md)
+      - [对C++变长参数中的字符串进行转义](docs/博客/编程/语言/C++/2021-02-24-对C++变长参数中的字符串进行转义.md)
+      - [C++模板类成员函数使用SFINAE特性匹配智能指针](docs/博客/编程/语言/C++/2021-02-23-C++模板类成员函数使用SFINAE特性匹配智能指针.md)
+      - [使用C++11模板SFINAE特性重写序列化与反序列化](docs/博客/编程/语言/C++/2020-11-10-使用C++11模板SFINAE特性重写序列化与反序列化.md)
+      - [C++跨平台函数指针的写法](docs/博客/编程/语言/C++/2007-05-11-C++跨平台函数指针的写法.md)
+      - [MFC中动态设置组合框的下拉菜单高度](docs/博客/编程/语言/C++/2007-05-10-MFC中动态设置组合框的下拉菜单高度.md)
+      - [C++跨平台宏的写法](docs/博客/编程/语言/C++/2007-04-30-C++跨平台宏的写法.md)
+      - [C++跨平台模板的写法](docs/博客/编程/语言/C++/2007-04-30-C++跨平台模板的写法.md)
+    - Go
+      - [go读写网络消息](docs/博客/编程/语言/Go/2021-03-10-go读写网络消息.md)
+    - Lua
+      - [导出C++中的类到Lua脚本中的经历](docs/博客/编程/语言/Lua/2007-05-18-导出C++中的类到Lua脚本中的经历.md)
+    - Python
+      - [使用Python爬取考勤信息](docs/博客/编程/语言/Python/2018-12-29-使用Python爬取考勤信息.md)
+      - [解决：pip is configured with locations that require TLS](docs/博客/编程/语言/Python/2020-10-29-解决：pip_is_configured_with_locations_that_require_TLS.md)
+  - IDE
+    - Visual Studio
+      - [dll、lib、a的转换](docs/博客/编程/IDE/VisualStudio/2020-08-21-dll、lib、a的转换.md)
+      - [在VS调试器中显示PB容器类型的值](docs/博客/编程/IDE/VisualStudio/2019-06-24-在VS调试器中显示PB容器类型的值.md)
+      - [如何利用VC编写有汇编代码的跨平台代码](docs/博客/编程/IDE/VisualStudio/2007-05-12-如何利用VC编写有汇编代码的跨平台代码.md)
+  - 算法
+    - [麻将和牌算法](docs/博客/编程/算法/2018-11-07-麻将和牌算法.md)
+- 操作系统
+  - Linux
+    - [CentOS 6.x不升级内核安装Docker](docs/博客/操作系统/Linux/2021-08-15-CentOS6.x不升级内核安装Docker.md)
+    - [使用CheckInstall从源码制作RPM安装包](docs/博客/操作系统/Linux/2020-10-29-使用CheckInstall从源码制作RPM安装包.md)
+  - Windows
+    - [ws2设置静态IP](docs/博客/操作系统/Windows/2022-01-09-wsl2设置静态IP.md)
+  - MacOS
+- 其它
+  - [使用jekyll写博客](docs/博客/其它/2021-08-10-使用jekyll写博客.md)
