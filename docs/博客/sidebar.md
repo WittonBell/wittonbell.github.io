@@ -34,4 +34,6 @@
     - [ws2设置静态IP](docs/博客/操作系统/Windows/2022-01-09-wsl2设置静态IP.md)
   - MacOS
 - 其它
+  - [让docsify-katex支持化学公式mhchem扩展](docs/博客/其它/2022-03-16-让docsify-katex支持化学公式mhchem扩展.md)
+  - [使用docsify+markdown+vditor构建gitlab pages文档库](docs/博客/其它/2022-02-22-使用docsify+markdown+vditor构建gitlab_pages文档库.md)
   - [使用jekyll写博客](docs/博客/其它/2021-08-10-使用jekyll写博客.md)
