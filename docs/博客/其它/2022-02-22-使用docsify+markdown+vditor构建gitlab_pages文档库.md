@@ -103,7 +103,7 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
 数学公式，这里需要提一下，markdown中的数学公式有几种格式，不同的平台支持的写法也不一致。
 常见的markdown数学公式有以下几种写法：
 
-- 以$加`开头，并以反序结尾的行内公式（gitlab支持，vditor会多显示一对单引号）
+- 以`$`加`开头，并以反序结尾的行内公式（gitlab支持，vditor会多显示一对单引号）
 - 以$开头和结尾的行内公式（gitlab不支持，vditor支持）
 - 以$$开头和结尾的块公式（gitlab不支持，vditor支持）
 - 以math块标识的块公式（gitlab支持，vditor支持）
@@ -117,13 +117,11 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
       window.$docsify = {
       plugins: [
           function (hook) {
-            // 支持$和$$
             hook.doneEach(function () {
               if (typeof MathJax !== "undefined") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
               }
             });
-            // 支持$``$
             hook.beforeEach(function (content) {
               return content.replace(/\$`.*`\$/g, function (a) {
                 return a.replace("`", "").replace("`", "");
