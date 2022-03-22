@@ -8,8 +8,11 @@
 ```bash
 sudo apt install pip
 ```
+
 进行安装，会有很多额外的软件包需要安装，占用约600M的磁盘空间。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/63e683ed3d4a47f3ae87f4c89bddc4e7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 所以如果用不上那些额外的软件包，笔者建议使用另一种方式安装pip，下载一个[get-pip.py](https://bootstrap.pypa.io/get-pip.py)文件
 
 ```bash

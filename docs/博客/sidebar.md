@@ -35,8 +35,11 @@
   - MacOS
 - 容器
   - [使用容器编排对go项目进行部署、调试](docs/博客/容器/2022-01-11-使用容器编排对go项目进行部署、调试.md)
-  - [解决 podman: failed to create new watcher too many open files](docs/博客/容器/2021-12-28-解决podman-failed：to_create_new_watcher_too_many_open_files.md)
   - [ubuntu安装podman-compose](docs/博客/容器/2021-12-28-ubuntu安装podman-compose.md)
+  - [解决 podman: failed to create new watcher too many open files](docs/博客/容器/2021-12-28-解决podman-failed：to_create_new_watcher_too_many_open_files.md)
+  - [Goland连接https的Docker远程服务](docs/博客/容器/2021-12-23-Goland连接https的Docker远程服务.md)
+  - [Goland使用远程容器进行go开发调试](docs/博客/容器/2021-12-21-Goland使用远程容器进行go开发调试.md)
+  - [使用nexus3作为Docker镜像仓库](docs/博客/容器/2021-12-16-使用nexus3作为Docker镜像仓库.md)
   - [使用podman容器配置gitlab](docs/博客/容器/2021-11-30-使用podman容器配置gitlab.md)
 - 其它
   - [让docsify-katex支持化学公式mhchem扩展](docs/博客/其它/2022-03-16-让docsify-katex支持化学公式mhchem扩展.md)

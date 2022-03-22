@@ -302,6 +302,7 @@ int main(int, char**) {
 在前面配置gitlab时有提到，可以启用Gitlab自带容器镜像库，当然也可以配置成外部的容器镜像库，不过配置要复杂些。前面的配置是使用的自带的容器镜像库，启用成功后可以在项目中看到如下图所示功能：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/f8b506e5ede240d8ab3b0c050f5c9827.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_17,color_FFFFFF,t_70,g_se,x_16)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/41a83c8940d7453cb6e24d763ca4a9bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 从图中提示可以看出，要使用容器镜像库，还需要先登录，再构建容器镜像，最后推送到容器镜像库，才能显示到页面上。

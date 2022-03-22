@@ -48,6 +48,7 @@ In file included from installwatch.c:49:0:
 ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201029154445109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpdHRvbg==,size_16,color_FFFFFF,t_70#pic_center)
+
 修改源文件installwatch.c：
 101行：
 
@@ -152,6 +153,7 @@ int scandir64(	const char *dir,struct dirent64 ***namelist,
 ```
 
 来一个直观的修改对比：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201029164346480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpdHRvbg==,size_16,color_FFFFFF,t_70#pic_center)
 
 修改完成后再重新编译。
@@ -190,6 +192,7 @@ sudo checkinstall
 ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201029152735359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpdHRvbg==,size_16,color_FFFFFF,t_70#pic_center)
+
 中途可能会出现：
 
 ```bash
@@ -217,7 +220,9 @@ sudo rpmdev-setuptree
 ```
 
 可以看到/root/rpmbuild目录了
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201029114228890.png#pic_center)
+
 再重新执行前面的checkinstall命令，可以看到成功生成RPM安装包，路径在/root/rpmbuild/RPMS/x86_64目录中，并且已经执行了一次RPM安装包的安装，通过
 
 ```bash
@@ -225,6 +230,7 @@ rpm -qa | grep gcc
 ```
 
 可以看到，如图所示。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201029153807208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpdHRvbg==,size_16,color_FFFFFF,t_70#pic_center)
 
 从上图中可以看到

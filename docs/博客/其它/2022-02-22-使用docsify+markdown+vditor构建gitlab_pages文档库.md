@@ -61,13 +61,17 @@ gitlab-ctl reconfigure
 - 禁止公开访问 Pages 站点
 
 如下图所示：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/91121e0a2a1b4b99adb84d24a1819315.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 最大页面大小默认为100M，可以根据实际情况调整。设置完成后记得执行“保存修改”。
 
 ## 2. 项目设置
 
 在开启Pages后，项目设置，通用里会根据项目可见性自动设置Pages的可见性，并且项目设置里会看到Pages栏，如下图所示：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/d826b780bad7481ab463fa9b179376f7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 此时还没有任何可用页面。
 
 # 三、编写网页
@@ -192,6 +196,7 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
 ```
 
 下图为数学公式示例输出：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2a48a098782e48d290e888133b919526.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 # 四、预览网页
@@ -207,9 +212,13 @@ docsify serve
 ## 1. 编写.gitlab-ci.yml
 
 为了让gitlab pages能正常显示网页，需要使用到gitlab的CI/CD功能，在项目根目录创建一个.gitlab-ci.yml文件，也可以在gitlab网站上新建，选择.gitlab-ci.yml模板，应用html模板。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/9a171c1efc5f4032b34ab366515ba826.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/94fb2b99d4844d9f8b96baa40668ae04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/a2779b3c8c2e48bf9db4812a1ec333d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 或者把生成的内容复制到本地建。
 
 ```yaml
@@ -245,7 +254,7 @@ projects.pages.io是访问控制授权时需要用到的域名。
 
 # 六、附index.html源码
 
-```html
+````html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -405,12 +414,11 @@ projects.pages.io是访问控制授权时需要用到的域名。
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
   </body>
 </html>
-
-```
+````
 
 其实我们可以直接使用vditor来渲染，这样就能与VSCode中的表现完全一致（都是使用的vditor），但是docsify的其它插件就用不了了，同时图片的URL生成也有问题，显示不了本地图片。记录一下配置：
 
-```html
+````html
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor/dist/index.css" />
   <script src="https://cdn.jsdelivr.net/npm/vditor/dist/index.min.js"></script>
   <script>
@@ -442,7 +450,7 @@ projects.pages.io是访问控制授权时需要用到的域名。
       ]
     }
   </script>
-```
+````
 
 经过多番研究，使用docsify插件，配置出了比Vditor更强大的配置，支持
 
@@ -458,7 +466,7 @@ projects.pages.io是访问控制授权时需要用到的域名。
 记录一下：
 index.html：
 
-```html
+````html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -761,7 +769,7 @@ index.html：
     </script>
   </body>
 </html>
-```
+````
 
 其中的docsify-sw.js为：
 
