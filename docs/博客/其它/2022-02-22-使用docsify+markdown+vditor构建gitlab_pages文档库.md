@@ -27,39 +27,51 @@ Docsify与Docute都是基于 Vue，且它们都是完全的运行时驱动，不
 下面就介绍一下如何使用docsify构建gitlab Pages上的文档库。
 
 # 一、开启gitlab pages
-编辑/etc/gitlab/gitlab.rb，设置pages_external_url为自定义的域名，并且设置gitlab_pages['enable']为true，如果要打开访问控制，则需要设置gitlab_pages['access_control']为true，如下所示：
-```
-################################################################################
-## GitLab Pages                                                             
-##! Docs: https://docs.gitlab.com/ee/pages/administration.html                          
-################################################################################
-                                                                              
-##! Define to enable GitLab Pages                                           
-pages_external_url "http://pages.io/"                                                                   
-gitlab_pages['enable'] = true 
 
-##! Pages access control                                                                                    
-gitlab_pages['access_control'] = true                    
+编辑/etc/gitlab/gitlab.rb，设置pages_external_url为自定义的域名，并且设置gitlab_pages['enable']为true，如果要打开访问控制，则需要设置gitlab_pages['access_control']为true，如下所示：
+
 ```
+################################################################################
+## GitLab Pages
+##! Docs: https://docs.gitlab.com/ee/pages/administration.html
+################################################################################
+
+##! Define to enable GitLab Pages
+pages_external_url "http://pages.io/"
+gitlab_pages['enable'] = true
+
+##! Pages access control
+gitlab_pages['access_control'] = true
+```
+
 设置好后运行下面的命令生效：
+
 ```bash
 gitlab-ctl reconfigure
 ```
+
 # 二、gitlab网站设置
+
 ## 1. 访问控制
+
 如果需要访问控制，则需要：
 在“菜单”=>“管理员”=>“设置”=>“偏好设置”中展开Pages选项，勾选
+
 - 要求用户证明自定义域名的所有权
 - 禁止公开访问 Pages 站点
 
 如下图所示：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/91121e0a2a1b4b99adb84d24a1819315.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 最大页面大小默认为100M，可以根据实际情况调整。设置完成后记得执行“保存修改”。
+
 ## 2. 项目设置
+
 在开启Pages后，项目设置，通用里会根据项目可见性自动设置Pages的可见性，并且项目设置里会看到Pages栏，如下图所示：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/d826b780bad7481ab463fa9b179376f7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 此时还没有任何可用页面。
+
 # 三、编写网页
+
 使用docsify+markdown文件来构建网页，只需要编写一个index.html即可。其它的就是根据docsify规则 编写markdown文件。
 
 本地编写markdown文件建议使用VSCode+Office Viewer(Markdown Editor)插件，Office Viewer(Markdown Editor)插件使用了[vditor](https://b3log.org/vditor/) markdown编辑器，不得不说该编辑器非常强大。
@@ -75,6 +87,7 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
 下面结合[awesome-docsify](https://github.com/docsifyjs/awesome-docsify)中提供的插件，介绍一下几种常用的额外功能配置：
 
 ## 1. mermaid图
+
 直接使用插件[docsify-mermaid](https://github.com/Leward/mermaid-docsify)；
 
 ```html
@@ -85,8 +98,11 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
       mermaid.initialize({ startOnLoad: true });
     </script>
 ```
+
 ## 2. plantuml图
-直接使用插件[docsify-plantuml](https://github.com/imyelo/docsify-plantuml) 或者插件[docsify-puml](https://github.com/indieatom/docsify-puml) 
+
+直接使用插件[docsify-plantuml](https://github.com/imyelo/docsify-plantuml) 或者插件[docsify-puml](https://github.com/indieatom/docsify-puml)
+
 ```html
 <script>
       window.$docsify = {
@@ -94,18 +110,19 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
           skin: "classic",
         },
      }
-</script>     
+</script>
 <!--plantuml图支持-->
 <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
 ```
 
 ## 3.数学公式
+
 数学公式，这里需要提一下，markdown中的数学公式有几种格式，不同的平台支持的写法也不一致。
 常见的markdown数学公式有以下几种写法：
 
-- 以`$`加`开头，并以反序结尾的行内公式（gitlab支持，vditor会多显示一对单引号）
-- 以$开头和结尾的行内公式（gitlab不支持，vditor支持）
-- 以$$开头和结尾的块公式（gitlab不支持，vditor支持）
+- 以 `` $` ``开头，并以`` `$ ``结尾的行内公式（gitlab支持，vditor会多显示一对单引号）
+- 以 `$`开头和结尾的行内公式（gitlab不支持，vditor支持）
+- 以 `$$`开头和结尾的块公式（gitlab不支持，vditor支持）
 - 以math块标识的块公式（gitlab支持，vditor支持）
 
 有一个插件[docsify-katex](https://github.com/upupming/docsify-katex) 支持使用katex输出数学公式，但是试用了一下，没达到预期。docsify有一个[issues](https://github.com/docsifyjs/docsify/issues/96)提到怎样支持数学公式，但不尽如意。
@@ -122,6 +139,7 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
               }
             });
+            // 支持$`...`$块
             hook.beforeEach(function (content) {
               return content.replace(/\$`.*`\$/g, function (a) {
                 return a.replace("`", "").replace("`", "");
@@ -172,21 +190,28 @@ docsify内置的 Markdown 解析器是 [marked](https://github.com/markedjs/mark
 <!--MathJax数学公式支持-->
 <script src="//cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
+
 下图为数学公式示例输出：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2a48a098782e48d290e888133b919526.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 # 四、预览网页
+
 预览网页只需要在项目所在目录的命令行运行：
+
 ```bash
 docsify serve
 ```
 
 # 五、发布到gitlab pages
+
 ## 1. 编写.gitlab-ci.yml
+
 为了让gitlab pages能正常显示网页，需要使用到gitlab的CI/CD功能，在项目根目录创建一个.gitlab-ci.yml文件，也可以在gitlab网站上新建，选择.gitlab-ci.yml模板，应用html模板。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/9a171c1efc5f4032b34ab366515ba826.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/94fb2b99d4844d9f8b96baa40668ae04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/a2779b3c8c2e48bf9db4812a1ec333d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
 或者把生成的内容复制到本地建。
+
 ```yaml
 pages:
   stage: deploy
@@ -205,12 +230,16 @@ pages:
 成功后就可以在项目设置的Pages下看到网页的访问地址了：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/6dfa0d8f957a496ea7f8afb0427a1642.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2l0dG9u,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 ## 2. 修改hosts
+
 由于前面在配置gitlab.rb时pages_external_url是随便配置的，为了能正常访问，需要将之映射到gitlab所在的ip，修改C:\Windows\System32\drivers\etc\hosts，添加映射：
+
 ```bash
 192.168.1.6 docs.pages.io
 192.168.1.6 projects.pages.io
 ```
+
 docs.pages.io是平常访问用到的域名，其中的docs是gitlab中项目所在的组或者用户
 projects.pages.io是访问控制授权时需要用到的域名。
 
@@ -396,7 +425,7 @@ projects.pages.io是访问控制授权时需要用到的域名。
                 toc: true,
                 // 使用vditor来渲染Markdown最好不使用history模式，否则可能引起路由错误
                 // linkBase这个设置对Hash路由方式非常重要
-                linkBase: '#', 
+                linkBase: '#',
               },
               speech: {
                 enable: true,
@@ -404,7 +433,7 @@ projects.pages.io是访问控制授权时需要用到的域名。
               math: {
                 // VSCode的Office Viewer(Markdown Editor)插件使用的是'KaTeX'引擎，
                 // 这里与之保持一致，当然也可以使用'MathJax'引擎
-                engine: 'KaTeX', 
+                engine: 'KaTeX',
                 //engine: 'MathJax',
               },
             })
@@ -428,6 +457,7 @@ projects.pages.io是访问控制授权时需要用到的域名。
 
 记录一下：
 index.html：
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -821,12 +851,3 @@ self.addEventListener('fetch', event => {
 })
 
 ```
-
-
-
-
-
-
-
-
-

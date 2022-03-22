@@ -33,6 +33,11 @@
   - Windows
     - [ws2设置静态IP](docs/博客/操作系统/Windows/2022-01-09-wsl2设置静态IP.md)
   - MacOS
+- 容器
+  - [使用容器编排对go项目进行部署、调试](docs/博客/容器/2022-01-11-使用容器编排对go项目进行部署、调试.md)
+  - [解决 podman: failed to create new watcher too many open files](docs/博客/容器/2021-12-28-解决podman-failed：to_create_new_watcher_too_many_open_files.md)
+  - [ubuntu安装podman-compose](docs/博客/容器/2021-12-28-ubuntu安装podman-compose.md)
+  - [使用podman容器配置gitlab](docs/博客/容器/2021-11-30-使用podman容器配置gitlab.md)
 - 其它
   - [让docsify-katex支持化学公式mhchem扩展](docs/博客/其它/2022-03-16-让docsify-katex支持化学公式mhchem扩展.md)
   - [使用docsify+markdown+vditor构建gitlab pages文档库](docs/博客/其它/2022-02-22-使用docsify+markdown+vditor构建gitlab_pages文档库.md)
