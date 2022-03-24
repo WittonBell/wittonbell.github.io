@@ -1,5 +1,5 @@
 - [博客](docs/博客/)
 - [书籍](docs/书籍/)
 - [我的CSDN](https://blog.csdn.net/witton)
-- [关于](docs/docsify功能展示/)
+- 关于
   - [docsify部分功能展示](docs/关于/docsify功能展示/)
