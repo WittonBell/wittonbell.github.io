@@ -1,4 +1,8 @@
-# 柱状图
+所有配置都需要以echarts作为标识。
+
+<!-- tabs:start -->
+
+# **柱状图**
 
 ```echarts
 {
@@ -30,7 +34,37 @@
 }
 ```
 
-# Category 图
+```json
+{
+  settings: {
+    theme: {
+      categoryAxis: {
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false }
+      },
+      valueAxis: { axisLine: { show: false } }
+    }
+  },
+  xAxis : [
+    {
+      type : 'category',
+      data : ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    }
+  ],
+  yAxis : [{ type : 'value' }],
+  series : [
+    {
+      name:'直接访问',
+      type:'bar',
+      barWidth: '60%',
+      data:[10, 52, 200, 334, 390, 330, 220]
+    }
+  ]
+}
+```
+
+# **Category 图**
 
 ```echarts
 {
@@ -62,7 +96,37 @@
 }
 ```
 
-# 饼图
+```json
+{
+  "title": { "text": "最近 30 天" },
+  "tooltip": { "trigger": "axis", "axisPointer": { "lineStyle": { "width": 0 } } },
+  "legend": { "data": ["帖子", "用户", "回帖"] },
+  "xAxis": [{
+      "type": "category",
+      "boundaryGap": false,
+      "data": ["2019-05-08","2019-05-09","2019-05-10","2019-05-11","2019-05-12","2019-05-13","2019-05-14","2019-05-15","2019-05-16","2019-05-17","2019-05-18","2019-05-19","2019-05-20","2019-05-21","2019-05-22","2019-05-23","2019-05-24","2019-05-25","2019-05-26","2019-05-27","2019-05-28","2019-05-29","2019-05-30","2019-05-31","2019-06-01","2019-06-02","2019-06-03","2019-06-04","2019-06-05","2019-06-06","2019-06-07"],
+      "axisTick": { "show": false },
+      "axisLine": { "show": false }
+  }],
+  "yAxis": [{ "type": "value", "axisTick": { "show": false }, "axisLine": { "show": false }, "splitLine": { "lineStyle": { "color": "rgba(0, 0, 0, .38)", "type": "dashed" } } }],
+  "series": [
+    {
+      "name": "帖子", "type": "line", "smooth": true, "itemStyle": { "color": "#d23f31" }, "areaStyle": { "normal": {} }, "z": 3,
+      "data": ["18","14","22","9","7","18","10","12","13","16","6","9","15","15","12","15","8","14","9","10","29","22","14","22","9","10","15","9","9","15","0"]
+    },
+    {
+      "name": "用户", "type": "line", "smooth": true, "itemStyle": { "color": "#f1e05a" }, "areaStyle": { "normal": {} }, "z": 2,
+      "data": ["31","33","30","23","16","29","23","37","41","29","16","13","39","23","38","136","89","35","22","50","57","47","36","59","14","23","46","44","51","43","0"]
+    },
+    {
+      "name": "回帖", "type": "line", "smooth": true, "itemStyle": { "color": "#4285f4" }, "areaStyle": { "normal": {} }, "z": 1,
+      "data": ["35","42","73","15","43","58","55","35","46","87","36","15","44","76","130","73","50","20","21","54","48","73","60","89","26","27","70","63","55","37","0"]
+    }
+  ]
+}
+```
+
+# **饼图**
 
 ```echarts
 {
@@ -83,7 +147,26 @@
 }
 ```
 
-# 旭日图
+```json
+{
+    series : [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '55%',
+            data:[
+                {value:235, name:'视频广告'},
+                {value:274, name:'联盟广告'},
+                {value:310, name:'邮件营销'},
+                {value:335, name:'直接访问'},
+                {value:400, name:'搜索引擎'}
+            ]
+        }
+    ]
+}
+```
+
+# **旭日图**
 
 ```echarts
 {
@@ -116,7 +199,38 @@
 }
 ```
 
-# 折线图
+```json
+{
+    series: {
+        type: 'sunburst',
+        data: [{
+            name: 'A',
+            value: 10,
+            children: [{
+                value: 3,
+                name: 'Aa'
+            }, {
+                value: 5,
+                name: 'Ab'
+            }]
+        }, {
+            name: 'B',
+            children: [{
+                name: 'Ba',
+                value: 4
+            }, {
+                name: 'Bb',
+                value: 2
+            }]
+        }, {
+            name: 'C',
+            value: 3
+        }]
+    }
+}
+```
+
+# **折线图**
 
 ```echarts
 {
@@ -303,7 +417,192 @@
 }
 ```
 
-# 散点图
+```json
+{
+  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  title: {
+    text: 'Gradient Stacked Area Chart'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: 'Line 1',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(1, 191, 236)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [140, 232, 101, 264, 90, 340, 250]
+    },
+    {
+      name: 'Line 2',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(0, 221, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(77, 119, 255)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 282, 111, 234, 220, 340, 310]
+    },
+    {
+      name: 'Line 3',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(55, 162, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(116, 21, 219)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [320, 132, 201, 334, 190, 130, 220]
+    },
+    {
+      name: 'Line 4',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 0, 135)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(135, 0, 157)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 402, 231, 134, 190, 230, 120]
+    },
+    {
+      name: 'Line 5',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      label: {
+        show: true,
+        position: 'top'
+      },
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 191, 0)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(224, 62, 76)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 302, 181, 234, 210, 290, 150]
+    }
+  ]
+}
+```
+
+# **散点图**
 
 ```echarts
 {
@@ -576,7 +875,278 @@
 }
 ```
 
-# 桑基图
+```json
+{
+  title: {
+    text: '男女身高与体重分布',
+    subtext: 'Data from: Heinz 2003'
+  },
+  grid: {
+    left: '3%',
+    right: '7%',
+    bottom: '7%',
+    containLabel: true
+  },
+  tooltip: {
+    showDelay: 0,
+    formatter: function (params) {
+      if (params.value.length > 1) {
+        return (
+          params.seriesName +
+          ' :<br/>' +
+          params.value[0] +
+          'cm ' +
+          params.value[1] +
+          'kg '
+        );
+      } else {
+        return (
+          params.seriesName +
+          ' :<br/>' +
+          params.name +
+          ' : ' +
+          params.value +
+          'kg '
+        );
+      }
+    },
+    axisPointer: {
+      show: true,
+      type: 'cross',
+      lineStyle: {
+        type: 'dashed',
+        width: 1
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {},
+      brush: {
+        type: ['rect', 'polygon', 'clear']
+      }
+    }
+  },
+  brush: {},
+  legend: {
+    data: ['Female', 'Male'],
+    left: 'center',
+    bottom: 10
+  },
+  xAxis: [
+    {
+      type: 'value',
+      scale: true,
+      axisLabel: {
+        formatter: '{value} cm'
+      },
+      splitLine: {
+        show: false
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      scale: true,
+      axisLabel: {
+        formatter: '{value} kg'
+      },
+      splitLine: {
+        show: false
+      }
+    }
+  ],
+  series: [
+    {
+      name: 'Female',
+      type: 'scatter',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6],
+                [170.0, 59.0], [159.1, 47.6], [166.0, 69.8], [176.2, 66.8], [160.2, 75.2],
+                [172.5, 55.2], [170.9, 54.2], [172.9, 62.5], [153.4, 42.0], [160.0, 50.0],
+                [147.2, 49.8], [168.2, 49.2], [175.0, 73.2], [157.0, 47.8], [167.6, 68.8],
+                [159.5, 50.6], [175.0, 82.5], [166.8, 57.2], [176.5, 87.8], [170.2, 72.8],
+                [174.0, 54.5], [173.0, 59.8], [179.9, 67.3], [170.5, 67.8], [160.0, 47.0],
+                [154.4, 46.2], [162.0, 55.0], [176.5, 83.0], [160.0, 54.4], [152.0, 45.8],
+                [162.1, 53.6], [170.0, 73.2], [160.2, 52.1], [161.3, 67.9], [166.4, 56.6],
+                [168.9, 62.3], [163.8, 58.5], [167.6, 54.5], [160.0, 50.2], [161.3, 60.3],
+                [167.6, 58.3], [165.1, 56.2], [160.0, 50.2], [170.0, 72.9], [157.5, 59.8],
+                [167.6, 61.0], [160.7, 69.1], [163.2, 55.9], [152.4, 46.5], [157.5, 54.3],
+                [168.3, 54.8], [180.3, 60.7], [165.5, 60.0], [165.0, 62.0], [164.5, 60.3],
+                [156.0, 52.7], [160.0, 74.3], [163.0, 62.0], [165.7, 73.1], [161.0, 80.0],
+                [162.0, 54.7], [166.0, 53.2], [174.0, 75.7], [172.7, 61.1], [167.6, 55.7],
+                [151.1, 48.7], [164.5, 52.3], [163.5, 50.0], [152.0, 59.3], [169.0, 62.5],
+                [164.0, 55.7], [161.2, 54.8], [155.0, 45.9], [170.0, 70.6], [176.2, 67.2],
+                [170.0, 69.4], [162.5, 58.2], [170.3, 64.8], [164.1, 71.6], [169.5, 52.8],
+                [163.2, 59.8], [154.5, 49.0], [159.8, 50.0], [173.2, 69.2], [170.0, 55.9],
+                [161.4, 63.4], [169.0, 58.2], [166.2, 58.6], [159.4, 45.7], [162.5, 52.2],
+                [159.0, 48.6], [162.8, 57.8], [159.0, 55.6], [179.8, 66.8], [162.9, 59.4],
+                [161.0, 53.6], [151.1, 73.2], [168.2, 53.4], [168.9, 69.0], [173.2, 58.4],
+                [171.8, 56.2], [178.0, 70.6], [164.3, 59.8], [163.0, 72.0], [168.5, 65.2],
+                [166.8, 56.6], [172.7, 105.2], [163.5, 51.8], [169.4, 63.4], [167.8, 59.0],
+                [159.5, 47.6], [167.6, 63.0], [161.2, 55.2], [160.0, 45.0], [163.2, 54.0],
+                [162.2, 50.2], [161.3, 60.2], [149.5, 44.8], [157.5, 58.8], [163.2, 56.4],
+                [172.7, 62.0], [155.0, 49.2], [156.5, 67.2], [164.0, 53.8], [160.9, 54.4],
+                [162.8, 58.0], [167.0, 59.8], [160.0, 54.8], [160.0, 43.2], [168.9, 60.5],
+                [158.2, 46.4], [156.0, 64.4], [160.0, 48.8], [167.1, 62.2], [158.0, 55.5],
+                [167.6, 57.8], [156.0, 54.6], [162.1, 59.2], [173.4, 52.7], [159.8, 53.2],
+                [170.5, 64.5], [159.2, 51.8], [157.5, 56.0], [161.3, 63.6], [162.6, 63.2],
+                [160.0, 59.5], [168.9, 56.8], [165.1, 64.1], [162.6, 50.0], [165.1, 72.3],
+                [166.4, 55.0], [160.0, 55.9], [152.4, 60.4], [170.2, 69.1], [162.6, 84.5],
+                [170.2, 55.9], [158.8, 55.5], [172.7, 69.5], [167.6, 76.4], [162.6, 61.4],
+                [167.6, 65.9], [156.2, 58.6], [175.2, 66.8], [172.1, 56.6], [162.6, 58.6],
+                [160.0, 55.9], [165.1, 59.1], [182.9, 81.8], [166.4, 70.7], [165.1, 56.8],
+                [177.8, 60.0], [165.1, 58.2], [175.3, 72.7], [154.9, 54.1], [158.8, 49.1],
+                [172.7, 75.9], [168.9, 55.0], [161.3, 57.3], [167.6, 55.0], [165.1, 65.5],
+                [175.3, 65.5], [157.5, 48.6], [163.8, 58.6], [167.6, 63.6], [165.1, 55.2],
+                [165.1, 62.7], [168.9, 56.6], [162.6, 53.9], [164.5, 63.2], [176.5, 73.6],
+                [168.9, 62.0], [175.3, 63.6], [159.4, 53.2], [160.0, 53.4], [170.2, 55.0],
+                [162.6, 70.5], [167.6, 54.5], [162.6, 54.5], [160.7, 55.9], [160.0, 59.0],
+                [157.5, 63.6], [162.6, 54.5], [152.4, 47.3], [170.2, 67.7], [165.1, 80.9],
+                [172.7, 70.5], [165.1, 60.9], [170.2, 63.6], [170.2, 54.5], [170.2, 59.1],
+                [161.3, 70.5], [167.6, 52.7], [167.6, 62.7], [165.1, 86.3], [162.6, 66.4],
+                [152.4, 67.3], [168.9, 63.0], [170.2, 73.6], [175.2, 62.3], [175.2, 57.7],
+                [160.0, 55.4], [165.1, 104.1], [174.0, 55.5], [170.2, 77.3], [160.0, 80.5],
+                [167.6, 64.5], [167.6, 72.3], [167.6, 61.4], [154.9, 58.2], [162.6, 81.8],
+                [175.3, 63.6], [171.4, 53.4], [157.5, 54.5], [165.1, 53.6], [160.0, 60.0],
+                [174.0, 73.6], [162.6, 61.4], [174.0, 55.5], [162.6, 63.6], [161.3, 60.9],
+                [156.2, 60.0], [149.9, 46.8], [169.5, 57.3], [160.0, 64.1], [175.3, 63.6],
+                [169.5, 67.3], [160.0, 75.5], [172.7, 68.2], [162.6, 61.4], [157.5, 76.8],
+                [176.5, 71.8], [164.4, 55.5], [160.7, 48.6], [174.0, 66.4], [163.8, 67.3]
+            ],
+      markArea: {
+        silent: true,
+        itemStyle: {
+          color: 'transparent',
+          borderWidth: 1,
+          borderType: 'dashed'
+        },
+        data: [
+          [
+            {
+              name: 'Female Data Range',
+              xAxis: 'min',
+              yAxis: 'min'
+            },
+            {
+              xAxis: 'max',
+              yAxis: 'max'
+            }
+          ]
+        ]
+      },
+      markPoint: {
+        data: [
+          { type: 'max', name: 'Max' },
+          { type: 'min', name: 'Min' }
+        ]
+      },
+      markLine: {
+        lineStyle: {
+          type: 'solid'
+        },
+        data: [{ type: 'average', name: 'AVG' }, { xAxis: 160 }]
+      }
+    },
+    {
+      name: 'Male',
+      type: 'scatter',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7], [186.5, 72.6], [187.2, 78.8],
+                [181.5, 74.8], [184.0, 86.4], [184.5, 78.4], [175.0, 62.0], [184.0, 81.6],
+                [180.0, 76.6], [177.8, 83.6], [192.0, 90.0], [176.0, 74.6], [174.0, 71.0],
+                [184.0, 79.6], [192.7, 93.8], [171.5, 70.0], [173.0, 72.4], [176.0, 85.9],
+                [176.0, 78.8], [180.5, 77.8], [172.7, 66.2], [176.0, 86.4], [173.5, 81.8],
+                [178.0, 89.6], [180.3, 82.8], [180.3, 76.4], [164.5, 63.2], [173.0, 60.9],
+                [183.5, 74.8], [175.5, 70.0], [188.0, 72.4], [189.2, 84.1], [172.8, 69.1],
+                [170.0, 59.5], [182.0, 67.2], [170.0, 61.3], [177.8, 68.6], [184.2, 80.1],
+                [186.7, 87.8], [171.4, 84.7], [172.7, 73.4], [175.3, 72.1], [180.3, 82.6],
+                [182.9, 88.7], [188.0, 84.1], [177.2, 94.1], [172.1, 74.9], [167.0, 59.1],
+                [169.5, 75.6], [174.0, 86.2], [172.7, 75.3], [182.2, 87.1], [164.1, 55.2],
+                [163.0, 57.0], [171.5, 61.4], [184.2, 76.8], [174.0, 86.8], [174.0, 72.2],
+                [177.0, 71.6], [186.0, 84.8], [167.0, 68.2], [171.8, 66.1], [182.0, 72.0],
+                [167.0, 64.6], [177.8, 74.8], [164.5, 70.0], [192.0, 101.6], [175.5, 63.2],
+                [171.2, 79.1], [181.6, 78.9], [167.4, 67.7], [181.1, 66.0], [177.0, 68.2],
+                [174.5, 63.9], [177.5, 72.0], [170.5, 56.8], [182.4, 74.5], [197.1, 90.9],
+                [180.1, 93.0], [175.5, 80.9], [180.6, 72.7], [184.4, 68.0], [175.5, 70.9],
+                [180.6, 72.5], [177.0, 72.5], [177.1, 83.4], [181.6, 75.5], [176.5, 73.0],
+                [175.0, 70.2], [174.0, 73.4], [165.1, 70.5], [177.0, 68.9], [192.0, 102.3],
+                [176.5, 68.4], [169.4, 65.9], [182.1, 75.7], [179.8, 84.5], [175.3, 87.7],
+                [184.9, 86.4], [177.3, 73.2], [167.4, 53.9], [178.1, 72.0], [168.9, 55.5],
+                [157.2, 58.4], [180.3, 83.2], [170.2, 72.7], [177.8, 64.1], [172.7, 72.3],
+                [165.1, 65.0], [186.7, 86.4], [165.1, 65.0], [174.0, 88.6], [175.3, 84.1],
+                [185.4, 66.8], [177.8, 75.5], [180.3, 93.2], [180.3, 82.7], [177.8, 58.0],
+                [177.8, 79.5], [177.8, 78.6], [177.8, 71.8], [177.8, 116.4], [163.8, 72.2],
+                [188.0, 83.6], [198.1, 85.5], [175.3, 90.9], [166.4, 85.9], [190.5, 89.1],
+                [166.4, 75.0], [177.8, 77.7], [179.7, 86.4], [172.7, 90.9], [190.5, 73.6],
+                [185.4, 76.4], [168.9, 69.1], [167.6, 84.5], [175.3, 64.5], [170.2, 69.1],
+                [190.5, 108.6], [177.8, 86.4], [190.5, 80.9], [177.8, 87.7], [184.2, 94.5],
+                [176.5, 80.2], [177.8, 72.0], [180.3, 71.4], [171.4, 72.7], [172.7, 84.1],
+                [172.7, 76.8], [177.8, 63.6], [177.8, 80.9], [182.9, 80.9], [170.2, 85.5],
+                [167.6, 68.6], [175.3, 67.7], [165.1, 66.4], [185.4, 102.3], [181.6, 70.5],
+                [172.7, 95.9], [190.5, 84.1], [179.1, 87.3], [175.3, 71.8], [170.2, 65.9],
+                [193.0, 95.9], [171.4, 91.4], [177.8, 81.8], [177.8, 96.8], [167.6, 69.1],
+                [167.6, 82.7], [180.3, 75.5], [182.9, 79.5], [176.5, 73.6], [186.7, 91.8],
+                [188.0, 84.1], [188.0, 85.9], [177.8, 81.8], [174.0, 82.5], [177.8, 80.5],
+                [171.4, 70.0], [185.4, 81.8], [185.4, 84.1], [188.0, 90.5], [188.0, 91.4],
+                [182.9, 89.1], [176.5, 85.0], [175.3, 69.1], [175.3, 73.6], [188.0, 80.5],
+                [188.0, 82.7], [175.3, 86.4], [170.5, 67.7], [179.1, 92.7], [177.8, 93.6],
+                [175.3, 70.9], [182.9, 75.0], [170.8, 93.2], [188.0, 93.2], [180.3, 77.7],
+                [177.8, 61.4], [185.4, 94.1], [168.9, 75.0], [185.4, 83.6], [180.3, 85.5],
+                [174.0, 73.9], [167.6, 66.8], [182.9, 87.3], [160.0, 72.3], [180.3, 88.6],
+                [167.6, 75.5], [186.7, 101.4], [175.3, 91.1], [175.3, 67.3], [175.9, 77.7],
+                [175.3, 81.8], [179.1, 75.5], [181.6, 84.5], [177.8, 76.6], [182.9, 85.0],
+                [177.8, 102.5], [184.2, 77.3], [179.1, 71.8], [176.5, 87.9], [188.0, 94.3],
+                [174.0, 70.9], [167.6, 64.5], [170.2, 77.3], [167.6, 72.3], [188.0, 87.3],
+                [174.0, 80.0], [176.5, 82.3], [180.3, 73.6], [167.6, 74.1], [188.0, 85.9],
+                [180.3, 73.2], [167.6, 76.3], [183.0, 65.9], [183.0, 90.9], [179.1, 89.1],
+                [170.2, 62.3], [177.8, 82.7], [179.1, 79.1], [190.5, 98.2], [177.8, 84.1],
+                [180.3, 83.2], [180.3, 83.2]
+            ],
+      markArea: {
+        silent: true,
+        itemStyle: {
+          color: 'transparent',
+          borderWidth: 1,
+          borderType: 'dashed'
+        },
+        data: [
+          [
+            {
+              name: 'Male Data Range',
+              xAxis: 'min',
+              yAxis: 'min'
+            },
+            {
+              xAxis: 'max',
+              yAxis: 'max'
+            }
+          ]
+        ]
+      },
+      markPoint: {
+        data: [
+          { type: 'max', name: 'Max' },
+          { type: 'min', name: 'Min' }
+        ]
+      },
+      markLine: {
+        lineStyle: {
+          type: 'solid'
+        },
+        data: [{ type: 'average', name: 'Average' }, { xAxis: 170 }]
+      }
+    }
+  ]
+}
+```
+
+# **桑基图**
 
 ```echarts
 {
@@ -1858,7 +2428,1287 @@
 }
 ```
 
-# 仪表盘
+```json
+{
+  settings :{
+    height: '800px'
+  },
+  title: {
+    subtext: 'Data From lisachristina1234 on GitHub',
+    left: 'center'
+  },
+  backgroundColor: '#FFFFFF',
+  series: [
+    {
+      type: 'sankey',
+      left: 50.0,
+      top: 20.0,
+      right: 150.0,
+      bottom: 25.0,
+      data: [
+        {
+          name: 'Werne',
+          itemStyle: {
+            color: '#f18bbf',
+            borderColor: '#f18bbf'
+          }
+        },
+        {
+          name: 'Duesseldorf',
+          itemStyle: {
+            color: '#0078D7',
+            borderColor: '#0078D7'
+          }
+        },
+        {
+          name: 'Cambridge',
+          itemStyle: {
+            color: '#3891A7',
+            borderColor: '#3891A7'
+          }
+        },
+        {
+          name: 'Colma',
+          itemStyle: {
+            color: '#0037DA',
+            borderColor: '#0037DA'
+          }
+        },
+        {
+          name: 'W. York',
+          itemStyle: {
+            color: '#C0BEAF',
+            borderColor: '#C0BEAF'
+          }
+        },
+        {
+          name: 'Frankfurt am Main',
+          itemStyle: {
+            color: '#EA005E',
+            borderColor: '#EA005E'
+          }
+        },
+        {
+          name: 'Metz',
+          itemStyle: {
+            color: '#D13438',
+            borderColor: '#D13438'
+          }
+        },
+        {
+          name: 'Orleans',
+          itemStyle: {
+            color: '#567C73',
+            borderColor: '#567C73'
+          }
+        },
+        {
+          name: 'Saint-Denis',
+          itemStyle: {
+            color: '#9ed566',
+            borderColor: '#9ed566'
+          }
+        },
+        {
+          name: 'Hof',
+          itemStyle: {
+            color: '#2BCC7F',
+            borderColor: '#2BCC7F'
+          }
+        },
+        {
+          name: 'Cliffside',
+          itemStyle: {
+            color: '#809B48',
+            borderColor: '#809B48'
+          }
+        },
+        {
+          name: 'Leeds',
+          itemStyle: {
+            color: '#9B2D1F',
+            borderColor: '#9B2D1F'
+          }
+        },
+        {
+          name: 'Victoria',
+          itemStyle: {
+            color: '#604878',
+            borderColor: '#604878'
+          }
+        },
+        {
+          name: 'Erlangen',
+          itemStyle: {
+            color: '#A5644E',
+            borderColor: '#A5644E'
+          }
+        },
+        {
+          name: 'Saint Germain en Laye',
+          itemStyle: {
+            color: '#2D3F3A',
+            borderColor: '#2D3F3A'
+          }
+        },
+        {
+          name: 'Roissy en Brie',
+          itemStyle: {
+            color: '#761721',
+            borderColor: '#761721'
+          }
+        },
+        {
+          name: 'Wokingham',
+          itemStyle: {
+            color: '#B1BADD',
+            borderColor: '#B1BADD'
+          }
+        },
+        {
+          name: 'Runcorn',
+          itemStyle: {
+            color: '#B0CCB0',
+            borderColor: '#B0CCB0'
+          }
+        },
+        {
+          name: 'Newton',
+          itemStyle: {
+            color: '#8164A3',
+            borderColor: '#8164A3'
+          }
+        },
+        {
+          name: 'Morangis',
+          itemStyle: {
+            color: '#8E562E',
+            borderColor: '#8E562E'
+          }
+        },
+        {
+          name: 'Metchosin',
+          itemStyle: {
+            color: '#C1504D',
+            borderColor: '#C1504D'
+          }
+        },
+        {
+          name: 'Kirkby',
+          itemStyle: {
+            color: '#CCAF0A',
+            borderColor: '#CCAF0A'
+          }
+        },
+        {
+          name: 'London',
+          itemStyle: {
+            color: '#956251',
+            borderColor: '#956251'
+          }
+        },
+        {
+          name: 'Offenbach',
+          itemStyle: {
+            color: '#C17529',
+            borderColor: '#C17529'
+          }
+        },
+        {
+          name: 'Warrington',
+          itemStyle: {
+            color: '#CEC597',
+            borderColor: '#CEC597'
+          }
+        },
+        {
+          name: 'Vancouver',
+          itemStyle: {
+            color: '#9F2936',
+            borderColor: '#9F2936'
+          }
+        },
+        {
+          name: 'SuperiorCard',
+          itemStyle: {
+            color: 'rgba(128,155,72,255)',
+            borderColor: 'rgba(128,155,72,255)'
+          }
+        },
+        {
+          name: 'Lille',
+          itemStyle: {
+            color: '#ac7430',
+            borderColor: '#ac7430'
+          }
+        },
+        {
+          name: 'Hamburg',
+          itemStyle: {
+            color: '#00BCF2',
+            borderColor: '#00BCF2'
+          }
+        },
+        {
+          name: 'Langley',
+          itemStyle: {
+            color: '#CD7B38',
+            borderColor: '#CD7B38'
+          }
+        },
+        {
+          name: 'Les Ulis',
+          itemStyle: {
+            color: '#424242',
+            borderColor: '#424242'
+          }
+        },
+        {
+          name: 'Saarbrücken',
+          itemStyle: {
+            color: '#f63185',
+            borderColor: '#f63185'
+          }
+        },
+        {
+          name: 'N. Vancouver',
+          itemStyle: {
+            color: '#9CBC59',
+            borderColor: '#9CBC59'
+          }
+        },
+        {
+          name: 'Chalk Riber',
+          itemStyle: {
+            color: '#4F4BD9',
+            borderColor: '#4F4BD9'
+          }
+        },
+        {
+          name: 'Esher-Molesey',
+          itemStyle: {
+            color: '#3EC562',
+            borderColor: '#3EC562'
+          }
+        },
+        {
+          name: 'Chatou',
+          itemStyle: {
+            color: '#F06F2E',
+            borderColor: '#F06F2E'
+          }
+        },
+        {
+          name: 'Hannover',
+          itemStyle: {
+            color: '#C3986D',
+            borderColor: '#C3986D'
+          }
+        },
+        {
+          name: 'Roncq',
+          itemStyle: {
+            color: '#4D291C',
+            borderColor: '#4D291C'
+          }
+        },
+        {
+          name: 'Ingolstadt',
+          itemStyle: {
+            color: '#009c7a',
+            borderColor: '#009c7a'
+          }
+        },
+        {
+          name: 'Drancy',
+          itemStyle: {
+            color: '#986F0B',
+            borderColor: '#986F0B'
+          }
+        },
+        {
+          name: 'Langford',
+          itemStyle: {
+            color: '#3C8EA4',
+            borderColor: '#3C8EA4'
+          }
+        },
+        {
+          name: 'Lebanon',
+          itemStyle: {
+            color: '#4F82BE',
+            borderColor: '#4F82BE'
+          }
+        },
+        {
+          name: 'Maidenhead',
+          itemStyle: {
+            color: '#D38017',
+            borderColor: '#D38017'
+          }
+        },
+        {
+          name: 'Stoke-on-Trent',
+          itemStyle: {
+            color: '#A8CDD7',
+            borderColor: '#A8CDD7'
+          }
+        },
+        {
+          name: 'Peterborough',
+          itemStyle: {
+            color: '#7A072D',
+            borderColor: '#7A072D'
+          }
+        },
+        {
+          name: 'Suresnes',
+          itemStyle: {
+            color: '#859599',
+            borderColor: '#859599'
+          }
+        },
+        {
+          name: 'Versailles',
+          itemStyle: {
+            color: '#84AA33',
+            borderColor: '#84AA33'
+          }
+        },
+        {
+          name: 'Neunkirchen',
+          itemStyle: {
+            color: '#ff8b67',
+            borderColor: '#ff8b67'
+          }
+        },
+        {
+          name: 'Vista',
+          itemStyle: {
+            color: 'rgba(106,82,134,255)',
+            borderColor: 'rgba(106,82,134,255)'
+          }
+        },
+        {
+          name: 'Westminster',
+          itemStyle: {
+            color: '#1B587C',
+            borderColor: '#1B587C'
+          }
+        },
+        {
+          name: 'Kiel',
+          itemStyle: {
+            color: '#A19574',
+            borderColor: '#A19574'
+          }
+        },
+        {
+          name: 'Newcastle upon Tyne',
+          itemStyle: {
+            color: '#918485',
+            borderColor: '#918485'
+          }
+        },
+        {
+          name: 'Oxon',
+          itemStyle: {
+            color: '#FFA98C',
+            borderColor: '#FFA98C'
+          }
+        },
+        {
+          name: 'West Sussex',
+          itemStyle: {
+            color: '#B0E3C0',
+            borderColor: '#B0E3C0'
+          }
+        },
+        {
+          name: 'Oak Bay',
+          itemStyle: {
+            color: '#4BADC7',
+            borderColor: '#4BADC7'
+          }
+        },
+        {
+          name: 'Milton Keynes',
+          itemStyle: {
+            color: '#BA144C',
+            borderColor: '#BA144C'
+          }
+        },
+        {
+          name: 'Eilenburg',
+          itemStyle: {
+            color: '#F0A22E',
+            borderColor: '#F0A22E'
+          }
+        },
+        {
+          name: 'ColonialVoice',
+          itemStyle: {
+            color: 'rgba(64,105,157,255)',
+            borderColor: 'rgba(64,105,157,255)'
+          }
+        },
+        {
+          name: 'Liverpool',
+          itemStyle: {
+            color: '#A28E6A',
+            borderColor: '#A28E6A'
+          }
+        },
+        {
+          name: 'Calgary',
+          itemStyle: {
+            color: '#9F413E',
+            borderColor: '#9F413E'
+          }
+        },
+        {
+          name: 'CAD',
+          itemStyle: {
+            color: '#40699D',
+            borderColor: '#40699D'
+          }
+        },
+        {
+          name: 'Paris La Defense',
+          itemStyle: {
+            color: '#989391',
+            borderColor: '#989391'
+          }
+        },
+        {
+          name: "Villeneuve-d'Ascq",
+          itemStyle: {
+            color: '#886CE4',
+            borderColor: '#886CE4'
+          }
+        },
+        {
+          name: 'Gloucestershire',
+          itemStyle: {
+            color: '#964305',
+            borderColor: '#964305'
+          }
+        },
+        {
+          name: 'Gateshead',
+          itemStyle: {
+            color: '#485FB5',
+            borderColor: '#485FB5'
+          }
+        },
+        {
+          name: 'Salzgitter',
+          itemStyle: {
+            color: '#87a0c7',
+            borderColor: '#87a0c7'
+          }
+        },
+        {
+          name: 'Woolston',
+          itemStyle: {
+            color: '#FFE2C5',
+            borderColor: '#FFE2C5'
+          }
+        },
+        {
+          name: 'Frankfurt',
+          itemStyle: {
+            color: '#40699D',
+            borderColor: '#40699D'
+          }
+        },
+        {
+          name: 'Münster',
+          itemStyle: {
+            color: '#7e7eb2',
+            borderColor: '#7e7eb2'
+          }
+        },
+        {
+          name: 'York',
+          itemStyle: {
+            color: '#587C7D',
+            borderColor: '#587C7D'
+          }
+        },
+        {
+          name: 'High Wycombe',
+          itemStyle: {
+            color: '#F07F09',
+            borderColor: '#F07F09'
+          }
+        },
+        {
+          name: 'Stuttgart',
+          itemStyle: {
+            color: '#E3008C',
+            borderColor: '#E3008C'
+          }
+        },
+        {
+          name: 'Sooke',
+          itemStyle: {
+            color: '#4E8542',
+            borderColor: '#4E8542'
+          }
+        },
+        {
+          name: 'Essen',
+          itemStyle: {
+            color: '#B58B80',
+            borderColor: '#B58B80'
+          }
+        },
+        {
+          name: 'München',
+          itemStyle: {
+            color: '#4dc0a6',
+            borderColor: '#4dc0a6'
+          }
+        },
+        {
+          name: 'Haney',
+          itemStyle: {
+            color: '#6A5286',
+            borderColor: '#6A5286'
+          }
+        },
+        {
+          name: 'Port Hammond',
+          itemStyle: {
+            color: '#F89746',
+            borderColor: '#F89746'
+          }
+        },
+        {
+          name: 'Saint Ouen',
+          itemStyle: {
+            color: '#744DA9',
+            borderColor: '#744DA9'
+          }
+        },
+        {
+          name: 'Watford',
+          itemStyle: {
+            color: '#E8B7B7',
+            borderColor: '#E8B7B7'
+          }
+        },
+        {
+          name: 'GBP',
+          itemStyle: {
+            color: '#C32D2E',
+            borderColor: '#C32D2E'
+          }
+        },
+        {
+          name: 'Paderborn',
+          itemStyle: {
+            color: '#F0C42E',
+            borderColor: '#F0C42E'
+          }
+        },
+        {
+          name: 'Dunkerque',
+          itemStyle: {
+            color: '#881798',
+            borderColor: '#881798'
+          }
+        },
+        {
+          name: 'Colomiers',
+          itemStyle: {
+            color: '#efa835',
+            borderColor: '#efa835'
+          }
+        },
+        {
+          name: 'Oxford',
+          itemStyle: {
+            color: '#D8B25C',
+            borderColor: '#D8B25C'
+          }
+        },
+        {
+          name: 'Bury',
+          itemStyle: {
+            color: '#FEB80A',
+            borderColor: '#FEB80A'
+          }
+        },
+        {
+          name: 'Royal Oak',
+          itemStyle: {
+            color: '#009DD9',
+            borderColor: '#009DD9'
+          }
+        },
+        {
+          name: 'Shawnee',
+          itemStyle: {
+            color: '#F07F09',
+            borderColor: '#F07F09'
+          }
+        },
+        {
+          name: 'Lancaster',
+          itemStyle: {
+            color: '#D34817',
+            borderColor: '#D34817'
+          }
+        },
+        {
+          name: 'DEM',
+          itemStyle: {
+            color: '#4E342E',
+            borderColor: '#4E342E'
+          }
+        },
+        {
+          name: 'Grevenbroich',
+          itemStyle: {
+            color: '#FFA836',
+            borderColor: '#FFA836'
+          }
+        },
+        {
+          name: 'Distinguish',
+          itemStyle: {
+            color: 'rgba(159,65,62,255)',
+            borderColor: 'rgba(159,65,62,255)'
+          }
+        },
+        {
+          name: 'Cheltenham',
+          itemStyle: {
+            color: '#FF6551',
+            borderColor: '#FF6551'
+          }
+        },
+        {
+          name: 'Reading',
+          itemStyle: {
+            color: '#72A376',
+            borderColor: '#72A376'
+          }
+        },
+        {
+          name: 'Pantin',
+          itemStyle: {
+            color: '#69797E',
+            borderColor: '#69797E'
+          }
+        },
+        {
+          name: 'Kassel',
+          itemStyle: {
+            color: '#e65e20',
+            borderColor: '#e65e20'
+          }
+        },
+        {
+          name: 'Orly',
+          itemStyle: {
+            color: '#6E6A68',
+            borderColor: '#6E6A68'
+          }
+        },
+        {
+          name: 'FRF',
+          itemStyle: {
+            color: '#5ba33b',
+            borderColor: '#5ba33b'
+          }
+        },
+        {
+          name: 'Cergy',
+          itemStyle: {
+            color: '#B4009E',
+            borderColor: '#B4009E'
+          }
+        },
+        {
+          name: 'Paris',
+          itemStyle: {
+            color: '#666666',
+            borderColor: '#666666'
+          }
+        }
+      ],
+      links: [
+        {
+          source: 'FRF',
+          target: 'Colomiers',
+          value: 357.8399963378906
+        },
+        {
+          source: 'SuperiorCard',
+          target: 'FRF',
+          value: 894.5999908447266
+        },
+        {
+          source: 'DEM',
+          target: 'München',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Reading',
+          value: 188.52999836206436
+        },
+        {
+          source: 'CAD',
+          target: 'Shawnee',
+          value: 2346.919983509928
+        },
+        {
+          source: 'GBP',
+          target: 'Kirkby',
+          value: 753.4000000059605
+        },
+        {
+          source: 'FRF',
+          target: 'Roncq',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Peterborough',
+          value: 999.159998036921
+        },
+        {
+          source: 'DEM',
+          target: 'Frankfurt am Main',
+          value: 536.7599945068359
+        },
+        {
+          source: 'GBP',
+          target: 'Oxford',
+          value: 1831.3799968883395
+        },
+        {
+          source: 'Vista',
+          target: 'FRF',
+          value: 1789.1999816894531
+        },
+        {
+          source: 'CAD',
+          target: 'Langley',
+          value: 1274.8199949413538
+        },
+        {
+          source: 'DEM',
+          target: 'Offenbach',
+          value: 357.8399963378906
+        },
+        {
+          source: 'FRF',
+          target: "Villeneuve-d'Ascq",
+          value: 178.9199981689453
+        },
+        {
+          source: 'FRF',
+          target: 'Dunkerque',
+          value: 357.8399963378906
+        },
+        {
+          source: 'DEM',
+          target: 'Eilenburg',
+          value: 178.9199981689453
+        },
+        {
+          source: 'FRF',
+          target: 'Paris',
+          value: 1073.5199890136719
+        },
+        {
+          source: 'GBP',
+          target: 'Maidenhead',
+          value: 549.8400026857853
+        },
+        {
+          source: 'CAD',
+          target: 'Sooke',
+          value: 1764.499989286065
+        },
+        {
+          source: 'CAD',
+          target: 'Vancouver',
+          value: 1528.580000281334
+        },
+        {
+          source: 'DEM',
+          target: 'Hamburg',
+          value: 357.8399963378906
+        },
+        {
+          source: 'GBP',
+          target: 'London',
+          value: 8619.309983983636
+        },
+        {
+          source: 'CAD',
+          target: 'Oak Bay',
+          value: 1565.109990529716
+        },
+        {
+          source: 'Distinguish',
+          target: 'FRF',
+          value: 2683.7999725341797
+        },
+        {
+          source: 'DEM',
+          target: 'Neunkirchen',
+          value: 178.9199981689453
+        },
+        {
+          source: 'FRF',
+          target: 'Cergy',
+          value: 178.9199981689453
+        },
+        {
+          source: 'DEM',
+          target: 'Hof',
+          value: 357.8399963378906
+        },
+        {
+          source: 'FRF',
+          target: 'Paris La Defense',
+          value: 178.9199981689453
+        },
+        {
+          source: 'CAD',
+          target: 'Westminster',
+          value: 1149.7999994903803
+        },
+        {
+          source: 'DEM',
+          target: 'Ingolstadt',
+          value: 536.7599945068359
+        },
+        {
+          source: 'GBP',
+          target: 'Saint Ouen',
+          value: 0.5899999737739563
+        },
+        {
+          source: 'FRF',
+          target: 'Lille',
+          value: 357.8399963378906
+        },
+        {
+          source: 'GBP',
+          target: 'Leeds',
+          value: 1356.6899970173836
+        },
+        {
+          source: 'FRF',
+          target: 'Morangis',
+          value: 357.8399963378906
+        },
+        {
+          source: 'GBP',
+          target: 'Orly',
+          value: 0.5899999737739563
+        },
+        {
+          source: 'SuperiorCard',
+          target: 'DEM',
+          value: 1431.3599853515625
+        },
+        {
+          source: 'Vista',
+          target: 'CAD',
+          value: 5369.929964579642
+        },
+        {
+          source: 'GBP',
+          target: 'Paris',
+          value: 0.6399999856948853
+        },
+        {
+          source: 'GBP',
+          target: 'Liverpool',
+          value: 857.1999968588352
+        },
+        {
+          source: 'GBP',
+          target: 'Stoke-on-Trent',
+          value: 1131.7099939212203
+        },
+        {
+          source: 'Distinguish',
+          target: 'DEM',
+          value: 2504.8799743652344
+        },
+        {
+          source: 'CAD',
+          target: 'Langford',
+          value: 2343.4599857851863
+        },
+        {
+          source: 'DEM',
+          target: 'Kassel',
+          value: 536.7599945068359
+        },
+        {
+          source: 'GBP',
+          target: 'High Wycombe',
+          value: 216.83999809622765
+        },
+        {
+          source: 'CAD',
+          target: 'Port Hammond',
+          value: 1711.1399984136224
+        },
+        {
+          source: 'DEM',
+          target: 'Duesseldorf',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Gloucestershire',
+          value: 422.28999888151884
+        },
+        {
+          source: 'Distinguish',
+          target: 'GBP',
+          value: 10384.949975416064
+        },
+        {
+          source: 'FRF',
+          target: 'Roissy en Brie',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'West Sussex',
+          value: 592.1700052022934
+        },
+        {
+          source: 'CAD',
+          target: 'Cliffside',
+          value: 2906.2699892893434
+        },
+        {
+          source: 'GBP',
+          target: 'Newcastle upon Tyne',
+          value: 1448.2899911925197
+        },
+        {
+          source: 'GBP',
+          target: 'Runcorn',
+          value: 1120.4800013303757
+        },
+        {
+          source: 'GBP',
+          target: 'W. York',
+          value: 612.1199932694435
+        },
+        {
+          source: 'DEM',
+          target: 'Kiel',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Woolston',
+          value: 833.3199937939644
+        },
+        {
+          source: 'Distinguish',
+          target: 'CAD',
+          value: 6950.059956334531
+        },
+        {
+          source: 'DEM',
+          target: 'Frankfurt',
+          value: 715.6799926757812
+        },
+        {
+          source: 'CAD',
+          target: 'Colma',
+          value: 0.2199999988079071
+        },
+        {
+          source: 'DEM',
+          target: 'Essen',
+          value: 178.9199981689453
+        },
+        {
+          source: 'FRF',
+          target: 'Chatou',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Cheltenham',
+          value: 573.0499979257584
+        },
+        {
+          source: 'SuperiorCard',
+          target: 'GBP',
+          value: 8228.39999615401
+        },
+        {
+          source: 'CAD',
+          target: 'Haney',
+          value: 2310.4499812424183
+        },
+        {
+          source: 'FRF',
+          target: 'Saint Ouen',
+          value: 178.9199981689453
+        },
+        {
+          source: 'CAD',
+          target: 'Chalk Riber',
+          value: 0.9200000166893005
+        },
+        {
+          source: 'DEM',
+          target: 'Salzgitter',
+          value: 178.9199981689453
+        },
+        {
+          source: 'ColonialVoice',
+          target: 'FRF',
+          value: 1610.2799835205078
+        },
+        {
+          source: 'DEM',
+          target: 'Stuttgart',
+          value: 357.8399963378906
+        },
+        {
+          source: 'FRF',
+          target: 'Saint-Denis',
+          value: 178.9199981689453
+        },
+        {
+          source: 'CAD',
+          target: 'Royal Oak',
+          value: 2128.459992274642
+        },
+        {
+          source: 'FRF',
+          target: 'Les Ulis',
+          value: 715.6799926757812
+        },
+        {
+          source: 'FRF',
+          target: 'Drancy',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Esher-Molesey',
+          value: 911.4700058028102
+        },
+        {
+          source: 'SuperiorCard',
+          target: 'CAD',
+          value: 7388.099954992533
+        },
+        {
+          source: 'GBP',
+          target: 'Bury',
+          value: 903.9400005489588
+        },
+        {
+          source: 'GBP',
+          target: 'Watford',
+          value: 1326.5300009772182
+        },
+        {
+          source: 'CAD',
+          target: 'Victoria',
+          value: 827.3899968340993
+        },
+        {
+          source: 'DEM',
+          target: 'Saarbrücken',
+          value: 178.9199981689453
+        },
+        {
+          source: 'GBP',
+          target: 'Lancaster',
+          value: 685.6899967193604
+        },
+        {
+          source: 'FRF',
+          target: 'Pantin',
+          value: 178.9199981689453
+        },
+        {
+          source: 'CAD',
+          target: 'Newton',
+          value: 1781.909985654056
+        },
+        {
+          source: 'GBP',
+          target: 'Oxon',
+          value: 493.6499986946583
+        },
+        {
+          source: 'CAD',
+          target: 'Calgary',
+          value: 361.3899962902069
+        },
+        {
+          source: 'DEM',
+          target: 'Münster',
+          value: 715.6799926757812
+        },
+        {
+          source: 'DEM',
+          target: 'Grevenbroich',
+          value: 536.7599945068359
+        },
+        {
+          source: 'DEM',
+          target: 'Paderborn',
+          value: 357.8399963378906
+        },
+        {
+          source: 'GBP',
+          target: 'York',
+          value: 3172.9999914616346
+        },
+        {
+          source: 'CAD',
+          target: 'Metchosin',
+          value: 1750.7899813987315
+        },
+        {
+          source: 'FRF',
+          target: 'Suresnes',
+          value: 357.8399963378906
+        },
+        {
+          source: 'FRF',
+          target: 'Versailles',
+          value: 894.5999908447266
+        },
+        {
+          source: 'DEM',
+          target: 'Erlangen',
+          value: 536.7599945068359
+        },
+        {
+          source: 'CAD',
+          target: 'Lebanon',
+          value: 0.8700000047683716
+        },
+        {
+          source: 'GBP',
+          target: 'Wokingham',
+          value: 812.6600027084351
+        },
+        {
+          source: 'GBP',
+          target: 'Cambridge',
+          value: 500.36999743431807
+        },
+        {
+          source: 'ColonialVoice',
+          target: 'GBP',
+          value: 8040.7799860313535
+        },
+        {
+          source: 'FRF',
+          target: 'Saint Germain en Laye',
+          value: 178.9199981689453
+        },
+        {
+          source: 'FRF',
+          target: 'Metz',
+          value: 178.9199981689453
+        },
+        {
+          source: 'FRF',
+          target: 'Orleans',
+          value: 357.8399963378906
+        },
+        {
+          source: 'GBP',
+          target: 'Milton Keynes',
+          value: 1648.2200061008334
+        },
+        {
+          source: 'GBP',
+          target: 'Warrington',
+          value: 2162.8300000429153
+        },
+        {
+          source: 'CAD',
+          target: 'N. Vancouver',
+          value: 1862.4599857926369
+        },
+        {
+          source: 'DEM',
+          target: 'Hannover',
+          value: 178.9199981689453
+        },
+        {
+          source: 'Vista',
+          target: 'GBP',
+          value: 9497.539981640875
+        },
+        {
+          source: 'DEM',
+          target: 'Werne',
+          value: 178.9199981689453
+        },
+        {
+          source: 'ColonialVoice',
+          target: 'DEM',
+          value: 1789.1999816894531
+        },
+        {
+          source: 'ColonialVoice',
+          target: 'CAD',
+          value: 7907.36997512728
+        },
+        {
+          source: 'GBP',
+          target: 'Gateshead',
+          value: 1425.7099913656712
+        },
+        {
+          source: 'Vista',
+          target: 'DEM',
+          value: 1968.1199798583984
+        }
+      ],
+      lineStyle: {
+        color: 'source',
+        curveness: 0.5
+      },
+      itemStyle: {
+        color: '#1f77b4',
+        borderColor: '#1f77b4'
+      },
+      label: {
+        color: 'rgba(0,0,0,0.7)',
+        fontFamily: 'Arial',
+        fontSize: 10
+      }
+    }
+  ],
+  tooltip: {
+    trigger: 'item'
+  }
+}
+```
+
+# **仪表盘**
 
 ```echarts
 {
@@ -2373,3 +4223,519 @@
   ]
 }
 ```
+
+```json
+{
+  settings :{
+    height: '800px'
+  },
+  backgroundColor: '#000',
+  tooltip: {
+    formatter: '{a} <br/>{b} : {c}%'
+  },
+  toolbox: {
+    feature: {
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  series: [
+    {
+      name: 'gauge 0',
+      type: 'gauge',
+      min: -200,
+      max: 250,
+      startAngle: -30,
+      endAngle: -315,
+      splitNumber: 9,
+      radius: '35%',
+      center: ['21%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [[1, '#AE96A6']]
+        }
+      },
+      splitLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false
+      },
+      anchor: {},
+      pointer: {
+        show: false
+      },
+      detail: {
+        show: false
+      },
+      title: {
+        fontSize: 12,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff',
+        offsetCenter: [0, '-60%']
+      },
+      progress: {
+        show: true,
+        width: 3,
+        itemStyle: {
+          color: '#fff'
+        }
+      },
+      data: [
+        {
+          value: 250,
+          name: 'km/h'
+        }
+      ]
+    },
+    {
+      name: 'gauge 1',
+      type: 'gauge',
+      min: 0,
+      max: 250,
+      startAngle: -140,
+      endAngle: -305,
+      splitNumber: 5,
+      radius: '35%',
+      center: ['21%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [[1, '#AE96A6']]
+        }
+      },
+      splitLine: {
+        distance: -7,
+        length: 12,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisTick: {
+        distance: -8,
+        length: 8,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      axisLabel: {
+        distance: 14,
+        fontSize: 18,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff'
+      },
+      anchor: {},
+      pointer: {
+        icon: 'path://M-36.5,23.9L-41,4.4c-0.1-0.4-0.4-0.7-0.7-0.7c-0.5-0.1-1.1,0.2-1.2,0.7l-4.5,19.5c0,0.1,0,0.1,0,0.2v92.3c0,0.6,0.4,1,1,1h9c0.6,0,1-0.4,1-1V24.1C-36.5,24-36.5,23.9-36.5,23.9z M-39.5,114.6h-5v-85h5V114.6z',
+        width: 5,
+        length: '40%',
+        offsetCenter: [0, '-58%'],
+        itemStyle: {
+          color: '#f00',
+          shadowColor: 'rgba(255, 0, 0)',
+          shadowBlur: 5,
+          shadowOffsetY: 2
+        }
+      },
+      title: {
+        color: '#fff',
+        fontSize: 14,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        offsetCenter: [0, 0]
+      },
+      detail: {
+        show: false
+      },
+      data: [
+        {
+          value: 0,
+          name: '当前位置：\n \n 中科路'
+        }
+      ]
+    },
+    {
+      name: 'gauge 2',
+      type: 'gauge',
+      min: 0,
+      max: 8,
+      z: 10,
+      startAngle: 210,
+      endAngle: -30,
+      splitNumber: 8,
+      radius: '50%',
+      center: ['50%', '50%'],
+      axisLine: {
+        show: true,
+        lineStyle: {
+          width: 0,
+          color: [
+            [0.825, '#fff'],
+            [1, '#f00']
+          ]
+        }
+      },
+      splitLine: {
+        distance: 20,
+        length: 15,
+        lineStyle: {
+          color: 'auto',
+          width: 4,
+          shadowColor: 'rgba(255, 255, 255, 0.5)',
+          shadowBlur: 15,
+          shadowOffsetY: -10
+        }
+      },
+      axisTick: {
+        distance: 20,
+        length: 8,
+        lineStyle: {
+          color: 'auto',
+          width: 2,
+          shadowColor: 'rgba(255, 255, 255)',
+          shadowBlur: 10,
+          shadowOffsetY: -10
+        }
+      },
+      axisLabel: {
+        distance: 10,
+        fontSize: 35,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff'
+      },
+      anchor: {},
+      pointer: {
+        icon: 'path://M-36.5,23.9L-41,4.4c-0.1-0.4-0.4-0.7-0.7-0.7c-0.5-0.1-1.1,0.2-1.2,0.7l-4.5,19.5c0,0.1,0,0.1,0,0.2v92.3c0,0.6,0.4,1,1,1h9c0.6,0,1-0.4,1-1V24.1C-36.5,24-36.5,23.9-36.5,23.9z M-39.5,114.6h-5v-85h5V114.6z',
+        width: 10,
+        offsetCenter: [0, '-10%'],
+        length: '75%',
+        itemStyle: {
+          color: '#f00',
+          shadowColor: 'rgba(255, 0, 0)',
+          shadowBlur: 5,
+          shadowOffsetY: 3
+        }
+      },
+      title: {
+        color: '#fff',
+        fontSize: 12,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        offsetCenter: [0, '-50%']
+      },
+      data: [
+        {
+          value: 0.6,
+          name: '1/min x 1000'
+        }
+      ],
+      detail: {
+        show: false
+      }
+    },
+    {
+      name: 'gauge 3',
+      type: 'gauge',
+      min: 0,
+      max: 8,
+      z: 10,
+      splitNumber: 8,
+      radius: '50%',
+      axisLine: {
+        lineStyle: {
+          width: 14,
+          color: [[1, '#000']]
+        }
+      },
+      splitLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false
+      },
+      anchor: {},
+      pointer: {
+        show: false
+      },
+      title: {
+        show: false
+      },
+      detail: {
+        offsetCenter: ['25%', '50%'],
+        formatter: '{a|{value}}{b|km/h}',
+        rich: {
+          a: {
+            fontSize: 60,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            color: '#fff',
+            align: 'center',
+            padding: [0, 5, 0, 0]
+          },
+          b: {
+            fontSize: 14,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            color: '#fff',
+            padding: [0, 0, 20, 0]
+          }
+        }
+      },
+      data: [
+        {
+          value: 0,
+          name: ''
+        }
+      ]
+    },
+    {
+      name: 'gauge 4',
+      type: 'gauge',
+      min: 0,
+      max: 8,
+      startAngle: 135,
+      endAngle: -150,
+      splitNumber: 8,
+      radius: '35%',
+      center: ['79%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [[1, '#AE96A6']]
+        }
+      },
+      splitLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false
+      },
+      anchor: {},
+      pointer: {
+        show: false
+      },
+      title: {},
+      detail: {
+        offsetCenter: ['-15%', 0],
+        formatter: [
+          '{a|                  00:00}',
+          '{a|行驶时间       0:00}{b| h}',
+          '{a|行驶距离        0.0}{b| km}',
+          '{a|平均耗能        ---}{b| 1/100km}',
+          '{a|平均速度        ---}{b| km/h}'
+        ].join('\n'),
+        rich: {
+          a: {
+            fontSize: 14,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            lineHeight: 22,
+            color: '#fff',
+            align: 'left'
+          },
+          b: {
+            fontWeight: 600,
+            fontFamily: 'Arial',
+            lineHeight: 22,
+            color: '#fff',
+            align: 'left'
+          }
+        }
+      },
+      progress: {
+        show: true,
+        width: 3,
+        itemStyle: {
+          color: '#fff'
+        }
+      },
+      data: [
+        {
+          value: 250,
+          name: ''
+        }
+      ]
+    },
+    {
+      name: 'gauge 5',
+      type: 'gauge',
+      min: 0,
+      max: 1,
+      startAngle: 125,
+      endAngle: 55,
+      splitNumber: 2,
+      radius: '34%',
+      center: ['79%', '55.3%'],
+      axisLine: {
+        lineStyle: {
+          width: 9,
+          color: [
+            [0.15, '#f00'],
+            [1, 'rgba(255, 0, 0, 0)']
+          ]
+        }
+      },
+      splitLine: {
+        distance: -14,
+        length: 16,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisTick: {
+        distance: -14,
+        length: 10,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      axisLabel: {
+        distance: 12,
+        fontSize: 18,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff',
+        formatter: function (value) {
+          if (value === 0.5) {
+            return '2/4';
+          }
+          if (value === 1) {
+            return '4/4';
+          }
+          return value + '';
+        }
+      },
+      progress: {
+        show: true,
+        width: 5,
+        itemStyle: {
+          color: '#fff'
+        }
+      },
+      anchor: {
+        show: true,
+        itemStyle: {},
+        offsetCenter: ['-22%', '-57%'],
+        size: 18,
+        icon: 'path://M1.11979167,1.11111112 C1.11979167,0.497461393 1.61725306,0 2.23090279,0 L12.2309028,0 C12.8445525,1.43824153e-08 13.3420139,0.497461403 13.3420139,1.11111112 L13.3420139,10 L15.5642361,10 C16.7915356,10 17.7864583,10.9949228 17.7864583,12.2222222 L17.7864583,16.6666667 C17.7865523,17.28025 18.2839861,17.7776077 18.8975694,17.7776077 C19.5111527,17.7776077 20.0085866,17.28025 20.0086805,16.6666667 L20.0086805,8.88888888 L17.7864583,8.88888888 C17.1728086,8.88888888 16.6753472,8.3914275 16.6753472,7.77777779 L16.6753472,3.79333333 L15.6197917,2.73777777 C15.1859413,2.30392741 15.1859413,1.60051702 15.6197917,1.16666667 L15.6197917,1.16666667 C16.053642,0.732816318 16.7570524,0.732816318 17.1909028,1.16666667 L21.9053472,5.88111112 C22.1140468,6.08922811 22.2312072,6.37193273 22.2309028,6.66666667 L22.2309028,16.6666667 C22.2309028,18.5076158 20.7385186,20 18.8975695,20 C17.0566203,20 15.5642361,18.5076158 15.5642361,16.6666667 L15.5642361,12.2222222 L13.3420139,12.2222222 L13.3420139,17.7777778 L13.3420139,17.7777778 C13.9556636,17.7777778 14.453125,18.2752392 14.453125,18.8888889 L14.453125,18.8888889 C14.453125,19.5025386 13.9556636,20 13.3420139,20 L1.11979165,20 C0.506141934,20 0.00868054688,19.5025386 0.00868054687,18.8888889 L0.00868054687,18.8888889 C0.00868054688,18.2752392 0.506141934,17.7777778 1.11979165,17.7777778 L1.11979167,17.7777778 L1.11979167,1.11111112 Z M3.34201388,2.22222221 L3.34201388,8.88888888 L11.1197917,8.88888888 L11.1197917,2.22222221 L3.34201388,2.22222221 Z'
+      },
+      pointer: {
+        show: false
+      },
+      title: {},
+      detail: {
+        offsetCenter: ['10%', '-56%'],
+        formatter: '{a|831}{b| km}',
+        rich: {
+          a: {
+            fontSize: 15,
+            fontWeight: 800,
+            fontFamily: 'Arial',
+            color: '#fff'
+          },
+          b: {
+            fontWeight: 600,
+            fontFamily: 'Arial',
+            color: '#fff'
+          }
+        }
+      },
+      data: [
+        {
+          value: 0.85,
+          name: ''
+        }
+      ]
+    },
+    {
+      name: 'gauge 6',
+      type: 'gauge',
+      min: -120,
+      max: -60,
+      startAngle: 230,
+      endAngle: 310,
+      clockwise: false,
+      splitNumber: 2,
+      radius: '35%',
+      center: ['79%', '55%'],
+      axisLine: {
+        lineStyle: {
+          color: [
+            [1, '#AE96A6'],
+            [1.1, '#f00']
+          ]
+        }
+      },
+      splitLine: {
+        distance: -8,
+        length: 12,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisTick: {
+        splitNumber: 3,
+        length: 8,
+        distance: -8,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      axisLabel: {
+        distance: 14,
+        fontSize: 18,
+        fontWeight: 800,
+        fontFamily: 'Arial',
+        color: '#fff',
+        formatter: function (value) {
+          return -value + '';
+        }
+      },
+      anchor: {
+        show: true,
+        itemStyle: {},
+        offsetCenter: [0, '55%'],
+        size: 20,
+        icon: 'path://M-34.1-1.1L-34.1-1.1c0-0.3-0.3-0.6-0.6-0.6h-3.6v-1.5c0-0.5-0.2-0.9-0.6-1.1s-0.9-0.2-1.3,0c-0.4,0.2-0.6,0.7-0.6,1.1V7.9c0,0,0,0.1,0,0.1c-0.8,0.5-1.2,1.5-0.9,2.5c0.3,0.9,1.1,1.6,2.1,1.6c1,0,1.8-0.6,2.1-1.5c0.3-0.9,0-1.9-0.8-2.5V6.3h3.5c0.4,0,0.7-0.3,0.7-0.7l0,0c0-0.4-0.3-0.7-0.7-0.7h-3.5V2.9h3.5c0.4,0,0.7-0.3,0.7-0.7l0,0c0-0.4-0.3-0.7-0.7-0.7h-3.5v-2.1h3.6C-34.4-0.5-34.1-0.8-34.1-1.1z M-44.9,11.6c-0.7,0-1.4-0.2-2-0.6c-0.4-0.3-0.9-0.4-1.4-0.4c-0.4,0-0.9,0.2-1.2,0.4c-0.4,0.2-1.4-0.9-0.9-1.3c0.6-0.4,1.3-0.6,2-0.7c0.8,0,1.5,0.2,2.2,0.5c0.4,0.3,0.9,0.4,1.3,0.4c0.6,0,1.1-0.2,1.5-0.6s1.6,0.7,0.9,1.3S-44,11.6-44.9,11.6L-44.9,11.6z M-34.3,11.6c-0.7,0-1.4-0.3-2-0.7c-0.6-0.4,0.5-1.6,0.9-1.3s0.8,0.4,1.2,0.4c0.5,0,1-0.1,1.4-0.4c0.6-0.3,1.3-0.5,2-0.6h0c0.9,0,1.7,0.3,2.4,0.9c0.7,0.5-0.5,1.6-0.9,1.3c-0.4-0.3-1-0.6-1.5-0.6h0c-0.5,0-0.9,0.2-1.3,0.4c-0.6,0.3-1.3,0.5-2,0.6H-34.3z M-33.5,16.3c-0.7,0-1.4-0.3-1.9-0.8c-0.4-0.3-0.6-0.5-1-0.5c-0.4,0-0.7,0.2-1,0.4c-0.6,0.5-1.3,0.7-2,0.7c-0.7,0-1.4-0.3-1.9-0.8c-0.2-0.3-0.6-0.4-0.9-0.4c-0.4,0-0.7,0.1-1.1,0.5c-0.6,0.5-1.3,0.7-2.1,0.7c-0.7-0.1-1.4-0.4-1.9-0.9c-0.4-0.3-0.6-0.5-1-0.5c-0.3,0-0.6,0.2-0.9,0.4s-1.6-0.7-1.1-1.2c0.5-0.5,1.2-0.8,1.9-0.9c1-0.1,1.6,0.4,2.1,0.8c0.3,0.3,0.6,0.5,1,0.5c0.4,0,0.6-0.1,1-0.4c0.6-0.5,1.4-0.8,2.1-0.8c0.7,0,1.4,0.3,1.9,0.8c0.2,0.2,0.6,0.4,0.9,0.4c0.4,0,0.6-0.1,1-0.4c0.6-0.5,1.3-0.7,2-0.7c0.8,0,1.5,0.3,2,0.9c0.4,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.2,1.1-0.5c0.5-0.4,1.2-0.9,2.3-0.8c0.7,0,1.4,0.3,1.9,0.7c0.5,0.4-0.7,1.5-1,1.3s-0.6-0.4-1-0.4c-0.4,0-0.7,0.2-1.2,0.5C-32,15.9-32.7,16.2-33.5,16.3L-33.5,16.3z'
+      },
+      pointer: {
+        icon: 'path://M2.9,0.7L2.9,0.7c1.4,0,2.6,1.2,2.6,2.6v115c0,1.4-1.2,2.6-2.6,2.6l0,0c-1.4,0-2.6-1.2-2.6-2.6V3.3C0.3,1.9,1.4,0.7,2.9,0.7z',
+        width: 15,
+        length: '4',
+        offsetCenter: [0, '-90%'],
+        itemStyle: {
+          color: '#f00'
+        }
+      },
+      title: {},
+      detail: {
+        show: false
+      },
+      data: [
+        {
+          value: -120,
+          name: ''
+        }
+      ]
+    }
+  ]
+}
+```
+
+<!-- tabs:end -->
