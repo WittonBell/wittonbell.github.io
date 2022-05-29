@@ -19,6 +19,8 @@
     - Python
       - [使用Python爬取考勤信息](docs/博客/编程/语言/Python/2018-12-29-使用Python爬取考勤信息.md)
       - [解决：pip is configured with locations that require TLS](docs/博客/编程/语言/Python/2020-10-29-解决：pip_is_configured_with_locations_that_require_TLS.md)
+    - 汇编
+      - [Linux下使用CMake构建含nasm汇编的C++项目](docs/博客/编程/语言/汇编/2022-05-29-Linux下使用CMake构建含nasm汇编的C++项目.md)
   - IDE
     - Visual Studio
       - [dll、lib、a的转换](docs/博客/编程/IDE/VisualStudio/2020-08-21-dll、lib、a的转换.md)
