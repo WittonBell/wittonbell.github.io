@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>智能指针 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 智能指针 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;模板类成员函数使用SFINAE特性匹配智能指针</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
+      <description>为了讲解C++模板类成员函数如何使用SFINAE特性匹配智能指针，笔者使用最近在实际项目中的应用来进行说明。 最近在项目开</description>
+    </item>
+    
+  </channel>
+</rss>

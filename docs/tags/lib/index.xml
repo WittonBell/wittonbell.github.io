@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lib on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/lib/</link>
+    <description>Recent content in lib on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/lib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dll、lib、a的转换</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>一、.dll生成导入库.a或者.lib 在使用Mingw进行开发时，有时依赖的库只有.dll文件，而Mingw需要的是.a</description>
+    </item>
+    
+  </channel>
+</rss>

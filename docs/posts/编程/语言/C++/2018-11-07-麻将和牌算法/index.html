@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>麻将和牌算法 | Witton的博客</title>
+    <meta property="og:title" content="麻将和牌算法 - Witton的博客">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content='2018-11-07T00:00:00&#43;08:00'>
+    <meta property="article:modified_time" content='2018-11-07T00:00:00&#43;08:00'>
+    <meta name="Keywords" content="C,C&#43;&#43;,golang,go,erlang,python,C#,VS,Visual Studio,C/C&#43;&#43;,lua,博客,项目管理,软件架构">
+    <meta name="description" content="麻将和牌算法">
+    <meta name="author" content="Witton Bell">
+    <meta property="og:url" content="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://unpkg.com/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/mhchem.min.js"
+    integrity="sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/copy-tex.min.js"
+    integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+    
+    </head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                    <a id="logo" href="https://wittonbell.github.io/">
+                        Witton的博客
+                    </a>
+                <p class="description">游戏服务器开发、C/C&#43;&#43;、Go、Python，博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
+                    <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
+                    <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="body">
+        <div class="container">
+            <div class="col-group">
+                <div class="col-8" id="main">
+                    <div class="res-cons">
+
+<style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 300px;
+        margin-left: -310px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 1px 0;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 1px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一直接计算法">一、直接计算法</a></li>
+    <li><a href="#二查表法">二、查表法</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+
+<article class="post">
+        <header>
+            <h1 class="post-title">麻将和牌算法</h1>
+        </header>
+        <time datetime="2018-11-07T00:00:00Z" class="post-meta meta-date dt-published">2018年11月7日</time>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 作者: Witton Bell</span>
+<div class="post-meta meta-category">
+  <span>&nbsp;|&nbsp;</span><a href="/categories/C/C&#43;&#43;/" class="category-link p-category" target="_blank">C/C&#43;&#43;</a>/<a href="/categories/%E7%AE%97%E6%B3%95/" class="category-link p-category" target="_blank">算法</a>
+</div>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 1226 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 3&nbsp;分钟</span>
+
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        <div class="post-content">
+            <p>麻将牌有1－9万，1－9条，1－9筒，东南西北，中发白各4张，共34种136张牌。有些地方的麻将还有梅兰花竹、春夏秋冬各一张。一般将梅兰花竹、春夏秋冬用作万能牌（赖子牌、混牌）。</p>
+<p>麻将和牌的算法一般分为直接计算法与查表法两种：直接计算法就是按照和牌的规则进行计算；查表算法就是预先把所有和牌的牌型穷举出来组成一张表，在使用的时候直接查表即可。这两种算法各有优劣：直接计算法占用内存比较小，占用CPU会比较高，性能低下，带赖子的时候算法稍显复杂；查表法占用内存比较多，但CPU的开销比较小，性能很高。下面就简单介绍一下这种两算法：</p>
+<h1 id="一直接计算法">一、直接计算法</h1>
+<p>麻将的通用和牌规则（不包括7对，13幺等等特殊的和牌规则）是一系列的顺子（三张连牌，如123等等）加一系列的刻子（三张一样的牌，如111等等）再加一对将牌，即可和牌，用公式来表示即为：X * ABC + Y * DDD + EE，也就是说有X个顺子，Y个刻子加一对将牌，X与Y都是大于等于0的数，且整手牌的张数不能超过14张。</p>
+<p>关于直接计算法，在网上找到几篇参考文章，这里就不再赘述了。
+
+  <a href="https://www.cnblogs.com/laddc/p/6646365.html">https://www.cnblogs.com/laddc/p/6646365.html</a>
+
+  <a href="http://xingbinice.iteye.com/blog/2380673">http://xingbinice.iteye.com/blog/2380673</a></p>
+<h1 id="二查表法">二、查表法</h1>
+<p>查表法最重要是把所有可和牌型全部穷举出来保存到表中方便直接查询。穷举出来还是比较容易的，但是要保存下来，如果没有一个比较好的方法，则会出来占用内存非常大的情况。</p>
+<p>麻将有34种牌，我们可以把每种牌定义成一个字节，我们知道一手牌最多可以有14张牌，每张牌占一个字节，就需要14个字节，穷举出全部可和牌型占用内存是相当惊人的。</p>
+<p>网上有一文章介绍了如何表示和保存可和牌型：
+
+  <a href="https://blog.csdn.net/qq_38880234/article/details/76922107?utm_source=blogxgwz0">https://blog.csdn.net/qq_38880234/article/details/76922107?utm_source=blogxgwz0</a></p>
+<p>作者把源码也共享出来了：
+
+  <a href="https://github.com/pinorr/HuPaiMJ">https://github.com/pinorr/HuPaiMJ</a></p>
+<p>作者写了共四版，前两版作为基础，第三版作了优化，根据测试正确性没发现什么问题，其使用了unordered_map来存储，但是我发现在VS2010的Debug模式下会很慢，可以改为map；第四版则直接使用了数组来存储，性能得到了提升，但是有一个BUG（224420000 牌型胡不了），作者说不好解决，笔者进行了一些研究发现还是比较好解决，只是内存的使用有所增加。</p>
+<p>源码在对一种和牌牌型计算数组索引的时候把4张相同的牌做了如下处理：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">if</span> ((byIndex[i] <span style="color:#f92672">&amp;</span> BIT_VAL_FLAG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    byIndex[i] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>nKey <span style="color:#f92672">|=</span> (<span style="color:#66d9ef">int</span>)(byIndex[i] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x03</span>) <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> i);
+</span></span></code></pre></div><p>即发现是大于3的则减去3，然后再压缩成2位来存储。
+在查表时，则进行如下处理：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">if</span> (byTemp <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    byDelIndex <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    nVal <span style="color:#f92672">|=</span> (<span style="color:#66d9ef">int</span>)(byTemp <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> i);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#960050;background-color:#1e0010">……</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">if</span> (byDelIndex <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0xFF</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    byCards[<span style="color:#ae81ff">9</span> <span style="color:#f92672">*</span> cor <span style="color:#f92672">+</span> byDelIndex] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#f92672">--</span>cor; <span style="color:#f92672">++</span>byJiangNum;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>}
+</span></span></code></pre></div><p>即查表时同样对大于3的数作减3处理，并记录该数所在索引，作特殊处理。
+作者使用了262144个BYTE来存储，即18位,共0.25M内存，使用了3个这样的数组，共0.75M的内存，不得不说做得很精妙，但是遗憾的是有已知BUG。该方法出现BUG的的关键在对大于3的处理上.</p>
+<p>笔者在此基础上做出改进，由于一手牌中同时大于3的数量不会超过3个，这样可以增加两位来记录大于3的个数。此方法共占用20位，1048576个字节，即1M，比原方式占用内存大了4倍，但总体还不算大，经过测试之前的BUG不复存在，目前未发现任何BUG。</p>
+<p>祝开心！</p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+	<ul class="post-nav">
+		
+			<li class="post-nav-prev">
+				<a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/" rel="prev">&lt; 使用Python爬取考勤信息</a>
+			</li>
+		
+		
+			<li class="post-nav-next">
+				<a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/" rel="next">解密Cocos2D中的Lua源码 &gt;</a>
+			</li>
+		
+	</ul>
+
+
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
+        
+        
+        
+        
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/">https://wittonbell.github.io/posts/编程/语言/C&#43;&#43;/2018-11-07-麻将和牌算法/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/">关于友元函数的跨平台问题</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/">关于C/C&#43;&#43;的位域</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/">类成员函数大小问题</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/">宿主程序Crash与Lua是动态库还是静态库有关？</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/">关于G&#43;&#43;库链接的一个问题</a></li>
+        
+    </ul>
+</div>
+
+
+<div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/C/C&#43;&#43;/' target="_blank">C/C&#43;&#43;</a></li>
+                
+                <li><a href='/tags/%E7%AE%97%E6%B3%95/' target="_blank">算法</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const ID = "2018-11-07-麻将和牌算法" 
+    const Title = "2018-11-07-麻将和牌算法"
+    const gitalk = new Gitalk({
+        clientID: '118c70fe27b7246dfb76',
+        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
+        repo: 'comment',
+        owner: 'WittonBell',
+        admin: ['WittonBell'],
+        id: ID, 
+        title: Title,
+        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
+        pagerDirection: "last",
+        createIssueManually:  false ,
+        distractionFreeMode:  false  
+    });
+    (function () {
+        
+        
+        
+        
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+</div>
+<footer id="footer">
+    <div>
+        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://wittonbell.github.io/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">Witton</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+</div>
+
+            <div id="secondary">
+    <section class="widget">
+    <form id="search" action='https://wittonbell.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder=搜索>
+      <input type="hidden" name="sitesearch" value="https://wittonbell.github.io/">
+      <button type="submit" class="submit icon-search" title=搜索></button>
+</form>
+    </section>
+
+    <section class="widget">
+    <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/" title="VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4" target="_blank">VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/" title="解决lldb调试时可能出现的personality set failed Function not implemented" target="_blank">解决lldb调试时可能出现的personality set failed Function not implemented</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/" title="让docsify-katex支持化学公式mhchem扩展" target="_blank">让docsify-katex支持化学公式mhchem扩展</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/" title="使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库" target="_blank">使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/" title="使用容器编排对go项目进行部署、调试" target="_blank">使用容器编排对go项目进行部署、调试</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/" title="ubuntu安装podman-compose" target="_blank">ubuntu安装podman-compose</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/" title="解决podman failed：to create new watcher too many open files" target="_blank">解决podman failed：to create new watcher too many open files</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/" title="Goland连接https的Docker远程服务" target="_blank">Goland连接https的Docker远程服务</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/" title="Goland使用远程容器进行go开发调试" target="_blank">Goland使用远程容器进行go开发调试</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/" title="使用nexus3作为Docker镜像仓库" target="_blank">使用nexus3作为Docker镜像仓库</a>
+    </li>
+</ul>
+</section><section class="widget">
+    <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (31)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Cocos2D/">Cocos2D (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Go/">Go (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/">LLVM (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Python/">Python (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/VS/">VS (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/nasm/">nasm (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%85%B6%E5%AE%83/">其它 (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/">容器 (7)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/">游戏 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (1)</a></li>
+</ul>
+</section>
+
+    <section class="widget">
+    <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    <a href="https://wittonbell.github.io/tags/.a/">.a</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;/">C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/C/C&#43;&#43;/">C/C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/CNI/">CNI</a>
+    <a href="https://wittonbell.github.io/tags/CentOS/">CentOS</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-6.x/">CentOS 6.x</a>
+    <a href="https://wittonbell.github.io/tags/CheckInstall/">CheckInstall</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D/">Cocos2D</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D-X/">Cocos2D-X</a>
+    <a href="https://wittonbell.github.io/tags/Crash/">Crash</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/G&#43;&#43;/">G&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/GCC/">GCC</a>
+    <a href="https://wittonbell.github.io/tags/go/">go</a>
+    <a href="https://wittonbell.github.io/tags/Goland/">Goland</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/Linux/">Linux</a>
+    <a href="https://wittonbell.github.io/tags/Lua/">Lua</a>
+    <a href="https://wittonbell.github.io/tags/LuaTinker/">LuaTinker</a>
+    <a href="https://wittonbell.github.io/tags/Lua%E8%A7%A3%E5%AF%86/">Lua解密</a>
+    <a href="https://wittonbell.github.io/tags/MFC/">MFC</a>
+    <a href="https://wittonbell.github.io/tags/MinGW/">MinGW</a>
+    <a href="https://wittonbell.github.io/tags/PB/">PB</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/Python/">Python</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/SFINAE/">SFINAE</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/Samba/">Samba</a>
+    <a href="https://wittonbell.github.io/tags/TLS/">TLS</a>
+    <a href="https://wittonbell.github.io/tags/Table/">Table</a>
+    <a href="https://wittonbell.github.io/tags/Unicode/">Unicode</a>
+    <a href="https://wittonbell.github.io/tags/VC/">VC</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/WSL2/">WSL2</a>
+    <a href="https://wittonbell.github.io/tags/Windows/">Windows</a>
+    <a href="https://wittonbell.github.io/tags/blog/">blog</a>
+    <a href="https://wittonbell.github.io/tags/CentOS/">CentOS</a>
+    <a href="https://wittonbell.github.io/tags/class/">class</a>
+    <a href="https://wittonbell.github.io/tags/cmake/">cmake</a>
+    <a href="https://wittonbell.github.io/tags/compiler/">compiler</a>
+    <a href="https://wittonbell.github.io/tags/compose/">compose</a>
+    <a href="https://wittonbell.github.io/tags/debugger/">debugger</a>
+    <a href="https://wittonbell.github.io/tags/defer/">defer</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/docker-compose/">docker-compose</a>
+    <a href="https://wittonbell.github.io/tags/docsify/">docsify</a>
+    <a href="https://wittonbell.github.io/tags/GCC/">GCC</a>
+    <a href="https://wittonbell.github.io/tags/github-pages/">github pages</a>
+    <a href="https://wittonbell.github.io/tags/gitlab/">gitlab</a>
+    <a href="https://wittonbell.github.io/tags/gitlab-pages/">gitlab pages</a>
+    <a href="https://wittonbell.github.io/tags/go/">go</a>
+    <a href="https://wittonbell.github.io/tags/jekyll/">jekyll</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/lib/">lib</a>
+    <a href="https://wittonbell.github.io/tags/lldb/">lldb</a>
+    <a href="https://wittonbell.github.io/tags/markdown/">markdown</a>
+    <a href="https://wittonbell.github.io/tags/mhchem/">mhchem</a>
+    <a href="https://wittonbell.github.io/tags/nasm/">nasm</a>
+    <a href="https://wittonbell.github.io/tags/nexus3/">nexus3</a>
+    <a href="https://wittonbell.github.io/tags/pip/">pip</a>
+    <a href="https://wittonbell.github.io/tags/podman/">podman</a>
+    <a href="https://wittonbell.github.io/tags/podman-compose/">podman-compose</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/ruby/">ruby</a>
+    <a href="https://wittonbell.github.io/tags/runner/">runner</a>
+    <a href="https://wittonbell.github.io/tags/ubuntu/">ubuntu</a>
+    <a href="https://wittonbell.github.io/tags/VC/">VC</a>
+    <a href="https://wittonbell.github.io/tags/vditor/">vditor</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BD%8D%E5%9F%9F/">位域</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BF%AE%E5%A4%8D/">修复</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E6%A0%B8/">内核</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">内联汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%99%E5%8D%9A%E5%AE%A2/">写博客</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A8%E6%80%81%E5%BA%93/">动态库</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0/">友元函数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0/">变长参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%90%AF%E5%8A%A8/">启动</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85%E5%8C%85/">安装包</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%8F/">宏</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/">序列化</a>
+    <a href="https://wittonbell.github.io/tags/%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">成员函数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/">注册表</a>
+    <a href="https://wittonbell.github.io/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    <a href="https://wittonbell.github.io/tags/%E7%B1%BB/">类</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E6%8E%92/">编排</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/">编译</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A1%A8/">表</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%AF%86/">解密</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/">调试</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>
+    <a href="https://wittonbell.github.io/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/">静态IP</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81%E5%BA%93/">静态库</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91/">预编译</a>
+</div>
+</section>
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/witton" title="我的CSDN">我的CSDN博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wittonbell.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>

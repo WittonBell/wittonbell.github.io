@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>使用Python爬取考勤信息 | Witton的博客</title>
+    <meta property="og:title" content="使用Python爬取考勤信息 - Witton的博客">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content='2018-12-29T00:00:00&#43;08:00'>
+    <meta property="article:modified_time" content='2018-12-29T00:00:00&#43;08:00'>
+    <meta name="Keywords" content="C,C&#43;&#43;,golang,go,erlang,python,C#,VS,Visual Studio,C/C&#43;&#43;,lua,博客,项目管理,软件架构">
+    <meta name="description" content="使用Python爬取考勤信息">
+    <meta name="author" content="Witton Bell">
+    <meta property="og:url" content="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://unpkg.com/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/mhchem.min.js"
+    integrity="sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/copy-tex.min.js"
+    integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+    
+    </head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                    <a id="logo" href="https://wittonbell.github.io/">
+                        Witton的博客
+                    </a>
+                <p class="description">游戏服务器开发、C/C&#43;&#43;、Go、Python，博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
+                    <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
+                    <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="body">
+        <div class="container">
+            <div class="col-group">
+                <div class="col-8" id="main">
+                    <div class="res-cons">
+
+<style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 300px;
+        margin-left: -310px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 1px 0;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 1px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一环境准备">一、环境准备</a></li>
+        <li><a href="#二编码">二、编码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+
+<article class="post">
+        <header>
+            <h1 class="post-title">使用Python爬取考勤信息</h1>
+        </header>
+        <time datetime="2018-12-29T00:00:00Z" class="post-meta meta-date dt-published">2018年12月29日</time>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 作者: Witton Bell</span>
+<div class="post-meta meta-category">
+  <span>&nbsp;|&nbsp;</span><a href="/categories/Python/" class="category-link p-category" target="_blank">Python</a>
+</div>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 2718 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 6&nbsp;分钟</span>
+
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        <div class="post-content">
+            <p>最近公司的加班调休审批制度有一些调整，由于公司网站上没有清楚的标明各自有多少天可以调休，所以为了清楚的知道自己还有多少天可以调休，就想着使用爬虫爬一下考勤信息，把它放在一个Excel表中以方便查阅。最近项目不是很忙，也趁机学习学习Python爬虫。</p>
+<h2 id="一环境准备">一、环境准备</h2>
+<p>1.首先需要先安装Python，笔者使用的Python3.X。
+2.然后使用pip安装工具安装爬虫所需要的非标准库
+主要使用到以下一些非标准库：</p>
+<blockquote>
+<p>selenium：为了模拟浏览器操作
+win32：为了解密浏览器Cookies
+openpyxl：为了操作Excel</p>
+</blockquote>
+<p>使用pip工具安装：</p>
+<blockquote>
+<p>pip install selenium
+pip install pywin32
+pip install openpyxl</p>
+</blockquote>
+<p>3.由于笔者使用的是浏览器的模拟操作，所以还需要下载一个WebDriver，笔者使用的Chrome浏览器，所以下载与Chrome版本相对应的WebDriver放在Python的安装目录下。</p>
+<h2 id="二编码">二、编码</h2>
+<p>1.首先，我们把所有需要使用到的库加进来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">from</span> win32 <span style="color:#f92672">import</span> win32crypt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#f92672">from</span> os <span style="color:#f92672">import</span> getenv
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#f92672">import</span> sqlite3
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f92672">from</span> selenium.webdriver.common.by <span style="color:#f92672">import</span> By
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#f92672">from</span> selenium.webdriver.support <span style="color:#f92672">import</span> expected_conditions <span style="color:#66d9ef">as</span> EC
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#f92672">from</span> selenium.webdriver.support.wait <span style="color:#f92672">import</span> WebDriverWait
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#f92672">import</span> openpyxl
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#f92672">from</span> openpyxl.comments <span style="color:#f92672">import</span> Comment
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#f92672">from</span> openpyxl.styles <span style="color:#f92672">import</span> Font, colors, Alignment
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#f92672">import</span> math
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#f92672">import</span> re
+</span></span></code></pre></div><p>2.使用浏览器模拟操作
+使用浏览器模拟操作时，可以选择浏览器是否可见。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">opt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">webdriver</span>.<span style="color:#a6e22e">ChromeOptions</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#a6e22e">opt</span>.<span style="color:#a6e22e">headless</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">True</span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">浏览器是否可见</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#a6e22e">driver</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">webdriver</span>.<span style="color:#a6e22e">Chrome</span>(
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        <span style="color:#a6e22e">options</span><span style="color:#f92672">=</span><span style="color:#a6e22e">opt</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    )
+</span></span></code></pre></div><p>创建好了WebDriver后，就可以登录网站了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;https://mis.XXXXX.cn&#39;</span>)
+</span></span></code></pre></div><p>由于网站是需要登录的，所以要模拟登录过程。使用浏览器模拟登录有两种方式，使用账号密码直接登录和使用之前登录过的Cookies登录。</p>
+<ul>
+<li>直接登录
+直接登录需要找到账号与密码输入框，在账号密码框中输入相应的账号与密码，再点登录。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">usr_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">find_element_by_class_name</span>(<span style="color:#e6db74">&#34;ant-input&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">找到账号输入框</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a6e22e">psw</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">find_element_by_id</span>(<span style="color:#e6db74">&#34;inputPassword&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">找到密码输入框</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a6e22e">submit_btn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">find_element_by_class_name</span>(<span style="color:#e6db74">&#34;ant-btn&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">找到登录按钮</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#a6e22e">usr_name</span>.<span style="color:#a6e22e">send_keys</span>(<span style="color:#e6db74">&#34;abc&#34;</span>)  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">输入账号</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#a6e22e">psw</span>.<span style="color:#a6e22e">send_keys</span>(<span style="color:#e6db74">&#34;abc&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">输入密码</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#a6e22e">submit_btn</span>.<span style="color:#a6e22e">click</span>() <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">点击登录按钮</span>
+</span></span></code></pre></div><p><em><strong>BTW：由于各个网站使用的标签不一样，所以标签仅供参考。</strong></em></p>
+<ul>
+<li>使用Cookies登录
+这里定义了一个函数专门获取Chrome浏览器下考勤网站的Cookie</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_cookie_from_chrome</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    conn <span style="color:#f92672">=</span> sqlite3<span style="color:#f92672">.</span>connect(getenv(<span style="color:#e6db74">&#34;LOCALAPPDATA&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\Google\Chrome\User Data\Default\Cookies&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    cursor<span style="color:#f92672">.</span>execute(
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#e6db74">&#39;select host_key, name, encrypted_value, path, is_httponly, is_secure from cookies where host_key like &#34;%mis.XXXXX.cn%&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    cookies <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span> result <span style="color:#f92672">in</span> cursor<span style="color:#f92672">.</span>fetchall():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        value <span style="color:#f92672">=</span> win32crypt<span style="color:#f92672">.</span>CryptUnprotectData(result[<span style="color:#ae81ff">2</span>], <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>, <span style="color:#ae81ff">0</span>)[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#66d9ef">if</span> value:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            is_http_only <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            secure <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">if</span> result[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>                is_http_only <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            <span style="color:#66d9ef">if</span> result[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                secure <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            cookie <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                <span style="color:#e6db74">&#39;domain&#39;</span>: result[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>                <span style="color:#e6db74">&#39;httpOnly&#39;</span>: is_http_only,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>                <span style="color:#e6db74">&#39;name&#39;</span>: result[<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>                <span style="color:#e6db74">&#39;path&#39;</span>: result[<span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>                <span style="color:#e6db74">&#39;secure&#39;</span>: secure,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>                <span style="color:#e6db74">&#39;value&#39;</span>: value<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            cookies<span style="color:#f92672">.</span>append(cookie)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    cursor<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    <span style="color:#66d9ef">return</span> cookies
+</span></span></code></pre></div><p>获取到Cookies之后将之添加到WebDriver中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">cookies</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">get_cookie_from_chrome</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cookie</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">cookies</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>     <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">add_cookie</span>(<span style="color:#a6e22e">cookie</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;https://mis.XXXXX.cn&#39;</span>)
+</span></span></code></pre></div><p>由于网站使用了大量的Ajax以及Frame技术，所以需要等待一段时间，让数据加载完成。可以直接使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">sleep</span>
+</span></span></code></pre></div><p>函数进行显示等待，也可以使用selenium的expected_conditions条件等待。
+前者简单明了，但是如果在指定的时间内数据未加载完成，获取就会失败，出现异常；后者是设置一个最大等待时间，在此时间内根据设定的间隔时间不断检测是否出现指定的数据，如果出现则继续向后执行，否则等待直到最大等待时间超时。</p>
+<p>这里网站使用了Frame技术，左边有一个树型结构，里面有一个“个人考勤”，点了“个人考勤”后，右边才会出现个人考勤的详细列表，如下图：
+
+        <a data-fancybox="gallery" href="https://img-blog.csdnimg.cn/20181229110333922.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20181229110333922.png" />
+        </a>
+    
+所以需要切换Frame，然后点击“个人考勤”</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">wait</span>.<span style="color:#a6e22e">until</span>(<span style="color:#a6e22e">EC</span>.<span style="color:#a6e22e">frame_to_be_available_and_switch_to_it</span>((<span style="color:#a6e22e">By</span>.<span style="color:#a6e22e">ID</span>, <span style="color:#e6db74">&#39;left&#39;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a6e22e">work_day</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">wait</span>.<span style="color:#a6e22e">until</span>(<span style="color:#a6e22e">EC</span>.<span style="color:#a6e22e">element_to_be_clickable</span>((<span style="color:#a6e22e">By</span>.<span style="color:#a6e22e">ID</span>, <span style="color:#e6db74">&#34;sundefined5&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a6e22e">work_day</span>.<span style="color:#a6e22e">click</span>()
+</span></span></code></pre></div><p>这段话的意思是直到找到ID为‘left&rsquo;的Frame，成功切换过去为止，然后直到找到ID为&quot;sundefined5&quot;的元素且可以被点击时，点击它。点击了“个人考勤”后，右边就会出现详细的考勤列表。
+由于这个时候还在“left”Frame中，需要切换到新的个人考勤，就需要先切换到“left“的父Frame再切到”个人考勤“Fame</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">switch_to</span>.<span style="color:#a6e22e">parent_frame</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a6e22e">wait</span>.<span style="color:#a6e22e">until</span>(<span style="color:#a6e22e">EC</span>.<span style="color:#a6e22e">frame_to_be_available_and_switch_to_it</span>((<span style="color:#a6e22e">By</span>.<span style="color:#a6e22e">ID</span>, <span style="color:#e6db74">&#39;dz-kaoqin_iframe&#39;</span>)))
+</span></span></code></pre></div><p>切换到考勤详细列表后，开始找数据然后分析数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>presence_of_element_located((By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#34;//tbody/tr&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>date_list <span style="color:#f92672">=</span> wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>presence_of_element_located((By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#34;//tbody&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>flag, lst <span style="color:#f92672">=</span> parse_work_time(driver, text)  <span style="color:#75715e"># 这里使用一个专门的函数来分析数据</span>
+</span></span></code></pre></div><p>考勤列表的日期项可以点开，然后弹出一个对话框，详细列出了打卡记录，但如果有没上班，则为空
+
+        <a data-fancybox="gallery" href="https://img-blog.csdnimg.cn/20181229112129457.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20181229112129457.png" />
+        </a>
+    </p>
+<p>所以需要模拟点击日期，再获取打卡记录，获取完后，再把“打卡信息”对话框关闭，继续获取下一天的信息</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>item <span style="color:#f92672">=</span> wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>element_to_be_clickable((By<span style="color:#f92672">.</span>LINK_TEXT, lst[<span style="color:#ae81ff">0</span>])))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>item<span style="color:#f92672">.</span>click() <span style="color:#75715e"># 点击日期</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>frame_to_be_available_and_switch_to_it((By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//iframe[@frameborder=&#34;0&#34;]&#39;</span>))) <span style="color:#75715e"># 切换到“打卡信息”对话框</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.2</span>)  <span style="color:#75715e"># 这里只能使用sleep，因为这里可能只有tbody而没有数据</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>record_text <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#34;//tbody&#34;</span>)<span style="color:#f92672">.</span>text  <span style="color:#75715e"># 获取所有打卡记录，保存在record_text中</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>parent_frame() <span style="color:#75715e"># 返回父Frame</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>close_btn <span style="color:#f92672">=</span> wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>element_to_be_clickable((By<span style="color:#f92672">.</span>CLASS_NAME, <span style="color:#e6db74">&#34;layui-layer-ico&#34;</span>))) <span style="color:#75715e"># 找到“打卡信息”对话框的关闭按钮</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>close_btn<span style="color:#f92672">.</span>click() <span style="color:#75715e"># 点击关闭按钮，关闭“打卡信息”对话框</span>
+</span></span></code></pre></div><p>如果有考勤异常或者请假单之类的，也会有一个链接，可以查看请假单记录：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>bill_list <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#34;link-billId&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">for</span> bill <span style="color:#f92672">in</span> bill_list:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        bill<span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>frame_to_be_available_and_switch_to_it((By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//iframe[@frameborder=&#34;0&#34;]&#39;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.2</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        form <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//form&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        work_time<span style="color:#f92672">.</span>bill_text <span style="color:#f92672">=</span> form<span style="color:#f92672">.</span>text
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>parent_frame()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        close_btn <span style="color:#f92672">=</span> wait<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>element_to_be_clickable((By<span style="color:#f92672">.</span>CLASS_NAME, <span style="color:#e6db74">&#34;layui-layer-ico&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        close_btn<span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#66d9ef">return</span>
+</span></span></code></pre></div><p>把考勤信息爬取到后，就需要写入Excel表了。这里使用openpyxl库来写入，因为我试了xlwings以及xlwt两个库都不支持批注，只有openpyxl支持。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_to_excel</span>(work_time_list, file_path):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span>    wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>Workbook()    <span style="color:#75715e"># 打开一个工作薄</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span>    wb<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf-8&#39;</span>  <span style="color:#75715e"># 使用UTF8编码</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span>    sh <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>worksheets[<span style="color:#ae81ff">0</span>]  <span style="color:#75715e"># 获取第一个sheet</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span>    sh<span style="color:#f92672">.</span>title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;考勤&#34;</span>  <span style="color:#75715e">#将标题改为考勤</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span>    sheet <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>create_sheet(<span style="color:#e6db74">&#34;原始文本记录&#34;</span>)  <span style="color:#75715e"># 创建一个“原始文本记录”的表</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span>	<span style="color:#75715e"># 设置“考勤”表的表头</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span>    row <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span>    col <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span>    sh<span style="color:#f92672">.</span>cell(row, col, <span style="color:#e6db74">&#39;日期&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;上班时间&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;下班时间&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;上班打卡时间&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;下班打卡时间&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;最晚到时间&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;迟到分钟&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>, <span style="color:#e6db74">&#39;早退分钟&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>, <span style="color:#e6db74">&#39;考勤状态&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>, <span style="color:#e6db74">&#39;单据编号&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;单据类型&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#39;工作分钟&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;工作小时&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;是否加班&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span>    sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">14</span>, <span style="color:#e6db74">&#39;剩余可调休加班小时&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span>    <span style="color:#75715e"># 设置“考勤”表的列宽</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;A&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;B&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;C&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;D&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;E&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;F&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;G&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;H&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;I&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;J&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;K&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;L&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;M&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;N&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span>    sh<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;O&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span><span>    sheet<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#39;A&#39;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span>    blue_font <span style="color:#f92672">=</span> Font(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;宋体&#39;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">11</span>, italic<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, color<span style="color:#f92672">=</span>colors<span style="color:#f92672">.</span>BLUE, bold<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span><span>    red_font <span style="color:#f92672">=</span> Font(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;宋体&#39;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">11</span>, italic<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, color<span style="color:#f92672">=</span>colors<span style="color:#f92672">.</span>RED, bold<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span>    over_work_time_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span>    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> work_time_list:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span>        calc_work_time(item)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span><span>        time_hour <span style="color:#f92672">=</span> parse_bill_info(item)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span><span>        sheet<span style="color:#f92672">.</span>cell(row, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> item<span style="color:#f92672">.</span>origin_text
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span><span>        row <span style="color:#f92672">=</span> row <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span>        col <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span><span>        dt <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(item<span style="color:#f92672">.</span>date, <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span>        weekday <span style="color:#f92672">=</span> dt<span style="color:#f92672">.</span>weekday() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span>        cell <span style="color:#f92672">=</span> sh<span style="color:#f92672">.</span>cell(row, col, item<span style="color:#f92672">.</span>date <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;(星期&#39;</span> <span style="color:#f92672">+</span> str(weekday) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span><span>        has_comment <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span><span>        <span style="color:#66d9ef">if</span> item<span style="color:#f92672">.</span>record_text<span style="color:#f92672">.</span>__len__() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span><span>            cell<span style="color:#f92672">.</span>comment <span style="color:#f92672">=</span> Comment(item<span style="color:#f92672">.</span>record_text, <span style="color:#66d9ef">None</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">350</span>)  <span style="color:#75715e"># 设置批注</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span><span>            has_comment <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, item<span style="color:#f92672">.</span>start_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, item<span style="color:#f92672">.</span>end_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>, item<span style="color:#f92672">.</span>real_start_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>, item<span style="color:#f92672">.</span>real_end_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>, item<span style="color:#f92672">.</span>late_start_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">6</span>, item<span style="color:#f92672">.</span>late_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>, item<span style="color:#f92672">.</span>before_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>, item<span style="color:#f92672">.</span>status)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>, item<span style="color:#f92672">.</span>handle_sn)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span>        <span style="color:#66d9ef">if</span> item<span style="color:#f92672">.</span>bill_text<span style="color:#f92672">.</span>__len__() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span><span>            sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>)<span style="color:#f92672">.</span>comment <span style="color:#f92672">=</span> Comment(item<span style="color:#f92672">.</span>bill_text, <span style="color:#66d9ef">None</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">550</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>, item<span style="color:#f92672">.</span>handle_type)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">11</span>, item<span style="color:#f92672">.</span>valid_work_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span>        valid_work_time <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>floor(item<span style="color:#f92672">.</span>valid_work_time <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span><span>        <span style="color:#66d9ef">if</span> valid_work_time <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">8</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span><span>            valid_work_time <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">12</span>, valid_work_time)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span>        <span style="color:#66d9ef">if</span> weekday <span style="color:#f92672">==</span> <span style="color:#ae81ff">6</span> <span style="color:#f92672">or</span> weekday <span style="color:#f92672">==</span> <span style="color:#ae81ff">7</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span>            <span style="color:#66d9ef">if</span> has_comment <span style="color:#f92672">and</span> item<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;休息&#39;</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span><span>                sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;加班&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span>                over_work_time_acc <span style="color:#f92672">+=</span> valid_work_time
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span><span>        over_work_time_acc <span style="color:#f92672">-=</span> time_hour
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span>        sh<span style="color:#f92672">.</span>cell(row, col <span style="color:#f92672">+</span> <span style="color:#ae81ff">14</span>, over_work_time_acc)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span>        <span style="color:#66d9ef">if</span> weekday <span style="color:#f92672">==</span> <span style="color:#ae81ff">6</span> <span style="color:#f92672">or</span> weekday <span style="color:#f92672">==</span> <span style="color:#ae81ff">7</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span>            <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, sh<span style="color:#f92672">.</span>max_column <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span>                <span style="color:#66d9ef">if</span> has_comment:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span>                    sh<span style="color:#f92672">.</span>cell(row, col)<span style="color:#f92672">.</span>font <span style="color:#f92672">=</span> red_font
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span><span>                <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span><span>                    sh<span style="color:#f92672">.</span>cell(row, col)<span style="color:#f92672">.</span>font <span style="color:#f92672">=</span> blue_font
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span>    wb<span style="color:#f92672">.</span>save(file_path)  <span style="color:#75715e"># 保存Excel表</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span>    wb<span style="color:#f92672">.</span>close() <span style="color:#75715e"># 关闭</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span>    <span style="color:#66d9ef">return</span>
+</span></span></code></pre></div><p>保存下来的内容如图所示：
+
+        <a data-fancybox="gallery" href="https://img-blog.csdnimg.cn/20181229114907403.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20181229114907403.png" />
+        </a>
+    </p>
+<p>祝好</p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+	<ul class="post-nav">
+		
+			<li class="post-nav-prev">
+				<a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev">&lt; 加快编译速度，再谈C/C++预编译技术的使用</a>
+			</li>
+		
+		
+			<li class="post-nav-next">
+				<a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/" rel="next">麻将和牌算法 &gt;</a>
+			</li>
+		
+	</ul>
+
+
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
+        
+        
+        
+        
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/">https://wittonbell.github.io/posts/编程/语言/Python/2018-12-29-使用Python爬取考勤信息/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/">麻将和牌算法</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/">解密Cocos2D中的Lua源码</a></li>
+        
+        <li><a href="/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/">Windows系统无法启动时如何修复注册表</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/">关于友元函数的跨平台问题</a></li>
+        
+        <li><a href="/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/">关于C/C&#43;&#43;的位域</a></li>
+        
+    </ul>
+</div>
+
+
+<div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Python/' target="_blank">Python</a></li>
+                
+                <li><a href='/tags/%E7%88%AC%E8%99%AB/' target="_blank">爬虫</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const ID = "2018-12-29-使用Python爬取考勤信息" 
+    const Title = "2018-12-29-使用Python爬取考勤信息"
+    const gitalk = new Gitalk({
+        clientID: '118c70fe27b7246dfb76',
+        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
+        repo: 'comment',
+        owner: 'WittonBell',
+        admin: ['WittonBell'],
+        id: ID, 
+        title: Title,
+        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
+        pagerDirection: "last",
+        createIssueManually:  false ,
+        distractionFreeMode:  false  
+    });
+    (function () {
+        
+        
+        
+        
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+</div>
+<footer id="footer">
+    <div>
+        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://wittonbell.github.io/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">Witton</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+</div>
+
+            <div id="secondary">
+    <section class="widget">
+    <form id="search" action='https://wittonbell.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder=搜索>
+      <input type="hidden" name="sitesearch" value="https://wittonbell.github.io/">
+      <button type="submit" class="submit icon-search" title=搜索></button>
+</form>
+    </section>
+
+    <section class="widget">
+    <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/" title="VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4" target="_blank">VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/" title="解决lldb调试时可能出现的personality set failed Function not implemented" target="_blank">解决lldb调试时可能出现的personality set failed Function not implemented</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/" title="让docsify-katex支持化学公式mhchem扩展" target="_blank">让docsify-katex支持化学公式mhchem扩展</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/" title="使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库" target="_blank">使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/" title="使用容器编排对go项目进行部署、调试" target="_blank">使用容器编排对go项目进行部署、调试</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/" title="ubuntu安装podman-compose" target="_blank">ubuntu安装podman-compose</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/" title="解决podman failed：to create new watcher too many open files" target="_blank">解决podman failed：to create new watcher too many open files</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/" title="Goland连接https的Docker远程服务" target="_blank">Goland连接https的Docker远程服务</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/" title="Goland使用远程容器进行go开发调试" target="_blank">Goland使用远程容器进行go开发调试</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/" title="使用nexus3作为Docker镜像仓库" target="_blank">使用nexus3作为Docker镜像仓库</a>
+    </li>
+</ul>
+</section><section class="widget">
+    <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (31)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Cocos2D/">Cocos2D (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Go/">Go (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/">LLVM (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (13)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Python/">Python (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/VS/">VS (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/nasm/">nasm (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%85%B6%E5%AE%83/">其它 (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/">容器 (7)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/">游戏 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (1)</a></li>
+</ul>
+</section>
+
+    <section class="widget">
+    <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    <a href="https://wittonbell.github.io/tags/.a/">.a</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;/">C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/C/C&#43;&#43;/">C/C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/CNI/">CNI</a>
+    <a href="https://wittonbell.github.io/tags/CentOS/">CentOS</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-6.x/">CentOS 6.x</a>
+    <a href="https://wittonbell.github.io/tags/CheckInstall/">CheckInstall</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D/">Cocos2D</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D-X/">Cocos2D-X</a>
+    <a href="https://wittonbell.github.io/tags/Crash/">Crash</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/G&#43;&#43;/">G&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/GCC/">GCC</a>
+    <a href="https://wittonbell.github.io/tags/go/">go</a>
+    <a href="https://wittonbell.github.io/tags/Goland/">Goland</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/Linux/">Linux</a>
+    <a href="https://wittonbell.github.io/tags/Lua/">Lua</a>
+    <a href="https://wittonbell.github.io/tags/LuaTinker/">LuaTinker</a>
+    <a href="https://wittonbell.github.io/tags/Lua%E8%A7%A3%E5%AF%86/">Lua解密</a>
+    <a href="https://wittonbell.github.io/tags/MFC/">MFC</a>
+    <a href="https://wittonbell.github.io/tags/MinGW/">MinGW</a>
+    <a href="https://wittonbell.github.io/tags/PB/">PB</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/Python/">Python</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/SFINAE/">SFINAE</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/Samba/">Samba</a>
+    <a href="https://wittonbell.github.io/tags/TLS/">TLS</a>
+    <a href="https://wittonbell.github.io/tags/Table/">Table</a>
+    <a href="https://wittonbell.github.io/tags/Unicode/">Unicode</a>
+    <a href="https://wittonbell.github.io/tags/VC/">VC</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/WSL2/">WSL2</a>
+    <a href="https://wittonbell.github.io/tags/Windows/">Windows</a>
+    <a href="https://wittonbell.github.io/tags/blog/">blog</a>
+    <a href="https://wittonbell.github.io/tags/CentOS/">CentOS</a>
+    <a href="https://wittonbell.github.io/tags/class/">class</a>
+    <a href="https://wittonbell.github.io/tags/cmake/">cmake</a>
+    <a href="https://wittonbell.github.io/tags/compiler/">compiler</a>
+    <a href="https://wittonbell.github.io/tags/compose/">compose</a>
+    <a href="https://wittonbell.github.io/tags/debugger/">debugger</a>
+    <a href="https://wittonbell.github.io/tags/defer/">defer</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/docker-compose/">docker-compose</a>
+    <a href="https://wittonbell.github.io/tags/docsify/">docsify</a>
+    <a href="https://wittonbell.github.io/tags/GCC/">GCC</a>
+    <a href="https://wittonbell.github.io/tags/github-pages/">github pages</a>
+    <a href="https://wittonbell.github.io/tags/gitlab/">gitlab</a>
+    <a href="https://wittonbell.github.io/tags/gitlab-pages/">gitlab pages</a>
+    <a href="https://wittonbell.github.io/tags/go/">go</a>
+    <a href="https://wittonbell.github.io/tags/jekyll/">jekyll</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/lib/">lib</a>
+    <a href="https://wittonbell.github.io/tags/lldb/">lldb</a>
+    <a href="https://wittonbell.github.io/tags/markdown/">markdown</a>
+    <a href="https://wittonbell.github.io/tags/mhchem/">mhchem</a>
+    <a href="https://wittonbell.github.io/tags/nasm/">nasm</a>
+    <a href="https://wittonbell.github.io/tags/nexus3/">nexus3</a>
+    <a href="https://wittonbell.github.io/tags/pip/">pip</a>
+    <a href="https://wittonbell.github.io/tags/podman/">podman</a>
+    <a href="https://wittonbell.github.io/tags/podman-compose/">podman-compose</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/ruby/">ruby</a>
+    <a href="https://wittonbell.github.io/tags/runner/">runner</a>
+    <a href="https://wittonbell.github.io/tags/ubuntu/">ubuntu</a>
+    <a href="https://wittonbell.github.io/tags/VC/">VC</a>
+    <a href="https://wittonbell.github.io/tags/vditor/">vditor</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BD%8D%E5%9F%9F/">位域</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BF%AE%E5%A4%8D/">修复</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E6%A0%B8/">内核</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">内联汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%99%E5%8D%9A%E5%AE%A2/">写博客</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A8%E6%80%81%E5%BA%93/">动态库</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0/">友元函数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0/">变长参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%90%AF%E5%8A%A8/">启动</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85%E5%8C%85/">安装包</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%8F/">宏</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/">序列化</a>
+    <a href="https://wittonbell.github.io/tags/%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">成员函数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/">注册表</a>
+    <a href="https://wittonbell.github.io/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    <a href="https://wittonbell.github.io/tags/%E7%B1%BB/">类</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E6%8E%92/">编排</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/">编译</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A1%A8/">表</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%AF%86/">解密</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/">调试</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>
+    <a href="https://wittonbell.github.io/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/">静态IP</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81%E5%BA%93/">静态库</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91/">预编译</a>
+</div>
+</section>
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/witton" title="我的CSDN">我的CSDN博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wittonbell.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>

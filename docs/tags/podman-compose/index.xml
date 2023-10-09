@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>podman-compose on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/podman-compose/</link>
+    <description>Recent content in podman-compose on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/podman-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ubuntu安装podman-compose</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
+      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
+    </item>
+    
+    <item>
+      <title>Goland连接https的Docker远程服务</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
+      <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
+    </item>
+    
+    <item>
+      <title>Goland使用远程容器进行go开发调试</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
+    </item>
+    
+  </channel>
+</rss>

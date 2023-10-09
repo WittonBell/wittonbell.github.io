@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CheckInstall on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/CheckInstall/</link>
+    <description>Recent content in CheckInstall on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/CheckInstall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用CheckInstall从源码制作RPM安装包</title>
+      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      <description>在Centos系统中自行升级安装GCC时，如果想要将编译结果保留使用怎么办？GCC没有直接提供生成RPM的配置，我们可以</description>
+    </item>
+    
+  </channel>
+</rss>

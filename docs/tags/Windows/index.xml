@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Windows/</link>
+    <description>Recent content in Windows on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用CheckInstall从源码制作RPM安装包</title>
+      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
+      <description>WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些设置。 一、创建批处理文件设置静态IP 可以创建一个批处</description>
+    </item>
+    
+    <item>
+      <title>Windows系统无法启动时如何修复注册表</title>
+      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
+      <description>​ 我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想</description>
+    </item>
+    
+    <item>
+      <title>Linux通过Smb与Windows共享目录</title>
+      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Thu, 26 Jul 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>​ 由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的</description>
+    </item>
+    
+    <item>
+      <title>Windows与Linux共存之重装Windows经历</title>
+      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Sat, 09 Jun 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
+      <description>Linux是一个功能强大的操作系统，它既支持如MSDOS一般的命令行操作，也支持如Windows一般的图形界面的操作。 随</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitlab on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/gitlab/</link>
+    <description>Recent content in gitlab on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用podman容器配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+    </item>
+    
+  </channel>
+</rss>

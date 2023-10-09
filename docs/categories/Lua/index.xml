@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/Lua/</link>
+    <description>Recent content in Lua on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 30 Apr 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宿主程序Crash与Lua是动态库还是静态库有关？</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</link>
+      <pubDate>Thu, 30 Apr 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</guid>
+      <description>​ 前一阵子在做项目的时候，遇到一个感觉比较怪异的问题：在项目中我们用了Lua作为脚本扩展支持，Lua是以静态库的形式编译</description>
+    </item>
+    
+    <item>
+      <title>LuaTinker向Linux移植成功</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</link>
+      <pubDate>Wed, 06 Jun 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</guid>
+      <description>今天我怀着无比激动的心情写这篇博客。LuaTinker以其短小精悍，功能比较强大而广泛地被许多网友及同事所关注。自从我用</description>
+    </item>
+    
+    <item>
+      <title>如何用C API遍历Lua脚本中的表</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
+      <pubDate>Tue, 22 May 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
+      <description>在刚接触Lua不久，了解了许多理论知识后，就有一种跃跃欲试的冲动，想要自己动手写一段代码来试试。这也许是作为一个程序员所</description>
+    </item>
+    
+    <item>
+      <title>如何用C遍历Lua脚本中的表</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
+      <pubDate>Tue, 22 May 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
+      <description>在刚接触Lua不久，了解了许多理论知识后，就有一种跃跃欲试的冲动，想要自己动手写一段代码来试试。这也许是作为一个程序员所</description>
+    </item>
+    
+    <item>
+      <title>导出C&#43;&#43;中的类到Lua脚本中的经历</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Fri, 18 May 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</guid>
+      <description>这两天一直在研究Lua和LuaPlus。由于项目需要将C++中的类导出到Lua脚本中，让Lua脚本也可以使用C++中的东</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>容器 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/</link>
+    <description>Recent content in 容器 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用容器编排对go项目进行部署、调试</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+    </item>
+    
+    <item>
+      <title>ubuntu安装podman-compose</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
+      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
+    </item>
+    
+    <item>
+      <title>解决podman failed：to create new watcher too many open files</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</guid>
+      <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
+    </item>
+    
+    <item>
+      <title>Goland连接https的Docker远程服务</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
+      <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
+    </item>
+    
+    <item>
+      <title>Goland使用远程容器进行go开发调试</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
+    </item>
+    
+    <item>
+      <title>使用nexus3作为Docker镜像仓库</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
+    </item>
+    
+    <item>
+      <title>使用podman容器配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+    </item>
+    
+  </channel>
+</rss>

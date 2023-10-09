@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vditor on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/vditor/</link>
+    <description>Recent content in vditor on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/vditor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让docsify-katex支持化学公式mhchem扩展</title>
+      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</guid>
+      <description>在使用docsify构建Markdown文档时，如果想要支持数学公式，可以使用docsify-katex插件，但是该插件</description>
+    </item>
+    
+    <item>
+      <title>使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</title>
+      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/</guid>
+      <description>前几天策划写了一个word文档来整理补充一些内容，当时就比较感慨，如果是Web文档就好了，可以超链接过去，也不必东一个文</description>
+    </item>
+    
+  </channel>
+</rss>

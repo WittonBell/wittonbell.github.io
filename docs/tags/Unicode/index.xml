@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unicode on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Unicode/</link>
+    <description>Recent content in Unicode on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 16 Jun 2008 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Unicode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>跨平台UNICODE编程总结</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 16 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>​ 这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但</description>
+    </item>
+    
+    <item>
+      <title>跨平台Unicode编程的一点问题</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 24 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
+      <description>​ 最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNIC</description>
+    </item>
+    
+  </channel>
+</rss>

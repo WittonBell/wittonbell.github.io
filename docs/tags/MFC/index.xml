@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MFC on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/MFC/</link>
+    <description>Recent content in MFC on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 10 May 2007 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/MFC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MFC中动态设置组合框的下拉菜单高度</title>
+      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
+      <pubDate>Thu, 10 May 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
+      <description>今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组合框中的菜单项比较多的时候，默认的组合框下拉菜单高</description>
+    </item>
+    
+  </channel>
+</rss>
