@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>encoding on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/encoding/</link>
+    <description>Recent content in encoding on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Jul 2012 11:00:36 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/encoding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio中使用NASM编译汇编文件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Jul 2012 11:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</guid>
+      <description>NASM相对MASM和GAS而言，是一款比较中庸的汇编器，它语法简洁、功能强大，而且跨平台、免费，是外联汇编的不错选择。</description>
+    </item>
+    
+  </channel>
+</rss>

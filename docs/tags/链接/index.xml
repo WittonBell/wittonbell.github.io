@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>链接 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E9%93%BE%E6%8E%A5/</link>
+    <description>Recent content in 链接 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 09 Jul 2021 18:55:29 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%93%BE%E6%8E%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go语言非main包编译为静态库并使用</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 09 Jul 2021 18:55:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</guid>
+      <description>文章目录 一、环境 二、常规工程 三、将libDemo编译为静态库使用 1. 移动libDemo 2. 编译libDemo为静态库 3. 删除源</description>
+    </item>
+    
+  </channel>
+</rss>

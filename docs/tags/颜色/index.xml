@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>颜色 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2/</link>
+    <description>Recent content in 颜色 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 14 Aug 2023 14:18:54 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH远程连接MacOS catalina并进行终端颜色配置</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 14 Aug 2023 14:18:54 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/</guid>
+      <description>一、开关SSH服务 在虚拟机上安装了MacOS catalina，想要使用SSH远程进行连接，但是使用“系统偏好设置”/“共</description>
+    </item>
+    
+  </channel>
+</rss>

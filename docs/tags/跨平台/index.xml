@@ -6,59 +6,95 @@
     <description>Recent content in 跨平台 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Feb 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2013 21:39:30 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;安全方便高效地复制对象数组</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-05-05-C&#43;&#43;%E5%AE%89%E5%85%A8%E6%96%B9%E4%BE%BF%E9%AB%98%E6%95%88%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 05 May 2013 21:39:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-05-05-C&#43;&#43;%E5%AE%89%E5%85%A8%E6%96%B9%E4%BE%BF%E9%AB%98%E6%95%88%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84/</guid>
+      <description>在C++中，我们经常遇到需要对一个对象数组进行复制，比如下面一个结构： 1struct STest 2{ 3 int a; 4 int b; 5 vector&amp;lt;int&amp;gt; vctInt; 6};``` 7 8 9 10 11我们定义了两</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio中使用NASM编译汇编文件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Jul 2012 11:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</guid>
+      <description>NASM相对MASM和GAS而言，是一款比较中庸的汇编器，它语法简洁、功能强大，而且跨平台、免费，是外联汇编的不错选择。</description>
+    </item>
+    
     <item>
       <title>关于友元函数的跨平台问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 03 Feb 2010 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2010/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 03 Feb 2010 13:51:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 今天我在项目中写了一段代码，这段代码中有两个类A和B，类A中的一个保护成员函数需要访问类B中的私有成员变量，为了简便起</description>
+      <guid>https://wittonbell.github.io/posts/2010/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</guid>
+      <description>今天我在项目中写了一段代码，这段代码中有两个类A和B，类A中的一个保护成员函数需要访问类B中的私有成员变量，为了简便起见</description>
     </item>
     
     <item>
       <title>跨平台UNICODE编程总结</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 16 Jun 2008 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 16 Jun 2008 13:25:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
-      <description>​ 这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但</description>
+      <guid>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但是</description>
     </item>
     
     <item>
       <title>跨平台Unicode编程的一点问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Thu, 24 Apr 2008 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 24 Apr 2008 17:12:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNIC</description>
+      <guid>https://wittonbell.github.io/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
+      <description>最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNICO</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台函数指针的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-11-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Fri, 11 May 2007 00:00:00 +0000</pubDate>
+      <title>LuaTinker向Linux移植成功</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</link>
+      <pubDate>Wed, 06 Jun 2007 17:14:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-11-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>前段时间，我在项目中用到了函数指针，其写法示例如下： 1//Myclass.h 2 3class CMyClass; 4typedef void (CMyClass:: *MyCALLBACK)(); 5 6class CMyClass 7{ 8 MyCALLBACK m_MyHandler[5]; 9 10protected: 11 void AddCmd(const UINT ID,MyCALLBACK DBHandler); 12 void DispatchMsg(); 13 void MyHandler1(); 14 15public: 16 CMyCalss::CMyCalss() 17</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</guid>
+      <description>今天我怀着无比激动的心情写这篇博客。LuaTinker以其短小精悍，功能比较强大而广泛地被许多网友及同事所关注。自从我用</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台宏的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 30 Apr 2007 00:00:00 +0000</pubDate>
+      <title>如何利用VC编写有汇编代码的跨平台代码</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 12 May 2007 13:39:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这段代码，写完之后，看到这段代码是相当的整齐，有一种</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</guid>
+      <description>在C/C++中添加内联汇编很容易，只需要用__asm(VC中)或者__asm__(gcc/g++中)关键字就可以在C/C</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台模板的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 30 Apr 2007 00:00:00 +0000</pubDate>
+      <title>跨平台函数指针的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-11-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Fri, 11 May 2007 13:05:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>由于工作的原因，自己写的代码，需要跨平台运行（windows与Linux），但是由于VC编译器与gcc/g++编译器的差</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-11-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 前段时间，我在项目中用到了函数指针， 其写法示例如下： 1//Myclass.h 2 3class CMyClass; 4typedef void (CMyClass:: *MyCALLBACK)(); 5</description>
+    </item>
+    
+    <item>
+      <title>跨平台宏的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:50:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这</description>
+    </item>
+    
+    <item>
+      <title>跨平台模板的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:10:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 由于工作的原因，自己写的代码，需要跨平台运行（windows与Linu</description>
     </item>
     
   </channel>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ie on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/ie/</link>
+    <description>Recent content in ie on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 02 Sep 2012 19:44:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/ie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何调试Firefox和IE的插件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 02 Sep 2012 19:44:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</guid>
+      <description>关于FireFox和IE的插件调试，以前我有调试过T3D的，今天想再研究一下，打好断点，却怎么也无法断下来，可以前是可以</description>
+    </item>
+    
+  </channel>
+</rss>

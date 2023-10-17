@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>static on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/static/</link>
+    <description>Recent content in static on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 09 Jan 2022 11:20:42 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/static/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wsl2设置静态IP</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:42 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
+      <description>文章目录 一、创建批处理文件设置静态IP 二、设置DNS WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,14 +6,14 @@
     <description>Recent content in 静态IP on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Nov 2021 18:46:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用CheckInstall从源码制作RPM安装包</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <title>设置ubuntu和CentOS的IP地址为静态地址</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Wed, 24 Nov 2021 18:46:41 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
-      <description>WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些设置。 一、创建批处理文件设置静态IP 可以创建一个批处</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</guid>
+      <description>文章目录 一、确认网关地址 二、修改配置文件 １.ubuntu a.查看DHCP模式下的DNS信息 b. 修改/etc/netplan</description>
     </item>
     
   </channel>

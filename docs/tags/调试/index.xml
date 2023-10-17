@@ -6,14 +6,86 @@
     <description>Recent content in 调试 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jun 2023 17:15:13 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode调试mintty时命令行参数多了2＞CON 1＞CON ＜CON的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 06 Jun 2023 17:15:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>今天在调试mintty时，命令行参数始终多了几个参数2&amp;gt;CON 1&amp;gt;CON &amp;lt;CON。由于mintty是运行在MSYS环</description>
+    </item>
+    
+    <item>
+      <title>使用QEMU&#43;GDB调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 22:02:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+    <item>
+      <title>使用Bochs调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 21:50:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
     <item>
       <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 18:03:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、环境配置 二、部署 1、编写Dockerfile 2、编写容器编排文件 3、设置Goland部署配置 4、执行部署 三、</description>
+    </item>
+    
+    <item>
+      <title>Goland使用远程容器进行go开发调试</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 15:53:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、安装远程容器 二、安装与配置容器仓库 1.安装与配置 2.安装证书 三、准备项目 四、运行 1.开启容器远程服务 2.添加</description>
+    </item>
+    
+    <item>
+      <title>VSCode配置PHP Debug插件调试PHP</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</link>
+      <pubDate>Thu, 01 Jul 2021 18:03:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</guid>
+      <description>文章目录 一、首先需要架设Windows下的PHP运行环境 二、VSCode中下载配置PHP Debug插件 1.下载XDebu</description>
+    </item>
+    
+    <item>
+      <title>VSCode配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 13 Aug 2020 16:43:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载安装Erlang 二、安装VSCode Erlang插件 三、安装rebar3 四、测试开发环境 1. 创建工程 2. 配置</description>
+    </item>
+    
+    <item>
+      <title>GDB直观调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</guid>
+      <description>在Linux项目开发过程中使用命令行GDB进行C++程序STL调试时，会发现输出的内容很杂乱，真正有用的信息比较难找。 可</description>
+    </item>
+    
+    <item>
+      <title>VisualGDB可视化调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Tue, 19 Nov 2019 12:01:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</guid>
+      <description>本文中的VisualGDB开发调试环境为Visual Studio 2015加VisualGDB 5.4R12版本，并且使用了笔者改进过</description>
     </item>
     
   </channel>

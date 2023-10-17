@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/Qt/</link>
+    <description>Recent content in Qt on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 11 May 2023 21:19:39 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Qt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS2022编译安装Qt6.5源码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Thu, 11 May 2023 21:19:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</guid>
+      <description>一、准备环境 包括安装VS2022，Windows SDK，Python3，这里就不再一一介绍了，需要说明的一点是如果要编译</description>
+    </item>
+    
+    <item>
+      <title>解决QT：may not produce code compatible with the Qt version</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</link>
+      <pubDate>Wed, 05 Apr 2023 19:43:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</guid>
+      <description>问题 在Qt Creator的构建套件(Kit)中，自动检测的Kit很多都会有黄色的叹号，可以把鼠标移动到上面可以看到有警告</description>
+    </item>
+    
+    <item>
+      <title>解决QT：NO QML utility installed的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 05 Apr 2023 18:20:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在QT Creator中查看Qt的版本，发现自动检测的版本要么是红色的叹号，要么是黄色的叹号。红色的叹号表示完全不可用，黄</description>
+    </item>
+    
+    <item>
+      <title>MSYS2中mingw-w64-x86_64-qt-creator-10.0.0-2不能新建项目</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 05 Apr 2023 15:52:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
+      <description>今天在MSYS2的MinGW64中安装了最新的Qt Creator 10.0.0（mingw-w64-x86_64-qt-creator</description>
+    </item>
+    
+  </channel>
+</rss>

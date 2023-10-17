@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/VSCode/</link>
+    <description>Recent content in VSCode on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 06 Jun 2023 17:15:13 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/VSCode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode配置PHP Debug插件调试PHP</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</link>
+      <pubDate>Thu, 01 Jul 2021 18:03:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</guid>
+      <description>文章目录 一、首先需要架设Windows下的PHP运行环境 二、VSCode中下载配置PHP Debug插件 1.下载XDebu</description>
+    </item>
+    
+    <item>
+      <title>Windows控制台中文乱码问题测试、分析与解决</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Tue, 18 Aug 2020 22:32:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</guid>
+      <description>文章目录 一、测试 A、Win10系统 B、Win7 SP1系统 1.VSCode+GCC 2. VS2015 二、分析与总结 1. VS2015 2. MinGW 三、解决UTF8的乱码问题 1. 设置参数</description>
+    </item>
+    
+    <item>
+      <title>VSCode配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 13 Aug 2020 16:43:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载安装Erlang 二、安装VSCode Erlang插件 三、安装rebar3 四、测试开发环境 1. 创建工程 2. 配置</description>
+    </item>
+    
+    <item>
+      <title>使用VSCode环境编程的一些注意事项</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sat, 11 Jul 2020 20:27:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>文章目录 一、Go语言 1. 使用Code Runner运行 2. 关于提示 二、Python语言 1.使用Code Runner运行 2.格式</description>
+    </item>
+    
+    <item>
+      <title>VSCode下安装配置Go环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 07 Jul 2020 11:10:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载并安装Go安装包 二、VSCode安装Go相关插件 1. 安装Go插件 2. 安装其它插件 由于国内墙的原因，安装配置G</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装Visual Studio Code</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</link>
+      <pubDate>Wed, 15 Jan 2020 15:20:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</guid>
+      <description>VSCode的最新版本需要的Linux 系统配置为： Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 7, Fedora 23 由于Linux下最新版本需要GTK 3，而Cen</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 开发 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 13 Aug 2020 16:43:35 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 13 Aug 2020 16:43:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载安装Erlang 二、安装VSCode Erlang插件 三、安装rebar3 四、测试开发环境 1. 创建工程 2. 配置</description>
+    </item>
+    
+  </channel>
+</rss>

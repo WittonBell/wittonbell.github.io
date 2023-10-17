@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>g_test on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/g_test/</link>
+    <description>Recent content in g_test on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 21 Apr 2023 18:26:27 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/g_test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Glib中测试框架对C代码进行单元测试</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Fri, 21 Apr 2023 18:26:27 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>C++项目的测试框架比较常见的是Google的gtest（前文 CMake项目使用ctest+gtest进行单元测试有使用</description>
+    </item>
+    
+  </channel>
+</rss>

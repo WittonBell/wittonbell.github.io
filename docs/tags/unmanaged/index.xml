@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unmanaged on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/unmanaged/</link>
+    <description>Recent content in unmanaged on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 27 Oct 2020 15:46:02 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/unmanaged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>虚拟机中安装的CentOS8无法启动网卡使用网络</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-27-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%9A%84CentOS8%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 27 Oct 2020 15:46:02 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-27-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%9A%84CentOS8%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C/</guid>
+      <description>之前都用得好好的CentOS8系统，突然不能上网了，图形界面也没有有线连接选项。 首先需要查看网卡名： 通过查看/etc/s</description>
+    </item>
+    
+  </channel>
+</rss>

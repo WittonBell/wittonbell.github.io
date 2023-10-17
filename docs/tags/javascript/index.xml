@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 16 Mar 2022 16:31:39 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让docsify-katex支持化学公式mhchem扩展</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Wed, 16 Mar 2022 16:31:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</guid>
+      <description>在使用docsify构建Markdown文档时，如果想要支持数学公式，可以使用docsify-katex插件，但是该插件</description>
+    </item>
+    
+  </channel>
+</rss>

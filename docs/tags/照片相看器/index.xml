@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>照片相看器 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E7%85%A7%E7%89%87%E7%9B%B8%E7%9C%8B%E5%99%A8/</link>
+    <description>Recent content in 照片相看器 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 19 Sep 2020 17:59:24 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E7%85%A7%E7%89%87%E7%9B%B8%E7%9C%8B%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Windows照片查看器加载慢和颜色问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-09-19-%E8%A7%A3%E5%86%B3Windows%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E5%8A%A0%E8%BD%BD%E6%85%A2%E5%92%8C%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 19 Sep 2020 17:59:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-09-19-%E8%A7%A3%E5%86%B3Windows%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E5%8A%A0%E8%BD%BD%E6%85%A2%E5%92%8C%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <description>在Windows中，如果使用了“较准颜色”向导进行系统显示颜色的较准，则可能会导致使用照片查看器查看照片时加载很慢。如果</description>
+    </item>
+    
+  </channel>
+</rss>

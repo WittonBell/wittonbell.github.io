@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>占位 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%8D%A0%E4%BD%8D/</link>
+    <description>Recent content in 占位 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 02 Aug 2019 18:32:05 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%8D%A0%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 11 std::bind函数绑定如何省略占位参数std::placeholders::_1……</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-08-02-C&#43;&#43;-11-stdbind%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E5%A6%82%E4%BD%95%E7%9C%81%E7%95%A5%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0stdplaceholders_1/</link>
+      <pubDate>Fri, 02 Aug 2019 18:32:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-08-02-C&#43;&#43;-11-stdbind%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E5%A6%82%E4%BD%95%E7%9C%81%E7%95%A5%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0stdplaceholders_1/</guid>
+      <description>我们在使用C++的函数绑定功能时,每次都需要写一大堆的占位符,有多少个参数就要写多少个占位符,比如下面的示例代码: 1class CTest 2{</description>
+    </item>
+    
+  </channel>
+</rss>

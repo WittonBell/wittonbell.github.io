@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>运维 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/</link>
+    <description>Recent content in 运维 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 Sep 2023 15:59:48 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用docker-compose命令行向远程主机编排容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 14 Sep 2023 15:59:48 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</guid>
+      <description>在使用Goland的时候，可以直接使用它集成的功能来向远程主机部署容器，但是如果直接使用命令行的方式该如何操作？查看he</description>
+    </item>
+    
+    <item>
+      <title>JIRA维护记——使用原实例位置恢复数据</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 07 Jun 2023 17:37:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>一、出现问题 昨天下班了，同事反馈Jira又不能使用了。想都不用想，肯定是磁盘空间不足了，因为已经出现过几次了。之前都是清</description>
+    </item>
+    
+    <item>
+      <title>nginx文件服务器美化autoindex显示</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Sun, 15 May 2022 20:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</guid>
+      <description>网络上很多使用nginx来作为文件服务器的，前段时间公司也有这个需求，就研究了一下使用nginx来做文件服务器，参见前面</description>
+    </item>
+    
+    <item>
+      <title>使用nexus3作为Docker镜像仓库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 16 Dec 2021 18:17:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>文章目录 一、在容器中安装运行nexus3 二、创建Docker镜像仓库 三、修改配置文件 四、配置权限 1.配置Realms权限</description>
+    </item>
+    
+    <item>
+      <title>gitlab迁移记</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Dec 2021 12:27:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</guid>
+      <description>文章目录 一、导出项目 二、导入项目 前段时间公司配置了新的服务器，把系统与软件环境安装好，昨天开始迁移gitlab中的项目了</description>
+    </item>
+    
+  </channel>
+</rss>

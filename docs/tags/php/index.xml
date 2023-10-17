@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/php/</link>
+    <description>Recent content in php on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 May 2022 21:07:25 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows中使用nginx搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 28 May 2022 21:07:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>前面的博客 容器中搭建WordPress介绍了在容器中搭建WordPress，如果使用的是Windows环境而不是Linu</description>
+    </item>
+    
+    <item>
+      <title>容器中搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 21 May 2022 11:15:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>WordPress是一个非常流行的网站、博客内容管理系统，很网站都是使用它来创建的内容。本文记录笔者在容器中搭建Word</description>
+    </item>
+    
+    <item>
+      <title>Windows下使用Apache2.4架设PHP服务器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 28 May 2021 17:21:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、下载Apache的httpd 二、下载 PHP 三、解压、配置 1.解压 2.配置httpd 3.配置PHP 四、注册并启动h</description>
+    </item>
+    
+  </channel>
+</rss>

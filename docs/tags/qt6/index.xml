@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qt6 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/qt6/</link>
+    <description>Recent content in qt6 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 11 May 2023 21:19:39 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/qt6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS2022编译安装Qt6.5源码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Thu, 11 May 2023 21:19:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</guid>
+      <description>一、准备环境 包括安装VS2022，Windows SDK，Python3，这里就不再一一介绍了，需要说明的一点是如果要编译</description>
+    </item>
+    
+  </channel>
+</rss>

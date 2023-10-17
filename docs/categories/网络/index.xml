@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络 on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 Mar 2023 14:21:40 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows下的高效网络模型IOCP完整示例</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 23 Mar 2023 14:21:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</guid>
+      <description>IOCP即完成端口（I/O Completion Port），与Linux下的epoll一样，是一种非常高效的网络模型。epoll 是当资源准备</description>
+    </item>
+    
+    <item>
+      <title>libevent使用IOCP网络模型的示例</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Fri, 01 Jul 2016 15:09:59 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</guid>
+      <description>这段时间抽空学习了一下强大的网络库 libevent，其使用标准C语言编写，支持Windows、Linux、Mac等等主流</description>
+    </item>
+    
+    <item>
+      <title>浅析网络编程之Socket模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:29:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</guid>
+      <description>Winsock 的I/O操作 两种I/O模式 阻塞模式：执行I/O操作完成前会一直进行等待，不会将控制权交给程序。套接字 默认为阻塞模式。可</description>
+    </item>
+    
+    <item>
+      <title>很幽默的讲解六种Socket I/O模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:24:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</guid>
+      <description>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。 一： select 模型 二： WSAAsyncSelect 模型 三： WSAEventSelect 模型 四： Overlapped I/O 事件</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>validating on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/validating/</link>
+    <description>Recent content in validating on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 Sep 2023 11:56:48 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/validating/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/</link>
+      <pubDate>Thu, 14 Sep 2023 11:56:48 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/</guid>
+      <description>之前在使用podman容器时都一切正常，可以在Windows下使用Goland的Docker工具直接部署容器到远程Lin</description>
+    </item>
+    
+  </channel>
+</rss>

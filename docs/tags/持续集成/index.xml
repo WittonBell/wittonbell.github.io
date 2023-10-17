@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>持续集成 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</link>
+    <description>Recent content in 持续集成 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 May 2020 16:14:18 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gitlab持续集成/持续发布（CI/CD）配置</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 08 May 2020 16:14:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</guid>
+      <description>文章目录 一、安装相应软件 １.安装Gitlab, ２.安装gitlab-runner 二、配置 1. 注册Runner 2. 添加yml脚</description>
+    </item>
+    
+  </channel>
+</rss>

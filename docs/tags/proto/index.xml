@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proto on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/proto/</link>
+    <description>Recent content in proto on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 26 Apr 2023 17:49:55 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/proto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMake自动按目录结构编译Protobuf代码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Wed, 26 Apr 2023 17:49:55 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</guid>
+      <description>在使用CMake构建C++项目时，如果有使用Protobuf，CMake提供了一个FindProtobuf.cmake模</description>
+    </item>
+    
+  </channel>
+</rss>

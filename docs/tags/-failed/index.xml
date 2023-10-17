@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>- failed on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/-failed/</link>
+    <description>Recent content in - failed on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 30 Oct 2020 16:09:05 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/-failed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Clang编译器出现/usr/bin/ld: crtbegin.o: No such file: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</link>
+      <pubDate>Fri, 30 Oct 2020 16:09:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</guid>
+      <description>今天在使用Clang编译器编译项目时出现问题，项目使用了CMake，在cmake时报错： 1-- Detecting C compiler ABI info - failed 2/usr/bin/ld: crtbegin.o: No such file: No such file</description>
+    </item>
+    
+  </channel>
+</rss>

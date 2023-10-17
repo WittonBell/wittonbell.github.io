@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDE on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/IDE/</link>
+    <description>Recent content in IDE on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 21 Aug 2023 14:40:47 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/IDE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
+      <pubDate>Mon, 21 Aug 2023 14:40:47 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
+      <description>在使用Visual Studio 2022+MinGW+CMake作为开发环境时，如果项目中使用了Protobuf，则在CMake运行</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</guid>
+      <description>Visual Studio被称为是宇宙最强IDE，以前开发Linux C/C++服务器程序，基本上都是在Windows上使用VS编写跨</description>
+    </item>
+    
+    <item>
+      <title>VSCode调试mintty时命令行参数多了2＞CON 1＞CON ＜CON的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 06 Jun 2023 17:15:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>今天在调试mintty时，命令行参数始终多了几个参数2&amp;gt;CON 1&amp;gt;CON &amp;lt;CON。由于mintty是运行在MSYS环</description>
+    </item>
+    
+    <item>
+      <title>VSCode远程连接Ubuntu使用LLDB调试程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 30 May 2023 12:18:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</guid>
+      <description>VSCode已经具有远程开发的能力，可以使用SSH连接到Linux/MacOS进行远程开发，包括编译与调试，只需要安装R</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用CMake&#43;MinGW&#43;Clang&#43;LLDB作为开发环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 26 May 2023 16:55:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>笔者前面写了两篇关于Visual Studio 2022使用MinGW的博文：《 Visual Studio 2022使用MinGW来编译调试C/C++程序》、</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022 CMake&#43;MinGW&#43;GDB 调试目标程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 14 May 2023 23:51:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</guid>
+      <description>前段时间笔者在使用MinGW编译了QtCreator后，想要进行调试。最开始使用VSCode进行调试，可是可以调试，但是</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用MinGW来编译调试C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 07 Aug 2022 17:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>文章目录 一、创建项目 二、配置CMake 1.修改“CMakePresets.json”预设编译工具集 2.使用CMake设置</description>
+    </item>
+    
+    <item>
+      <title>VSCode配置PHP Debug插件调试PHP</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</link>
+      <pubDate>Thu, 01 Jul 2021 18:03:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</guid>
+      <description>文章目录 一、首先需要架设Windows下的PHP运行环境 二、VSCode中下载配置PHP Debug插件 1.下载XDebu</description>
+    </item>
+    
+    <item>
+      <title>Windows下开发Linux C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-04-Windows%E4%B8%8B%E5%BC%80%E5%8F%91Linux-C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 04 Jun 2019 17:50:12 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-04-Windows%E4%B8%8B%E5%BC%80%E5%8F%91Linux-C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>一、Windows编辑、编译、调试、运行，最终在Linux下编译、运行 这是常规方法，以前我做的几个项目都是在Window</description>
+    </item>
+    
+    <item>
+      <title>使用IntelliJ IDEA配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 20 Jan 2016 21:30:47 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>Idea工具是目前我使用过的开发Erlang最好用的IDE，但其Erlang插件的官方教程太简陋，我就想自己做一个相对详</description>
+    </item>
+    
+    <item>
+      <title>sublime配置全攻略</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-12-20-sublime%E9%85%8D%E7%BD%AE%E5%85%A8%E6%94%BB%E7%95%A5/</link>
+      <pubDate>Fri, 20 Dec 2013 17:25:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-12-20-sublime%E9%85%8D%E7%BD%AE%E5%85%A8%E6%94%BB%E7%95%A5/</guid>
+      <description>大家好，今天给大家分享一款编辑器：sublime text2 我用过很多编辑器， EditPlus、EmEditor、Notepad+</description>
+    </item>
+    
+  </channel>
+</rss>

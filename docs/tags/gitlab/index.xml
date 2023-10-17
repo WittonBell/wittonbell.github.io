@@ -6,14 +6,50 @@
     <description>Recent content in gitlab on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 15:58:43 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记Gitlab备份与设置自动备份</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</guid>
+      <description>今天给Gitlab做了一个备份，并且设置了每天自动备份，记录一下。 一、导出全部项目 由于Gitlab Web页面并没有自动备</description>
+    </item>
+    
+    <item>
+      <title>gitlab迁移记</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Dec 2021 12:27:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</guid>
+      <description>文章目录 一、导出项目 二、导入项目 前段时间公司配置了新的服务器，把系统与软件环境安装好，昨天开始迁移gitlab中的项目了</description>
+    </item>
+    
     <item>
       <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 11:11:41 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab以及gitlab-runner镜像 二、运行容器与配置gitlab 1、运行gitlab容器 2、</description>
+    </item>
+    
+    <item>
+      <title>Gitlab持续集成/持续发布（CI/CD）配置</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 08 May 2020 16:14:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</guid>
+      <description>文章目录 一、安装相应软件 １.安装Gitlab, ２.安装gitlab-runner 二、配置 1. 注册Runner 2. 添加yml脚</description>
+    </item>
+    
+    <item>
+      <title>Centos 安装配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-02-Centos-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Sat, 02 May 2020 18:06:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-02-Centos-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab 二、安装与配置gitlab 1.安装 2.配置 三、测试与Web配置 1. 测试访问地址 2. 语言设置 3. 关闭</description>
     </item>
     
   </channel>

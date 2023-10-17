@@ -6,14 +6,32 @@
     <description>Recent content in dll on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/dll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 May 2023 17:05:09 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/dll/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>dll、lib、a的转换</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <title>.dll、.lib、.a的转换</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 21 Aug 2020 15:00:57 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
-      <description>一、.dll生成导入库.a或者.lib 在使用Mingw进行开发时，有时依赖的库只有.dll文件，而Mingw需要的是.a</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>文章目录 一、.dll生成导入库.a或者.lib 二、静态lib库转dll库 一、.dll生成导入库.a或者.lib 在使用Mi</description>
+    </item>
+    
+    <item>
+      <title>Win32调试API原理</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 13 Jan 2012 11:23:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</guid>
+      <description>来自《软件技术加密内幕》和chm版本不太一样 在Win32中自带了一些API函数，它们提供了相当于一般调试器的大多数功能，</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 清单(manifest)导致的问题</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 17 Nov 2011 12:10:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前些天把一个项目从XP 32位平台拿到Win7 64位平台去编译运行，用VS2008按Win32的方式编译连接都通过，但是一</description>
     </item>
     
   </channel>

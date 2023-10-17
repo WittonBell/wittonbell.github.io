@@ -6,14 +6,14 @@
     <description>Recent content in 序列化 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 17:43:08 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用C&#43;&#43;11模板SFINAE特性重写序列化与反序列化</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
-      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      <title>go读写网络消息</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</link>
+      <pubDate>Wed, 10 Mar 2021 17:43:08 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
-      <description>序列化与反序列化在编程中是最常见不过了，项目中原来写的序列化与反序列化是使用的普通类成员函数来写的，每一个数据类型都写了</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</guid>
+      <description>前几天项目需要写一个登录压力测试机器人对服务器进行压力测试。服务器是使用C++写的，为了快捷完成机器人，我并没有选择C+</description>
     </item>
     
   </channel>

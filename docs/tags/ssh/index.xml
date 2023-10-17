@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/ssh/</link>
+    <description>Recent content in ssh on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 14 Aug 2023 14:18:54 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH远程连接MacOS catalina并进行终端颜色配置</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 14 Aug 2023 14:18:54 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/</guid>
+      <description>一、开关SSH服务 在虚拟机上安装了MacOS catalina，想要使用SSH远程进行连接，但是使用“系统偏好设置”/“共</description>
+    </item>
+    
+    <item>
+      <title>使用libSSH2实现与Linux Shell的命令行交互</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</link>
+      <pubDate>Mon, 03 Apr 2023 17:19:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</guid>
+      <description>使用Linux已经有不少年头，也使用过不少Linux的SSH工具，比如SecureCRT，XShell，Putty，Sm</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>海峰五笔 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%B5%B7%E5%B3%B0%E4%BA%94%E7%AC%94/</link>
+    <description>Recent content in 海峰五笔 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 04 Dec 2019 17:03:58 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%B5%B7%E5%B3%B0%E4%BA%94%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux下安装五笔输入法和更新码表</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</link>
+      <pubDate>Wed, 04 Dec 2019 17:03:58 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</guid>
+      <description>Linux下有几种输入法框架：IBus，fcitx，SCIM等等，关于他们的历史渊源可以在网上查资料。 笔者以CentOS</description>
+    </item>
+    
+  </channel>
+</rss>

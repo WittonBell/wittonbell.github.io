@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>can on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/can/</link>
+    <description>Recent content in can on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 Oct 2021 09:50:04 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/can/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决centos下安装WPS出现can‘t find libXss.so.1</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</link>
+      <pubDate>Thu, 21 Oct 2021 09:50:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</guid>
+      <description>今天在CentOS8中安装WPS时，出现找不到libXss.so.1的情况，但是又不知道是需要安装哪个包，可以通过下面的</description>
+    </item>
+    
+  </channel>
+</rss>

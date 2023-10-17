@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/Unity/</link>
+    <description>Recent content in Unity on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 10 Mar 2020 14:01:03 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity实战之面板动画</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-03-10-Unity%E5%AE%9E%E6%88%98%E4%B9%8B%E9%9D%A2%E6%9D%BF%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 10 Mar 2020 14:01:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-03-10-Unity%E5%AE%9E%E6%88%98%E4%B9%8B%E9%9D%A2%E6%9D%BF%E5%8A%A8%E7%94%BB/</guid>
+      <description>面板动画一般可以用在游戏的设置面板中，当在游戏中点击某个按钮后，设置面板从某一个地方滑动进入视野，当操作玩家操作完后，再</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>not owned on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/not-owned/</link>
+    <description>Recent content in not owned on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 Mar 2023 17:19:31 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/not-owned/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决：git repository path ‘XXX‘ is not owned by current user</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-%E8%A7%A3%E5%86%B3git-repository-path-XXX-is-not-owned-by-current-user/</link>
+      <pubDate>Thu, 23 Mar 2023 17:19:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-%E8%A7%A3%E5%86%B3git-repository-path-XXX-is-not-owned-by-current-user/</guid>
+      <description>今天在拉取一个Git项目时，出现提示： 之前有同事也向我求助过，当时由于比较忙，就让他新建一个目录重新clone一下。 今天</description>
+    </item>
+    
+  </channel>
+</rss>

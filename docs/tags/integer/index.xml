@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>integer on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/integer/</link>
+    <description>Recent content in integer on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 13 Jan 2012 11:23:32 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/integer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win32调试API原理</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 13 Jan 2012 11:23:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</guid>
+      <description>来自《软件技术加密内幕》和chm版本不太一样 在Win32中自带了一些API函数，它们提供了相当于一般调试器的大多数功能，</description>
+    </item>
+    
+  </channel>
+</rss>

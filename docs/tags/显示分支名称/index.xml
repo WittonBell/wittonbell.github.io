@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>显示分支名称 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%90%8D%E7%A7%B0/</link>
+    <description>Recent content in 显示分支名称 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 22 Aug 2020 15:22:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%90%8D%E7%A7%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell中显示Git分支名</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</link>
+      <pubDate>Sat, 22 Aug 2020 15:22:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</guid>
+      <description>文章目录 一、Windows下的msys2 bash 二、Mac Bash 一、Windows下的msys2 bash 如果我们安装了git for windo</description>
+    </item>
+    
+  </channel>
+</rss>

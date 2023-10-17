@@ -1,0 +1,2308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>浅析网络编程之Socket模型 | Witton的博客</title>
+    <meta property="og:title" content="浅析网络编程之Socket模型 - Witton的博客">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content='2011-11-28T14:29:41&#43;08:00'>
+    <meta property="article:modified_time" content='2011-11-28T14:29:41&#43;08:00'>
+    <meta name="Keywords" content="socket,网络,编程,sockets,服务器,null,博客,笔记,游戏开发,Witton,WittonBell,Bell">
+    <meta name="description" content="浅析网络编程之Socket模型">
+    <meta name="author" content="【转载】">
+    <meta property="og:url" content="https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://unpkg.com/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/mhchem.min.js"
+    integrity="sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/copy-tex.min.js"
+    integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+    
+    </head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                    <a id="logo" href="https://wittonbell.github.io/">
+                        Witton的博客
+                    </a>
+                <p class="description">游戏服务器开发、技术笔记、博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
+                    <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
+                    <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="body">
+        <div class="container">
+            <div class="col-group">
+                <div class="col-8" id="main">
+                    <div class="res-cons">
+
+<article class="post">
+        <header>
+            <h1 class="post-title">浅析网络编程之Socket模型</h1>
+        </header>
+        <time datetime="2011-11-28T06:29:41Z" class="post-meta meta-date dt-published">2011年11月28日</time>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 作者: 【转载】</span>
+<div class="post-meta meta-category">
+  <span>&nbsp;|&nbsp;</span><a href="/categories/Windows/" class="category-link p-category" target="_blank">Windows</a>/<a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-link p-category" target="_blank">网络</a>
+</div>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 15943 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 32&nbsp;分钟</span>
+
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        <div class="post-content">
+            <p>Winsock 的I/O操作</p>
+<p>  两种I/O模式 </p>
+<p>        阻塞模式：执行I/O操作完成前会一直进行等待，不会将控制权交给程序。套接字 默认为阻塞模式。可以通过多线程技术 进行处理。          非阻塞模式：执行I/O操作时，Winsock函数会返回并交出控制权。这种模式使用 起来比较复杂，因为函数在没有运行完成 就进行返回，会不断地返回 WSAEWOULDBLOCK错误。但功能强大。
+Windows Socket五种I/O模型
+        如果你想在Windows平台上构建服务器应用，那么I/O模型是你必须考虑的。Windows操作系统提供了选择（Select）、
+异步选择（WSAAsyncSelect）、事件选择（WSAEventSelect）、重叠I/O（Overlapped I/O）和完成端口（Completion Port)共五种
+I/O模型。每一种模型均适用于一种特定的应用场景。程序员应该对自己的应用需求非常明确，而且综合考虑到程序的扩展性
+和可移植性等因素，作出自己的选择。</p>
+<p>我们假设客户端的代码如下（为代码直观，省去所有错误检查，以下同）：
+#include &lt;WINSOCK2.H&gt;
+#include &lt;stdio.h&gt;</p>
+<p>#define SERVER_ADDRESS &ldquo;137.117.2.148&rdquo;
+#define PORT           5150
+#define MSGSIZE        1024</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>int main()
+{
+  WSADATA     wsaData;
+  SOCKET      sClient;
+  SOCKADDR_IN server;
+  char        szMessage[MSGSIZE];
+  int         ret;
+  
+  // Initialize Windows socket library
+  WSAStartup(0x0202, &amp;wsaData);</p>
+<p>  // Create client socket
+  sClient = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</p>
+<p>  // Connect to server
+  memset(&amp;server, 0, sizeof(SOCKADDR_IN));
+  server.sin_family = AF_INET;
+  server.sin_addr.S_un.S_addr = inet_addr(SERVER_ADDRESS);
+  server.sin_port = htons(PORT);</p>
+<p>  connect(sClient, (struct sockaddr *)&amp;server, sizeof(SOCKADDR_IN));</p>
+<p>  while (TRUE)
+  {
+    printf(&ldquo;Send:&rdquo;);
+  gets(szMessage);</p>
+<p>    // Send message
+    send(sClient, szMessage, strlen(szMessage), 0);</p>
+<p>    // Receive message
+    ret = recv(sClient, szMessage, MSGSIZE, 0);
+    szMessage[ret] = &lsquo;\0&rsquo;;</p>
+<p>    printf(&ldquo;Received [%d bytes]: &lsquo;%s&rsquo;\n&rdquo;, ret, szMessage);
+  }</p>
+<p>  // Clean up
+  closesocket(sClient);
+  WSACleanup();
+  return 0;
+}</p>
+<p>客户端所做的事情相当简单，创建套接字，连接服务器，然后不停的发送和接收数据。</p>
+<p>        比较容易想到的一种服务器模型就是采用一个主线程，负责监听客户端的连接请求，当接收到某个客户端的连接请求后，
+创建一个专门用于和该客户端通信的套接字和一个辅助线程。以后该客户端和服务器的交互都在这个辅助线程内完成。这种方
+法比较直观，程序非常简单而且可移植性好，但是不能利用平台相关的特性。例如，如果连接数增多的时候（成千上万的连
+接），那么线程数成倍增长，操作系统忙于频繁的线程间切换，而且大部分线程在其生命周期内都是处于非活动状态的，这大
+大浪费了系统的资源。所以，如果你已经知道你的代码只会运行在Windows平台上，建议采用Winsock I/O模型。</p>
+<p>一.选择模型
+      Select（选择）模型是Winsock中最常见的I/O模型。之所以称其为“Select模型”，是由于它的“中心思想”便是利用select函
+数，实现对I/O的管理。最初设计该模型时，主要面向的是某些使用UNIX操作系统的计算机，它们采用的是Berkeley套接字方案。
+Select模型已集成到Winsock 1.1中，它使那些想避免在套接字调用过程中被无辜“锁定”的应用程序，采取一种有序的方式，同
+时进行对多个套接字的管理。由于Winsock 1.1向后兼容于Berkeley套接字实施方案，所以假如有一个Berkeley套接字应用使用了
+select函数，那么从理论角度讲，毋需对其进行任何修改，便可正常运行。（节选自《Windows网络编程》第八章)
+下面的这段程序就是利用选择模型实现的Echo服务器的代码（已经不能再精简了）：</p>
+<p>#include &lt;winsock.h&gt;
+#include &lt;stdio.h&gt;</p>
+<p>#define PORT       5150
+#define MSGSIZE    1024</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>int    g_iTotalConn = 0;
+SOCKET g_CliSocketArr[FD_SETSIZE];</p>
+<p>DWORD WINAPI WorkerThread(LPVOID lpParameter);</p>
+<p>int main()
+{
+  WSADATA     wsaData;
+  SOCKET      sListen, sClient;
+  SOCKADDR_IN local, client;
+  int         iaddrSize = sizeof(SOCKADDR_IN);
+  DWORD       dwThreadId;</p>
+<p>  // Initialize Windows socket library
+  WSAStartup(0x0202, &amp;wsaData);</p>
+<p>  // Create listening socket
+  sListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</p>
+<p>  // Bind
+  local.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+local.sin_family = AF_INET;
+local.sin_port = htons(PORT);
+  bind(sListen, (struct sockaddr *)&amp;local, sizeof(SOCKADDR_IN));</p>
+<p>  // Listen
+  listen(sListen, 3);</p>
+<p>  // Create worker thread
+  CreateThread(NULL, 0, WorkerThread, NULL, 0, &amp;dwThreadId);  </p>
+<p>  while (TRUE)
+  {
+    // Accept a connection
+    sClient = accept(sListen, (struct sockaddr *)&amp;client, &amp;iaddrSize);
+    printf(&ldquo;Accepted client:%s:%d\n&rdquo;, inet_ntoa(client.sin_addr), ntohs(client.sin_port));</p>
+<p>    // Add socket to g_CliSocketArr
+    g_CliSocketArr[g_iTotalConn++] = sClient;
+  }
+  
+  return 0;
+}</p>
+<p>DWORD WINAPI WorkerThread(LPVOID lpParam)
+{
+  int            i;
+  fd_set         fdread;
+  int            ret;
+  struct timeval tv = {1, 0};
+  char           szMessage[MSGSIZE];
+  
+  while (TRUE)
+  {
+    FD_ZERO(&amp;fdread);
+    for (i = 0; i &lt; g_iTotalConn; i++)
+    {
+      FD_SET(g_CliSocketArr, &amp;fdread);
+    }</p>
+<p>    // We only care read event
+    ret = select(0, &amp;fdread, NULL, NULL, &amp;tv);</p>
+<p>    if (ret == 0)
+    {
+      // Time expired
+      continue;
+    }</p>
+<p>    for (i = 0; i &lt; g_iTotalConn; i++)
+    {
+      if (FD_ISSET(g_CliSocketArr, &amp;fdread))
+      {
+        // A read event happened on g_CliSocketArr
+        ret = recv(g_CliSocketArr, szMessage, MSGSIZE, 0);
+    if (ret == 0 || (ret == SOCKET_ERROR &amp;&amp; WSAGetLastError() == WSAECONNRESET))
+    {
+     // Client socket closed
+          printf(&ldquo;Client socket %d closed.\n&rdquo;, g_CliSocketArr);
+     closesocket(g_CliSocketArr);
+     if (i &lt; g_iTotalConn - 1)
+          {            
+            g_CliSocketArr[i&ndash;] = g_CliSocketArr[&ndash;g_iTotalConn];
+          }
+        }
+    else
+    {
+     // We received a message from client
+          szMessage[ret] = &lsquo;\0&rsquo;;
+     send(g_CliSocketArr, szMessage, strlen(szMessage), 0);
+        }
+      }
+    }
+  }
+  
+  return 0;
+}</p>
+<p>服务器的几个主要动作如下：
+1.创建监听套接字，绑定，监听；
+2.创建工作者线程；
+3.创建一个套接字数组，用来存放当前所有活动的客户端套接字，每accept一个连接就更新一次数组；
+4.接受客户端的连接。这里有一点需要注意的，就是我没有重新定义FD_SETSIZE宏，所以服务器最多支持的并发连接数为64。
+而且，这里决不能无条件的accept,服务器应该根据当前的连接数来决定是否接受来自某个客户端的连接。一种比较好的实现方
+案就是采用WSAAccept函数，而且让WSAAccept回调自己实现的Condition Function。如下所示：</p>
+<p>int CALLBACK ConditionFunc(LPWSABUF lpCallerId,LPWSABUF lpCallerData, LPQOS lpSQOS,LPQOS lpGQOS,LPWSABUF lpCalleeId, LPWSABUF lpCalleeData
+ ,GROUP FAR * g,DWORD dwCallbackData)
+{
+if (当前连接数 &lt; FD_SETSIZE)
+  return CF_ACCEPT;
+else
+  return CF_REJECT;
+}</p>
+<p>工作者线程里面是一个死循环，一次循环完成的动作是：
+1.将当前所有的客户端套接字加入到读集fdread中；
+2.调用select函数；
+3.查看某个套接字是否仍然处于读集中，如果是，则接收数据。如果接收的数据长度为0，或者发生WSAECONNRESET错误，
+则表示客户端套接字主动关闭，这时需要将服务器中对应的套接字所绑定的资源释放掉，然后调整我们的套接字数组（将数
+组中最后一个套接字挪到当前的位置上）</p>
+<p>除了需要有条件接受客户端的连接外，还需要在连接数为0的情形下做特殊处理，因为如果读集中没有任何套接字，select函数
+会立刻返回，这将导致工作者线程成为一个毫无停顿的死循环，CPU的占用率马上达到100%。</p>
+<p>关系到套接字列表的操作都需要使用循环,在轮询的时候,需要遍历一次,再新的一轮开始时,将列表加入队列又需要遍历一次.也就
+是说,Select在工作一次时,需要至少遍历2次列表,这是它效率较低的原因之一.在大规模的网络连接方面,还是推荐使用IOCP
+或EPOLL模型.但是Select模型可以使用在诸如对战类游戏上,比如类似星际这种,因为它小巧易于实现,而且对战类游戏的网络连接
+量并不大.</p>
+<p>对于Select模型想要突破Windows 64个限制的话,可以采取分段轮询,一次轮询64个.例如套接字列表为128个,在第一次轮询时,将前
+64个放入队列中用Select进行状态查询,待本次操作全部结束后.将后64个再加入轮询队列中进行轮询处理.这样处理需要在非阻塞
+式下工作.以此类推,Select也能支持无限多个.</p>
+<p>二.异步选择
+Winsock提供了一个有用的异步I/O模型。利用这个模型，应用程序可在一个套接字上，接收以Windows消息为基础的网络事件通
+知。具体的做法是在建好一个套接字后，调用WSAAsyncSelect函数。该模型最早出现于Winsock的1.1版本中，用于帮助应用程序
+开发者面向一些早期的16位Windows平台（如Windows for Workgroups），适应其“落后”的多任务消息环境。应用程序仍可从这
+种模型中得到好处，特别是它们用一个标准的Windows例程（常称为&quot;WndProc&quot;），对窗口消息进行管理的时候。该模型亦得到了Microsoft Foundation Class（微软基本类，MFC）对象CSocket的采纳。（节选自《Windows网络编程》第八章)
+我还是先贴出代码，然后做详细解释：
+#include &lt;winsock.h&gt;
+#include &lt;tchar.h&gt;</p>
+<p>#define PORT      5150
+#define MSGSIZE   1024
+#define WM_SOCKET WM_USER+0</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);</p>
+<p>int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
+{
+  static TCHAR szAppName[] = _T(&ldquo;AsyncSelect Model&rdquo;);
+  HWND         hwnd ;
+  MSG          msg ;
+  WNDCLASS     wndclass ;</p>
+<p>  wndclass.style         = CS_HREDRAW | CS_VREDRAW ;
+  wndclass.lpfnWndProc   = WndProc ;
+  wndclass.cbClsExtra    = 0 ;
+  wndclass.cbWndExtra    = 0 ;
+  wndclass.hInstance     = hInstance ;
+  wndclass.hIcon         = LoadIcon (NULL, IDI_APPLICATION) ;
+  wndclass.hCursor       = LoadCursor (NULL, IDC_ARROW) ;
+  wndclass.hbrBackground = (HBRUSH) GetStockObject (WHITE_BRUSH) ;
+  wndclass.lpszMenuName  = NULL ;
+  wndclass.lpszClassName = szAppName ;</p>
+<p>  if (!RegisterClass(&amp;wndclass))
+  {
+    MessageBox (NULL, TEXT (&ldquo;This program requires Windows NT!&rdquo;), szAppName, MB_ICONERROR) ;
+    return 0 ;
+  }</p>
+<p>  hwnd = CreateWindow (szAppName,                  // window class name
+                       TEXT (&ldquo;AsyncSelect Model&rdquo;), // window caption
+                       WS_OVERLAPPEDWINDOW,        // window style
+                       CW_USEDEFAULT,              // initial x position
+                       CW_USEDEFAULT,              // initial y position
+                       CW_USEDEFAULT,              // initial x size
+                       CW_USEDEFAULT,              // initial y size
+                       NULL,                       // parent window handle
+                       NULL,                       // window menu handle
+                       hInstance,                  // program instance handle
+                       NULL) ;                     // creation parameters</p>
+<p>  ShowWindow(hwnd, iCmdShow);
+  UpdateWindow(hwnd);</p>
+<p>  while (GetMessage(&amp;msg, NULL, 0, 0))
+  {
+    TranslateMessage(&amp;msg) ;
+    DispatchMessage(&amp;msg) ;
+  }
+  
+  return msg.wParam;
+}</p>
+<p>LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+  WSADATA       wsd;
+  static SOCKET sListen;
+  SOCKET        sClient;
+  SOCKADDR_IN   local, client;
+  int           ret, iAddrSize = sizeof(client);
+  char          szMessage[MSGSIZE];</p>
+<p>  switch (message)
+  {
+case WM_CREATE:
+    // Initialize Windows Socket library
+  WSAStartup(0x0202, &amp;wsd);
+  
+  // Create listening socket
+    sListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    
+  // Bind
+    local.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+  local.sin_family = AF_INET;
+  local.sin_port = htons(PORT);
+  bind(sListen, (struct sockaddr *)&amp;local, sizeof(local));
+  
+  // Listen
+    listen(sListen, 3);</p>
+<p>    // Associate listening socket with FD_ACCEPT event
+  WSAAsyncSelect(sListen, hwnd, WM_SOCKET, FD_ACCEPT);
+  return 0;</p>
+<p>  case WM_DESTROY:
+    closesocket(sListen);
+    WSACleanup();
+    PostQuitMessage(0);
+    return 0;
+  
+  case WM_SOCKET:
+    if (WSAGETSELECTERROR(lParam))
+    {
+      closesocket(wParam);
+      break;
+    }
+    
+    switch (WSAGETSELECTEVENT(lParam))
+    {
+    case FD_ACCEPT:
+      // Accept a connection from client
+      sClient = accept(wParam, (struct sockaddr *)&amp;client, &amp;iAddrSize);
+      
+      // Associate client socket with FD_READ and FD_CLOSE event
+      WSAAsyncSelect(sClient, hwnd, WM_SOCKET, FD_READ | FD_CLOSE);
+      break;</p>
+<p>    case FD_READ:
+      ret = recv(wParam, szMessage, MSGSIZE, 0);</p>
+<p>      if (ret == 0 || ret == SOCKET_ERROR &amp;&amp; WSAGetLastError() == WSAECONNRESET)
+      {
+        closesocket(wParam);
+      }
+      else
+      {
+        szMessage[ret] = &lsquo;\0&rsquo;;
+        send(wParam, szMessage, strlen(szMessage), 0);
+      }
+      break;
+      
+    case FD_CLOSE:
+      closesocket(wParam);      
+      break;
+    }
+    return 0;
+  }
+  
+  return DefWindowProc(hwnd, message, wParam, lParam);
+}</p>
+<p>在我看来，WSAAsyncSelect是最简单的一种Winsock I/O模型（之所以说它简单是因为一个主线程就搞定了）。使用Raw Windows API写过窗口类应用程序的人应该都能看得懂。这里，我们需要做的仅仅是：
+1.在WM_CREATE消息处理函数中，初始化Windows Socket library，创建监听套接字，绑定，监听，并且调用WSAAsyncSelect函数表示我们关心在监听套接字上发生的FD_ACCEPT事件；
+2.自定义一个消息WM_SOCKET，一旦在我们所关心的套接字（监听套接字和客户端套接字）上发生了某个事件，系统就会调用WndProc并且message参数被设置为WM_SOCKET；
+3.在WM_SOCKET的消息处理函数中，分别对FD_ACCEPT、FD_READ和FD_CLOSE事件进行处理；
+4.在窗口销毁消息(WM_DESTROY)的处理函数中，我们关闭监听套接字，清除Windows Socket library</p>
+<p>下面这张用于WSAAsyncSelect函数的网络事件类型表可以让你对各个网络事件有更清楚的认识：
+表1</p>
+<p>FD_READ 应用程序想要接收有关是否可读的通知，以便读入数据 
+FD_WRITE 应用程序想要接收有关是否可写的通知，以便写入数据 
+FD_OOB 应用程序想接收是否有带外（OOB）数据抵达的通知 
+FD_ACCEPT 应用程序想接收与进入连接有关的通知 
+FD_CONNECT 应用程序想接收与一次连接或者多点join操作完成的通知 
+FD_CLOSE 应用程序想接收与套接字关闭有关的通知 
+FD_QOS 应用程序想接收套接字“服务质量”（QoS）发生更改的通知 
+FD_GROUP_QOS  应用程序想接收套接字组“服务质量”发生更改的通知（现在没什么用处，为未来套接字组的使用保留） 
+FD_ROUTING_INTERFACE_CHANGE 应用程序想接收在指定的方向上，与路由接口发生变化的通知 
+FD_ADDRESS_LIST_CHANGE  应用程序想接收针对套接字的协议家族，本地地址列表发生变化的通知 </p>
+<p>三.事件选择
+Winsock提供了另一个有用的异步I/O模型。和WSAAsyncSelect模型类似的是，它也允许应用程序在一个或多个套接字上，接收以事件为基础的网络事件通知。对于表1总结的、由WSAAsyncSelect模型采用的网络事件来说，它们均可原封不动地移植到新模型。在用新模型开发的应用程序中，也能接收和处理所有那些事件。该模型最主要的差别在于网络事件会投递至一个事件对象句柄，而非投递至一个窗口例程。（节选自《Windows网络编程》第八章)
+还是让我们先看代码然后进行分析：
+#include &lt;winsock2.h&gt;
+#include &lt;stdio.h&gt;</p>
+<p>#define PORT    5150
+#define MSGSIZE 1024</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>int      g_iTotalConn = 0;
+SOCKET   g_CliSocketArr[MAXIMUM_WAIT_OBJECTS];
+WSAEVENT g_CliEventArr[MAXIMUM_WAIT_OBJECTS];</p>
+<p>DWORD WINAPI WorkerThread(LPVOID);
+void Cleanup(int index);</p>
+<p>int main()
+{
+  WSADATA     wsaData;
+  SOCKET      sListen, sClient;
+  SOCKADDR_IN local, client;
+  DWORD       dwThreadId;
+  int         iaddrSize = sizeof(SOCKADDR_IN);</p>
+<p>  // Initialize Windows Socket library
+  WSAStartup(0x0202, &amp;wsaData);</p>
+<p>  // Create listening socket
+  sListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</p>
+<p>  // Bind
+  local.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+local.sin_family = AF_INET;
+local.sin_port = htons(PORT);
+  bind(sListen, (struct sockaddr *)&amp;local, sizeof(SOCKADDR_IN));</p>
+<p>  // Listen
+  listen(sListen, 3);</p>
+<p>  // Create worker thread
+  CreateThread(NULL, 0, WorkerThread, NULL, 0, &amp;dwThreadId);</p>
+<p>  while (TRUE)
+  {
+    // Accept a connection
+    sClient = accept(sListen, (struct sockaddr *)&amp;client, &amp;iaddrSize);
+    printf(&ldquo;Accepted client:%s:%d\n&rdquo;, inet_ntoa(client.sin_addr), ntohs(client.sin_port));</p>
+<p>    // Associate socket with network event
+    g_CliSocketArr[g_iTotalConn] = sClient;
+    g_CliEventArr[g_iTotalConn] = WSACreateEvent();
+    WSAEventSelect(g_CliSocketArr[g_iTotalConn],
+                   g_CliEventArr[g_iTotalConn],
+                   FD_READ | FD_CLOSE);
+    g_iTotalConn++;
+  }
+}</p>
+<p>DWORD WINAPI WorkerThread(LPVOID lpParam)
+{
+  int              ret, index;
+  WSANETWORKEVENTS NetworkEvents;
+  char             szMessage[MSGSIZE];</p>
+<p>  while (TRUE)
+  {
+    ret = WSAWaitForMultipleEvents(g_iTotalConn, g_CliEventArr, FALSE, 1000, FALSE);
+    if (ret == WSA_WAIT_FAILED || ret == WSA_WAIT_TIMEOUT)
+    {
+      continue;
+    }</p>
+<p>    index = ret - WSA_WAIT_EVENT_0;
+    WSAEnumNetworkEvents(g_CliSocketArr[index], g_CliEventArr[index], &amp;NetworkEvents);</p>
+<p>    if (NetworkEvents.lNetworkEvents &amp; FD_READ)
+    {
+      // Receive message from client
+      ret = recv(g_CliSocketArr[index], szMessage, MSGSIZE, 0);
+      if (ret == 0 || (ret == SOCKET_ERROR &amp;&amp; WSAGetLastError() == WSAECONNRESET))
+      {
+        Cleanup(index);
+      }
+      else
+      {
+        szMessage[ret] = &lsquo;\0&rsquo;;
+        send(g_CliSocketArr[index], szMessage, strlen(szMessage), 0);
+      }
+    }</p>
+<p>    if (NetworkEvents.lNetworkEvents &amp; FD_CLOSE)
+  {
+   Cleanup(index);
+  }
+  }
+  return 0;
+}</p>
+<p>void Cleanup(int index)
+{
+  closesocket(g_CliSocketArr[index]);
+WSACloseEvent(g_CliEventArr[index]);</p>
+<p>if (index &lt; g_iTotalConn - 1)
+{
+  g_CliSocketArr[index] = g_CliSocketArr[g_iTotalConn - 1];
+  g_CliEventArr[index] = g_CliEventArr[g_iTotalConn - 1];
+}</p>
+<p>g_iTotalConn&ndash;;
+}</p>
+<p>事件选择模型也比较简单，实现起来也不是太复杂，它的基本思想是将每个套接字都和一个WSAEVENT对象对应起来，并且在关联的时候指定需要关注的哪些网络事件。一旦在某个套接字上发生了我们关注的事件（FD_READ和FD_CLOSE），与之相关联的WSAEVENT对象被Signaled。程序定义了两个全局数组，一个套接字数组，一个WSAEVENT对象数组，其大小都是MAXIMUM_WAIT_OBJECTS（64），两个数组中的元素一一对应。
+同样的，这里的程序没有考虑两个问题，一是不能无条件的调用accept，因为我们支持的并发连接数有限。解决方法是将套接字按MAXIMUM_WAIT_OBJECTS分组，每MAXIMUM_WAIT_OBJECTS个套接字一组，每一组分配一个工作者线程；或者采用WSAAccept代替accept，并回调自己定义的Condition Function。第二个问题是没有对连接数为0的情形做特殊处理，程序在连接数为0的时候CPU占用率为100%。</p>
+<p>四.重叠I/O模型
+Winsock2的发布使得Socket I/O有了和文件I/O统一的接口。我们可以通过使用Win32文件操纵函数ReadFile和WriteFile来进行Socket I/O。伴随而来的，用于普通文件I/O的重叠I/O模型和完成端口模型对Socket I/O也适用了。这些模型的优点是可以达到更佳的系统性能，但是实现较为复杂，里面涉及较多的C语言技巧。例如我们在完成端口模型中会经常用到所谓的“尾随数据”。</p>
+<p>1.用事件通知方式实现的重叠I/O模型
+#include &lt;winsock2.h&gt;
+#include &lt;stdio.h&gt;</p>
+<p>#define PORT    5150
+#define MSGSIZE 1024</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>typedef struct
+{
+  WSAOVERLAPPED overlap;
+  WSABUF        Buffer;
+  char          szMessage[MSGSIZE];
+  DWORD         NumberOfBytesRecvd;
+  DWORD         Flags;
+}PER_IO_OPERATION_DATA, *LPPER_IO_OPERATION_DATA;</p>
+<p>int                     g_iTotalConn = 0;
+SOCKET                  g_CliSocketArr[MAXIMUM_WAIT_OBJECTS];
+WSAEVENT                g_CliEventArr[MAXIMUM_WAIT_OBJECTS];
+LPPER_IO_OPERATION_DATA g_pPerIODataArr[MAXIMUM_WAIT_OBJECTS];</p>
+<p>DWORD WINAPI WorkerThread(LPVOID);
+void Cleanup(int);</p>
+<p>int main()
+{
+  WSADATA     wsaData;
+  SOCKET      sListen, sClient;
+  SOCKADDR_IN local, client;
+  DWORD       dwThreadId;
+  int         iaddrSize = sizeof(SOCKADDR_IN);</p>
+<p>  // Initialize Windows Socket library
+  WSAStartup(0x0202, &amp;wsaData);</p>
+<p>  // Create listening socket
+  sListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</p>
+<p>  // Bind
+  local.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+local.sin_family = AF_INET;
+local.sin_port = htons(PORT);
+  bind(sListen, (struct sockaddr *)&amp;local, sizeof(SOCKADDR_IN));</p>
+<p>  // Listen
+  listen(sListen, 3);</p>
+<p>  // Create worker thread
+  CreateThread(NULL, 0, WorkerThread, NULL, 0, &amp;dwThreadId);</p>
+<p>  while (TRUE)
+  {
+    // Accept a connection
+    sClient = accept(sListen, (struct sockaddr *)&amp;client, &amp;iaddrSize);
+    printf(&ldquo;Accepted client:%s:%d\n&rdquo;, inet_ntoa(client.sin_addr), ntohs(client.sin_port));</p>
+<p>    g_CliSocketArr[g_iTotalConn] = sClient;
+    
+    // Allocate a PER_IO_OPERATION_DATA structure
+    g_pPerIODataArr[g_iTotalConn] = (LPPER_IO_OPERATION_DATA)HeapAlloc(
+      GetProcessHeap(),
+      HEAP_ZERO_MEMORY,
+      sizeof(PER_IO_OPERATION_DATA));
+    g_pPerIODataArr[g_iTotalConn]-&gt;Buffer.len = MSGSIZE;
+    g_pPerIODataArr[g_iTotalConn]-&gt;Buffer.buf = g_pPerIODataArr[g_iTotalConn]-&gt;szMessage;
+    g_CliEventArr[g_iTotalConn] = g_pPerIODataArr[g_iTotalConn]-&gt;overlap.hEvent = WSACreateEvent();</p>
+<p>    // Launch an asynchronous operation
+    WSARecv(
+      g_CliSocketArr[g_iTotalConn],
+      &amp;g_pPerIODataArr[g_iTotalConn]-&gt;Buffer,
+      1,
+      &amp;g_pPerIODataArr[g_iTotalConn]-&gt;NumberOfBytesRecvd,
+      &amp;g_pPerIODataArr[g_iTotalConn]-&gt;Flags,
+      &amp;g_pPerIODataArr[g_iTotalConn]-&gt;overlap,
+      NULL);
+    
+    g_iTotalConn++;
+  }
+  
+  closesocket(sListen);
+  WSACleanup();
+  return 0;
+}</p>
+<p>DWORD WINAPI WorkerThread(LPVOID lpParam)
+{
+  int   ret, index;
+  DWORD cbTransferred;</p>
+<p>  while (TRUE)
+  {
+    ret = WSAWaitForMultipleEvents(g_iTotalConn, g_CliEventArr, FALSE, 1000, FALSE);
+    if (ret == WSA_WAIT_FAILED || ret == WSA_WAIT_TIMEOUT)
+    {
+      continue;
+    }</p>
+<p>    index = ret - WSA_WAIT_EVENT_0;
+    WSAResetEvent(g_CliEventArr[index]);</p>
+<p>    WSAGetOverlappedResult(
+      g_CliSocketArr[index],
+      &amp;g_pPerIODataArr[index]-&gt;overlap,
+      &amp;cbTransferred,
+      TRUE,
+      &amp;g_pPerIODataArr[g_iTotalConn]-&gt;Flags);</p>
+<p>    if (cbTransferred == 0)
+    {
+      // The connection was closed by client
+      Cleanup(index);
+    }
+    else
+    {
+      // g_pPerIODataArr[index]-&gt;szMessage contains the received data
+      g_pPerIODataArr[index]-&gt;szMessage[cbTransferred] = &lsquo;\0&rsquo;;
+      send(g_CliSocketArr[index], g_pPerIODataArr[index]-&gt;szMessage,\
+        cbTransferred, 0);</p>
+<p>      // Launch another asynchronous operation
+      WSARecv(
+        g_CliSocketArr[index],
+        &amp;g_pPerIODataArr[index]-&gt;Buffer,
+        1,
+        &amp;g_pPerIODataArr[index]-&gt;NumberOfBytesRecvd,
+        &amp;g_pPerIODataArr[index]-&gt;Flags,
+        &amp;g_pPerIODataArr[index]-&gt;overlap,
+        NULL);
+    }
+  }</p>
+<p>  return 0;
+}</p>
+<p>void Cleanup(int index)
+{
+  closesocket(g_CliSocketArr[index]);
+  WSACloseEvent(g_CliEventArr[index]);
+  HeapFree(GetProcessHeap(), 0, g_pPerIODataArr[index]);</p>
+<p>  if (index &lt; g_iTotalConn - 1)
+  {
+    g_CliSocketArr[index] = g_CliSocketArr[g_iTotalConn - 1];
+    g_CliEventArr[index] = g_CliEventArr[g_iTotalConn - 1];
+    g_pPerIODataArr[index] = g_pPerIODataArr[g_iTotalConn - 1];
+  }</p>
+<p>  g_pPerIODataArr[&ndash;g_iTotalConn] = NULL;
+}</p>
+<p>这个模型与上述其他模型不同的是它使用Winsock2提供的异步I/O函数WSARecv。在调用WSARecv时，指定一个WSAOVERLAPPED结构，这个调用不是阻塞的，也就是说，它会立刻返回。一旦有数据到达的时候，被指定的WSAOVERLAPPED结构中的hEvent被Signaled。由于下面这个语句
+g_CliEventArr[g_iTotalConn] = g_pPerIODataArr[g_iTotalConn]-&gt;overlap.hEvent；
+使得与该套接字相关联的WSAEVENT对象也被Signaled，所以WSAWaitForMultipleEvents的调用操作成功返回。我们现在应该做的就是用与调用WSARecv相同的WSAOVERLAPPED结构为参数调用WSAGetOverlappedResult，从而得到本次I/O传送的字节数等相关信息。在取得接收的数据后，把数据原封不动的发送到客户端，然后重新激活一个WSARecv异步操作。</p>
+<p>2.用完成例程方式实现的重叠I/O模型
+#include &lt;WINSOCK2.H&gt;
+#include &lt;stdio.h&gt;</p>
+<p>#define PORT    5150
+#define MSGSIZE 1024</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>typedef struct
+{
+WSAOVERLAPPED overlap;
+WSABUF        Buffer;
+  char          szMessage[MSGSIZE];
+DWORD         NumberOfBytesRecvd;
+DWORD         Flags; 
+SOCKET        sClient;
+}PER_IO_OPERATION_DATA, *LPPER_IO_OPERATION_DATA;</p>
+<p>DWORD WINAPI WorkerThread(LPVOID);
+void CALLBACK CompletionROUTINE(DWORD, DWORD, LPWSAOVERLAPPED, DWORD);</p>
+<p>SOCKET g_sNewClientConnection;
+BOOL   g_bNewConnectionArrived = FALSE;</p>
+<p>int main()
+{
+  WSADATA     wsaData;
+  SOCKET      sListen;
+  SOCKADDR_IN local, client;
+  DWORD       dwThreadId;
+  int         iaddrSize = sizeof(SOCKADDR_IN);</p>
+<p>  // Initialize Windows Socket library
+  WSAStartup(0x0202, &amp;wsaData);</p>
+<p>  // Create listening socket
+  sListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</p>
+<p>  // Bind
+  local.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+local.sin_family = AF_INET;
+local.sin_port = htons(PORT);
+  bind(sListen, (struct sockaddr *)&amp;local, sizeof(SOCKADDR_IN));</p>
+<p>  // Listen
+  listen(sListen, 3);</p>
+<p>  // Create worker thread
+  CreateThread(NULL, 0, WorkerThread, NULL, 0, &amp;dwThreadId);</p>
+<p>  while (TRUE)
+  {
+    // Accept a connection
+    g_sNewClientConnection = accept(sListen, (struct sockaddr *)&amp;client, &amp;iaddrSize);
+    g_bNewConnectionArrived = TRUE;
+    printf(&ldquo;Accepted client:%s:%d\n&rdquo;, inet_ntoa(client.sin_addr), ntohs(client.sin_port));
+  }
+}</p>
+<p>DWORD WINAPI WorkerThread(LPVOID lpParam)
+{
+LPPER_IO_OPERATION_DATA lpPerIOData = NULL;</p>
+<p>  while (TRUE)
+  {
+    if (g_bNewConnectionArrived)
+    {
+      // Launch an asynchronous operation for new arrived connection
+      lpPerIOData = (LPPER_IO_OPERATION_DATA)HeapAlloc(
+        GetProcessHeap(),
+        HEAP_ZERO_MEMORY,
+        sizeof(PER_IO_OPERATION_DATA));
+      lpPerIOData-&gt;Buffer.len = MSGSIZE;
+      lpPerIOData-&gt;Buffer.buf = lpPerIOData-&gt;szMessage;
+      lpPerIOData-&gt;sClient = g_sNewClientConnection;
+      
+      WSARecv(lpPerIOData-&gt;sClient,
+        &amp;lpPerIOData-&gt;Buffer,
+        1,
+        &amp;lpPerIOData-&gt;NumberOfBytesRecvd,
+        &amp;lpPerIOData-&gt;Flags,
+        &amp;lpPerIOData-&gt;overlap,
+        CompletionROUTINE);      
+      
+      g_bNewConnectionArrived = FALSE;
+    }</p>
+<p>    SleepEx(1000, TRUE);
+  }
+  return 0;
+}</p>
+<p>void CALLBACK CompletionROUTINE(DWORD dwError,
+                                DWORD cbTransferred,
+                                LPWSAOVERLAPPED lpOverlapped,
+                                DWORD dwFlags)
+{
+  LPPER_IO_OPERATION_DATA lpPerIOData = (LPPER_IO_OPERATION_DATA)lpOverlapped;
+  
+  if (dwError != 0 || cbTransferred == 0)
+{
+    // Connection was closed by client
+  closesocket(lpPerIOData-&gt;sClient);
+  HeapFree(GetProcessHeap(), 0, lpPerIOData);
+}
+  else
+  {
+    lpPerIOData-&gt;szMessage[cbTransferred] = &lsquo;\0&rsquo;;
+    send(lpPerIOData-&gt;sClient, lpPerIOData-&gt;szMessage, cbTransferred, 0);
+    
+    // Launch another asynchronous operation
+    memset(&amp;lpPerIOData-&gt;overlap, 0, sizeof(WSAOVERLAPPED));
+    lpPerIOData-&gt;Buffer.len = MSGSIZE;
+    lpPerIOData-&gt;Buffer.buf = lpPerIOData-&gt;szMessage;    </p>
+<p>    WSARecv(lpPerIOData-&gt;sClient,
+      &amp;lpPerIOData-&gt;Buffer,
+      1,
+      &amp;lpPerIOData-&gt;NumberOfBytesRecvd,
+      &amp;lpPerIOData-&gt;Flags,
+      &amp;lpPerIOData-&gt;overlap,
+      CompletionROUTINE);
+  }
+}</p>
+<p>用完成例程来实现重叠I/O比用事件通知简单得多。在这个模型中，主线程只用不停的接受连接即可；辅助线程判断有没有新的客户端连接被建立，如果有，就为那个客户端套接字激活一个异步的WSARecv操作，然后调用SleepEx使线程处于一种可警告的等待状态，以使得I/O完成后CompletionROUTINE可以被内核调用。如果辅助线程不调用SleepEx，则内核在完成一次I/O操作后，无法调用完成例程（因为完成例程的运行应该和当初激活WSARecv异步操作的代码在同一个线程之内）。
+完成例程内的实现代码比较简单，它取出接收到的数据，然后将数据原封不动的发送给客户端，最后重新激活另一个WSARecv异步操作。注意，在这里用到了“尾随数据”。我们在调用WSARecv的时候，参数lpOverlapped实际上指向一个比它大得多的结构PER_IO_OPERATION_DATA，这个结构除了WSAOVERLAPPED以外，还被我们附加了缓冲区的结构信息，另外还包括客户端套接字等重要的信息。这样，在完成例程中通过参数lpOverlapped拿到的不仅仅是WSAOVERLAPPED结构，还有后边尾随的包含客户端套接字和接收数据缓冲区等重要信息。这样的C语言技巧在我后面介绍完成端口的时候还会使用到。</p>
+<p>五.完成端口模型
+“完成端口”模型是迄今为止最为复杂的一种I/O模型。然而，假若一个应用程序同时需要管理为数众多的套接字，那么采用这种模型，往往可以达到最佳的系统性能！但不幸的是，该模型只适用于Windows NT和Windows 2000操作系统。因其设计的复杂性，只有在你的应用程序需要同时管理数百乃至上千个套接字的时候，而且希望随着系统内安装的CPU数量的增多，应用程序的性能也可以线性提升，才应考虑采用“完成端口”模型。要记住的一个基本准则是，假如要为Windows NT或Windows 2000开发高性能的服务器应用，同时希望为大量套接字I/O请求提供服务（Web服务器便是这方面的典型例子），那么I/O完成端口模型便是最佳选择！（节选自《Windows网络编程》第八章）
+完成端口模型是我最喜爱的一种模型。虽然其实现比较复杂（其实我觉得它的实现比用事件通知实现的重叠I/O简单多了），但其效率是惊人的。我在T公司的时候曾经帮同事写过一个邮件服务器的性能测试程序，用的就是完成端口模型。结果表明，完成端口模型在多连接（成千上万）的情况下，仅仅依靠一两个辅助线程，就可以达到非常高的吞吐量。下面我还是从代码说起：
+#include &lt;WINSOCK2.H&gt;
+#include &lt;stdio.h&gt;</p>
+<p>#define PORT    5150
+#define MSGSIZE 1024</p>
+<p>#pragma comment(lib, &ldquo;ws2_32.lib&rdquo;)</p>
+<p>typedef enum
+{
+  RECV_POSTED
+}OPERATION_TYPE;</p>
+<p>typedef struct
+{
+WSAOVERLAPPED  overlap;
+WSABUF         Buffer;
+  char           szMessage[MSGSIZE];
+DWORD          NumberOfBytesRecvd;
+DWORD          Flags;
+OPERATION_TYPE OperationType;
+}PER_IO_OPERATION_DATA, *LPPER_IO_OPERATION_DATA;</p>
+<p>DWORD WINAPI WorkerThread(LPVOID);</p>
+<p>int main()
+{
+  WSADATA                 wsaData;
+  SOCKET                  sListen, sClient;
+  SOCKADDR_IN             local, client;
+  DWORD                   i, dwThreadId;
+  int                     iaddrSize = sizeof(SOCKADDR_IN);
+  HANDLE                  CompletionPort = INVALID_HANDLE_VALUE;
+  SYSTEM_INFO             systeminfo;
+  LPPER_IO_OPERATION_DATA lpPerIOData = NULL;</p>
+<p>  // Initialize Windows Socket library
+  WSAStartup(0x0202, &amp;wsaData);</p>
+<p>  // Create completion port
+  CompletionPort = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);</p>
+<p>  // Create worker thread
+  GetSystemInfo(&amp;systeminfo);
+  for (i = 0; i &lt; systeminfo.dwNumberOfProcessors; i++)
+  {
+    CreateThread(NULL, 0, WorkerThread, CompletionPort, 0, &amp;dwThreadId);
+  }
+  
+  // Create listening socket
+  sListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</p>
+<p>  // Bind
+  local.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+local.sin_family = AF_INET;
+local.sin_port = htons(PORT);
+  bind(sListen, (struct sockaddr *)&amp;local, sizeof(SOCKADDR_IN));</p>
+<p>  // Listen
+  listen(sListen, 3);</p>
+<p>  while (TRUE)
+  {
+    // Accept a connection
+    sClient = accept(sListen, (struct sockaddr *)&amp;client, &amp;iaddrSize);
+    printf(&ldquo;Accepted client:%s:%d\n&rdquo;, inet_ntoa(client.sin_addr), ntohs(client.sin_port));</p>
+<p>    // Associate the newly arrived client socket with completion port
+    CreateIoCompletionPort((HANDLE)sClient, CompletionPort, (DWORD)sClient, 0);
+    
+    // Launch an asynchronous operation for new arrived connection
+    lpPerIOData = (LPPER_IO_OPERATION_DATA)HeapAlloc(
+      GetProcessHeap(),
+      HEAP_ZERO_MEMORY,
+      sizeof(PER_IO_OPERATION_DATA));
+    lpPerIOData-&gt;Buffer.len = MSGSIZE;
+    lpPerIOData-&gt;Buffer.buf = lpPerIOData-&gt;szMessage;
+    lpPerIOData-&gt;OperationType = RECV_POSTED;
+    WSARecv(sClient,
+      &amp;lpPerIOData-&gt;Buffer,
+      1,
+      &amp;lpPerIOData-&gt;NumberOfBytesRecvd,
+      &amp;lpPerIOData-&gt;Flags,
+      &amp;lpPerIOData-&gt;overlap,
+      NULL);
+  }</p>
+<p>  PostQueuedCompletionStatus(CompletionPort, 0xFFFFFFFF, 0, NULL);
+CloseHandle(CompletionPort);
+closesocket(sListen);
+WSACleanup();
+return 0;
+}</p>
+<p>DWORD WINAPI WorkerThread(LPVOID CompletionPortID)
+{
+  HANDLE                  CompletionPort=(HANDLE)CompletionPortID;
+  DWORD                   dwBytesTransferred;
+  SOCKET                  sClient;
+  LPPER_IO_OPERATION_DATA lpPerIOData = NULL;</p>
+<p>  while (TRUE)
+  {
+    GetQueuedCompletionStatus(
+      CompletionPort,
+      &amp;dwBytesTransferred,
+      &amp;sClient,
+      (LPOVERLAPPED *)&amp;lpPerIOData,
+      INFINITE);
+    if (dwBytesTransferred == 0xFFFFFFFF)
+    {
+      return 0;
+    }
+    
+    if (lpPerIOData-&gt;OperationType == RECV_POSTED)
+    {
+      if (dwBytesTransferred == 0)
+      {
+        // Connection was closed by client
+        closesocket(sClient);
+        HeapFree(GetProcessHeap(), 0, lpPerIOData);        
+      }
+      else
+      {
+        lpPerIOData-&gt;szMessage[dwBytesTransferred] = &lsquo;\0&rsquo;;
+        send(sClient, lpPerIOData-&gt;szMessage, dwBytesTransferred, 0);
+        
+        // Launch another asynchronous operation for sClient
+        memset(lpPerIOData, 0, sizeof(PER_IO_OPERATION_DATA));
+        lpPerIOData-&gt;Buffer.len = MSGSIZE;
+        lpPerIOData-&gt;Buffer.buf = lpPerIOData-&gt;szMessage;
+        lpPerIOData-&gt;OperationType = RECV_POSTED;
+        WSARecv(sClient,
+          &amp;lpPerIOData-&gt;Buffer,
+          1,
+          &amp;lpPerIOData-&gt;NumberOfBytesRecvd,
+          &amp;lpPerIOData-&gt;Flags,
+          &amp;lpPerIOData-&gt;overlap,
+          NULL);
+      }
+    }
+  }
+return 0;
+}</p>
+<p>首先，说说主线程：
+1.创建完成端口对象
+2.创建工作者线程（这里工作者线程的数量是按照CPU的个数来决定的，这样可以达到最佳性能）
+3.创建监听套接字，绑定，监听，然后程序进入循环
+4.在循环中，我做了以下几件事情：
+(1).接受一个客户端连接
+(2).将该客户端套接字与完成端口绑定到一起(还是调用CreateIoCompletionPort，但这次的作用不同)，注意，按道理来讲，此时传递给CreateIoCompletionPort的第三个参数应该是一个完成键，一般来讲，程序都是传递一个单句柄数据结构的地址，该单句柄数据包含了和该客户端连接有关的信息，由于我们只关心套接字句柄，所以直接将套接字句柄作为完成键传递；
+(3).触发一个WSARecv异步调用，这次又用到了“尾随数据”，使接收数据所用的缓冲区紧跟在WSAOVERLAPPED对象之后，此外，还有操作类型等重要信息。</p>
+<p>在工作者线程的循环中，我们
+1.调用GetQueuedCompletionStatus取得本次I/O的相关信息（例如套接字句柄、传送的字节数、单I/O数据结构的地址等等）
+2.通过单I/O数据结构找到接收数据缓冲区，然后将数据原封不动的发送到客户端
+3.再次触发一个WSARecv异步操作</p>
+<p>五种I/O模型的比较
+我会从以下几个方面来进行比较
+*有无每线程64连接数限制
+如果在选择模型中没有重新定义FD_SETSIZE宏，则每个fd_set默认可以装下64个SOCKET。同样的，受MAXIMUM_WAIT_OBJECTS宏的影响，事件选择、用事件通知实现的重叠I/O都有每线程最大64连接数限制。如果连接数成千上万，则必须对客户端套接字进行分组，这样，势必增加程序的复杂度。
+相反，异步选择、用完成例程实现的重叠I/O和完成端口不受此限制。</p>
+<p>*线程数
+除了异步选择以外，其他模型至少需要2个线程。一个主线程和一个辅助线程。同样的，如果连接数大于64，则选择模型、事件选择和用事件通知实现的重叠I/O的线程数还要增加。</p>
+<p>*实现的复杂度
+我的个人看法是，在实现难度上，异步选择&lt;选择&lt;用完成例程实现的重叠I/O&lt;事件选择&lt;完成端口&lt;用事件通知实现的重叠I/O</p>
+<p>*性能
+由于选择模型中每次都要重设读集，在select函数返回后还要针对所有套接字进行逐一测试，我的感觉是效率比较差；完成端口和用完成例程实现的重叠I/O基本上不涉及全局数据，效率应该是最高的，而且在多处理器情形下完成端口还要高一些；事件选择和用事件通知实现的重叠I/O在实现机制上都是采用WSAWaitForMultipleEvents，感觉效率差不多；至于异步选择，不好比较。所以我的结论是:选择&lt;用事件通知实现的重叠I/O&lt;事件选择&lt;用完成例程实现的重叠I/O&lt;完成端口.</p>
+<hr>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<hr>
+<p>◆先看定义：
+typedef unsigned int u_int;
+typedef u_int SOCKET;
+◆Socket相当于进行网络通信两端的插座，只要对方的Socket和自己的Socket有通信联接，双方就可以发送和接收数据了。其定义类似于文件句柄的定义。</p>
+<p>◆Socket有五种不同的类型：</p>
+<p>1、流式套接字(stream socket)
+定义：
+#define SOCK_STREAM 1 
+流式套接字提供了双向、有序的、无重复的以及无记录边界的数据流服务，适合处理大量数据。它是面向联结的，必须建立数据传输链路，同时还必须对传输的数据进行验证，确保数据的准确性。因此，系统开销较大。</p>
+<p>2、 数据报套接字(datagram socket)</p>
+<p>定义：
+#define SOCK_DGRAM 2 
+数据报套接字也支持双向的数据流，但不保证传输数据的准确性，但保留了记录边界。由于数据报套接字是无联接的，例如广播时的联接，所以并不保证接收端是否正在侦听。数据报套接字传输效率比较高。</p>
+<p>3、原始套接字(raw-protocol interface)</p>
+<p>定义：
+#define SOCK_RAW 3 
+原始套接字保存了数据包中的完整IP头，前面两种套接字只能收到用户数据。因此可以通过原始套接字对数据进行分析。
+其它两种套接字不常用，这里就不介绍了。</p>
+<p>◆Socket开发所必须需要的文件(以WinSock V2.0为例)：</p>
+<p>头文件：Winsock2.h</p>
+<p>库文件：WS2_32.LIB</p>
+<p>动态库：W32_32.DLL</p>
+<p>一些重要的定义</p>
+<p>1、数据类型的基本定义：这个大家一看就懂。
+typedef unsigned char u_char;
+typedef unsigned short u_short;
+typedef unsigned int u_int;
+typedef unsigned long u_long;
+2、 网络地址的数据结构，有一个老的和一个新的的，请大家留意，如果想知道为什么，
+请发邮件给Bill Gate。其实就是计算机的IP地址，不过一般不用用点分开的IP地
+址，当然也提供一些转换函数。</p>
+<p>◆ 旧的网络地址结构的定义，为一个4字节的联合：
+struct in_addr 
+ {
+ union 
+ {
+ struct { u_char s_b1,s_b2,s_b3,s_b4; } S_un_b;
+ struct { u_short s_w1,s_w2; } S_un_w;
+ u_long S_addr;
+ } S_un;
+ #define s_addr S_un.S_addr /* can be used for most tcp &amp; ip code */
+ //下面几行省略,反正没什么用处。
+ };
+其实完全不用这么麻烦，请看下面:</p>
+<p>◆ 新的网络地址结构的定义：
+非常简单，就是一个无符号长整数 unsigned long。举个例子：IP地址为127.0.0.1的网络地址是什么呢？请看定义：
+#define INADDR_LOOPBACK 0x7f000001</p>
+<p>3、 套接字地址结构</p>
+<p>(1)、sockaddr结构：
+struct sockaddr {
+ u_short sa_family; /* address family <em>/
+ char sa_data[14]; /</em> up to 14 bytes of direct address */
+ };
+sa_family为网络地址类型，一般为AF_INET，表示该socket在Internet域中进行通信，该地址结构随选择的协议的不同而变化，因此一般情况下另一个与该地址结构大小相同的sockaddr_in结构更为常用，sockaddr_in结构用来标识TCP/IP协议下的地址。换句话说，这个结构是通用socket地址结构，而下面的sockaddr_in是专门针对Internet域的socket地址结构。</p>
+<p>(2)、sockaddr_in结构
+struct sockaddr_in {
+ short sin_family;
+ u_short sin_port;
+ struct in_addr sin_addr;
+ char sin_zero[8];
+};
+sin _family为网络地址类型，必须设定为AF_INET。sin_port为服务端口，注意不要使用已固定的服务端口，如HTTP的端口80等。如果端口设置为0，则系统会自动分配一个唯一端口。sin_addr为一个unsigned long的IP地址。sin_zero为填充字段，纯粹用来保证结构的大小。</p>
+<p>◆ 将常用的用点分开的IP地址转换为unsigned long类型的IP地址的函数：
+unsigned long inet_addr(const char FAR * cp )
+用法：
+unsigned long addr=inet_addr(&ldquo;192.1.8.84&rdquo;)</p>
+<p>◆ 如果将sin_addr设置为INADDR_ANY，则表示所有的IP地址，也即所有的计算机。
+#define INADDR_ANY (u_long)0x00000000</p>
+<p>4、 主机地址：</p>
+<p>先看定义：
+struct hostent {
+ char FAR * h_name; /* official name of host <em>/
+ char FAR * FAR * h_aliases; /</em> alias list <em>/
+ short h_addrtype; /</em> host address type <em>/
+ short h_length; /</em> length of address <em>/
+ char FAR * FAR * h_addr_list; /</em> list of addresses <em>/
+ #define h_addr h_addr_list[0] /</em> address, for backward compat */
+ };
+h_name为主机名字。
+h_aliases为主机别名列表。
+h_addrtype为地址类型。
+h_length为地址类型。
+h_addr_list为IP地址，如果该主机有多个网卡，就包括地址的列表。
+另外还有几个类似的结构，这里就不一一介绍了。</p>
+<p>5、 常见TCP/IP协议的定义：
+#define IPPROTO_IP 0 
+#define IPPROTO_ICMP 1 
+#define IPPROTO_IGMP 2 
+#define IPPROTO_TCP 6 
+#define IPPROTO_UDP 17 
+#define IPPROTO_RAW 255 
+具体是什么协议，大家一看就知道了。</p>
+<p>套接字的属性</p>
+<p>为了灵活使用套接字，我们可以对它的属性进行设定。</p>
+<p>1、 属性内容：
+//允许调试输出
+#define SO_DEBUG 0x0001 /* turn on debugging info recording <em>/
+//是否监听模式
+#define SO_ACCEPTCONN 0x0002 /</em> socket has had listen() <em>/
+//套接字与其他套接字的地址绑定
+#define SO_REUSEADDR 0x0004 /</em> allow local address reuse <em>/
+//保持连接
+#define SO_KEEPALIVE 0x0008 /</em> keep connections alive <em>/
+//不要路由出去
+#define SO_DONTROUTE 0x0010 /</em> just use interface addresses <em>/
+//设置为广播
+#define SO_BROADCAST 0x0020 /</em> permit sending of broadcast msgs <em>/
+//使用环回不通过硬件
+#define SO_USELOOPBACK 0x0040 /</em> bypass hardware when possible <em>/
+//当前拖延值
+#define SO_LINGER 0x0080 /</em> linger on close if data present <em>/
+//是否加入带外数据
+#define SO_OOBINLINE 0x0100 /</em> leave received OOB data in line <em>/
+//禁用LINGER选项
+#define SO_DONTLINGER (int)(~SO_LINGER)
+//发送缓冲区长度
+#define SO_SNDBUF 0x1001 /</em> send buffer size <em>/
+//接收缓冲区长度
+#define SO_RCVBUF 0x1002 /</em> receive buffer size <em>/
+//发送超时时间
+#define SO_SNDTIMEO 0x1005 /</em> send timeout <em>/
+//接收超时时间
+#define SO_RCVTIMEO 0x1006 /</em> receive timeout <em>/
+//错误状态
+#define SO_ERROR 0x1007 /</em> get error status and clear <em>/
+//套接字类型
+#define SO_TYPE 0x1008 /</em> get socket type */</p>
+<p>2、 读取socket属性：
+int getsockopt(SOCKET s, int level, int optname, char FAR * optval, int FAR * optlen)
+s为欲读取属性的套接字。level为套接字选项的级别，大多数是特定协议和套接字专有的。如IP协议应为 IPPROTO_IP。</p>
+<p>optname为读取选项的名称
+optval为存放选项值的缓冲区指针。
+optlen为缓冲区的长度
+用法：
+int ttl=0; //读取TTL值
+int rc = getsockopt( s, IPPROTO_IP, IP_TTL, (char *)&amp;ttl, sizeof(ttl));
+//来自MS platform SDK 2003</p>
+<p>3、 设置socket属性：
+int setsockopt(SOCKET s,int level, int optname,const char FAR * optval, int optlen)
+s为欲设置属性的套接字。
+level为套接字选项的级别，用法同上。
+optname为设置选项的名称
+optval为存放选项值的缓冲区指针。
+optlen为缓冲区的长度</p>
+<p>用法：
+int ttl=32; //设置TTL值
+int rc = setsockopt( s, IPPROTO_IP, IP_TTL, (char *)&amp;ttl, sizeof(ttl));</p>
+<p>套接字的使用步骤</p>
+<p>1、启动Winsock：对Winsock DLL进行初始化，协商Winsock的版本支持并分配必要的
+资源。（服务器端和客户端）
+int WSAStartup( WORD wVersionRequested, LPWSADATA lpWSAData )
+wVersionRequested为打算加载Winsock的版本，一般如下设置：
+wVersionRequested=MAKEWORD(2,0)
+或者直接赋值：wVersionRequested=2</p>
+<p>LPWSADATA为初始化Socket后加载的版本的信息,定义如下：
+typedef struct WSAData {
+ WORD wVersion;
+ WORD wHighVersion;
+ char szDescription[WSADESCRIPTION_LEN+1];
+ char szSystemStatus[WSASYS_STATUS_LEN+1];
+ unsigned short iMaxSockets;
+ unsigned short iMaxUdpDg;
+ char FAR * lpVendorInfo;
+ } WSADATA, FAR * LPWSADATA;
+如果加载成功后数据为：</p>
+<p>wVersion＝2 表示加载版本为2.0。
+wHighVersion＝514 表示当前系统支持socket最高版本为2.2。
+szDescription=&ldquo;WinSock 2.0&rdquo;
+szSystemStatus=&ldquo;Running&rdquo; 表示正在运行。
+iMaxSockets＝0 表示同时打开的socket最大数，为0表示没有限制。
+iMaxUdpDg＝0 表示同时打开的数据报最大数，为0表示没有限制。
+lpVendorInfo 没有使用，为厂商指定信息预留。</p>
+<p>该函数使用方法：
+WORD wVersion=MAKEWORD(2,0);
+WSADATA wsData;
+int nResult= WSAStartup(wVersion,&amp;wsData);
+if(nResult !=0)
+{
+//错误处理
+}</p>
+<p>2、创建套接字：（服务器端和客户端）
+SOCKET socket( int af, int type, int protocol );
+af为网络地址类型，一般为AF_INET，表示在Internet域中使用。
+type为套接字类型，前面已经介绍了。
+protocol为指定网络协议，一般为IPPROTO_IP。
+用法：
+SOCKET sock=socket(AF_INET,SOCK_STREAM,IPPROTO_IP);
+if(sock==INVALID_SOCKET)
+{
+//错误处理
+}</p>
+<p>3、套接字的绑定：将本地地址绑定到所创建的套接字上。（服务器端和客户端）
+int bind( SOCKET s, const struct sockaddr FAR * name, int namelen )
+s为已经创建的套接字。
+name为socket地址结构，为sockaddr结构，如前面讨论的，我们一般使用sockaddr_in
+结构，在使用再强制转换为sockaddr结构。
+namelen为地址结构的长度。</p>
+<p>用法：
+sockaddr_in addr;
+addr. sin_family=AF_INET;
+addr. sin_port= htons(0); //保证字节顺序
+addr. sin_addr.s_addr= inet_addr(&ldquo;192.1.8.84&rdquo;)
+int nResult=bind(s,(sockaddr*)&amp;addr,sizeof(sockaddr));
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>4、 套接字的监听：（服务器端）
+int listen(SOCKET s, int backlog )
+s为一个已绑定但未联接的套接字。
+backlog为指定正在等待联接的最大队列长度，这个参数非常重要，因为服务器一般可
+以提供多个连接。
+用法：
+int nResult=listen(s,5) //最多5个连接
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>5、套接字等待连接:：（服务器端）
+SOCKET accept( SOCKET s, struct sockaddr FAR * addr, int FAR * addrlen )
+s为处于监听模式的套接字。
+sockaddr为接收成功后返回客户端的网络地址。
+addrlen为网络地址的长度。</p>
+<p>用法：
+sockaddr_in addr;
+SOCKET s_d=accept(s,(sockaddr*)&amp;addr,sizeof(sockaddr));
+if(s==INVALID_SOCKET)
+{
+//错误处理
+}</p>
+<p>6、套接字的连结：将两个套接字连结起来准备通信。（客户端）
+int connect(SOCKET s, const struct sockaddr FAR * name, int namelen )
+s为欲连结的已创建的套接字。
+name为欲连结的socket地址。
+namelen为socket地址的结构的长度。</p>
+<p>用法：
+sockaddr_in addr;
+addr. sin_family=AF_INET;
+addr. sin_port=htons(0); //保证字节顺序
+addr. sin_addr.s_addr= htonl(INADDR_ANY) //保证字节顺序
+int nResult=connect(s,(sockaddr*)&amp;addr,sizeof(sockaddr));
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>7、套接字发送数据：（服务器端和客户端）
+int send(SOCKET s, const char FAR * buf, int len, int flags )
+s为服务器端监听的套接字。
+buf为欲发送数据缓冲区的指针。
+len为发送数据缓冲区的长度。
+flags为数据发送标记。
+返回值为发送数据的字符数。</p>
+<p>◆这里讲一下这个发送标记，下面8中讨论的接收标记也一样：</p>
+<p>flag取值必须为0或者如下定义的组合：0表示没有特殊行为。
+#define MSG_OOB 0x1 /* process out-of-band data <em>/
+#define MSG_PEEK 0x2 /</em> peek at incoming message <em>/
+#define MSG_DONTROUTE 0x4 /</em> send without using routing tables */
+MSG_OOB表示数据应该带外发送，所谓带外数据就是TCP紧急数据。
+MSG_PEEK表示使有用的数据复制到缓冲区内，但并不从系统缓冲区内删除。
+MSG_DONTROUTE表示不要将包路由出去。</p>
+<p>用法：
+char buf[]=&ldquo;xiaojin&rdquo;;
+int nResult=send(s,buf,strlen(buf));
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>8、 套接字的数据接收：（客户端）
+int recv( SOCKET s, char FAR * buf, int len, int flags )
+s为准备接收数据的套接字。
+buf为准备接收数据的缓冲区。
+len为准备接收数据缓冲区的大小。
+flags为数据接收标记。
+返回值为接收的数据的字符数。</p>
+<p>用法：
+char mess[1000];
+int nResult =recv(s,mess,1000,0);
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>9、中断套接字连接：通知服务器端或客户端停止接收和发送数据。（服务器端和客户端）
+int shutdown(SOCKET s, int how)
+s为欲中断连接的套接字。
+How为描述禁止哪些操作，取值为：SD_RECEIVE、SD_SEND、SD_BOTH。
+#define SD_RECEIVE 0x00
+#define SD_SEND 0x01
+#define SD_BOTH 0x02
+用法：
+int nResult= shutdown(s,SD_BOTH);
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>10、 关闭套接字：释放所占有的资源。（服务器端和客户端）
+int closesocket( SOCKET s )
+s为欲关闭的套接字。</p>
+<p>用法：
+int nResult=closesocket(s);
+if(nResult==SOCKET_ERROR)
+{
+//错误处理
+}</p>
+<p>与socket有关的一些函数介绍</p>
+<p>1、读取当前错误值：每次发生错误时，如果要对具体问题进行处理，那么就应该调用这个函数取得错误代码。 
+ int WSAGetLastError(void );
+ #define h_errno WSAGetLastError()
+错误值请自己阅读Winsock2.h。</p>
+<p>2、将主机的unsigned long值转换为网络字节顺序(32位)：为什么要这样做呢？因为不同的计算机使用不同的字节顺序存储数据。因此任何从Winsock函数对IP地址和端口号的引用和传给Winsock函数的IP地址和端口号均时按照网络顺序组织的。
+ 
+ u_long htonl(u_long hostlong);
+ 举例：htonl(0)=0
+ htonl(80)= 1342177280</p>
+<p>3、将unsigned long数从网络字节顺序转换位主机字节顺序，是上面函数的逆函数。 
+ 
+ u_long ntohl(u_long netlong);
+ 举例：ntohl(0)=0
+ ntohl(1342177280)= 80</p>
+<p>4、将主机的unsigned short值转换为网络字节顺序(16位)：原因同2： 
+ 
+ u_short htons(u_short hostshort);
+ 举例：htonl(0)=0
+ htonl(80)= 20480</p>
+<p>5、将unsigned short数从网络字节顺序转换位主机字节顺序，是上面函数的逆函数。 
+ u_short ntohs(u_short netshort);
+ 举例：ntohs(0)=0
+ ntohsl(20480)= 80</p>
+<p>6、将用点分割的IP地址转换位一个in_addr结构的地址，这个结构的定义见笔记(一)，实际上就是一个unsigned long值。计算机内部处理IP地址可是不认识如192.1.8.84之类的数据。 
+ unsigned long inet_addr( const char FAR * cp );
+ 举例：inet_addr(&ldquo;192.1.8.84&rdquo;)=1409810880
+ inet_addr(&ldquo;127.0.0.1&rdquo;)= 16777343
+如果发生错误，函数返回INADDR_NONE值。</p>
+<p>7、将网络地址转换位用点分割的IP地址，是上面函数的逆函数。 
+ char FAR * inet_ntoa( struct in_addr in );
+ 举例：char * ipaddr=NULL;
+ char addr[20];
+ in_addr inaddr;
+ inaddr. s_addr=16777343;
+ ipaddr= inet_ntoa(inaddr);
+ strcpy(addr,ipaddr); 
+这样addr的值就变为127.0.0.1。
+注意意不要修改返回值或者进行释放动作。如果函数失败就会返回NULL值。</p>
+<p>8、获取套接字的本地地址结构： 
+ 
+ int getsockname(SOCKET s, struct sockaddr FAR * name, int FAR * namelen );
+s为套接字
+name为函数调用后获得的地址值
+namelen为缓冲区的大小。</p>
+<p>9、获取与套接字相连的端地址结构：
+ int getpeername(SOCKET s, struct sockaddr FAR * name, int FAR * namelen );
+s为套接字
+name为函数调用后获得的端地址值
+namelen为缓冲区的大小。</p>
+<p>10、获取计算机名：
+ int gethostname( char FAR * name, int namelen );
+name是存放计算机名的缓冲区
+namelen是缓冲区的大小
+用法：
+ char szName[255];
+ memset(szName,0,255);
+ if(gethostname(szName,255)==SOCKET_ERROR)
+ {
+     //错误处理
+ }
+返回值为：szNmae=&ldquo;xiaojin&rdquo;</p>
+<p>11、根据计算机名获取主机地址： 
+ struct hostent FAR * gethostbyname( const char FAR * name );
+name为计算机名。
+用法：
+ hostent * host;
+ char* ip;
+ host= gethostbyname(&ldquo;xiaojin&rdquo;);
+ if(host-&gt;h_addr_list[0])
+ {
+   struct in_addr addr;
+    memmove(&amp;addr, host-&gt;h_addr_list[0]，4);
+   //获得标准IP地址
+   ip=inet_ ntoa (addr);
+ }</p>
+<p>返回值为：hostent-&gt;h_name=&ldquo;xiaojin&rdquo;
+hostent-&gt;h_addrtype=2 //AF_INET
+hostent-&gt;length=4
+ip=&ldquo;127.0.0.1&rdquo;</p>
+<p>Winsock 的I/O操作：</p>
+<p>1、 两种I/O模式 
+阻塞模式：执行I/O操作完成前会一直进行等待，不会将控制权交给程序。套接字 默认为阻塞模式。可以通过多线程技术进行处理。 
+非阻塞模式：执行I/O操作时，Winsock函数会返回并交出控制权。这种模式使用 起来比较复杂，因为函数在没有运行完成就进行返回，会不断地返回 WSAEWOULDBLOCK错误。但功能强大。
+为了解决这个问题，提出了进行I/O操作的一些I/O模型,下面介绍最常见的三种：</p>
+<p>2、select模型：</p>
+<p>　　通过调用select函数可以确定一个或多个套接字的状态，判断套接字上是否有数据，或
+者能否向一个套接字写入数据。 
+int select( int nfds, fd_set FAR * readfds, fd_set FAR * writefds, 
+ fd_set FAR *exceptfds, const struct timeval FAR * timeout );</p>
+<p>◆先来看看涉及到的结构的定义：
+a、 d_set结构：
+#define FD_SETSIZE 64?
+typedef struct fd_set {
+ u_int fd_count; /* how many are SET? <em>/
+ SOCKET fd_array[FD_SETSIZE]; /</em> an array of SOCKETs */
+ } fd_set;</p>
+<p>fd_count为已设定socket的数量
+fd_array为socket列表，FD_SETSIZE为最大socket数量，建议不小于64。这是微软建
+议的。</p>
+<p>B、timeval结构： 
+struct timeval {
+ long tv_sec; /* seconds <em>/
+ long tv_usec; /</em> and microseconds */
+ };
+tv_sec为时间的秒值。
+tv_usec为时间的毫秒值。
+这个结构主要是设置select()函数的等待值，如果将该结构设置为(0,0)，则select()函数
+会立即返回。</p>
+<p>◆再来看看select函数各参数的作用： 
+nfds：没有任何用处，主要用来进行系统兼容用，一般设置为0。</p>
+<p>readfds：等待可读性检查的套接字组。</p>
+<p>writefds；等待可写性检查的套接字组。</p>
+<p>exceptfds：等待错误检查的套接字组。</p>
+<p>timeout：超时时间。</p>
+<p>函数失败的返回值：
+调用失败返回SOCKET_ERROR,超时返回0。
+readfds、writefds、exceptfds三个变量至少有一个不为空，同时这个不为空的套接字组
+种至少有一个socket，道理很简单，否则要select干什么呢。 </p>
+<p>举例：测试一个套接字是否可读：
+fd_set fdread;
+//FD_ZERO定义
+// #define FD_ZERO(set) (((fd_set FAR *)(set))-&gt;fd_count=0)
+FD_ZERO(&amp;fdread);
+FD_SET(s,&amp;fdread)； //加入套接字，详细定义请看winsock2.h
+if(select(0,%fdread,NULL,NULL,NULL)&gt;0
+{
+  //成功
+  if(FD_ISSET(s,&amp;fread) //是否存在fread中，详细定义请看winsock2.h
+  {
+    //是可读的
+  }
+}</p>
+<p>◆I/O操作函数：主要用于获取与套接字相关的操作参数。 
+ int ioctlsocket(SOCKET s, long cmd, u_long FAR * argp ); 
+s为I/O操作的套接字。
+cmd为对套接字的操作命令。
+argp为命令所带参数的指针。</p>
+<p>常见的命令： //确定套接字自动读入的数据量
+#define FIONREAD _IOR(&lsquo;&lsquo;&lsquo;&lsquo;f&rsquo;&rsquo;&rsquo;&rsquo;, 127, u_long) /* get # bytes to read <em>/
+//允许或禁止套接字的非阻塞模式，允许为非0，禁止为0
+#define FIONBIO _IOW(&lsquo;&lsquo;&lsquo;&lsquo;f&rsquo;&rsquo;&rsquo;&rsquo;, 126, u_long) /</em> set/clear non-blocking i/o <em>/
+//确定是否所有带外数据都已被读入
+#define SIOCATMARK _IOR(&lsquo;&lsquo;&lsquo;&rsquo;s&rsquo;&rsquo;&rsquo;&rsquo;, 7, u_long) /</em> at oob mark? */</p>
+<p>3、WSAAsynSelect模型：
+WSAAsynSelect模型也是一个常用的异步I/O模型。应用程序可以在一个套接字上接收以
+WINDOWS消息为基础的网络事件通知。该模型的实现方法是通过调用WSAAsynSelect函
+数 自动将套接字设置为非阻塞模式，并向WINDOWS注册一个或多个网络时间，并提供一
+个通知时使用的窗口句柄。当注册的事件发生时，对应的窗口将收到一个基于消息的通知。
+ int WSAAsyncSelect( SOCKET s, HWND hWnd, u_int wMsg, long lEvent); 
+s为需要事件通知的套接字
+hWnd为接收消息的窗口句柄
+wMsg为要接收的消息
+lEvent为掩码，指定应用程序感兴趣的网络事件组合，主要如下： 
+#define FD_READ_BIT 0
+#define FD_READ (1 &laquo; FD_READ_BIT)
+#define FD_WRITE_BIT 1
+#define FD_WRITE (1 &laquo; FD_WRITE_BIT)
+#define FD_OOB_BIT 2
+#define FD_OOB (1 &laquo; FD_OOB_BIT)
+#define FD_ACCEPT_BIT 3
+#define FD_ACCEPT (1 &laquo; FD_ACCEPT_BIT)
+#define FD_CONNECT_BIT 4
+#define FD_CONNECT (1 &laquo; FD_CONNECT_BIT)
+#define FD_CLOSE_BIT 5
+#define FD_CLOSE (1 &laquo; FD_CLOSE_BIT)
+用法：要接收读写通知：
+int nResult= WSAAsyncSelect(s,hWnd,wMsg,FD_READ|FD_WRITE)；
+if(nResult==SOCKET_ERROR)
+{
+  //错误处理
+}
+取消通知：
+ int nResult= WSAAsyncSelect(s,hWnd,0，0)； 
+当应用程序窗口hWnd收到消息时，wMsg.wParam参数标识了套接字，lParam的低字标明
+了网络事件，高字则包含错误代码。</p>
+<p>4、WSAEventSelect模型
+WSAEventSelect模型类似WSAAsynSelect模型，但最主要的区别是网络事件发生时会被发
+送到一个事件对象句柄，而不是发送到一个窗口。</p>
+<p>使用步骤如下：
+a、 创建事件对象来接收网络事件：
+#define WSAEVENT HANDLE
+#define LPWSAEVENT LPHANDLE
+WSAEVENT WSACreateEvent( void );
+该函数的返回值为一个事件对象句柄，它具有两种工作状态：已传信(signaled)和未传信
+(nonsignaled)以及两种工作模式：人工重设(manual reset)和自动重设(auto reset)。默认未
+未传信的工作状态和人工重设模式。</p>
+<p>b、将事件对象与套接字关联，同时注册事件，使事件对象的工作状态从未传信转变未
+已传信。
+ int WSAEventSelect( SOCKET s,WSAEVENT hEventObject,long lNetworkEvents ); 
+s为套接字
+hEventObject为刚才创建的事件对象句柄
+lNetworkEvents为掩码，定义如上面所述</p>
+<p>c、I/O处理后，设置事件对象为未传信
+BOOL WSAResetEvent( WSAEVENT hEvent );
+Hevent为事件对象</p>
+<p>成功返回TRUE，失败返回FALSE。</p>
+<p>d、等待网络事件来触发事件句柄的工作状态：
+DWORD WSAWaitForMultipleEvents( DWORD cEvents,
+const WSAEVENT FAR * lphEvents, BOOL fWaitAll,
+DWORD dwTimeout, BOOL fAlertable );
+lpEvent为事件句柄数组的指针
+cEvent为为事件句柄的数目，其最大值为WSA_MAXIMUM_WAIT_EVENTS 
+fWaitAll指定等待类型：TRUE：当lphEvent数组重所有事件对象同时有信号时返回；
+FALSE：任一事件有信号就返回。
+dwTimeout为等待超时（毫秒）
+fAlertable为指定函数返回时是否执行完成例程</p>
+<p>对事件数组中的事件进行引用时，应该用WSAWaitForMultipleEvents的返回值，减去
+预声明值WSA_WAIT_EVENT_0，得到具体的引用值。例如：
+nIndex=WSAWaitForMultipleEvents(…);
+MyEvent=EventArray[Index- WSA_WAIT_EVENT_0];</p>
+<p>e、判断网络事件类型：
+int WSAEnumNetworkEvents( SOCKET s,
+WSAEVENT hEventObject, LPWSANETWORKEVENTS lpNetworkEvents );
+s为套接字
+hEventObject为需要重设的事件对象
+lpNetworkEvents为记录网络事件和错误代码，其结构定义如下：
+typedef struct _WSANETWORKEVENTS {
+  long lNetworkEvents;
+  int iErrorCode[FD_MAX_EVENTS];
+} WSANETWORKEVENTS, FAR * LPWSANETWORKEVENTS;</p>
+<p>f、关闭事件对象句柄：
+BOOL WSACloseEvent(WSAEVENT hEvent);</p>
+<p>调用成功返回TRUE，否则返回FALSE。</p>
+<p>本文转自http://www.cppblog.com/xushaohua/articles/37653.html，如有侵权，请告之删除。</p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+	<ul class="post-nav">
+		
+			<li class="post-nav-prev">
+				<a href="/posts/2011/2011-11-29-UDK%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%88%87%E6%8D%A2%E8%A7%86%E8%A7%92%E5%8A%A0%E5%87%8F%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8%E9%80%9F%E5%BA%A6%E5%88%9D%E5%A7%8B%E5%8C%96%E6%94%B9%E5%8F%98%E8%A7%86%E8%A7%92/" rel="prev">&lt; UDK学习笔记之添加快捷键切换视角、加减角色移动速度，初始化改变视角</a>
+			</li>
+		
+		
+			<li class="post-nav-next">
+				<a href="/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/" rel="next">很幽默的讲解六种Socket I/O模型 &gt;</a>
+			</li>
+		
+	</ul>
+
+
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
+        
+        
+        
+        
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/">https://wittonbell.github.io/posts/2011/2011-11-28-浅析网络编程之Socket模型/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/">跨平台UNICODE编程总结</a></li>
+        
+        <li><a href="/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/">很幽默的讲解六种Socket I/O模型</a></li>
+        
+        <li><a href="/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/">Linux下编译GCC</a></li>
+        
+        <li><a href="/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/">跨平台Unicode编程的一点问题</a></li>
+        
+        <li><a href="/posts/2007/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/">如何用C API遍历Lua脚本中的表</a></li>
+        
+    </ul>
+</div>
+
+
+<div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/socket/' target="_blank">socket</a></li>
+                
+                <li><a href='/tags/%E7%BD%91%E7%BB%9C/' target="_blank">网络</a></li>
+                
+                <li><a href='/tags/%E7%BC%96%E7%A8%8B/' target="_blank">编程</a></li>
+                
+                <li><a href='/tags/sockets/' target="_blank">sockets</a></li>
+                
+                <li><a href='/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/' target="_blank">服务器</a></li>
+                
+                <li><a href='/tags/null/' target="_blank">null</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const ID = "2011-11-28-浅析网络编程之Socket模型" 
+    const Title = "2011-11-28-浅析网络编程之Socket模型"
+    const gitalk = new Gitalk({
+        clientID: '118c70fe27b7246dfb76',
+        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
+        repo: 'comment',
+        owner: 'WittonBell',
+        admin: ['WittonBell'],
+        id: ID, 
+        title: Title,
+        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
+        pagerDirection: "last",
+        createIssueManually:  false ,
+        distractionFreeMode:  false  
+    });
+    (function () {
+        
+        
+        
+        
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+</div>
+<footer id="footer">
+    <div>
+        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://wittonbell.github.io/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">Witton</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+</div>
+
+            <div id="secondary">
+    <section class="widget">
+    <form id="search" action='https://wittonbell.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder=搜索>
+      <input type="hidden" name="sitesearch" value="https://wittonbell.github.io/">
+      <button type="submit" class="submit icon-search" title=搜索></button>
+</form>
+    </section>
+
+    <section class="widget">
+    <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/" title="制作带Go调试器的容器" target="_blank">制作带Go调试器的容器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/" title="复制远程连接到Linux使用VIM打开的内容到Windows" target="_blank">复制远程连接到Linux使用VIM打开的内容到Windows</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/" title="容器中的nginx暴露一个端口部署多个功能的网站" target="_blank">容器中的nginx暴露一个端口部署多个功能的网站</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/" title="使用docker-compose命令行向远程主机编排容器" target="_blank">使用docker-compose命令行向远程主机编排容器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/" title="解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]" target="_blank">解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/" title="解决nexus3登录x509: certificate has expired or is not yet valid" target="_blank">解决nexus3登录x509: certificate has expired or is not yet valid</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/" title="VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4" target="_blank">VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/" title="Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发" target="_blank">Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/" title="SSH远程连接MacOS catalina并进行终端颜色配置" target="_blank">SSH远程连接MacOS catalina并进行终端颜色配置</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/" title="解决lldb调试时可能出现的personality set failed: Function not implemented" target="_blank">解决lldb调试时可能出现的personality set failed: Function not implemented</a>
+    </li>
+</ul>
+</section><section class="widget">
+    <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (36)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Erlang/">Erlang (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/GO/">GO (9)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/IDE/">IDE (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/Clang/">LLVM/Clang (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (73)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (19)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Mysql/">Mysql (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Python/">Python (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Qt/">Qt (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Redis/">Redis (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unity/">Unity (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unreal/">Unreal (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/VisualGDB/">VisualGDB (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (43)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/macOS/">macOS (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/nginx/">nginx (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux/">使用Cockpit管理Linux (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/">容器 (28)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/">操作系统开发 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%9D%82%E8%AE%B0/">杂记 (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/">汇编 (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/">游戏 (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理 (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (44)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/">网络 (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台 (17)</a></li>
+</ul>
+</section>
+
+    <section class="widget">
+    <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    <a href="https://wittonbell.github.io/tags/-failed/">- failed</a>
+    <a href="https://wittonbell.github.io/tags/.a/">.a</a>
+    <a href="https://wittonbell.github.io/tags/0%E5%AD%97%E8%8A%82/">0字节</a>
+    <a href="https://wittonbell.github.io/tags/2010/">2010</a>
+    <a href="https://wittonbell.github.io/tags/6.x/">6.x</a>
+    <a href="https://wittonbell.github.io/tags/ABI-info/">ABI info</a>
+    <a href="https://wittonbell.github.io/tags/AC97/">AC97</a>
+    <a href="https://wittonbell.github.io/tags/Apache/">Apache</a>
+    <a href="https://wittonbell.github.io/tags/BUG/">BUG</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-11/">C&#43;&#43; 11</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-makefile/">C&#43;&#43; makefile</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;11/">C&#43;&#43;11</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/CC&#43;&#43;/">CC&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/CNI-config/">CNI config</a>
+    <a href="https://wittonbell.github.io/tags/CNI-network/">CNI network</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/CentOS6/">CentOS6</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D/">Cocos2D</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2d-x/">Cocos2d-x</a>
+    <a href="https://wittonbell.github.io/tags/Code/">Code</a>
+    <a href="https://wittonbell.github.io/tags/Code-Runner/">Code Runner</a>
+    <a href="https://wittonbell.github.io/tags/Console/">Console</a>
+    <a href="https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/DNS/">DNS</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/Erlang%E4%BD%BF%E7%94%A8ProtoBuffer/">Erlang使用ProtoBuffer</a>
+    <a href="https://wittonbell.github.io/tags/Error/">Error</a>
+    <a href="https://wittonbell.github.io/tags/Free-Heap-block/">Free Heap block</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/Githuber-MD/">Githuber MD</a>
+    <a href="https://wittonbell.github.io/tags/Git%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/">Git版本信息</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/Google-Protocol-Buffers/">Google Protocol Buffers</a>
+    <a href="https://wittonbell.github.io/tags/HD-Audio/">HD Audio</a>
+    <a href="https://wittonbell.github.io/tags/Homebrew/">Homebrew</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/IPV6/">IPV6</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/Lua%E8%A7%A3%E5%AF%86/">Lua解密</a>
+    <a href="https://wittonbell.github.io/tags/MOTD/">MOTD</a>
+    <a href="https://wittonbell.github.io/tags/Mac/">Mac</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/ModuleNotFound/">ModuleNotFound</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/NO-QML/">NO QML</a>
+    <a href="https://wittonbell.github.io/tags/Navigator/">Navigator</a>
+    <a href="https://wittonbell.github.io/tags/No-moudule/">No moudule</a>
+    <a href="https://wittonbell.github.io/tags/No-such-file/">No such file</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/QEMU/">QEMU</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/SFINAE/">SFINAE</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/Segmentation/">Segmentation</a>
+    <a href="https://wittonbell.github.io/tags/TLS/SSL/">TLS/SSL</a>
+    <a href="https://wittonbell.github.io/tags/Terminal/">Terminal</a>
+    <a href="https://wittonbell.github.io/tags/Unable-to-load/">Unable to load</a>
+    <a href="https://wittonbell.github.io/tags/Unity/">Unity</a>
+    <a href="https://wittonbell.github.io/tags/VLAN/">VLAN</a>
+    <a href="https://wittonbell.github.io/tags/VMware/">VMware</a>
+    <a href="https://wittonbell.github.io/tags/VS2015/">VS2015</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/Visual-C&#43;&#43;/">Visual C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio-2015/">Visual Studio 2015</a>
+    <a href="https://wittonbell.github.io/tags/VisualGDB/">VisualGDB</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/XDebug/">XDebug</a>
+    <a href="https://wittonbell.github.io/tags/after-it-was-freed/">after it was freed</a>
+    <a href="https://wittonbell.github.io/tags/api/">api</a>
+    <a href="https://wittonbell.github.io/tags/array/">array</a>
+    <a href="https://wittonbell.github.io/tags/asp.net/">asp.net</a>
+    <a href="https://wittonbell.github.io/tags/autoindex/">autoindex</a>
+    <a href="https://wittonbell.github.io/tags/backspace/">backspace</a>
+    <a href="https://wittonbell.github.io/tags/backup/">backup</a>
+    <a href="https://wittonbell.github.io/tags/bash/">bash</a>
+    <a href="https://wittonbell.github.io/tags/binary/">binary</a>
+    <a href="https://wittonbell.github.io/tags/bind/">bind</a>
+    <a href="https://wittonbell.github.io/tags/blog/">blog</a>
+    <a href="https://wittonbell.github.io/tags/bochs/">bochs</a>
+    <a href="https://wittonbell.github.io/tags/bolt_state.db/">bolt_state.db</a>
+    <a href="https://wittonbell.github.io/tags/brew/">brew</a>
+    <a href="https://wittonbell.github.io/tags/bridge/">bridge</a>
+    <a href="https://wittonbell.github.io/tags/build/">build</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/callback/">callback</a>
+    <a href="https://wittonbell.github.io/tags/can/">can</a>
+    <a href="https://wittonbell.github.io/tags/catalina/">catalina</a>
+    <a href="https://wittonbell.github.io/tags/cd/">cd</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/centos-6/">centos 6</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/centos8/">centos8</a>
+    <a href="https://wittonbell.github.io/tags/certificate/">certificate</a>
+    <a href="https://wittonbell.github.io/tags/checkinstall/">checkinstall</a>
+    <a href="https://wittonbell.github.io/tags/chrome/">chrome</a>
+    <a href="https://wittonbell.github.io/tags/ci/">ci</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/class/">class</a>
+    <a href="https://wittonbell.github.io/tags/cmake/">cmake</a>
+    <a href="https://wittonbell.github.io/tags/cmd/">cmd</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/command/">command</a>
+    <a href="https://wittonbell.github.io/tags/compatible-with/">compatible with</a>
+    <a href="https://wittonbell.github.io/tags/compile/">compile</a>
+    <a href="https://wittonbell.github.io/tags/compiler/">compiler</a>
+    <a href="https://wittonbell.github.io/tags/constructor/">constructor</a>
+    <a href="https://wittonbell.github.io/tags/containers/">containers</a>
+    <a href="https://wittonbell.github.io/tags/core-dumped/">core dumped</a>
+    <a href="https://wittonbell.github.io/tags/cpack/">cpack</a>
+    <a href="https://wittonbell.github.io/tags/crash/">crash</a>
+    <a href="https://wittonbell.github.io/tags/cross/">cross</a>
+    <a href="https://wittonbell.github.io/tags/crtbegin.o/">crtbegin.o</a>
+    <a href="https://wittonbell.github.io/tags/ctest/">ctest</a>
+    <a href="https://wittonbell.github.io/tags/ctr.log/">ctr.log</a>
+    <a href="https://wittonbell.github.io/tags/curl/">curl</a>
+    <a href="https://wittonbell.github.io/tags/current-user/">current user</a>
+    <a href="https://wittonbell.github.io/tags/cygwin/">cygwin</a>
+    <a href="https://wittonbell.github.io/tags/data/">data</a>
+    <a href="https://wittonbell.github.io/tags/database/">database</a>
+    <a href="https://wittonbell.github.io/tags/debian/">debian</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/defer/">defer</a>
+    <a href="https://wittonbell.github.io/tags/device-is/">device is</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/dlv/">dlv</a>
+    <a href="https://wittonbell.github.io/tags/docisfy/">docisfy</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/docker-compose/">docker-compose</a>
+    <a href="https://wittonbell.github.io/tags/docsify/">docsify</a>
+    <a href="https://wittonbell.github.io/tags/dos/">dos</a>
+    <a href="https://wittonbell.github.io/tags/echarts/">echarts</a>
+    <a href="https://wittonbell.github.io/tags/ecmascript/">ecmascript</a>
+    <a href="https://wittonbell.github.io/tags/encoding/">encoding</a>
+    <a href="https://wittonbell.github.io/tags/enum-class/">enum class</a>
+    <a href="https://wittonbell.github.io/tags/epoll/">epoll</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/excel/">excel</a>
+    <a href="https://wittonbell.github.io/tags/exception/">exception</a>
+    <a href="https://wittonbell.github.io/tags/exe/">exe</a>
+    <a href="https://wittonbell.github.io/tags/export/">export</a>
+    <a href="https://wittonbell.github.io/tags/ext/">ext</a>
+    <a href="https://wittonbell.github.io/tags/failed-to/">failed to</a>
+    <a href="https://wittonbell.github.io/tags/file/">file</a>
+    <a href="https://wittonbell.github.io/tags/find/">find</a>
+    <a href="https://wittonbell.github.io/tags/firefox/">firefox</a>
+    <a href="https://wittonbell.github.io/tags/float/">float</a>
+    <a href="https://wittonbell.github.io/tags/fortran/">fortran</a>
+    <a href="https://wittonbell.github.io/tags/freebsd/">freebsd</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/g_test/">g_test</a>
+    <a href="https://wittonbell.github.io/tags/gc/">gc</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gcc%E6%BA%90%E7%A0%81/">gcc源码</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/git/">git</a>
+    <a href="https://wittonbell.github.io/tags/github/">github</a>
+    <a href="https://wittonbell.github.io/tags/gitlab/">gitlab</a>
+    <a href="https://wittonbell.github.io/tags/gitlab-pages/">gitlab pages</a>
+    <a href="https://wittonbell.github.io/tags/glib/">glib</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/goland/">goland</a>
+    <a href="https://wittonbell.github.io/tags/golang/">golang</a>
+    <a href="https://wittonbell.github.io/tags/go%E8%B0%83%E8%AF%95%E5%99%A8/">go调试器</a>
+    <a href="https://wittonbell.github.io/tags/gpb/">gpb</a>
+    <a href="https://wittonbell.github.io/tags/gtest/">gtest</a>
+    <a href="https://wittonbell.github.io/tags/has-expired/">has expired</a>
+    <a href="https://wittonbell.github.io/tags/heap/">heap</a>
+    <a href="https://wittonbell.github.io/tags/hp/">hp</a>
+    <a href="https://wittonbell.github.io/tags/httpd/">httpd</a>
+    <a href="https://wittonbell.github.io/tags/https/">https</a>
+    <a href="https://wittonbell.github.io/tags/idea/">idea</a>
+    <a href="https://wittonbell.github.io/tags/ie/">ie</a>
+    <a href="https://wittonbell.github.io/tags/installed/">installed</a>
+    <a href="https://wittonbell.github.io/tags/integer/">integer</a>
+    <a href="https://wittonbell.github.io/tags/intel/">intel</a>
+    <a href="https://wittonbell.github.io/tags/intellij-idea/">intellij idea</a>
+    <a href="https://wittonbell.github.io/tags/interface/">interface</a>
+    <a href="https://wittonbell.github.io/tags/internet/">internet</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/iostream/">iostream</a>
+    <a href="https://wittonbell.github.io/tags/ip/">ip</a>
+    <a href="https://wittonbell.github.io/tags/java/">java</a>
+    <a href="https://wittonbell.github.io/tags/javascript/">javascript</a>
+    <a href="https://wittonbell.github.io/tags/jekyll/">jekyll</a>
+    <a href="https://wittonbell.github.io/tags/jenkins/">jenkins</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/json/">json</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/kubernetes/">kubernetes</a>
+    <a href="https://wittonbell.github.io/tags/lib/">lib</a>
+    <a href="https://wittonbell.github.io/tags/libSSH2/">libSSH2</a>
+    <a href="https://wittonbell.github.io/tags/libXss/">libXss</a>
+    <a href="https://wittonbell.github.io/tags/libc&#43;&#43;/">libc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libevent/">libevent</a>
+    <a href="https://wittonbell.github.io/tags/libstdc&#43;&#43;/">libstdc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libvirt/">libvirt</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lldb/">lldb</a>
+    <a href="https://wittonbell.github.io/tags/lldb-mi/">lldb-mi</a>
+    <a href="https://wittonbell.github.io/tags/log/">log</a>
+    <a href="https://wittonbell.github.io/tags/ls/">ls</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/macos/">macos</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/makefiles/">makefiles</a>
+    <a href="https://wittonbell.github.io/tags/markdown/">markdown</a>
+    <a href="https://wittonbell.github.io/tags/match-library/">match library</a>
+    <a href="https://wittonbell.github.io/tags/max-size/">max-size</a>
+    <a href="https://wittonbell.github.io/tags/may-not/">may not</a>
+    <a href="https://wittonbell.github.io/tags/mermaid/">mermaid</a>
+    <a href="https://wittonbell.github.io/tags/mfc/">mfc</a>
+    <a href="https://wittonbell.github.io/tags/mhchem/">mhchem</a>
+    <a href="https://wittonbell.github.io/tags/microsoft/">microsoft</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/minidump/">minidump</a>
+    <a href="https://wittonbell.github.io/tags/modified-at/">modified at</a>
+    <a href="https://wittonbell.github.io/tags/msys/">msys</a>
+    <a href="https://wittonbell.github.io/tags/msys2/">msys2</a>
+    <a href="https://wittonbell.github.io/tags/mysql/">mysql</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/natvis/">natvis</a>
+    <a href="https://wittonbell.github.io/tags/new-project/">new project</a>
+    <a href="https://wittonbell.github.io/tags/nexus/">nexus</a>
+    <a href="https://wittonbell.github.io/tags/nginx/">nginx</a>
+    <a href="https://wittonbell.github.io/tags/ninja/">ninja</a>
+    <a href="https://wittonbell.github.io/tags/not-found/">not found</a>
+    <a href="https://wittonbell.github.io/tags/not-implemented/">not implemented</a>
+    <a href="https://wittonbell.github.io/tags/not-in-the/">not in the</a>
+    <a href="https://wittonbell.github.io/tags/not-owned/">not owned</a>
+    <a href="https://wittonbell.github.io/tags/not-support/">not support</a>
+    <a href="https://wittonbell.github.io/tags/null/">null</a>
+    <a href="https://wittonbell.github.io/tags/object/">object</a>
+    <a href="https://wittonbell.github.io/tags/open-files/">open files</a>
+    <a href="https://wittonbell.github.io/tags/open-vSwitch/">open vSwitch</a>
+    <a href="https://wittonbell.github.io/tags/open-vm-tools/">open-vm-tools</a>
+    <a href="https://wittonbell.github.io/tags/or-is-not/">or is not</a>
+    <a href="https://wittonbell.github.io/tags/os/">os</a>
+    <a href="https://wittonbell.github.io/tags/output/">output</a>
+    <a href="https://wittonbell.github.io/tags/overlay/">overlay</a>
+    <a href="https://wittonbell.github.io/tags/pacman/">pacman</a>
+    <a href="https://wittonbell.github.io/tags/path/">path</a>
+    <a href="https://wittonbell.github.io/tags/personality/">personality</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/pie/">pie</a>
+    <a href="https://wittonbell.github.io/tags/pip/">pip</a>
+    <a href="https://wittonbell.github.io/tags/pkg-config/">pkg-config</a>
+    <a href="https://wittonbell.github.io/tags/pkg_resources/">pkg_resources</a>
+    <a href="https://wittonbell.github.io/tags/placeholders_1/">placeholders::_1</a>
+    <a href="https://wittonbell.github.io/tags/plugin/">plugin</a>
+    <a href="https://wittonbell.github.io/tags/podman/">podman</a>
+    <a href="https://wittonbell.github.io/tags/podman-compose/">podman-compose</a>
+    <a href="https://wittonbell.github.io/tags/postfix/">postfix</a>
+    <a href="https://wittonbell.github.io/tags/produce-code/">produce code</a>
+    <a href="https://wittonbell.github.io/tags/proto/">proto</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/protobuffer/">protobuffer</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/python3/">python3</a>
+    <a href="https://wittonbell.github.io/tags/qt/">qt</a>
+    <a href="https://wittonbell.github.io/tags/qt6/">qt6</a>
+    <a href="https://wittonbell.github.io/tags/qtcreator/">qtcreator</a>
+    <a href="https://wittonbell.github.io/tags/rand/">rand</a>
+    <a href="https://wittonbell.github.io/tags/reflect/">reflect</a>
+    <a href="https://wittonbell.github.io/tags/registry/">registry</a>
+    <a href="https://wittonbell.github.io/tags/repository/">repository</a>
+    <a href="https://wittonbell.github.io/tags/require/">require</a>
+    <a href="https://wittonbell.github.io/tags/reset/">reset</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/safe.directory/">safe.directory</a>
+    <a href="https://wittonbell.github.io/tags/set-failed/">set failed</a>
+    <a href="https://wittonbell.github.io/tags/sftp/">sftp</a>
+    <a href="https://wittonbell.github.io/tags/shell/">shell</a>
+    <a href="https://wittonbell.github.io/tags/socket/">socket</a>
+    <a href="https://wittonbell.github.io/tags/sockets/">sockets</a>
+    <a href="https://wittonbell.github.io/tags/srand/">srand</a>
+    <a href="https://wittonbell.github.io/tags/ssh/">ssh</a>
+    <a href="https://wittonbell.github.io/tags/static/">static</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/storage/">storage</a>
+    <a href="https://wittonbell.github.io/tags/stream/">stream</a>
+    <a href="https://wittonbell.github.io/tags/strictly/">strictly</a>
+    <a href="https://wittonbell.github.io/tags/string/">string</a>
+    <a href="https://wittonbell.github.io/tags/struct/">struct</a>
+    <a href="https://wittonbell.github.io/tags/structure/">structure</a>
+    <a href="https://wittonbell.github.io/tags/sudo/">sudo</a>
+    <a href="https://wittonbell.github.io/tags/sudoers-file/">sudoers file</a>
+    <a href="https://wittonbell.github.io/tags/task/">task</a>
+    <a href="https://wittonbell.github.io/tags/templates/">templates</a>
+    <a href="https://wittonbell.github.io/tags/the-Qt-version/">the Qt version</a>
+    <a href="https://wittonbell.github.io/tags/thread/">thread</a>
+    <a href="https://wittonbell.github.io/tags/token/">token</a>
+    <a href="https://wittonbell.github.io/tags/too-many/">too many</a>
+    <a href="https://wittonbell.github.io/tags/traversal/">traversal</a>
+    <a href="https://wittonbell.github.io/tags/ubuntu/">ubuntu</a>
+    <a href="https://wittonbell.github.io/tags/unmanaged/">unmanaged</a>
+    <a href="https://wittonbell.github.io/tags/upload/">upload</a>
+    <a href="https://wittonbell.github.io/tags/utf8-codec-cant-deco/">utf8 codec cant deco</a>
+    <a href="https://wittonbell.github.io/tags/utility/">utility</a>
+    <a href="https://wittonbell.github.io/tags/validating/">validating</a>
+    <a href="https://wittonbell.github.io/tags/vditor/">vditor</a>
+    <a href="https://wittonbell.github.io/tags/version/">version</a>
+    <a href="https://wittonbell.github.io/tags/vim/">vim</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/visualstudio/">visualstudio</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/vss/">vss</a>
+    <a href="https://wittonbell.github.io/tags/warnings/">warnings</a>
+    <a href="https://wittonbell.github.io/tags/watcher/">watcher</a>
+    <a href="https://wittonbell.github.io/tags/win10/">win10</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/windows-7/">windows 7</a>
+    <a href="https://wittonbell.github.io/tags/windows-xp/">windows xp</a>
+    <a href="https://wittonbell.github.io/tags/wordpress/">wordpress</a>
+    <a href="https://wittonbell.github.io/tags/wsl2/">wsl2</a>
+    <a href="https://wittonbell.github.io/tags/x509/">x509</a>
+    <a href="https://wittonbell.github.io/tags/x86/">x86</a>
+    <a href="https://wittonbell.github.io/tags/xls/">xls</a>
+    <a href="https://wittonbell.github.io/tags/xlsx/">xlsx</a>
+    <a href="https://wittonbell.github.io/tags/xml/">xml</a>
+    <a href="https://wittonbell.github.io/tags/xml%E8%BD%ACexcel/">xml转excel</a>
+    <a href="https://wittonbell.github.io/tags/xp/">xp</a>
+    <a href="https://wittonbell.github.io/tags/yet-valid/">yet valid</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3/">一个端口</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E5%88%97/">一列</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0/">上传</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/">上传文件</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">不升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E6%98%BE%E7%A4%BA/">不显示</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E8%B6%B3/">不足</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%A4%E5%88%97%E6%95%B0%E6%8D%AE/">两列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%AD%E6%96%87/">中文</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/">乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/">二进制</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/">五笔输入法</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E4%BA%92/">交互</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E5%8F%89/">交叉</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%90%86/">代理</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%A0%81/">代码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%BB%E5%8A%A1/">任务</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BC%81%E4%B8%9A%E7%89%88/">企业版</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BD%BF%E7%94%A8/">使用</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BE%9D%E8%B5%96/">依赖</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BF%AE%E6%94%B9/">修改</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%8D%E8%B4%B9/">免费</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">共享文件夹</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/">共享目录</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E5%AE%B9/">内容</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">内联汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E5%87%BA%E7%89%88/">出版</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%87%E6%8D%A2/">切换</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%A4%E6%96%AD/">判断</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%B6%E4%BD%9C/">制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF/">前置面板</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/">加快编译速度</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E8%BD%BD%E6%85%A2/">加载慢</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C/">动画制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7/">升级</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%A0%E4%BD%8D/">占位</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/">右键菜单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+    <a href="https://wittonbell.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E5%BD%A2/">图形</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E6%A0%87/">图标</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/">垃圾回收器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A3%B0%E9%9F%B3/">声音</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%84%E7%90%86%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">处理变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%87%E4%BB%BD/">备份</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%8D%E5%88%B6/">复制</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E4%B8%AA%E7%AB%99%E7%82%B9/">多个站点</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE/">多列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%A7%E9%9A%8F%E6%9C%BA%E6%95%B0/">大随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E4%BD%93/">字体</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/">字符串乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8/">存储</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/">存储路径</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85/">安装</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">安装与配置</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AF%BC%E5%87%BA/">导出</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E4%BD%9C/">工作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%8D%95/">工单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%AE%E5%88%AB/">差别</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B9%B3%E5%8F%B0/">平台</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/">序列化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BB%B6%E8%BF%9F%E8%B0%83%E7%94%A8/">延迟调用</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/">开机启动</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%95%E6%93%8E/">引擎</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BD%A9%E8%89%B2/">彩色</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+    <a href="https://wittonbell.github.io/tags/%E6%81%A2%E5%A4%8D/">恢复</a>
+    <a href="https://wittonbell.github.io/tags/%E6%85%A2/">慢</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%8C%85/">打包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%BC%80/">打开</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%A9%E5%B1%95/">扩展</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%BE%E5%9B%9E/">找回</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">持续集成</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/">控制台</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E5%8F%96/">提取</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF/">提示信息</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/">提示符</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%92%E4%BB%B6/">插件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    <a href="https://wittonbell.github.io/tags/%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/">收发邮件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">数学公式</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E5%90%88/">整合</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E6%95%B0/">整数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%87%E4%BB%B6%E6%9C%8D/">文件服</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/">断点</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%A0%E5%B0%84/">映射</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%90%8D%E7%A7%B0/">显示分支名称</a>
+    <a href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0glibc/">更新glibc</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/">更新码表</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%BF%E6%8D%A2%E5%A4%B1%E8%B4%A5%E4%B8%8D%E6%98%AF%E9%94%99%E8%AF%AF/">替换失败不是错误</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%AC%E5%9C%B0%E5%8C%85/">本地包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94/">极点五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%84%E5%BB%BA/">构建</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A1%8C%E9%9D%A2/">桌面</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">模板类成员函数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E7%B3%8A/">模糊</a>
+    <a href="https://wittonbell.github.io/tags/%E6%AF%94%E8%BE%83/">比较</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E6%80%BB/">汇总</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E7%BC%96/">汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%B7%E5%B3%B0%E4%BA%94%E7%AC%94/">海峰五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%BA%90%E7%A0%81/">源码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%85%A7%E7%89%87%E7%9B%B8%E7%9C%8B%E5%99%A8/">照片相看器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%8E%AF%E5%A2%83/">环境</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90/">生成</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4/">生成时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%99%BB%E5%BD%95/">登录</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A3%81%E7%9B%98/">磁盘</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A4%BE%E5%8C%BA%E7%89%88/">社区版</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A9%BA%E9%97%B4/">空间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AB%AF%E5%8F%A3/">端口</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    <a href="https://wittonbell.github.io/tags/%E7%B4%A2%E5%BC%95/">索引</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%88%E7%AB%AF/">终端</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%91%E5%AE%9A/">绑定</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/">编排容器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A0%81/">编码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/">编程书籍</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/">编译</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/">编译器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/">编译时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E5%8D%A1%E4%B8%8D%E5%8F%AF%E7%94%A8/">网卡不可用</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%AB%99/">网站</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE/">网络访问</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%8C%96/">美化</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/">美式键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD/">自动下载</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%B8%A6/">自带</a>
+    <a href="https://wittonbell.github.io/tags/%E8%8B%B1%E8%AF%AD%E9%94%AE%E7%9B%98/">英语键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%86%B3/">解决</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%AF%86/">解密</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/">解析失败</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80/">语言</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/">调试</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC/">转</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC%E4%B9%89/">转义</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%81%E7%A7%BB/">迁移</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E8%A1%8C/">运行</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%85%A5%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">进入当前目录</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%BA%A6/">进度</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B/">远程</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">远程连接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%80%E6%A0%BC%E9%94%AE/">退格键</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%9A%E7%94%A8makefile/">通用makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">邮件服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86/">配置与管理</a>
+    <a href="https://wittonbell.github.io/tags/%E9%87%8D%E8%BD%BD/">重载</a>
+    <a href="https://wittonbell.github.io/tags/%E9%93%BE%E6%8E%A5/">链接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9B%86%E6%88%90/">集成</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81/">静态</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/">静态IP</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81%E5%BA%93/">静态库</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91/">预编译</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91makefile/">预编译makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4/">预编译头</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2/">颜色</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E4%B8%8D%E6%AD%A3/">颜色不正</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E5%8F%91%E9%BB%84/">颜色发黄</a>
+</div>
+</section>
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/witton" title="我的CSDN">我的CSDN博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wittonbell.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>语言 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80/</link>
+    <description>Recent content in 语言 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 31 Jan 2010 23:44:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于C/C&#43;&#43;的位域</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</link>
+      <pubDate>Sun, 31 Jan 2010 23:44:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</guid>
+      <description>在C/C++中我们有时为了节省内存占用空间，需要使用到位域，如下所示代码： struct SDummy { int A : 2; int B : 8; int C : 12; int D : 10; }; 在计算</description>
+    </item>
+    
+    <item>
+      <title>跨平台UNICODE编程总结</title>
+      <link>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 16 Jun 2008 13:25:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但是</description>
+    </item>
+    
+  </channel>
+</rss>

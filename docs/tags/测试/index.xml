@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 测试 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 02 Sep 2012 19:44:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何调试Firefox和IE的插件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 02 Sep 2012 19:44:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</guid>
+      <description>关于FireFox和IE的插件调试，以前我有调试过T3D的，今天想再研究一下，打好断点，却怎么也无法断下来，可以前是可以</description>
+    </item>
+    
+    <item>
+      <title>Windows系统无法启动时如何修复注册表</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
+      <pubDate>Thu, 10 Jun 2010 21:53:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
+      <description>我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想在</description>
+    </item>
+    
+    <item>
+      <title>类成员函数大小问题</title>
+      <link>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 15 Nov 2009 20:56:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>上周，我一同事，在调试我们项目的时候，发现我写的一段代码中，有一个类成员函数指针数组有大小有点怪异，便叫我过去瞧瞧。有如</description>
+    </item>
+    
+    <item>
+      <title>导出C&#43;&#43;中的类到Lua脚本中的经历</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Fri, 18 May 2007 09:29:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</guid>
+      <description>这两天一直在研究Lua和LuaPlus。由于项目需要将C++中的类导出到Lua脚本中，让Lua脚本也可以使用C++中的东</description>
+    </item>
+    
+  </channel>
+</rss>

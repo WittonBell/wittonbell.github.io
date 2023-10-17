@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 02 Jul 2020 18:09:22 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS8下超详细安装配置kubernetes（K8S）</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</link>
+      <pubDate>Thu, 02 Jul 2020 18:09:22 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</guid>
+      <description>文章目录 一、环境准备 1. 卸载podman 2. 关闭交换区 3. 禁用selinux 4. 关闭防火墙 二、安装K8S 1. 配置系统基本安装源 2. 添</description>
+    </item>
+    
+  </channel>
+</rss>

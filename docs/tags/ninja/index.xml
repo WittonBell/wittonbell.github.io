@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ninja on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/ninja/</link>
+    <description>Recent content in ninja on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 19 Nov 2019 17:23:20 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/ninja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS 6.X 安装使用Ninja</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</link>
+      <pubDate>Tue, 19 Nov 2019 17:23:20 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</guid>
+      <description>1.由于ninja需要GLIBC_2.15，CentOS 6.X的glibc只有GLIBC_2.12，所以需要更新glib</description>
+    </item>
+    
+  </channel>
+</rss>

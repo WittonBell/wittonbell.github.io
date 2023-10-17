@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/mysql/</link>
+    <description>Recent content in mysql on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 May 2022 21:07:25 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows中使用nginx搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 28 May 2022 21:07:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>前面的博客 容器中搭建WordPress介绍了在容器中搭建WordPress，如果使用的是Windows环境而不是Linu</description>
+    </item>
+    
+    <item>
+      <title>容器中搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 21 May 2022 11:15:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>WordPress是一个非常流行的网站、博客内容管理系统，很网站都是使用它来创建的内容。本文记录笔者在容器中搭建Word</description>
+    </item>
+    
+    <item>
+      <title>从之前的Mysql实例数据中恢复数据</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-27-%E4%BB%8E%E4%B9%8B%E5%89%8D%E7%9A%84Mysql%E5%AE%9E%E4%BE%8B%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 27 Dec 2021 10:56:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-27-%E4%BB%8E%E4%B9%8B%E5%89%8D%E7%9A%84Mysql%E5%AE%9E%E4%BE%8B%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>前几天向公司申请了一台新电脑，这两天新电脑到了，就是各种软件的安装，工作环境的搭建，其中有一项就是把之前的Mysql数据</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——podman容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Tue, 07 Sep 2021 22:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、查看podman容器 二、拉取镜像 三、配置镜像实例 CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用C</description>
+    </item>
+    
+  </channel>
+</rss>

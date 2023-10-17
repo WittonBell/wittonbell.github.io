@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows 7 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/windows-7/</link>
+    <description>Recent content in windows 7 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 31 Aug 2016 10:41:56 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/windows-7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Google Chrome浏览器字体模糊的问题</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-08-31-%E8%A7%A3%E5%86%B3Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E6%A8%A1%E7%B3%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 31 Aug 2016 10:41:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-08-31-%E8%A7%A3%E5%86%B3Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E6%A8%A1%E7%B3%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>之前使用Google的Chrome浏览器一直觉得有时候，其显示的字体比较模糊，不管是Windows XP还是Windows</description>
+    </item>
+    
+  </channel>
+</rss>

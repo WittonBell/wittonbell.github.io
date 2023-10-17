@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Erlang on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/Erlang/</link>
+    <description>Recent content in Erlang on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 13 Aug 2020 16:43:35 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Erlang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 13 Aug 2020 16:43:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载安装Erlang 二、安装VSCode Erlang插件 三、安装rebar3 四、测试开发环境 1. 创建工程 2. 配置</description>
+    </item>
+    
+    <item>
+      <title>如何将ProtoBuffer生成Erlang文件</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-11-27-%E5%A6%82%E4%BD%95%E5%B0%86ProtoBuffer%E7%94%9F%E6%88%90Erlang%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 27 Nov 2017 19:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-11-27-%E5%A6%82%E4%BD%95%E5%B0%86ProtoBuffer%E7%94%9F%E6%88%90Erlang%E6%96%87%E4%BB%B6/</guid>
+      <description>ProtoBuffer官方提供了C++、Java、Python等语言的生成器，但不支持Erlang语言，为了让Erlan</description>
+    </item>
+    
+    <item>
+      <title>Mnesia动态添加节点杂记</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-04-24-Mnesia%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E6%9D%82%E8%AE%B0/</link>
+      <pubDate>Mon, 24 Apr 2017 20:00:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-04-24-Mnesia%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E6%9D%82%E8%AE%B0/</guid>
+      <description>FAQ List: 如果动态的添加一个节点到Mnesia cluster中 如何动态的从mnesia cluster中删除一个节点 在一个节点上</description>
+    </item>
+    
+    <item>
+      <title>使用Makefile编译Erlang</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-01-26-%E4%BD%BF%E7%94%A8Makefile%E7%BC%96%E8%AF%91Erlang/</link>
+      <pubDate>Tue, 26 Jan 2016 20:03:42 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-01-26-%E4%BD%BF%E7%94%A8Makefile%E7%BC%96%E8%AF%91Erlang/</guid>
+      <description>#配置选项，可以是DEBUG和RELEASE CONFIG ?= RELEASE #语言配置，可以是chs(简体中文)、cht(繁体中文)等等 Region ?= chs #源</description>
+    </item>
+    
+    <item>
+      <title>使用IntelliJ IDEA配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 20 Jan 2016 21:30:47 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>Idea工具是目前我使用过的开发Erlang最好用的IDE，但其Erlang插件的官方教程太简陋，我就想自己做一个相对详</description>
+    </item>
+    
+    <item>
+      <title>erlang 开发建议</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-12-05-erlang-%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE/</link>
+      <pubDate>Thu, 05 Dec 2013 12:27:19 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-12-05-erlang-%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE/</guid>
+      <description>* 确保没有任何编译警告 Erlang中String采用list实现，32位系统中，其1个字符用8个字节的空间（4个保存va</description>
+    </item>
+    
+  </channel>
+</rss>

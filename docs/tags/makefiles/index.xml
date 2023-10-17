@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>makefiles on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/makefiles/</link>
+    <description>Recent content in makefiles on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 28 Aug 2020 15:44:51 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/makefiles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSYS Makefiles、 MinGW Makefiles与Unix Makefiles的差别</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</link>
+      <pubDate>Fri, 28 Aug 2020 15:44:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</guid>
+      <description>我们在*nix或者Mac系统中做开发会经常使用Makefile来组织构建规则，然后使用make来构建项目。 Makefil</description>
+    </item>
+    
+  </channel>
+</rss>

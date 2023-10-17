@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code Runner on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Code-Runner/</link>
+    <description>Recent content in Code Runner on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 11 Jul 2020 20:27:16 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Code-Runner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用VSCode环境编程的一些注意事项</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sat, 11 Jul 2020 20:27:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>文章目录 一、Go语言 1. 使用Code Runner运行 2. 关于提示 二、Python语言 1.使用Code Runner运行 2.格式</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,32 +6,41 @@
     <description>Recent content in markdown on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Aug 2023 10:22:20 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>让docsify-katex支持化学公式mhchem扩展</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</link>
-      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <title>使用Go语言生成Excel任务表依赖图（Markdown文件mermaid图）</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-04-%E4%BD%BF%E7%94%A8Go%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90Excel%E4%BB%BB%E5%8A%A1%E8%A1%A8%E4%BE%9D%E8%B5%96%E5%9B%BEMarkdown%E6%96%87%E4%BB%B6mermaid%E5%9B%BE/</link>
+      <pubDate>Fri, 04 Aug 2023 10:22:20 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</guid>
-      <description>在使用docsify构建Markdown文档时，如果想要支持数学公式，可以使用docsify-katex插件，但是该插件</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-04-%E4%BD%BF%E7%94%A8Go%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90Excel%E4%BB%BB%E5%8A%A1%E8%A1%A8%E4%BE%9D%E8%B5%96%E5%9B%BEMarkdown%E6%96%87%E4%BB%B6mermaid%E5%9B%BE/</guid>
+      <description>一、前言 在游戏中，任务是非常常见的玩法，可能会有主线任务，支线任务以及其它一些类型的任务，各任务可能还会有前置任务，即需</description>
+    </item>
+    
+    <item>
+      <title>WordPress使用markdown格式发布内容</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Mon, 23 May 2022 21:53:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</guid>
+      <description>markdown是目前网络上比较流行的文档格式，前一篇博文 容器中搭建WordPress中介绍了在容器中如何搭建WordP</description>
+    </item>
+    
+    <item>
+      <title>修改vditor以支持javascript形式的json</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-03-12-%E4%BF%AE%E6%94%B9vditor%E4%BB%A5%E6%94%AF%E6%8C%81javascript%E5%BD%A2%E5%BC%8F%E7%9A%84json/</link>
+      <pubDate>Sat, 12 Mar 2022 11:31:27 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-03-12-%E4%BF%AE%E6%94%B9vditor%E4%BB%A5%E6%94%AF%E6%8C%81javascript%E5%BD%A2%E5%BC%8F%E7%9A%84json/</guid>
+      <description>最近在研究使用docsify+markdown的文档管理，markdown文件使用VSCode+Office Viewer(Markdown Edito</description>
     </item>
     
     <item>
       <title>使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2022/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab-pages%E6%96%87%E6%A1%A3%E5%BA%93/</link>
+      <pubDate>Tue, 22 Feb 2022 18:03:53 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/</guid>
+      <guid>https://wittonbell.github.io/posts/2022/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab-pages%E6%96%87%E6%A1%A3%E5%BA%93/</guid>
       <description>前几天策划写了一个word文档来整理补充一些内容，当时就比较感慨，如果是Web文档就好了，可以超链接过去，也不必东一个文</description>
-    </item>
-    
-    <item>
-      <title>使用jekyll写博客</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2021-08-10-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2021-08-10-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
-      <description>一、安装Ruby环境 从 https://rubyinstaller.org/downloads/ 下载 Ruby2.X的最新安装包，最好是带DEVKIT的，不建议下载3.X的，因为有些theme还</description>
     </item>
     
   </channel>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>storage on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/storage/</link>
+    <description>Recent content in storage on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 30 Dec 2022 17:51:05 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/storage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>改变podman的存储路径</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 30 Dec 2022 17:51:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</guid>
+      <description>使用podman容器时，podman会默认使用/var/lib/containers路径作为存储路径，可能会导致根磁盘空</description>
+    </item>
+    
+  </channel>
+</rss>

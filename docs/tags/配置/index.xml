@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 配置 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 07 Jul 2020 11:10:28 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode下安装配置Go环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 07 Jul 2020 11:10:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载并安装Go安装包 二、VSCode安装Go相关插件 1. 安装Go插件 2. 安装其它插件 由于国内墙的原因，安装配置G</description>
+    </item>
+    
+    <item>
+      <title>CentOS8下超详细安装配置kubernetes（K8S）</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</link>
+      <pubDate>Thu, 02 Jul 2020 18:09:22 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</guid>
+      <description>文章目录 一、环境准备 1. 卸载podman 2. 关闭交换区 3. 禁用selinux 4. 关闭防火墙 二、安装K8S 1. 配置系统基本安装源 2. 添</description>
+    </item>
+    
+  </channel>
+</rss>

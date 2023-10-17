@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Githuber MD on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Githuber-MD/</link>
+    <description>Recent content in Githuber MD on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 23 May 2022 21:53:33 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Githuber-MD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WordPress使用markdown格式发布内容</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Mon, 23 May 2022 21:53:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</guid>
+      <description>markdown是目前网络上比较流行的文档格式，前一篇博文 容器中搭建WordPress中介绍了在容器中如何搭建WordP</description>
+    </item>
+    
+  </channel>
+</rss>

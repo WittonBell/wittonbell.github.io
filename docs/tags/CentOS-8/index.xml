@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CentOS 8 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/CentOS-8/</link>
+    <description>Recent content in CentOS 8 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 05 Sep 2021 10:36:30 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/CentOS-8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS 8构建桌面办公环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-28-CentOS-8%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 28 Oct 2020 23:26:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-28-CentOS-8%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、设置软件源 二、安装输入法 三、安装Shell扩展 用习惯了CentOS 6.X的桌面环境后，感觉CentOS7与8</description>
+    </item>
+    
+  </channel>
+</rss>

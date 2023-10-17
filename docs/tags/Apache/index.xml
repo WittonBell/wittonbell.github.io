@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Apache/</link>
+    <description>Recent content in Apache on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 28 May 2021 17:21:14 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Apache/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows下使用Apache2.4架设PHP服务器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 28 May 2021 17:21:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、下载Apache的httpd 二、下载 PHP 三、解压、配置 1.解压 2.配置httpd 3.配置PHP 四、注册并启动h</description>
+    </item>
+    
+  </channel>
+</rss>

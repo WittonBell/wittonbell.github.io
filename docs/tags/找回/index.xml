@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>找回 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%89%BE%E5%9B%9E/</link>
+    <description>Recent content in 找回 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Aug 2021 11:38:10 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%89%BE%E5%9B%9E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>本地Git硬重置后找回原来的提交</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Tue, 31 Aug 2021 11:38:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</guid>
+      <description>有些时候我们在做一些开发工作时，可能会用到本地Git管理，即在一个目录中进行开发，并将这个目录作为Git的版本库目录。 本</description>
+    </item>
+    
+  </channel>
+</rss>

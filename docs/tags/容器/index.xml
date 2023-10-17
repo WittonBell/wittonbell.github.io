@@ -6,68 +6,95 @@
     <description>Recent content in 容器 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 18:28:34 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>制作带Go调试器的容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</guid>
+      <description>首先创建容器 1sudo podman pull golang:1.21 2sudo podman run -itd --name go-dlv golang:1.21 然后使用命令 1sudo podman exec -it go-dlv /bin/bash 进入容器，在容器内执行下面的命令安装go调试器dlv： 1go env -w GOPROXY=https://goproxy.cn,direct</description>
+    </item>
+    
+    <item>
+      <title>容器中的nginx暴露一个端口部署多个功能的网站</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 15 Sep 2023 15:33:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</guid>
+      <description>随着容器的应用越来越多，将nginx部署在容器中也是常有之事。可能事先创建容器时只暴露了一个端口给浏览器连接，后面又想根</description>
+    </item>
+    
+    <item>
+      <title>使用docker-compose命令行向远程主机编排容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 14 Sep 2023 15:59:48 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</guid>
+      <description>在使用Goland的时候，可以直接使用它集成的功能来向远程主机部署容器，但是如果直接使用命令行的方式该如何操作？查看he</description>
+    </item>
+    
+    <item>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>容器中搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 21 May 2022 11:15:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>WordPress是一个非常流行的网站、博客内容管理系统，很网站都是使用它来创建的内容。本文记录笔者在容器中搭建Word</description>
+    </item>
+    
+    <item>
+      <title>容器中使用nginx并搭建sftp服务</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 13 May 2022 14:52:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</guid>
+      <description>文章目录 一、下载并安装最新的nginx容器 二、设置系统 1.设置更新源 2.更新 3.设置本地时区 三、准备sftp账号 1.添加</description>
+    </item>
+    
     <item>
       <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 18:03:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
-    </item>
-    
-    <item>
-      <title>ubuntu安装podman-compose</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
-      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
-    </item>
-    
-    <item>
-      <title>解决podman failed：to create new watcher too many open files</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</guid>
-      <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
-    </item>
-    
-    <item>
-      <title>Goland连接https的Docker远程服务</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
-      <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、环境配置 二、部署 1、编写Dockerfile 2、编写容器编排文件 3、设置Goland部署配置 4、执行部署 三、</description>
     </item>
     
     <item>
       <title>Goland使用远程容器进行go开发调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 15:53:15 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
-      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、安装远程容器 二、安装与配置容器仓库 1.安装与配置 2.安装证书 三、准备项目 四、运行 1.开启容器远程服务 2.添加</description>
     </item>
     
     <item>
-      <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <title>开机自动运行容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 25 Nov 2021 11:11:31 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、创建容器 二、创建服务 三、设置开机自动启动 四、测试服务 五、开机测试 六、测试容器运行中情况下，重启主机 七、使用容</description>
     </item>
     
     <item>
-      <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <title>CentOS 8使用Cockpit管理Linux——podman容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Tue, 07 Sep 2021 22:31:33 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、查看podman容器 二、拉取镜像 三、配置镜像实例 CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用C</description>
     </item>
     
   </channel>

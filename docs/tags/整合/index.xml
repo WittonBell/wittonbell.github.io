@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>整合 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%95%B4%E5%90%88/</link>
+    <description>Recent content in 整合 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 13 Apr 2019 12:23:16 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%95%B4%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将LLVM/Clang编译器整合到Visual Studio中</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
+      <pubDate>Sat, 13 Apr 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
+      <description>一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部分</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>struct on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/struct/</link>
+    <description>Recent content in struct on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 05 Nov 2010 17:27:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/struct/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writing custom visualizers for Visual Studio 2005</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-11-05-Writing-custom-visualizers-for-Visual-Studio-2005/</link>
+      <pubDate>Fri, 05 Nov 2010 17:27:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-11-05-Writing-custom-visualizers-for-Visual-Studio-2005/</guid>
+      <description>The native debugger in Visual Studio has long had an underadvertised feature called autoexp.dat , which is a file in the PackagesDebugger folder that allows you to control several aspects of the debugger. Among the features that you can control in autoexp.dat include: the string that is displayed for types in the variable panes, which functions the debugger will skip</description>
+    </item>
+    
+    <item>
+      <title>关于C/C&#43;&#43;的位域</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</link>
+      <pubDate>Sun, 31 Jan 2010 23:44:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</guid>
+      <description>在C/C++中我们有时为了节省内存占用空间，需要使用到位域，如下所示代码： struct SDummy { int A : 2; int B : 8; int C : 12; int D : 10; }; 在计算</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;类模板的成员函数模板写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 21 May 2007 13:04:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</guid>
+      <description>这几天本来想将Lua_Tinker移植到Linux上去的，但是由于VC中的模板写法与gcc中的模板写法有些不同之处，比如</description>
+    </item>
+    
+    <item>
+      <title>跨平台宏的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:50:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这</description>
+    </item>
+    
+  </channel>
+</rss>

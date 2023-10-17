@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>研发管理 on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 研发管理 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 13 Jun 2023 15:58:43 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记Gitlab备份与设置自动备份</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</guid>
+      <description>今天给Gitlab做了一个备份，并且设置了每天自动备份，记录一下。 一、导出全部项目 由于Gitlab Web页面并没有自动备</description>
+    </item>
+    
+    <item>
+      <title>处理podman的overlay-containers中ctr.log日志文件过大的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 08 Jun 2023 11:08:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>公司服务器的一些软件使用了容器技术，比如Podman、Docker，从架设到现在已经稳定运行了1年半了，半年前发现磁盘占</description>
+    </item>
+    
+    <item>
+      <title>JIRA维护记——使用原实例位置恢复数据</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 07 Jun 2023 17:37:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>一、出现问题 昨天下班了，同事反馈Jira又不能使用了。想都不用想，肯定是磁盘空间不足了，因为已经出现过几次了。之前都是清</description>
+    </item>
+    
+    <item>
+      <title>使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab-pages%E6%96%87%E6%A1%A3%E5%BA%93/</link>
+      <pubDate>Tue, 22 Feb 2022 18:03:53 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab-pages%E6%96%87%E6%A1%A3%E5%BA%93/</guid>
+      <description>前几天策划写了一个word文档来整理补充一些内容，当时就比较感慨，如果是Web文档就好了，可以超链接过去，也不必东一个文</description>
+    </item>
+    
+    <item>
+      <title>gitlab迁移记</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Dec 2021 12:27:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</guid>
+      <description>文章目录 一、导出项目 二、导入项目 前段时间公司配置了新的服务器，把系统与软件环境安装好，昨天开始迁移gitlab中的项目了</description>
+    </item>
+    
+    <item>
+      <title>本地Git硬重置后找回原来的提交</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Tue, 31 Aug 2021 11:38:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</guid>
+      <description>有些时候我们在做一些开发工作时，可能会用到本地Git管理，即在一个目录中进行开发，并将这个目录作为Git的版本库目录。 本</description>
+    </item>
+    
+    <item>
+      <title>使用JIRA管理项目工单</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-21-%E4%BD%BF%E7%94%A8JIRA%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%8D%95/</link>
+      <pubDate>Wed, 21 Oct 2020 17:53:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-21-%E4%BD%BF%E7%94%A8JIRA%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%8D%95/</guid>
+      <description>文章目录 一、JIRA的安装 二、配置系统 1. 配置JIRA显示语言和时间 2.设置日期时间显示格式 A.第一步 B.第二步 3.设置附</description>
+    </item>
+    
+    <item>
+      <title>安装JIRA 8.X EE</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</link>
+      <pubDate>Wed, 03 Jun 2020 18:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</guid>
+      <description>文章目录 一、下载软件 二、安装： 三、配置 1.脚本配置 2.页面配置 JIRA是一个比较好用的项目跟踪管理工具，使用的公司还是比</description>
+    </item>
+    
+    <item>
+      <title>Gitlab持续集成/持续发布（CI/CD）配置</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 08 May 2020 16:14:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</guid>
+      <description>文章目录 一、安装相应软件 １.安装Gitlab, ２.安装gitlab-runner 二、配置 1. 注册Runner 2. 添加yml脚</description>
+    </item>
+    
+    <item>
+      <title>Centos 安装配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-02-Centos-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Sat, 02 May 2020 18:06:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-02-Centos-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab 二、安装与配置gitlab 1.安装 2.配置 三、测试与Web配置 1. 测试访问地址 2. 语言设置 3. 关闭</description>
+    </item>
+    
+    <item>
+      <title>Jenkins添加Windows自动化构建方案</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-02-27-Jenkins%E6%B7%BB%E5%8A%A0Windows%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Mon, 27 Feb 2017 17:38:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-02-27-Jenkins%E6%B7%BB%E5%8A%A0Windows%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88/</guid>
+      <description>一、为Jenkins添加Windows节点 这里需要填写远程工作目录，启动方法一项一定要选择“Launch agent via Java Web Star</description>
+    </item>
+    
+  </channel>
+</rss>

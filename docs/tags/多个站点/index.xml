@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>多个站点 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%A4%9A%E4%B8%AA%E7%AB%99%E7%82%B9/</link>
+    <description>Recent content in 多个站点 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 15 Sep 2023 15:33:18 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%A4%9A%E4%B8%AA%E7%AB%99%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>容器中的nginx暴露一个端口部署多个功能的网站</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 15 Sep 2023 15:33:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</guid>
+      <description>随着容器的应用越来越多，将nginx部署在容器中也是常有之事。可能事先创建容器时只暴露了一个端口给浏览器连接，后面又想根</description>
+    </item>
+    
+  </channel>
+</rss>

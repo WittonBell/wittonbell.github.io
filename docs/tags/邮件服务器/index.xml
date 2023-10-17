@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>邮件服务器 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 邮件服务器 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 01 May 2020 23:23:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux下安装配置Postfix邮件服务器</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 01 May 2020 23:23:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、设置域名 二、搭建DNS环境域名解析，用于解析postfix地址 三、安装postfix服务器并进行配置 四、安装</description>
+    </item>
+    
+  </channel>
+</rss>

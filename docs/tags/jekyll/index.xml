@@ -6,14 +6,14 @@
     <description>Recent content in jekyll on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 09:42:18 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用jekyll写博客</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2021-08-10-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-13-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 13 Aug 2021 09:42:18 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2021-08-10-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
-      <description>一、安装Ruby环境 从 https://rubyinstaller.org/downloads/ 下载 Ruby2.X的最新安装包，最好是带DEVKIT的，不建议下载3.X的，因为有些theme还</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-13-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
+      <description>文章目录 一、安装Ruby环境 二、修改更新源 三、安装jekyll及其依赖 四、新建博客站点 五、启动本地服务预览博客 六、配置博</description>
     </item>
     
   </channel>

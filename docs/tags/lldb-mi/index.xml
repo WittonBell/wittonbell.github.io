@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lldb-mi on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/lldb-mi/</link>
+    <description>Recent content in lldb-mi on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Aug 2023 18:32:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/lldb-mi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</guid>
+      <description>Visual Studio被称为是宇宙最强IDE，以前开发Linux C/C++服务器程序，基本上都是在Windows上使用VS编写跨</description>
+    </item>
+    
+    <item>
+      <title>VSCode远程连接Ubuntu使用LLDB调试程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 30 May 2023 12:18:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</guid>
+      <description>VSCode已经具有远程开发的能力，可以使用SSH连接到Linux/MacOS进行远程开发，包括编译与调试，只需要安装R</description>
+    </item>
+    
+  </channel>
+</rss>

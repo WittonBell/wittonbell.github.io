@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fortran on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/fortran/</link>
+    <description>Recent content in fortran on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 19 Dec 2007 10:17:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/fortran/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用MINGW编译GCC4.2.2指南</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-12-19-%E7%94%A8MINGW%E7%BC%96%E8%AF%91GCC4.2.2%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 19 Dec 2007 10:17:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-12-19-%E7%94%A8MINGW%E7%BC%96%E8%AF%91GCC4.2.2%E6%8C%87%E5%8D%97/</guid>
+      <description>在网上，编译GCC的方法有很多，大部份人都推荐在CYGWIN环境下进行交叉编译，这样可以可以少遇到许多困难，但是使用CY</description>
+    </item>
+    
+  </channel>
+</rss>

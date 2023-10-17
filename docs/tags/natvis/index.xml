@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>natvis on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/natvis/</link>
+    <description>Recent content in natvis on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 24 Jun 2019 17:07:49 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/natvis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Visual Studio调试器中显示Google Protocol Buffers容器类型的值</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Mon, 24 Jun 2019 17:07:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <description>Google Protocol Buffers会生成RepeatedField和Map等容器类型，为方便在Visual Studio中进行调试，编写了</description>
+    </item>
+    
+  </channel>
+</rss>

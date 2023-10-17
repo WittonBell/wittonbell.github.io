@@ -6,122 +6,662 @@
     <description>Recent content in Linux on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 16:15:27 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>解决lldb调试时可能出现的personality set failed Function not implemented</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
-      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      <title>复制远程连接到Linux使用VIM打开的内容到Windows</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</link>
+      <pubDate>Fri, 15 Sep 2023 16:15:27 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</guid>
+      <description>我们经常是使用SSH工具远程连接到Linux服务器上进行工作，有时候需要将Linux下使用VIM打开的文件内容复制到Wi</description>
+    </item>
+    
+    <item>
+      <title>解决nexus3登录x509: certificate has expired or is not yet valid</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</link>
+      <pubDate>Tue, 12 Sep 2023 12:01:01 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</guid>
+      <description>笔者前面的博文 使用nexus3作为Docker镜像仓库介绍了如何使用nexus3来作为容器的镜像仓库，在生成证书时，使用</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</guid>
+      <description>Visual Studio被称为是宇宙最强IDE，以前开发Linux C/C++服务器程序，基本上都是在Windows上使用VS编写跨</description>
+    </item>
+    
+    <item>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
       <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
     </item>
     
     <item>
-      <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <title>VMware 17虚拟Ubuntu 22.04设置共享目录</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Fri, 07 Jul 2023 22:48:04 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>之前使用VM 17之前的版本虚拟CentOS，设置共享目录非常方便，在CentOS中安装VMware Tools即可。随着C</description>
     </item>
     
     <item>
-      <title>ubuntu安装podman-compose</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <title>记Gitlab备份与设置自动备份</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
-      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</guid>
+      <description>今天给Gitlab做了一个备份，并且设置了每天自动备份，记录一下。 一、导出全部项目 由于Gitlab Web页面并没有自动备</description>
     </item>
     
     <item>
-      <title>解决podman failed：to create new watcher too many open files</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <title>虚拟机中Ubuntu不知root密码时设置唯一的非root用户为sudo管理员</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</link>
+      <pubDate>Fri, 09 Jun 2023 23:02:30 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</guid>
+      <description>刚才在虚拟机中玩Ubuntu的时候，在Cockpit管理页面把账号“服务器管理员”的选项给取消了，然后重新登录之后，就不</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 登录提示信息`Message of The Day`(MOTD)定制与开关</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-Ubuntu-%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AFMessage-of-The-DayMOTD%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%BC%80%E5%85%B3/</link>
+      <pubDate>Thu, 08 Jun 2023 17:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-Ubuntu-%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AFMessage-of-The-DayMOTD%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%BC%80%E5%85%B3/</guid>
+      <description>一、效果 登录Ubuntu的时候，在控制台可能会弹出一系列提示消息，有欢迎消息、系统信息、更新信息等等： 这些提示消息被称为</description>
+    </item>
+    
+    <item>
+      <title>处理podman的overlay-containers中ctr.log日志文件过大的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 08 Jun 2023 11:08:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>公司服务器的一些软件使用了容器技术，比如Podman、Docker，从架设到现在已经稳定运行了1年半了，半年前发现磁盘占</description>
+    </item>
+    
+    <item>
+      <title>JIRA维护记——使用原实例位置恢复数据</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 07 Jun 2023 17:37:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>一、出现问题 昨天下班了，同事反馈Jira又不能使用了。想都不用想，肯定是磁盘空间不足了，因为已经出现过几次了。之前都是清</description>
+    </item>
+    
+    <item>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>VSCode远程连接Ubuntu使用LLDB调试程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 30 May 2023 12:18:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</guid>
+      <description>VSCode已经具有远程开发的能力，可以使用SSH连接到Linux/MacOS进行远程开发，包括编译与调试，只需要安装R</description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;开发中使用pkg-config来引用依赖库</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</link>
+      <pubDate>Thu, 20 Apr 2023 18:49:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</guid>
+      <description>在使用C/C++进行开发的过程中，经常需要引用其它的库，可能是系统已经安装好的，也可能是其它的外部库。 如果是系统支持的库</description>
+    </item>
+    
+    <item>
+      <title>使用libSSH2实现与Linux Shell的命令行交互</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</link>
+      <pubDate>Mon, 03 Apr 2023 17:19:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</guid>
+      <description>使用Linux已经有不少年头，也使用过不少Linux的SSH工具，比如SecureCRT，XShell，Putty，Sm</description>
+    </item>
+    
+    <item>
+      <title>改变podman的存储路径</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 30 Dec 2022 17:51:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</guid>
+      <description>使用podman容器时，podman会默认使用/var/lib/containers路径作为存储路径，可能会导致根磁盘空</description>
+    </item>
+    
+    <item>
+      <title>在MinGW中构建GCC交叉编译器和GDB交叉调试器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Wed, 06 Jul 2022 18:51:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description>前文 《C语言使用MinGW中的GCC生成平面(flat)二进制文件》中有介绍MinGW中使用GCC生成编写操作系统内核所</description>
+    </item>
+    
+    <item>
+      <title>Linux下使用CMake构建含nasm汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-29-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8CMake%E6%9E%84%E5%BB%BA%E5%90%ABnasm%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 29 May 2022 00:24:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-29-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8CMake%E6%9E%84%E5%BB%BA%E5%90%ABnasm%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>CMake的出现极大的方便了C/C++项目的编译管理，避免了手工写Makefile的繁琐。如果在C/C++项目中有需要使</description>
+    </item>
+    
+    <item>
+      <title>WordPress使用markdown格式发布内容</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Mon, 23 May 2022 21:53:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</guid>
+      <description>markdown是目前网络上比较流行的文档格式，前一篇博文 容器中搭建WordPress中介绍了在容器中如何搭建WordP</description>
+    </item>
+    
+    <item>
+      <title>容器中搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 21 May 2022 11:15:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>WordPress是一个非常流行的网站、博客内容管理系统，很网站都是使用它来创建的内容。本文记录笔者在容器中搭建Word</description>
+    </item>
+    
+    <item>
+      <title>nginx文件服务器美化autoindex显示</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Sun, 15 May 2022 20:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</guid>
+      <description>网络上很多使用nginx来作为文件服务器的，前段时间公司也有这个需求，就研究了一下使用nginx来做文件服务器，参见前面</description>
+    </item>
+    
+    <item>
+      <title>容器中使用nginx并搭建sftp服务</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 13 May 2022 14:52:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</guid>
+      <description>文章目录 一、下载并安装最新的nginx容器 二、设置系统 1.设置更新源 2.更新 3.设置本地时区 三、准备sftp账号 1.添加</description>
+    </item>
+    
+    <item>
+      <title>容器中使用ngnix搭建支持上传下载的文件服务器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-10-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8ngnix%E6%90%AD%E5%BB%BA%E6%94%AF%E6%8C%81%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 10 May 2022 16:29:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-10-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8ngnix%E6%90%AD%E5%BB%BA%E6%94%AF%E6%8C%81%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、安装nginx容器 二、配置nginx 三、支持文件上传 1. 配置nginx 2. 添加upload.html 3. 添加后端处</description>
+    </item>
+    
+    <item>
+      <title>wsl2设置静态IP</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:42 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
+      <description>文章目录 一、创建批处理文件设置静态IP 二、设置DNS WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些</description>
+    </item>
+    
+    <item>
+      <title>解决 podman: failed to create new watcher too many open files</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-%E8%A7%A3%E5%86%B3-podman-failed-to-create-new-watcher-too-many-open-files/</link>
+      <pubDate>Tue, 28 Dec 2021 16:07:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-%E8%A7%A3%E5%86%B3-podman-failed-to-create-new-watcher-too-many-open-files/</guid>
       <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
     </item>
     
     <item>
-      <title>Goland连接https的Docker远程服务</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      <title>ubuntu安装podman-compose</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
+      <pubDate>Tue, 28 Dec 2021 11:46:32 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
+      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
+    </item>
+    
+    <item>
+      <title>Goland连接https的Docker远程服务</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 23 Dec 2021 18:31:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
       <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
     </item>
     
     <item>
-      <title>Goland使用远程容器进行go开发调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      <title>使用nexus3作为Docker镜像仓库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 16 Dec 2021 18:17:25 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
-      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>文章目录 一、在容器中安装运行nexus3 二、创建Docker镜像仓库 三、修改配置文件 四、配置权限 1.配置Realms权限</description>
     </item>
     
     <item>
-      <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <title>gitlab迁移记</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Dec 2021 12:27:57 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</guid>
+      <description>文章目录 一、导出项目 二、导入项目 前段时间公司配置了新的服务器，把系统与软件环境安装好，昨天开始迁移gitlab中的项目了</description>
     </item>
     
     <item>
       <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 11:11:41 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab以及gitlab-runner镜像 二、运行容器与配置gitlab 1、运行gitlab容器 2、</description>
     </item>
     
     <item>
-      <title>CentOS6.x不升级内核安装Docker</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2021-08-15-CentOS6.x%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      <title>让Linux的Shell提示和输出是彩色的</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</link>
+      <pubDate>Sat, 27 Nov 2021 23:52:13 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2021-08-15-CentOS6.x%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</guid>
+      <description>在使用最新的Ubuntu的时候发现终端的提示符是彩色的 而在CentOS8中以及容器中的Linux系统一般都不是彩色提示，</description>
+    </item>
+    
+    <item>
+      <title>搭建容器的私有库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</link>
+      <pubDate>Fri, 26 Nov 2021 16:16:06 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</guid>
+      <description>文章目录 一、拉取registry容器 1、使用cockpit来拉取 2、使用命令拉取 3、生成密码： 二、 运行registry镜</description>
+    </item>
+    
+    <item>
+      <title>开机自动运行容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 25 Nov 2021 11:11:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、创建容器 二、创建服务 三、设置开机自动启动 四、测试服务 五、开机测试 六、测试容器运行中情况下，重启主机 七、使用容</description>
+    </item>
+    
+    <item>
+      <title>设置ubuntu和CentOS的IP地址为静态地址</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Wed, 24 Nov 2021 18:46:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</guid>
+      <description>文章目录 一、确认网关地址 二、修改配置文件 １.ubuntu a.查看DHCP模式下的DNS信息 b. 修改/etc/netplan</description>
+    </item>
+    
+    <item>
+      <title>配置与管理Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</link>
+      <pubDate>Mon, 22 Nov 2021 16:12:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</guid>
+      <description>文章目录 一、使用SSH远程连接Ubuntu 1.查看IP地址 2. 使用SSH连接 二、安装配置Cockpit 1.安装Cockpi</description>
+    </item>
+    
+    <item>
+      <title>详细安装Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/</link>
+      <pubDate>Fri, 19 Nov 2021 16:51:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/</guid>
+      <description>文章目录 一、下载安装包 二、安装 1.是否更新安装器 2. 填写安装（更新）镜像地址 3. 磁盘分区 4.功能选择 由于公司服务器的硬件配置</description>
+    </item>
+    
+    <item>
+      <title>解决centos下安装WPS出现can‘t find libXss.so.1</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</link>
+      <pubDate>Thu, 21 Oct 2021 09:50:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</guid>
+      <description>今天在CentOS8中安装WPS时，出现找不到libXss.so.1的情况，但是又不知道是需要安装哪个包，可以通过下面的</description>
+    </item>
+    
+    <item>
+      <title>解决退格键在MinGW的vim中不起作用的问题</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 25 Sep 2021 15:21:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>MinGW下的vim在默认情况下会与Linux下的vim不太一样，比如MinGW中默认的vim配置，退格键（backsp</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——文件管理器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 09 Sep 2021 22:26:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——虚拟机</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 09 Sep 2021 08:18:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>文章目录 一、创建储存池 二、通过下载一个系统来创建虚拟机 三、通过本地安装介质来创建虚拟机 CentOS 8使用Cockpit管理Linu</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——podman容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Tue, 07 Sep 2021 22:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、查看podman容器 二、拉取镜像 三、配置镜像实例 CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用C</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——存储</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 05 Sep 2021 21:59:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</guid>
+      <description>文章目录 一、安装Cockpit的附加组件 二、监控存储系统 三、管理卷组、逻辑卷（分区） 1.管理普通分区 2. 格式化 3.调整分区</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——网络</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Sun, 05 Sep 2021 21:56:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%BD%91%E7%BB%9C/</guid>
+      <description>文章目录 一、使用 web 控制台管理防火墙 1.开关防火墙 2.编辑防火墙区域和规则 2.1 区域 2.2 防火墙规则 2.3 添加区域 2.4 删除区域 二、使用 Web</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit进阶</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Sun, 05 Sep 2021 10:36:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</guid>
+      <description>文章目录 一、账户管理 1.创建新账户 2. 设置密码 3.强制变更密码 4.设置密码永不过期或者要求每多少天就需要修改密码 5.设置从</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit入门</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 04 Sep 2021 23:46:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</guid>
+      <description>文章目录 一、安装 二、登录Cockpit web 控制台 三、设置Web显示语言 四、重启或者关闭CentOS系统 五、修改基本配置 1. 修</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——简介</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 04 Sep 2021 21:11:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 快速升级内核</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
+      <pubDate>Mon, 30 Aug 2021 11:50:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
+      <description>文章目录 一、老式方法： 1、导入公钥： 2、查看是否安装ELRepo项目 3、安装ELRepo项目 二、直接下载内核安装包安装内</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.10不升级内核安装Docker</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
+      <pubDate>Sun, 15 Aug 2021 11:56:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
       <description>目前Docker新版本docker-ce官宣支持的CentOS系统为7及以上系统，CentOS 6.X由于内核版本太低，为</description>
     </item>
     
     <item>
-      <title>使用CheckInstall从源码制作RPM安装包</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <title>解决Clang编译器出现/usr/bin/ld: crtbegin.o: No such file: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</link>
+      <pubDate>Fri, 30 Oct 2020 16:09:05 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
-      <description>在Centos系统中自行升级安装GCC时，如果想要将编译结果保留使用怎么办？GCC没有直接提供生成RPM的配置，我们可以</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</guid>
+      <description>今天在使用Clang编译器编译项目时出现问题，项目使用了CMake，在cmake时报错： 1-- Detecting C compiler ABI info - failed 2/usr/bin/ld: crtbegin.o: No such file: No such file</description>
+    </item>
+    
+    <item>
+      <title>使用CheckInstall从源码制作RPM安装包</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <pubDate>Thu, 29 Oct 2020 16:20:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      <description>文章目录 一、下载并安装CheckInstall 二、使用CheckInstall 一、下载并安装CheckInstall RP</description>
+    </item>
+    
+    <item>
+      <title>解决：pip is configured with locations that require TLS/SSL</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-29-%E8%A7%A3%E5%86%B3pip-is-configured-with-locations-that-require-TLS_SSL/</link>
+      <pubDate>Thu, 29 Oct 2020 10:14:52 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-29-%E8%A7%A3%E5%86%B3pip-is-configured-with-locations-that-require-TLS_SSL/</guid>
+      <description>在使用pip进行软件包安装的时候出现问题： 1WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available. 解决： 1mkdir -p ~/.pip 2vim ~/.pip/pip.conf 然后输入内容： 1[global] 2index-url = http://mirrors.aliyun.com/pypi/simple/ 3 4[install]</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8构建桌面办公环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-28-CentOS-8%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 28 Oct 2020 23:26:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-28-CentOS-8%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、设置软件源 二、安装输入法 三、安装Shell扩展 用习惯了CentOS 6.X的桌面环境后，感觉CentOS7与8</description>
+    </item>
+    
+    <item>
+      <title>虚拟机中安装的CentOS8无法启动网卡使用网络</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-27-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%9A%84CentOS8%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 27 Oct 2020 15:46:02 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-27-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%9A%84CentOS8%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C/</guid>
+      <description>之前都用得好好的CentOS8系统，突然不能上网了，图形界面也没有有线连接选项。 首先需要查看网卡名： 通过查看/etc/s</description>
+    </item>
+    
+    <item>
+      <title>CentOS8下超详细安装配置kubernetes（K8S）</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</link>
+      <pubDate>Thu, 02 Jul 2020 18:09:22 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</guid>
+      <description>文章目录 一、环境准备 1. 卸载podman 2. 关闭交换区 3. 禁用selinux 4. 关闭防火墙 二、安装K8S 1. 配置系统基本安装源 2. 添</description>
+    </item>
+    
+    <item>
+      <title>VMWare中的Linux加载主机的共享目录</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Wed, 24 Jun 2020 16:41:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>在VMware虚拟机中安装的Linux，有时想与主机进行文件共享，可以通过安装VMware Tools工具，然后在虚拟机设</description>
+    </item>
+    
+    <item>
+      <title>Open vSwitch的安装与运行</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-17-Open-vSwitch%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</link>
+      <pubDate>Wed, 17 Jun 2020 17:38:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-17-Open-vSwitch%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</guid>
+      <description>文章目录 一、下载安装包 二、安装 1. 解压、生成Makefile、编译、安装 2. 如果在安装的过程中生成了修改了内核模块，那么重新</description>
+    </item>
+    
+    <item>
+      <title>Linux下安装配置Postfix邮件服务器</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 01 May 2020 23:23:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、设置域名 二、搭建DNS环境域名解析，用于解析postfix地址 三、安装postfix服务器并进行配置 四、安装</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装Visual Studio Code</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</link>
+      <pubDate>Wed, 15 Jan 2020 15:20:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</guid>
+      <description>VSCode的最新版本需要的Linux 系统配置为： Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 7, Fedora 23 由于Linux下最新版本需要GTK 3，而Cen</description>
+    </item>
+    
+    <item>
+      <title>Linux下安装五笔输入法和更新码表</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</link>
+      <pubDate>Wed, 04 Dec 2019 17:03:58 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</guid>
+      <description>Linux下有几种输入法框架：IBus，fcitx，SCIM等等，关于他们的历史渊源可以在网上查资料。 笔者以CentOS</description>
+    </item>
+    
+    <item>
+      <title>GDB直观调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</guid>
+      <description>在Linux项目开发过程中使用命令行GDB进行C++程序STL调试时，会发现输出的内容很杂乱，真正有用的信息比较难找。 可</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装使用Ninja</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</link>
+      <pubDate>Tue, 19 Nov 2019 17:23:20 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</guid>
+      <description>1.由于ninja需要GLIBC_2.15，CentOS 6.X的glibc只有GLIBC_2.12，所以需要更新glib</description>
+    </item>
+    
+    <item>
+      <title>VisualGDB可视化调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Tue, 19 Nov 2019 12:01:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</guid>
+      <description>本文中的VisualGDB开发调试环境为Visual Studio 2015加VisualGDB 5.4R12版本，并且使用了笔者改进过</description>
+    </item>
+    
+    <item>
+      <title>CentOS python2升级到python3后的注意事项</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-26-CentOS-python2%E5%8D%87%E7%BA%A7%E5%88%B0python3%E5%90%8E%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sun, 26 May 2019 18:27:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-26-CentOS-python2%E5%8D%87%E7%BA%A7%E5%88%B0python3%E5%90%8E%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>由于CentOS系统默认使用的是Python2，升级到Python3后原来的一些系统软件就不可用了，需要做一些处理。 首先</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X安装GCC 9.1和LLVM/Clang 8.0</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</link>
+      <pubDate>Sun, 19 May 2019 23:24:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</guid>
+      <description>在Cent OS 6.X中要安装Clang 8.0必须要使用GCC 4.8及以上版本才能编译，但系统自带的是4.4.7版本的，看了</description>
+    </item>
+    
+    <item>
+      <title>epoll的本质</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-24-epoll%E7%9A%84%E6%9C%AC%E8%B4%A8/</link>
+      <pubDate>Wed, 24 Apr 2019 14:00:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-24-epoll%E7%9A%84%E6%9C%AC%E8%B4%A8/</guid>
+      <description>从事服务端开发，少不了要接触网络编程。epoll作为linux下高性能网络服务器的必备技术至关重要，nginx、redi</description>
+    </item>
+    
+    <item>
+      <title>加快编译速度，再谈C/C&#43;&#43;预编译技术的使用</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 31 Mar 2019 22:34:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>最近新参加的一项目是C++项目，新项目使用的原来老项目的代码来作开发，两个项目不管是Windows还是Linux都是没使</description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;通用Makefile</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</link>
+      <pubDate>Thu, 23 Feb 2017 14:14:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</guid>
+      <description>最近的项目又回到了Linux上运行，这就需要在Linux下编译项目，写Makefile针对习惯了Windows的程序员来</description>
     </item>
     
     <item>
       <title>Linux下编译GCC</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
-      <pubDate>Mon, 08 Jun 2009 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
+      <pubDate>Mon, 08 Jun 2009 17:37:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
-      <description>​ 看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Li</description>
+      <guid>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
+      <description>看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Lin</description>
+    </item>
+    
+    <item>
+      <title>关于G&#43;&#43;库链接的一个问题</title>
+      <link>https://wittonbell.github.io/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Jul 2008 16:25:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
+      <description>我们的项目是按模块开发的，所以需要在生成可执行文件时将所有的模块都链接起来，我想这个是每个程序员都知道的事情，不管是在W</description>
+    </item>
+    
+    <item>
+      <title>使用 GNU CC 的预编译头文件加快编译速度</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-12-26-%E4%BD%BF%E7%94%A8-GNU-CC-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Wed, 26 Dec 2007 14:37:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-12-26-%E4%BD%BF%E7%94%A8-GNU-CC-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</guid>
+      <description>既使用过 Microsoft® Visual C++® 又使用过 GNU CC 的网友一定会感受到两者编译速度的差异，尤其是对于 wxWidgets 这样头文件内容多的软</description>
+    </item>
+    
+    <item>
+      <title>用MINGW编译GCC4.2.2指南</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-12-19-%E7%94%A8MINGW%E7%BC%96%E8%AF%91GCC4.2.2%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 19 Dec 2007 10:17:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-12-19-%E7%94%A8MINGW%E7%BC%96%E8%AF%91GCC4.2.2%E6%8C%87%E5%8D%97/</guid>
+      <description>在网上，编译GCC的方法有很多，大部份人都推荐在CYGWIN环境下进行交叉编译，这样可以可以少遇到许多困难，但是使用CY</description>
     </item>
     
     <item>
       <title>Linux通过Smb与Windows共享目录</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Thu, 26 Jul 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Thu, 26 Jul 2007 10:06:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
-      <description>​ 由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的。</description>
     </item>
     
     <item>
       <title>Windows与Linux共存之重装Windows经历</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Sat, 09 Jun 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Sat, 09 Jun 2007 16:50:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
       <description>Linux是一个功能强大的操作系统，它既支持如MSDOS一般的命令行操作，也支持如Windows一般的图形界面的操作。 随</description>
+    </item>
+    
+    <item>
+      <title>LuaTinker向Linux移植成功</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</link>
+      <pubDate>Wed, 06 Jun 2007 17:14:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</guid>
+      <description>今天我怀着无比激动的心情写这篇博客。LuaTinker以其短小精悍，功能比较强大而广泛地被许多网友及同事所关注。自从我用</description>
     </item>
     
   </channel>

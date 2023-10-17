@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>慢 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%85%A2/</link>
+    <description>Recent content in 慢 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 09 May 2020 18:01:12 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%85%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Mac下安装Homebrew慢的问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-09-%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E5%AE%89%E8%A3%85Homebrew%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 09 May 2020 18:01:12 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-09-%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E5%AE%89%E8%A3%85Homebrew%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>一、方法一 国内安装Homebrew很慢，可以使用下面的方法： 1curl -fsSL https://gitee.com/xueweihan/codes/vfrgh7z8qcjlx1ubwt6nk71/raw\?blob_name\=brew_install.sh &amp;gt;&amp;gt; brew_install 先把安装文件保存到brew_install，然后修</description>
+    </item>
+    
+  </channel>
+</rss>

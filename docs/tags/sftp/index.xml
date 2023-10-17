@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sftp on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/sftp/</link>
+    <description>Recent content in sftp on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 13 May 2022 14:52:57 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/sftp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>容器中使用nginx并搭建sftp服务</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 13 May 2022 14:52:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</guid>
+      <description>文章目录 一、下载并安装最新的nginx容器 二、设置系统 1.设置更新源 2.更新 3.设置本地时区 三、准备sftp账号 1.添加</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>共享文件夹 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+    <description>Recent content in 共享文件夹 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 24 Jun 2020 16:41:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMWare中的Linux加载主机的共享目录</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Wed, 24 Jun 2020 16:41:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>在VMware虚拟机中安装的Linux，有时想与主机进行文件共享，可以通过安装VMware Tools工具，然后在虚拟机设</description>
+    </item>
+    
+  </channel>
+</rss>

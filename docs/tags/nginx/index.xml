@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nginx on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/nginx/</link>
+    <description>Recent content in nginx on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 15 Sep 2023 15:33:18 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>容器中的nginx暴露一个端口部署多个功能的网站</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 15 Sep 2023 15:33:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</guid>
+      <description>随着容器的应用越来越多，将nginx部署在容器中也是常有之事。可能事先创建容器时只暴露了一个端口给浏览器连接，后面又想根</description>
+    </item>
+    
+    <item>
+      <title>Windows中使用nginx搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 28 May 2022 21:07:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>前面的博客 容器中搭建WordPress介绍了在容器中搭建WordPress，如果使用的是Windows环境而不是Linu</description>
+    </item>
+    
+    <item>
+      <title>nginx文件服务器美化autoindex显示</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Sun, 15 May 2022 20:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</guid>
+      <description>网络上很多使用nginx来作为文件服务器的，前段时间公司也有这个需求，就研究了一下使用nginx来做文件服务器，参见前面</description>
+    </item>
+    
+    <item>
+      <title>容器中使用nginx并搭建sftp服务</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 13 May 2022 14:52:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</guid>
+      <description>文章目录 一、下载并安装最新的nginx容器 二、设置系统 1.设置更新源 2.更新 3.设置本地时区 三、准备sftp账号 1.添加</description>
+    </item>
+    
+    <item>
+      <title>容器中使用ngnix搭建支持上传下载的文件服务器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-10-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8ngnix%E6%90%AD%E5%BB%BA%E6%94%AF%E6%8C%81%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 10 May 2022 16:29:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-10-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8ngnix%E6%90%AD%E5%BB%BA%E6%94%AF%E6%8C%81%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、安装nginx容器 二、配置nginx 三、支持文件上传 1. 配置nginx 2. 添加upload.html 3. 添加后端处</description>
+    </item>
+    
+  </channel>
+</rss>

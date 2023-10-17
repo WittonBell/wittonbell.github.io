@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置与管理 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 配置与管理 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 30 Nov 2021 11:11:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用podman容器配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 11:11:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab以及gitlab-runner镜像 二、运行容器与配置gitlab 1、运行gitlab容器 2、</description>
+    </item>
+    
+    <item>
+      <title>配置与管理Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</link>
+      <pubDate>Mon, 22 Nov 2021 16:12:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</guid>
+      <description>文章目录 一、使用SSH远程连接Ubuntu 1.查看IP地址 2. 使用SSH连接 二、安装配置Cockpit 1.安装Cockpi</description>
+    </item>
+    
+  </channel>
+</rss>

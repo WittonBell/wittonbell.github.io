@@ -6,32 +6,131 @@
     <description>Recent content in ubuntu on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Aug 2023 19:47:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>解决lldb调试时可能出现的personality set failed Function not implemented</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
-      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
       <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
     </item>
     
     <item>
-      <title>ubuntu安装podman-compose</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <title>VMware 17虚拟Ubuntu 22.04设置共享目录</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Fri, 07 Jul 2023 22:48:04 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>之前使用VM 17之前的版本虚拟CentOS，设置共享目录非常方便，在CentOS中安装VMware Tools即可。随着C</description>
+    </item>
+    
+    <item>
+      <title>虚拟机中Ubuntu不知root密码时设置唯一的非root用户为sudo管理员</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</link>
+      <pubDate>Fri, 09 Jun 2023 23:02:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</guid>
+      <description>刚才在虚拟机中玩Ubuntu的时候，在Cockpit管理页面把账号“服务器管理员”的选项给取消了，然后重新登录之后，就不</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 登录提示信息`Message of The Day`(MOTD)定制与开关</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-Ubuntu-%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AFMessage-of-The-DayMOTD%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%BC%80%E5%85%B3/</link>
+      <pubDate>Thu, 08 Jun 2023 17:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-Ubuntu-%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AFMessage-of-The-DayMOTD%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%BC%80%E5%85%B3/</guid>
+      <description>一、效果 登录Ubuntu的时候，在控制台可能会弹出一系列提示消息，有欢迎消息、系统信息、更新信息等等： 这些提示消息被称为</description>
+    </item>
+    
+    <item>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>VSCode远程连接Ubuntu使用LLDB调试程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 30 May 2023 12:18:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</guid>
+      <description>VSCode已经具有远程开发的能力，可以使用SSH连接到Linux/MacOS进行远程开发，包括编译与调试，只需要安装R</description>
+    </item>
+    
+    <item>
+      <title>wsl2设置静态IP</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:42 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
+      <description>文章目录 一、创建批处理文件设置静态IP 二、设置DNS WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些</description>
+    </item>
+    
+    <item>
+      <title>ubuntu安装podman-compose</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
+      <pubDate>Tue, 28 Dec 2021 11:46:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
       <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
     </item>
     
     <item>
-      <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <title>使用podman容器配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 11:11:41 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab以及gitlab-runner镜像 二、运行容器与配置gitlab 1、运行gitlab容器 2、</description>
+    </item>
+    
+    <item>
+      <title>让Linux的Shell提示和输出是彩色的</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</link>
+      <pubDate>Sat, 27 Nov 2021 23:52:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</guid>
+      <description>在使用最新的Ubuntu的时候发现终端的提示符是彩色的 而在CentOS8中以及容器中的Linux系统一般都不是彩色提示，</description>
+    </item>
+    
+    <item>
+      <title>搭建容器的私有库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</link>
+      <pubDate>Fri, 26 Nov 2021 16:16:06 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</guid>
+      <description>文章目录 一、拉取registry容器 1、使用cockpit来拉取 2、使用命令拉取 3、生成密码： 二、 运行registry镜</description>
+    </item>
+    
+    <item>
+      <title>设置ubuntu和CentOS的IP地址为静态地址</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Wed, 24 Nov 2021 18:46:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</guid>
+      <description>文章目录 一、确认网关地址 二、修改配置文件 １.ubuntu a.查看DHCP模式下的DNS信息 b. 修改/etc/netplan</description>
+    </item>
+    
+    <item>
+      <title>配置与管理Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</link>
+      <pubDate>Mon, 22 Nov 2021 16:12:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</guid>
+      <description>文章目录 一、使用SSH远程连接Ubuntu 1.查看IP地址 2. 使用SSH连接 二、安装配置Cockpit 1.安装Cockpi</description>
+    </item>
+    
+    <item>
+      <title>详细安装Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/</link>
+      <pubDate>Fri, 19 Nov 2021 16:51:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/</guid>
+      <description>文章目录 一、下载安装包 二、安装 1.是否更新安装器 2. 填写安装（更新）镜像地址 3. 磁盘分区 4.功能选择 由于公司服务器的硬件配置</description>
     </item>
     
   </channel>

@@ -6,14 +6,176 @@
     <description>Recent content in MSYS2 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/MSYS2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 14:40:47 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/MSYS2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
-      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
+      <pubDate>Mon, 21 Aug 2023 14:40:47 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
       <description>在使用Visual Studio 2022+MinGW+CMake作为开发环境时，如果项目中使用了Protobuf，则在CMake运行</description>
+    </item>
+    
+    <item>
+      <title>VSCode调试mintty时命令行参数多了2＞CON 1＞CON ＜CON的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 06 Jun 2023 17:15:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>今天在调试mintty时，命令行参数始终多了几个参数2&amp;gt;CON 1&amp;gt;CON &amp;lt;CON。由于mintty是运行在MSYS环</description>
+    </item>
+    
+    <item>
+      <title>将MSYS2 MinGW集成到Windows终端</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Mon, 05 Jun 2023 18:00:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</guid>
+      <description>微软开发了一款Windows终端的开源软件，非常好用。安装后在Win7及以上系统会在右键菜单中添加一条“在终端中打开”的</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022 CMake&#43;MinGW&#43;GDB 调试目标程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 14 May 2023 23:51:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</guid>
+      <description>前段时间笔者在使用MinGW编译了QtCreator后，想要进行调试。最开始使用VSCode进行调试，可是可以调试，但是</description>
+    </item>
+    
+    <item>
+      <title>CMake自动按目录结构编译Protobuf代码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Wed, 26 Apr 2023 17:49:55 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</guid>
+      <description>在使用CMake构建C++项目时，如果有使用Protobuf，CMake提供了一个FindProtobuf.cmake模</description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;开发中使用pkg-config来引用依赖库</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</link>
+      <pubDate>Thu, 20 Apr 2023 18:49:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</guid>
+      <description>在使用C/C++进行开发的过程中，经常需要引用其它的库，可能是系统已经安装好的，也可能是其它的外部库。 如果是系统支持的库</description>
+    </item>
+    
+    <item>
+      <title>解决QT：may not produce code compatible with the Qt version</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</link>
+      <pubDate>Wed, 05 Apr 2023 19:43:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</guid>
+      <description>问题 在Qt Creator的构建套件(Kit)中，自动检测的Kit很多都会有黄色的叹号，可以把鼠标移动到上面可以看到有警告</description>
+    </item>
+    
+    <item>
+      <title>解决QT：NO QML utility installed的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 05 Apr 2023 18:20:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在QT Creator中查看Qt的版本，发现自动检测的版本要么是红色的叹号，要么是黄色的叹号。红色的叹号表示完全不可用，黄</description>
+    </item>
+    
+    <item>
+      <title>MSYS2中mingw-w64-x86_64-qt-creator-10.0.0-2不能新建项目</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 05 Apr 2023 15:52:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
+      <description>今天在MSYS2的MinGW64中安装了最新的Qt Creator 10.0.0（mingw-w64-x86_64-qt-creator</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用MinGW来编译调试C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 07 Aug 2022 17:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>文章目录 一、创建项目 二、配置CMake 1.修改“CMakePresets.json”预设编译工具集 2.使用CMake设置</description>
+    </item>
+    
+    <item>
+      <title>在MinGW中构建GCC交叉编译器和GDB交叉调试器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Wed, 06 Jul 2022 18:51:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description>前文 《C语言使用MinGW中的GCC生成平面(flat)二进制文件》中有介绍MinGW中使用GCC生成编写操作系统内核所</description>
+    </item>
+    
+    <item>
+      <title>C语言使用MinGW中的GCC生成平面(flat)二进制文件</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 30 Jun 2022 18:41:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</guid>
+      <description>最近抽空在看自制操作系统相关的书籍，比如《自己动手写操作系统》、《Orange’S：一个操作系统的实现》、《一个64位操</description>
+    </item>
+    
+    <item>
+      <title>解决退格键在MinGW的vim中不起作用的问题</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 25 Sep 2021 15:21:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>MinGW下的vim在默认情况下会与Linux下的vim不太一样，比如MinGW中默认的vim配置，退格键（backsp</description>
+    </item>
+    
+    <item>
+      <title>解决ModuleNotFoundError: No module named ‘pkg_resources‘</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-25-%E8%A7%A3%E5%86%B3ModuleNotFoundError-No-module-named-pkg_resources/</link>
+      <pubDate>Wed, 25 Aug 2021 10:24:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-25-%E8%A7%A3%E5%86%B3ModuleNotFoundError-No-module-named-pkg_resources/</guid>
+      <description>今天使用pacman -Syuu升级了一下msys2的MinGW64，结果出现了Python不能正常使用的情况，升级之前都</description>
+    </item>
+    
+    <item>
+      <title>解决：pip is configured with locations that require TLS/SSL</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-29-%E8%A7%A3%E5%86%B3pip-is-configured-with-locations-that-require-TLS_SSL/</link>
+      <pubDate>Thu, 29 Oct 2020 10:14:52 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-29-%E8%A7%A3%E5%86%B3pip-is-configured-with-locations-that-require-TLS_SSL/</guid>
+      <description>在使用pip进行软件包安装的时候出现问题： 1WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available. 解决： 1mkdir -p ~/.pip 2vim ~/.pip/pip.conf 然后输入内容： 1[global] 2index-url = http://mirrors.aliyun.com/pypi/simple/ 3 4[install]</description>
+    </item>
+    
+    <item>
+      <title>MSYS Makefiles、 MinGW Makefiles与Unix Makefiles的差别</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</link>
+      <pubDate>Fri, 28 Aug 2020 15:44:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</guid>
+      <description>我们在*nix或者Mac系统中做开发会经常使用Makefile来组织构建规则，然后使用make来构建项目。 Makefil</description>
+    </item>
+    
+    <item>
+      <title>使用msys2 mingw64编译gcc</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</link>
+      <pubDate>Thu, 27 Aug 2020 16:21:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</guid>
+      <description>我们在msys2中使用pacman安装的GCC默认是不能显示中文帮助的 而Linux下是可以显示中文的： 这是因为在编译ms</description>
+    </item>
+    
+    <item>
+      <title>Shell中显示Git分支名</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</link>
+      <pubDate>Sat, 22 Aug 2020 15:22:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</guid>
+      <description>文章目录 一、Windows下的msys2 bash 二、Mac Bash 一、Windows下的msys2 bash 如果我们安装了git for windo</description>
+    </item>
+    
+    <item>
+      <title>.dll、.lib、.a的转换</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 21 Aug 2020 15:00:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>文章目录 一、.dll生成导入库.a或者.lib 二、静态lib库转dll库 一、.dll生成导入库.a或者.lib 在使用Mi</description>
     </item>
     
   </channel>

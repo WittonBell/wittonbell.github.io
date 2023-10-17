@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>彩色 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%BD%A9%E8%89%B2/</link>
+    <description>Recent content in 彩色 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 27 Nov 2021 23:52:13 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%BD%A9%E8%89%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让Linux的Shell提示和输出是彩色的</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</link>
+      <pubDate>Sat, 27 Nov 2021 23:52:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</guid>
+      <description>在使用最新的Ubuntu的时候发现终端的提示符是彩色的 而在CentOS8中以及容器中的Linux系统一般都不是彩色提示，</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gdb on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/gdb/</link>
+    <description>Recent content in gdb on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Aug 2023 18:32:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/gdb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</guid>
+      <description>Visual Studio被称为是宇宙最强IDE，以前开发Linux C/C++服务器程序，基本上都是在Windows上使用VS编写跨</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用CMake&#43;MinGW&#43;Clang&#43;LLDB作为开发环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 26 May 2023 16:55:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>笔者前面写了两篇关于Visual Studio 2022使用MinGW的博文：《 Visual Studio 2022使用MinGW来编译调试C/C++程序》、</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022 CMake&#43;MinGW&#43;GDB 调试目标程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 14 May 2023 23:51:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</guid>
+      <description>前段时间笔者在使用MinGW编译了QtCreator后，想要进行调试。最开始使用VSCode进行调试，可是可以调试，但是</description>
+    </item>
+    
+    <item>
+      <title>GDB直观调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</guid>
+      <description>在Linux项目开发过程中使用命令行GDB进行C++程序STL调试时，会发现输出的内容很杂乱，真正有用的信息比较难找。 可</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>personality on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/personality/</link>
+    <description>Recent content in personality on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 13 Aug 2023 19:47:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/personality/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
+    </item>
+    
+  </channel>
+</rss>

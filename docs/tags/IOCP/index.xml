@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IOCP on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/IOCP/</link>
+    <description>Recent content in IOCP on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 Mar 2023 14:21:40 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/IOCP/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>libevent使用IOCP网络模型的示例</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Fri, 01 Jul 2016 15:09:59 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</guid>
+      <description>这段时间抽空学习了一下强大的网络库 libevent，其使用标准C语言编写，支持Windows、Linux、Mac等等主流</description>
+    </item>
+    
+  </channel>
+</rss>

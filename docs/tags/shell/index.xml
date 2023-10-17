@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/shell/</link>
+    <description>Recent content in shell on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 03 Apr 2023 17:19:44 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用libSSH2实现与Linux Shell的命令行交互</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</link>
+      <pubDate>Mon, 03 Apr 2023 17:19:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</guid>
+      <description>使用Linux已经有不少年头，也使用过不少Linux的SSH工具，比如SecureCRT，XShell，Putty，Sm</description>
+    </item>
+    
+    <item>
+      <title>Shell中显示Git分支名</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</link>
+      <pubDate>Sat, 22 Aug 2020 15:22:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</guid>
+      <description>文章目录 一、Windows下的msys2 bash 二、Mac Bash 一、Windows下的msys2 bash 如果我们安装了git for windo</description>
+    </item>
+    
+  </channel>
+</rss>

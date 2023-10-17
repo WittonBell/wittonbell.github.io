@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git版本信息 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Git%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
+    <description>Recent content in Git版本信息 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 30 Mar 2023 18:22:09 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Git%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go项目中添加生成时间与版本信息</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-30-Go%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4%E4%B8%8E%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Thu, 30 Mar 2023 18:22:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-30-Go%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4%E4%B8%8E%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
+      <description>我们在编写软件时，一般会有版本号以及生成的时间，Go编译的程序中，如何添加当时的编译时间以及版本信息？ C/C++语言，非</description>
+    </item>
+    
+  </channel>
+</rss>

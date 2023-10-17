@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图标 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%9B%BE%E6%A0%87/</link>
+    <description>Recent content in 图标 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 05 May 2023 17:05:09 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%9B%BE%E6%A0%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>提取Windows中系统自带的图标资源</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 05 May 2023 17:05:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</guid>
+      <description>写应用程序，如果想使用Windows下的图标，可以使用Visual Studio中的图标，比如VS2008的 ImageLi</description>
+    </item>
+    
+  </channel>
+</rss>

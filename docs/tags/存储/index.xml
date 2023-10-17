@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>存储 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8/</link>
+    <description>Recent content in 存储 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 05 Sep 2021 21:59:17 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——存储</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 05 Sep 2021 21:59:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</guid>
+      <description>文章目录 一、安装Cockpit的附加组件 二、监控存储系统 三、管理卷组、逻辑卷（分区） 1.管理普通分区 2. 格式化 3.调整分区</description>
+    </item>
+    
+  </channel>
+</rss>

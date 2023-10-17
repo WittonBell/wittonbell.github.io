@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Studio 2015 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Visual-Studio-2015/</link>
+    <description>Recent content in Visual Studio 2015 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 12 May 2019 15:57:07 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Visual-Studio-2015/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Visual Studio 2015编译LLVM/Clang源码</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sun, 12 May 2019 15:57:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</guid>
+      <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,14 +6,41 @@
     <description>Recent content in protobuf on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 14:40:47 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
-      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
+      <pubDate>Mon, 21 Aug 2023 14:40:47 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
       <description>在使用Visual Studio 2022+MinGW+CMake作为开发环境时，如果项目中使用了Protobuf，则在CMake运行</description>
+    </item>
+    
+    <item>
+      <title>CMake自动按目录结构编译Protobuf代码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Wed, 26 Apr 2023 17:49:55 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</guid>
+      <description>在使用CMake构建C++项目时，如果有使用Protobuf，CMake提供了一个FindProtobuf.cmake模</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Google Protocol Buffers容器类型的值</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Mon, 24 Jun 2019 17:07:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <description>Google Protocol Buffers会生成RepeatedField和Map等容器类型，为方便在Visual Studio中进行调试，编写了</description>
+    </item>
+    
+    <item>
+      <title>使用自己的Python函数处理Protobuf中的字符串编码</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-11-04-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86Protobuf%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Fri, 04 Nov 2016 19:03:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-11-04-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86Protobuf%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</guid>
+      <description>我目前所在的项目是一个老项目，里面的字符串编码有点乱，数据库中有些是GB2312，有些是UTF8；代码中有些是GBK，有</description>
     </item>
     
   </channel>

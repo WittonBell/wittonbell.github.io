@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>libstdc&#43;&#43; on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/libstdc&#43;&#43;/</link>
+    <description>Recent content in libstdc&#43;&#43; on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 Nov 2019 18:43:23 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/libstdc++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GDB直观调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</guid>
+      <description>在Linux项目开发过程中使用命令行GDB进行C++程序STL调试时，会发现输出的内容很杂乱，真正有用的信息比较难找。 可</description>
+    </item>
+    
+  </channel>
+</rss>

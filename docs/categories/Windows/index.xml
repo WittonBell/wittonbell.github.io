@@ -6,50 +6,392 @@
     <description>Recent content in Windows on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jun 2023 18:00:24 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <title>将MSYS2 MinGW集成到Windows终端</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Mon, 05 Jun 2023 18:00:24 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</guid>
+      <description>微软开发了一款Windows终端的开源软件，非常好用。安装后在Win7及以上系统会在右键菜单中添加一条“在终端中打开”的</description>
     </item>
     
     <item>
-      <title>使用CheckInstall从源码制作RPM安装包</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <title>VS2022编译安装Qt6.5源码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Thu, 11 May 2023 21:19:39 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
-      <description>WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些设置。 一、创建批处理文件设置静态IP 可以创建一个批处</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</guid>
+      <description>一、准备环境 包括安装VS2022，Windows SDK，Python3，这里就不再一一介绍了，需要说明的一点是如果要编译</description>
+    </item>
+    
+    <item>
+      <title>提取Windows中系统自带的图标资源</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 05 May 2023 17:05:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</guid>
+      <description>写应用程序，如果想使用Windows下的图标，可以使用Visual Studio中的图标，比如VS2008的 ImageLi</description>
+    </item>
+    
+    <item>
+      <title>解决：git repository path ‘XXX‘ is not owned by current user</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-%E8%A7%A3%E5%86%B3git-repository-path-XXX-is-not-owned-by-current-user/</link>
+      <pubDate>Thu, 23 Mar 2023 17:19:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-%E8%A7%A3%E5%86%B3git-repository-path-XXX-is-not-owned-by-current-user/</guid>
+      <description>今天在拉取一个Git项目时，出现提示： 之前有同事也向我求助过，当时由于比较忙，就让他新建一个目录重新clone一下。 今天</description>
+    </item>
+    
+    <item>
+      <title>Windows下的高效网络模型IOCP完整示例</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 23 Mar 2023 14:21:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</guid>
+      <description>IOCP即完成端口（I/O Completion Port），与Linux下的epoll一样，是一种非常高效的网络模型。epoll 是当资源准备</description>
+    </item>
+    
+    <item>
+      <title>MiniDump不生成或者生成0字节</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</link>
+      <pubDate>Wed, 22 Mar 2023 18:30:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</guid>
+      <description>今天在使用C写一个Windows多线程程序时，发现退出过程中有段错误，为了方便快速的定位问题，我使用了MiniDump。</description>
+    </item>
+    
+    <item>
+      <title>使用QEMU&#43;GDB调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 22:02:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+    <item>
+      <title>使用Bochs调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 21:50:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+    <item>
+      <title>在MinGW中构建GCC交叉编译器和GDB交叉调试器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Wed, 06 Jul 2022 18:51:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description>前文 《C语言使用MinGW中的GCC生成平面(flat)二进制文件》中有介绍MinGW中使用GCC生成编写操作系统内核所</description>
+    </item>
+    
+    <item>
+      <title>C语言使用MinGW中的GCC生成平面(flat)二进制文件</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 30 Jun 2022 18:41:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</guid>
+      <description>最近抽空在看自制操作系统相关的书籍，比如《自己动手写操作系统》、《Orange’S：一个操作系统的实现》、《一个64位操</description>
+    </item>
+    
+    <item>
+      <title>Windows中使用nginx搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 28 May 2022 21:07:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>前面的博客 容器中搭建WordPress介绍了在容器中搭建WordPress，如果使用的是Windows环境而不是Linu</description>
+    </item>
+    
+    <item>
+      <title>Windows10配置使用极点五笔输入法</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-04-26-Windows10%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Tue, 26 Apr 2022 16:45:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-04-26-Windows10%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>在Windows下，笔者一直以来都是使用的五笔输入法，使用过王码五笔，万能五笔，极品五笔，极点五笔等等，在使用了极点五笔</description>
+    </item>
+    
+    <item>
+      <title>使用容器编排对go项目进行部署、调试</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 18:03:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、环境配置 二、部署 1、编写Dockerfile 2、编写容器编排文件 3、设置Goland部署配置 4、执行部署 三、</description>
+    </item>
+    
+    <item>
+      <title>wsl2设置静态IP</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:42 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
+      <description>文章目录 一、创建批处理文件设置静态IP 二、设置DNS WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些</description>
+    </item>
+    
+    <item>
+      <title>解决退格键在MinGW的vim中不起作用的问题</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 25 Sep 2021 15:21:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>MinGW下的vim在默认情况下会与Linux下的vim不太一样，比如MinGW中默认的vim配置，退格键（backsp</description>
+    </item>
+    
+    <item>
+      <title>本地Git硬重置后找回原来的提交</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Tue, 31 Aug 2021 11:38:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</guid>
+      <description>有些时候我们在做一些开发工作时，可能会用到本地Git管理，即在一个目录中进行开发，并将这个目录作为Git的版本库目录。 本</description>
+    </item>
+    
+    <item>
+      <title>VSCode配置PHP Debug插件调试PHP</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</link>
+      <pubDate>Thu, 01 Jul 2021 18:03:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</guid>
+      <description>文章目录 一、首先需要架设Windows下的PHP运行环境 二、VSCode中下载配置PHP Debug插件 1.下载XDebu</description>
+    </item>
+    
+    <item>
+      <title>Windows下使用Apache2.4架设PHP服务器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 28 May 2021 17:21:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、下载Apache的httpd 二、下载 PHP 三、解压、配置 1.解压 2.配置httpd 3.配置PHP 四、注册并启动h</description>
+    </item>
+    
+    <item>
+      <title>C语言随机数</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
+      <pubDate>Wed, 21 Oct 2020 11:58:01 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
+      <description>昨天项目中遇到随机数相关的问题，其实并不是问题，只是没有使用对。项目中使用的自己写的类似C语言的rand()的伪随机函数</description>
+    </item>
+    
+    <item>
+      <title>解决Windows照片查看器加载慢和颜色问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-09-19-%E8%A7%A3%E5%86%B3Windows%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E5%8A%A0%E8%BD%BD%E6%85%A2%E5%92%8C%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 19 Sep 2020 17:59:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-09-19-%E8%A7%A3%E5%86%B3Windows%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E5%8A%A0%E8%BD%BD%E6%85%A2%E5%92%8C%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <description>在Windows中，如果使用了“较准颜色”向导进行系统显示颜色的较准，则可能会导致使用照片查看器查看照片时加载很慢。如果</description>
+    </item>
+    
+    <item>
+      <title>解决在HD Audio模式下Windows系统前置面板耳机无声音的问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-09-18-%E8%A7%A3%E5%86%B3%E5%9C%A8HD-Audio%E6%A8%A1%E5%BC%8F%E4%B8%8BWindows%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF%E8%80%B3%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 18 Sep 2020 22:49:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-09-18-%E8%A7%A3%E5%86%B3%E5%9C%A8HD-Audio%E6%A8%A1%E5%BC%8F%E4%B8%8BWindows%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF%E8%80%B3%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>笔者的台式机是10年前的电脑了，我记得在BIOS中不管是设置Front Panel Select为AC97还是HD Audio，前置面</description>
+    </item>
+    
+    <item>
+      <title>MSYS Makefiles、 MinGW Makefiles与Unix Makefiles的差别</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</link>
+      <pubDate>Fri, 28 Aug 2020 15:44:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</guid>
+      <description>我们在*nix或者Mac系统中做开发会经常使用Makefile来组织构建规则，然后使用make来构建项目。 Makefil</description>
+    </item>
+    
+    <item>
+      <title>使用msys2 mingw64编译gcc</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</link>
+      <pubDate>Thu, 27 Aug 2020 16:21:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</guid>
+      <description>我们在msys2中使用pacman安装的GCC默认是不能显示中文帮助的 而Linux下是可以显示中文的： 这是因为在编译ms</description>
+    </item>
+    
+    <item>
+      <title>.dll、.lib、.a的转换</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 21 Aug 2020 15:00:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>文章目录 一、.dll生成导入库.a或者.lib 二、静态lib库转dll库 一、.dll生成导入库.a或者.lib 在使用Mi</description>
+    </item>
+    
+    <item>
+      <title>Windows控制台中文乱码问题测试、分析与解决</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Tue, 18 Aug 2020 22:32:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</guid>
+      <description>文章目录 一、测试 A、Win10系统 B、Win7 SP1系统 1.VSCode+GCC 2. VS2015 二、分析与总结 1. VS2015 2. MinGW 三、解决UTF8的乱码问题 1. 设置参数</description>
+    </item>
+    
+    <item>
+      <title>Windows下添加msys2-MinGW到右键菜单</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-15-Windows%E4%B8%8B%E6%B7%BB%E5%8A%A0msys2-MinGW%E5%88%B0%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+      <pubDate>Sat, 15 Aug 2020 20:12:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-15-Windows%E4%B8%8B%E6%B7%BB%E5%8A%A0msys2-MinGW%E5%88%B0%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+      <description>文章目录 一、新建批处理文件 二、修改注册表，添加命令 三、测试 Windows下使用msys2-Mingw进行程序开发或者Sh</description>
+    </item>
+    
+    <item>
+      <title>VMWare中的Linux加载主机的共享目录</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Wed, 24 Jun 2020 16:41:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>在VMware虚拟机中安装的Linux，有时想与主机进行文件共享，可以通过安装VMware Tools工具，然后在虚拟机设</description>
+    </item>
+    
+    <item>
+      <title>GDB直观调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</guid>
+      <description>在Linux项目开发过程中使用命令行GDB进行C++程序STL调试时，会发现输出的内容很杂乱，真正有用的信息比较难找。 可</description>
+    </item>
+    
+    <item>
+      <title>VisualGDB可视化调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Tue, 19 Nov 2019 12:01:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</guid>
+      <description>本文中的VisualGDB开发调试环境为Visual Studio 2015加VisualGDB 5.4R12版本，并且使用了笔者改进过</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Google Protocol Buffers容器类型的值</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Mon, 24 Jun 2019 17:07:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <description>Google Protocol Buffers会生成RepeatedField和Map等容器类型，为方便在Visual Studio中进行调试，编写了</description>
+    </item>
+    
+    <item>
+      <title>使用Visual Studio 2015编译LLVM/Clang源码</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sun, 12 May 2019 15:57:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</guid>
+      <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
+    </item>
+    
+    <item>
+      <title>加快编译速度，再谈C/C&#43;&#43;预编译技术的使用</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 31 Mar 2019 22:34:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>最近新参加的一项目是C++项目，新项目使用的原来老项目的代码来作开发，两个项目不管是Windows还是Linux都是没使</description>
+    </item>
+    
+    <item>
+      <title>BAT 批处理脚本教程</title>
+      <link>https://wittonbell.github.io/posts/2018/2018-07-04-BAT-%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Wed, 04 Jul 2018 15:40:02 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2018/2018-07-04-BAT-%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E6%95%99%E7%A8%8B/</guid>
+      <description>第一章 批处理基础 第一节 常用批处理内部命令简介 批处理定义：顾名思义，批处理文件是将一系列命令按一定的顺序集合为一个可执行的</description>
+    </item>
+    
+    <item>
+      <title>自己动手解决HEAP: Free Heap block XXX modified at YYY after it was freed问题</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-05-10-%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%A7%A3%E5%86%B3HEAP-Free-Heap-block-XXX-modified-at-YYY-after-it-was-freed%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 10 May 2013 16:56:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-05-10-%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%A7%A3%E5%86%B3HEAP-Free-Heap-block-XXX-modified-at-YYY-after-it-was-freed%E9%97%AE%E9%A2%98/</guid>
+      <description>前段时间接手的项目中有出现HEAP: Free Heap block XXX modified at YYY after it was freed问题，作为C/C++程序员，如果代码写得不规范，出现这</description>
+    </item>
+    
+    <item>
+      <title>如何调试Firefox和IE的插件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 02 Sep 2012 19:44:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</guid>
+      <description>关于FireFox和IE的插件调试，以前我有调试过T3D的，今天想再研究一下，打好断点，却怎么也无法断下来，可以前是可以</description>
+    </item>
+    
+    <item>
+      <title>如何在不安装VC2008发布包的情况下，发布VC2008生成的程序</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 08 Aug 2012 09:54:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <description>在前面的Blog中有提到，VS2005及以上版本的程序发布与之前版本有一个差别就是清单文件，这个清单文件包含了运行此应用</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio中使用NASM编译汇编文件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Jul 2012 11:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</guid>
+      <description>NASM相对MASM和GAS而言，是一款比较中庸的汇编器，它语法简洁、功能强大，而且跨平台、免费，是外联汇编的不错选择。</description>
+    </item>
+    
+    <item>
+      <title>Win32调试API原理</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 13 Jan 2012 11:23:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</guid>
+      <description>来自《软件技术加密内幕》和chm版本不太一样 在Win32中自带了一些API函数，它们提供了相当于一般调试器的大多数功能，</description>
+    </item>
+    
+    <item>
+      <title>浅析网络编程之Socket模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:29:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</guid>
+      <description>Winsock 的I/O操作 两种I/O模式 阻塞模式：执行I/O操作完成前会一直进行等待，不会将控制权交给程序。套接字 默认为阻塞模式。可</description>
+    </item>
+    
+    <item>
+      <title>很幽默的讲解六种Socket I/O模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:24:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</guid>
+      <description>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。 一： select 模型 二： WSAAsyncSelect 模型 三： WSAEventSelect 模型 四： Overlapped I/O 事件</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 清单(manifest)导致的问题</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 17 Nov 2011 12:10:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前些天把一个项目从XP 32位平台拿到Win7 64位平台去编译运行，用VS2008按Win32的方式编译连接都通过，但是一</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Unreal的数据类型的值</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-10-31-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAUnreal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Sun, 31 Oct 2010 17:07:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-10-31-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAUnreal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <description>在Unreal引擎中大量使用了自定义的数据类型如：FName，FString，TArray等等，对于这些自定义的数据类型</description>
     </item>
     
     <item>
       <title>Windows系统无法启动时如何修复注册表</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
-      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
+      <pubDate>Thu, 10 Jun 2010 21:53:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
-      <description>​ 我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想</description>
-    </item>
-    
-    <item>
-      <title>Linux通过Smb与Windows共享目录</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Thu, 26 Jul 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
-      <description>​ 由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的</description>
-    </item>
-    
-    <item>
-      <title>Windows与Linux共存之重装Windows经历</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Sat, 09 Jun 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
-      <description>Linux是一个功能强大的操作系统，它既支持如MSDOS一般的命令行操作，也支持如Windows一般的图形界面的操作。 随</description>
+      <guid>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
+      <description>我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想在</description>
     </item>
     
   </channel>

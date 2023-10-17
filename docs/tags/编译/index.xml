@@ -6,14 +6,32 @@
     <description>Recent content in 编译 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jun 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 18:55:29 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux下编译GCC</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
-      <pubDate>Mon, 08 Jun 2009 00:00:00 +0000</pubDate>
+      <title>Go语言非main包编译为静态库并使用</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 09 Jul 2021 18:55:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
-      <description>​ 看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Li</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</guid>
+      <description>文章目录 一、环境 二、常规工程 三、将libDemo编译为静态库使用 1. 移动libDemo 2. 编译libDemo为静态库 3. 删除源</description>
+    </item>
+    
+    <item>
+      <title>使用msys2 mingw64编译gcc</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</link>
+      <pubDate>Thu, 27 Aug 2020 16:21:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</guid>
+      <description>我们在msys2中使用pacman安装的GCC默认是不能显示中文帮助的 而Linux下是可以显示中文的： 这是因为在编译ms</description>
+    </item>
+    
+    <item>
+      <title>使用Visual Studio 2015编译LLVM/Clang源码</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sun, 12 May 2019 15:57:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</guid>
+      <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
     </item>
     
   </channel>

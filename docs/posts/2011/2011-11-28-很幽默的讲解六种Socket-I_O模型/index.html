@@ -1,0 +1,1672 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>很幽默的讲解六种Socket I/O模型 | Witton的博客</title>
+    <meta property="og:title" content="很幽默的讲解六种Socket I/O模型 - Witton的博客">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content='2011-11-28T14:24:26&#43;08:00'>
+    <meta property="article:modified_time" content='2011-11-28T14:24:26&#43;08:00'>
+    <meta name="Keywords" content="socket,微软,microsoft,远程连接,windows,stream,博客,笔记,游戏开发,Witton,WittonBell,Bell">
+    <meta name="description" content="很幽默的讲解六种Socket I/O模型">
+    <meta name="author" content="【转载】">
+    <meta property="og:url" content="https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://unpkg.com/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/mhchem.min.js"
+    integrity="sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/copy-tex.min.js"
+    integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+    
+    </head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                    <a id="logo" href="https://wittonbell.github.io/">
+                        Witton的博客
+                    </a>
+                <p class="description">游戏服务器开发、技术笔记、博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
+                    <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
+                    <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="body">
+        <div class="container">
+            <div class="col-group">
+                <div class="col-8" id="main">
+                    <div class="res-cons">
+
+<style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 300px;
+        margin-left: -310px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 1px 0;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 1px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mainsock">len
+, i : 
+Integer
+;
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+begin
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+MainSock :</a></li>
+    <li><a href="#addrsin_family"> socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+addr.sin_family :</a></li>
+    <li><a href="#addrsin_port"> AF_INET;
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+addr.sin_port :</a></li>
+    <li><a href="#addrsin_addrs_addr"> htons(
+5678
+);
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+addr.sin_addr.S_addr :</a></li>
+    <li><a href="#timeouttv_sec"><img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+begin
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+FD_ZERO( fd_read );
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+FD_SET( MainSock, fd_read );
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+timeout.tv_sec :</a></li>
+    <li><a href="#timeouttv_usec"> 
+0
+;
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+timeout.tv_usec :</a></li>
+    <li><a href="#i">for
+ i:</a>
+      <ul>
+        <li><a href="#fd_readfd_count">0
+ 
+to
+ fd_read.fd_count</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading">len
+ :</a></li>
+    <li><a href="#asock"> sizeof(addr);
+<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
+ASock :</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+
+<article class="post">
+        <header>
+            <h1 class="post-title">很幽默的讲解六种Socket I/O模型</h1>
+        </header>
+        <time datetime="2011-11-28T06:24:26Z" class="post-meta meta-date dt-published">2011年11月28日</time>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 作者: 【转载】</span>
+<div class="post-meta meta-category">
+  <span>&nbsp;|&nbsp;</span><a href="/categories/Windows/" class="category-link p-category" target="_blank">Windows</a>/<a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-link p-category" target="_blank">网络</a>
+</div>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 3606 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 8&nbsp;分钟</span>
+
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        <div class="post-content">
+            <pre><code>                本文简单介绍了当前 
+</code></pre>
+<p>Windows
+支持的各种
+Socket I/O
+模型，如果你发现其中存在什么错误请务必赐教。</p>
+<p>一：
+select
+模型</p>
+<p>二：
+WSAAsyncSelect
+模型</p>
+<p>三：
+WSAEventSelect
+模型</p>
+<p>四：
+Overlapped I/O
+事件通知模型</p>
+<p>五：
+Overlapped I/O
+完成例程模型</p>
+<p>六：
+IOCP
+模型</p>
+<p>老陈有一个在外地工作的女儿，不能经常回来，老陈和她通过信件联系。他们的信会被邮递员投递到他们的信箱里。</p>
+<p>这和
+Socket
+模型非常类似。下面我就以老陈接收信件为例讲解
+Socket I/O
+模型</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>一： 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>select 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>模型 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>老陈非常想看到女儿的信。以至于他每隔 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>10 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>分钟就下楼检查信箱，看是否有女儿的信 
+</span></span></code></pre></div><p>在这种情况下，
+&quot;
+下楼检查信箱
+&quot;
+然后回到楼上耽误了老陈太多的时间，以至于老陈无法做其他工作。</p>
+<p>select
+模型和老陈的这种情况非常相似：周而复始地去检查
+&hellip;&hellip;
+如果有数据
+&hellip;&hellip;
+接收
+/
+发送
+&hellip;&hellip;.</p>
+<p>使用线程来
+select
+应该是通用的做法：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>procedure TListenThread.Execute;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+var
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+addr : TSockAddrIn;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+fd_read : TFDSet;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+timeout : TTimeVal;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+ASock,
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+MainSock : TSocket;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<h1 id="mainsock">len
+, i : 
+Integer
+;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+begin
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+MainSock :</h1>
+<h1 id="addrsin_family"> socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+addr.sin_family :</h1>
+<h1 id="addrsin_port"> AF_INET;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+addr.sin_port :</h1>
+<h1 id="addrsin_addrs_addr"> htons(
+5678
+);
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+addr.sin_addr.S_addr :</h1>
+<p> htonl(INADDR_ANY);
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+bind( MainSock, @addr, sizeof(addr) );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+listen( MainSock, 
+5
+ );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>while
+ (
+not
+ Terminated) 
+do</p>
+<h1 id="timeouttv_sec">
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+begin
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+FD_ZERO( fd_read );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+FD_SET( MainSock, fd_read );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+timeout.tv_sec :</h1>
+<h1 id="timeouttv_usec"> 
+0
+;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+timeout.tv_usec :</h1>
+<p> 
+500
+;
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>if
+ 
+select
+( 
+0
+, @fd_read, nil, nil, @timeout ) </p>
+<blockquote>
+</blockquote>
+<p> 
+0
+ 
+then
+ 
+//
+至少有1个等待Accept的connection
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+begin
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>if
+ FD_ISSET( MainSock, fd_read ) 
+then</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+begin
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<h1 id="i">for
+ i:</h1>
+<h2 id="fd_readfd_count">0
+ 
+to
+ fd_read.fd_count</h2>
+<p>1
+ 
+do
+ 
+//
+注意，fd_count 
+&lt;=
+ 
+64
+，也就是说select只能同时管理最多64个连接
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+begin
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<h1 id="heading">len
+ :</h1>
+<h1 id="asock"> sizeof(addr);
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+ASock :</h1>
+<p> accept( MainSock, addr, 
+len
+ );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>if
+ ASock 
+&lt;&gt;
+ INVALID_SOCKET 
+then</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+&hellip;.
+//
+为ASock创建一个新的线程，在新的线程中再不停地select
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>end
+; 
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>end
+; 
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>end
+; 
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>end
+; 
+//
+while
+ (
+not
+ self.Terminated)
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+shutdown( MainSock, SD_BOTH );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    
+closesocket( MainSock );
+
+        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
+            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
+        </a>
+    </p>
+<p>end
+;</p>
+<p>二：WSAAsyncSelect模型</p>
+<p>后来，老陈使用了微软公司的新式信箱。这种信箱非常先进，一旦信箱里有新的信件，盖茨就会给老陈打电话：喂，大爷，你有新的信件了！从此，老陈再也不必频繁上下楼检查信箱了，牙也不疼了，你瞅准了，蓝天 &hellip;&hellip;不是，微软~~~~~~~~
+微软提供的WSAAsyncSelect模型就是这个意思。</p>
+<p>WSAAsyncSelect模型是Windows 下最简单易用的一种Socket I/O模型。使用这种模型时，Windows会把网络事件以消息的形势通知应用程序。
+首先定义一个消息标示常量：
+const WM_SOCKET = WM_USER + 55;
+再在主Form的private 域添加一个处理此消息的函数声明：
+private
+procedure WMSocket(var Msg: TMessage); message WM_SOCKET;
+然后就可以使用WSAAsyncSelect了：
+var
+addr : TSockAddr;
+sock : TSocket;</p>
+<p>sock := socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+addr.sin_family := AF_INET;
+addr.sin_port := htons(5678);
+addr.sin_addr.S_addr := htonl(INADDR_ANY);
+bind( m_sock, @addr, sizeof(SOCKADDR) );</p>
+<p>WSAAsyncSelect( m_sock, Handle, WM_SOCKET, FD_ACCEPT or FD_CLOSE );</p>
+<p>listen( m_sock, 5 );
+&hellip;.</p>
+<p>应用程序可以对收到WM_SOCKET消息进行分析，判断是哪一个 socket产生了网络事件以及事件类型：</p>
+<p>procedure TfmMain.WMSocket(var Msg: TMessage);
+var
+sock : TSocket;
+addr : TSockAddrIn;
+addrlen : Integer;
+buf : Array [0..4095] of Char;
+begin
+//Msg的WParam是产生了网络事件的 socket句柄，LParam则包含了事件类型
+case WSAGetSelectEvent( Msg.LParam ) of
+FD_ACCEPT :
+begin
+addrlen := sizeof(addr);
+sock := accept( Msg.WParam, addr, addrlen );
+if sock &lt;&gt; INVALID_SOCKET then
+WSAAsyncSelect( sock, Handle, WM_SOCKET, FD_READ or FD_WRITE or FD_CLOSE );
+end;</p>
+<p>FD_CLOSE : closesocket( Msg.WParam );
+FD_READ : recv( Msg.WParam, buf[0], 4096, 0 );
+FD_WRITE : ;
+end;
+end;</p>
+<p>三：WSAEventSelect模型</p>
+<p>后来，微软的信箱非常畅销，购买微软信箱的人以百万计数&hellip;&hellip;以至于盖茨每天 24小时给客户打电话，累得腰酸背痛，喝蚁力神都不好使~~~~~~
+微软改进了他们的信箱：在客户的家中添加一个附加装置，这个装置会监视客户的信箱，每当新的信件来临，此装置会发出 &ldquo;新信件到达&quot;声，提醒老陈去收信。盖茨终于可以睡觉了。</p>
+<p>同样要使用线程：
+procedure TListenThread.Execute;
+var
+hEvent : WSAEvent;
+ret : Integer;
+ne : TWSANetworkEvents;
+sock : TSocket;
+adr : TSockAddrIn;
+sMsg : String;
+Index,
+EventTotal : DWORD;
+EventArray : Array [0..WSA_MAXIMUM_WAIT_EVENTS-1] of WSAEVENT;
+begin
+&hellip;socket&hellip;bind&hellip;
+hEvent := WSACreateEvent();
+WSAEventSelect( ListenSock, hEvent, FD_ACCEPT or FD_CLOSE );
+&hellip;listen&hellip;</p>
+<p>while ( not Terminated ) do
+begin
+Index := WSAWaitForMultipleEvents( EventTotal, @EventArray[0], FALSE, WSA_INFINITE, FALSE );
+FillChar( ne, sizeof(ne), 0 );
+WSAEnumNetworkEvents( SockArray[Index-WSA_WAIT_EVENT_0], EventArray[Index-WSA_WAIT_EVENT_0], @ne );</p>
+<p>if ( ne.lNetworkEvents and FD_ACCEPT ) &gt; 0 then
+begin
+if ne.iErrorCode[FD_ACCEPT_BIT] &lt;&gt; 0 then
+continue;</p>
+<p>ret := sizeof(adr);
+sock := accept( SockArray[Index-WSA_WAIT_EVENT_0], adr, ret );
+if EventTotal &gt; WSA_MAXIMUM_WAIT_EVENTS-1 then//这里WSA_MAXIMUM_WAIT_EVENTS 同样是64
+begin
+closesocket( sock );
+continue;
+end;</p>
+<p>hEvent := WSACreateEvent();
+WSAEventSelect( sock, hEvent, FD_READ or FD_WRITE or FD_CLOSE );
+SockArray[EventTotal] := sock;
+EventArray[EventTotal] := hEvent;
+Inc( EventTotal );
+end;</p>
+<p>if ( ne.lNetworkEvents and FD_READ ) &gt; 0 then
+begin
+if ne.iErrorCode[FD_READ_BIT] &lt;&gt; 0 then
+continue;
+FillChar( RecvBuf[0], PACK_SIZE_RECEIVE, 0 );
+ret := recv( SockArray[Index-WSA_WAIT_EVENT_0], RecvBuf[0], PACK_SIZE_RECEIVE, 0 );
+&hellip;&hellip;
+end;
+end;
+end;</p>
+<p>四：Overlapped I/O 事件通知模型</p>
+<p>后来，微软通过调查发现，老陈不喜欢上下楼收发信件，因为上下楼其实很浪费时间。于是微软再次改进他们的信箱。新式的信箱采用了更为先进的技术，只要用户告诉微软自己的家在几楼几号，新式信箱会把信件直接传送到用户的家中，然后告诉用户，你的信件已经放到你的家中了！老陈很高兴，因为他不必再亲自收发信件了！</p>
+<p>Overlapped I/O 事件通知模型和WSAEventSelect模型在实现上非常相似，主要区别在 &ldquo;Overlapped&rdquo;，Overlapped 模型是让应用程序使用重叠数据结构(WSAOVERLAPPED)，一次投递一个或多个 Winsock I/O请求。这些提交的请求完成后，应用程序会收到通知。什么意思呢？就是说，如果你想从 socket上接收数据，只需要告诉系统，由系统为你接收数据，而你需要做的只是为系统提供一个缓冲区 ~~~~~
+Listen线程和WSAEventSelect 模型一模一样，Recv/Send线程则完全不同：
+procedure TOverlapThread.Execute;
+var
+dwTemp : DWORD;
+ret : Integer;
+Index : DWORD;
+begin
+&hellip;&hellip;</p>
+<p>while ( not Terminated ) do
+begin
+Index := WSAWaitForMultipleEvents( FLinks.Count, @FLinks.Events[0], FALSE, RECV_TIME_OUT, FALSE );
+Dec( Index, WSA_WAIT_EVENT_0 );
+if Index &gt; WSA_MAXIMUM_WAIT_EVENTS-1 then //超时或者其他错误
+continue;</p>
+<p>WSAResetEvent( FLinks.Events[Index] );
+WSAGetOverlappedResult( FLinks.Sockets[Index], FLinks.pOverlaps[Index], @dwTemp, FALSE, FLinks.pdwFlags[Index]^ );</p>
+<p>if dwTemp = 0 then //连接已经关闭
+begin
+&hellip;&hellip;
+continue;
+end else
+begin
+fmMain.ListBox1.Items.Add( FLinks.pBufs[Index]^.buf );
+end;</p>
+<p>//初始化缓冲区
+FLinks.pdwFlags[Index]^ := 0;
+FillChar( FLinks.pOverlaps[Index]^, sizeof(WSAOVERLAPPED), 0 );
+FLinks.pOverlaps[Index]^.hEvent := FLinks.Events[Index];
+FillChar( FLinks.pBufs[Index]^.buf^, BUFFER_SIZE, 0 );</p>
+<p>//递一个接收数据请求
+WSARecv( FLinks.Sockets[Index], FLinks.pBufs[Index], 1, FLinks.pdwRecvd[Index]^, FLinks.pdwFlags[Index]^, FLinks.pOverlaps[Index], nil );
+end;
+end;</p>
+<p>五：Overlapped I/O 完成例程模型</p>
+<p>老陈接收到新的信件后，一般的程序是：打开信封&mdash;-掏出信纸 &mdash;-阅读信件&mdash;-回复信件 &hellip;&hellip;为了进一步减轻用户负担，微软又开发了一种新的技术：用户只要告诉微软对信件的操作步骤，微软信箱将按照这些步骤去处理信件，不再需要用户亲自拆信 /阅读/回复了！老陈终于过上了小资生活！</p>
+<p>Overlapped I/O 完成例程要求用户提供一个回调函数，发生新的网络事件的时候系统将执行这个函数：
+procedure WorkerRoutine( const dwError, cbTransferred : DWORD; const
+lpOverlapped : LPWSAOVERLAPPED; const dwFlags : DWORD ); stdcall;
+然后告诉系统用WorkerRoutine函数处理接收到的数据：
+WSARecv( m_socket, @FBuf, 1, dwTemp, dwFlag, @m_overlap, WorkerRoutine );
+然后&hellip;&hellip;没有什么然后了，系统什么都给你做了！微软真实体贴！
+while ( not Terminated ) do//这就是一个Recv/Send线程要做的事情 &hellip;&hellip;什么都不用做啊！！！
+begin
+if SleepEx( RECV_TIME_OUT, True ) = WAIT_IO_COMPLETION then //
+begin
+;
+end else
+begin
+continue;
+end;
+end;</p>
+<p>六：IOCP模型</p>
+<p>微软信箱似乎很完美，老陈也很满意。但是在一些大公司情况却完全不同！这些大公司有数以万计的信箱，每秒钟都有数以百计的信件需要处理，以至于微软信箱经常因超负荷运转而崩溃！需要重新启动！微软不得不使出杀手锏 &hellip;&hellip;
+微软给每个大公司派了一名名叫&quot;Completion Port&quot;的超级机器人，让这个机器人去处理那些信件！</p>
+<p>&ldquo;Windows NT小组注意到这些应用程序的性能没有预料的那么高。特别的，处理很多同时的客户请求意味着很多线程并发地运行在系统中。因为所有这些线程都是可运行的 [没有被挂起和等待发生什么事]， Microsoft意识到NT内核花费了太多的时间来转换运行线程的上下文 [Context]，线程就没有得到很多CPU时间来做它们的工作。大家可能也都感觉到并行模型的瓶颈在于它为每一个客户请求都创建了一个新线程。创建线程比起创建进程开销要小，但也远不是没有开销的。我们不妨设想一下：如果事先开好 N个线程，让它们在那hold[堵塞 ]，然后可以将所有用户的请求都投递到一个消息队列中去。然后那N 个线程逐一从消息队列中去取出消息并加以处理。就可以避免针对每一个用户请求都开线程。不仅减少了线程的资源，也提高了线程的利用率。理论上很不错，你想我等泛泛之辈都能想出来的问题， Microsoft又怎会没有考虑到呢?&rdquo;&mdash;&ndash; 摘自nonocast的《理解I/O Completion Port》</p>
+<p>先看一下IOCP模型的实现：</p>
+<p>//创建一个完成端口
+FCompletPort := CreateIoCompletionPort( INVALID_HANDLE_VALUE, 0,0,0 );</p>
+<p>//接受远程连接，并把这个连接的socket句柄绑定到刚才创建的 IOCP上
+AConnect := accept( FListenSock, addr, len);
+CreateIoCompletionPort( AConnect, FCompletPort, nil, 0 );</p>
+<p>//创建CPU数<em>2 + 2个线程
+for i:=1 to si.dwNumberOfProcessors</em>2+2 do
+begin
+AThread := TRecvSendThread.Create( false );
+AThread.CompletPort := FCompletPort;//告诉这个线程，你要去这个IOCP 去访问数据
+end;</p>
+<p>OK，就这么简单，我们要做的就是建立一个IOCP，把远程连接的 socket句柄绑定到刚才创建的IOCP上，最后创建 n个线程，并告诉这n个线程到这个 IOCP上去访问数据就可以了。</p>
+<p>再看一下TRecvSendThread线程都干些什么：</p>
+<p>procedure TRecvSendThread.Execute;
+var
+&hellip;&hellip;
+begin
+while (not self.Terminated) do
+begin
+//查询IOCP状态（数据读写操作是否完成）
+GetQueuedCompletionStatus( CompletPort, BytesTransd, CompletKey, POVERLAPPED(pPerIoDat), TIME_OUT );</p>
+<p>if BytesTransd &lt;&gt; 0 then
+&hellip;.;//数据读写操作完成</p>
+<p>//再投递一个读数据请求
+WSARecv( CompletKey, @(pPerIoDat^.BufData), 1, BytesRecv, Flags, @(pPerIoDat^.Overlap), nil );
+end;
+end;</p>
+<p>读写线程只是简单地检查IOCP是否完成了我们投递的读写操作，如果完成了则再投递一个新的读写请求。
+应该注意到，我们创建的所有TRecvSendThread都在访问同一个 IOCP（因为我们只创建了一个IOCP），并且我们没有使用临界区！难道不会产生冲突吗？不用考虑同步问题吗？</p>
+<p>呵呵，这正是
+IOCP
+的奥妙所在。
+IOCP
+不是一个普通的对象，不需要考虑线程安全问题。它会自动调配访问它的线程：如果某个
+socket
+上有一个线程
+A
+正在访问，那么线程
+B
+的访问请求会被分配到另外一个
+socket
+。这一切都是由系统自动调配的，我们无需过问</p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+	<ul class="post-nav">
+		
+			<li class="post-nav-prev">
+				<a href="/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/" rel="prev">&lt; 浅析网络编程之Socket模型</a>
+			</li>
+		
+		
+			<li class="post-nav-next">
+				<a href="/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/" rel="next">Visual Studio 清单(manifest)导致的问题 &gt;</a>
+			</li>
+		
+	</ul>
+
+
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
+        
+        
+        
+        
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/">https://wittonbell.github.io/posts/2011/2011-11-28-很幽默的讲解六种Socket-I_O模型/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/">Visual Studio 清单(manifest)导致的问题</a></li>
+        
+        <li><a href="/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/">Windows系统无法启动时如何修复注册表</a></li>
+        
+        <li><a href="/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/">Linux下编译GCC</a></li>
+        
+        <li><a href="/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/">关于G&#43;&#43;库链接的一个问题</a></li>
+        
+        <li><a href="/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/">跨平台UNICODE编程总结</a></li>
+        
+    </ul>
+</div>
+
+
+<div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/socket/' target="_blank">socket</a></li>
+                
+                <li><a href='/tags/%E5%BE%AE%E8%BD%AF/' target="_blank">微软</a></li>
+                
+                <li><a href='/tags/microsoft/' target="_blank">microsoft</a></li>
+                
+                <li><a href='/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/' target="_blank">远程连接</a></li>
+                
+                <li><a href='/tags/windows/' target="_blank">windows</a></li>
+                
+                <li><a href='/tags/stream/' target="_blank">stream</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const ID = "2011-11-28-很幽默的讲解六种Socket-I_O模型" 
+    const Title = "2011-11-28-很幽默的讲解六种Socket-I_O模型"
+    const gitalk = new Gitalk({
+        clientID: '118c70fe27b7246dfb76',
+        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
+        repo: 'comment',
+        owner: 'WittonBell',
+        admin: ['WittonBell'],
+        id: ID, 
+        title: Title,
+        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
+        pagerDirection: "last",
+        createIssueManually:  false ,
+        distractionFreeMode:  false  
+    });
+    (function () {
+        
+        
+        
+        
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+</div>
+<footer id="footer">
+    <div>
+        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://wittonbell.github.io/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">Witton</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+</div>
+
+            <div id="secondary">
+    <section class="widget">
+    <form id="search" action='https://wittonbell.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder=搜索>
+      <input type="hidden" name="sitesearch" value="https://wittonbell.github.io/">
+      <button type="submit" class="submit icon-search" title=搜索></button>
+</form>
+    </section>
+
+    <section class="widget">
+    <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/" title="制作带Go调试器的容器" target="_blank">制作带Go调试器的容器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/" title="复制远程连接到Linux使用VIM打开的内容到Windows" target="_blank">复制远程连接到Linux使用VIM打开的内容到Windows</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/" title="容器中的nginx暴露一个端口部署多个功能的网站" target="_blank">容器中的nginx暴露一个端口部署多个功能的网站</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/" title="使用docker-compose命令行向远程主机编排容器" target="_blank">使用docker-compose命令行向远程主机编排容器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/" title="解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]" target="_blank">解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/" title="解决nexus3登录x509: certificate has expired or is not yet valid" target="_blank">解决nexus3登录x509: certificate has expired or is not yet valid</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/" title="VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4" target="_blank">VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/" title="Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发" target="_blank">Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/" title="SSH远程连接MacOS catalina并进行终端颜色配置" target="_blank">SSH远程连接MacOS catalina并进行终端颜色配置</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/" title="解决lldb调试时可能出现的personality set failed: Function not implemented" target="_blank">解决lldb调试时可能出现的personality set failed: Function not implemented</a>
+    </li>
+</ul>
+</section><section class="widget">
+    <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (36)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Erlang/">Erlang (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/GO/">GO (9)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/IDE/">IDE (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/Clang/">LLVM/Clang (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (73)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (19)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Mysql/">Mysql (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Python/">Python (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Qt/">Qt (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Redis/">Redis (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unity/">Unity (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unreal/">Unreal (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/VisualGDB/">VisualGDB (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (43)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/macOS/">macOS (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/nginx/">nginx (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux/">使用Cockpit管理Linux (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/">容器 (28)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/">操作系统开发 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%9D%82%E8%AE%B0/">杂记 (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/">汇编 (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/">游戏 (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理 (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (44)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/">网络 (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台 (17)</a></li>
+</ul>
+</section>
+
+    <section class="widget">
+    <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    <a href="https://wittonbell.github.io/tags/-failed/">- failed</a>
+    <a href="https://wittonbell.github.io/tags/.a/">.a</a>
+    <a href="https://wittonbell.github.io/tags/0%E5%AD%97%E8%8A%82/">0字节</a>
+    <a href="https://wittonbell.github.io/tags/2010/">2010</a>
+    <a href="https://wittonbell.github.io/tags/6.x/">6.x</a>
+    <a href="https://wittonbell.github.io/tags/ABI-info/">ABI info</a>
+    <a href="https://wittonbell.github.io/tags/AC97/">AC97</a>
+    <a href="https://wittonbell.github.io/tags/Apache/">Apache</a>
+    <a href="https://wittonbell.github.io/tags/BUG/">BUG</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-11/">C&#43;&#43; 11</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-makefile/">C&#43;&#43; makefile</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;11/">C&#43;&#43;11</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/CC&#43;&#43;/">CC&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/CNI-config/">CNI config</a>
+    <a href="https://wittonbell.github.io/tags/CNI-network/">CNI network</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/CentOS6/">CentOS6</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D/">Cocos2D</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2d-x/">Cocos2d-x</a>
+    <a href="https://wittonbell.github.io/tags/Code/">Code</a>
+    <a href="https://wittonbell.github.io/tags/Code-Runner/">Code Runner</a>
+    <a href="https://wittonbell.github.io/tags/Console/">Console</a>
+    <a href="https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/DNS/">DNS</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/Erlang%E4%BD%BF%E7%94%A8ProtoBuffer/">Erlang使用ProtoBuffer</a>
+    <a href="https://wittonbell.github.io/tags/Error/">Error</a>
+    <a href="https://wittonbell.github.io/tags/Free-Heap-block/">Free Heap block</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/Githuber-MD/">Githuber MD</a>
+    <a href="https://wittonbell.github.io/tags/Git%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/">Git版本信息</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/Google-Protocol-Buffers/">Google Protocol Buffers</a>
+    <a href="https://wittonbell.github.io/tags/HD-Audio/">HD Audio</a>
+    <a href="https://wittonbell.github.io/tags/Homebrew/">Homebrew</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/IPV6/">IPV6</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/Lua%E8%A7%A3%E5%AF%86/">Lua解密</a>
+    <a href="https://wittonbell.github.io/tags/MOTD/">MOTD</a>
+    <a href="https://wittonbell.github.io/tags/Mac/">Mac</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/ModuleNotFound/">ModuleNotFound</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/NO-QML/">NO QML</a>
+    <a href="https://wittonbell.github.io/tags/Navigator/">Navigator</a>
+    <a href="https://wittonbell.github.io/tags/No-moudule/">No moudule</a>
+    <a href="https://wittonbell.github.io/tags/No-such-file/">No such file</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/QEMU/">QEMU</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/SFINAE/">SFINAE</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/Segmentation/">Segmentation</a>
+    <a href="https://wittonbell.github.io/tags/TLS/SSL/">TLS/SSL</a>
+    <a href="https://wittonbell.github.io/tags/Terminal/">Terminal</a>
+    <a href="https://wittonbell.github.io/tags/Unable-to-load/">Unable to load</a>
+    <a href="https://wittonbell.github.io/tags/Unity/">Unity</a>
+    <a href="https://wittonbell.github.io/tags/VLAN/">VLAN</a>
+    <a href="https://wittonbell.github.io/tags/VMware/">VMware</a>
+    <a href="https://wittonbell.github.io/tags/VS2015/">VS2015</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/Visual-C&#43;&#43;/">Visual C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio-2015/">Visual Studio 2015</a>
+    <a href="https://wittonbell.github.io/tags/VisualGDB/">VisualGDB</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/XDebug/">XDebug</a>
+    <a href="https://wittonbell.github.io/tags/after-it-was-freed/">after it was freed</a>
+    <a href="https://wittonbell.github.io/tags/api/">api</a>
+    <a href="https://wittonbell.github.io/tags/array/">array</a>
+    <a href="https://wittonbell.github.io/tags/asp.net/">asp.net</a>
+    <a href="https://wittonbell.github.io/tags/autoindex/">autoindex</a>
+    <a href="https://wittonbell.github.io/tags/backspace/">backspace</a>
+    <a href="https://wittonbell.github.io/tags/backup/">backup</a>
+    <a href="https://wittonbell.github.io/tags/bash/">bash</a>
+    <a href="https://wittonbell.github.io/tags/binary/">binary</a>
+    <a href="https://wittonbell.github.io/tags/bind/">bind</a>
+    <a href="https://wittonbell.github.io/tags/blog/">blog</a>
+    <a href="https://wittonbell.github.io/tags/bochs/">bochs</a>
+    <a href="https://wittonbell.github.io/tags/bolt_state.db/">bolt_state.db</a>
+    <a href="https://wittonbell.github.io/tags/brew/">brew</a>
+    <a href="https://wittonbell.github.io/tags/bridge/">bridge</a>
+    <a href="https://wittonbell.github.io/tags/build/">build</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/callback/">callback</a>
+    <a href="https://wittonbell.github.io/tags/can/">can</a>
+    <a href="https://wittonbell.github.io/tags/catalina/">catalina</a>
+    <a href="https://wittonbell.github.io/tags/cd/">cd</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/centos-6/">centos 6</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/centos8/">centos8</a>
+    <a href="https://wittonbell.github.io/tags/certificate/">certificate</a>
+    <a href="https://wittonbell.github.io/tags/checkinstall/">checkinstall</a>
+    <a href="https://wittonbell.github.io/tags/chrome/">chrome</a>
+    <a href="https://wittonbell.github.io/tags/ci/">ci</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/class/">class</a>
+    <a href="https://wittonbell.github.io/tags/cmake/">cmake</a>
+    <a href="https://wittonbell.github.io/tags/cmd/">cmd</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/command/">command</a>
+    <a href="https://wittonbell.github.io/tags/compatible-with/">compatible with</a>
+    <a href="https://wittonbell.github.io/tags/compile/">compile</a>
+    <a href="https://wittonbell.github.io/tags/compiler/">compiler</a>
+    <a href="https://wittonbell.github.io/tags/constructor/">constructor</a>
+    <a href="https://wittonbell.github.io/tags/containers/">containers</a>
+    <a href="https://wittonbell.github.io/tags/core-dumped/">core dumped</a>
+    <a href="https://wittonbell.github.io/tags/cpack/">cpack</a>
+    <a href="https://wittonbell.github.io/tags/crash/">crash</a>
+    <a href="https://wittonbell.github.io/tags/cross/">cross</a>
+    <a href="https://wittonbell.github.io/tags/crtbegin.o/">crtbegin.o</a>
+    <a href="https://wittonbell.github.io/tags/ctest/">ctest</a>
+    <a href="https://wittonbell.github.io/tags/ctr.log/">ctr.log</a>
+    <a href="https://wittonbell.github.io/tags/curl/">curl</a>
+    <a href="https://wittonbell.github.io/tags/current-user/">current user</a>
+    <a href="https://wittonbell.github.io/tags/cygwin/">cygwin</a>
+    <a href="https://wittonbell.github.io/tags/data/">data</a>
+    <a href="https://wittonbell.github.io/tags/database/">database</a>
+    <a href="https://wittonbell.github.io/tags/debian/">debian</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/defer/">defer</a>
+    <a href="https://wittonbell.github.io/tags/device-is/">device is</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/dlv/">dlv</a>
+    <a href="https://wittonbell.github.io/tags/docisfy/">docisfy</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/docker-compose/">docker-compose</a>
+    <a href="https://wittonbell.github.io/tags/docsify/">docsify</a>
+    <a href="https://wittonbell.github.io/tags/dos/">dos</a>
+    <a href="https://wittonbell.github.io/tags/echarts/">echarts</a>
+    <a href="https://wittonbell.github.io/tags/ecmascript/">ecmascript</a>
+    <a href="https://wittonbell.github.io/tags/encoding/">encoding</a>
+    <a href="https://wittonbell.github.io/tags/enum-class/">enum class</a>
+    <a href="https://wittonbell.github.io/tags/epoll/">epoll</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/excel/">excel</a>
+    <a href="https://wittonbell.github.io/tags/exception/">exception</a>
+    <a href="https://wittonbell.github.io/tags/exe/">exe</a>
+    <a href="https://wittonbell.github.io/tags/export/">export</a>
+    <a href="https://wittonbell.github.io/tags/ext/">ext</a>
+    <a href="https://wittonbell.github.io/tags/failed-to/">failed to</a>
+    <a href="https://wittonbell.github.io/tags/file/">file</a>
+    <a href="https://wittonbell.github.io/tags/find/">find</a>
+    <a href="https://wittonbell.github.io/tags/firefox/">firefox</a>
+    <a href="https://wittonbell.github.io/tags/float/">float</a>
+    <a href="https://wittonbell.github.io/tags/fortran/">fortran</a>
+    <a href="https://wittonbell.github.io/tags/freebsd/">freebsd</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/g_test/">g_test</a>
+    <a href="https://wittonbell.github.io/tags/gc/">gc</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gcc%E6%BA%90%E7%A0%81/">gcc源码</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/git/">git</a>
+    <a href="https://wittonbell.github.io/tags/github/">github</a>
+    <a href="https://wittonbell.github.io/tags/gitlab/">gitlab</a>
+    <a href="https://wittonbell.github.io/tags/gitlab-pages/">gitlab pages</a>
+    <a href="https://wittonbell.github.io/tags/glib/">glib</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/goland/">goland</a>
+    <a href="https://wittonbell.github.io/tags/golang/">golang</a>
+    <a href="https://wittonbell.github.io/tags/go%E8%B0%83%E8%AF%95%E5%99%A8/">go调试器</a>
+    <a href="https://wittonbell.github.io/tags/gpb/">gpb</a>
+    <a href="https://wittonbell.github.io/tags/gtest/">gtest</a>
+    <a href="https://wittonbell.github.io/tags/has-expired/">has expired</a>
+    <a href="https://wittonbell.github.io/tags/heap/">heap</a>
+    <a href="https://wittonbell.github.io/tags/hp/">hp</a>
+    <a href="https://wittonbell.github.io/tags/httpd/">httpd</a>
+    <a href="https://wittonbell.github.io/tags/https/">https</a>
+    <a href="https://wittonbell.github.io/tags/idea/">idea</a>
+    <a href="https://wittonbell.github.io/tags/ie/">ie</a>
+    <a href="https://wittonbell.github.io/tags/installed/">installed</a>
+    <a href="https://wittonbell.github.io/tags/integer/">integer</a>
+    <a href="https://wittonbell.github.io/tags/intel/">intel</a>
+    <a href="https://wittonbell.github.io/tags/intellij-idea/">intellij idea</a>
+    <a href="https://wittonbell.github.io/tags/interface/">interface</a>
+    <a href="https://wittonbell.github.io/tags/internet/">internet</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/iostream/">iostream</a>
+    <a href="https://wittonbell.github.io/tags/ip/">ip</a>
+    <a href="https://wittonbell.github.io/tags/java/">java</a>
+    <a href="https://wittonbell.github.io/tags/javascript/">javascript</a>
+    <a href="https://wittonbell.github.io/tags/jekyll/">jekyll</a>
+    <a href="https://wittonbell.github.io/tags/jenkins/">jenkins</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/json/">json</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/kubernetes/">kubernetes</a>
+    <a href="https://wittonbell.github.io/tags/lib/">lib</a>
+    <a href="https://wittonbell.github.io/tags/libSSH2/">libSSH2</a>
+    <a href="https://wittonbell.github.io/tags/libXss/">libXss</a>
+    <a href="https://wittonbell.github.io/tags/libc&#43;&#43;/">libc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libevent/">libevent</a>
+    <a href="https://wittonbell.github.io/tags/libstdc&#43;&#43;/">libstdc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libvirt/">libvirt</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lldb/">lldb</a>
+    <a href="https://wittonbell.github.io/tags/lldb-mi/">lldb-mi</a>
+    <a href="https://wittonbell.github.io/tags/log/">log</a>
+    <a href="https://wittonbell.github.io/tags/ls/">ls</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/macos/">macos</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/makefiles/">makefiles</a>
+    <a href="https://wittonbell.github.io/tags/markdown/">markdown</a>
+    <a href="https://wittonbell.github.io/tags/match-library/">match library</a>
+    <a href="https://wittonbell.github.io/tags/max-size/">max-size</a>
+    <a href="https://wittonbell.github.io/tags/may-not/">may not</a>
+    <a href="https://wittonbell.github.io/tags/mermaid/">mermaid</a>
+    <a href="https://wittonbell.github.io/tags/mfc/">mfc</a>
+    <a href="https://wittonbell.github.io/tags/mhchem/">mhchem</a>
+    <a href="https://wittonbell.github.io/tags/microsoft/">microsoft</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/minidump/">minidump</a>
+    <a href="https://wittonbell.github.io/tags/modified-at/">modified at</a>
+    <a href="https://wittonbell.github.io/tags/msys/">msys</a>
+    <a href="https://wittonbell.github.io/tags/msys2/">msys2</a>
+    <a href="https://wittonbell.github.io/tags/mysql/">mysql</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/natvis/">natvis</a>
+    <a href="https://wittonbell.github.io/tags/new-project/">new project</a>
+    <a href="https://wittonbell.github.io/tags/nexus/">nexus</a>
+    <a href="https://wittonbell.github.io/tags/nginx/">nginx</a>
+    <a href="https://wittonbell.github.io/tags/ninja/">ninja</a>
+    <a href="https://wittonbell.github.io/tags/not-found/">not found</a>
+    <a href="https://wittonbell.github.io/tags/not-implemented/">not implemented</a>
+    <a href="https://wittonbell.github.io/tags/not-in-the/">not in the</a>
+    <a href="https://wittonbell.github.io/tags/not-owned/">not owned</a>
+    <a href="https://wittonbell.github.io/tags/not-support/">not support</a>
+    <a href="https://wittonbell.github.io/tags/null/">null</a>
+    <a href="https://wittonbell.github.io/tags/object/">object</a>
+    <a href="https://wittonbell.github.io/tags/open-files/">open files</a>
+    <a href="https://wittonbell.github.io/tags/open-vSwitch/">open vSwitch</a>
+    <a href="https://wittonbell.github.io/tags/open-vm-tools/">open-vm-tools</a>
+    <a href="https://wittonbell.github.io/tags/or-is-not/">or is not</a>
+    <a href="https://wittonbell.github.io/tags/os/">os</a>
+    <a href="https://wittonbell.github.io/tags/output/">output</a>
+    <a href="https://wittonbell.github.io/tags/overlay/">overlay</a>
+    <a href="https://wittonbell.github.io/tags/pacman/">pacman</a>
+    <a href="https://wittonbell.github.io/tags/path/">path</a>
+    <a href="https://wittonbell.github.io/tags/personality/">personality</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/pie/">pie</a>
+    <a href="https://wittonbell.github.io/tags/pip/">pip</a>
+    <a href="https://wittonbell.github.io/tags/pkg-config/">pkg-config</a>
+    <a href="https://wittonbell.github.io/tags/pkg_resources/">pkg_resources</a>
+    <a href="https://wittonbell.github.io/tags/placeholders_1/">placeholders::_1</a>
+    <a href="https://wittonbell.github.io/tags/plugin/">plugin</a>
+    <a href="https://wittonbell.github.io/tags/podman/">podman</a>
+    <a href="https://wittonbell.github.io/tags/podman-compose/">podman-compose</a>
+    <a href="https://wittonbell.github.io/tags/postfix/">postfix</a>
+    <a href="https://wittonbell.github.io/tags/produce-code/">produce code</a>
+    <a href="https://wittonbell.github.io/tags/proto/">proto</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/protobuffer/">protobuffer</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/python3/">python3</a>
+    <a href="https://wittonbell.github.io/tags/qt/">qt</a>
+    <a href="https://wittonbell.github.io/tags/qt6/">qt6</a>
+    <a href="https://wittonbell.github.io/tags/qtcreator/">qtcreator</a>
+    <a href="https://wittonbell.github.io/tags/rand/">rand</a>
+    <a href="https://wittonbell.github.io/tags/reflect/">reflect</a>
+    <a href="https://wittonbell.github.io/tags/registry/">registry</a>
+    <a href="https://wittonbell.github.io/tags/repository/">repository</a>
+    <a href="https://wittonbell.github.io/tags/require/">require</a>
+    <a href="https://wittonbell.github.io/tags/reset/">reset</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/safe.directory/">safe.directory</a>
+    <a href="https://wittonbell.github.io/tags/set-failed/">set failed</a>
+    <a href="https://wittonbell.github.io/tags/sftp/">sftp</a>
+    <a href="https://wittonbell.github.io/tags/shell/">shell</a>
+    <a href="https://wittonbell.github.io/tags/socket/">socket</a>
+    <a href="https://wittonbell.github.io/tags/sockets/">sockets</a>
+    <a href="https://wittonbell.github.io/tags/srand/">srand</a>
+    <a href="https://wittonbell.github.io/tags/ssh/">ssh</a>
+    <a href="https://wittonbell.github.io/tags/static/">static</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/storage/">storage</a>
+    <a href="https://wittonbell.github.io/tags/stream/">stream</a>
+    <a href="https://wittonbell.github.io/tags/strictly/">strictly</a>
+    <a href="https://wittonbell.github.io/tags/string/">string</a>
+    <a href="https://wittonbell.github.io/tags/struct/">struct</a>
+    <a href="https://wittonbell.github.io/tags/structure/">structure</a>
+    <a href="https://wittonbell.github.io/tags/sudo/">sudo</a>
+    <a href="https://wittonbell.github.io/tags/sudoers-file/">sudoers file</a>
+    <a href="https://wittonbell.github.io/tags/task/">task</a>
+    <a href="https://wittonbell.github.io/tags/templates/">templates</a>
+    <a href="https://wittonbell.github.io/tags/the-Qt-version/">the Qt version</a>
+    <a href="https://wittonbell.github.io/tags/thread/">thread</a>
+    <a href="https://wittonbell.github.io/tags/token/">token</a>
+    <a href="https://wittonbell.github.io/tags/too-many/">too many</a>
+    <a href="https://wittonbell.github.io/tags/traversal/">traversal</a>
+    <a href="https://wittonbell.github.io/tags/ubuntu/">ubuntu</a>
+    <a href="https://wittonbell.github.io/tags/unmanaged/">unmanaged</a>
+    <a href="https://wittonbell.github.io/tags/upload/">upload</a>
+    <a href="https://wittonbell.github.io/tags/utf8-codec-cant-deco/">utf8 codec cant deco</a>
+    <a href="https://wittonbell.github.io/tags/utility/">utility</a>
+    <a href="https://wittonbell.github.io/tags/validating/">validating</a>
+    <a href="https://wittonbell.github.io/tags/vditor/">vditor</a>
+    <a href="https://wittonbell.github.io/tags/version/">version</a>
+    <a href="https://wittonbell.github.io/tags/vim/">vim</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/visualstudio/">visualstudio</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/vss/">vss</a>
+    <a href="https://wittonbell.github.io/tags/warnings/">warnings</a>
+    <a href="https://wittonbell.github.io/tags/watcher/">watcher</a>
+    <a href="https://wittonbell.github.io/tags/win10/">win10</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/windows-7/">windows 7</a>
+    <a href="https://wittonbell.github.io/tags/windows-xp/">windows xp</a>
+    <a href="https://wittonbell.github.io/tags/wordpress/">wordpress</a>
+    <a href="https://wittonbell.github.io/tags/wsl2/">wsl2</a>
+    <a href="https://wittonbell.github.io/tags/x509/">x509</a>
+    <a href="https://wittonbell.github.io/tags/x86/">x86</a>
+    <a href="https://wittonbell.github.io/tags/xls/">xls</a>
+    <a href="https://wittonbell.github.io/tags/xlsx/">xlsx</a>
+    <a href="https://wittonbell.github.io/tags/xml/">xml</a>
+    <a href="https://wittonbell.github.io/tags/xml%E8%BD%ACexcel/">xml转excel</a>
+    <a href="https://wittonbell.github.io/tags/xp/">xp</a>
+    <a href="https://wittonbell.github.io/tags/yet-valid/">yet valid</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3/">一个端口</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E5%88%97/">一列</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0/">上传</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/">上传文件</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">不升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E6%98%BE%E7%A4%BA/">不显示</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E8%B6%B3/">不足</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%A4%E5%88%97%E6%95%B0%E6%8D%AE/">两列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%AD%E6%96%87/">中文</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/">乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/">二进制</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/">五笔输入法</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E4%BA%92/">交互</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E5%8F%89/">交叉</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%90%86/">代理</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%A0%81/">代码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%BB%E5%8A%A1/">任务</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BC%81%E4%B8%9A%E7%89%88/">企业版</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BD%BF%E7%94%A8/">使用</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BE%9D%E8%B5%96/">依赖</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BF%AE%E6%94%B9/">修改</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%8D%E8%B4%B9/">免费</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">共享文件夹</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/">共享目录</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E5%AE%B9/">内容</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">内联汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E5%87%BA%E7%89%88/">出版</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%87%E6%8D%A2/">切换</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%A4%E6%96%AD/">判断</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%B6%E4%BD%9C/">制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF/">前置面板</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/">加快编译速度</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E8%BD%BD%E6%85%A2/">加载慢</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C/">动画制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7/">升级</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%A0%E4%BD%8D/">占位</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/">右键菜单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+    <a href="https://wittonbell.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E5%BD%A2/">图形</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E6%A0%87/">图标</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/">垃圾回收器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A3%B0%E9%9F%B3/">声音</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%84%E7%90%86%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">处理变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%87%E4%BB%BD/">备份</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%8D%E5%88%B6/">复制</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E4%B8%AA%E7%AB%99%E7%82%B9/">多个站点</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE/">多列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%A7%E9%9A%8F%E6%9C%BA%E6%95%B0/">大随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E4%BD%93/">字体</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/">字符串乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8/">存储</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/">存储路径</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85/">安装</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">安装与配置</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AF%BC%E5%87%BA/">导出</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E4%BD%9C/">工作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%8D%95/">工单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%AE%E5%88%AB/">差别</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B9%B3%E5%8F%B0/">平台</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/">序列化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BB%B6%E8%BF%9F%E8%B0%83%E7%94%A8/">延迟调用</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/">开机启动</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%95%E6%93%8E/">引擎</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BD%A9%E8%89%B2/">彩色</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+    <a href="https://wittonbell.github.io/tags/%E6%81%A2%E5%A4%8D/">恢复</a>
+    <a href="https://wittonbell.github.io/tags/%E6%85%A2/">慢</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%8C%85/">打包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%BC%80/">打开</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%A9%E5%B1%95/">扩展</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%BE%E5%9B%9E/">找回</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">持续集成</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/">控制台</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E5%8F%96/">提取</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF/">提示信息</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/">提示符</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%92%E4%BB%B6/">插件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    <a href="https://wittonbell.github.io/tags/%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/">收发邮件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">数学公式</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E5%90%88/">整合</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E6%95%B0/">整数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%87%E4%BB%B6%E6%9C%8D/">文件服</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/">断点</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%A0%E5%B0%84/">映射</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%90%8D%E7%A7%B0/">显示分支名称</a>
+    <a href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0glibc/">更新glibc</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/">更新码表</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%BF%E6%8D%A2%E5%A4%B1%E8%B4%A5%E4%B8%8D%E6%98%AF%E9%94%99%E8%AF%AF/">替换失败不是错误</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%AC%E5%9C%B0%E5%8C%85/">本地包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94/">极点五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%84%E5%BB%BA/">构建</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A1%8C%E9%9D%A2/">桌面</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">模板类成员函数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E7%B3%8A/">模糊</a>
+    <a href="https://wittonbell.github.io/tags/%E6%AF%94%E8%BE%83/">比较</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E6%80%BB/">汇总</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E7%BC%96/">汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%B7%E5%B3%B0%E4%BA%94%E7%AC%94/">海峰五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%BA%90%E7%A0%81/">源码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%85%A7%E7%89%87%E7%9B%B8%E7%9C%8B%E5%99%A8/">照片相看器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%8E%AF%E5%A2%83/">环境</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90/">生成</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4/">生成时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%99%BB%E5%BD%95/">登录</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A3%81%E7%9B%98/">磁盘</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A4%BE%E5%8C%BA%E7%89%88/">社区版</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A9%BA%E9%97%B4/">空间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AB%AF%E5%8F%A3/">端口</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    <a href="https://wittonbell.github.io/tags/%E7%B4%A2%E5%BC%95/">索引</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%88%E7%AB%AF/">终端</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%91%E5%AE%9A/">绑定</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/">编排容器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A0%81/">编码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/">编程书籍</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/">编译</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/">编译器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/">编译时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E5%8D%A1%E4%B8%8D%E5%8F%AF%E7%94%A8/">网卡不可用</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%AB%99/">网站</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE/">网络访问</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%8C%96/">美化</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/">美式键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD/">自动下载</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%B8%A6/">自带</a>
+    <a href="https://wittonbell.github.io/tags/%E8%8B%B1%E8%AF%AD%E9%94%AE%E7%9B%98/">英语键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%86%B3/">解决</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%AF%86/">解密</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/">解析失败</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80/">语言</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/">调试</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC/">转</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC%E4%B9%89/">转义</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%81%E7%A7%BB/">迁移</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E8%A1%8C/">运行</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%85%A5%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">进入当前目录</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%BA%A6/">进度</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B/">远程</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">远程连接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%80%E6%A0%BC%E9%94%AE/">退格键</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%9A%E7%94%A8makefile/">通用makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">邮件服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86/">配置与管理</a>
+    <a href="https://wittonbell.github.io/tags/%E9%87%8D%E8%BD%BD/">重载</a>
+    <a href="https://wittonbell.github.io/tags/%E9%93%BE%E6%8E%A5/">链接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9B%86%E6%88%90/">集成</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81/">静态</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/">静态IP</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81%E5%BA%93/">静态库</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91/">预编译</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91makefile/">预编译makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4/">预编译头</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2/">颜色</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E4%B8%8D%E6%AD%A3/">颜色不正</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E5%8F%91%E9%BB%84/">颜色发黄</a>
+</div>
+</section>
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/witton" title="我的CSDN">我的CSDN博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wittonbell.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>

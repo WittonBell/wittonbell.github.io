@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>produce code on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/produce-code/</link>
+    <description>Recent content in produce code on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 05 Apr 2023 19:43:07 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/produce-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决QT：may not produce code compatible with the Qt version</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</link>
+      <pubDate>Wed, 05 Apr 2023 19:43:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</guid>
+      <description>问题 在Qt Creator的构建套件(Kit)中，自动检测的Kit很多都会有黄色的叹号，可以把鼠标移动到上面可以看到有警告</description>
+    </item>
+    
+  </channel>
+</rss>

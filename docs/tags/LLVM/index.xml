@@ -6,23 +6,14 @@
     <description>Recent content in LLVM on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/LLVM/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Apr 2019 12:23:16 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/LLVM/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用Visual Studio 2015编译LLVM Clang源码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM-Clang%E6%BA%90%E7%A0%81/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <title>将LLVM/Clang编译器整合到Visual Studio中</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
+      <pubDate>Sat, 13 Apr 2019 12:23:16 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM-Clang%E6%BA%90%E7%A0%81/</guid>
-      <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
-    </item>
-    
-    <item>
-      <title>将LLVM Clang编译器整合到Visual Studio中</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-04-13-%E5%B0%86LLVM-Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
-      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-04-13-%E5%B0%86LLVM-Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
-      <description>​ 一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部</description>
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
+      <description>一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部分</description>
     </item>
     
   </channel>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发语言 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/</link>
+    <description>Recent content in 开发语言 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 15 Sep 2023 18:28:34 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>制作带Go调试器的容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</guid>
+      <description>首先创建容器 1sudo podman pull golang:1.21 2sudo podman run -itd --name go-dlv golang:1.21 然后使用命令 1sudo podman exec -it go-dlv /bin/bash 进入容器，在容器内执行下面的命令安装go调试器dlv： 1go env -w GOPROXY=https://goproxy.cn,direct</description>
+    </item>
+    
+    <item>
+      <title>解决QT：NO QML utility installed的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 05 Apr 2023 18:20:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在QT Creator中查看Qt的版本，发现自动检测的版本要么是红色的叹号，要么是黄色的叹号。红色的叹号表示完全不可用，黄</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习资料</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
+      <pubDate>Thu, 21 Oct 2021 10:18:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
+      <description>本文转自： https://github.com/0voice/cpp_new_features 2021年最新整理， C++ 学习资料，含C++ 11 / 14 / 17 / 20 / 23 新特性、入门教程、推荐书籍、优质文章、学习笔记、教</description>
+    </item>
+    
+  </channel>
+</rss>

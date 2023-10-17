@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual C&#43;&#43; on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Visual-C&#43;&#43;/</link>
+    <description>Recent content in Visual C&#43;&#43; on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 31 Mar 2019 22:34:29 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Visual-C++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>加快编译速度，再谈C/C&#43;&#43;预编译技术的使用</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 31 Mar 2019 22:34:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>最近新参加的一项目是C++项目，新项目使用的原来老项目的代码来作开发，两个项目不管是Windows还是Linux都是没使</description>
+    </item>
+    
+  </channel>
+</rss>

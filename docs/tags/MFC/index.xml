@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MFC on Witton的博客</title>
-    <link>https://wittonbell.github.io/tags/MFC/</link>
-    <description>Recent content in MFC on Witton的博客</description>
+    <title>mfc on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/mfc/</link>
+    <description>Recent content in mfc on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 10 May 2007 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/MFC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Aug 2012 09:54:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/mfc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在不安装VC2008发布包的情况下，发布VC2008生成的程序</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 08 Aug 2012 09:54:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <description>在前面的Blog中有提到，VS2005及以上版本的程序发布与之前版本有一个差别就是清单文件，这个清单文件包含了运行此应用</description>
+    </item>
+    
     <item>
       <title>MFC中动态设置组合框的下拉菜单高度</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
-      <pubDate>Thu, 10 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
+      <pubDate>Thu, 10 May 2007 13:13:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
-      <description>今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组合框中的菜单项比较多的时候，默认的组合框下拉菜单高</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组</description>
     </item>
     
   </channel>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cockpit on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Cockpit/</link>
+    <description>Recent content in Cockpit on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 30 Nov 2021 11:11:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Cockpit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit入门</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 04 Sep 2021 23:46:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</guid>
+      <description>文章目录 一、安装 二、登录Cockpit web 控制台 三、设置Web显示语言 四、重启或者关闭CentOS系统 五、修改基本配置 1. 修</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——简介</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 04 Sep 2021 21:11:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+  </channel>
+</rss>

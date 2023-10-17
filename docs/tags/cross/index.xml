@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cross on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/cross/</link>
+    <description>Recent content in cross on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 06 Jul 2022 18:51:38 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/cross/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在MinGW中构建GCC交叉编译器和GDB交叉调试器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Wed, 06 Jul 2022 18:51:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description>前文 《C语言使用MinGW中的GCC生成平面(flat)二进制文件》中有介绍MinGW中使用GCC生成编写操作系统内核所</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>too many on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/too-many/</link>
+    <description>Recent content in too many on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 28 Dec 2021 16:07:09 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/too-many/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决 podman: failed to create new watcher too many open files</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-%E8%A7%A3%E5%86%B3-podman-failed-to-create-new-watcher-too-many-open-files/</link>
+      <pubDate>Tue, 28 Dec 2021 16:07:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-%E8%A7%A3%E5%86%B3-podman-failed-to-create-new-watcher-too-many-open-files/</guid>
+      <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
+    </item>
+    
+  </channel>
+</rss>

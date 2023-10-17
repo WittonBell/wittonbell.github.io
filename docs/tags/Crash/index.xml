@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crash on Witton的博客</title>
-    <link>https://wittonbell.github.io/tags/Crash/</link>
-    <description>Recent content in Crash on Witton的博客</description>
+    <title>crash on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/crash/</link>
+    <description>Recent content in crash on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 30 Apr 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Crash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2009 17:48:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/crash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>宿主程序Crash与Lua是动态库还是静态库有关？</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</link>
-      <pubDate>Thu, 30 Apr 2009 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2009/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</link>
+      <pubDate>Thu, 30 Apr 2009 17:48:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</guid>
-      <description>​ 前一阵子在做项目的时候，遇到一个感觉比较怪异的问题：在项目中我们用了Lua作为脚本扩展支持，Lua是以静态库的形式编译</description>
+      <guid>https://wittonbell.github.io/posts/2009/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</guid>
+      <description>前一阵子在做项目的时候，遇到一个感觉比较怪异的问题：在项目中我们用了Lua作为脚本扩展支持，Lua是以静态库的形式编译进</description>
     </item>
     
   </channel>

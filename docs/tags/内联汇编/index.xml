@@ -6,14 +6,14 @@
     <description>Recent content in 内联汇编 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 12 May 2007 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Dec 2019 11:11:37 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>如何利用VC编写有汇编代码的跨平台代码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</link>
-      <pubDate>Sat, 12 May 2007 00:00:00 +0000</pubDate>
+      <title>使用Clang编译内联intel语法汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 09 Dec 2019 11:11:37 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</guid>
-      <description>在C/C++中添加内联汇编很容易，只需要用__asm(VC中)或者__asm__(gcc/g++中)关键字就可以在C/C</description>
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>我们在编写C/C++代码时，如果在有较高性能需求的时候，可以使用汇编代码来编写相应的函数，C/C++直接调用即可。汇编的</description>
     </item>
     
   </channel>

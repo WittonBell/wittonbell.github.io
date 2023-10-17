@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pacman on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/pacman/</link>
+    <description>Recent content in pacman on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 05 Apr 2023 15:52:50 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/pacman/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSYS2中mingw-w64-x86_64-qt-creator-10.0.0-2不能新建项目</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 05 Apr 2023 15:52:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
+      <description>今天在MSYS2的MinGW64中安装了最新的Qt Creator 10.0.0（mingw-w64-x86_64-qt-creator</description>
+    </item>
+    
+  </channel>
+</rss>

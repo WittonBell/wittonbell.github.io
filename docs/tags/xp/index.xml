@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xp on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/xp/</link>
+    <description>Recent content in xp on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 17 Nov 2011 12:10:03 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/xp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio 清单(manifest)导致的问题</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 17 Nov 2011 12:10:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前些天把一个项目从XP 32位平台拿到Win7 64位平台去编译运行，用VS2008按Win32的方式编译连接都通过，但是一</description>
+    </item>
+    
+    <item>
+      <title>Windows与Linux共存之重装Windows经历</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Sat, 09 Jun 2007 16:50:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
+      <description>Linux是一个功能强大的操作系统，它既支持如MSDOS一般的命令行操作，也支持如Windows一般的图形界面的操作。 随</description>
+    </item>
+    
+  </channel>
+</rss>

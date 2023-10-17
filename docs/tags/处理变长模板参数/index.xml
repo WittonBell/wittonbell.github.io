@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>处理变长模板参数 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%A4%84%E7%90%86%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/</link>
+    <description>Recent content in 处理变长模板参数 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 24 Feb 2021 16:21:28 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%A4%84%E7%90%86%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对C&#43;&#43;变长参数中的字符串进行转义</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</link>
+      <pubDate>Wed, 24 Feb 2021 16:21:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</guid>
+      <description>使用过SQL的读者应该都知道SQL存在注入的可能，即没有严格检查用户输入数据的合法性。这里不讨论SQL的注入以及防止注入</description>
+    </item>
+    
+  </channel>
+</rss>

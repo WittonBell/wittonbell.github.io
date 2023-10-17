@@ -1,82 +1,91 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Witton的博客</title>
-    <link>https://wittonbell.github.io/categories/Go/</link>
-    <description>Recent content in Go on Witton的博客</description>
+    <title>GO on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/GO/</link>
+    <description>Recent content in GO on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/Go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 18:28:34 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/GO/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>制作带Go调试器的容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</guid>
+      <description>首先创建容器 1sudo podman pull golang:1.21 2sudo podman run -itd --name go-dlv golang:1.21 然后使用命令 1sudo podman exec -it go-dlv /bin/bash 进入容器，在容器内执行下面的命令安装go调试器dlv： 1go env -w GOPROXY=https://goproxy.cn,direct</description>
+    </item>
+    
+    <item>
+      <title>使用Go语言生成Excel任务表依赖图（Markdown文件mermaid图）</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-04-%E4%BD%BF%E7%94%A8Go%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90Excel%E4%BB%BB%E5%8A%A1%E8%A1%A8%E4%BE%9D%E8%B5%96%E5%9B%BEMarkdown%E6%96%87%E4%BB%B6mermaid%E5%9B%BE/</link>
+      <pubDate>Fri, 04 Aug 2023 10:22:20 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-04-%E4%BD%BF%E7%94%A8Go%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90Excel%E4%BB%BB%E5%8A%A1%E8%A1%A8%E4%BE%9D%E8%B5%96%E5%9B%BEMarkdown%E6%96%87%E4%BB%B6mermaid%E5%9B%BE/</guid>
+      <description>一、前言 在游戏中，任务是非常常见的玩法，可能会有主线任务，支线任务以及其它一些类型的任务，各任务可能还会有前置任务，即需</description>
+    </item>
+    
+    <item>
+      <title>Go项目中添加生成时间与版本信息</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-30-Go%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4%E4%B8%8E%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Thu, 30 Mar 2023 18:22:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-30-Go%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4%E4%B8%8E%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
+      <description>我们在编写软件时，一般会有版本号以及生成的时间，Go编译的程序中，如何添加当时的编译时间以及版本信息？ C/C++语言，非</description>
+    </item>
+    
     <item>
       <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 18:03:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
-    </item>
-    
-    <item>
-      <title>ubuntu安装podman-compose</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
-      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
-    </item>
-    
-    <item>
-      <title>Goland连接https的Docker远程服务</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
-      <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、环境配置 二、部署 1、编写Dockerfile 2、编写容器编排文件 3、设置Goland部署配置 4、执行部署 三、</description>
     </item>
     
     <item>
       <title>Goland使用远程容器进行go开发调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 15:53:15 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
-      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、安装远程容器 二、安装与配置容器仓库 1.安装与配置 2.安装证书 三、准备项目 四、运行 1.开启容器远程服务 2.添加</description>
     </item>
     
     <item>
-      <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Go语言非main包编译为静态库并使用</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 09 Jul 2021 18:55:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
-    </item>
-    
-    <item>
-      <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;实现Go的defer功能</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
-      <description>在Go语言中有一个关键字：defer，它的作用就是延迟执行后面的函数，在资源释放方面特别有用，比如下面一段C/C++的示</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</guid>
+      <description>文章目录 一、环境 二、常规工程 三、将libDemo编译为静态库使用 1. 移动libDemo 2. 编译libDemo为静态库 3. 删除源</description>
     </item>
     
     <item>
       <title>go读写网络消息</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Go/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</link>
+      <pubDate>Wed, 10 Mar 2021 17:43:08 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Go/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</guid>
       <description>前几天项目需要写一个登录压力测试机器人对服务器进行压力测试。服务器是使用C++写的，为了快捷完成机器人，我并没有选择C+</description>
+    </item>
+    
+    <item>
+      <title>使用VSCode环境编程的一些注意事项</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sat, 11 Jul 2020 20:27:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>文章目录 一、Go语言 1. 使用Code Runner运行 2. 关于提示 二、Python语言 1.使用Code Runner运行 2.格式</description>
+    </item>
+    
+    <item>
+      <title>VSCode下安装配置Go环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 07 Jul 2020 11:10:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载并安装Go安装包 二、VSCode安装Go相关插件 1. 安装Go插件 2. 安装其它插件 由于国内墙的原因，安装配置G</description>
     </item>
     
   </channel>

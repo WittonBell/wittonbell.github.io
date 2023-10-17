@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>汇编 on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/</link>
+    <description>Recent content in 汇编 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 09 Dec 2019 11:11:37 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Clang编译内联intel语法汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 09 Dec 2019 11:11:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>我们在编写C/C++代码时，如果在有较高性能需求的时候，可以使用汇编代码来编写相应的函数，C/C++直接调用即可。汇编的</description>
+    </item>
+    
+    <item>
+      <title>将NASM汇编器集成到Visual Studio中</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-06-01-%E5%B0%86NASM%E6%B1%87%E7%BC%96%E5%99%A8%E9%9B%86%E6%88%90%E5%88%B0Visual-Studio%E4%B8%AD/</link>
+      <pubDate>Sat, 01 Jun 2013 21:17:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-06-01-%E5%B0%86NASM%E6%B1%87%E7%BC%96%E5%99%A8%E9%9B%86%E6%88%90%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
+      <description>之前在《 Visual Studio中使用NASM编译汇编文件》中介绍了如何将NASM汇编器集成到VS2005和VS2008中，但VS</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio中使用NASM编译汇编文件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Jul 2012 11:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</guid>
+      <description>NASM相对MASM和GAS而言，是一款比较中庸的汇编器，它语法简洁、功能强大，而且跨平台、免费，是外联汇编的不错选择。</description>
+    </item>
+    
+  </channel>
+</rss>

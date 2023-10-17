@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microsoft on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/microsoft/</link>
+    <description>Recent content in microsoft on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 02 Sep 2012 19:44:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何调试Firefox和IE的插件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 02 Sep 2012 19:44:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</guid>
+      <description>关于FireFox和IE的插件调试，以前我有调试过T3D的，今天想再研究一下，打好断点，却怎么也无法断下来，可以前是可以</description>
+    </item>
+    
+    <item>
+      <title>很幽默的讲解六种Socket I/O模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:24:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</guid>
+      <description>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。 一： select 模型 二： WSAAsyncSelect 模型 三： WSAEventSelect 模型 四： Overlapped I/O 事件</description>
+    </item>
+    
+    <item>
+      <title>使用 GNU CC 的预编译头文件加快编译速度</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-12-26-%E4%BD%BF%E7%94%A8-GNU-CC-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Wed, 26 Dec 2007 14:37:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-12-26-%E4%BD%BF%E7%94%A8-GNU-CC-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</guid>
+      <description>既使用过 Microsoft® Visual C++® 又使用过 GNU CC 的网友一定会感受到两者编译速度的差异，尤其是对于 wxWidgets 这样头文件内容多的软</description>
+    </item>
+    
+  </channel>
+</rss>

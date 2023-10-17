@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>操作系统开发 on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 操作系统开发 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 18 Aug 2022 22:02:29 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用QEMU&#43;GDB调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 22:02:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+    <item>
+      <title>使用Bochs调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 21:50:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+  </channel>
+</rss>

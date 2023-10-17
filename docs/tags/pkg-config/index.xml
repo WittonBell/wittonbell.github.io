@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pkg-config on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/pkg-config/</link>
+    <description>Recent content in pkg-config on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 20 Apr 2023 18:49:49 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/pkg-config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C/C&#43;&#43;开发中使用pkg-config来引用依赖库</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</link>
+      <pubDate>Thu, 20 Apr 2023 18:49:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</guid>
+      <description>在使用C/C++进行开发的过程中，经常需要引用其它的库，可能是系统已经安装好的，也可能是其它的外部库。 如果是系统支持的库</description>
+    </item>
+    
+  </channel>
+</rss>

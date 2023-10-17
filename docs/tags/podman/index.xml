@@ -6,68 +6,158 @@
     <description>Recent content in podman on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/podman/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 18:28:34 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/podman/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <title>制作带Go调试器的容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</guid>
+      <description>首先创建容器 1sudo podman pull golang:1.21 2sudo podman run -itd --name go-dlv golang:1.21 然后使用命令 1sudo podman exec -it go-dlv /bin/bash 进入容器，在容器内执行下面的命令安装go调试器dlv： 1go env -w GOPROXY=https://goproxy.cn,direct</description>
+    </item>
+    
+    <item>
+      <title>解决nexus3登录x509: certificate has expired or is not yet valid</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</link>
+      <pubDate>Tue, 12 Sep 2023 12:01:01 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</guid>
+      <description>笔者前面的博文 使用nexus3作为Docker镜像仓库介绍了如何使用nexus3来作为容器的镜像仓库，在生成证书时，使用</description>
+    </item>
+    
+    <item>
+      <title>处理podman的overlay-containers中ctr.log日志文件过大的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 08 Jun 2023 11:08:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>公司服务器的一些软件使用了容器技术，比如Podman、Docker，从架设到现在已经稳定运行了1年半了，半年前发现磁盘占</description>
+    </item>
+    
+    <item>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>改变podman的存储路径</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 30 Dec 2022 17:51:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</guid>
+      <description>使用podman容器时，podman会默认使用/var/lib/containers路径作为存储路径，可能会导致根磁盘空</description>
     </item>
     
     <item>
       <title>ubuntu安装podman-compose</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
+      <pubDate>Tue, 28 Dec 2021 11:46:32 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
       <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
     </item>
     
     <item>
-      <title>解决podman failed：to create new watcher too many open files</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</guid>
-      <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
-    </item>
-    
-    <item>
-      <title>Goland连接https的Docker远程服务</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
-      <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
-    </item>
-    
-    <item>
-      <title>Goland使用远程容器进行go开发调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
-      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
-    </item>
-    
-    <item>
-      <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
-    </item>
-    
-    <item>
       <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 11:11:41 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab以及gitlab-runner镜像 二、运行容器与配置gitlab 1、运行gitlab容器 2、</description>
+    </item>
+    
+    <item>
+      <title>搭建容器的私有库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</link>
+      <pubDate>Fri, 26 Nov 2021 16:16:06 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</guid>
+      <description>文章目录 一、拉取registry容器 1、使用cockpit来拉取 2、使用命令拉取 3、生成密码： 二、 运行registry镜</description>
+    </item>
+    
+    <item>
+      <title>开机自动运行容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 25 Nov 2021 11:11:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、创建容器 二、创建服务 三、设置开机自动启动 四、测试服务 五、开机测试 六、测试容器运行中情况下，重启主机 七、使用容</description>
+    </item>
+    
+    <item>
+      <title>配置与管理Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</link>
+      <pubDate>Mon, 22 Nov 2021 16:12:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</guid>
+      <description>文章目录 一、使用SSH远程连接Ubuntu 1.查看IP地址 2. 使用SSH连接 二、安装配置Cockpit 1.安装Cockpi</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——文件管理器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 09 Sep 2021 22:26:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——虚拟机</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 09 Sep 2021 08:18:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>文章目录 一、创建储存池 二、通过下载一个系统来创建虚拟机 三、通过本地安装介质来创建虚拟机 CentOS 8使用Cockpit管理Linu</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——podman容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Tue, 07 Sep 2021 22:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、查看podman容器 二、拉取镜像 三、配置镜像实例 CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用C</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——存储</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 05 Sep 2021 21:59:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</guid>
+      <description>文章目录 一、安装Cockpit的附加组件 二、监控存储系统 三、管理卷组、逻辑卷（分区） 1.管理普通分区 2. 格式化 3.调整分区</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit进阶</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Sun, 05 Sep 2021 10:36:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</guid>
+      <description>文章目录 一、账户管理 1.创建新账户 2. 设置密码 3.强制变更密码 4.设置密码永不过期或者要求每多少天就需要修改密码 5.设置从</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit入门</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 04 Sep 2021 23:46:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</guid>
+      <description>文章目录 一、安装 二、登录Cockpit web 控制台 三、设置Web显示语言 四、重启或者关闭CentOS系统 五、修改基本配置 1. 修</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——简介</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 04 Sep 2021 21:11:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
     </item>
     
   </channel>

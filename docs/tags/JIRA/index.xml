@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JIRA on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/JIRA/</link>
+    <description>Recent content in JIRA on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 07 Jun 2023 17:37:51 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/JIRA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用JIRA管理项目工单</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-21-%E4%BD%BF%E7%94%A8JIRA%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%8D%95/</link>
+      <pubDate>Wed, 21 Oct 2020 17:53:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-21-%E4%BD%BF%E7%94%A8JIRA%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%8D%95/</guid>
+      <description>文章目录 一、JIRA的安装 二、配置系统 1. 配置JIRA显示语言和时间 2.设置日期时间显示格式 A.第一步 B.第二步 3.设置附</description>
+    </item>
+    
+    <item>
+      <title>安装JIRA 8.X EE</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</link>
+      <pubDate>Wed, 03 Jun 2020 18:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</guid>
+      <description>文章目录 一、下载软件 二、安装： 三、配置 1.脚本配置 2.页面配置 JIRA是一个比较好用的项目跟踪管理工具，使用的公司还是比</description>
+    </item>
+    
+  </channel>
+</rss>

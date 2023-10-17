@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>多线程 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <description>Recent content in 多线程 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 17 Nov 2011 12:10:03 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio 清单(manifest)导致的问题</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 17 Nov 2011 12:10:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前些天把一个项目从XP 32位平台拿到Win7 64位平台去编译运行，用VS2008按Win32的方式编译连接都通过，但是一</description>
+    </item>
+    
+  </channel>
+</rss>

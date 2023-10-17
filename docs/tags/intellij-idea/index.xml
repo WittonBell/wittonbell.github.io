@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intellij idea on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/intellij-idea/</link>
+    <description>Recent content in intellij idea on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 20 Jan 2016 21:30:47 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/intellij-idea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用IntelliJ IDEA配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 20 Jan 2016 21:30:47 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>Idea工具是目前我使用过的开发Erlang最好用的IDE，但其Erlang插件的官方教程太简陋，我就想自己做一个相对详</description>
+    </item>
+    
+  </channel>
+</rss>

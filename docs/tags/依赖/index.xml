@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>依赖 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E4%BE%9D%E8%B5%96/</link>
+    <description>Recent content in 依赖 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 15 Apr 2023 17:12:17 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E4%BE%9D%E8%B5%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMake项目使用ctest&#43;gtest进行单元测试</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-15-CMake%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8ctest&#43;gtest%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sat, 15 Apr 2023 17:12:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-15-CMake%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8ctest&#43;gtest%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>随着CMake工具越来越强大便捷，越来越多的C/C++项目转而使用CMake来进行编译管理，它还提供了用于测试的ctes</description>
+    </item>
+    
+  </channel>
+</rss>

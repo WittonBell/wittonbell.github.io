@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>not in the on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/not-in-the/</link>
+    <description>Recent content in not in the on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 09 Jun 2023 23:02:30 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/not-in-the/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>虚拟机中Ubuntu不知root密码时设置唯一的非root用户为sudo管理员</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</link>
+      <pubDate>Fri, 09 Jun 2023 23:02:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</guid>
+      <description>刚才在虚拟机中玩Ubuntu的时候，在Cockpit管理页面把账号“服务器管理员”的选项给取消了，然后重新登录之后，就不</description>
+    </item>
+    
+  </channel>
+</rss>

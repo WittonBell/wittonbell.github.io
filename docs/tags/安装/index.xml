@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85/</link>
+    <description>Recent content in 安装 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 15 Aug 2021 11:56:10 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS 6.10不升级内核安装Docker</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
+      <pubDate>Sun, 15 Aug 2021 11:56:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
+      <description>目前Docker新版本docker-ce官宣支持的CentOS系统为7及以上系统，CentOS 6.X由于内核版本太低，为</description>
+    </item>
+    
+    <item>
+      <title>VSCode下安装配置Go环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 07 Jul 2020 11:10:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载并安装Go安装包 二、VSCode安装Go相关插件 1. 安装Go插件 2. 安装其它插件 由于国内墙的原因，安装配置G</description>
+    </item>
+    
+    <item>
+      <title>CentOS8下超详细安装配置kubernetes（K8S）</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</link>
+      <pubDate>Thu, 02 Jul 2020 18:09:22 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</guid>
+      <description>文章目录 一、环境准备 1. 卸载podman 2. 关闭交换区 3. 禁用selinux 4. 关闭防火墙 二、安装K8S 1. 配置系统基本安装源 2. 添</description>
+    </item>
+    
+    <item>
+      <title>Open vSwitch的安装与运行</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-17-Open-vSwitch%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</link>
+      <pubDate>Wed, 17 Jun 2020 17:38:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-17-Open-vSwitch%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</guid>
+      <description>文章目录 一、下载安装包 二、安装 1. 解压、生成Makefile、编译、安装 2. 如果在安装的过程中生成了修改了内核模块，那么重新</description>
+    </item>
+    
+    <item>
+      <title>安装JIRA 8.X EE</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</link>
+      <pubDate>Wed, 03 Jun 2020 18:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</guid>
+      <description>文章目录 一、下载软件 二、安装： 三、配置 1.脚本配置 2.页面配置 JIRA是一个比较好用的项目跟踪管理工具，使用的公司还是比</description>
+    </item>
+    
+    <item>
+      <title>解决Mac下安装Homebrew慢的问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-09-%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E5%AE%89%E8%A3%85Homebrew%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 09 May 2020 18:01:12 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-09-%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E5%AE%89%E8%A3%85Homebrew%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>一、方法一 国内安装Homebrew很慢，可以使用下面的方法： 1curl -fsSL https://gitee.com/xueweihan/codes/vfrgh7z8qcjlx1ubwt6nk71/raw\?blob_name\=brew_install.sh &amp;gt;&amp;gt; brew_install 先把安装文件保存到brew_install，然后修</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装Visual Studio Code</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</link>
+      <pubDate>Wed, 15 Jan 2020 15:20:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</guid>
+      <description>VSCode的最新版本需要的Linux 系统配置为： Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 7, Fedora 23 由于Linux下最新版本需要GTK 3，而Cen</description>
+    </item>
+    
+  </channel>
+</rss>

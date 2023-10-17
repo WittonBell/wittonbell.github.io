@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>微软 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%BE%AE%E8%BD%AF/</link>
+    <description>Recent content in 微软 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 28 Nov 2011 14:24:26 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%BE%AE%E8%BD%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>很幽默的讲解六种Socket I/O模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:24:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</guid>
+      <description>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。 一： select 模型 二： WSAAsyncSelect 模型 三： WSAEventSelect 模型 四： Overlapped I/O 事件</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 清单(manifest)导致的问题</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 17 Nov 2011 12:10:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前些天把一个项目从XP 32位平台拿到Win7 64位平台去编译运行，用VS2008按Win32的方式编译连接都通过，但是一</description>
+    </item>
+    
+    <item>
+      <title>微软真是忽悠人</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-09-30-%E5%BE%AE%E8%BD%AF%E7%9C%9F%E6%98%AF%E5%BF%BD%E6%82%A0%E4%BA%BA/</link>
+      <pubDate>Sun, 30 Sep 2007 18:07:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-09-30-%E5%BE%AE%E8%BD%AF%E7%9C%9F%E6%98%AF%E5%BF%BD%E6%82%A0%E4%BA%BA/</guid>
+      <description>有两个月没有写东西了，明天就是国庆节了，我想祝我所有的朋友包括网友节日快乐！ 由于明天是国庆节，今天又没有什么事，就在那里</description>
+    </item>
+    
+  </channel>
+</rss>

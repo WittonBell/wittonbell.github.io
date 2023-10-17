@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLVM/Clang on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/LLVM/Clang/</link>
+    <description>Recent content in LLVM/Clang on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language><atom:link href="https://wittonbell.github.io/categories/LLVM/Clang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
+    </item>
+    
+    <item>
+      <title>VSCode远程连接Ubuntu使用LLDB调试程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 30 May 2023 12:18:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</guid>
+      <description>VSCode已经具有远程开发的能力，可以使用SSH连接到Linux/MacOS进行远程开发，包括编译与调试，只需要安装R</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用CMake&#43;MinGW&#43;Clang&#43;LLDB作为开发环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 26 May 2023 16:55:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>笔者前面写了两篇关于Visual Studio 2022使用MinGW的博文：《 Visual Studio 2022使用MinGW来编译调试C/C++程序》、</description>
+    </item>
+    
+    <item>
+      <title>解决Clang编译器出现/usr/bin/ld: crtbegin.o: No such file: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</link>
+      <pubDate>Fri, 30 Oct 2020 16:09:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</guid>
+      <description>今天在使用Clang编译器编译项目时出现问题，项目使用了CMake，在cmake时报错： 1-- Detecting C compiler ABI info - failed 2/usr/bin/ld: crtbegin.o: No such file: No such file</description>
+    </item>
+    
+    <item>
+      <title>使用Clang编译内联intel语法汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 09 Dec 2019 11:11:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>我们在编写C/C++代码时，如果在有较高性能需求的时候，可以使用汇编代码来编写相应的函数，C/C++直接调用即可。汇编的</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X安装GCC 9.1和LLVM/Clang 8.0</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</link>
+      <pubDate>Sun, 19 May 2019 23:24:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</guid>
+      <description>在Cent OS 6.X中要安装Clang 8.0必须要使用GCC 4.8及以上版本才能编译，但系统自带的是4.4.7版本的，看了</description>
+    </item>
+    
+    <item>
+      <title>使用Visual Studio 2015编译LLVM/Clang源码</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sun, 12 May 2019 15:57:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</guid>
+      <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
+    </item>
+    
+    <item>
+      <title>将LLVM/Clang编译器整合到Visual Studio中</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
+      <pubDate>Sat, 13 Apr 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
+      <description>一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部分</description>
+    </item>
+    
+  </channel>
+</rss>

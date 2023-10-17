@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>epoll on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/epoll/</link>
+    <description>Recent content in epoll on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 Mar 2023 14:21:40 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/epoll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows下的高效网络模型IOCP完整示例</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 23 Mar 2023 14:21:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</guid>
+      <description>IOCP即完成端口（I/O Completion Port），与Linux下的epoll一样，是一种非常高效的网络模型。epoll 是当资源准备</description>
+    </item>
+    
+    <item>
+      <title>epoll的本质</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-24-epoll%E7%9A%84%E6%9C%AC%E8%B4%A8/</link>
+      <pubDate>Wed, 24 Apr 2019 14:00:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-24-epoll%E7%9A%84%E6%9C%AC%E8%B4%A8/</guid>
+      <description>从事服务端开发，少不了要接触网络编程。epoll作为linux下高性能网络服务器的必备技术至关重要，nginx、redi</description>
+    </item>
+    
+  </channel>
+</rss>

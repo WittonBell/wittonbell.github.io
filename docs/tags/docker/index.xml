@@ -6,59 +6,104 @@
     <description>Recent content in docker on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Sep 2023 15:59:48 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <title>使用docker-compose命令行向远程主机编排容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 14 Sep 2023 15:59:48 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</guid>
+      <description>在使用Goland的时候，可以直接使用它集成的功能来向远程主机部署容器，但是如果直接使用命令行的方式该如何操作？查看he</description>
     </item>
     
     <item>
-      <title>解决podman failed：to create new watcher too many open files</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</guid>
-      <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>使用容器编排对go项目进行部署、调试</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 18:03:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、环境配置 二、部署 1、编写Dockerfile 2、编写容器编排文件 3、设置Goland部署配置 4、执行部署 三、</description>
     </item>
     
     <item>
       <title>Goland连接https的Docker远程服务</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 23 Dec 2021 18:31:25 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
       <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
     </item>
     
     <item>
-      <title>Goland使用远程容器进行go开发调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
-      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
-    </item>
-    
-    <item>
       <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 16 Dec 2021 18:17:25 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>文章目录 一、在容器中安装运行nexus3 二、创建Docker镜像仓库 三、修改配置文件 四、配置权限 1.配置Realms权限</description>
     </item>
     
     <item>
-      <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <title>搭建容器的私有库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</link>
+      <pubDate>Fri, 26 Nov 2021 16:16:06 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</guid>
+      <description>文章目录 一、拉取registry容器 1、使用cockpit来拉取 2、使用命令拉取 3、生成密码： 二、 运行registry镜</description>
+    </item>
+    
+    <item>
+      <title>开机自动运行容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 25 Nov 2021 11:11:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、创建容器 二、创建服务 三、设置开机自动启动 四、测试服务 五、开机测试 六、测试容器运行中情况下，重启主机 七、使用容</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 快速升级内核</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
+      <pubDate>Mon, 30 Aug 2021 11:50:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
+      <description>文章目录 一、老式方法： 1、导入公钥： 2、查看是否安装ELRepo项目 3、安装ELRepo项目 二、直接下载内核安装包安装内</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.10不升级内核安装Docker</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
+      <pubDate>Sun, 15 Aug 2021 11:56:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
+      <description>目前Docker新版本docker-ce官宣支持的CentOS系统为7及以上系统，CentOS 6.X由于内核版本太低，为</description>
+    </item>
+    
+    <item>
+      <title>修改已有Docker的端口映射</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-05-%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%9C%89Docker%E7%9A%84%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</link>
+      <pubDate>Fri, 05 Jun 2020 16:05:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-05-%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%9C%89Docker%E7%9A%84%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</guid>
+      <description>文章目录 1. 关闭容器 2. 停止容器服务 3. 修改配置文件 4. 启动容器服务 5. 启动容器 在创建Docker容器时，我们可以使用-p或者-P</description>
+    </item>
+    
+    <item>
+      <title>Docker Bridge网络模式下解析DNS问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-01-Docker-Bridge%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%A7%A3%E6%9E%90DNS%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 01 Jun 2020 17:24:08 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-01-Docker-Bridge%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%A7%A3%E6%9E%90DNS%E9%97%AE%E9%A2%98/</guid>
+      <description>Docker的网络模式有Bridge(桥接)模式，host(主机)模式，overlay模式等等，参见 https://do</description>
     </item>
     
   </channel>

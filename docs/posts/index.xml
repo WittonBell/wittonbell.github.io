@@ -6,464 +6,1859 @@
     <description>Recent content in Posts on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 18:28:34 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
-      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <title>制作带Go调试器的容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</guid>
+      <description>首先创建容器 1sudo podman pull golang:1.21 2sudo podman run -itd --name go-dlv golang:1.21 然后使用命令 1sudo podman exec -it go-dlv /bin/bash 进入容器，在容器内执行下面的命令安装go调试器dlv： 1go env -w GOPROXY=https://goproxy.cn,direct</description>
+    </item>
+    
+    <item>
+      <title>复制远程连接到Linux使用VIM打开的内容到Windows</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</link>
+      <pubDate>Fri, 15 Sep 2023 16:15:27 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</guid>
+      <description>我们经常是使用SSH工具远程连接到Linux服务器上进行工作，有时候需要将Linux下使用VIM打开的文件内容复制到Wi</description>
+    </item>
+    
+    <item>
+      <title>容器中的nginx暴露一个端口部署多个功能的网站</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 15 Sep 2023 15:33:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/</guid>
+      <description>随着容器的应用越来越多，将nginx部署在容器中也是常有之事。可能事先创建容器时只暴露了一个端口给浏览器连接，后面又想根</description>
+    </item>
+    
+    <item>
+      <title>使用docker-compose命令行向远程主机编排容器</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 14 Sep 2023 15:59:48 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</guid>
+      <description>在使用Goland的时候，可以直接使用它集成的功能来向远程主机部署容器，但是如果直接使用命令行的方式该如何操作？查看he</description>
+    </item>
+    
+    <item>
+      <title>解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/</link>
+      <pubDate>Thu, 14 Sep 2023 11:56:48 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/</guid>
+      <description>之前在使用podman容器时都一切正常，可以在Windows下使用Goland的Docker工具直接部署容器到远程Lin</description>
+    </item>
+    
+    <item>
+      <title>解决nexus3登录x509: certificate has expired or is not yet valid</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</link>
+      <pubDate>Tue, 12 Sep 2023 12:01:01 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</guid>
+      <description>笔者前面的博文 使用nexus3作为Docker镜像仓库介绍了如何使用nexus3来作为容器的镜像仓库，在生成证书时，使用</description>
+    </item>
+    
+    <item>
+      <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
+      <pubDate>Mon, 21 Aug 2023 14:40:47 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
       <description>在使用Visual Studio 2022+MinGW+CMake作为开发环境时，如果项目中使用了Protobuf，则在CMake运行</description>
     </item>
     
     <item>
-      <title>解决lldb调试时可能出现的personality set failed Function not implemented</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
-      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</guid>
+      <description>Visual Studio被称为是宇宙最强IDE，以前开发Linux C/C++服务器程序，基本上都是在Windows上使用VS编写跨</description>
+    </item>
+    
+    <item>
+      <title>SSH远程连接MacOS catalina并进行终端颜色配置</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 14 Aug 2023 14:18:54 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/</guid>
+      <description>一、开关SSH服务 在虚拟机上安装了MacOS catalina，想要使用SSH远程进行连接，但是使用“系统偏好设置”/“共</description>
+    </item>
+    
+    <item>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
       <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
     </item>
     
     <item>
-      <title>让docsify-katex支持化学公式mhchem扩展</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</link>
-      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <title>使用Go语言生成Excel任务表依赖图（Markdown文件mermaid图）</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-04-%E4%BD%BF%E7%94%A8Go%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90Excel%E4%BB%BB%E5%8A%A1%E8%A1%A8%E4%BE%9D%E8%B5%96%E5%9B%BEMarkdown%E6%96%87%E4%BB%B6mermaid%E5%9B%BE/</link>
+      <pubDate>Fri, 04 Aug 2023 10:22:20 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-04-%E4%BD%BF%E7%94%A8Go%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90Excel%E4%BB%BB%E5%8A%A1%E8%A1%A8%E4%BE%9D%E8%B5%96%E5%9B%BEMarkdown%E6%96%87%E4%BB%B6mermaid%E5%9B%BE/</guid>
+      <description>一、前言 在游戏中，任务是非常常见的玩法，可能会有主线任务，支线任务以及其它一些类型的任务，各任务可能还会有前置任务，即需</description>
+    </item>
+    
+    <item>
+      <title>VMware 17虚拟Ubuntu 22.04设置共享目录</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Fri, 07 Jul 2023 22:48:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>之前使用VM 17之前的版本虚拟CentOS，设置共享目录非常方便，在CentOS中安装VMware Tools即可。随着C</description>
+    </item>
+    
+    <item>
+      <title>记Gitlab备份与设置自动备份</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</guid>
+      <description>今天给Gitlab做了一个备份，并且设置了每天自动备份，记录一下。 一、导出全部项目 由于Gitlab Web页面并没有自动备</description>
+    </item>
+    
+    <item>
+      <title>虚拟机中Ubuntu不知root密码时设置唯一的非root用户为sudo管理员</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</link>
+      <pubDate>Fri, 09 Jun 2023 23:02:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-09-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADUbuntu%E4%B8%8D%E7%9F%A5root%E5%AF%86%E7%A0%81%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%94%AF%E4%B8%80%E7%9A%84%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E4%B8%BAsudo%E7%AE%A1%E7%90%86%E5%91%98/</guid>
+      <description>刚才在虚拟机中玩Ubuntu的时候，在Cockpit管理页面把账号“服务器管理员”的选项给取消了，然后重新登录之后，就不</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 登录提示信息`Message of The Day`(MOTD)定制与开关</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-Ubuntu-%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AFMessage-of-The-DayMOTD%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%BC%80%E5%85%B3/</link>
+      <pubDate>Thu, 08 Jun 2023 17:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-Ubuntu-%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AFMessage-of-The-DayMOTD%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%BC%80%E5%85%B3/</guid>
+      <description>一、效果 登录Ubuntu的时候，在控制台可能会弹出一系列提示消息，有欢迎消息、系统信息、更新信息等等： 这些提示消息被称为</description>
+    </item>
+    
+    <item>
+      <title>处理podman的overlay-containers中ctr.log日志文件过大的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 08 Jun 2023 11:08:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-08-%E5%A4%84%E7%90%86podman%E7%9A%84overlay-containers%E4%B8%ADctr.log%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>公司服务器的一些软件使用了容器技术，比如Podman、Docker，从架设到现在已经稳定运行了1年半了，半年前发现磁盘占</description>
+    </item>
+    
+    <item>
+      <title>JIRA维护记——使用原实例位置恢复数据</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 07 Jun 2023 17:37:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-07-JIRA%E7%BB%B4%E6%8A%A4%E8%AE%B0%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AE%9E%E4%BE%8B%E4%BD%8D%E7%BD%AE%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>一、出现问题 昨天下班了，同事反馈Jira又不能使用了。想都不用想，肯定是磁盘空间不足了，因为已经出现过几次了。之前都是清</description>
+    </item>
+    
+    <item>
+      <title>VSCode调试mintty时命令行参数多了2＞CON 1＞CON ＜CON的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 06 Jun 2023 17:15:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>今天在调试mintty时，命令行参数始终多了几个参数2&amp;gt;CON 1&amp;gt;CON &amp;lt;CON。由于mintty是运行在MSYS环</description>
+    </item>
+    
+    <item>
+      <title>将MSYS2 MinGW集成到Windows终端</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Mon, 05 Jun 2023 18:00:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</guid>
+      <description>微软开发了一款Windows终端的开源软件，非常好用。安装后在Win7及以上系统会在右键菜单中添加一条“在终端中打开”的</description>
+    </item>
+    
+    <item>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>VSCode远程连接Ubuntu使用LLDB调试程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 30 May 2023 12:18:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</guid>
+      <description>VSCode已经具有远程开发的能力，可以使用SSH连接到Linux/MacOS进行远程开发，包括编译与调试，只需要安装R</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用CMake&#43;MinGW&#43;Clang&#43;LLDB作为开发环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 26 May 2023 16:55:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>笔者前面写了两篇关于Visual Studio 2022使用MinGW的博文：《 Visual Studio 2022使用MinGW来编译调试C/C++程序》、</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022 CMake&#43;MinGW&#43;GDB 调试目标程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 14 May 2023 23:51:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</guid>
+      <description>前段时间笔者在使用MinGW编译了QtCreator后，想要进行调试。最开始使用VSCode进行调试，可是可以调试，但是</description>
+    </item>
+    
+    <item>
+      <title>VS2022编译安装Qt6.5源码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Thu, 11 May 2023 21:19:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</guid>
+      <description>一、准备环境 包括安装VS2022，Windows SDK，Python3，这里就不再一一介绍了，需要说明的一点是如果要编译</description>
+    </item>
+    
+    <item>
+      <title>提取Windows中系统自带的图标资源</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 05 May 2023 17:05:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</guid>
+      <description>写应用程序，如果想使用Windows下的图标，可以使用Visual Studio中的图标，比如VS2008的 ImageLi</description>
+    </item>
+    
+    <item>
+      <title>CMake自动按目录结构编译Protobuf代码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Wed, 26 Apr 2023 17:49:55 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</guid>
+      <description>在使用CMake构建C++项目时，如果有使用Protobuf，CMake提供了一个FindProtobuf.cmake模</description>
+    </item>
+    
+    <item>
+      <title>使用Glib中测试框架对C代码进行单元测试</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Fri, 21 Apr 2023 18:26:27 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>C++项目的测试框架比较常见的是Google的gtest（前文 CMake项目使用ctest+gtest进行单元测试有使用</description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;开发中使用pkg-config来引用依赖库</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</link>
+      <pubDate>Thu, 20 Apr 2023 18:49:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</guid>
+      <description>在使用C/C++进行开发的过程中，经常需要引用其它的库，可能是系统已经安装好的，也可能是其它的外部库。 如果是系统支持的库</description>
+    </item>
+    
+    <item>
+      <title>使用CMake的CPack工具打包项目</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-18-%E4%BD%BF%E7%94%A8CMake%E7%9A%84CPack%E5%B7%A5%E5%85%B7%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 18 Apr 2023 12:04:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-18-%E4%BD%BF%E7%94%A8CMake%E7%9A%84CPack%E5%B7%A5%E5%85%B7%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/</guid>
+      <description>为了介绍如何使用CMake的CPack工具进行项目打包，这里使用了前文 CMake项目使用ctest+gtest进行单元测</description>
+    </item>
+    
+    <item>
+      <title>CMake项目使用ctest&#43;gtest进行单元测试</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-15-CMake%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8ctest&#43;gtest%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sat, 15 Apr 2023 17:12:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-15-CMake%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8ctest&#43;gtest%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>随着CMake工具越来越强大便捷，越来越多的C/C++项目转而使用CMake来进行编译管理，它还提供了用于测试的ctes</description>
+    </item>
+    
+    <item>
+      <title>解决QT：may not produce code compatible with the Qt version</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</link>
+      <pubDate>Wed, 05 Apr 2023 19:43:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTmay-not-produce-code-compatible-with-the-Qt-version/</guid>
+      <description>问题 在Qt Creator的构建套件(Kit)中，自动检测的Kit很多都会有黄色的叹号，可以把鼠标移动到上面可以看到有警告</description>
+    </item>
+    
+    <item>
+      <title>解决QT：NO QML utility installed的问题</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 05 Apr 2023 18:20:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-%E8%A7%A3%E5%86%B3QTNO-QML-utility-installed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在QT Creator中查看Qt的版本，发现自动检测的版本要么是红色的叹号，要么是黄色的叹号。红色的叹号表示完全不可用，黄</description>
+    </item>
+    
+    <item>
+      <title>MSYS2中mingw-w64-x86_64-qt-creator-10.0.0-2不能新建项目</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 05 Apr 2023 15:52:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
+      <description>今天在MSYS2的MinGW64中安装了最新的Qt Creator 10.0.0（mingw-w64-x86_64-qt-creator</description>
+    </item>
+    
+    <item>
+      <title>使用libSSH2实现与Linux Shell的命令行交互</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</link>
+      <pubDate>Mon, 03 Apr 2023 17:19:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-03-%E4%BD%BF%E7%94%A8libSSH2%E5%AE%9E%E7%8E%B0%E4%B8%8ELinux-Shell%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92/</guid>
+      <description>使用Linux已经有不少年头，也使用过不少Linux的SSH工具，比如SecureCRT，XShell，Putty，Sm</description>
+    </item>
+    
+    <item>
+      <title>Go项目中添加生成时间与版本信息</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-30-Go%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4%E4%B8%8E%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Thu, 30 Mar 2023 18:22:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-30-Go%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4%E4%B8%8E%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
+      <description>我们在编写软件时，一般会有版本号以及生成的时间，Go编译的程序中，如何添加当时的编译时间以及版本信息？ C/C++语言，非</description>
+    </item>
+    
+    <item>
+      <title>解决：git repository path ‘XXX‘ is not owned by current user</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-%E8%A7%A3%E5%86%B3git-repository-path-XXX-is-not-owned-by-current-user/</link>
+      <pubDate>Thu, 23 Mar 2023 17:19:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-%E8%A7%A3%E5%86%B3git-repository-path-XXX-is-not-owned-by-current-user/</guid>
+      <description>今天在拉取一个Git项目时，出现提示： 之前有同事也向我求助过，当时由于比较忙，就让他新建一个目录重新clone一下。 今天</description>
+    </item>
+    
+    <item>
+      <title>Windows下的高效网络模型IOCP完整示例</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 23 Mar 2023 14:21:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</guid>
+      <description>IOCP即完成端口（I/O Completion Port），与Linux下的epoll一样，是一种非常高效的网络模型。epoll 是当资源准备</description>
+    </item>
+    
+    <item>
+      <title>MiniDump不生成或者生成0字节</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</link>
+      <pubDate>Wed, 22 Mar 2023 18:30:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</guid>
+      <description>今天在使用C写一个Windows多线程程序时，发现退出过程中有段错误，为了方便快速的定位问题，我使用了MiniDump。</description>
+    </item>
+    
+    <item>
+      <title>改变podman的存储路径</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 30 Dec 2022 17:51:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-12-30-%E6%94%B9%E5%8F%98podman%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</guid>
+      <description>使用podman容器时，podman会默认使用/var/lib/containers路径作为存储路径，可能会导致根磁盘空</description>
+    </item>
+    
+    <item>
+      <title>使用QEMU&#43;GDB调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 22:02:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8QEMU&#43;GDB%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+    <item>
+      <title>使用Bochs调试操作系统代码</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 18 Aug 2022 21:50:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-18-%E4%BD%BF%E7%94%A8Bochs%E8%B0%83%E8%AF%95%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81/</guid>
+      <description>最近在写一个玩具操作系统，在编写过程中，经常需要进行代码调试。平常我们在Windows或者Linux下编写应用程序时，可</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用MinGW来编译调试C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 07 Aug 2022 17:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>文章目录 一、创建项目 二、配置CMake 1.修改“CMakePresets.json”预设编译工具集 2.使用CMake设置</description>
+    </item>
+    
+    <item>
+      <title>在MinGW中构建GCC交叉编译器和GDB交叉调试器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Wed, 06 Jul 2022 18:51:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-07-06-%E5%9C%A8MinGW%E4%B8%AD%E6%9E%84%E5%BB%BAGCC%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8CGDB%E4%BA%A4%E5%8F%89%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description>前文 《C语言使用MinGW中的GCC生成平面(flat)二进制文件》中有介绍MinGW中使用GCC生成编写操作系统内核所</description>
+    </item>
+    
+    <item>
+      <title>C语言使用MinGW中的GCC生成平面(flat)二进制文件</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 30 Jun 2022 18:41:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</guid>
+      <description>最近抽空在看自制操作系统相关的书籍，比如《自己动手写操作系统》、《Orange’S：一个操作系统的实现》、《一个64位操</description>
+    </item>
+    
+    <item>
+      <title>Linux下使用CMake构建含nasm汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-29-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8CMake%E6%9E%84%E5%BB%BA%E5%90%ABnasm%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 29 May 2022 00:24:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-29-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8CMake%E6%9E%84%E5%BB%BA%E5%90%ABnasm%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>CMake的出现极大的方便了C/C++项目的编译管理，避免了手工写Makefile的繁琐。如果在C/C++项目中有需要使</description>
+    </item>
+    
+    <item>
+      <title>Windows中使用nginx搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 28 May 2022 21:07:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>前面的博客 容器中搭建WordPress介绍了在容器中搭建WordPress，如果使用的是Windows环境而不是Linu</description>
+    </item>
+    
+    <item>
+      <title>WordPress使用markdown格式发布内容</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Mon, 23 May 2022 21:53:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-23-WordPress%E4%BD%BF%E7%94%A8markdown%E6%A0%BC%E5%BC%8F%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9/</guid>
+      <description>markdown是目前网络上比较流行的文档格式，前一篇博文 容器中搭建WordPress中介绍了在容器中如何搭建WordP</description>
+    </item>
+    
+    <item>
+      <title>容器中搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 21 May 2022 11:15:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-21-%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>WordPress是一个非常流行的网站、博客内容管理系统，很网站都是使用它来创建的内容。本文记录笔者在容器中搭建Word</description>
+    </item>
+    
+    <item>
+      <title>nginx文件服务器美化autoindex显示</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Sun, 15 May 2022 20:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</guid>
+      <description>网络上很多使用nginx来作为文件服务器的，前段时间公司也有这个需求，就研究了一下使用nginx来做文件服务器，参见前面</description>
+    </item>
+    
+    <item>
+      <title>容器中使用nginx并搭建sftp服务</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 13 May 2022 14:52:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-13-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E5%B9%B6%E6%90%AD%E5%BB%BAsftp%E6%9C%8D%E5%8A%A1/</guid>
+      <description>文章目录 一、下载并安装最新的nginx容器 二、设置系统 1.设置更新源 2.更新 3.设置本地时区 三、准备sftp账号 1.添加</description>
+    </item>
+    
+    <item>
+      <title>容器中使用ngnix搭建支持上传下载的文件服务器</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-10-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8ngnix%E6%90%AD%E5%BB%BA%E6%94%AF%E6%8C%81%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 10 May 2022 16:29:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-10-%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8ngnix%E6%90%AD%E5%BB%BA%E6%94%AF%E6%8C%81%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、安装nginx容器 二、配置nginx 三、支持文件上传 1. 配置nginx 2. 添加upload.html 3. 添加后端处</description>
+    </item>
+    
+    <item>
+      <title>Windows10配置使用极点五笔输入法</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-04-26-Windows10%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Tue, 26 Apr 2022 16:45:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-04-26-Windows10%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>在Windows下，笔者一直以来都是使用的五笔输入法，使用过王码五笔，万能五笔，极品五笔，极点五笔等等，在使用了极点五笔</description>
+    </item>
+    
+    <item>
+      <title>让docsify-katex支持化学公式mhchem扩展</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Wed, 16 Mar 2022 16:31:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-03-16-%E8%AE%A9docsify-katex%E6%94%AF%E6%8C%81%E5%8C%96%E5%AD%A6%E5%85%AC%E5%BC%8Fmhchem%E6%89%A9%E5%B1%95/</guid>
       <description>在使用docsify构建Markdown文档时，如果想要支持数学公式，可以使用docsify-katex插件，但是该插件</description>
     </item>
     
     <item>
-      <title>使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      <title>修改vditor以支持javascript形式的json</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-03-12-%E4%BF%AE%E6%94%B9vditor%E4%BB%A5%E6%94%AF%E6%8C%81javascript%E5%BD%A2%E5%BC%8F%E7%9A%84json/</link>
+      <pubDate>Sat, 12 Mar 2022 11:31:27 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab_pages%E6%96%87%E6%A1%A3%E5%BA%93/</guid>
+      <guid>https://wittonbell.github.io/posts/2022/2022-03-12-%E4%BF%AE%E6%94%B9vditor%E4%BB%A5%E6%94%AF%E6%8C%81javascript%E5%BD%A2%E5%BC%8F%E7%9A%84json/</guid>
+      <description>最近在研究使用docsify+markdown的文档管理，markdown文件使用VSCode+Office Viewer(Markdown Edito</description>
+    </item>
+    
+    <item>
+      <title>使用docsify&#43;markdown&#43;vditor构建gitlab pages文档库</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab-pages%E6%96%87%E6%A1%A3%E5%BA%93/</link>
+      <pubDate>Tue, 22 Feb 2022 18:03:53 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-02-22-%E4%BD%BF%E7%94%A8docsify&#43;markdown&#43;vditor%E6%9E%84%E5%BB%BAgitlab-pages%E6%96%87%E6%A1%A3%E5%BA%93/</guid>
       <description>前几天策划写了一个word文档来整理补充一些内容，当时就比较感慨，如果是Web文档就好了，可以超链接过去，也不必东一个文</description>
     </item>
     
     <item>
       <title>使用容器编排对go项目进行部署、调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 11 Jan 2022 18:03:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
-      <description>在项目开发中，可能我们需要开发多个服务程序协同工作，比如游戏中的网关服，登录服，世界服，数据库服等等。在容器技术出来以前</description>
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-11-%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92%E5%AF%B9go%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、环境配置 二、部署 1、编写Dockerfile 2、编写容器编排文件 3、设置Goland部署配置 4、执行部署 三、</description>
     </item>
     
     <item>
-      <title>ubuntu安装podman-compose</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <title>wsl2设置静态IP</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:42 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
-      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
+      <guid>https://wittonbell.github.io/posts/2022/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
+      <description>文章目录 一、创建批处理文件设置静态IP 二、设置DNS WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些</description>
     </item>
     
     <item>
-      <title>解决podman failed：to create new watcher too many open files</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <title>解决 podman: failed to create new watcher too many open files</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-%E8%A7%A3%E5%86%B3-podman-failed-to-create-new-watcher-too-many-open-files/</link>
+      <pubDate>Tue, 28 Dec 2021 16:07:09 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-28-%E8%A7%A3%E5%86%B3podman-failedto_create_new_watcher_too_many_open_files/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-%E8%A7%A3%E5%86%B3-podman-failed-to-create-new-watcher-too-many-open-files/</guid>
       <description>今天在服务中部署容器时，出现错误： 1Error: error configuring CNI network plugin: failed to create new watcher too many open files 通过： 1cat /proc/sys/fs/inotify/max_user_instances 2cat /proc/sys/fs/inotify/max_user_watches 查看结果为： 1fs.inotify.max_user_instances = 128 2fs.inotify.max_user_watches = 264039 max_user_</description>
     </item>
     
     <item>
-      <title>Goland连接https的Docker远程服务</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      <title>ubuntu安装podman-compose</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
+      <pubDate>Tue, 28 Dec 2021 11:46:32 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
+      <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
+    </item>
+    
+    <item>
+      <title>从之前的Mysql实例数据中恢复数据</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-27-%E4%BB%8E%E4%B9%8B%E5%89%8D%E7%9A%84Mysql%E5%AE%9E%E4%BE%8B%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 27 Dec 2021 10:56:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-27-%E4%BB%8E%E4%B9%8B%E5%89%8D%E7%9A%84Mysql%E5%AE%9E%E4%BE%8B%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>前几天向公司申请了一台新电脑，这两天新电脑到了，就是各种软件的安装，工作环境的搭建，其中有一项就是把之前的Mysql数据</description>
+    </item>
+    
+    <item>
+      <title>Goland连接https的Docker远程服务</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 23 Dec 2021 18:31:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-23-Goland%E8%BF%9E%E6%8E%A5https%E7%9A%84Docker%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1/</guid>
       <description>在前文 Goland使用远程容器进行go开发调试中介绍到为了让Goland能够远程调试Docker容器中的代码，需要在Do</description>
     </item>
     
     <item>
       <title>Goland使用远程容器进行go开发调试</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 15:53:15 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
-      <description>随着容器技术的出现，我们的开发方式也在发生着变化，以前使用C/C++进行开发时，一般都是开发本地应用，后面发展到本地开发</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、安装远程容器 二、安装与配置容器仓库 1.安装与配置 2.安装证书 三、准备项目 四、运行 1.开启容器远程服务 2.添加</description>
     </item>
     
     <item>
       <title>使用nexus3作为Docker镜像仓库</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
-      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 16 Dec 2021 18:17:25 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>一、在容器中安装运行nexus3 为了方便起见，这里使用脚本来处理安装运行。 在一个空目录中新建一个shell脚本文件，比如</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-16-%E4%BD%BF%E7%94%A8nexus3%E4%BD%9C%E4%B8%BADocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>文章目录 一、在容器中安装运行nexus3 二、创建Docker镜像仓库 三、修改配置文件 四、配置权限 1.配置Realms权限</description>
+    </item>
+    
+    <item>
+      <title>gitlab迁移记</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Dec 2021 12:27:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-03-gitlab%E8%BF%81%E7%A7%BB%E8%AE%B0/</guid>
+      <description>文章目录 一、导出项目 二、导入项目 前段时间公司配置了新的服务器，把系统与软件环境安装好，昨天开始迁移gitlab中的项目了</description>
     </item>
     
     <item>
       <title>使用podman容器配置gitlab</title>
-      <link>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Tue, 30 Nov 2021 11:11:41 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%AE%B9%E5%99%A8/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
-      <description>一、下载gitlab以及gitlab-runner镜像 1sudo podman pull docker.io/gitlab/gitlab-ee 2sudo podman pull docker.io/gitlab/gitlab-runner 笔者下载的版本是gitlab-ee 14.5，git</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-30-%E4%BD%BF%E7%94%A8podman%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab以及gitlab-runner镜像 二、运行容器与配置gitlab 1、运行gitlab容器 2、</description>
     </item>
     
     <item>
-      <title>CentOS6.x不升级内核安装Docker</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2021-08-15-CentOS6.x%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      <title>让Linux的Shell提示和输出是彩色的</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</link>
+      <pubDate>Sat, 27 Nov 2021 23:52:13 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2021-08-15-CentOS6.x%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</guid>
+      <description>在使用最新的Ubuntu的时候发现终端的提示符是彩色的 而在CentOS8中以及容器中的Linux系统一般都不是彩色提示，</description>
+    </item>
+    
+    <item>
+      <title>搭建容器的私有库</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</link>
+      <pubDate>Fri, 26 Nov 2021 16:16:06 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-26-%E6%90%AD%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E7%A7%81%E6%9C%89%E5%BA%93/</guid>
+      <description>文章目录 一、拉取registry容器 1、使用cockpit来拉取 2、使用命令拉取 3、生成密码： 二、 运行registry镜</description>
+    </item>
+    
+    <item>
+      <title>开机自动运行容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Thu, 25 Nov 2021 11:11:31 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-25-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、创建容器 二、创建服务 三、设置开机自动启动 四、测试服务 五、开机测试 六、测试容器运行中情况下，重启主机 七、使用容</description>
+    </item>
+    
+    <item>
+      <title>设置ubuntu和CentOS的IP地址为静态地址</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Wed, 24 Nov 2021 18:46:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</guid>
+      <description>文章目录 一、确认网关地址 二、修改配置文件 １.ubuntu a.查看DHCP模式下的DNS信息 b. 修改/etc/netplan</description>
+    </item>
+    
+    <item>
+      <title>配置与管理Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</link>
+      <pubDate>Mon, 22 Nov 2021 16:12:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</guid>
+      <description>文章目录 一、使用SSH远程连接Ubuntu 1.查看IP地址 2. 使用SSH连接 二、安装配置Cockpit 1.安装Cockpi</description>
+    </item>
+    
+    <item>
+      <title>详细安装Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/</link>
+      <pubDate>Fri, 19 Nov 2021 16:51:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/</guid>
+      <description>文章目录 一、下载安装包 二、安装 1.是否更新安装器 2. 填写安装（更新）镜像地址 3. 磁盘分区 4.功能选择 由于公司服务器的硬件配置</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习资料</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
+      <pubDate>Thu, 21 Oct 2021 10:18:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
+      <description>本文转自： https://github.com/0voice/cpp_new_features 2021年最新整理， C++ 学习资料，含C++ 11 / 14 / 17 / 20 / 23 新特性、入门教程、推荐书籍、优质文章、学习笔记、教</description>
+    </item>
+    
+    <item>
+      <title>解决centos下安装WPS出现can‘t find libXss.so.1</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</link>
+      <pubDate>Thu, 21 Oct 2021 09:50:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</guid>
+      <description>今天在CentOS8中安装WPS时，出现找不到libXss.so.1的情况，但是又不知道是需要安装哪个包，可以通过下面的</description>
+    </item>
+    
+    <item>
+      <title>解决退格键在MinGW的vim中不起作用的问题</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 25 Sep 2021 15:21:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>MinGW下的vim在默认情况下会与Linux下的vim不太一样，比如MinGW中默认的vim配置，退格键（backsp</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——文件管理器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 09 Sep 2021 22:26:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——虚拟机</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 09 Sep 2021 08:18:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>文章目录 一、创建储存池 二、通过下载一个系统来创建虚拟机 三、通过本地安装介质来创建虚拟机 CentOS 8使用Cockpit管理Linu</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——podman容器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Tue, 07 Sep 2021 22:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/</guid>
+      <description>文章目录 一、查看podman容器 二、拉取镜像 三、配置镜像实例 CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用C</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——存储</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 05 Sep 2021 21:59:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</guid>
+      <description>文章目录 一、安装Cockpit的附加组件 二、监控存储系统 三、管理卷组、逻辑卷（分区） 1.管理普通分区 2. 格式化 3.调整分区</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——网络</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Sun, 05 Sep 2021 21:56:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%BD%91%E7%BB%9C/</guid>
+      <description>文章目录 一、使用 web 控制台管理防火墙 1.开关防火墙 2.编辑防火墙区域和规则 2.1 区域 2.2 防火墙规则 2.3 添加区域 2.4 删除区域 二、使用 Web</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit进阶</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Sun, 05 Sep 2021 10:36:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</guid>
+      <description>文章目录 一、账户管理 1.创建新账户 2. 设置密码 3.强制变更密码 4.设置密码永不过期或者要求每多少天就需要修改密码 5.设置从</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit入门</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 04 Sep 2021 23:46:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</guid>
+      <description>文章目录 一、安装 二、登录Cockpit web 控制台 三、设置Web显示语言 四、重启或者关闭CentOS系统 五、修改基本配置 1. 修</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——简介</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 04 Sep 2021 21:11:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>本地Git硬重置后找回原来的提交</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Tue, 31 Aug 2021 11:38:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</guid>
+      <description>有些时候我们在做一些开发工作时，可能会用到本地Git管理，即在一个目录中进行开发，并将这个目录作为Git的版本库目录。 本</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 快速升级内核</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
+      <pubDate>Mon, 30 Aug 2021 11:50:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
+      <description>文章目录 一、老式方法： 1、导入公钥： 2、查看是否安装ELRepo项目 3、安装ELRepo项目 二、直接下载内核安装包安装内</description>
+    </item>
+    
+    <item>
+      <title>解决ModuleNotFoundError: No module named ‘pkg_resources‘</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-25-%E8%A7%A3%E5%86%B3ModuleNotFoundError-No-module-named-pkg_resources/</link>
+      <pubDate>Wed, 25 Aug 2021 10:24:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-25-%E8%A7%A3%E5%86%B3ModuleNotFoundError-No-module-named-pkg_resources/</guid>
+      <description>今天使用pacman -Syuu升级了一下msys2的MinGW64，结果出现了Python不能正常使用的情况，升级之前都</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.10不升级内核安装Docker</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
+      <pubDate>Sun, 15 Aug 2021 11:56:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
       <description>目前Docker新版本docker-ce官宣支持的CentOS系统为7及以上系统，CentOS 6.X由于内核版本太低，为</description>
     </item>
     
     <item>
       <title>使用jekyll写博客</title>
-      <link>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2021-08-10-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-13-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 13 Aug 2021 09:42:18 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E5%85%B6%E5%AE%83/2021-08-10-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
-      <description>一、安装Ruby环境 从 https://rubyinstaller.org/downloads/ 下载 Ruby2.X的最新安装包，最好是带DEVKIT的，不建议下载3.X的，因为有些theme还</description>
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-13-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
+      <description>文章目录 一、安装Ruby环境 二、修改更新源 三、安装jekyll及其依赖 四、新建博客站点 五、启动本地服务预览博客 六、配置博</description>
+    </item>
+    
+    <item>
+      <title>Go语言非main包编译为静态库并使用</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 09 Jul 2021 18:55:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-09-Go%E8%AF%AD%E8%A8%80%E9%9D%9Emain%E5%8C%85%E7%BC%96%E8%AF%91%E4%B8%BA%E9%9D%99%E6%80%81%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8/</guid>
+      <description>文章目录 一、环境 二、常规工程 三、将libDemo编译为静态库使用 1. 移动libDemo 2. 编译libDemo为静态库 3. 删除源</description>
     </item>
     
     <item>
       <title>C&#43;&#43;实现Go的defer功能</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Thu, 08 Jul 2021 18:38:14 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
       <description>在Go语言中有一个关键字：defer，它的作用就是延迟执行后面的函数，在资源释放方面特别有用，比如下面一段C/C++的示</description>
     </item>
     
     <item>
-      <title>go读写网络消息</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Go/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <title>VSCode配置PHP Debug插件调试PHP</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</link>
+      <pubDate>Thu, 01 Jul 2021 18:03:15 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Go/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-01-VSCode%E9%85%8D%E7%BD%AEPHP-Debug%E6%8F%92%E4%BB%B6%E8%B0%83%E8%AF%95PHP/</guid>
+      <description>文章目录 一、首先需要架设Windows下的PHP运行环境 二、VSCode中下载配置PHP Debug插件 1.下载XDebu</description>
+    </item>
+    
+    <item>
+      <title>Windows下使用Apache2.4架设PHP服务器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 28 May 2021 17:21:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-05-28-Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Apache2.4%E6%9E%B6%E8%AE%BEPHP%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、下载Apache的httpd 二、下载 PHP 三、解压、配置 1.解压 2.配置httpd 3.配置PHP 四、注册并启动h</description>
+    </item>
+    
+    <item>
+      <title>Redis 6.2.1源码结构</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-04-25-Redis-6.2.1%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 25 Apr 2021 17:23:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-04-25-Redis-6.2.1%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84/</guid>
+      <description>最近在看Redis 6.2.1的源码，现把Redis源文件目录中各文件实现的功能作一个整理和简要说明（按文件名排序），如有</description>
+    </item>
+    
+    <item>
+      <title>分布式系统趣解</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-03-26-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%B6%A3%E8%A7%A3/</link>
+      <pubDate>Fri, 26 Mar 2021 18:18:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-03-26-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%B6%A3%E8%A7%A3/</guid>
+      <description>大纲 奇闻轶事 什么是单点故障？ 怎么解决？ 问题来了 怎么保持一致性？ 一致性的分类 Write-All-Read-One Quorum Raft 算法 总结 奇闻轶事 Linux 作者 Linus Torvalds 在 5.12 合并窗口开</description>
+    </item>
+    
+    <item>
+      <title>go读写网络消息</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</link>
+      <pubDate>Wed, 10 Mar 2021 17:43:08 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</guid>
       <description>前几天项目需要写一个登录压力测试机器人对服务器进行压力测试。服务器是使用C++写的，为了快捷完成机器人，我并没有选择C+</description>
     </item>
     
     <item>
       <title>对C&#43;&#43;变长参数中的字符串进行转义</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</link>
-      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</link>
+      <pubDate>Wed, 24 Feb 2021 16:21:28 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</guid>
       <description>使用过SQL的读者应该都知道SQL存在注入的可能，即没有严格检查用户输入数据的合法性。这里不讨论SQL的注入以及防止注入</description>
     </item>
     
     <item>
       <title>C&#43;&#43;模板类成员函数使用SFINAE特性匹配智能指针</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
-      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
+      <pubDate>Tue, 23 Feb 2021 15:01:21 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
       <description>为了讲解C++模板类成员函数如何使用SFINAE特性匹配智能指针，笔者使用最近在实际项目中的应用来进行说明。 最近在项目开</description>
     </item>
     
     <item>
-      <title>使用C&#43;&#43;11模板SFINAE特性重写序列化与反序列化</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
-      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      <title>免费的编程中文书籍索引</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-03-%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BC%96%E7%A8%8B%E4%B8%AD%E6%96%87%E4%B9%A6%E7%B1%8D%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Wed, 03 Feb 2021 09:55:10 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-03-%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BC%96%E7%A8%8B%E4%B8%AD%E6%96%87%E4%B9%A6%E7%B1%8D%E7%B4%A2%E5%BC%95/</guid>
+      <description>免费的编程中文书籍索引 转自： https://github.com/xiaoweiChen/free-programming-books-zh_CN 免费的编程中文书籍索引，欢迎投稿。 国外程序员在 stackoverflow 推荐的程序员必读书籍， 中文版。 stackoverflow 上的程序员</description>
+    </item>
+    
+    <item>
+      <title>使用C&#43;&#43;11模板SFINAE实现enum class与整数的比较</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-12-08-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E5%AE%9E%E7%8E%B0enum-class%E4%B8%8E%E6%95%B4%E6%95%B0%E7%9A%84%E6%AF%94%E8%BE%83/</link>
+      <pubDate>Tue, 08 Dec 2020 15:18:53 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-12-08-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E5%AE%9E%E7%8E%B0enum-class%E4%B8%8E%E6%95%B4%E6%95%B0%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
+      <description>在C++11中添加了enum class类型，与enum类型不同的是，使用enum class中的枚举值时必须加上类型限定符</description>
+    </item>
+    
+    <item>
+      <title>使用C&#43;&#43;11模板SFINAE特性重写序列化与反序列化</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <pubDate>Tue, 10 Nov 2020 17:16:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
       <description>序列化与反序列化在编程中是最常见不过了，项目中原来写的序列化与反序列化是使用的普通类成员函数来写的，每一个数据类型都写了</description>
     </item>
     
     <item>
-      <title>解决：pip is configured with locations that require TLS</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2020-10-29-%E8%A7%A3%E5%86%B3pip_is_configured_with_locations_that_require_TLS/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <title>解决Clang编译器出现/usr/bin/ld: crtbegin.o: No such file: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</link>
+      <pubDate>Fri, 30 Oct 2020 16:09:05 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2020-10-29-%E8%A7%A3%E5%86%B3pip_is_configured_with_locations_that_require_TLS/</guid>
-      <description>在使用pip进行软件包安装的时候出现问题： 1WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available. 解决： 1make -p ~/.pip 2vim ~/.pip/pip.conf 然后输入内容： 1[global] 2index-url = http://mirrors.aliyun.com/pypi/simple/ 3 4[install]</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-30-%E8%A7%A3%E5%86%B3Clang%E7%BC%96%E8%AF%91%E5%99%A8%E5%87%BA%E7%8E%B0_usr_bin_ld-crtbegin.o-No-such-file-No-such-file-or-directory/</guid>
+      <description>今天在使用Clang编译器编译项目时出现问题，项目使用了CMake，在cmake时报错： 1-- Detecting C compiler ABI info - failed 2/usr/bin/ld: crtbegin.o: No such file: No such file</description>
     </item>
     
     <item>
       <title>使用CheckInstall从源码制作RPM安装包</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <pubDate>Thu, 29 Oct 2020 16:20:32 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
-      <description>在Centos系统中自行升级安装GCC时，如果想要将编译结果保留使用怎么办？GCC没有直接提供生成RPM的配置，我们可以</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-29-%E4%BD%BF%E7%94%A8CheckInstall%E4%BB%8E%E6%BA%90%E7%A0%81%E5%88%B6%E4%BD%9CRPM%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      <description>文章目录 一、下载并安装CheckInstall 二、使用CheckInstall 一、下载并安装CheckInstall RP</description>
     </item>
     
     <item>
-      <title>使用CheckInstall从源码制作RPM安装包</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <title>解决：pip is configured with locations that require TLS/SSL</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-29-%E8%A7%A3%E5%86%B3pip-is-configured-with-locations-that-require-TLS_SSL/</link>
+      <pubDate>Thu, 29 Oct 2020 10:14:52 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
-      <description>WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些设置。 一、创建批处理文件设置静态IP 可以创建一个批处</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-29-%E8%A7%A3%E5%86%B3pip-is-configured-with-locations-that-require-TLS_SSL/</guid>
+      <description>在使用pip进行软件包安装的时候出现问题： 1WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available. 解决： 1mkdir -p ~/.pip 2vim ~/.pip/pip.conf 然后输入内容： 1[global] 2index-url = http://mirrors.aliyun.com/pypi/simple/ 3 4[install]</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8构建桌面办公环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-28-CentOS-8%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 28 Oct 2020 23:26:44 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-28-CentOS-8%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、设置软件源 二、安装输入法 三、安装Shell扩展 用习惯了CentOS 6.X的桌面环境后，感觉CentOS7与8</description>
+    </item>
+    
+    <item>
+      <title>虚拟机中安装的CentOS8无法启动网卡使用网络</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-27-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%9A%84CentOS8%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 27 Oct 2020 15:46:02 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-27-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85%E7%9A%84CentOS8%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C/</guid>
+      <description>之前都用得好好的CentOS8系统，突然不能上网了，图形界面也没有有线连接选项。 首先需要查看网卡名： 通过查看/etc/s</description>
+    </item>
+    
+    <item>
+      <title>使用JIRA管理项目工单</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-21-%E4%BD%BF%E7%94%A8JIRA%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%8D%95/</link>
+      <pubDate>Wed, 21 Oct 2020 17:53:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-21-%E4%BD%BF%E7%94%A8JIRA%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%8D%95/</guid>
+      <description>文章目录 一、JIRA的安装 二、配置系统 1. 配置JIRA显示语言和时间 2.设置日期时间显示格式 A.第一步 B.第二步 3.设置附</description>
     </item>
     
     <item>
       <title>C语言随机数</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
-      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
+      <pubDate>Wed, 21 Oct 2020 11:58:01 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
       <description>昨天项目中遇到随机数相关的问题，其实并不是问题，只是没有使用对。项目中使用的自己写的类似C语言的rand()的伪随机函数</description>
     </item>
     
     <item>
-      <title>dll、lib、a的转换</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <title>解决Windows照片查看器加载慢和颜色问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-09-19-%E8%A7%A3%E5%86%B3Windows%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E5%8A%A0%E8%BD%BD%E6%85%A2%E5%92%8C%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 19 Sep 2020 17:59:24 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
-      <description>一、.dll生成导入库.a或者.lib 在使用Mingw进行开发时，有时依赖的库只有.dll文件，而Mingw需要的是.a</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-09-19-%E8%A7%A3%E5%86%B3Windows%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8%E5%8A%A0%E8%BD%BD%E6%85%A2%E5%92%8C%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <description>在Windows中，如果使用了“较准颜色”向导进行系统显示颜色的较准，则可能会导致使用照片查看器查看照片时加载很慢。如果</description>
     </item>
     
     <item>
-      <title>在VS调试器中显示PB容器类型的值</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-06-24-%E5%9C%A8VS%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAPB%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
-      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      <title>解决在HD Audio模式下Windows系统前置面板耳机无声音的问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-09-18-%E8%A7%A3%E5%86%B3%E5%9C%A8HD-Audio%E6%A8%A1%E5%BC%8F%E4%B8%8BWindows%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF%E8%80%B3%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 18 Sep 2020 22:49:25 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-06-24-%E5%9C%A8VS%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAPB%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <guid>https://wittonbell.github.io/posts/2020/2020-09-18-%E8%A7%A3%E5%86%B3%E5%9C%A8HD-Audio%E6%A8%A1%E5%BC%8F%E4%B8%8BWindows%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF%E8%80%B3%E6%9C%BA%E6%97%A0%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>笔者的台式机是10年前的电脑了，我记得在BIOS中不管是设置Front Panel Select为AC97还是HD Audio，前置面</description>
+    </item>
+    
+    <item>
+      <title>MSYS Makefiles、 MinGW Makefiles与Unix Makefiles的差别</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</link>
+      <pubDate>Fri, 28 Aug 2020 15:44:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-28-MSYS-Makefiles-MinGW-Makefiles%E4%B8%8EUnix-Makefiles%E7%9A%84%E5%B7%AE%E5%88%AB/</guid>
+      <description>我们在*nix或者Mac系统中做开发会经常使用Makefile来组织构建规则，然后使用make来构建项目。 Makefil</description>
+    </item>
+    
+    <item>
+      <title>使用msys2 mingw64编译gcc</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</link>
+      <pubDate>Thu, 27 Aug 2020 16:21:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-27-%E4%BD%BF%E7%94%A8msys2-mingw64%E7%BC%96%E8%AF%91gcc/</guid>
+      <description>我们在msys2中使用pacman安装的GCC默认是不能显示中文帮助的 而Linux下是可以显示中文的： 这是因为在编译ms</description>
+    </item>
+    
+    <item>
+      <title>Shell中显示Git分支名</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</link>
+      <pubDate>Sat, 22 Aug 2020 15:22:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</guid>
+      <description>文章目录 一、Windows下的msys2 bash 二、Mac Bash 一、Windows下的msys2 bash 如果我们安装了git for windo</description>
+    </item>
+    
+    <item>
+      <title>.dll、.lib、.a的转换</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 21 Aug 2020 15:00:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-21-.dll.lib.a%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>文章目录 一、.dll生成导入库.a或者.lib 二、静态lib库转dll库 一、.dll生成导入库.a或者.lib 在使用Mi</description>
+    </item>
+    
+    <item>
+      <title>Windows控制台中文乱码问题测试、分析与解决</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Tue, 18 Aug 2020 22:32:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</guid>
+      <description>文章目录 一、测试 A、Win10系统 B、Win7 SP1系统 1.VSCode+GCC 2. VS2015 二、分析与总结 1. VS2015 2. MinGW 三、解决UTF8的乱码问题 1. 设置参数</description>
+    </item>
+    
+    <item>
+      <title>Windows下添加msys2-MinGW到右键菜单</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-15-Windows%E4%B8%8B%E6%B7%BB%E5%8A%A0msys2-MinGW%E5%88%B0%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+      <pubDate>Sat, 15 Aug 2020 20:12:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-15-Windows%E4%B8%8B%E6%B7%BB%E5%8A%A0msys2-MinGW%E5%88%B0%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+      <description>文章目录 一、新建批处理文件 二、修改注册表，添加命令 三、测试 Windows下使用msys2-Mingw进行程序开发或者Sh</description>
+    </item>
+    
+    <item>
+      <title>VSCode配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 13 Aug 2020 16:43:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-08-13-VSCode%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载安装Erlang 二、安装VSCode Erlang插件 三、安装rebar3 四、测试开发环境 1. 创建工程 2. 配置</description>
+    </item>
+    
+    <item>
+      <title>使用VSCode环境编程的一些注意事项</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sat, 11 Jul 2020 20:27:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>文章目录 一、Go语言 1. 使用Code Runner运行 2. 关于提示 二、Python语言 1.使用Code Runner运行 2.格式</description>
+    </item>
+    
+    <item>
+      <title>VSCode下安装配置Go环境</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 07 Jul 2020 11:10:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-07-VSCode%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEGo%E7%8E%AF%E5%A2%83/</guid>
+      <description>文章目录 一、下载并安装Go安装包 二、VSCode安装Go相关插件 1. 安装Go插件 2. 安装其它插件 由于国内墙的原因，安装配置G</description>
+    </item>
+    
+    <item>
+      <title>CentOS8下超详细安装配置kubernetes（K8S）</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</link>
+      <pubDate>Thu, 02 Jul 2020 18:09:22 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-02-CentOS8%E4%B8%8B%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEkubernetesK8S/</guid>
+      <description>文章目录 一、环境准备 1. 卸载podman 2. 关闭交换区 3. 禁用selinux 4. 关闭防火墙 二、安装K8S 1. 配置系统基本安装源 2. 添</description>
+    </item>
+    
+    <item>
+      <title>VMWare中的Linux加载主机的共享目录</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Wed, 24 Jun 2020 16:41:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-24-VMWare%E4%B8%AD%E7%9A%84Linux%E5%8A%A0%E8%BD%BD%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>在VMware虚拟机中安装的Linux，有时想与主机进行文件共享，可以通过安装VMware Tools工具，然后在虚拟机设</description>
+    </item>
+    
+    <item>
+      <title>Open vSwitch的安装与运行</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-17-Open-vSwitch%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</link>
+      <pubDate>Wed, 17 Jun 2020 17:38:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-17-Open-vSwitch%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</guid>
+      <description>文章目录 一、下载安装包 二、安装 1. 解压、生成Makefile、编译、安装 2. 如果在安装的过程中生成了修改了内核模块，那么重新</description>
+    </item>
+    
+    <item>
+      <title>修改已有Docker的端口映射</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-05-%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%9C%89Docker%E7%9A%84%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</link>
+      <pubDate>Fri, 05 Jun 2020 16:05:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-05-%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%9C%89Docker%E7%9A%84%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</guid>
+      <description>文章目录 1. 关闭容器 2. 停止容器服务 3. 修改配置文件 4. 启动容器服务 5. 启动容器 在创建Docker容器时，我们可以使用-p或者-P</description>
+    </item>
+    
+    <item>
+      <title>安装JIRA 8.X EE</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</link>
+      <pubDate>Wed, 03 Jun 2020 18:31:33 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-03-%E5%AE%89%E8%A3%85JIRA-8.X-EE/</guid>
+      <description>文章目录 一、下载软件 二、安装： 三、配置 1.脚本配置 2.页面配置 JIRA是一个比较好用的项目跟踪管理工具，使用的公司还是比</description>
+    </item>
+    
+    <item>
+      <title>Docker Bridge网络模式下解析DNS问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-06-01-Docker-Bridge%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%A7%A3%E6%9E%90DNS%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 01 Jun 2020 17:24:08 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-06-01-Docker-Bridge%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%A7%A3%E6%9E%90DNS%E9%97%AE%E9%A2%98/</guid>
+      <description>Docker的网络模式有Bridge(桥接)模式，host(主机)模式，overlay模式等等，参见 https://do</description>
+    </item>
+    
+    <item>
+      <title>解决Mac下安装Homebrew慢的问题</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-09-%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E5%AE%89%E8%A3%85Homebrew%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 09 May 2020 18:01:12 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-09-%E8%A7%A3%E5%86%B3Mac%E4%B8%8B%E5%AE%89%E8%A3%85Homebrew%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>一、方法一 国内安装Homebrew很慢，可以使用下面的方法： 1curl -fsSL https://gitee.com/xueweihan/codes/vfrgh7z8qcjlx1ubwt6nk71/raw\?blob_name\=brew_install.sh &amp;gt;&amp;gt; brew_install 先把安装文件保存到brew_install，然后修</description>
+    </item>
+    
+    <item>
+      <title>Gitlab持续集成/持续发布（CI/CD）配置</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 08 May 2020 16:14:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-08-Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90_%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B8%83CI_CD%E9%85%8D%E7%BD%AE/</guid>
+      <description>文章目录 一、安装相应软件 １.安装Gitlab, ２.安装gitlab-runner 二、配置 1. 注册Runner 2. 添加yml脚</description>
+    </item>
+    
+    <item>
+      <title>Centos 安装配置gitlab</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-02-Centos-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/</link>
+      <pubDate>Sat, 02 May 2020 18:06:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-02-Centos-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/</guid>
+      <description>文章目录 一、下载gitlab 二、安装与配置gitlab 1.安装 2.配置 三、测试与Web配置 1. 测试访问地址 2. 语言设置 3. 关闭</description>
+    </item>
+    
+    <item>
+      <title>Linux下安装配置Postfix邮件服务器</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 01 May 2020 23:23:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、设置域名 二、搭建DNS环境域名解析，用于解析postfix地址 三、安装postfix服务器并进行配置 四、安装</description>
+    </item>
+    
+    <item>
+      <title>Unity实战之面板动画</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-03-10-Unity%E5%AE%9E%E6%88%98%E4%B9%8B%E9%9D%A2%E6%9D%BF%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 10 Mar 2020 14:01:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-03-10-Unity%E5%AE%9E%E6%88%98%E4%B9%8B%E9%9D%A2%E6%9D%BF%E5%8A%A8%E7%94%BB/</guid>
+      <description>面板动画一般可以用在游戏的设置面板中，当在游戏中点击某个按钮后，设置面板从某一个地方滑动进入视野，当操作玩家操作完后，再</description>
+    </item>
+    
+    <item>
+      <title>如何制作可用于Windows虚拟机的macOS安装镜像</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-03-08-%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E5%8F%AF%E7%94%A8%E4%BA%8EWindows%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84macOS%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Sun, 08 Mar 2020 14:00:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-03-08-%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E5%8F%AF%E7%94%A8%E4%BA%8EWindows%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84macOS%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F/</guid>
+      <description>文章目录 一、下载DMG安装镜像 二、安装 三、制作空白磁盘 macOS系统的安装镜像文件默认都是dmg文件，不能直接使用于Wi</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装Visual Studio Code</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</link>
+      <pubDate>Wed, 15 Jan 2020 15:20:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</guid>
+      <description>VSCode的最新版本需要的Linux 系统配置为： Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 7, Fedora 23 由于Linux下最新版本需要GTK 3，而Cen</description>
+    </item>
+    
+    <item>
+      <title>将Excel中的两列或多列数据汇总到一列</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-26-%E5%B0%86Excel%E4%B8%AD%E7%9A%84%E4%B8%A4%E5%88%97%E6%88%96%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE%E6%B1%87%E6%80%BB%E5%88%B0%E4%B8%80%E5%88%97/</link>
+      <pubDate>Thu, 26 Dec 2019 17:58:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-26-%E5%B0%86Excel%E4%B8%AD%E7%9A%84%E4%B8%A4%E5%88%97%E6%88%96%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE%E6%B1%87%E6%80%BB%E5%88%B0%E4%B8%80%E5%88%97/</guid>
+      <description>前段时间做一个Excel表格，需要将多列数据全部汇总到一列，度娘了一时半会没查出来的符合需求的方法，今天使用Google</description>
+    </item>
+    
+    <item>
+      <title>使用Clang编译内联intel语法汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 09 Dec 2019 11:11:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>我们在编写C/C++代码时，如果在有较高性能需求的时候，可以使用汇编代码来编写相应的函数，C/C++直接调用即可。汇编的</description>
+    </item>
+    
+    <item>
+      <title>Linux下安装五笔输入法和更新码表</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</link>
+      <pubDate>Wed, 04 Dec 2019 17:03:58 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</guid>
+      <description>Linux下有几种输入法框架：IBus，fcitx，SCIM等等，关于他们的历史渊源可以在网上查资料。 笔者以CentOS</description>
+    </item>
+    
+    <item>
+      <title>GDB直观调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</guid>
+      <description>在Linux项目开发过程中使用命令行GDB进行C++程序STL调试时，会发现输出的内容很杂乱，真正有用的信息比较难找。 可</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装使用Ninja</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</link>
+      <pubDate>Tue, 19 Nov 2019 17:23:20 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</guid>
+      <description>1.由于ninja需要GLIBC_2.15，CentOS 6.X的glibc只有GLIBC_2.12，所以需要更新glib</description>
+    </item>
+    
+    <item>
+      <title>VisualGDB可视化调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Tue, 19 Nov 2019 12:01:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</guid>
+      <description>本文中的VisualGDB开发调试环境为Visual Studio 2015加VisualGDB 5.4R12版本，并且使用了笔者改进过</description>
+    </item>
+    
+    <item>
+      <title>使用Python实现XML文件转为Excel文件</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-09-02-%E4%BD%BF%E7%94%A8Python%E5%AE%9E%E7%8E%B0XML%E6%96%87%E4%BB%B6%E8%BD%AC%E4%B8%BAExcel%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 02 Sep 2019 16:21:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-09-02-%E4%BD%BF%E7%94%A8Python%E5%AE%9E%E7%8E%B0XML%E6%96%87%E4%BB%B6%E8%BD%AC%E4%B8%BAExcel%E6%96%87%E4%BB%B6/</guid>
+      <description>由于项目组中原来的文件使用的XML格式作为配置，扩展性很好，但是阅读起来不是很直观，编辑起来也是不很方便，特别一些规则的</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; 11 std::bind函数绑定如何省略占位参数std::placeholders::_1……</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-08-02-C&#43;&#43;-11-stdbind%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E5%A6%82%E4%BD%95%E7%9C%81%E7%95%A5%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0stdplaceholders_1/</link>
+      <pubDate>Fri, 02 Aug 2019 18:32:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-08-02-C&#43;&#43;-11-stdbind%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E5%A6%82%E4%BD%95%E7%9C%81%E7%95%A5%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0stdplaceholders_1/</guid>
+      <description>我们在使用C++的函数绑定功能时,每次都需要写一大堆的占位符,有多少个参数就要写多少个占位符,比如下面的示例代码: 1class CTest 2{</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Google Protocol Buffers容器类型的值</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Mon, 24 Jun 2019 17:07:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
       <description>Google Protocol Buffers会生成RepeatedField和Map等容器类型，为方便在Visual Studio中进行调试，编写了</description>
     </item>
     
     <item>
-      <title>使用Visual Studio 2015编译LLVM Clang源码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM-Clang%E6%BA%90%E7%A0%81/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <title>Windows下开发Linux C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-04-Windows%E4%B8%8B%E5%BC%80%E5%8F%91Linux-C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 04 Jun 2019 17:50:12 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM-Clang%E6%BA%90%E7%A0%81/</guid>
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-04-Windows%E4%B8%8B%E5%BC%80%E5%8F%91Linux-C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>一、Windows编辑、编译、调试、运行，最终在Linux下编译、运行 这是常规方法，以前我做的几个项目都是在Window</description>
+    </item>
+    
+    <item>
+      <title>CentOS python2升级到python3后的注意事项</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-26-CentOS-python2%E5%8D%87%E7%BA%A7%E5%88%B0python3%E5%90%8E%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sun, 26 May 2019 18:27:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-26-CentOS-python2%E5%8D%87%E7%BA%A7%E5%88%B0python3%E5%90%8E%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>由于CentOS系统默认使用的是Python2，升级到Python3后原来的一些系统软件就不可用了，需要做一些处理。 首先</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X安装GCC 9.1和LLVM/Clang 8.0</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</link>
+      <pubDate>Sun, 19 May 2019 23:24:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</guid>
+      <description>在Cent OS 6.X中要安装Clang 8.0必须要使用GCC 4.8及以上版本才能编译，但系统自带的是4.4.7版本的，看了</description>
+    </item>
+    
+    <item>
+      <title>使用Visual Studio 2015编译LLVM/Clang源码</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sun, 12 May 2019 15:57:07 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM_Clang%E6%BA%90%E7%A0%81/</guid>
       <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
     </item>
     
     <item>
-      <title>将LLVM Clang编译器整合到Visual Studio中</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-04-13-%E5%B0%86LLVM-Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
-      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      <title>epoll的本质</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-24-epoll%E7%9A%84%E6%9C%AC%E8%B4%A8/</link>
+      <pubDate>Wed, 24 Apr 2019 14:00:23 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-04-13-%E5%B0%86LLVM-Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
-      <description>​ 一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部</description>
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-24-epoll%E7%9A%84%E6%9C%AC%E8%B4%A8/</guid>
+      <description>从事服务端开发，少不了要接触网络编程。epoll作为linux下高性能网络服务器的必备技术至关重要，nginx、redi</description>
+    </item>
+    
+    <item>
+      <title>将LLVM/Clang编译器整合到Visual Studio中</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
+      <pubDate>Sat, 13 Apr 2019 12:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-04-13-%E5%B0%86LLVM_Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
+      <description>一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部分</description>
     </item>
     
     <item>
       <title>加快编译速度，再谈C/C&#43;&#43;预编译技术的使用</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 31 Mar 2019 22:34:29 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>​ 最近新参加的一项目是C++项目，新项目使用的原来老项目的代码来作开发，两个项目不管是Windows还是Linux都是没</description>
+      <guid>https://wittonbell.github.io/posts/2019/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>最近新参加的一项目是C++项目，新项目使用的原来老项目的代码来作开发，两个项目不管是Windows还是Linux都是没使</description>
     </item>
     
     <item>
       <title>使用Python爬取考勤信息</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/</link>
-      <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2018/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sat, 29 Dec 2018 11:50:40 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Python/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/</guid>
+      <guid>https://wittonbell.github.io/posts/2018/2018-12-29-%E4%BD%BF%E7%94%A8Python%E7%88%AC%E5%8F%96%E8%80%83%E5%8B%A4%E4%BF%A1%E6%81%AF/</guid>
       <description>最近公司的加班调休审批制度有一些调整，由于公司网站上没有清楚的标明各自有多少天可以调休，所以为了清楚的知道自己还有多少天</description>
     </item>
     
     <item>
       <title>麻将和牌算法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2018/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 07 Nov 2018 11:59:55 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://wittonbell.github.io/posts/2018/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</guid>
       <description>麻将牌有1－9万，1－9条，1－9筒，东南西北，中发白各4张，共34种136张牌。有些地方的麻将还有梅兰花竹、春夏秋冬各</description>
     </item>
     
     <item>
-      <title>解密Cocos2D中的Lua源码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/</link>
-      <pubDate>Sat, 26 May 2018 00:00:00 +0000</pubDate>
+      <title>Elo Rating System 简介及其在游戏中的运用</title>
+      <link>https://wittonbell.github.io/posts/2018/2018-10-09-Elo-Rating-System-%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%85%B6%E5%9C%A8%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E8%BF%90%E7%94%A8/</link>
+      <pubDate>Tue, 09 Oct 2018 10:26:37 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/</guid>
+      <guid>https://wittonbell.github.io/posts/2018/2018-10-09-Elo-Rating-System-%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%85%B6%E5%9C%A8%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E8%BF%90%E7%94%A8/</guid>
+      <description>不知道大家在玩游戏的时候，是不是都产生过这样的疑问： 《王者荣耀》排位五连胜后遭遇九连跪，是不是游戏操控胜率？ 《英雄联盟》</description>
+    </item>
+    
+    <item>
+      <title>BAT 批处理脚本教程</title>
+      <link>https://wittonbell.github.io/posts/2018/2018-07-04-BAT-%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Wed, 04 Jul 2018 15:40:02 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2018/2018-07-04-BAT-%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E6%95%99%E7%A8%8B/</guid>
+      <description>第一章 批处理基础 第一节 常用批处理内部命令简介 批处理定义：顾名思义，批处理文件是将一系列命令按一定的顺序集合为一个可执行的</description>
+    </item>
+    
+    <item>
+      <title>解密Cocos2D中的Lua源码</title>
+      <link>https://wittonbell.github.io/posts/2018/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sat, 26 May 2018 11:17:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2018/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/</guid>
       <description>由于没学习和使用过Cocos2D，但出于工作需要，后面将要学习与使用Cocos2D。 第一次使用修改过的Cocos的时候遇</description>
     </item>
     
     <item>
-      <title>Windows系统无法启动时如何修复注册表</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
-      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      <title>我在IT职场超15年：从程序员做到副总，送你21个超实用的职场法则！</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-12-22-%E6%88%91%E5%9C%A8IT%E8%81%8C%E5%9C%BA%E8%B6%8515%E5%B9%B4%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%81%9A%E5%88%B0%E5%89%AF%E6%80%BB%E9%80%81%E4%BD%A021%E4%B8%AA%E8%B6%85%E5%AE%9E%E7%94%A8%E7%9A%84%E8%81%8C%E5%9C%BA%E6%B3%95%E5%88%99/</link>
+      <pubDate>Fri, 22 Dec 2017 09:19:38 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
-      <description>​ 我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想</description>
+      <guid>https://wittonbell.github.io/posts/2017/2017-12-22-%E6%88%91%E5%9C%A8IT%E8%81%8C%E5%9C%BA%E8%B6%8515%E5%B9%B4%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%81%9A%E5%88%B0%E5%89%AF%E6%80%BB%E9%80%81%E4%BD%A021%E4%B8%AA%E8%B6%85%E5%AE%9E%E7%94%A8%E7%9A%84%E8%81%8C%E5%9C%BA%E6%B3%95%E5%88%99/</guid>
+      <description>写在前面 我在IT职场打滚超过15年了，从一名程序员做到常务副总。相对于其它行业，IT职场应该算比较光明的了，但也陷阱重重</description>
+    </item>
+    
+    <item>
+      <title>如何将ProtoBuffer生成Erlang文件</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-11-27-%E5%A6%82%E4%BD%95%E5%B0%86ProtoBuffer%E7%94%9F%E6%88%90Erlang%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 27 Nov 2017 19:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-11-27-%E5%A6%82%E4%BD%95%E5%B0%86ProtoBuffer%E7%94%9F%E6%88%90Erlang%E6%96%87%E4%BB%B6/</guid>
+      <description>ProtoBuffer官方提供了C++、Java、Python等语言的生成器，但不支持Erlang语言，为了让Erlan</description>
+    </item>
+    
+    <item>
+      <title>CSDN终于跟上来了</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-06-28-CSDN%E7%BB%88%E4%BA%8E%E8%B7%9F%E4%B8%8A%E6%9D%A5%E4%BA%86/</link>
+      <pubDate>Wed, 28 Jun 2017 14:51:01 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-06-28-CSDN%E7%BB%88%E4%BA%8E%E8%B7%9F%E4%B8%8A%E6%9D%A5%E4%BA%86/</guid>
+      <description>有一段时间没登录上CSDN了，由于CSDN需要实名制，实名制可以，但偏偏它搞了一个另类的，非主流的做法，让用户自己编辑短</description>
+    </item>
+    
+    <item>
+      <title>Mnesia动态添加节点杂记</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-04-24-Mnesia%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E6%9D%82%E8%AE%B0/</link>
+      <pubDate>Mon, 24 Apr 2017 20:00:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-04-24-Mnesia%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E6%9D%82%E8%AE%B0/</guid>
+      <description>FAQ List: 如果动态的添加一个节点到Mnesia cluster中 如何动态的从mnesia cluster中删除一个节点 在一个节点上</description>
+    </item>
+    
+    <item>
+      <title>提高mysql千万级大数据SQL查询优化30条经验</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-04-21-%E6%8F%90%E9%AB%98mysql%E5%8D%83%E4%B8%87%E7%BA%A7%E5%A4%A7%E6%95%B0%E6%8D%AESQL%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%9630%E6%9D%A1%E7%BB%8F%E9%AA%8C/</link>
+      <pubDate>Fri, 21 Apr 2017 10:29:02 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-04-21-%E6%8F%90%E9%AB%98mysql%E5%8D%83%E4%B8%87%E7%BA%A7%E5%A4%A7%E6%95%B0%E6%8D%AESQL%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%9630%E6%9D%A1%E7%BB%8F%E9%AA%8C/</guid>
+      <description>**转载地址：http://www.jincon.com/archives/120/ ** 1.对查询进行优化，应尽量避免全表</description>
+    </item>
+    
+    <item>
+      <title>Jenkins添加Windows自动化构建方案</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-02-27-Jenkins%E6%B7%BB%E5%8A%A0Windows%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Mon, 27 Feb 2017 17:38:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-02-27-Jenkins%E6%B7%BB%E5%8A%A0Windows%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88/</guid>
+      <description>一、为Jenkins添加Windows节点 这里需要填写远程工作目录，启动方法一项一定要选择“Launch agent via Java Web Star</description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;通用Makefile</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</link>
+      <pubDate>Thu, 23 Feb 2017 14:14:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</guid>
+      <description>最近的项目又回到了Linux上运行，这就需要在Linux下编译项目，写Makefile针对习惯了Windows的程序员来</description>
+    </item>
+    
+    <item>
+      <title>使用自己的Python函数处理Protobuf中的字符串编码</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-11-04-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86Protobuf%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Fri, 04 Nov 2016 19:03:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-11-04-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86Protobuf%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</guid>
+      <description>我目前所在的项目是一个老项目，里面的字符串编码有点乱，数据库中有些是GB2312，有些是UTF8；代码中有些是GBK，有</description>
+    </item>
+    
+    <item>
+      <title>在VisualGDB中配置预编译头加快编译速度</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-09-16-%E5%9C%A8VisualGDB%E4%B8%AD%E9%85%8D%E7%BD%AE%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Fri, 16 Sep 2016 00:20:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-09-16-%E5%9C%A8VisualGDB%E4%B8%AD%E9%85%8D%E7%BD%AE%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</guid>
+      <description>今天是中秋佳节，但是写完已经是第二天凌晨了，还是祝大家中秋快乐！ VS对C++的支持相较GCC太弱了，连续几个VS版本对C</description>
+    </item>
+    
+    <item>
+      <title>解决Google Chrome浏览器字体模糊的问题</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-08-31-%E8%A7%A3%E5%86%B3Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E6%A8%A1%E7%B3%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 31 Aug 2016 10:41:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-08-31-%E8%A7%A3%E5%86%B3Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E6%A8%A1%E7%B3%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>之前使用Google的Chrome浏览器一直觉得有时候，其显示的字体比较模糊，不管是Windows XP还是Windows</description>
+    </item>
+    
+    <item>
+      <title>libevent使用IOCP网络模型的示例</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Fri, 01 Jul 2016 15:09:59 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</guid>
+      <description>这段时间抽空学习了一下强大的网络库 libevent，其使用标准C语言编写，支持Windows、Linux、Mac等等主流</description>
+    </item>
+    
+    <item>
+      <title>使用Makefile编译Erlang</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-01-26-%E4%BD%BF%E7%94%A8Makefile%E7%BC%96%E8%AF%91Erlang/</link>
+      <pubDate>Tue, 26 Jan 2016 20:03:42 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-01-26-%E4%BD%BF%E7%94%A8Makefile%E7%BC%96%E8%AF%91Erlang/</guid>
+      <description>#配置选项，可以是DEBUG和RELEASE CONFIG ?= RELEASE #语言配置，可以是chs(简体中文)、cht(繁体中文)等等 Region ?= chs #源</description>
+    </item>
+    
+    <item>
+      <title>使用IntelliJ IDEA配置Erlang开发环境</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 20 Jan 2016 21:30:47 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>Idea工具是目前我使用过的开发Erlang最好用的IDE，但其Erlang插件的官方教程太简陋，我就想自己做一个相对详</description>
+    </item>
+    
+    <item>
+      <title>sublime配置全攻略</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-12-20-sublime%E9%85%8D%E7%BD%AE%E5%85%A8%E6%94%BB%E7%95%A5/</link>
+      <pubDate>Fri, 20 Dec 2013 17:25:57 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-12-20-sublime%E9%85%8D%E7%BD%AE%E5%85%A8%E6%94%BB%E7%95%A5/</guid>
+      <description>大家好，今天给大家分享一款编辑器：sublime text2 我用过很多编辑器， EditPlus、EmEditor、Notepad+</description>
+    </item>
+    
+    <item>
+      <title>一个简单的垃圾收集器</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-12-20-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</link>
+      <pubDate>Fri, 20 Dec 2013 12:38:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-12-20-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</guid>
+      <description>垃圾收集被认为是有更多编程牛人出没的水域之一，但在这里，我会给你一个漂亮的儿童游泳池去玩耍。可能这里面仍然会有一些能手，</description>
+    </item>
+    
+    <item>
+      <title>erlang 开发建议</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-12-05-erlang-%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE/</link>
+      <pubDate>Thu, 05 Dec 2013 12:27:19 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-12-05-erlang-%E5%BC%80%E5%8F%91%E5%BB%BA%E8%AE%AE/</guid>
+      <description>* 确保没有任何编译警告 Erlang中String采用list实现，32位系统中，其1个字符用8个字节的空间（4个保存va</description>
+    </item>
+    
+    <item>
+      <title>VGDB提示</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-10-09-VGDB%E6%8F%90%E7%A4%BA/</link>
+      <pubDate>Wed, 09 Oct 2013 22:20:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-10-09-VGDB%E6%8F%90%E7%A4%BA/</guid>
+      <description>由于之前地址的版本在未安装.Net 4.0的电脑上安装会出现插件使用装载失败的问题，已更新，新地址为：http://pan</description>
+    </item>
+    
+    <item>
+      <title>VisualGDB使用随笔</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-09-26-VisualGDB%E4%BD%BF%E7%94%A8%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Thu, 26 Sep 2013 20:03:20 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-09-26-VisualGDB%E4%BD%BF%E7%94%A8%E9%9A%8F%E7%AC%94/</guid>
+      <description>VisualGDB是目前我遇到的在Windows下开发Linux应用程序最好用的软件，它不仅可以直接在VS环境中编译Li</description>
+    </item>
+    
+    <item>
+      <title>将NASM汇编器集成到Visual Studio中</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-06-01-%E5%B0%86NASM%E6%B1%87%E7%BC%96%E5%99%A8%E9%9B%86%E6%88%90%E5%88%B0Visual-Studio%E4%B8%AD/</link>
+      <pubDate>Sat, 01 Jun 2013 21:17:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-06-01-%E5%B0%86NASM%E6%B1%87%E7%BC%96%E5%99%A8%E9%9B%86%E6%88%90%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
+      <description>之前在《 Visual Studio中使用NASM编译汇编文件》中介绍了如何将NASM汇编器集成到VS2005和VS2008中，但VS</description>
+    </item>
+    
+    <item>
+      <title>自己动手解决HEAP: Free Heap block XXX modified at YYY after it was freed问题</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-05-10-%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%A7%A3%E5%86%B3HEAP-Free-Heap-block-XXX-modified-at-YYY-after-it-was-freed%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 10 May 2013 16:56:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-05-10-%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%A7%A3%E5%86%B3HEAP-Free-Heap-block-XXX-modified-at-YYY-after-it-was-freed%E9%97%AE%E9%A2%98/</guid>
+      <description>前段时间接手的项目中有出现HEAP: Free Heap block XXX modified at YYY after it was freed问题，作为C/C++程序员，如果代码写得不规范，出现这</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;安全方便高效地复制对象数组</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-05-05-C&#43;&#43;%E5%AE%89%E5%85%A8%E6%96%B9%E4%BE%BF%E9%AB%98%E6%95%88%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 05 May 2013 21:39:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-05-05-C&#43;&#43;%E5%AE%89%E5%85%A8%E6%96%B9%E4%BE%BF%E9%AB%98%E6%95%88%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84/</guid>
+      <description>在C++中，我们经常遇到需要对一个对象数组进行复制，比如下面一个结构： 1struct STest 2{ 3 int a; 4 int b; 5 vector&amp;lt;int&amp;gt; vctInt; 6};``` 7 8 9 10 11我们定义了两</description>
+    </item>
+    
+    <item>
+      <title>如何调试Firefox和IE的插件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 02 Sep 2012 19:44:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-09-02-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95Firefox%E5%92%8CIE%E7%9A%84%E6%8F%92%E4%BB%B6/</guid>
+      <description>关于FireFox和IE的插件调试，以前我有调试过T3D的，今天想再研究一下，打好断点，却怎么也无法断下来，可以前是可以</description>
+    </item>
+    
+    <item>
+      <title>如何在不安装VC2008发布包的情况下，发布VC2008生成的程序</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 08 Aug 2012 09:54:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <description>在前面的Blog中有提到，VS2005及以上版本的程序发布与之前版本有一个差别就是清单文件，这个清单文件包含了运行此应用</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio中使用NASM编译汇编文件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Jul 2012 11:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</guid>
+      <description>NASM相对MASM和GAS而言，是一款比较中庸的汇编器，它语法简洁、功能强大，而且跨平台、免费，是外联汇编的不错选择。</description>
+    </item>
+    
+    <item>
+      <title>Win32调试API原理</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 13 Jan 2012 11:23:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</guid>
+      <description>来自《软件技术加密内幕》和chm版本不太一样 在Win32中自带了一些API函数，它们提供了相当于一般调试器的大多数功能，</description>
+    </item>
+    
+    <item>
+      <title>UDK学习笔记之添加快捷键切换视角、加减角色移动速度，初始化改变视角</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-29-UDK%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%88%87%E6%8D%A2%E8%A7%86%E8%A7%92%E5%8A%A0%E5%87%8F%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8%E9%80%9F%E5%BA%A6%E5%88%9D%E5%A7%8B%E5%8C%96%E6%94%B9%E5%8F%98%E8%A7%86%E8%A7%92/</link>
+      <pubDate>Tue, 29 Nov 2011 11:32:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-29-UDK%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%88%87%E6%8D%A2%E8%A7%86%E8%A7%92%E5%8A%A0%E5%87%8F%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8%E9%80%9F%E5%BA%A6%E5%88%9D%E5%A7%8B%E5%8C%96%E6%94%B9%E5%8F%98%E8%A7%86%E8%A7%92/</guid>
+      <description>一、添加快捷键切换视角 1.打开UDK安装目录下UDKGame\Config\UDKInput.ini 2.在[Engine</description>
+    </item>
+    
+    <item>
+      <title>浅析网络编程之Socket模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:29:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</guid>
+      <description>Winsock 的I/O操作 两种I/O模式 阻塞模式：执行I/O操作完成前会一直进行等待，不会将控制权交给程序。套接字 默认为阻塞模式。可</description>
+    </item>
+    
+    <item>
+      <title>很幽默的讲解六种Socket I/O模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:24:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</guid>
+      <description>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。 一： select 模型 二： WSAAsyncSelect 模型 三： WSAEventSelect 模型 四： Overlapped I/O 事件</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 清单(manifest)导致的问题</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 17 Nov 2011 12:10:03 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-17-Visual-Studio-%E6%B8%85%E5%8D%95manifest%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前些天把一个项目从XP 32位平台拿到Win7 64位平台去编译运行，用VS2008按Win32的方式编译连接都通过，但是一</description>
+    </item>
+    
+    <item>
+      <title>Writing custom visualizers for Visual Studio 2005</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-11-05-Writing-custom-visualizers-for-Visual-Studio-2005/</link>
+      <pubDate>Fri, 05 Nov 2010 17:27:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-11-05-Writing-custom-visualizers-for-Visual-Studio-2005/</guid>
+      <description>The native debugger in Visual Studio has long had an underadvertised feature called autoexp.dat , which is a file in the PackagesDebugger folder that allows you to control several aspects of the debugger. Among the features that you can control in autoexp.dat include: the string that is displayed for types in the variable panes, which functions the debugger will skip</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Unreal的数据类型的值</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-10-31-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAUnreal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Sun, 31 Oct 2010 17:07:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-10-31-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAUnreal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <description>在Unreal引擎中大量使用了自定义的数据类型如：FName，FString，TArray等等，对于这些自定义的数据类型</description>
+    </item>
+    
+    <item>
+      <title>Windows系统无法启动时如何修复注册表</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
+      <pubDate>Thu, 10 Jun 2010 21:53:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
+      <description>我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想在</description>
     </item>
     
     <item>
       <title>关于友元函数的跨平台问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 03 Feb 2010 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2010/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 03 Feb 2010 13:51:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 今天我在项目中写了一段代码，这段代码中有两个类A和B，类A中的一个保护成员函数需要访问类B中的私有成员变量，为了简便起</description>
+      <guid>https://wittonbell.github.io/posts/2010/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</guid>
+      <description>今天我在项目中写了一段代码，这段代码中有两个类A和B，类A中的一个保护成员函数需要访问类B中的私有成员变量，为了简便起见</description>
     </item>
     
     <item>
       <title>关于C/C&#43;&#43;的位域</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</link>
-      <pubDate>Sun, 31 Jan 2010 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2010/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</link>
+      <pubDate>Sun, 31 Jan 2010 23:44:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</guid>
-      <description>​ 在C/C++中我们有时为了节省内存占用空间，需要使用到位域，如下所示代码： 1struct SDummy 2{ 3 int A : 2; 4 int B : 8; 5 int C : 12; 6 int D :</description>
+      <guid>https://wittonbell.github.io/posts/2010/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</guid>
+      <description>在C/C++中我们有时为了节省内存占用空间，需要使用到位域，如下所示代码： struct SDummy { int A : 2; int B : 8; int C : 12; int D : 10; }; 在计算</description>
     </item>
     
     <item>
       <title>类成员函数大小问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sun, 15 Nov 2009 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 15 Nov 2009 20:56:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 上周，我一同事，在调试我们项目的时候，发现我写的一段代码中，有一个类成员函数指针数组有大小有点怪异，便叫我过去瞧瞧。有</description>
+      <guid>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>上周，我一同事，在调试我们项目的时候，发现我写的一段代码中，有一个类成员函数指针数组有大小有点怪异，便叫我过去瞧瞧。有如</description>
     </item>
     
     <item>
       <title>Linux下编译GCC</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
-      <pubDate>Mon, 08 Jun 2009 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
+      <pubDate>Mon, 08 Jun 2009 17:37:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
-      <description>​ 看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Li</description>
+      <guid>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
+      <description>看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Lin</description>
     </item>
     
     <item>
       <title>宿主程序Crash与Lua是动态库还是静态库有关？</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</link>
-      <pubDate>Thu, 30 Apr 2009 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2009/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</link>
+      <pubDate>Thu, 30 Apr 2009 17:48:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</guid>
-      <description>​ 前一阵子在做项目的时候，遇到一个感觉比较怪异的问题：在项目中我们用了Lua作为脚本扩展支持，Lua是以静态库的形式编译</description>
+      <guid>https://wittonbell.github.io/posts/2009/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</guid>
+      <description>前一阵子在做项目的时候，遇到一个感觉比较怪异的问题：在项目中我们用了Lua作为脚本扩展支持，Lua是以静态库的形式编译进</description>
     </item>
     
     <item>
       <title>关于G&#43;&#43;库链接的一个问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 15 Jul 2008 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Jul 2008 16:25:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 我们的项目是按模块开发的，所以需要在生成可执行文件时将所有的模块都链接起来，我想这个是每个程序员都知道的事情，不管是在</description>
+      <guid>https://wittonbell.github.io/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
+      <description>我们的项目是按模块开发的，所以需要在生成可执行文件时将所有的模块都链接起来，我想这个是每个程序员都知道的事情，不管是在W</description>
     </item>
     
     <item>
       <title>跨平台UNICODE编程总结</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 16 Jun 2008 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 16 Jun 2008 13:25:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
-      <description>​ 这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但</description>
+      <guid>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但是</description>
     </item>
     
     <item>
       <title>跨平台Unicode编程的一点问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Thu, 24 Apr 2008 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 24 Apr 2008 17:12:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNIC</description>
+      <guid>https://wittonbell.github.io/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
+      <description>最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNICO</description>
+    </item>
+    
+    <item>
+      <title>使用 GNU CC 的预编译头文件加快编译速度</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-12-26-%E4%BD%BF%E7%94%A8-GNU-CC-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Wed, 26 Dec 2007 14:37:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-12-26-%E4%BD%BF%E7%94%A8-GNU-CC-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</guid>
+      <description>既使用过 Microsoft® Visual C++® 又使用过 GNU CC 的网友一定会感受到两者编译速度的差异，尤其是对于 wxWidgets 这样头文件内容多的软</description>
+    </item>
+    
+    <item>
+      <title>用MINGW编译GCC4.2.2指南</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-12-19-%E7%94%A8MINGW%E7%BC%96%E8%AF%91GCC4.2.2%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 19 Dec 2007 10:17:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-12-19-%E7%94%A8MINGW%E7%BC%96%E8%AF%91GCC4.2.2%E6%8C%87%E5%8D%97/</guid>
+      <description>在网上，编译GCC的方法有很多，大部份人都推荐在CYGWIN环境下进行交叉编译，这样可以可以少遇到许多困难，但是使用CY</description>
+    </item>
+    
+    <item>
+      <title>微软真是忽悠人</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-09-30-%E5%BE%AE%E8%BD%AF%E7%9C%9F%E6%98%AF%E5%BF%BD%E6%82%A0%E4%BA%BA/</link>
+      <pubDate>Sun, 30 Sep 2007 18:07:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-09-30-%E5%BE%AE%E8%BD%AF%E7%9C%9F%E6%98%AF%E5%BF%BD%E6%82%A0%E4%BA%BA/</guid>
+      <description>有两个月没有写东西了，明天就是国庆节了，我想祝我所有的朋友包括网友节日快乐！ 由于明天是国庆节，今天又没有什么事，就在那里</description>
     </item>
     
     <item>
       <title>Linux通过Smb与Windows共享目录</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Thu, 26 Jul 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Thu, 26 Jul 2007 10:06:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
-      <description>​ 由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的。</description>
     </item>
     
     <item>
       <title>Windows与Linux共存之重装Windows经历</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Sat, 09 Jun 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Sat, 09 Jun 2007 16:50:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
       <description>Linux是一个功能强大的操作系统，它既支持如MSDOS一般的命令行操作，也支持如Windows一般的图形界面的操作。 随</description>
     </item>
     
     <item>
       <title>LuaTinker向Linux移植成功</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</link>
-      <pubDate>Wed, 06 Jun 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</link>
+      <pubDate>Wed, 06 Jun 2007 17:14:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</guid>
       <description>今天我怀着无比激动的心情写这篇博客。LuaTinker以其短小精悍，功能比较强大而广泛地被许多网友及同事所关注。自从我用</description>
     </item>
     
     <item>
       <title>如何用C API遍历Lua脚本中的表</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
-      <pubDate>Tue, 22 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
+      <pubDate>Tue, 22 May 2007 22:10:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
-      <description>在刚接触Lua不久，了解了许多理论知识后，就有一种跃跃欲试的冲动，想要自己动手写一段代码来试试。这也许是作为一个程序员所</description>
-    </item>
-    
-    <item>
-      <title>如何用C遍历Lua脚本中的表</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
-      <pubDate>Tue, 22 May 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
       <description>在刚接触Lua不久，了解了许多理论知识后，就有一种跃跃欲试的冲动，想要自己动手写一段代码来试试。这也许是作为一个程序员所</description>
     </item>
     
     <item>
       <title>C&#43;&#43;类模板的成员函数模板写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 21 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 21 May 2007 13:04:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</guid>
       <description>这几天本来想将Lua_Tinker移植到Linux上去的，但是由于VC中的模板写法与gcc中的模板写法有些不同之处，比如</description>
     </item>
     
     <item>
       <title>导出C&#43;&#43;中的类到Lua脚本中的经历</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Fri, 18 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Fri, 18 May 2007 09:29:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</guid>
       <description>这两天一直在研究Lua和LuaPlus。由于项目需要将C++中的类导出到Lua脚本中，让Lua脚本也可以使用C++中的东</description>
     </item>
     
     <item>
-      <title>如何利用VC编写有汇编代码的跨平台代码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</link>
-      <pubDate>Sat, 12 May 2007 00:00:00 +0000</pubDate>
+      <title>VSLua工具</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-15-VSLua%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 15 May 2007 20:12:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-15-VSLua%E5%B7%A5%E5%85%B7/</guid>
+      <description>今天在网上找到一些比较好的Lua工具，其中最让人心动的是VSLua，它可以在VS下与C/C++代码一起调试。感觉是一个很</description>
+    </item>
+    
+    <item>
+      <title>如何利用VC编写有汇编代码的跨平台代码</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 12 May 2007 13:39:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</guid>
       <description>在C/C++中添加内联汇编很容易，只需要用__asm(VC中)或者__asm__(gcc/g++中)关键字就可以在C/C</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台函数指针的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-11-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Fri, 11 May 2007 00:00:00 +0000</pubDate>
+      <title>跨平台函数指针的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-11-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Fri, 11 May 2007 13:05:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-11-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>前段时间，我在项目中用到了函数指针，其写法示例如下： 1//Myclass.h 2 3class CMyClass; 4typedef void (CMyClass:: *MyCALLBACK)(); 5 6class CMyClass 7{ 8 MyCALLBACK m_MyHandler[5]; 9 10protected: 11 void AddCmd(const UINT ID,MyCALLBACK DBHandler); 12 void DispatchMsg(); 13 void MyHandler1(); 14 15public: 16 CMyCalss::CMyCalss() 17</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-11-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 前段时间，我在项目中用到了函数指针， 其写法示例如下： 1//Myclass.h 2 3class CMyClass; 4typedef void (CMyClass:: *MyCALLBACK)(); 5</description>
     </item>
     
     <item>
       <title>MFC中动态设置组合框的下拉菜单高度</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
-      <pubDate>Thu, 10 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
+      <pubDate>Thu, 10 May 2007 13:13:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
-      <description>今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组合框中的菜单项比较多的时候，默认的组合框下拉菜单高</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台宏的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 30 Apr 2007 00:00:00 +0000</pubDate>
+      <title>跨平台宏的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:50:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这段代码，写完之后，看到这段代码是相当的整齐，有一种</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台模板的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 30 Apr 2007 00:00:00 +0000</pubDate>
+      <title>跨平台模板的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:10:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>由于工作的原因，自己写的代码，需要跨平台运行（windows与Linux），但是由于VC编译器与gcc/g++编译器的差</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 由于工作的原因，自己写的代码，需要跨平台运行（windows与Linu</description>
     </item>
     
   </channel>

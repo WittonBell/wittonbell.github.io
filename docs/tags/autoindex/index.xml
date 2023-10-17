@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>autoindex on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/autoindex/</link>
+    <description>Recent content in autoindex on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 15 May 2022 20:48:37 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/autoindex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nginx文件服务器美化autoindex显示</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Sun, 15 May 2022 20:48:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-15-nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%8E%E5%8C%96autoindex%E6%98%BE%E7%A4%BA/</guid>
+      <description>网络上很多使用nginx来作为文件服务器的，前段时间公司也有这个需求，就研究了一下使用nginx来做文件服务器，参见前面</description>
+    </item>
+    
+  </channel>
+</rss>

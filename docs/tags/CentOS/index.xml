@@ -1,19 +1,172 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CentOS on Witton的博客</title>
-    <link>https://wittonbell.github.io/tags/CentOS/</link>
-    <description>Recent content in CentOS on Witton的博客</description>
+    <title>centos on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/centos/</link>
+    <description>Recent content in centos on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/CentOS/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Aug 2023 19:47:46 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CentOS6.x不升级内核安装Docker</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2021-08-15-CentOS6.x%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/2021-08-15-CentOS6.x%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
+    </item>
+    
+    <item>
+      <title>让Linux的Shell提示和输出是彩色的</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</link>
+      <pubDate>Sat, 27 Nov 2021 23:52:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-27-%E8%AE%A9Linux%E7%9A%84Shell%E6%8F%90%E7%A4%BA%E5%92%8C%E8%BE%93%E5%87%BA%E6%98%AF%E5%BD%A9%E8%89%B2%E7%9A%84/</guid>
+      <description>在使用最新的Ubuntu的时候发现终端的提示符是彩色的 而在CentOS8中以及容器中的Linux系统一般都不是彩色提示，</description>
+    </item>
+    
+    <item>
+      <title>设置ubuntu和CentOS的IP地址为静态地址</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Wed, 24 Nov 2021 18:46:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</guid>
+      <description>文章目录 一、确认网关地址 二、修改配置文件 １.ubuntu a.查看DHCP模式下的DNS信息 b. 修改/etc/netplan</description>
+    </item>
+    
+    <item>
+      <title>配置与管理Ubuntu 21.10</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</link>
+      <pubDate>Mon, 22 Nov 2021 16:12:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/</guid>
+      <description>文章目录 一、使用SSH远程连接Ubuntu 1.查看IP地址 2. 使用SSH连接 二、安装配置Cockpit 1.安装Cockpi</description>
+    </item>
+    
+    <item>
+      <title>解决centos下安装WPS出现can‘t find libXss.so.1</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</link>
+      <pubDate>Thu, 21 Oct 2021 09:50:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/</guid>
+      <description>今天在CentOS8中安装WPS时，出现找不到libXss.so.1的情况，但是又不知道是需要安装哪个包，可以通过下面的</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——文件管理器</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 09 Sep 2021 22:26:13 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——虚拟机</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 09 Sep 2021 08:18:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>文章目录 一、创建储存池 二、通过下载一个系统来创建虚拟机 三、通过本地安装介质来创建虚拟机 CentOS 8使用Cockpit管理Linu</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——存储</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 05 Sep 2021 21:59:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E5%AD%98%E5%82%A8/</guid>
+      <description>文章目录 一、安装Cockpit的附加组件 二、监控存储系统 三、管理卷组、逻辑卷（分区） 1.管理普通分区 2. 格式化 3.调整分区</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——网络</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Sun, 05 Sep 2021 21:56:28 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%BD%91%E7%BB%9C/</guid>
+      <description>文章目录 一、使用 web 控制台管理防火墙 1.开关防火墙 2.编辑防火墙区域和规则 2.1 区域 2.2 防火墙规则 2.3 添加区域 2.4 删除区域 二、使用 Web</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit进阶</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Sun, 05 Sep 2021 10:36:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-05-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E8%BF%9B%E9%98%B6/</guid>
+      <description>文章目录 一、账户管理 1.创建新账户 2. 设置密码 3.强制变更密码 4.设置密码永不过期或者要求每多少天就需要修改密码 5.设置从</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——Cockpit入门</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 04 Sep 2021 23:46:45 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86LinuxCockpit%E5%85%A5%E9%97%A8/</guid>
+      <description>文章目录 一、安装 二、登录Cockpit web 控制台 三、设置Web显示语言 四、重启或者关闭CentOS系统 五、修改基本配置 1. 修</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——简介</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 04 Sep 2021 21:11:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-04-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E7%AE%80%E4%BB%8B/</guid>
+      <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 快速升级内核</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
+      <pubDate>Mon, 30 Aug 2021 11:50:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-30-CentOS-6.X-%E5%BF%AB%E9%80%9F%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
+      <description>文章目录 一、老式方法： 1、导入公钥： 2、查看是否安装ELRepo项目 3、安装ELRepo项目 二、直接下载内核安装包安装内</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.10不升级内核安装Docker</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</link>
+      <pubDate>Sun, 15 Aug 2021 11:56:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-15-CentOS-6.10%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85Docker/</guid>
       <description>目前Docker新版本docker-ce官宣支持的CentOS系统为7及以上系统，CentOS 6.X由于内核版本太低，为</description>
+    </item>
+    
+    <item>
+      <title>Linux下安装配置Postfix邮件服务器</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 01 May 2020 23:23:46 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-05-01-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEPostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>文章目录 一、设置域名 二、搭建DNS环境域名解析，用于解析postfix地址 三、安装postfix服务器并进行配置 四、安装</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X 安装使用Ninja</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</link>
+      <pubDate>Tue, 19 Nov 2019 17:23:20 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-CentOS-6.X-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Ninja/</guid>
+      <description>1.由于ninja需要GLIBC_2.15，CentOS 6.X的glibc只有GLIBC_2.12，所以需要更新glib</description>
+    </item>
+    
+    <item>
+      <title>CentOS python2升级到python3后的注意事项</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-26-CentOS-python2%E5%8D%87%E7%BA%A7%E5%88%B0python3%E5%90%8E%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sun, 26 May 2019 18:27:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-26-CentOS-python2%E5%8D%87%E7%BA%A7%E5%88%B0python3%E5%90%8E%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>由于CentOS系统默认使用的是Python2，升级到Python3后原来的一些系统软件就不可用了，需要做一些处理。 首先</description>
+    </item>
+    
+    <item>
+      <title>CentOS 6.X安装GCC 9.1和LLVM/Clang 8.0</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</link>
+      <pubDate>Sun, 19 May 2019 23:24:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-05-19-CentOS-6.X%E5%AE%89%E8%A3%85GCC-9.1%E5%92%8CLLVM_Clang-8.0/</guid>
+      <description>在Cent OS 6.X中要安装Clang 8.0必须要使用GCC 4.8及以上版本才能编译，但系统自带的是4.4.7版本的，看了</description>
     </item>
     
   </channel>

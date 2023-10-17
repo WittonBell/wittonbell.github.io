@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>极点五笔 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94/</link>
+    <description>Recent content in 极点五笔 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 26 Apr 2022 16:45:04 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows10配置使用极点五笔输入法</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-04-26-Windows10%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Tue, 26 Apr 2022 16:45:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-04-26-Windows10%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>在Windows下，笔者一直以来都是使用的五笔输入法，使用过王码五笔，万能五笔，极品五笔，极点五笔等等，在使用了极点五笔</description>
+    </item>
+    
+    <item>
+      <title>Linux下安装五笔输入法和更新码表</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</link>
+      <pubDate>Wed, 04 Dec 2019 17:03:58 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-04-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95%E5%92%8C%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/</guid>
+      <description>Linux下有几种输入法框架：IBus，fcitx，SCIM等等，关于他们的历史渊源可以在网上查资料。 笔者以CentOS</description>
+    </item>
+    
+  </channel>
+</rss>

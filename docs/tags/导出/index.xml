@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>导出 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%AF%BC%E5%87%BA/</link>
+    <description>Recent content in 导出 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 13 Jun 2023 15:58:43 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%AF%BC%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记Gitlab备份与设置自动备份</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-13-%E8%AE%B0Gitlab%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</guid>
+      <description>今天给Gitlab做了一个备份，并且设置了每天自动备份，记录一下。 一、导出全部项目 由于Gitlab Web页面并没有自动备</description>
+    </item>
+    
+  </channel>
+</rss>

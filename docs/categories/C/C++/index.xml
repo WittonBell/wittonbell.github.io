@@ -7,282 +7,327 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language><atom:link href="https://wittonbell.github.io/categories/C/C++/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>VS2022解决Protobuf compiler version 23.4 doesn&#39;t match library version 4.23.4</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
-      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
+      <pubDate>Mon, 21 Aug 2023 14:40:47 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</guid>
       <description>在使用Visual Studio 2022+MinGW+CMake作为开发环境时，如果项目中使用了Protobuf，则在CMake运行</description>
     </item>
     
     <item>
-      <title>解决lldb调试时可能出现的personality set failed Function not implemented</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
-      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      <title>解决lldb调试时可能出现的personality set failed: Function not implemented</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</link>
+      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/Linux/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/</guid>
       <description>最近在尝试使用Visual Studio 2022远程连接Linux进行C/C++的开发，由于CentOS风波不断，所以现在的开发基本</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;实现Go的defer功能</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <title>搭建ubuntu容器内C/C&#43;&#43;开发调试环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 05 Jun 2023 17:10:30 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E6%90%AD%E5%BB%BAubuntu%E5%AE%B9%E5%99%A8%E5%86%85C_C&#43;&#43;%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、创建容器 为了让容器内的调试器（gdb、lldb）能够正常调试，在创建容器时需要添加参数： podman添加参数：--c</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用CMake&#43;MinGW&#43;Clang&#43;LLDB作为开发环境</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 26 May 2023 16:55:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-26-Visual-Studio-2022%E4%BD%BF%E7%94%A8CMake&#43;MinGW&#43;Clang&#43;LLDB%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>笔者前面写了两篇关于Visual Studio 2022使用MinGW的博文：《 Visual Studio 2022使用MinGW来编译调试C/C++程序》、</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022 CMake&#43;MinGW&#43;GDB 调试目标程序</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 14 May 2023 23:51:11 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-14-Visual-Studio-2022-CMake&#43;MinGW&#43;GDB-%E8%B0%83%E8%AF%95%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F/</guid>
+      <description>前段时间笔者在使用MinGW编译了QtCreator后，想要进行调试。最开始使用VSCode进行调试，可是可以调试，但是</description>
+    </item>
+    
+    <item>
+      <title>CMake自动按目录结构编译Protobuf代码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Wed, 26 Apr 2023 17:49:55 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-26-CMake%E8%87%AA%E5%8A%A8%E6%8C%89%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E7%BC%96%E8%AF%91Protobuf%E4%BB%A3%E7%A0%81/</guid>
+      <description>在使用CMake构建C++项目时，如果有使用Protobuf，CMake提供了一个FindProtobuf.cmake模</description>
+    </item>
+    
+    <item>
+      <title>使用Glib中测试框架对C代码进行单元测试</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Fri, 21 Apr 2023 18:26:27 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>C++项目的测试框架比较常见的是Google的gtest（前文 CMake项目使用ctest+gtest进行单元测试有使用</description>
+    </item>
+    
+    <item>
+      <title>C/C&#43;&#43;开发中使用pkg-config来引用依赖库</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</link>
+      <pubDate>Thu, 20 Apr 2023 18:49:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-20-C_C&#43;&#43;%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8pkg-config%E6%9D%A5%E5%BC%95%E7%94%A8%E4%BE%9D%E8%B5%96%E5%BA%93/</guid>
+      <description>在使用C/C++进行开发的过程中，经常需要引用其它的库，可能是系统已经安装好的，也可能是其它的外部库。 如果是系统支持的库</description>
+    </item>
+    
+    <item>
+      <title>使用CMake的CPack工具打包项目</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-18-%E4%BD%BF%E7%94%A8CMake%E7%9A%84CPack%E5%B7%A5%E5%85%B7%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 18 Apr 2023 12:04:50 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-18-%E4%BD%BF%E7%94%A8CMake%E7%9A%84CPack%E5%B7%A5%E5%85%B7%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/</guid>
+      <description>为了介绍如何使用CMake的CPack工具进行项目打包，这里使用了前文 CMake项目使用ctest+gtest进行单元测</description>
+    </item>
+    
+    <item>
+      <title>CMake项目使用ctest&#43;gtest进行单元测试</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-04-15-CMake%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8ctest&#43;gtest%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sat, 15 Apr 2023 17:12:17 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-04-15-CMake%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8ctest&#43;gtest%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>随着CMake工具越来越强大便捷，越来越多的C/C++项目转而使用CMake来进行编译管理，它还提供了用于测试的ctes</description>
+    </item>
+    
+    <item>
+      <title>Windows下的高效网络模型IOCP完整示例</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 23 Mar 2023 14:21:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</guid>
+      <description>IOCP即完成端口（I/O Completion Port），与Linux下的epoll一样，是一种非常高效的网络模型。epoll 是当资源准备</description>
+    </item>
+    
+    <item>
+      <title>MiniDump不生成或者生成0字节</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</link>
+      <pubDate>Wed, 22 Mar 2023 18:30:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</guid>
+      <description>今天在使用C写一个Windows多线程程序时，发现退出过程中有段错误，为了方便快速的定位问题，我使用了MiniDump。</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio 2022使用MinGW来编译调试C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 07 Aug 2022 17:23:16 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-08-07-Visual-Studio-2022%E4%BD%BF%E7%94%A8MinGW%E6%9D%A5%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95C_C&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>文章目录 一、创建项目 二、配置CMake 1.修改“CMakePresets.json”预设编译工具集 2.使用CMake设置</description>
+    </item>
+    
+    <item>
+      <title>C语言使用MinGW中的GCC生成平面(flat)二进制文件</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 30 Jun 2022 18:41:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-06-30-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84GCC%E7%94%9F%E6%88%90%E5%B9%B3%E9%9D%A2flat%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</guid>
+      <description>最近抽空在看自制操作系统相关的书籍，比如《自己动手写操作系统》、《Orange’S：一个操作系统的实现》、《一个64位操</description>
+    </item>
+    
+    <item>
+      <title>Linux下使用CMake构建含nasm汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-29-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8CMake%E6%9E%84%E5%BB%BA%E5%90%ABnasm%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 29 May 2022 00:24:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-29-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8CMake%E6%9E%84%E5%BB%BA%E5%90%ABnasm%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>CMake的出现极大的方便了C/C++项目的编译管理，避免了手工写Makefile的繁琐。如果在C/C++项目中有需要使</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习资料</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
+      <pubDate>Thu, 21 Oct 2021 10:18:04 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
+      <description>本文转自： https://github.com/0voice/cpp_new_features 2021年最新整理， C++ 学习资料，含C++ 11 / 14 / 17 / 20 / 23 新特性、入门教程、推荐书籍、优质文章、学习笔记、教</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;实现Go的defer功能</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Thu, 08 Jul 2021 18:38:14 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-07-08-C&#43;&#43;%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
       <description>在Go语言中有一个关键字：defer，它的作用就是延迟执行后面的函数，在资源释放方面特别有用，比如下面一段C/C++的示</description>
     </item>
     
     <item>
       <title>对C&#43;&#43;变长参数中的字符串进行转义</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</link>
-      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</link>
+      <pubDate>Wed, 24 Feb 2021 16:21:28 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-24-%E5%AF%B9C&#43;&#43;%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E8%BD%AC%E4%B9%89/</guid>
       <description>使用过SQL的读者应该都知道SQL存在注入的可能，即没有严格检查用户输入数据的合法性。这里不讨论SQL的注入以及防止注入</description>
     </item>
     
     <item>
       <title>C&#43;&#43;模板类成员函数使用SFINAE特性匹配智能指针</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
-      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
+      <pubDate>Tue, 23 Feb 2021 15:01:21 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-23-C&#43;&#43;%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8SFINAE%E7%89%B9%E6%80%A7%E5%8C%B9%E9%85%8D%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
       <description>为了讲解C++模板类成员函数如何使用SFINAE特性匹配智能指针，笔者使用最近在实际项目中的应用来进行说明。 最近在项目开</description>
     </item>
     
     <item>
       <title>使用C&#43;&#43;11模板SFINAE特性重写序列化与反序列化</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
-      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2020/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <pubDate>Tue, 10 Nov 2020 17:16:18 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <guid>https://wittonbell.github.io/posts/2020/2020-11-10-%E4%BD%BF%E7%94%A8C&#43;&#43;11%E6%A8%A1%E6%9D%BFSFINAE%E7%89%B9%E6%80%A7%E9%87%8D%E5%86%99%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
       <description>序列化与反序列化在编程中是最常见不过了，项目中原来写的序列化与反序列化是使用的普通类成员函数来写的，每一个数据类型都写了</description>
     </item>
     
     <item>
       <title>C语言随机数</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
-      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2020/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
+      <pubDate>Wed, 21 Oct 2020 11:58:01 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
+      <guid>https://wittonbell.github.io/posts/2020/2020-10-21-C%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
       <description>昨天项目中遇到随机数相关的问题，其实并不是问题，只是没有使用对。项目中使用的自己写的类似C语言的rand()的伪随机函数</description>
     </item>
     
     <item>
-      <title>dll、lib、a的转换</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <title>使用VSCode环境编程的一些注意事项</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sat, 11 Jul 2020 20:27:16 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2020-08-21-dllliba%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
-      <description>一、.dll生成导入库.a或者.lib 在使用Mingw进行开发时，有时依赖的库只有.dll文件，而Mingw需要的是.a</description>
+      <guid>https://wittonbell.github.io/posts/2020/2020-07-11-%E4%BD%BF%E7%94%A8VSCode%E7%8E%AF%E5%A2%83%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>文章目录 一、Go语言 1. 使用Code Runner运行 2. 关于提示 二、Python语言 1.使用Code Runner运行 2.格式</description>
     </item>
     
     <item>
-      <title>在VS调试器中显示PB容器类型的值</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-06-24-%E5%9C%A8VS%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAPB%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
-      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      <title>C&#43;&#43; 11 std::bind函数绑定如何省略占位参数std::placeholders::_1……</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-08-02-C&#43;&#43;-11-stdbind%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E5%A6%82%E4%BD%95%E7%9C%81%E7%95%A5%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0stdplaceholders_1/</link>
+      <pubDate>Fri, 02 Aug 2019 18:32:05 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-06-24-%E5%9C%A8VS%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAPB%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <guid>https://wittonbell.github.io/posts/2019/2019-08-02-C&#43;&#43;-11-stdbind%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E5%A6%82%E4%BD%95%E7%9C%81%E7%95%A5%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0stdplaceholders_1/</guid>
+      <description>我们在使用C++的函数绑定功能时,每次都需要写一大堆的占位符,有多少个参数就要写多少个占位符,比如下面的示例代码: 1class CTest 2{</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Google Protocol Buffers容器类型的值</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Mon, 24 Jun 2019 17:07:49 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-24-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAGoogle-Protocol-Buffers%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
       <description>Google Protocol Buffers会生成RepeatedField和Map等容器类型，为方便在Visual Studio中进行调试，编写了</description>
     </item>
     
     <item>
-      <title>使用Visual Studio 2015编译LLVM Clang源码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM-Clang%E6%BA%90%E7%A0%81/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-05-12-%E4%BD%BF%E7%94%A8Visual-Studio-2015%E7%BC%96%E8%AF%91LLVM-Clang%E6%BA%90%E7%A0%81/</guid>
-      <description>一、下载LLVM/Clang源码 从http://releases.llvm.org/download.html下载LLV</description>
-    </item>
-    
-    <item>
-      <title>将LLVM Clang编译器整合到Visual Studio中</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-04-13-%E5%B0%86LLVM-Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</link>
-      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/VS/2019-04-13-%E5%B0%86LLVM-Clang%E7%BC%96%E8%AF%91%E5%99%A8%E6%95%B4%E5%90%88%E5%88%B0Visual-Studio%E4%B8%AD/</guid>
-      <description>​ 一、集成clang-cl编译器 clang-cl是兼容微软cl的模式，它支持微软cl编译器的绝大多数编译选项，目前还有部</description>
-    </item>
-    
-    <item>
-      <title>加快编译速度，再谈C/C&#43;&#43;预编译技术的使用</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2019-03-31-%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E5%86%8D%E8%B0%88C_C&#43;&#43;%E9%A2%84%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>​ 最近新参加的一项目是C++项目，新项目使用的原来老项目的代码来作开发，两个项目不管是Windows还是Linux都是没</description>
-    </item>
-    
-    <item>
       <title>麻将和牌算法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2018/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 07 Nov 2018 11:59:55 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://wittonbell.github.io/posts/2018/2018-11-07-%E9%BA%BB%E5%B0%86%E5%92%8C%E7%89%8C%E7%AE%97%E6%B3%95/</guid>
       <description>麻将牌有1－9万，1－9条，1－9筒，东南西北，中发白各4张，共34种136张牌。有些地方的麻将还有梅兰花竹、春夏秋冬各</description>
     </item>
     
     <item>
-      <title>解密Cocos2D中的Lua源码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/</link>
-      <pubDate>Sat, 26 May 2018 00:00:00 +0000</pubDate>
+      <title>C/C&#43;&#43;通用Makefile</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</link>
+      <pubDate>Thu, 23 Feb 2017 14:14:40 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2018-05-26-%E8%A7%A3%E5%AF%86Cocos2D%E4%B8%AD%E7%9A%84Lua%E6%BA%90%E7%A0%81/</guid>
-      <description>由于没学习和使用过Cocos2D，但出于工作需要，后面将要学习与使用Cocos2D。 第一次使用修改过的Cocos的时候遇</description>
+      <guid>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</guid>
+      <description>最近的项目又回到了Linux上运行，这就需要在Linux下编译项目，写Makefile针对习惯了Windows的程序员来</description>
     </item>
     
     <item>
-      <title>关于友元函数的跨平台问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 03 Feb 2010 00:00:00 +0000</pubDate>
+      <title>在VisualGDB中配置预编译头加快编译速度</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-09-16-%E5%9C%A8VisualGDB%E4%B8%AD%E9%85%8D%E7%BD%AE%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Fri, 16 Sep 2016 00:20:10 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-02-03-%E5%85%B3%E4%BA%8E%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 今天我在项目中写了一段代码，这段代码中有两个类A和B，类A中的一个保护成员函数需要访问类B中的私有成员变量，为了简便起</description>
+      <guid>https://wittonbell.github.io/posts/2016/2016-09-16-%E5%9C%A8VisualGDB%E4%B8%AD%E9%85%8D%E7%BD%AE%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/</guid>
+      <description>今天是中秋佳节，但是写完已经是第二天凌晨了，还是祝大家中秋快乐！ VS对C++的支持相较GCC太弱了，连续几个VS版本对C</description>
     </item>
     
     <item>
-      <title>关于C/C&#43;&#43;的位域</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</link>
-      <pubDate>Sun, 31 Jan 2010 00:00:00 +0000</pubDate>
+      <title>自己动手解决HEAP: Free Heap block XXX modified at YYY after it was freed问题</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-05-10-%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%A7%A3%E5%86%B3HEAP-Free-Heap-block-XXX-modified-at-YYY-after-it-was-freed%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 10 May 2013 16:56:38 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2010-01-31-%E5%85%B3%E4%BA%8EC_C&#43;&#43;%E7%9A%84%E4%BD%8D%E5%9F%9F/</guid>
-      <description>​ 在C/C++中我们有时为了节省内存占用空间，需要使用到位域，如下所示代码： 1struct SDummy 2{ 3 int A : 2; 4 int B : 8; 5 int C : 12; 6 int D :</description>
+      <guid>https://wittonbell.github.io/posts/2013/2013-05-10-%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%A7%A3%E5%86%B3HEAP-Free-Heap-block-XXX-modified-at-YYY-after-it-was-freed%E9%97%AE%E9%A2%98/</guid>
+      <description>前段时间接手的项目中有出现HEAP: Free Heap block XXX modified at YYY after it was freed问题，作为C/C++程序员，如果代码写得不规范，出现这</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;安全方便高效地复制对象数组</title>
+      <link>https://wittonbell.github.io/posts/2013/2013-05-05-C&#43;&#43;%E5%AE%89%E5%85%A8%E6%96%B9%E4%BE%BF%E9%AB%98%E6%95%88%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 05 May 2013 21:39:30 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2013/2013-05-05-C&#43;&#43;%E5%AE%89%E5%85%A8%E6%96%B9%E4%BE%BF%E9%AB%98%E6%95%88%E5%9C%B0%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84/</guid>
+      <description>在C++中，我们经常遇到需要对一个对象数组进行复制，比如下面一个结构： 1struct STest 2{ 3 int a; 4 int b; 5 vector&amp;lt;int&amp;gt; vctInt; 6};``` 7 8 9 10 11我们定义了两</description>
+    </item>
+    
+    <item>
+      <title>如何在不安装VC2008发布包的情况下，发布VC2008生成的程序</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 08 Aug 2012 09:54:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <description>在前面的Blog中有提到，VS2005及以上版本的程序发布与之前版本有一个差别就是清单文件，这个清单文件包含了运行此应用</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio中使用NASM编译汇编文件</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Jul 2012 11:00:36 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-07-12-Visual-Studio%E4%B8%AD%E4%BD%BF%E7%94%A8NASM%E7%BC%96%E8%AF%91%E6%B1%87%E7%BC%96%E6%96%87%E4%BB%B6/</guid>
+      <description>NASM相对MASM和GAS而言，是一款比较中庸的汇编器，它语法简洁、功能强大，而且跨平台、免费，是外联汇编的不错选择。</description>
+    </item>
+    
+    <item>
+      <title>Writing custom visualizers for Visual Studio 2005</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-11-05-Writing-custom-visualizers-for-Visual-Studio-2005/</link>
+      <pubDate>Fri, 05 Nov 2010 17:27:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-11-05-Writing-custom-visualizers-for-Visual-Studio-2005/</guid>
+      <description>The native debugger in Visual Studio has long had an underadvertised feature called autoexp.dat , which is a file in the PackagesDebugger folder that allows you to control several aspects of the debugger. Among the features that you can control in autoexp.dat include: the string that is displayed for types in the variable panes, which functions the debugger will skip</description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio调试器中显示Unreal的数据类型的值</title>
+      <link>https://wittonbell.github.io/posts/2010/2010-10-31-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAUnreal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</link>
+      <pubDate>Sun, 31 Oct 2010 17:07:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2010/2010-10-31-%E5%9C%A8Visual-Studio%E8%B0%83%E8%AF%95%E5%99%A8%E4%B8%AD%E6%98%BE%E7%A4%BAUnreal%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC/</guid>
+      <description>在Unreal引擎中大量使用了自定义的数据类型如：FName，FString，TArray等等，对于这些自定义的数据类型</description>
     </item>
     
     <item>
       <title>类成员函数大小问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sun, 15 Nov 2009 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 15 Nov 2009 20:56:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 上周，我一同事，在调试我们项目的时候，发现我写的一段代码中，有一个类成员函数指针数组有大小有点怪异，便叫我过去瞧瞧。有</description>
-    </item>
-    
-    <item>
-      <title>宿主程序Crash与Lua是动态库还是静态库有关？</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</link>
-      <pubDate>Thu, 30 Apr 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/Lua/2009-04-30-%E5%AE%BF%E4%B8%BB%E7%A8%8B%E5%BA%8FCrash%E4%B8%8ELua%E6%98%AF%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%98%E6%98%AF%E9%9D%99%E6%80%81%E5%BA%93%E6%9C%89%E5%85%B3/</guid>
-      <description>​ 前一阵子在做项目的时候，遇到一个感觉比较怪异的问题：在项目中我们用了Lua作为脚本扩展支持，Lua是以静态库的形式编译</description>
-    </item>
-    
-    <item>
-      <title>关于G&#43;&#43;库链接的一个问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 15 Jul 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 我们的项目是按模块开发的，所以需要在生成可执行文件时将所有的模块都链接起来，我想这个是每个程序员都知道的事情，不管是在</description>
-    </item>
-    
-    <item>
-      <title>跨平台UNICODE编程总结</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 16 Jun 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
-      <description>​ 这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但</description>
-    </item>
-    
-    <item>
-      <title>跨平台Unicode编程的一点问题</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Thu, 24 Apr 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
-      <description>​ 最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNIC</description>
-    </item>
-    
-    <item>
-      <title>LuaTinker向Linux移植成功</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</link>
-      <pubDate>Wed, 06 Jun 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-06-06-LuaTinker%E5%90%91Linux%E7%A7%BB%E6%A4%8D%E6%88%90%E5%8A%9F/</guid>
-      <description>今天我怀着无比激动的心情写这篇博客。LuaTinker以其短小精悍，功能比较强大而广泛地被许多网友及同事所关注。自从我用</description>
-    </item>
-    
-    <item>
-      <title>如何用C API遍历Lua脚本中的表</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
-      <pubDate>Tue, 22 May 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C-API%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
-      <description>在刚接触Lua不久，了解了许多理论知识后，就有一种跃跃欲试的冲动，想要自己动手写一段代码来试试。这也许是作为一个程序员所</description>
-    </item>
-    
-    <item>
-      <title>如何用C遍历Lua脚本中的表</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</link>
-      <pubDate>Tue, 22 May 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C/2007-05-22-%E5%A6%82%E4%BD%95%E7%94%A8C%E9%81%8D%E5%8E%86Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E8%A1%A8/</guid>
-      <description>在刚接触Lua不久，了解了许多理论知识后，就有一种跃跃欲试的冲动，想要自己动手写一段代码来试试。这也许是作为一个程序员所</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;类模板的成员函数模板写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 21 May 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-21-C&#43;&#43;%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95/</guid>
-      <description>这几天本来想将Lua_Tinker移植到Linux上去的，但是由于VC中的模板写法与gcc中的模板写法有些不同之处，比如</description>
-    </item>
-    
-    <item>
-      <title>导出C&#43;&#43;中的类到Lua脚本中的经历</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Fri, 18 May 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-18-%E5%AF%BC%E5%87%BAC&#43;&#43;%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%B0Lua%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%8E%86/</guid>
-      <description>这两天一直在研究Lua和LuaPlus。由于项目需要将C++中的类导出到Lua脚本中，让Lua脚本也可以使用C++中的东</description>
+      <guid>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>上周，我一同事，在调试我们项目的时候，发现我写的一段代码中，有一个类成员函数指针数组有大小有点怪异，便叫我过去瞧瞧。有如</description>
     </item>
     
     <item>
       <title>如何利用VC编写有汇编代码的跨平台代码</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</link>
-      <pubDate>Sat, 12 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 12 May 2007 13:39:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-12-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8VC%E7%BC%96%E5%86%99%E6%9C%89%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/</guid>
       <description>在C/C++中添加内联汇编很容易，只需要用__asm(VC中)或者__asm__(gcc/g++中)关键字就可以在C/C</description>
     </item>
     
     <item>
-      <title>C&#43;&#43;跨平台函数指针的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-11-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Fri, 11 May 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-11-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>前段时间，我在项目中用到了函数指针，其写法示例如下： 1//Myclass.h 2 3class CMyClass; 4typedef void (CMyClass:: *MyCALLBACK)(); 5 6class CMyClass 7{ 8 MyCALLBACK m_MyHandler[5]; 9 10protected: 11 void AddCmd(const UINT ID,MyCALLBACK DBHandler); 12 void DispatchMsg(); 13 void MyHandler1(); 14 15public: 16 CMyCalss::CMyCalss() 17</description>
-    </item>
-    
-    <item>
       <title>MFC中动态设置组合框的下拉菜单高度</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
-      <pubDate>Thu, 10 May 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</link>
+      <pubDate>Thu, 10 May 2007 13:13:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
-      <description>今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组合框中的菜单项比较多的时候，默认的组合框下拉菜单高</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;跨平台宏的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 30 Apr 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这段代码，写完之后，看到这段代码是相当的整齐，有一种</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;跨平台模板的写法</title>
-      <link>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</link>
-      <pubDate>Mon, 30 Apr 2007 00:00:00 +0000</pubDate>
-      
-      <guid>https://wittonbell.github.io/posts/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/C&#43;&#43;/2007-04-30-C&#43;&#43;%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</guid>
-      <description>由于工作的原因，自己写的代码，需要跨平台运行（windows与Linux），但是由于VC编译器与gcc/g++编译器的差</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组</description>
     </item>
     
   </channel>

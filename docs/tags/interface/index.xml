@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interface on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/interface/</link>
+    <description>Recent content in interface on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 10 Mar 2021 17:43:08 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/interface/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go读写网络消息</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</link>
+      <pubDate>Wed, 10 Mar 2021 17:43:08 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-03-10-go%E8%AF%BB%E5%86%99%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF/</guid>
+      <description>前几天项目需要写一个登录压力测试机器人对服务器进行压力测试。服务器是使用C++写的，为了快捷完成机器人，我并没有选择C+</description>
+    </item>
+    
+    <item>
+      <title>类成员函数大小问题</title>
+      <link>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 15 Nov 2009 20:56:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2009/2009-11-15-%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>上周，我一同事，在调试我们项目的时候，发现我写的一段代码中，有一个类成员函数指针数组有大小有点怪异，便叫我过去瞧瞧。有如</description>
+    </item>
+    
+  </channel>
+</rss>

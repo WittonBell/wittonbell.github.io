@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/Code/</link>
+    <description>Recent content in Code on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Jan 2020 15:20:05 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS 6.X 安装Visual Studio Code</title>
+      <link>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</link>
+      <pubDate>Wed, 15 Jan 2020 15:20:05 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2020/2020-01-15-CentOS-6.X-%E5%AE%89%E8%A3%85Visual-Studio-Code/</guid>
+      <description>VSCode的最新版本需要的Linux 系统配置为： Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 7, Fedora 23 由于Linux下最新版本需要GTK 3，而Cen</description>
+    </item>
+    
+  </channel>
+</rss>

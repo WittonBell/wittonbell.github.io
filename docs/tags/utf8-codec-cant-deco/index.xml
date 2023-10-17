@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>utf8 codec cant deco on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/utf8-codec-cant-deco/</link>
+    <description>Recent content in utf8 codec cant deco on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 04 Nov 2016 19:03:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/utf8-codec-cant-deco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用自己的Python函数处理Protobuf中的字符串编码</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-11-04-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86Protobuf%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Fri, 04 Nov 2016 19:03:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-11-04-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86Protobuf%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</guid>
+      <description>我目前所在的项目是一个老项目，里面的字符串编码有点乱，数据库中有些是GB2312，有些是UTF8；代码中有些是GBK，有</description>
+    </item>
+    
+  </channel>
+</rss>

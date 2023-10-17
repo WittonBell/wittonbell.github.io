@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂记 on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/%E6%9D%82%E8%AE%B0/</link>
+    <description>Recent content in 杂记 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 12 Mar 2022 11:31:27 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/categories/%E6%9D%82%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修改vditor以支持javascript形式的json</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-03-12-%E4%BF%AE%E6%94%B9vditor%E4%BB%A5%E6%94%AF%E6%8C%81javascript%E5%BD%A2%E5%BC%8F%E7%9A%84json/</link>
+      <pubDate>Sat, 12 Mar 2022 11:31:27 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-03-12-%E4%BF%AE%E6%94%B9vditor%E4%BB%A5%E6%94%AF%E6%8C%81javascript%E5%BD%A2%E5%BC%8F%E7%9A%84json/</guid>
+      <description>最近在研究使用docsify+markdown的文档管理，markdown文件使用VSCode+Office Viewer(Markdown Edito</description>
+    </item>
+    
+    <item>
+      <title>使用jekyll写博客</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-13-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 13 Aug 2021 09:42:18 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-13-%E4%BD%BF%E7%94%A8jekyll%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
+      <description>文章目录 一、安装Ruby环境 二、修改更新源 三、安装jekyll及其依赖 四、新建博客站点 五、启动本地服务预览博客 六、配置博</description>
+    </item>
+    
+    <item>
+      <title>免费的编程中文书籍索引</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-02-03-%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BC%96%E7%A8%8B%E4%B8%AD%E6%96%87%E4%B9%A6%E7%B1%8D%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Wed, 03 Feb 2021 09:55:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-02-03-%E5%85%8D%E8%B4%B9%E7%9A%84%E7%BC%96%E7%A8%8B%E4%B8%AD%E6%96%87%E4%B9%A6%E7%B1%8D%E7%B4%A2%E5%BC%95/</guid>
+      <description>免费的编程中文书籍索引 转自： https://github.com/xiaoweiChen/free-programming-books-zh_CN 免费的编程中文书籍索引，欢迎投稿。 国外程序员在 stackoverflow 推荐的程序员必读书籍， 中文版。 stackoverflow 上的程序员</description>
+    </item>
+    
+    <item>
+      <title>将Excel中的两列或多列数据汇总到一列</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-26-%E5%B0%86Excel%E4%B8%AD%E7%9A%84%E4%B8%A4%E5%88%97%E6%88%96%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE%E6%B1%87%E6%80%BB%E5%88%B0%E4%B8%80%E5%88%97/</link>
+      <pubDate>Thu, 26 Dec 2019 17:58:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-26-%E5%B0%86Excel%E4%B8%AD%E7%9A%84%E4%B8%A4%E5%88%97%E6%88%96%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE%E6%B1%87%E6%80%BB%E5%88%B0%E4%B8%80%E5%88%97/</guid>
+      <description>前段时间做一个Excel表格，需要将多列数据全部汇总到一列，度娘了一时半会没查出来的符合需求的方法，今天使用Google</description>
+    </item>
+    
+    <item>
+      <title>我在IT职场超15年：从程序员做到副总，送你21个超实用的职场法则！</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-12-22-%E6%88%91%E5%9C%A8IT%E8%81%8C%E5%9C%BA%E8%B6%8515%E5%B9%B4%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%81%9A%E5%88%B0%E5%89%AF%E6%80%BB%E9%80%81%E4%BD%A021%E4%B8%AA%E8%B6%85%E5%AE%9E%E7%94%A8%E7%9A%84%E8%81%8C%E5%9C%BA%E6%B3%95%E5%88%99/</link>
+      <pubDate>Fri, 22 Dec 2017 09:19:38 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-12-22-%E6%88%91%E5%9C%A8IT%E8%81%8C%E5%9C%BA%E8%B6%8515%E5%B9%B4%E4%BB%8E%E7%A8%8B%E5%BA%8F%E5%91%98%E5%81%9A%E5%88%B0%E5%89%AF%E6%80%BB%E9%80%81%E4%BD%A021%E4%B8%AA%E8%B6%85%E5%AE%9E%E7%94%A8%E7%9A%84%E8%81%8C%E5%9C%BA%E6%B3%95%E5%88%99/</guid>
+      <description>写在前面 我在IT职场打滚超过15年了，从一名程序员做到常务副总。相对于其它行业，IT职场应该算比较光明的了，但也陷阱重重</description>
+    </item>
+    
+    <item>
+      <title>CSDN终于跟上来了</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-06-28-CSDN%E7%BB%88%E4%BA%8E%E8%B7%9F%E4%B8%8A%E6%9D%A5%E4%BA%86/</link>
+      <pubDate>Wed, 28 Jun 2017 14:51:01 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-06-28-CSDN%E7%BB%88%E4%BA%8E%E8%B7%9F%E4%B8%8A%E6%9D%A5%E4%BA%86/</guid>
+      <description>有一段时间没登录上CSDN了，由于CSDN需要实名制，实名制可以，但偏偏它搞了一个另类的，非主流的做法，让用户自己编辑短</description>
+    </item>
+    
+    <item>
+      <title>解决Google Chrome浏览器字体模糊的问题</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-08-31-%E8%A7%A3%E5%86%B3Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E6%A8%A1%E7%B3%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 31 Aug 2016 10:41:56 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-08-31-%E8%A7%A3%E5%86%B3Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E6%A8%A1%E7%B3%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>之前使用Google的Chrome浏览器一直觉得有时候，其显示的字体比较模糊，不管是Windows XP还是Windows</description>
+    </item>
+    
+    <item>
+      <title>微软真是忽悠人</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-09-30-%E5%BE%AE%E8%BD%AF%E7%9C%9F%E6%98%AF%E5%BF%BD%E6%82%A0%E4%BA%BA/</link>
+      <pubDate>Sun, 30 Sep 2007 18:07:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-09-30-%E5%BE%AE%E8%BD%AF%E7%9C%9F%E6%98%AF%E5%BF%BD%E6%82%A0%E4%BA%BA/</guid>
+      <description>有两个月没有写东西了，明天就是国庆节了，我想祝我所有的朋友包括网友节日快乐！ 由于明天是国庆节，今天又没有什么事，就在那里</description>
+    </item>
+    
+  </channel>
+</rss>

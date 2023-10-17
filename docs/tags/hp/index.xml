@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hp on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/hp/</link>
+    <description>Recent content in hp on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 30 Apr 2007 17:50:00 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/hp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>跨平台宏的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:50:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%8F%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 前段时间在写代码的时候，有一段代码发现用宏比较方便，于是就用宏完成了这</description>
+    </item>
+    
+  </channel>
+</rss>

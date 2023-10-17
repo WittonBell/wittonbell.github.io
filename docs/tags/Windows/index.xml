@@ -1,46 +1,208 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on Witton的博客</title>
-    <link>https://wittonbell.github.io/tags/Windows/</link>
-    <description>Recent content in Windows on Witton的博客</description>
+    <title>windows on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/windows/</link>
+    <description>Recent content in windows on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 16:15:27 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用CheckInstall从源码制作RPM安装包</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <title>复制远程连接到Linux使用VIM打开的内容到Windows</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</link>
+      <pubDate>Fri, 15 Sep 2023 16:15:27 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2022-01-09-wsl2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</guid>
-      <description>WSL2每次启动后的IP都不固定，如果需要一个固定的IP，需要做一些设置。 一、创建批处理文件设置静态IP 可以创建一个批处</description>
+      <guid>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</guid>
+      <description>我们经常是使用SSH工具远程连接到Linux服务器上进行工作，有时候需要将Linux下使用VIM打开的文件内容复制到Wi</description>
+    </item>
+    
+    <item>
+      <title>将MSYS2 MinGW集成到Windows终端</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Mon, 05 Jun 2023 18:00:24 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</guid>
+      <description>微软开发了一款Windows终端的开源软件，非常好用。安装后在Win7及以上系统会在右键菜单中添加一条“在终端中打开”的</description>
+    </item>
+    
+    <item>
+      <title>VS2022编译安装Qt6.5源码</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Thu, 11 May 2023 21:19:39 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</guid>
+      <description>一、准备环境 包括安装VS2022，Windows SDK，Python3，这里就不再一一介绍了，需要说明的一点是如果要编译</description>
+    </item>
+    
+    <item>
+      <title>提取Windows中系统自带的图标资源</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 05 May 2023 17:05:09 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-05-05-%E6%8F%90%E5%8F%96Windows%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%9B%BE%E6%A0%87%E8%B5%84%E6%BA%90/</guid>
+      <description>写应用程序，如果想使用Windows下的图标，可以使用Visual Studio中的图标，比如VS2008的 ImageLi</description>
+    </item>
+    
+    <item>
+      <title>Windows下的高效网络模型IOCP完整示例</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 23 Mar 2023 14:21:40 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-23-Windows%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8BIOCP%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B/</guid>
+      <description>IOCP即完成端口（I/O Completion Port），与Linux下的epoll一样，是一种非常高效的网络模型。epoll 是当资源准备</description>
+    </item>
+    
+    <item>
+      <title>MiniDump不生成或者生成0字节</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</link>
+      <pubDate>Wed, 22 Mar 2023 18:30:51 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2023/2023-03-22-MiniDump%E4%B8%8D%E7%94%9F%E6%88%90%E6%88%96%E8%80%85%E7%94%9F%E6%88%900%E5%AD%97%E8%8A%82/</guid>
+      <description>今天在使用C写一个Windows多线程程序时，发现退出过程中有段错误，为了方便快速的定位问题，我使用了MiniDump。</description>
+    </item>
+    
+    <item>
+      <title>Windows中使用nginx搭建WordPress</title>
+      <link>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</link>
+      <pubDate>Sat, 28 May 2022 21:07:25 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2022/2022-05-28-Windows%E4%B8%AD%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BAWordPress/</guid>
+      <description>前面的博客 容器中搭建WordPress介绍了在容器中搭建WordPress，如果使用的是Windows环境而不是Linu</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8使用Cockpit管理Linux——虚拟机</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 09 Sep 2021 08:18:29 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>文章目录 一、创建储存池 二、通过下载一个系统来创建虚拟机 三、通过本地安装介质来创建虚拟机 CentOS 8使用Cockpit管理Linu</description>
+    </item>
+    
+    <item>
+      <title>本地Git硬重置后找回原来的提交</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Tue, 31 Aug 2021 11:38:10 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-08-31-%E6%9C%AC%E5%9C%B0Git%E7%A1%AC%E9%87%8D%E7%BD%AE%E5%90%8E%E6%89%BE%E5%9B%9E%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%8F%90%E4%BA%A4/</guid>
+      <description>有些时候我们在做一些开发工作时，可能会用到本地Git管理，即在一个目录中进行开发，并将这个目录作为Git的版本库目录。 本</description>
+    </item>
+    
+    <item>
+      <title>Windows下开发Linux C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-06-04-Windows%E4%B8%8B%E5%BC%80%E5%8F%91Linux-C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 04 Jun 2019 17:50:12 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-06-04-Windows%E4%B8%8B%E5%BC%80%E5%8F%91Linux-C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>一、Windows编辑、编译、调试、运行，最终在Linux下编译、运行 这是常规方法，以前我做的几个项目都是在Window</description>
+    </item>
+    
+    <item>
+      <title>Jenkins添加Windows自动化构建方案</title>
+      <link>https://wittonbell.github.io/posts/2017/2017-02-27-Jenkins%E6%B7%BB%E5%8A%A0Windows%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Mon, 27 Feb 2017 17:38:23 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2017/2017-02-27-Jenkins%E6%B7%BB%E5%8A%A0Windows%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88/</guid>
+      <description>一、为Jenkins添加Windows节点 这里需要填写远程工作目录，启动方法一项一定要选择“Launch agent via Java Web Star</description>
+    </item>
+    
+    <item>
+      <title>libevent使用IOCP网络模型的示例</title>
+      <link>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Fri, 01 Jul 2016 15:09:59 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2016/2016-07-01-libevent%E4%BD%BF%E7%94%A8IOCP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A4%BA%E4%BE%8B/</guid>
+      <description>这段时间抽空学习了一下强大的网络库 libevent，其使用标准C语言编写，支持Windows、Linux、Mac等等主流</description>
+    </item>
+    
+    <item>
+      <title>Win32调试API原理</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 13 Jan 2012 11:23:32 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-01-13-Win32%E8%B0%83%E8%AF%95API%E5%8E%9F%E7%90%86/</guid>
+      <description>来自《软件技术加密内幕》和chm版本不太一样 在Win32中自带了一些API函数，它们提供了相当于一般调试器的大多数功能，</description>
+    </item>
+    
+    <item>
+      <title>很幽默的讲解六种Socket I/O模型</title>
+      <link>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 28 Nov 2011 14:24:26 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2011/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/</guid>
+      <description>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。 一： select 模型 二： WSAAsyncSelect 模型 三： WSAEventSelect 模型 四： Overlapped I/O 事件</description>
     </item>
     
     <item>
       <title>Windows系统无法启动时如何修复注册表</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
-      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
+      <pubDate>Thu, 10 Jun 2010 21:53:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
-      <description>​ 我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想</description>
+      <guid>https://wittonbell.github.io/posts/2010/2010-06-10-Windows%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%B3%A8%E5%86%8C%E8%A1%A8/</guid>
+      <description>我前一阵子在整理磁盘碎片时，觉得WINDOWS分区用久了会有很多碎片，整理起来麻烦，而LINUX分区没有这么麻烦，就想在</description>
+    </item>
+    
+    <item>
+      <title>Linux下编译GCC</title>
+      <link>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
+      <pubDate>Mon, 08 Jun 2009 17:37:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
+      <description>看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Lin</description>
+    </item>
+    
+    <item>
+      <title>关于G&#43;&#43;库链接的一个问题</title>
+      <link>https://wittonbell.github.io/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Jul 2008 16:25:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2008/2008-07-15-%E5%85%B3%E4%BA%8EG&#43;&#43;%E5%BA%93%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
+      <description>我们的项目是按模块开发的，所以需要在生成可执行文件时将所有的模块都链接起来，我想这个是每个程序员都知道的事情，不管是在W</description>
+    </item>
+    
+    <item>
+      <title>跨平台UNICODE编程总结</title>
+      <link>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 16 Jun 2008 13:25:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>这段时间在架构整个服务器，虽然前段时间受到了5.12汶川8.0级大地震的影响（深切悼念在此次大地震中遇难的同胞们），但是</description>
+    </item>
+    
+    <item>
+      <title>跨平台Unicode编程的一点问题</title>
+      <link>https://wittonbell.github.io/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 24 Apr 2008 17:12:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2008/2008-04-24-%E8%B7%A8%E5%B9%B3%E5%8F%B0Unicode%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%AE%E9%A2%98/</guid>
+      <description>最近在做一个跨平台的库，想让这个库支持ANSI和UNICODE，但是在LINUX下不像WINDOWS下有那么多UNICO</description>
     </item>
     
     <item>
       <title>Linux通过Smb与Windows共享目录</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Thu, 26 Jul 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Thu, 26 Jul 2007 10:06:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
-      <description>​ 由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的</description>
+      <guid>https://wittonbell.github.io/posts/2007/2007-07-26-Linux%E9%80%9A%E8%BF%87Smb%E4%B8%8EWindows%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</guid>
+      <description>由于近段时间太忙，都已经好久没有写东西了！今天将如何设置Linux的Smb服务，以达到与Windows文件夹共享的目的。</description>
     </item>
     
     <item>
       <title>Windows与Linux共存之重装Windows经历</title>
-      <link>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Sat, 09 Jun 2007 00:00:00 +0000</pubDate>
+      <link>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Sat, 09 Jun 2007 16:50:00 +0800</pubDate>
       
-      <guid>https://wittonbell.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
+      <guid>https://wittonbell.github.io/posts/2007/2007-06-09-Windows%E4%B8%8ELinux%E5%85%B1%E5%AD%98%E4%B9%8B%E9%87%8D%E8%A3%85Windows%E7%BB%8F%E5%8E%86/</guid>
       <description>Linux是一个功能强大的操作系统，它既支持如MSDOS一般的命令行操作，也支持如Windows一般的图形界面的操作。 随</description>
+    </item>
+    
+    <item>
+      <title>跨平台模板的写法</title>
+      <link>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</link>
+      <pubDate>Mon, 30 Apr 2007 17:10:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2007/2007-04-30-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%99%E6%B3%95/</guid>
+      <description>(若转载，请注明原出处与作者，作者：Witton) 由于工作的原因，自己写的代码，需要跨平台运行（windows与Linu</description>
     </item>
     
   </channel>

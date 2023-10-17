@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>详细安装Ubuntu 21.10 | Witton的博客</title>
+    <meta property="og:title" content="详细安装Ubuntu 21.10 - Witton的博客">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content='2021-11-19T16:51:17&#43;08:00'>
+    <meta property="article:modified_time" content='2021-11-19T16:51:17&#43;08:00'>
+    <meta name="Keywords" content="ubuntu,linux,服务器,博客,笔记,游戏开发,Witton,WittonBell,Bell">
+    <meta name="description" content="详细安装Ubuntu 21.10">
+    <meta name="author" content="Witton Bell">
+    <meta property="og:url" content="https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://unpkg.com/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/mhchem.min.js"
+    integrity="sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/copy-tex.min.js"
+    integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+    
+    </head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                    <a id="logo" href="https://wittonbell.github.io/">
+                        Witton的博客
+                    </a>
+                <p class="description">游戏服务器开发、技术笔记、博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
+                    <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
+                    <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="body">
+        <div class="container">
+            <div class="col-group">
+                <div class="col-8" id="main">
+                    <div class="res-cons">
+
+<style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 300px;
+        margin-left: -310px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 1px 0;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 1px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#一下载安装包">一、下载安装包</a></li>
+        <li><a href="#二安装">二、安装</a>
+          <ul>
+            <li><a href="#1是否更新安装器">1.是否更新安装器</a></li>
+            <li><a href="#2-填写安装更新镜像地址">2. 填写安装（更新）镜像地址</a></li>
+            <li><a href="#3-磁盘分区">3. 磁盘分区</a></li>
+            <li><a href="#4功能选择">4.功能选择</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+
+<article class="post">
+        <header>
+            <h1 class="post-title">详细安装Ubuntu 21.10</h1>
+        </header>
+        <time datetime="2021-11-19T08:51:17Z" class="post-meta meta-date dt-published">2021年11月19日</time>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 作者: Witton Bell</span>
+<div class="post-meta meta-category">
+  <span>&nbsp;|&nbsp;</span><a href="/categories/Linux/" class="category-link p-category" target="_blank">Linux</a>
+</div>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 2009 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 5&nbsp;分钟</span>
+
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        <div class="post-content">
+            <h4 id="文章目录">文章目录</h4>
+<ul>
+<li>
+<p>
+  <a href="/#_5">一、下载安装包</a></p>
+</li>
+<li>
+<p>
+  <a href="/#_8">二、安装</a></p>
+</li>
+<li></li>
+<li>
+<p>
+  <a href="/#1_11">1.是否更新安装器</a></p>
+</li>
+<li>
+<p>
+  <a href="/#2__14">2. 填写安装（更新）镜像地址</a></p>
+</li>
+<li>
+<p>
+  <a href="/#3__24">3. 磁盘分区</a></p>
+</li>
+<li>
+<p>
+  <a href="/#4_58">4.功能选择</a></p>
+</li>
+</ul>
+<p><em>由于公司服务器的硬件配置比较老了，使用的HDD硬盘，集Git，SVN，编译，网盘等等功用于一身，使用体验相当不好，经常卡得受不了。双11前几天就建议老板买一台新电脑作为服务器。电脑很快配置好了，但是商家安装系统搞了一个星期（公司一直都是使用的CentOS系统，大家也相对熟悉CentOS，就希望新服务器也安装CentOS系统。但是商家一直说是安装不了CentOS，包括最新的CentOS 8。既然安装不了CentOS，那安装Ubuntu吧，国外很多都使用Ubuntu系统，我把CentOS与Ubuntu的下载链接发给了商家。但是商家却安装了一个Kylin的桌面系统，说是这个系统可以安装，我问Ubuntu是否可以安装，答可以试一下，就这样，折腾了一个星期才送到。） 1T的SSD硬盘让商家系统盘分配200G的空间，其余的分配给/home，到手却只有200G的可用空间，其余的未分配。由于平常使用中对分区使用得比较少，之前又未使用过Ubuntu，虽然尝试使用Cockpit系统来进行磁盘管理，但是默认情况下不能操作逻辑卷（后面的博文
+  <a href="https://blog.csdn.net/witton/article/details/121426964">配置与管理Ubuntu 21.05</a>有介绍如何处理），所以选择了重新安装Ubuntu系统，在安装时重新进行分区调整。本文将详细介绍磁盘分区中的细节。由于与CentOS在很多地方体验都不同，后续博文将介绍Ubuntu下的配置。</em></p>
+<h2 id="一下载安装包">一、下载安装包</h2>
+<p>下载最新的
+  <a href="https://mirrors.cloud.tencent.com/ubuntu-releases/releases/21.10/ubuntu-21.10-live-server-amd64.iso">ubuntu-21.10 Server</a>版本，由于腾讯镜像相对比较快一些，这里选择在腾讯镜像下载，并且将其作为更新源（由于服务器版本是live-server版本，有些功能需要在线下载安装，所以最好选择一个网速比较快的更新源）。</p>
+<h2 id="二安装">二、安装</h2>
+<p>在安装时，由于无法选择中文安装语言，所以在安装过程中，需要阅读清楚。</p>
+<h3 id="1是否更新安装器">1.是否更新安装器</h3>
+<p>下图所示可以选择不更新，以加快安装，待安装完成后再更新（那时可以从填写的更新源中更新）。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/7fe5d201c2044a1aa1c675631f5a8445.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/7fe5d201c2044a1aa1c675631f5a8445.png" />
+        </a>
+    </p>
+<h3 id="2-填写安装更新镜像地址">2. 填写安装（更新）镜像地址</h3>
+<p>下面的界面则是填写镜像地址了，这里很重要，如果你选择安装的功能很多，很可能需要在线下载安装。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/73170093612c4df0bcb59ca184a148a4.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/73170093612c4df0bcb59ca184a148a4.png" />
+        </a>
+    </p>
+<p>这里填写</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>https://mirrors.cloud.tencent.com/ubuntu
+</span></span></code></pre></div><p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/8868011f07dd45e59ef692311c0744fb.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/8868011f07dd45e59ef692311c0744fb.png" />
+        </a>
+    </p>
+<h3 id="3-磁盘分区">3. 磁盘分区</h3>
+<p>由于是新磁盘，所以选择使用整块磁盘，并且使用LVM组，<strong>如果想要在安装完成后可以调整空间，一定要选择使用LVM组，并且选择ext4分区格式</strong>。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/3072976653704b25a6c753a37f243563.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/3072976653704b25a6c753a37f243563.png" />
+        </a>
+    </p>
+<p>下图是Ubuntu默认的分配情况</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/cc7ee34292fb48e0afa1339630186e20.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/cc7ee34292fb48e0afa1339630186e20.png" />
+        </a>
+    </p>
+<p>这个界面有三部分信息：
+第一部分是FILE SYTEM SUMMARY（文件系统总览），图中挂载了两人个文件系统，/和/boot
+第二部分是AVAILABLE DEVICES（可用设备），图中是ubuntu-vg(new)，总大小98.996G，<strong>注意下面的free space，有49.5G的空间未分配</strong>
+第三部分是USED DEVICES（已用设备），图中有两个已用设备ubuntu-vg(new)和/dev/sda。ubuntu-vg(new)总大小98.996G，有49.496G挂载到/，加上前面的free space刚好是整个ubuntu-vg(new)的大小。/dev/sda设备才是真正的整个磁盘，会分三个区，如图所示，
+第一个区为Grub使用，占用1M
+第二个分区为启动分区，挂载到/boot，占用1G
+第三个分区为LVM逻辑卷组，占用剩余的所有空间</p>
+<p>如果我们想要调整分配情况，比如/我们调整为30G，其余的都挂载到/home目录。
+选择已用设备中挂载到/的行，回车，选择Edit</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/8d80760deb374a9b975f2e28f31c302a.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/8d80760deb374a9b975f2e28f31c302a.png" />
+        </a>
+    </p>
+<p>在弹出的对应框中编辑Size为30G，Save即可。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/dde294220ad341b49cd28ed68a28d8e3.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/dde294220ad341b49cd28ed68a28d8e3.png" />
+        </a>
+    </p>
+<p>这个对话框中可以编辑名字、格式以及挂载路径，需要注意的是格式Ubuntu默认为ext4，而CentOS默认是xfs。ext4格式在安装好系统后可以缩小空间，如果磁盘还有空闲，是可以扩容的；而xfs则不能缩小。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/0a07b7590623464b9f37824adb26f60d.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/0a07b7590623464b9f37824adb26f60d.png" />
+        </a>
+    </p>
+<p>/设置为30G后，磁盘剩余空间变成了68.996G了。这些空间都是没有分配的，需要分配它，比如/home目录将是各个用户使用的，我们可以将剩余的空间挂载到/home
+如图所示，在ubuntu-vg(new)逻辑卷组上回车，在弹出菜单中选择“Create Logical Volume”创建逻辑卷。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/17177131837a49b9884f61b04cc72175.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/17177131837a49b9884f61b04cc72175.png" />
+        </a>
+    </p>
+<ul>
+<li>Name 名字可修改，也可使用默认</li>
+<li>Size 如果想把所有空间都挂载到/home则可以不填写Size了，否则填写指定大小</li>
+<li>Format 选择ext4</li>
+<li>Mount 挂载点选择/home</li>
+</ul>
+<p>然后点击Create创建逻辑卷</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/4f308d303e04421d8c68b3c0c9271e19.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/4f308d303e04421d8c68b3c0c9271e19.png" />
+        </a>
+    </p>
+<p>完成后，如图所示，整个磁盘都利用起来了。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/a4978aac2a294557941ea6a7795d9aaa.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/a4978aac2a294557941ea6a7795d9aaa.png" />
+        </a>
+    </p>
+<h3 id="4功能选择">4.功能选择</h3>
+<p>在下图中根据要求选择想要安装的功能，可能会从线上下载。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/9020d7e610b546de844c1d820e2ca743.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/9020d7e610b546de844c1d820e2ca743.png" />
+        </a>
+    </p>
+<p>确认后就开始安装系统，在安装系统界面可以选择View full log查看全部日志</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/0702976c7f304eac95f49c8bf0e8fd88.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/0702976c7f304eac95f49c8bf0e8fd88.png" />
+        </a>
+    </p>
+<p>从安装日志中可以看到Linux firmware 198M需要从安装（更新）源中下载，如果网络比较慢的话，这步可能要等待很久。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/41f93b5cd17a409eb352fe61e54bcf42.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/41f93b5cd17a409eb352fe61e54bcf42.png" />
+        </a>
+    </p>
+<p>安装后成功登录</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/0cc5ac43083947c48f32fb927e9f7b76.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/0cc5ac43083947c48f32fb927e9f7b76.png" />
+        </a>
+    </p>
+<p>然后使用lsblk查看磁盘分区情况，使用df -h查看磁盘使用情况，跟我们之前的预期一样。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/61f007fb39244f5bb28cf374773f30f7.png">
+            <img class="mx-auto" alt="" src="../assets/2021-11-19-%e8%af%a6%e7%bb%86%e5%ae%89%e8%a3%85Ubuntu-21.10/61f007fb39244f5bb28cf374773f30f7.png" />
+        </a>
+    </p>
+<p>Ubuntu的默认locale可能是en_US.UTF-8，没有安装中文包，可以使用下面的命令进行安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt install language-pack-zh-hans
+</span></span></code></pre></div>
+        </div>
+
+
+
+
+
+
+
+
+
+	<ul class="post-nav">
+		
+			<li class="post-nav-prev">
+				<a href="/posts/2021/2021-11-22-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86Ubuntu-21.10/" rel="prev">&lt; 配置与管理Ubuntu 21.10</a>
+			</li>
+		
+		
+			<li class="post-nav-next">
+				<a href="/posts/2021/2021-10-21-C&#43;&#43;%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" rel="next">C++学习资料 &gt;</a>
+			</li>
+		
+	</ul>
+
+
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
+        
+        
+        
+        
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/2021/2021-11-19-%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85Ubuntu-21.10/">https://wittonbell.github.io/posts/2021/2021-11-19-详细安装Ubuntu-21.10/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/">Linux下编译GCC</a></li>
+        
+        <li><a href="/posts/2008/2008-06-16-%E8%B7%A8%E5%B9%B3%E5%8F%B0UNICODE%E7%BC%96%E7%A8%8B%E6%80%BB%E7%BB%93/">跨平台UNICODE编程总结</a></li>
+        
+        <li><a href="/posts/2021/2021-10-21-%E8%A7%A3%E5%86%B3centos%E4%B8%8B%E5%AE%89%E8%A3%85WPS%E5%87%BA%E7%8E%B0cant-find-libXss.so.1/">解决centos下安装WPS出现can‘t find libXss.so.1</a></li>
+        
+        <li><a href="/posts/2021/2021-09-25-%E8%A7%A3%E5%86%B3%E9%80%80%E6%A0%BC%E9%94%AE%E5%9C%A8MinGW%E7%9A%84vim%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/">解决退格键在MinGW的vim中不起作用的问题</a></li>
+        
+        <li><a href="/posts/2021/2021-09-07-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linuxpodman%E5%AE%B9%E5%99%A8/">CentOS 8使用Cockpit管理Linux——podman容器</a></li>
+        
+    </ul>
+</div>
+
+
+<div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/ubuntu/' target="_blank">ubuntu</a></li>
+                
+                <li><a href='/tags/linux/' target="_blank">linux</a></li>
+                
+                <li><a href='/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/' target="_blank">服务器</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const ID = "2021-11-19-详细安装Ubuntu-21.10" 
+    const Title = "2021-11-19-详细安装Ubuntu-21.10"
+    const gitalk = new Gitalk({
+        clientID: '118c70fe27b7246dfb76',
+        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
+        repo: 'comment',
+        owner: 'WittonBell',
+        admin: ['WittonBell'],
+        id: ID, 
+        title: Title,
+        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
+        pagerDirection: "last",
+        createIssueManually:  false ,
+        distractionFreeMode:  false  
+    });
+    (function () {
+        
+        
+        
+        
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+</div>
+<footer id="footer">
+    <div>
+        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://wittonbell.github.io/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">Witton</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+</div>
+
+            <div id="secondary">
+    <section class="widget">
+    <form id="search" action='https://wittonbell.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder=搜索>
+      <input type="hidden" name="sitesearch" value="https://wittonbell.github.io/">
+      <button type="submit" class="submit icon-search" title=搜索></button>
+</form>
+    </section>
+
+    <section class="widget">
+    <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/" title="制作带Go调试器的容器" target="_blank">制作带Go调试器的容器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/" title="复制远程连接到Linux使用VIM打开的内容到Windows" target="_blank">复制远程连接到Linux使用VIM打开的内容到Windows</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-15-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84nginx%E6%9A%B4%E9%9C%B2%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%BD%91%E7%AB%99/" title="容器中的nginx暴露一个端口部署多个功能的网站" target="_blank">容器中的nginx暴露一个端口部署多个功能的网站</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/" title="使用docker-compose命令行向远程主机编排容器" target="_blank">使用docker-compose命令行向远程主机编排容器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/" title="解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]" target="_blank">解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/" title="解决nexus3登录x509: certificate has expired or is not yet valid" target="_blank">解决nexus3登录x509: certificate has expired or is not yet valid</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/" title="VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4" target="_blank">VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/" title="Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发" target="_blank">Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-14-SSH%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MacOS-catalina%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE/" title="SSH远程连接MacOS catalina并进行终端颜色配置" target="_blank">SSH远程连接MacOS catalina并进行终端颜色配置</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2023/2023-08-13-%E8%A7%A3%E5%86%B3lldb%E8%B0%83%E8%AF%95%E6%97%B6%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84personality-set-failed-Function-not-implemented/" title="解决lldb调试时可能出现的personality set failed: Function not implemented" target="_blank">解决lldb调试时可能出现的personality set failed: Function not implemented</a>
+    </li>
+</ul>
+</section><section class="widget">
+    <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (36)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Erlang/">Erlang (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/GO/">GO (9)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/IDE/">IDE (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/Clang/">LLVM/Clang (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (73)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (19)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Mysql/">Mysql (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Python/">Python (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Qt/">Qt (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Redis/">Redis (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unity/">Unity (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unreal/">Unreal (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/VisualGDB/">VisualGDB (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (43)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/macOS/">macOS (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/nginx/">nginx (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux/">使用Cockpit管理Linux (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/">容器 (28)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/">操作系统开发 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%9D%82%E8%AE%B0/">杂记 (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/">汇编 (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/">游戏 (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理 (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (44)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/">网络 (4)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台 (17)</a></li>
+</ul>
+</section>
+
+    <section class="widget">
+    <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    <a href="https://wittonbell.github.io/tags/-failed/">- failed</a>
+    <a href="https://wittonbell.github.io/tags/.a/">.a</a>
+    <a href="https://wittonbell.github.io/tags/0%E5%AD%97%E8%8A%82/">0字节</a>
+    <a href="https://wittonbell.github.io/tags/2010/">2010</a>
+    <a href="https://wittonbell.github.io/tags/6.x/">6.x</a>
+    <a href="https://wittonbell.github.io/tags/ABI-info/">ABI info</a>
+    <a href="https://wittonbell.github.io/tags/AC97/">AC97</a>
+    <a href="https://wittonbell.github.io/tags/Apache/">Apache</a>
+    <a href="https://wittonbell.github.io/tags/BUG/">BUG</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-11/">C&#43;&#43; 11</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-makefile/">C&#43;&#43; makefile</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;11/">C&#43;&#43;11</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/CC&#43;&#43;/">CC&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/CNI-config/">CNI config</a>
+    <a href="https://wittonbell.github.io/tags/CNI-network/">CNI network</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/CentOS6/">CentOS6</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D/">Cocos2D</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2d-x/">Cocos2d-x</a>
+    <a href="https://wittonbell.github.io/tags/Code/">Code</a>
+    <a href="https://wittonbell.github.io/tags/Code-Runner/">Code Runner</a>
+    <a href="https://wittonbell.github.io/tags/Console/">Console</a>
+    <a href="https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/DNS/">DNS</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/Erlang%E4%BD%BF%E7%94%A8ProtoBuffer/">Erlang使用ProtoBuffer</a>
+    <a href="https://wittonbell.github.io/tags/Error/">Error</a>
+    <a href="https://wittonbell.github.io/tags/Free-Heap-block/">Free Heap block</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/Githuber-MD/">Githuber MD</a>
+    <a href="https://wittonbell.github.io/tags/Git%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/">Git版本信息</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/Google-Protocol-Buffers/">Google Protocol Buffers</a>
+    <a href="https://wittonbell.github.io/tags/HD-Audio/">HD Audio</a>
+    <a href="https://wittonbell.github.io/tags/Homebrew/">Homebrew</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/IPV6/">IPV6</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/Lua%E8%A7%A3%E5%AF%86/">Lua解密</a>
+    <a href="https://wittonbell.github.io/tags/MOTD/">MOTD</a>
+    <a href="https://wittonbell.github.io/tags/Mac/">Mac</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/ModuleNotFound/">ModuleNotFound</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/NO-QML/">NO QML</a>
+    <a href="https://wittonbell.github.io/tags/Navigator/">Navigator</a>
+    <a href="https://wittonbell.github.io/tags/No-moudule/">No moudule</a>
+    <a href="https://wittonbell.github.io/tags/No-such-file/">No such file</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/QEMU/">QEMU</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/SFINAE/">SFINAE</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/Segmentation/">Segmentation</a>
+    <a href="https://wittonbell.github.io/tags/TLS/SSL/">TLS/SSL</a>
+    <a href="https://wittonbell.github.io/tags/Terminal/">Terminal</a>
+    <a href="https://wittonbell.github.io/tags/Unable-to-load/">Unable to load</a>
+    <a href="https://wittonbell.github.io/tags/Unity/">Unity</a>
+    <a href="https://wittonbell.github.io/tags/VLAN/">VLAN</a>
+    <a href="https://wittonbell.github.io/tags/VMware/">VMware</a>
+    <a href="https://wittonbell.github.io/tags/VS2015/">VS2015</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/Visual-C&#43;&#43;/">Visual C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio-2015/">Visual Studio 2015</a>
+    <a href="https://wittonbell.github.io/tags/VisualGDB/">VisualGDB</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/XDebug/">XDebug</a>
+    <a href="https://wittonbell.github.io/tags/after-it-was-freed/">after it was freed</a>
+    <a href="https://wittonbell.github.io/tags/api/">api</a>
+    <a href="https://wittonbell.github.io/tags/array/">array</a>
+    <a href="https://wittonbell.github.io/tags/asp.net/">asp.net</a>
+    <a href="https://wittonbell.github.io/tags/autoindex/">autoindex</a>
+    <a href="https://wittonbell.github.io/tags/backspace/">backspace</a>
+    <a href="https://wittonbell.github.io/tags/backup/">backup</a>
+    <a href="https://wittonbell.github.io/tags/bash/">bash</a>
+    <a href="https://wittonbell.github.io/tags/binary/">binary</a>
+    <a href="https://wittonbell.github.io/tags/bind/">bind</a>
+    <a href="https://wittonbell.github.io/tags/blog/">blog</a>
+    <a href="https://wittonbell.github.io/tags/bochs/">bochs</a>
+    <a href="https://wittonbell.github.io/tags/bolt_state.db/">bolt_state.db</a>
+    <a href="https://wittonbell.github.io/tags/brew/">brew</a>
+    <a href="https://wittonbell.github.io/tags/bridge/">bridge</a>
+    <a href="https://wittonbell.github.io/tags/build/">build</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/callback/">callback</a>
+    <a href="https://wittonbell.github.io/tags/can/">can</a>
+    <a href="https://wittonbell.github.io/tags/catalina/">catalina</a>
+    <a href="https://wittonbell.github.io/tags/cd/">cd</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/centos-6/">centos 6</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/centos8/">centos8</a>
+    <a href="https://wittonbell.github.io/tags/certificate/">certificate</a>
+    <a href="https://wittonbell.github.io/tags/checkinstall/">checkinstall</a>
+    <a href="https://wittonbell.github.io/tags/chrome/">chrome</a>
+    <a href="https://wittonbell.github.io/tags/ci/">ci</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/class/">class</a>
+    <a href="https://wittonbell.github.io/tags/cmake/">cmake</a>
+    <a href="https://wittonbell.github.io/tags/cmd/">cmd</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/command/">command</a>
+    <a href="https://wittonbell.github.io/tags/compatible-with/">compatible with</a>
+    <a href="https://wittonbell.github.io/tags/compile/">compile</a>
+    <a href="https://wittonbell.github.io/tags/compiler/">compiler</a>
+    <a href="https://wittonbell.github.io/tags/constructor/">constructor</a>
+    <a href="https://wittonbell.github.io/tags/containers/">containers</a>
+    <a href="https://wittonbell.github.io/tags/core-dumped/">core dumped</a>
+    <a href="https://wittonbell.github.io/tags/cpack/">cpack</a>
+    <a href="https://wittonbell.github.io/tags/crash/">crash</a>
+    <a href="https://wittonbell.github.io/tags/cross/">cross</a>
+    <a href="https://wittonbell.github.io/tags/crtbegin.o/">crtbegin.o</a>
+    <a href="https://wittonbell.github.io/tags/ctest/">ctest</a>
+    <a href="https://wittonbell.github.io/tags/ctr.log/">ctr.log</a>
+    <a href="https://wittonbell.github.io/tags/curl/">curl</a>
+    <a href="https://wittonbell.github.io/tags/current-user/">current user</a>
+    <a href="https://wittonbell.github.io/tags/cygwin/">cygwin</a>
+    <a href="https://wittonbell.github.io/tags/data/">data</a>
+    <a href="https://wittonbell.github.io/tags/database/">database</a>
+    <a href="https://wittonbell.github.io/tags/debian/">debian</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/defer/">defer</a>
+    <a href="https://wittonbell.github.io/tags/device-is/">device is</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/dlv/">dlv</a>
+    <a href="https://wittonbell.github.io/tags/docisfy/">docisfy</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/docker-compose/">docker-compose</a>
+    <a href="https://wittonbell.github.io/tags/docsify/">docsify</a>
+    <a href="https://wittonbell.github.io/tags/dos/">dos</a>
+    <a href="https://wittonbell.github.io/tags/echarts/">echarts</a>
+    <a href="https://wittonbell.github.io/tags/ecmascript/">ecmascript</a>
+    <a href="https://wittonbell.github.io/tags/encoding/">encoding</a>
+    <a href="https://wittonbell.github.io/tags/enum-class/">enum class</a>
+    <a href="https://wittonbell.github.io/tags/epoll/">epoll</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/excel/">excel</a>
+    <a href="https://wittonbell.github.io/tags/exception/">exception</a>
+    <a href="https://wittonbell.github.io/tags/exe/">exe</a>
+    <a href="https://wittonbell.github.io/tags/export/">export</a>
+    <a href="https://wittonbell.github.io/tags/ext/">ext</a>
+    <a href="https://wittonbell.github.io/tags/failed-to/">failed to</a>
+    <a href="https://wittonbell.github.io/tags/file/">file</a>
+    <a href="https://wittonbell.github.io/tags/find/">find</a>
+    <a href="https://wittonbell.github.io/tags/firefox/">firefox</a>
+    <a href="https://wittonbell.github.io/tags/float/">float</a>
+    <a href="https://wittonbell.github.io/tags/fortran/">fortran</a>
+    <a href="https://wittonbell.github.io/tags/freebsd/">freebsd</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/g_test/">g_test</a>
+    <a href="https://wittonbell.github.io/tags/gc/">gc</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gcc%E6%BA%90%E7%A0%81/">gcc源码</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/git/">git</a>
+    <a href="https://wittonbell.github.io/tags/github/">github</a>
+    <a href="https://wittonbell.github.io/tags/gitlab/">gitlab</a>
+    <a href="https://wittonbell.github.io/tags/gitlab-pages/">gitlab pages</a>
+    <a href="https://wittonbell.github.io/tags/glib/">glib</a>
+    <a href="https://wittonbell.github.io/tags/Go/">Go</a>
+    <a href="https://wittonbell.github.io/tags/goland/">goland</a>
+    <a href="https://wittonbell.github.io/tags/golang/">golang</a>
+    <a href="https://wittonbell.github.io/tags/go%E8%B0%83%E8%AF%95%E5%99%A8/">go调试器</a>
+    <a href="https://wittonbell.github.io/tags/gpb/">gpb</a>
+    <a href="https://wittonbell.github.io/tags/gtest/">gtest</a>
+    <a href="https://wittonbell.github.io/tags/has-expired/">has expired</a>
+    <a href="https://wittonbell.github.io/tags/heap/">heap</a>
+    <a href="https://wittonbell.github.io/tags/hp/">hp</a>
+    <a href="https://wittonbell.github.io/tags/httpd/">httpd</a>
+    <a href="https://wittonbell.github.io/tags/https/">https</a>
+    <a href="https://wittonbell.github.io/tags/idea/">idea</a>
+    <a href="https://wittonbell.github.io/tags/ie/">ie</a>
+    <a href="https://wittonbell.github.io/tags/installed/">installed</a>
+    <a href="https://wittonbell.github.io/tags/integer/">integer</a>
+    <a href="https://wittonbell.github.io/tags/intel/">intel</a>
+    <a href="https://wittonbell.github.io/tags/intellij-idea/">intellij idea</a>
+    <a href="https://wittonbell.github.io/tags/interface/">interface</a>
+    <a href="https://wittonbell.github.io/tags/internet/">internet</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/iostream/">iostream</a>
+    <a href="https://wittonbell.github.io/tags/ip/">ip</a>
+    <a href="https://wittonbell.github.io/tags/java/">java</a>
+    <a href="https://wittonbell.github.io/tags/javascript/">javascript</a>
+    <a href="https://wittonbell.github.io/tags/jekyll/">jekyll</a>
+    <a href="https://wittonbell.github.io/tags/jenkins/">jenkins</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/json/">json</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/kubernetes/">kubernetes</a>
+    <a href="https://wittonbell.github.io/tags/lib/">lib</a>
+    <a href="https://wittonbell.github.io/tags/libSSH2/">libSSH2</a>
+    <a href="https://wittonbell.github.io/tags/libXss/">libXss</a>
+    <a href="https://wittonbell.github.io/tags/libc&#43;&#43;/">libc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libevent/">libevent</a>
+    <a href="https://wittonbell.github.io/tags/libstdc&#43;&#43;/">libstdc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libvirt/">libvirt</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lldb/">lldb</a>
+    <a href="https://wittonbell.github.io/tags/lldb-mi/">lldb-mi</a>
+    <a href="https://wittonbell.github.io/tags/log/">log</a>
+    <a href="https://wittonbell.github.io/tags/ls/">ls</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/macos/">macos</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/makefiles/">makefiles</a>
+    <a href="https://wittonbell.github.io/tags/markdown/">markdown</a>
+    <a href="https://wittonbell.github.io/tags/match-library/">match library</a>
+    <a href="https://wittonbell.github.io/tags/max-size/">max-size</a>
+    <a href="https://wittonbell.github.io/tags/may-not/">may not</a>
+    <a href="https://wittonbell.github.io/tags/mermaid/">mermaid</a>
+    <a href="https://wittonbell.github.io/tags/mfc/">mfc</a>
+    <a href="https://wittonbell.github.io/tags/mhchem/">mhchem</a>
+    <a href="https://wittonbell.github.io/tags/microsoft/">microsoft</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/minidump/">minidump</a>
+    <a href="https://wittonbell.github.io/tags/modified-at/">modified at</a>
+    <a href="https://wittonbell.github.io/tags/msys/">msys</a>
+    <a href="https://wittonbell.github.io/tags/msys2/">msys2</a>
+    <a href="https://wittonbell.github.io/tags/mysql/">mysql</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/natvis/">natvis</a>
+    <a href="https://wittonbell.github.io/tags/new-project/">new project</a>
+    <a href="https://wittonbell.github.io/tags/nexus/">nexus</a>
+    <a href="https://wittonbell.github.io/tags/nginx/">nginx</a>
+    <a href="https://wittonbell.github.io/tags/ninja/">ninja</a>
+    <a href="https://wittonbell.github.io/tags/not-found/">not found</a>
+    <a href="https://wittonbell.github.io/tags/not-implemented/">not implemented</a>
+    <a href="https://wittonbell.github.io/tags/not-in-the/">not in the</a>
+    <a href="https://wittonbell.github.io/tags/not-owned/">not owned</a>
+    <a href="https://wittonbell.github.io/tags/not-support/">not support</a>
+    <a href="https://wittonbell.github.io/tags/null/">null</a>
+    <a href="https://wittonbell.github.io/tags/object/">object</a>
+    <a href="https://wittonbell.github.io/tags/open-files/">open files</a>
+    <a href="https://wittonbell.github.io/tags/open-vSwitch/">open vSwitch</a>
+    <a href="https://wittonbell.github.io/tags/open-vm-tools/">open-vm-tools</a>
+    <a href="https://wittonbell.github.io/tags/or-is-not/">or is not</a>
+    <a href="https://wittonbell.github.io/tags/os/">os</a>
+    <a href="https://wittonbell.github.io/tags/output/">output</a>
+    <a href="https://wittonbell.github.io/tags/overlay/">overlay</a>
+    <a href="https://wittonbell.github.io/tags/pacman/">pacman</a>
+    <a href="https://wittonbell.github.io/tags/path/">path</a>
+    <a href="https://wittonbell.github.io/tags/personality/">personality</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/pie/">pie</a>
+    <a href="https://wittonbell.github.io/tags/pip/">pip</a>
+    <a href="https://wittonbell.github.io/tags/pkg-config/">pkg-config</a>
+    <a href="https://wittonbell.github.io/tags/pkg_resources/">pkg_resources</a>
+    <a href="https://wittonbell.github.io/tags/placeholders_1/">placeholders::_1</a>
+    <a href="https://wittonbell.github.io/tags/plugin/">plugin</a>
+    <a href="https://wittonbell.github.io/tags/podman/">podman</a>
+    <a href="https://wittonbell.github.io/tags/podman-compose/">podman-compose</a>
+    <a href="https://wittonbell.github.io/tags/postfix/">postfix</a>
+    <a href="https://wittonbell.github.io/tags/produce-code/">produce code</a>
+    <a href="https://wittonbell.github.io/tags/proto/">proto</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/protobuffer/">protobuffer</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/python3/">python3</a>
+    <a href="https://wittonbell.github.io/tags/qt/">qt</a>
+    <a href="https://wittonbell.github.io/tags/qt6/">qt6</a>
+    <a href="https://wittonbell.github.io/tags/qtcreator/">qtcreator</a>
+    <a href="https://wittonbell.github.io/tags/rand/">rand</a>
+    <a href="https://wittonbell.github.io/tags/reflect/">reflect</a>
+    <a href="https://wittonbell.github.io/tags/registry/">registry</a>
+    <a href="https://wittonbell.github.io/tags/repository/">repository</a>
+    <a href="https://wittonbell.github.io/tags/require/">require</a>
+    <a href="https://wittonbell.github.io/tags/reset/">reset</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/safe.directory/">safe.directory</a>
+    <a href="https://wittonbell.github.io/tags/set-failed/">set failed</a>
+    <a href="https://wittonbell.github.io/tags/sftp/">sftp</a>
+    <a href="https://wittonbell.github.io/tags/shell/">shell</a>
+    <a href="https://wittonbell.github.io/tags/socket/">socket</a>
+    <a href="https://wittonbell.github.io/tags/sockets/">sockets</a>
+    <a href="https://wittonbell.github.io/tags/srand/">srand</a>
+    <a href="https://wittonbell.github.io/tags/ssh/">ssh</a>
+    <a href="https://wittonbell.github.io/tags/static/">static</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/storage/">storage</a>
+    <a href="https://wittonbell.github.io/tags/stream/">stream</a>
+    <a href="https://wittonbell.github.io/tags/strictly/">strictly</a>
+    <a href="https://wittonbell.github.io/tags/string/">string</a>
+    <a href="https://wittonbell.github.io/tags/struct/">struct</a>
+    <a href="https://wittonbell.github.io/tags/structure/">structure</a>
+    <a href="https://wittonbell.github.io/tags/sudo/">sudo</a>
+    <a href="https://wittonbell.github.io/tags/sudoers-file/">sudoers file</a>
+    <a href="https://wittonbell.github.io/tags/task/">task</a>
+    <a href="https://wittonbell.github.io/tags/templates/">templates</a>
+    <a href="https://wittonbell.github.io/tags/the-Qt-version/">the Qt version</a>
+    <a href="https://wittonbell.github.io/tags/thread/">thread</a>
+    <a href="https://wittonbell.github.io/tags/token/">token</a>
+    <a href="https://wittonbell.github.io/tags/too-many/">too many</a>
+    <a href="https://wittonbell.github.io/tags/traversal/">traversal</a>
+    <a href="https://wittonbell.github.io/tags/ubuntu/">ubuntu</a>
+    <a href="https://wittonbell.github.io/tags/unmanaged/">unmanaged</a>
+    <a href="https://wittonbell.github.io/tags/upload/">upload</a>
+    <a href="https://wittonbell.github.io/tags/utf8-codec-cant-deco/">utf8 codec cant deco</a>
+    <a href="https://wittonbell.github.io/tags/utility/">utility</a>
+    <a href="https://wittonbell.github.io/tags/validating/">validating</a>
+    <a href="https://wittonbell.github.io/tags/vditor/">vditor</a>
+    <a href="https://wittonbell.github.io/tags/version/">version</a>
+    <a href="https://wittonbell.github.io/tags/vim/">vim</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/visualstudio/">visualstudio</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/vss/">vss</a>
+    <a href="https://wittonbell.github.io/tags/warnings/">warnings</a>
+    <a href="https://wittonbell.github.io/tags/watcher/">watcher</a>
+    <a href="https://wittonbell.github.io/tags/win10/">win10</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/windows-7/">windows 7</a>
+    <a href="https://wittonbell.github.io/tags/windows-xp/">windows xp</a>
+    <a href="https://wittonbell.github.io/tags/wordpress/">wordpress</a>
+    <a href="https://wittonbell.github.io/tags/wsl2/">wsl2</a>
+    <a href="https://wittonbell.github.io/tags/x509/">x509</a>
+    <a href="https://wittonbell.github.io/tags/x86/">x86</a>
+    <a href="https://wittonbell.github.io/tags/xls/">xls</a>
+    <a href="https://wittonbell.github.io/tags/xlsx/">xlsx</a>
+    <a href="https://wittonbell.github.io/tags/xml/">xml</a>
+    <a href="https://wittonbell.github.io/tags/xml%E8%BD%ACexcel/">xml转excel</a>
+    <a href="https://wittonbell.github.io/tags/xp/">xp</a>
+    <a href="https://wittonbell.github.io/tags/yet-valid/">yet valid</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3/">一个端口</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E5%88%97/">一列</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0/">上传</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/">上传文件</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">不升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E6%98%BE%E7%A4%BA/">不显示</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E8%B6%B3/">不足</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%A4%E5%88%97%E6%95%B0%E6%8D%AE/">两列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%AD%E6%96%87/">中文</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/">乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/">二进制</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/">五笔输入法</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E4%BA%92/">交互</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E5%8F%89/">交叉</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%90%86/">代理</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%A0%81/">代码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%BB%E5%8A%A1/">任务</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BC%81%E4%B8%9A%E7%89%88/">企业版</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BD%BF%E7%94%A8/">使用</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BE%9D%E8%B5%96/">依赖</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BF%AE%E6%94%B9/">修改</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%8D%E8%B4%B9/">免费</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">共享文件夹</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/">共享目录</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E5%AE%B9/">内容</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">内联汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E5%87%BA%E7%89%88/">出版</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%87%E6%8D%A2/">切换</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%A4%E6%96%AD/">判断</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%B6%E4%BD%9C/">制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF/">前置面板</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/">加快编译速度</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E8%BD%BD%E6%85%A2/">加载慢</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C/">动画制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7/">升级</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%A0%E4%BD%8D/">占位</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/">右键菜单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+    <a href="https://wittonbell.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E5%BD%A2/">图形</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E6%A0%87/">图标</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/">垃圾回收器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A3%B0%E9%9F%B3/">声音</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%84%E7%90%86%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">处理变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%87%E4%BB%BD/">备份</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%8D%E5%88%B6/">复制</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E4%B8%AA%E7%AB%99%E7%82%B9/">多个站点</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE/">多列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%A7%E9%9A%8F%E6%9C%BA%E6%95%B0/">大随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E4%BD%93/">字体</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/">字符串乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8/">存储</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/">存储路径</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85/">安装</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">安装与配置</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AF%BC%E5%87%BA/">导出</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E4%BD%9C/">工作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%8D%95/">工单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%AE%E5%88%AB/">差别</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B9%B3%E5%8F%B0/">平台</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/">序列化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BB%B6%E8%BF%9F%E8%B0%83%E7%94%A8/">延迟调用</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/">开机启动</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%95%E6%93%8E/">引擎</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BD%A9%E8%89%B2/">彩色</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+    <a href="https://wittonbell.github.io/tags/%E6%81%A2%E5%A4%8D/">恢复</a>
+    <a href="https://wittonbell.github.io/tags/%E6%85%A2/">慢</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%8C%85/">打包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%BC%80/">打开</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%A9%E5%B1%95/">扩展</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%BE%E5%9B%9E/">找回</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">持续集成</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/">控制台</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E5%8F%96/">提取</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF/">提示信息</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/">提示符</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%92%E4%BB%B6/">插件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    <a href="https://wittonbell.github.io/tags/%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/">收发邮件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">数学公式</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E5%90%88/">整合</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E6%95%B0/">整数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%87%E4%BB%B6%E6%9C%8D/">文件服</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/">断点</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%A0%E5%B0%84/">映射</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%90%8D%E7%A7%B0/">显示分支名称</a>
+    <a href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0glibc/">更新glibc</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/">更新码表</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%BF%E6%8D%A2%E5%A4%B1%E8%B4%A5%E4%B8%8D%E6%98%AF%E9%94%99%E8%AF%AF/">替换失败不是错误</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%AC%E5%9C%B0%E5%8C%85/">本地包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94/">极点五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%84%E5%BB%BA/">构建</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A1%8C%E9%9D%A2/">桌面</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">模板类成员函数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E7%B3%8A/">模糊</a>
+    <a href="https://wittonbell.github.io/tags/%E6%AF%94%E8%BE%83/">比较</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E6%80%BB/">汇总</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E7%BC%96/">汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%B7%E5%B3%B0%E4%BA%94%E7%AC%94/">海峰五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%BA%90%E7%A0%81/">源码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%85%A7%E7%89%87%E7%9B%B8%E7%9C%8B%E5%99%A8/">照片相看器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%8E%AF%E5%A2%83/">环境</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90/">生成</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4/">生成时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%99%BB%E5%BD%95/">登录</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A3%81%E7%9B%98/">磁盘</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A4%BE%E5%8C%BA%E7%89%88/">社区版</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A9%BA%E9%97%B4/">空间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AB%AF%E5%8F%A3/">端口</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    <a href="https://wittonbell.github.io/tags/%E7%B4%A2%E5%BC%95/">索引</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%88%E7%AB%AF/">终端</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%91%E5%AE%9A/">绑定</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/">编排容器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A0%81/">编码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/">编程书籍</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/">编译</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/">编译器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/">编译时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E5%8D%A1%E4%B8%8D%E5%8F%AF%E7%94%A8/">网卡不可用</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%AB%99/">网站</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE/">网络访问</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%8C%96/">美化</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/">美式键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD/">自动下载</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%B8%A6/">自带</a>
+    <a href="https://wittonbell.github.io/tags/%E8%8B%B1%E8%AF%AD%E9%94%AE%E7%9B%98/">英语键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%86%B3/">解决</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%AF%86/">解密</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/">解析失败</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80/">语言</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/">调试</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC/">转</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC%E4%B9%89/">转义</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%81%E7%A7%BB/">迁移</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E8%A1%8C/">运行</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%85%A5%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">进入当前目录</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%BA%A6/">进度</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B/">远程</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">远程连接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%80%E6%A0%BC%E9%94%AE/">退格键</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%9A%E7%94%A8makefile/">通用makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">邮件服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86/">配置与管理</a>
+    <a href="https://wittonbell.github.io/tags/%E9%87%8D%E8%BD%BD/">重载</a>
+    <a href="https://wittonbell.github.io/tags/%E9%93%BE%E6%8E%A5/">链接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9B%86%E6%88%90/">集成</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81/">静态</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/">静态IP</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81%E5%BA%93/">静态库</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91/">预编译</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91makefile/">预编译makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4/">预编译头</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2/">颜色</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E4%B8%8D%E6%AD%A3/">颜色不正</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E5%8F%91%E9%BB%84/">颜色发黄</a>
+</div>
+</section>
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/witton" title="我的CSDN">我的CSDN博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wittonbell.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>

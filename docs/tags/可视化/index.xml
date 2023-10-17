@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>可视化 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+    <description>Recent content in 可视化 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 19 Nov 2019 12:01:35 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VisualGDB可视化调试STL</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</link>
+      <pubDate>Tue, 19 Nov 2019 12:01:35 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-11-19-VisualGDB%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95STL/</guid>
+      <description>本文中的VisualGDB开发调试环境为Visual Studio 2015加VisualGDB 5.4R12版本，并且使用了笔者改进过</description>
+    </item>
+    
+  </channel>
+</rss>

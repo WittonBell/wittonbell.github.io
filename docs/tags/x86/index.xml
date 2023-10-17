@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>x86 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/x86/</link>
+    <description>Recent content in x86 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 08 Aug 2012 09:54:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/x86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在不安装VC2008发布包的情况下，发布VC2008生成的程序</title>
+      <link>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 08 Aug 2012 09:54:41 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2012/2012-08-08-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%AE%89%E8%A3%85VC2008%E5%8F%91%E5%B8%83%E5%8C%85%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%8F%91%E5%B8%83VC2008%E7%94%9F%E6%88%90%E7%9A%84%E7%A8%8B%E5%BA%8F/</guid>
+      <description>在前面的Blog中有提到，VS2005及以上版本的程序发布与之前版本有一个差别就是清单文件，这个清单文件包含了运行此应用</description>
+    </item>
+    
+    <item>
+      <title>Linux下编译GCC</title>
+      <link>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</link>
+      <pubDate>Mon, 08 Jun 2009 17:37:00 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2009/2009-06-08-Linux%E4%B8%8B%E7%BC%96%E8%AF%91GCC/</guid>
+      <description>看到gcc 4.4.0已经出来了，据说相比4.3.X有较大的性能提升，对 C++ 0x 标准的支持也有了大幅提升。上周就把公司的Lin</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intel on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/intel/</link>
+    <description>Recent content in intel on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 09 Dec 2019 11:11:37 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/intel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Clang编译内联intel语法汇编的C/C&#43;&#43;项目</title>
+      <link>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 09 Dec 2019 11:11:37 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</guid>
+      <description>我们在编写C/C++代码时，如果在有较高性能需求的时候，可以使用汇编代码来编写相应的函数，C/C++直接调用即可。汇编的</description>
+    </item>
+    
+  </channel>
+</rss>

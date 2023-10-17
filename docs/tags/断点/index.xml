@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>断点 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/</link>
+    <description>Recent content in 断点 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 21 Dec 2021 15:53:15 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goland使用远程容器进行go开发调试</title>
+      <link>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 21 Dec 2021 15:53:15 +0800</pubDate>
+      
+      <guid>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</guid>
+      <description>文章目录 一、安装远程容器 二、安装与配置容器仓库 1.安装与配置 2.安装证书 三、准备项目 四、运行 1.开启容器远程服务 2.添加</description>
+    </item>
+    
+  </channel>
+</rss>
