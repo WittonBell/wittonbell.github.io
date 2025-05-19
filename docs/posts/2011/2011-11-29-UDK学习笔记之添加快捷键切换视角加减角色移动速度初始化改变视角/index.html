@@ -91,8 +91,8 @@
 <div class="post-meta meta-category">
   <span>&nbsp;|&nbsp;</span><a href="/categories/Unreal/" class="category-link p-category" target="_blank">Unreal</a>
 </div>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 531 字</span>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 2&nbsp;分钟</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 501 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 1&nbsp;分钟</span>
 
         <div class="post-meta">
             <span id="busuanzi_container_page_pv">&nbsp;|
@@ -101,55 +101,44 @@
         </div>
         <div class="post-content">
             <p>一、添加快捷键切换视角</p>
-<p>  1.打开UDK安装目录下UDKGame\Config\UDKInput.ini</p>
-<p>  2.在[Engine.PlayerInput]中添加如下内容：</p>
-<p>     Bindings=(Name=&ldquo;PageDown&rdquo;,Command=&ldquo;Camera ThirdPerson&rdquo;)      Bindings=(Name=&ldquo;PageUp&rdquo;,Command=&ldquo;Camera Fixed&rdquo;)</p>
-<p>  3.运行关卡，即可使用PageDown和PageUp分别切换视角到第三人称与第一人称</p>
+<p>1.打开UDK安装目录下UDKGame\Config\UDKInput.ini</p>
+<p>2.在[Engine.PlayerInput]中添加如下内容：</p>
+<pre><code> Bindings=(Name=&quot;PageDown&quot;,Command=&quot;Camera ThirdPerson&quot;)      Bindings=(Name=&quot;PageUp&quot;,Command=&quot;Camera Fixed&quot;)
+</code></pre>
+<p>3.运行关卡，即可使用PageDown和PageUp分别切换视角到第三人称与第一人称</p>
 <p>二、添加加减角色移动速度</p>
-<p>  1.打开UDK安装目录下Development\Src\Engine\Classes\CheatManager.uc</p>
-<p>  2.在其中添加如下内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>exec function <span style="color:#a6e22e">IncSpeed</span>()
+<p>1.打开UDK安装目录下Development\Src\Engine\Classes\CheatManager.uc</p>
+<p>2.在其中添加如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>exec function IncSpeed()
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  Pawn.GroundSpeed <span style="color:#f92672">+=</span> Pawn.Default.GroundSpeed <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  Pawn.WaterSpeed <span style="color:#f92672">+=</span> Pawn.Default.WaterSpeed <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>Pawn.GroundSpeed += Pawn.Default.GroundSpeed * 0.1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>Pawn.WaterSpeed += Pawn.Default.WaterSpeed * 0.1;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>}
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>exec function <span style="color:#a6e22e">DecSpeed</span>()
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  Pawn.GroundSpeed <span style="color:#f92672">-=</span> Pawn.Default.GroundSpeed <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  Pawn.WaterSpeed <span style="color:#f92672">-=</span> Pawn.Default.WaterSpeed <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  <span style="color:#75715e">// 防止速度过慢
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(Pawn.GroundSpeed <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.1</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    Pawn.GroundSpeed <span style="color:#f92672">=</span> Pawn.Default.GroundSpeed <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    Pawn.WaterSpeed <span style="color:#f92672">=</span> Pawn.Default.WaterSpeed <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>  }
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>}<span style="color:#960050;background-color:#1e0010">```</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>  <span style="color:#ae81ff">3.</span><span style="color:#960050;background-color:#1e0010">打开</span>UDK安装目录下UDKGame<span style="color:#960050;background-color:#1e0010">\</span>Config<span style="color:#960050;background-color:#1e0010">\</span>UDKInput.ini
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>  <span style="color:#ae81ff">4.</span><span style="color:#960050;background-color:#1e0010">在</span>[Engine.PlayerInput]<span style="color:#960050;background-color:#1e0010">中添加如下内容：</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    Bindings<span style="color:#f92672">=</span>(Name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I&#34;</span>,Command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IncSpeed&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>     Bindings<span style="color:#f92672">=</span>(Name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;F12&#34;</span>,Command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DecSpeed&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>  <span style="color:#ae81ff">5.</span><span style="color:#960050;background-color:#1e0010">编译脚本后，运行关卡，即可使用快捷键</span>I添加角色移动的速度<span style="color:#960050;background-color:#1e0010">，用</span>F12减少角色移动速度
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span><span style="color:#960050;background-color:#1e0010">三、初始化改变视角，让其默认为第三人称视角</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>  <span style="color:#ae81ff">1.</span><span style="color:#960050;background-color:#1e0010">打开</span>Development<span style="color:#960050;background-color:#1e0010">\</span>Src<span style="color:#960050;background-color:#1e0010">\</span>UTGame<span style="color:#960050;background-color:#1e0010">\</span>Classes<span style="color:#960050;background-color:#1e0010">\</span>UTPlayerController.uc
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>  <span style="color:#ae81ff">2.</span><span style="color:#960050;background-color:#1e0010">在</span>defaultproperties的最后添加<span style="color:#960050;background-color:#1e0010">：</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>    bBehindView <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>  <span style="color:#ae81ff">3.</span><span style="color:#960050;background-color:#1e0010">编译脚本后，运行关卡。</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span> 
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>exec function DecSpeed()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>Pawn.GroundSpeed -= Pawn.Default.GroundSpeed * 0.1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>Pawn.WaterSpeed -= Pawn.Default.WaterSpeed * 0.1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>// 防止速度过慢
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>if(Pawn.GroundSpeed &lt; 0.1)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>Pawn.GroundSpeed = Pawn.Default.GroundSpeed * 0.1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>Pawn.WaterSpeed = Pawn.Default.WaterSpeed * 0.1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>}
+</span></span></code></pre></div><p>3.打开UDK安装目录下UDKGame\Config\UDKInput.ini</p>
+<p>4.在[Engine.PlayerInput]中添加如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>    Bindings=(Name=&#34;I&#34;,Command=&#34;IncSpeed&#34;)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    Bindings=(Name=&#34;F12&#34;,Command=&#34;DecSpeed&#34;)
+</span></span></code></pre></div><p>5.编译脚本后，运行关卡，即可使用快捷键I添加角色移动的速度，用F12减少角色移动速度</p>
+<p>三、初始化改变视角，让其默认为第三人称视角</p>
+<p>1.打开Development\Src\UTGame\Classes\UTPlayerController.uc</p>
+<p>2.在defaultproperties的最后添加：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>    bBehindView = true
+</span></span></code></pre></div><p>3.编译脚本后，运行关卡。</p>
+
         </div>
 
 
@@ -258,7 +247,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

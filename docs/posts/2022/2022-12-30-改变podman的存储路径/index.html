@@ -233,10 +233,10 @@
 <p>podman会根据<code>/etc/containers/storage.conf</code>中的配置来改变podman的存储路径，但是这并不是绝对的，感觉像是BUG一样。</p>
 <p>ubuntu系统中<code>/etc/containers</code>下并没有<code>storage.conf</code>文件，需要自己手动创建（如果有则修改）。</p>
 <p>内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>[storage]
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>driver = &#34;overlay&#34;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>runroot = &#34;/run/containers/storage&#34;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>graphroot = &#34;/var/lib/containers/storage&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>[storage]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>driver <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;overlay&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>runroot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/run/containers/storage&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>graphroot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/lib/containers/storage&#34;</span>
 </span></span></code></pre></div><p>上面的配置是podman的默认配置，其中，<code>driver</code>是驱动类型，默认为<code>overlay</code>，需要填写，但是最好不要修改，因为原来的驱动类型就是<code>overlay</code>； <code>graphroot</code>就是podman的存储路径，<code>runroot</code>是运行路径，这些都可以改为自定义的路径。这里主要是修改 <code>graphroot</code>路径。</p>
 <p>修改完成后，可以使用<code>sudo podman info</code>命令来查看是否生效：</p>
 <p>
@@ -384,7 +384,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

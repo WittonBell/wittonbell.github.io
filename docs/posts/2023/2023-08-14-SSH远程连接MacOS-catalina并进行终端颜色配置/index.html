@@ -219,7 +219,7 @@
         </a>
     </p>
 <p>难道是catalina有BUG？不过还是有方法的，可以使用如下命令开启SSH服务：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo launchctl load <span style="color:#f92672">-</span>w <span style="color:#f92672">/</span>System<span style="color:#f92672">/</span>Library<span style="color:#f92672">/</span>LaunchDaemons<span style="color:#f92672">/</span>ssh<span style="color:#f92672">.</span>plist
 </span></span></code></pre></div><p>此时如果使用“系统偏好设置”/“共享”/“远程登录”开关进行关闭，又会出现一直是<code>正在停止“远程登录”</code></p>
 <p>
         <a data-fancybox="gallery" href="../assets/2023-08-14-SSH%e8%bf%9c%e7%a8%8b%e8%bf%9e%e6%8e%a5MacOS-catalina%e5%b9%b6%e8%bf%9b%e8%a1%8c%e7%bb%88%e7%ab%af%e9%a2%9c%e8%89%b2%e9%85%8d%e7%bd%ae/c378ed5ed7754010ac7fb7927575437d.png">
@@ -227,7 +227,7 @@
         </a>
     </p>
 <p>使用前面的命令打开的SSH服务，可以使用下面的指令关闭SSH服务：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo launchctl unload <span style="color:#f92672">-</span>w <span style="color:#f92672">/</span>System<span style="color:#f92672">/</span>Library<span style="color:#f92672">/</span>LaunchDaemons<span style="color:#f92672">/</span>ssh<span style="color:#f92672">.</span>plist
 </span></span></code></pre></div><p>打开SSH服务后，就可以使用远程SSH工具连接了。</p>
 <h2 id="二提示符与ls显示颜色">二、提示符与ls显示颜色</h2>
 <p>MacOS默认的shell原来是bash，后面是使用的zsh，catalina就是zsh，它默认是没有打开颜色的，可以新建一个<code>~/.zshrc</code>文件，内容如下：</p>
@@ -358,7 +358,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

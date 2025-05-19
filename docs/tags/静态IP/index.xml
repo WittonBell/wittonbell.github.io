@@ -6,15 +6,14 @@
     <description>Recent content in 静态IP on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 24 Nov 2021 18:46:41 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Nov 2021 18:46:41 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>设置ubuntu和CentOS的IP地址为静态地址</title>
       <link>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</link>
       <pubDate>Wed, 24 Nov 2021 18:46:41 +0800</pubDate>
-      
       <guid>https://wittonbell.github.io/posts/2021/2021-11-24-%E8%AE%BE%E7%BD%AEubuntu%E5%92%8CCentOS%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA%E9%9D%99%E6%80%81%E5%9C%B0%E5%9D%80/</guid>
       <description>文章目录 一、确认网关地址 二、修改配置文件 １.ubuntu a.查看DHCP模式下的DNS信息 b. 修改/etc/netplan</description>
     </item>
-    
   </channel>
 </rss>

@@ -225,7 +225,7 @@
 <p>如果在link.ld中使用<code>OUTPUT_FORMAT(&quot;pei-i386&quot;)</code>,会报错：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mingw32/bin/ld.exe: unsupported PEI architecture: pei-i386
 </span></span></code></pre></div><p>使用使用<code>OUTPUT_FORMAT(&quot;binary&quot;)</code>，则会报：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mingw32/bin/ld.exe: cannot perform PE operations on non PE output file &#39;loader.bin&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mingw32<span style="color:#f92672">/</span>bin<span style="color:#f92672">/</span>ld<span style="color:#f92672">.</span>exe: cannot perform PE operations on non PE output file <span style="color:#e6db74">&#39;loader.bin&#39;</span>
 </span></span></code></pre></div><p>所以为了能使用MinGW编译16位汇编与C语言的混合代码，就必须编译一个交叉编译器。</p>
 <p>下面笔者就以最新的GCC 12.1为例，介绍如何通过MinGW来构建GCC的交叉编译器。笔者的MinGW为MSYS2中的MinGW64。</p>
 <h2 id="一下载binutils">一、下载Binutils</h2>
@@ -441,7 +441,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

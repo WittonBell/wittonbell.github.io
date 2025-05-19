@@ -150,21 +150,21 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#freebsd">FreeBSD</a></li>
+    <li><a href="#freebsd">$FreeBSD$</a></li>
     <li><a href="#the-meaning-of-">The meaning of &ldquo;$&lt;&rdquo;:</a></li>
     <li><a href="#bsd-pmake-the-implied-source">BSD Pmake: the implied source</a></li>
     <li><a href="#gnu-make-the-first-prerequisite">GNU make: the first prerequisite</a></li>
-    <li><a href="#--------------------">&gt;                    ^</a></li>
+    <li><a href="#--------------------">$&gt;                    $^</a></li>
     <li><a href="#bsd-pmake----all-sources--------not-defined">BSD Pmake    all sources        not defined</a></li>
     <li><a href="#gnu-make-----not-defined--------all-prerequisites">GNU make     not defined        all prerequisites</a></li>
     <li><a href="#both-interpret--as-target">Both interpret &ldquo;$@&rdquo; as target</a></li>
     <li><a href="#pre-compiled-header">Pre-compiled header</a></li>
     <li><a href="#for-both-unix-like-os-and-microsoft-windows-mingwcygwin">For Both UNIX-like OS and Microsoft Windows (MinGW/Cygwin)</a></li>
-    <li><a href="#freebsd-1">FreeBSD</a></li>
+    <li><a href="#freebsd-1">$FreeBSD$</a></li>
     <li><a href="#the-meaning-of--1">The meaning of &ldquo;$&lt;&rdquo;:</a></li>
     <li><a href="#bsd-pmake-the-implied-source-1">BSD Pmake: the implied source</a></li>
     <li><a href="#gnu-make-the-first-prerequisite-1">GNU make: the first prerequisite</a></li>
-    <li><a href="#---------------------1">&gt;                    ^</a></li>
+    <li><a href="#---------------------1">$&gt;                    $^</a></li>
     <li><a href="#bsd-pmake----all-sources--------not-defined-1">BSD Pmake    all sources        not defined</a></li>
     <li><a href="#gnu-make-----not-defined--------all-prerequisites-1">GNU make     not defined        all prerequisites</a></li>
     <li><a href="#both-interpret--as-target-1">Both interpret &ldquo;$@&rdquo; as target</a></li>
@@ -252,7 +252,7 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#75715e">#endif </span><span style="color:#75715e">/* ! _INC_H_ */</span><span style="color:#75715e">```
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#75715e"></span> 
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">建立</span> Makefile<span style="color:#960050;background-color:#1e0010">，以维护预编译头文件。一方面要建立维护</span> GNU CC <span style="color:#960050;background-color:#1e0010">的预编译头文件</span> inc.h.gch <span style="color:#960050;background-color:#1e0010">的规则；另一方面，要在编译每个</span> C<span style="color:#f92672">/</span>C<span style="color:#f92672">++</span> <span style="color:#960050;background-color:#1e0010">源文件时检查</span> inc.h.gch<span style="color:#960050;background-color:#1e0010">，即让所有</span> .o <span style="color:#960050;background-color:#1e0010">文件依赖于</span> inc.h.gch<span style="color:#960050;background-color:#1e0010">。</span> 
-</span></span></code></pre></div><h1 id="freebsd"><span class="math inline">\(FreeBSD\)</span></h1>
+</span></span></code></pre></div><h1 id="freebsd">$FreeBSD$</h1>
 <p>CC  =   gcc
 CFLAGS  =   -g -Wall</p>
 <p>CXX =   gcc
@@ -274,19 +274,22 @@ RM  =   rm -f</p>
 <h1 id="bsd-pmake-the-implied-source">BSD Pmake: the implied source</h1>
 <h1 id="gnu-make-the-first-prerequisite">GNU make: the first prerequisite</h1>
 <p>.c.o:
-<span class="math inline">\((CC) \)</span>(CFLAGS) -c <span class="math inline">\(< .cxx.o:\)</span>(CXX) <span class="math inline">\((CXXFLAGS) -c \)</span>&lt;</p>
+$(CC) $(CFLAGS) -c $&lt;
+.cxx.o:
+$(CXX) $(CXXFLAGS) -c $&lt;</p>
 <p>all:    $(EXE)</p>
-<h1 id="--------------------"><span class="math inline">\(>                    \)</span>^</h1>
+<h1 id="--------------------">$&gt;                    $^</h1>
 <h1 id="bsd-pmake----all-sources--------not-defined">BSD Pmake    all sources        not defined</h1>
 <h1 id="gnu-make-----not-defined--------all-prerequisites">GNU make     not defined        all prerequisites</h1>
 <h1 id="both-interpret--as-target">Both interpret &ldquo;$@&rdquo; as target</h1>
-<p><span class="math inline">\((EXE): \)</span>(OBJS) <span class="math inline">\((LIBBDD)\)</span>(LD) <span class="math inline">\((LDFLAGS) -o \)</span>@ <span class="math inline">\(> \)</span>^ $(LIBS)</p>
+<p>$(EXE): $(OBJS) $(LIBBDD)
+$(LD) $(LDFLAGS) -o $@ $&gt; $^ $(LIBS)</p>
 <h1 id="pre-compiled-header">Pre-compiled header</h1>
-<p><span class="math inline">\((OBJS): \)</span>(PCH)</p>
-<p><span class="math inline">\((PCH): \)</span>(PCH_H)
-<span class="math inline">\((CC) \)</span>(CFLAGS) <span class="math inline">\(> \)</span>^</p>
+<p>$(OBJS): $(PCH)</p>
+<p>$(PCH): $(PCH_H)
+$(CC) $(CFLAGS) $&gt; $^</p>
 <p>clean:
-<span class="math inline">\((RM) \)</span>(PCH) $(OBJS)</p>
+$(RM) $(PCH) $(OBJS)</p>
 <h1 id="for-both-unix-like-os-and-microsoft-windows-mingwcygwin">For Both UNIX-like OS and Microsoft Windows (MinGW/Cygwin)</h1>
 <pre><code>$(RM) $(EXE) $(EXE).exe```
 </code></pre>
@@ -303,7 +306,7 @@ RM  =   rm -f</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#75715e">#endif </span><span style="color:#75715e">/* ! _INC_HPP_ */</span><span style="color:#75715e">```
 </span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#75715e"></span> 
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#f92672">+</span> <span style="color:#960050;background-color:#1e0010">在</span> Makefile <span style="color:#960050;background-color:#1e0010">里也要随之增加对</span> inc.hpp <span style="color:#960050;background-color:#1e0010">的维护。一是要增加产生</span> inc.hpp.gch <span style="color:#960050;background-color:#1e0010">的规则，此时执行</span> GNU CC <span style="color:#960050;background-color:#1e0010">时要增加参数“</span><span style="color:#f92672">-</span>x c<span style="color:#f92672">++-</span>header<span style="color:#960050;background-color:#1e0010">”；二是要在</span> clean <span style="color:#960050;background-color:#1e0010">一节中删除这个预编译头文件。</span> 
-</span></span></code></pre></div><h1 id="freebsd-1"><span class="math inline">\(FreeBSD\)</span></h1>
+</span></span></code></pre></div><h1 id="freebsd-1">$FreeBSD$</h1>
 <p>CC  =   gcc
 CFLAGS  =   -g -Wall</p>
 <p>CXX =   gcc
@@ -327,50 +330,53 @@ RM  =   rm -f</p>
 <h1 id="bsd-pmake-the-implied-source-1">BSD Pmake: the implied source</h1>
 <h1 id="gnu-make-the-first-prerequisite-1">GNU make: the first prerequisite</h1>
 <p>.c.o:
-<span class="math inline">\((CC) \)</span>(CFLAGS) -c <span class="math inline">\(< .cxx.o:\)</span>(CXX) <span class="math inline">\((CXXFLAGS) -c \)</span>&lt;</p>
+$(CC) $(CFLAGS) -c $&lt;
+.cxx.o:
+$(CXX) $(CXXFLAGS) -c $&lt;</p>
 <p>all:    $(EXE)</p>
-<h1 id="---------------------1"><span class="math inline">\(>                    \)</span>^</h1>
+<h1 id="---------------------1">$&gt;                    $^</h1>
 <h1 id="bsd-pmake----all-sources--------not-defined-1">BSD Pmake    all sources        not defined</h1>
 <h1 id="gnu-make-----not-defined--------all-prerequisites-1">GNU make     not defined        all prerequisites</h1>
 <h1 id="both-interpret--as-target-1">Both interpret &ldquo;$@&rdquo; as target</h1>
-<p><span class="math inline">\((EXE): \)</span>(OBJS) <span class="math inline">\((LIBBDD)\)</span>(LD) <span class="math inline">\((LDFLAGS) -o \)</span>@ <span class="math inline">\(> \)</span>^ $(LIBS)</p>
+<p>$(EXE): $(OBJS) $(LIBBDD)
+$(LD) $(LDFLAGS) -o $@ $&gt; $^ $(LIBS)</p>
 <h1 id="pre-compiled-header-1">Pre-compiled header</h1>
-<p><span class="math inline">\((OBJS): \)</span>(PCH)</p>
-<p><span class="math inline">\((PCH): \)</span>(PCH_H)
-<span class="math inline">\((CC) \)</span>(CFLAGS) <span class="math inline">\(> \)</span>^</p>
-<p><span class="math inline">\((PCH_X): \)</span>(PCH_X_H)
-<span class="math inline">\((CXX) \)</span>(CXXFLAGS) -x c++-header <span class="math inline">\(> \)</span>^</p>
+<p>$(OBJS): $(PCH)</p>
+<p>$(PCH): $(PCH_H)
+$(CC) $(CFLAGS) $&gt; $^</p>
+<p>$(PCH_X): $(PCH_X_H)
+$(CXX) $(CXXFLAGS) -x c++-header $&gt; $^</p>
 <p>clean:
-<span class="math inline">\((RM) \)</span>(PCH) <span class="math inline">\((PCH_X) \)</span>(OBJS)</p>
+$(RM) $(PCH) $(PCH_X) $(OBJS)</p>
 <h1 id="for-both-unix-like-os-and-microsoft-windows-mingwcygwin-1">For Both UNIX-like OS and Microsoft Windows (MinGW/Cygwin)</h1>
 <pre><code>$(RM) $(EXE) $(EXE).exe```
 </code></pre>
 <p>这是以上两种 Makefile 的比较：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#960050;background-color:#1e0010">@@</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">6</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">8</span> <span style="color:#960050;background-color:#1e0010">@@</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> EXE    <span style="color:#f92672">=</span>   testapp
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> PCH_H  <span style="color:#f92672">=</span>   inc<span style="color:#f92672">.</span>h
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> PCH    <span style="color:#f92672">=</span>   inc<span style="color:#f92672">.</span>h<span style="color:#f92672">.</span>gch
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f92672">+</span>PCH_X_H    <span style="color:#f92672">=</span>   inc<span style="color:#f92672">.</span>hpp
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#f92672">+</span>PCH_X  <span style="color:#f92672">=</span>   inc<span style="color:#f92672">.</span>hpp<span style="color:#f92672">.</span>gch
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> SRCS   <span style="color:#f92672">=</span>   testapp<span style="color:#f92672">.</span>c
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> OBJS   <span style="color:#f92672">=</span>   testapp<span style="color:#f92672">.</span>o
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> LIBS   <span style="color:#f92672">=</span>           <span style="color:#75715e"># System Libraries</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#960050;background-color:#1e0010">@@</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">7</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">10</span> <span style="color:#960050;background-color:#1e0010">@@</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> <span style="color:#960050;background-color:#1e0010">$</span>(PCH): <span style="color:#960050;background-color:#1e0010">$</span>(PCH_H)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#960050;background-color:#1e0010">$</span>(CC) <span style="color:#960050;background-color:#1e0010">$</span>(CFLAGS) <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#f92672">^</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@@ -12,6 +12,8 @@
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> EXE    =   testapp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> PCH_H  =   inc.h
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> PCH    =   inc.h.gch
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>+PCH_X_H    =   inc.hpp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>+PCH_X  =   inc.hpp.gch
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> SRCS   =   testapp.c
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> OBJS   =   testapp.o
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> LIBS   =           # System Libraries
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>@@ -48,7 +50,10 @@
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> $(PCH): $(PCH_H)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    $(CC) $(CFLAGS) $&gt; $^
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">$</span>(PCH_X): <span style="color:#960050;background-color:#1e0010">$</span>(PCH_X_H)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#f92672">+</span>   <span style="color:#960050;background-color:#1e0010">$</span>(CXX) <span style="color:#960050;background-color:#1e0010">$</span>(CXXFLAGS) <span style="color:#f92672">-</span>x c<span style="color:#f92672">++-</span>header <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#f92672">^</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>+$(PCH_X): $(PCH_X_H)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>+   $(CXX) $(CXXFLAGS) -x c++-header $&gt; $^
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>+
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span> clean:
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#f92672">-</span>   <span style="color:#960050;background-color:#1e0010">$</span>(RM) <span style="color:#960050;background-color:#1e0010">$</span>(PCH) <span style="color:#960050;background-color:#1e0010">$</span>(OBJS)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#f92672">+</span>   <span style="color:#960050;background-color:#1e0010">$</span>(RM) <span style="color:#960050;background-color:#1e0010">$</span>(PCH) <span style="color:#960050;background-color:#1e0010">$</span>(PCH_X) <span style="color:#960050;background-color:#1e0010">$</span>(OBJS)
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span> <span style="color:#75715e"># For Both UNIX-like OS and Microsoft Windows (MinGW/Cygwin)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    <span style="color:#960050;background-color:#1e0010">$</span>(RM) <span style="color:#960050;background-color:#1e0010">$</span>(EXE) <span style="color:#960050;background-color:#1e0010">$</span>(EXE)<span style="color:#f92672">.</span>exe<span style="color:#960050;background-color:#1e0010">```</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>-   $(RM) $(PCH) $(OBJS)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>+   $(RM) $(PCH) $(PCH_X) $(OBJS)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span> # For Both UNIX-like OS and Microsoft Windows (MinGW/Cygwin)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    $(RM) $(EXE) $(EXE).exe```
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>  <span style="color:#960050;background-color:#1e0010">本文转自</span> 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>[<span style="color:#960050;background-color:#1e0010">使用</span> GNU CC <span style="color:#960050;background-color:#1e0010">的预编译头文件加快编译速度</span>](http:<span style="color:#f92672">//</span>www<span style="color:#f92672">.</span>codeweblog<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span><span style="color:#a6e22e">%E4%BD%BF%E7</span><span style="color:#f92672">%</span><span style="color:#ae81ff">94</span><span style="color:#a6e22e">%A8</span><span style="color:#f92672">-</span>gnu<span style="color:#f92672">-</span>cc<span style="color:#f92672">-</span><span style="color:#a6e22e">%E7</span><span style="color:#f92672">%</span><span style="color:#ae81ff">9</span>A<span style="color:#f92672">%</span><span style="color:#ae81ff">84</span><span style="color:#a6e22e">%E9%A2</span><span style="color:#f92672">%</span><span style="color:#ae81ff">84</span><span style="color:#a6e22e">%E7%BC</span><span style="color:#f92672">%</span><span style="color:#ae81ff">96</span><span style="color:#a6e22e">%E8%AF</span><span style="color:#f92672">%</span><span style="color:#ae81ff">91</span><span style="color:#a6e22e">%E5%A4%B4%E6</span><span style="color:#f92672">%</span><span style="color:#ae81ff">96</span><span style="color:#f92672">%</span><span style="color:#ae81ff">87</span><span style="color:#a6e22e">%E4%BB%B6%E5</span><span style="color:#f92672">%</span><span style="color:#ae81ff">8</span>A<span style="color:#a6e22e">%A0%E5%BF%AB%E7%BC</span><span style="color:#f92672">%</span><span style="color:#ae81ff">96</span><span style="color:#a6e22e">%E8%AF</span><span style="color:#f92672">%</span><span style="color:#ae81ff">91</span><span style="color:#a6e22e">%E9</span><span style="color:#f92672">%</span><span style="color:#ae81ff">80</span><span style="color:#f92672">%</span><span style="color:#ae81ff">9</span>F<span style="color:#a6e22e">%E5%BA%A6</span><span style="color:#f92672">/</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>  本文转自 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>[使用 GNU CC 的预编译头文件加快编译速度](http://www.codeweblog.com/%E4%BD%BF%E7%94%A8-gnu-cc-%E7%9A%84%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/)
 </span></span></code></pre></div>
         </div>
 
@@ -484,7 +490,7 @@ RM  =   rm -f</p>
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

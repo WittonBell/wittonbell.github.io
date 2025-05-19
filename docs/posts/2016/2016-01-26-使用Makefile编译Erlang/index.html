@@ -119,21 +119,25 @@ ifeq ($(CONFIG),DEBUG)
 else
     FLAGS := -D&rsquo;RELEASE&rsquo;
 endif</p>
-<p>FLAGS += <span class="math inline">\({EXT_MICROS} FLAGS += -DRegion="\)</span>(Region)&quot;</p>
+<p>FLAGS += ${EXT_MICROS}
+FLAGS += -DRegion=&quot;$(Region)&quot;</p>
 <p>define walk
-<span class="math inline">\((wildcard \)</span>(1)/*.erl) <span class="math inline">\((foreach e, \)</span>(wildcard <span class="math inline">\((1)/*), \)</span>(call walk, $(e)))
+$(wildcard $(1)/<em>.erl) $(foreach e, $(wildcard $(1)/</em>), $(call walk, $(e)))
 endef
  </p>
 <p>#源文件目录下的所有Erlang文件</p>
-<p>AllFiles = <span class="math inline">\((call walk, \)</span>(SOURCE_DIR))
+<p>AllFiles = $(call walk, $(SOURCE_DIR))
 #配置文件目录下的所有Erlang文件
-AllCfgFiles = <span class="math inline">\((call walk, \)</span>(SOURCE_DIR)/config)
+AllCfgFiles = $(call walk, $(SOURCE_DIR)/config)
 #指定语言的配置文件
-SpecRegionCfgFiles = <span class="math inline">\((call walk, \)</span>(SOURCE_DIR)/config/<span class="math inline">\((Region)) #剔除所有的配置文件 NoCfgFiles = \)</span>(filter-out <span class="math inline">\((AllCfgFiles),\)</span>(AllFiles))
+SpecRegionCfgFiles = $(call walk, $(SOURCE_DIR)/config/$(Region))
+#剔除所有的配置文件
+NoCfgFiles = $(filter-out $(AllCfgFiles),$(AllFiles))
 #加上指定语言的配置文件
-NeedAllFiles = <span class="math inline">\((NoCfgFiles) NeedAllFiles += \)</span>(SpecRegionCfgFiles)</p>
-<p>OBJS = <span class="math inline">\((patsubst %.erl,%.beam,\)</span>(NeedAllFiles))</p>
-<p>ERLC = erlc -W <span class="math inline">\((FLAGS) -o \)</span>{EBIN_DIR} $(INCLUDE_DIR)</p>
+NeedAllFiles = $(NoCfgFiles)
+NeedAllFiles += $(SpecRegionCfgFiles)</p>
+<p>OBJS = $(patsubst %.erl,%.beam,$(NeedAllFiles))</p>
+<p>ERLC = erlc -W $(FLAGS) -o ${EBIN_DIR} $(INCLUDE_DIR)</p>
 <p>all: dir compile</p>
 <p>clean:
     rm -rf $(EBIN_DIR)</p>
@@ -141,7 +145,7 @@ NeedAllFiles = <span class="math inline">\((NoCfgFiles) NeedAllFiles += \)</spa
     mkdir -p $(EBIN_DIR)</p>
 <p>compile:${OBJS}</p>
 <p>%.beam:%.erl
-    <span class="math inline">\({ERLC} \)</span>&lt;</p>
+    ${ERLC} $&lt;</p>
 
         </div>
 
@@ -249,7 +253,7 @@ NeedAllFiles = <span class="math inline">\((NoCfgFiles) NeedAllFiles += \)</spa
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

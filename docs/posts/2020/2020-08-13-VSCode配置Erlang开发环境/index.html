@@ -276,8 +276,8 @@
 <h2 id="三安装rebar3">三、安装rebar3</h2>
 <p>在https://www.rebar3.org/下载最新的
   <a href="https://rebar3.s3.amazonaws.com/rebar3">rebar3</a>，放在Erlang的可执行文件目录中（C:\Program Files\erl-23.0\bin），然后在此目录添加一个rebar3.bat，内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#960050;background-color:#1e0010">@</span>echo off
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>escript<span style="color:#f92672">.</span>exe <span style="color:#e6db74">&#34;%~dpn0&#34;</span> <span style="color:#f92672">%*</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@echo off
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>escript.exe &#34;%~dpn0&#34; %*
 </span></span></code></pre></div><h2 id="四测试开发环境">四、测试开发环境</h2>
 <p>由于VSCode的Erlang插件默认是使用rebar3编译生成的目录结构来进行调试的，所以需要使用rebar3来进行编译。也强烈建议使用rebar3来创建工程。</p>
 <h4 id="1-创建工程">1. 创建工程</h4>
@@ -428,11 +428,11 @@
 <p>截止目前CoderRunner插件还不支持Erlang，不过可以自行添加，在settings.json中找到&quot;code-runner.executorMap&quot;，添加erlang的命令即可，这里是使用escript的方式执行的，所以需要添加main/1入口函数。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&#34;erlang&#34;: &#34;cd $dir &amp;&amp; escript $fileName&#34;,
 </span></span></code></pre></div><p>如有一个main.erl：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>-module(main).
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">-</span>module(main)<span style="color:#f92672">.</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>-export([main/1]).
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f92672">-</span><span style="color:#66d9ef">export</span>([main<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>main(_Args) -&gt; io:format(&#34;test~n&#34;).
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>main(_Args) <span style="color:#f92672">-&gt;</span> io:format(<span style="color:#e6db74">&#34;test~n&#34;</span>)<span style="color:#f92672">.</span>
 </span></span></code></pre></div><p>使用CodeRunner执行Erlang：</p>
 <p>
         <a data-fancybox="gallery" href="../assets/2020-08-13-VSCode%e9%85%8d%e7%bd%aeErlang%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83/20200813170049214.png">
@@ -552,7 +552,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

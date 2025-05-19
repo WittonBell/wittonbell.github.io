@@ -91,7 +91,7 @@
 <div class="post-meta meta-category">
   <span>&nbsp;|&nbsp;</span><a href="/categories/Windows/" class="category-link p-category" target="_blank">Windows</a>
 </div>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 10040 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 10231 字</span>
 <span class="post-meta meta-category">&nbsp;|&nbsp; 21&nbsp;分钟</span>
 
         <div class="post-meta">
@@ -100,536 +100,364 @@
             </span>
         </div>
         <div class="post-content">
-            <p>来自《软件技术加密内幕》和chm版本不太一样 </p>
+            <p>来自《软件技术加密内幕》和chm版本不太一样</p>
 <p>在Win32中自带了一些API函数，它们提供了相当于一般调试器的大多数功能，这些函数统称为Win32调试API（Win32 Debug API）。利用这些API可以做到加载一个程序或捆绑到一个正在运行的程序上以供调试；可以获得被调试的程序的底层信息，例如进程ID、进入地址、映像基址等；甚至可以对被调试的程序进行任意的修改，包括进程的内存、线程的运行环境等。</p>
 <p>简而言之，读者可以用这些API写一个进程调试器。就像现在流行的调试器Visual C++调试器、WinDBG、OllyDbg等一样。当然除了能写调试器外，利用调试API还能做很多不同寻常的工作。</p>
-<p><strong>3.1  Win32调试API原理</strong></p>
-<p><strong>3.1.1  调试相关函数简要说明</strong></p>
+<p><strong>3.1 Win32调试API原理</strong></p>
+<p><strong>3.1.1 调试相关函数简要说明</strong></p>
 <p>Windows提供了一组Win32 Debug API，其具体定义如下。</p>
 <p>（1）ContinueDebugEvent函数</p>
 <p>说明：此函数允许调试器恢复先前由于调试事件而挂起的线程。</p>
 <p>语法：
-<strong>BOOL ContinueDebugEvent</strong>(
-<strong>DWORD</strong> 
-<em>dwProcessId</em>,
-<strong>DWORD</strong> 
-<em>dwThreadId</em>, 
-**DWORD **
-<em>dwContinueStatus</em> )</p>
+<strong>BOOL ContinueDebugEvent</strong>(<strong>DWORD</strong>  <em>dwProcessId</em>, <strong>DWORD</strong>  <em>dwThreadId</em>,  **DWORD ** <em>dwContinueStatus</em>)</p>
 <p>参数：</p>
-<p>dwProcessId         DWORD  被调试进程的进程标识符</p>
-<p>dwThreadId           DWORD  欲恢复线程的线程标识符</p>
-<p>dwContinueStatus  
-DWORD  
-此值指定了该线程将以何种方式继续，包含两个定义值
-DBG_CONTINUE
-和
-DBG_EXCEPTION_NOT_HANDLED</p>
-<p>返回值                  
-BOOL  
-如果函数成功，则返回非零值；如果失败，则返回零</p>
-<p> </p>
-<p>（2）DebugActiveProcess   </p>
+<p>dwProcessId DWORD被调试进程的进程标识符</p>
+<p>dwThreadId DWORD欲恢复线程的线程标识符</p>
+<p>dwContinueStatus DWORD此值指定了该线程将以何种方式继续，包含两个定义值 DBG_CONTINUE  和  DBG_EXCEPTION_NOT_HANDLED</p>
+<p>返回值 BOOL如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>（2）DebugActiveProcess</p>
 <p>说明：此函数允许将调试器捆绑到一个正在运行的进程上。</p>
 <p>语法：
-<strong>BOOL DebugActiveProcess</strong>(
-<strong>DWORD</strong> 
-<em>dwProcessId</em> )</p>
+<strong>BOOL DebugActiveProcess</strong>(<strong>DWORD</strong> <em>dwProcessId</em>)</p>
 <p>参数：</p>
-<p>dwProcessId         DWORD  欲捆绑进程的进程标识符</p>
-<p>返回值                  BOOL  如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>dwProcessId DWORD欲捆绑进程的进程标识符</p>
+<p>返回值 BOOL如果函数成功，则返回非零值；如果失败，则返回零</p>
 <p>（3）DebugActiveProcessStop</p>
 <p>说明：此函数允许将调试器从一个正在运行的进程上卸载。</p>
 <p>语法：
-<strong>BOOL DebugActiveProcessStop</strong>(
-<strong>DWORD</strong> 
-<em>dwProcessId</em> )</p>
+<strong>BOOL DebugActiveProcessStop</strong>(<strong>DWORD</strong>  <em>dwProcessId</em>)</p>
 <p>参数：</p>
-<p>dwProcessId         DWORD  欲卸载的进程的进程标识符</p>
-<p>返回值                  BOOL  如果函数成功，则返回非零值；如果失败，则返回零</p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2012-01-13-Win32%e8%b0%83%e8%af%95API%e5%8e%9f%e7%90%86/image014.jpg">
-            <img class="mx-auto" alt="" src="../assets/2012-01-13-Win32%e8%b0%83%e8%af%95API%e5%8e%9f%e7%90%86/image014.jpg" />
-        </a>
-    
-注意：Windows 9x内核不支持此函数。</p>
+<p>dwProcessId DWORD欲卸载的进程的进程标识符</p>
+<p>返回值 BOOL 如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>注意：Windows 9x内核不支持此函数。</p>
 <p>（4）DebugBreak</p>
 <p>说明：在当前进程中产生一个断点异常，如果当前进程不是处在被调试状态，那么这个异常将被系统例程接管，多数情况下会导致当前进程被终止。</p>
 <p>语法：
-<strong>VOID DebugBreak</strong>(
-<strong>VOID</strong>)</p>
+<strong>VOID DebugBreak</strong>(<strong>VOID</strong>)</p>
 <p>参数：无</p>
 <p>其他：其实这个函数的用处与在程序中直接插入INT 3的效果是一样的，如果反编译Windows 98的KERNEL32.dll，读者可以发现这个函数只包含两句，一句是INT 3，一句是RET。</p>
 <p>（5）DebugBreakProcess</p>
 <p>说明：在指定进程中产生一个断点异常。</p>
 <p>语法：
-<strong>VOID DebugBreakProcess</strong> (
-<strong>HANDLE</strong> 
-<em>hProcess</em>)</p>
+<strong>VOID DebugBreakProcess</strong>( <strong>HANDLE</strong> <em>hProcess</em>)</p>
 <p>参数：</p>
-<p>hProcess               HANDLE  进程的句柄</p>
-<p>返回值                  无</p>
+<p>hProcess HANDLE进程的句柄</p>
+<p>返回值 无</p>
 <p>（6）FatalExit</p>
 <p>说明：此函数将使调用进程强制退出，将控制权转移至调试器。与ExitProcess不同的是，在退出前会先调用一个INT 3断点。</p>
 <p>语法：
-<strong>VOID FatalExit</strong>(
-<strong>int</strong> 
-<em>ExitCode</em>)</p>
+<strong>VOID FatalExit</strong>(<strong>int</strong> <em>ExitCode</em>)</p>
 <p>参数：</p>
-<p>ExitCode               int  退出码</p>
-<p>返回值                  无</p>
+<p>ExitCode int 退出码</p>
+<p>返回值 无</p>
 <p>（7）FlushInstructionCache</p>
 <p>说明：刷新指令高速缓存。</p>
 <p>语法：
-<strong>BOOL FlushInstructionCache</strong>(
-<strong>HANDLE</strong> 
-<em>hProcess</em>, 
-<strong>LPCVOID</strong> 
-<em>lpBassAddress</em>, 
-<strong>SIZE_T</strong> 
-<em>dwSize</em>)</p>
+<strong>BOOL FlushInstructionCache</strong>(<strong>HANDLE</strong> <em>hProcess</em>, <strong>LPCVOID</strong> <em>lpBassAddress</em>, <strong>SIZE_T</strong>  <em>dwSize</em>)</p>
 <p>参数：</p>
-<p>hProcess               HANDLE  进程的句柄</p>
-<p>lpBassAddress        LPCVOID  欲刷新区域的基地址</p>
-<p>dwSize                  SIZE_T  欲刷新区域的长度</p>
-<p>返回值                  BOOL  如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>hProcess HANDLE 进程的句柄</p>
+<p>lpBassAddress LPCVOID 欲刷新区域的基地址</p>
+<p>dwSize SIZE_T 欲刷新区域的长度</p>
+<p>返回值 BOOL 如果函数成功，则返回非零值；如果失败，则返回零</p>
 <p>（8）GetThreadContext</p>
 <p>说明：获取指定线程的执行环境。</p>
 <p>语法：
-<strong>BOOL GetThreadContext</strong>(
-<strong>HANDLE</strong> 
-<em>hThread</em>,
-** LPCONTEXT** 
-*lpContext *)</p>
+<strong>BOOL GetThreadContext</strong>(<strong>HANDLE</strong>  <em>hThread</em>, ** LPCONTEXT**  *lpContext *)</p>
 <p>参数：</p>
-<p>hThread                HANDLE  欲获取执行环境的线程的句柄</p>
-<p>lpContext               LPCONTEXT  指向CONTEXT结构的指针</p>
-<p>返回值                  BOOL  如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>hThread HANDLE 欲获取执行环境的线程的句柄</p>
+<p>lpContext LPCONTEXT 指向CONTEXT结构的指针</p>
+<p>返回值 BOOL 如果函数成功，则返回非零值；如果失败，则返回零</p>
 <p>（9）GetThreadSelectorEntry</p>
 <p>说明：此函数返回指定选择器和线程的描述符表的入口地址。</p>
 <p>语法：
-<strong>BOOL GetThreadSelectorEntry</strong>( 
-<strong>HANDLE</strong> 
-<em>hThread</em>,
-<strong>DWORD</strong> 
-<em>dwSelector</em>,    
-<strong>LPLDT_ENTRY</strong> 
-<em>lpSelectorEntry</em> )</p>
+<strong>BOOL GetThreadSelectorEntry</strong>( <strong>HANDLE</strong>  <em>hThread</em>, <strong>DWORD</strong>  <em>dwSelector</em>, <strong>LPLDT_ENTRY</strong> <em>lpSelectorEntry</em> )</p>
 <p>参数：</p>
-<p>hThread                HANDLE  包含指定选择器的线程的句柄</p>
-<p>dwSelector            DWORD  选择器数目</p>
-<p>lpSelectorEntry      LPLDT_ENTRY  指向用来接收描述符表的结构的指针</p>
-<p>返回值                  如果函数成功，则返回非零值，此外lpSelectorEntry指向的结构中将被填入接收到的描述符表；如果失败，则返回零</p>
+<p>hThread HANDLE 包含指定选择器的线程的句柄</p>
+<p>dwSelector DWORD 选择器数目</p>
+<p>lpSelectorEntry LPLDT_ENTRY 指向用来接收描述符表的结构的指针</p>
+<p>返回值 如果函数成功，则返回非零值，此外lpSelectorEntry指向的结构中将被填入接收到的描述符表；如果失败，则返回零</p>
 <p>（10）IsDebuggerPresent</p>
 <p>说明：此函数用来判断调用进程是否处于被调试环境中。</p>
 <p>语法：
-<strong>BOOL IsDebuggerPresent</strong>(
-<strong>VOID</strong>)</p>
+<strong>BOOL IsDebuggerPresent</strong>(<strong>VOID</strong>)</p>
 <p>参数：</p>
-<p>返回值                   BOOL：如果进程处在被调试状态，则返回非零值，不是处在被调试状态则返回零</p>
+<p>返回值 BOOL：如果进程处在被调试状态，则返回非零值，不是处在被调试状态则返回零</p>
 <p>（11）OutputDebugString</p>
 <p>说明：将一个字符串传递给调试器显示。</p>
 <p>语法：
-<strong>VOID OutputDebugString</strong>(
-**LPCYSTR **
-<em>lpOutputString</em>)</p>
+<strong>VOID OutputDebugString</strong>(**LPCYSTR ** <em>lpOutputString</em>)</p>
 <p>参数：</p>
-<p>lpOutputString       LPCYSTR：指向要显示的以“00”结尾的字符串的指针</p>
-<p>返回值                  无</p>
+<p>lpOutputString LPCYSTR：指向要显示的以“00”结尾的字符串的指针</p>
+<p>返回值 无</p>
 <p>（12）ReadProcessMemory</p>
 <p>说明：读取指定进程的某区域内的数据。</p>
 <p>语法：
-<strong>BOOL ReadProcessMemory</strong>(
-<strong>HANDLE</strong> 
-<em>hProcess</em>, 
-<strong>LPCVOID</strong> 
-<em>lpBassAddress</em>, 
-<strong>LPVOID</strong>
-* lpBuffer*, 
-<strong>SIZE_T</strong> 
-<em>nSize</em>, 
-<strong>SIZE_T</strong> * 
-<em>lpNumberOfBytesRead</em>)</p>
+<strong>BOOL ReadProcessMemory</strong>( <strong>HANDLE</strong>  <em>hProcess</em>,  <strong>LPCVOID</strong>  <em>lpBassAddress</em>,  <strong>LPVOID</strong> <em>lpBuffer</em>,  <strong>SIZE_T</strong>  <em>nSize</em>,  <strong>SIZE_T</strong> *  <em>lpNumberOfBytesRead</em>)</p>
 <p>参数：</p>
-<p>hProcess              HANDLE  进程的句柄</p>
-<p>lpBassAddress        LPCVOID  欲读取区域的基地址</p>
-<p>lpBuffer                 LPVOID  保存读取数据的缓冲的指针</p>
-<p>nSize                     SIZE_T  欲读取的字节数</p>
-<p>lpNumberOfBytesRead   SIZE_T  存储已读取字节数的地址指针</p>
-<p>返回值                  BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>hProcess HANDLE 进程的句柄</p>
+<p>lpBassAddress LPCVOID 欲读取区域的基地址</p>
+<p>lpBuffer LPVOID 保存读取数据的缓冲的指针</p>
+<p>nSize SIZE_T 欲读取的字节数</p>
+<p>lpNumberOfBytesRead SIZE_T 存储已读取字节数的地址指针</p>
+<p>返回值 BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
 <p>（13）SetThreadContext</p>
 <p>说明：设置指定线程的执行环境。</p>
 <p>语法：
-<strong>BOOL SetThreadContext</strong>(
-<strong>HANDLE</strong> 
-<em>hThread</em>, 
-<strong>LPCONTEXT</strong> 
-<em>lpContext</em> )</p>
+<strong>BOOL SetThreadContext</strong>( <strong>HANDLE</strong>  <em>hThread</em>,  <strong>LPCONTEXT</strong>  <em>lpContext</em> )</p>
 <p>参数：</p>
-<p>hThread                HANDLE  欲设置执行环境的线程的句柄</p>
-<p>lpContext               LPCONTEXT  指向CONTEXT结构的指针</p>
-<p>返回值                  BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>hThread HANDLE 欲设置执行环境的线程的句柄</p>
+<p>lpContext LPCONTEXT 指向CONTEXT结构的指针</p>
+<p>返回值 BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
 <p>（14）WaitForDebugEvent</p>
 <p>说明：此函数用来等待被调试进程发生调试事件。</p>
 <p>语法：
-<strong>BOOL WaitForDebugEvent</strong>(
-<strong>LPDEBUG_ENENT</strong> 
-<em>lpDebugEvent</em>, 
-<strong>DWORD</strong> 
-<em>dwMilliseconds</em>)</p>
+<strong>BOOL WaitForDebugEvent</strong>( <strong>LPDEBUG_ENENT</strong>  <em>lpDebugEvent</em>,  <strong>DWORD</strong>  <em>dwMilliseconds</em>)</p>
 <p>参数：</p>
-<p>lpDebugEvent        LPDEBUG_ENENT  指向接收调试事件信息的DEBUG_ ENENT结构的指针</p>
-<p>dwMilliseconds      DWORD  该函数用来等待调试事件发生的毫秒数，如果这段时间内没有调试事件发生，函数将返回调用者；如果将该参数指定为INFINITE，函数将一直等待直到调试事件发生</p>
-<p>返回值                  BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p>lpDebugEvent LPDEBUG_ENENT 指向接收调试事件信息的DEBUG_ ENENT结构的指针</p>
+<p>dwMilliseconds DWORD 该函数用来等待调试事件发生的毫秒数，如果这段时间内没有调试事件发生，函数将返回调用者；如果将该参数指定为INFINITE，函数将一直等待直到调试事件发生</p>
+<p>返回值 BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
 <p>（15）WriteProcessMemory</p>
 <p>说明：在指定进程的某区域内写入数据。</p>
 <p>语法：
-<strong>BOOL WriteProcessMemory</strong>(
-<strong>HANDLE</strong> 
-<em>hProcess</em>, 
-<strong>LPCVOID</strong> 
-<em>lpBassAddress</em>, 
-**LPVOID **
-<em>lpBuffer,</em> 
-<strong>SIZE_T</strong> 
-<em>nSize</em>, 
-<strong>SIZE_T</strong> * 
-<em>lpNumberOfBytesRead</em>)</p>
+<strong>BOOL WriteProcessMemory</strong>( <strong>HANDLE</strong>  <em>hProcess</em>,  <strong>LPCVOID</strong> <em>lpBassAddress</em>, **LPVOID ** <em>lpBuffer,</em>  <strong>SIZE_T</strong>  <em>nSize</em>,  <strong>SIZE_T</strong> *  <em>lpNumberOfBytesRead</em>)</p>
 <p>参数：</p>
-<p>hProcess              HANDLE  进程的句柄</p>
-<p>lpBassAddress        LPCVOID  欲写入区域的基地址</p>
-<p>lpBuffer                 LPVOID  保存欲写入数据的缓冲的指针</p>
-<p>nSize                     SIZE_T  欲写入的字节数</p>
-<p>lpNumberOfBytesRead   SIZE_T  存储已写入字节数的地址的指针</p>
-<p>返回值                  BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
-<p><strong>3.1.2  调试事件</strong></p>
+<p>hProcess HANDLE 进程的句柄</p>
+<p>lpBassAddress LPCVOID 欲写入区域的基地址</p>
+<p>lpBuffer LPVOID 保存欲写入数据的缓冲的指针</p>
+<p>nSize SIZE_T 欲写入的字节数</p>
+<p>lpNumberOfBytesRead SIZE_T 存储已写入字节数的地址的指针</p>
+<p>返回值 BOOL：如果函数成功，则返回非零值；如果失败，则返回零</p>
+<p><strong>3.1.2 调试事件</strong></p>
 <p>作为调试器，监视目标进程的执行、对目标进程发生的每一个调试事件做出应有的反应是它的主要工作。当目标进程发生一个调试事件后，系统将会通知调试器来处理这个事件。调试器将利用WaitForDebugEvent函数来获取目标进程的相关环境信息。可能存在的调试事件类型如表3-1所示。</p>
-<p>表
-3-1  
-调试事件</p>
-<pre><code>  调 
-  试 
-  事 
-  件 
-  
-
-  含 
-       
-  义 
-  
-
-   CREATE_PROCESS_DEBUG_EVENT 
-  
-
-   进程被创建。当调试的进程刚被创建（还未运行）或调试器开始调试已经激活的进程时，就会生成这个事件 
-  
-
-   CREATE_THEAD_DEBUG_EVENT 
-  
-
-   在调试进程中创建一个新的进程或调试器开始调试已经激活的进程时，就会生成这个调试事件。要注意的是当调试的主线程被创建时不会收到该通知 
-  
-
-   EXCEPTION_DEBUG_EVENT 
-  
-
-   在调试的进程中出现了异常，就会生成该调试事件 
-  
-
-   EXIT_PROCESS_DEBUG_EVENT 
-  
-
-   每当退出调试进程中的最后一个线程时，产生这个事件 
-  
-
-   EXIT_THREAD_DEBUG_EVENT 
-  
-
-   调试中的线程退出时事件发生，调试的主线程退出时不会收到该通知 
-  
-
-   LOAD_DLL_DEBUG_EVENT 
-  
-
-   每当被调试的进程装载DLL文件时，就生成这个事件。当PE装载器第一次解析出与DLL文件有关的链接时，将收到这一事件。调试进程使用了LoadLibrary时也会发生。每当DLL文件装载到地址空间中去时，都要调用该调试事件 
-  
-
-   OUTPUT_DEBUG_STRING_EVENT 
-  
-
-   当调试进程调用DebugOutputString函数向程序发送消息字符串时该事件发生 
-  
-
-   UNLOAD_DLL_DEBUG_EVENT 
-  
-
-   每当调试进程使用FreeLibrary函数卸载DLL文件时，就会生成该调试事件。仅当最后一次从过程的地址空间卸载DLL文件时，才出现该调试事件（也就是说DLL文件的使用次数为0时） 
-  
-
-   RIP_EVENT 
-  
-
-   只有Windows 98检查过的构件才会生成该调试事件。该调试事件是报告错误信息 
-</code></pre>
+<p>表 3-1 调试事件</p>
+<table>
+<thead>
+<tr>
+<th>调试事件</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CREATE_PROCESS_DEBUG_EVENT</td>
+<td>进程被创建。当调试的进程刚被创建（还未运行）或调试器开始调试已经激活的进程时，就会生成这个事件</td>
+</tr>
+<tr>
+<td>CREATE_THEAD_DEBUG_EVENT</td>
+<td>在调试进程中创建一个新的进程或调试器开始调试已经激活的进程时，就会生成这个调试事件。要注意的是当调试的主线程被创建时不会收到该通知</td>
+</tr>
+<tr>
+<td>EXCEPTION_DEBUG_EVENT</td>
+<td>在调试的进程中出现了异常，就会生成该调试事件</td>
+</tr>
+<tr>
+<td>EXIT_PROCESS_DEBUG_EVENT</td>
+<td>每当退出调试进程中的最后一个线程时，产生这个事件</td>
+</tr>
+<tr>
+<td>EXIT_THREAD_DEBUG_EVENT</td>
+<td>调试中的线程退出时事件发生，调试的主线程退出时不会收到该通知</td>
+</tr>
+<tr>
+<td>LOAD_DLL_DEBUG_EVENT</td>
+<td>每当被调试的进程装载DLL文件时，就生成这个事件。当PE装载器第一次解析出与DLL文件有关的链接时，将收到这一事件。调试进程使用了LoadLibrary时也会发生。每当DLL文件装载到地址空间中去时，都要调用该调试事件</td>
+</tr>
+<tr>
+<td>OUTPUT_DEBUG_STRING_EVENT</td>
+<td>当调试进程调用DebugOutputString函数向程序发送消息字符串时该事件发生</td>
+</tr>
+<tr>
+<td>UNLOAD_DLL_DEBUG_EVENT</td>
+<td>每当调试进程使用FreeLibrary函数卸载DLL文件时，就会生成该调试事件。仅当最后一次从过程的地址空间卸载DLL文件时，才出现该调试事件（也就是说DLL文件的使用次数为0时）</td>
+</tr>
+<tr>
+<td>RIP_EVENT</td>
+<td>只有Windows 98检查过的构件才会生成该调试事件。该调试事件是报告错误信息</td>
+</tr>
+</tbody>
+</table>
 <p>当WaitForDebugEvent接收到一个调试事件时，它将把调试事件的信息填写入DEBUG_EVENT结构中并返回。这个结构定义如下：</p>
-<p><strong>[cpp]</strong>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#"> view plain</a>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#">copy</a></p>
-<ul>
-<li>typedef struct _DEBUG_EVENT {   </li>
-<li>DWORD dwDebugEventCode;  </li>
-<li>DWORD dwProcessId;  </li>
-<li>DWORD dwThreadId;  </li>
-<li>union {  </li>
-<li>EXCEPTION_DEBUG_INFO Exception;  </li>
-<li>CREATE_THREAD_DEBUG_INFO CreateThread;  </li>
-<li>CREATE_PROCESS_DEBUG_INFO CreateProcessInfo;  </li>
-<li>EXIT_THREAD_DEBUG_INFO ExitThread;  </li>
-<li>EXIT_PROCESS_DEBUG_INFO ExitProcess;  </li>
-<li>LOAD_DLL_DEBUG_INFO LoadDll;  </li>
-<li>UNLOAD_DLL_DEBUG_INFO UnloadDll;  </li>
-<li>OUTPUT_DEBUG_STRING_INFO DebugString;          </li>
-<li>RIP_INFO RipInfo;  </li>
-<li>} u;  </li>
-<li>} DEBUG_EVENT;  </li>
-</ul>
-<p> </p>
-<p>在dwDebugEventCode中的值标记了所发生的调试事件的类型。dwProcessId的值是调试事件所发生的进程的标识符。dwThreadId的值是调试事件所发生的线程的标识符。u结构包含了关于调试事件的更多信息，根据上面dwDebugEventCode的不同，它可以是表3-2中所示的结构。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span> <span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _DEBUG_EVENT{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> DWORD dwDebugEventCode;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> DWORD dwProcessId;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> DWORD dwThreadId;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> <span style="color:#66d9ef">union</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> EXCEPTION_DEBUG_INFO Exception;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> CREATE_THREAD_DEBUG_INFO CreateThread;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> CREATE_PROCESS_DEBUG_INFO CreateProcessInfo;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> EXIT_THREAD_DEBUG_INFO ExitThread;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> EXIT_PROCESS_DEBUG_INFO ExitProcess;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> LOAD_DLL_DEBUG_INFO LoadDll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> UNLOAD_DLL_DEBUG_INFO UnloadDll;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> OUTPUT_DEBUG_STRING_INFO DebugString;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> RIP_INFO RipInfo;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span> } u;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span> }DEBUG_EVENT;
+</span></span></code></pre></div><p>在dwDebugEventCode中的值标记了所发生的调试事件的类型。dwProcessId的值是调试事件所发生的进程的标识符。dwThreadId的值是调试事件所发生的线程的标识符。u结构包含了关于调试事件的更多信息，根据上面dwDebugEventCode的不同，它可以是表3-2中所示的结构。</p>
 <p>表
-3-2  
-事件信息与
-u
-结构成员</p>
-<pre><code>  dwDebugEventCode 
-  
-
-  u 
-  的解释 
-  
-
-   CREATE_PROCESS_DEBUG_EVENT 
-  
-
-   名为CreateProcessInfo的CREATE_PROCESS_DEBUG_INFO结构 
-  
-
-   EXIT_PROCESS_DEBUG_EVENT 
-  
-
-   名为ExitProcess的EXIT_PROCESS_DEBUG_INFO结构 
-  
-
-   CREATE_THREAD_DEBUG_EVENT 
-  
-
-   名为CreateThread的CREATE_THREAD_DEBUG_INFO结构 
-  
-
-   EXIT_THREAD_DEBUG_EVENT 
-  
-
-   名为ExitThread的EXIT_THREAD_DEBUG_EVENT 结构 
-  
-
-   LOAD_DLL_DEBUG_EVENT 
-  
-
-   名为LoadDll的LOAD_DLL_DEBUG_INFO 结构 
-  
-
-   UNLOAD_DLL_DEBUG_EVENT 
-  
-
-   名为UnloadDll的UNLOAD_DLL_DEBUG_INFO结构 
-  
-
-   EXCEPTION_DEBUG_EVENT 
-  
-
-   名为Exception的EXCEPTION_DEBUG_INFO结构 
-  
-
-   OUTPUT_DEBUG_STRING_EVENT 
-  
-
-   名为DebugString的OUTPUT_DEBUG_STRING_INFO 结构 
-  
-
-   RIP_EVENT 
-  
-
-   名为RipInfo的RIP_INFO 结构 
-</code></pre>
+3-2 事件信息与 u 结构成员</p>
+<table>
+<thead>
+<tr>
+<th>dwDebugEventCode</th>
+<th>u 的解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CREATE_PROCESS_DEBUG_EVENT</td>
+<td>名为CreateProcessInfo的CREATE_PROCESS_DEBUG_INFO结构</td>
+</tr>
+<tr>
+<td>EXIT_PROCESS_DEBUG_EVENT</td>
+<td>名为ExitProcess的EXIT_PROCESS_DEBUG_INFO结构</td>
+</tr>
+<tr>
+<td>CREATE_THREAD_DEBUG_EVENT</td>
+<td>名为CreateThread的CREATE_THREAD_DEBUG_INFO结构</td>
+</tr>
+<tr>
+<td>EXIT_THREAD_DEBUG_EVENT</td>
+<td>名为ExitThread的EXIT_THREAD_DEBUG_EVENT 结构</td>
+</tr>
+<tr>
+<td>LOAD_DLL_DEBUG_EVENT</td>
+<td>名为LoadDll的LOAD_DLL_DEBUG_INFO 结构</td>
+</tr>
+<tr>
+<td>UNLOAD_DLL_DEBUG_EVENT</td>
+<td>名为UnloadDll的UNLOAD_DLL_DEBUG_INFO结构</td>
+</tr>
+<tr>
+<td>EXCEPTION_DEBUG_EVENT</td>
+<td>名为Exception的EXCEPTION_DEBUG_INFO结构</td>
+</tr>
+<tr>
+<td>OUTPUT_DEBUG_STRING_EVENT</td>
+<td>名为DebugString的OUTPUT_DEBUG_STRING_INFO 结构</td>
+</tr>
+<tr>
+<td>RIP_EVENT</td>
+<td>名为RipInfo的RIP_INFO 结构</td>
+</tr>
+</tbody>
+</table>
 <p>那么如何访问这些数据呢？假设程序调用了WaitForDebugEvent函数并返回，那么要做的第一件事就是检查dwDebugEventCode字段中的值，根据它来判断debugger进程中发生了哪种类型的调试事件。比如说，如果dwDebugEventCode字段的值为 CREATE_PROCESS_DEBUG_EVENT，就可认为u的成员为CreateProcessInfo 并可通过u.CreateProcessInfo来访问。</p>
-<p>下面是常用的CREATE_PROCESS_DEBUG_INFO结构的简要说明。</p>
-<pre><code> CREATE_PROCESS_DEBUG_INFO 
- 结构定义： 
-</code></pre>
-<p><strong>[cpp]</strong>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#"> view plain</a>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#">copy</a></p>
-<ul>
-<li>typedef struct _CREATE_PROCESS_DEBUG_INFO {  </li>
-<li>  HANDLE hFile;                              // 进程文件的句柄，利用它可对文件进行操作  </li>
-<li>  HANDLE hProcess;                         // 进程的句柄，在进程空间中进行读写操作时要用到它  </li>
-<li>  HANDLE hThread;                          // 主线程的句柄，在读取、设置线程环境时都要用到它  </li>
-<li>  LPVOID lpBaseOfImage;                  // 进程执行的映像基地址  </li>
-<li>  DWORD dwDebugInfoFileOffset;        </li>
-<li>  DWORD nDebugInfoSize;  </li>
-<li>  LPVOID lpThreadLocalBase;  </li>
-<li>  LPTHREAD_START_ROUTINE lpStartAddress;  </li>
-<li>  LPVOID lpImageName;  </li>
-<li>  WORD fUnicode;  </li>
-<li>} CREATE_PROCESS_DEBUG_INFO, *LPCREATE_PROCESS_DEBUG_INFO;  </li>
-</ul>
-<p> </p>
-<p><strong>3.1.3  如何在调试时创建并跟踪一个进程</strong></p>
-<p>这是使用
-Win32
-调试
-API
-的第一步。可以通过以下方式创建进程。</p>
-<p><strong>1. 如何创建一个新进程以供调试</strong></p>
+<p>下面是常用的CREATE_PROCESS_DEBUG_INFO结构的简要说明。
+<code>CREATE_PROCESS_DEBUG_INFO</code> 结构定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _CREATE_PROCESS_DEBUG_INFO {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  HANDLE hFile; <span style="color:#75715e">// 进程文件的句柄，利用它可对文件进行操作
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#75715e"></span>  HANDLE hProcess; <span style="color:#75715e">// 进程的句柄，在进程空间中进行读写操作时要用到它
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#75715e"></span>  HANDLE hThread; <span style="color:#75715e">// 主线程的句柄，在读取、设置线程环境时都要用到它
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#75715e"></span>  LPVOID lpBaseOfImage; <span style="color:#75715e">// 进程执行的映像基地址
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#75715e"></span>  DWORD dwDebugInfoFileOffset;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  DWORD nDebugInfoSize;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  LPVOID lpThreadLocalBase;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  LPTHREAD_START_ROUTINE lpStartAddress;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  LPVOID lpImageName;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  WORD fUnicode;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  } CREATE_PROCESS_DEBUG_INFO, <span style="color:#f92672">*</span>LPCREATE_PROCESS_DEBUG_INFO;
+</span></span></code></pre></div><p><strong>3.1.3 如何在调试时创建并跟踪一个进程</strong></p>
+<p>这是使用 Win32 调试 API 的第一步。可以通过以下方式创建进程。</p>
+<p><strong>1. 如何创建一个新进程以供调试</strong></p>
 <p>通过CreateProcess创建新进程时，如果在dwCreationFlags标志字段中设置了DEBUG_PROCESS或DEBUG_ONLY_THIS_PROCESS标志，将创建一个用以调试的新进程。如果是以DEBUG_PROCESS标志创建新进程，调试器将会接收到目标进程及由目标进程创建的所有子进程发生的所有调试事件，一般来说这是没有必要的。建议可以指定DEBUG_ONLY_THIS_PROCESS和DEBUG_PROCESS的组合标志来禁止它，如果设置了DEBUG_ONLY_THIS_PROCESS标志，调试器将只会收到目标进程的调试事件，而对其子进程的调试事件不予理睬。当进程创建成功后，可以通过查看PROCESS_INFORMATION结构来获取被创建进程及其主线程的进程标识符和线程标识符。</p>
 <p>由于操作系统将调试对象标记为在特殊模式下运行，所以，可以使用IsDebuggerPresent函数查看进程是否在调试器下运行。</p>
-<p><strong>2. 如何将调试器捆绑到一个正在运行的进程上</strong></p>
+<p><strong>2. 如何将调试器捆绑到一个正在运行的进程上</strong></p>
 <p>利用DebugActiveProcess函数可以将调试器捆绑到一个正在运行的进程上，如果执行成功，则效果类似于利用DEBUG_ONLY_THIS_PROCESS标志创建的新进程。</p>
 <p>要注意的是，在NT内核下当试图通过DebugActiveProcess函数将调试器捆绑到一个创建时带有安全描述符的进程上时，将被拒绝。在Windows 9x中则简单得多，只有当指定了一个无效的进程标识符时调用才会失败。所以看上去NT内核的系统要更安全。</p>
 <p>将调试器捆绑到一个进程上一般是比较好的一种做法，但是有时除了利用CreateProcess函数来载入进程外没有其他的办法。那么到底该用哪种方法呢？这涉及读者将要进行的工作。比如要做一个简单的游戏修改器时，用临时捆绑调试器的方法可能比较好，如果要做一些不同寻常的工作的话，利用载入的方法可能更好，因为它获得目标进程及其线程的所有控制权，这样就可以为所欲为了。</p>
-<p><strong>3.1.4  调试循环体</strong></p>
+<p><strong>3.1.4 调试循环体</strong></p>
 <p>用调试API建立一个简单的调试程序是非常简单的，所有要做的只是创建一个用来调试的新进程，然后执行相关代码来监视所有的调试事件。笔者把监视所有的调试事件的这部分代码称为“调试循环体”，为什么呢？因为它的实现非常简单，看上去就像一个“while”循环，所需要做的只是使用WaitForDebugEvent和ContinueDebugEvent函数。就像上面说的，WaitForDebugEvent在一段时间内等待目标进程中调试事件的发生，如果在这段时间没有调试事件发生，那么函数将返回FALSE。如果在指定时间内调试事件发生了，那么函数将返回TRUE，并且它会把所发生的调试事件及其相关信息填写入一个DEBUG_EVENT结构。然后调试器会检查这些信息，并据此做出相应的反应。在对这些事件做出相应的操作后，就可以使用ContinueDebugEvent函数来恢复线程的执行，并等待下一个调试事件的发生。要注意的一点是WaitForDebugEvent只能使用在创建的或是捆绑上的进程中的某个线程上。</p>
 <p>WaitForDebugEvent – ContinueDebugEvent循环的C语言示例：</p>
-<p><strong>[cpp]</strong>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#"> view plain</a>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#">copy</a></p>
-<ul>
-<li>PROCESS_INFORMATION       pi;  </li>
-<li>STARTUP_INFO                      si;  </li>
-<li>DEBUG_EVENT                       devent;  </li>
-<li>If        (CreateProcess( 0 , &ldquo;target.exe&rdquo;    , 0 , 0 ,FALSE ,DEBUG_ONLY_THIS_PROCESS , 0 ,0 ,&amp;si , π))  </li>
-<li>{  </li>
-<li>         while(TRUE)           </li>
-<li>                   {  </li>
-<li>                   if       (WaitForDebugEvent( &amp;devent , 150))             //在150毫秒内等待调试事件  </li>
-<li>                            {  </li>
-<li>                            switch (devent.dwDebugEventCode)  </li>
-<li>{  </li>
-<li>case CREATE_PROCESS_DEBUG_EVENT:  </li>
-<li>//在此填入你的处理程序  </li>
-<li>break;            </li>
-<li>case EXIT_PROCESS_DEBUG_EVENT:  </li>
-<li>//在此填入你的处理程序  </li>
-<li>break;  </li>
-<li>case EXCEPTION_DEBUG_EVENT:                       </li>
-<li>//在此填入你的处理程序  </li>
-<li>break;  </li>
-<li>}         </li>
-<li>                            ContinueDebugEvent(devent.dwProcessId , devent.dwThreadId , DBG_CONTINUE);  </li>
-<li>                            }  </li>
-<li>                   else  </li>
-<li>                            {  </li>
-<li>                            // 其他一些操作  </li>
-<li>                            }  </li>
-<li>                   }  </li>
-<li>         }  // while循环结束  </li>
-<li>else  </li>
-<li>         {  </li>
-<li>         MessageBox(0,&ldquo;Unexpected load error&rdquo;,&ldquo;Fatal Error&rdquo; ,MB_OK);        </li>
-<li>         }  </li>
-</ul>
-<p> </p>
-<p><strong>3.1.5  如何处理调试事件</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  PROCESS_INFORMATION pi; 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  STARTUP_INFO si;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  DEBUG_EVENT devent;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">CreateProcess</span>(<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;target.exe&#34;</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,FALSE,DEBUG_ONLY_THIS_PROCESS,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#f92672">&amp;</span>si,<span style="color:#960050;background-color:#1e0010">π</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#66d9ef">while</span>(TRUE)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">WaitForDebugEvent</span>(<span style="color:#f92672">&amp;</span>devent,<span style="color:#ae81ff">150</span>))<span style="color:#75715e">//在150毫秒内等待调试事件
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#75715e"></span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  <span style="color:#66d9ef">switch</span>(devent.dwDebugEventCode)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  <span style="color:#66d9ef">case</span> CREATE_PROCESS_DEBUG_EVENT:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  <span style="color:#75715e">//在此填入你的处理程序
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  <span style="color:#66d9ef">case</span> EXIT_PROCESS_DEBUG_EVENT:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  <span style="color:#75715e">//在此填入你的处理程序
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>  <span style="color:#66d9ef">case</span> EXCEPTION_DEBUG_EVENT:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>  <span style="color:#75715e">//在此填入你的处理程序
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>  <span style="color:#a6e22e">ContinueDebugEvent</span>(devent.dwProcessId,devent.dwThreadId,DBG_CONTINUE);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>  <span style="color:#75715e">//其他一些操作
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>  }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>  }<span style="color:#75715e">//while循环结束
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>  <span style="color:#a6e22e">MessageBox</span>(<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;Unexpected load error&#34;</span>,<span style="color:#e6db74">&#34;Fatal Error&#34;</span> ,MB_OK);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>  }
+</span></span></code></pre></div><p><strong>3.1.5 如何处理调试事件</strong></p>
 <p>在上一节的示例中已经看到调试器如何捕获调试事件，并且利用C/C++中定义的case/switch语法做出了相应的动作。当每一个调试事件发生时，根据事件的不同类型，都会有一段不同的处理程序来进行处理。关于调试事件的更多信息可以根据DEBUG_EVENT中U结构的相应成员来取得。作为示例，再来看一下EXCEPTION_DEBUG_EVENT结构。选择它是因为遇到一个异常断点并追踪它的来龙去脉是经常要做的事情。其他的事件结构请参考API说明。</p>
 <p>EXCEPTION_DEBUG_EVENT结构：</p>
-<p><strong>[cpp]</strong>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#"> view plain</a>
-
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#">copy</a></p>
-<ul>
-<li>typedef struct _EXCEPTION_DEBUG_INFO  </li>
-<li>         {  </li>
-<li>                   EXCEPTION_RECORD ExceptionRecord;  </li>
-<li>                   DWORD dwFirstChance;  </li>
-<li>         } EXCEPTION_DEBUG_INFO;  </li>
-<li>其中EXCEPTION_RECORD结构包含异常的很多信息，内容如下：  </li>
-<li>typedef struct _EXCEPTION_RECORD  </li>
-<li>                   {  </li>
-<li>                   DWORD ExceptionCode;  </li>
-<li>                   DWORD ExceptionFlags;  </li>
-<li>                   struct _EXCEPTION_RECORD *ExceptionRecord;  </li>
-<li>                   PVOID ExceptionAddress;  </li>
-<li>                   DWORD NumberParameters;  </li>
-<li>                   DWORD ExceptionInformation[EXCEPTION_MAXIMUM_PARAMETERS];  </li>
-<li>                   } EXCEPTION_RECORD;  </li>
-<li>   </li>
-</ul>
-<p> </p>
-<pre><code>           
- 结构中字段的定义 
- 
-
- ExceptionCode 
-
-
- ExceptionFlags 
-
-
- ExceptionRecord 
-
-
- ExceptionAddress 
-
-
- NumberParameters 
-
-
- ExceptionInformation 
- 
-
- DWORD 
- ：用来描述异常类型的代码。 
-
-
- DWORD 
- ：零表示可继续异常。反之，则值为 
- EXCEPTION_NONCONTINUABLE 
- 。 
-
-
- 指向 
- _EXCEPTION_RECORD 
- 结构的指针。 
-
-
- PVOID 
- ：异常发生的地址。 
-
-
- DWORD 
- ： 
- ExceptionInformation 
- 队列中定义的 
- 32 
- 位参数的数目。 
-
-
- 额外的 
- 32 
- 位消息队列，主要在嵌套异常时使用，对多数异常情况，它没有定义。 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>  <span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _EXCEPTION_DEBUG_INFO
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  EXCEPTION_RECORD ExceptionRecord;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  DWORD dwFirstChance;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>  }EXCEPTION_DEBUG_INFO;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>  <span style="color:#960050;background-color:#1e0010">其中</span>EXCEPTION_RECORD结构包含异常的很多信息<span style="color:#960050;background-color:#1e0010">，内容如下：</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  <span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _EXCEPTION_RECORD
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  DWORD ExceptionCode;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>  DWORD ExceptionFlags;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  <span style="color:#66d9ef">struct</span> _EXCEPTION_RECORD <span style="color:#f92672">*</span>ExceptionRecord;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>  PVOID ExceptionAddress;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  DWORD NumberParameters;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  DWORD ExceptionInformation[EXCEPTION_MAXIMUM_PARAMETERS];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  } EXCEPTION_RECORD;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  
+</span></span></code></pre></div><pre><code> 结构中字段的定义 
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExceptionCode</td>
+<td>DWORD ：用来描述异常类型的代码。</td>
+</tr>
+<tr>
+<td>ExceptionFlags</td>
+<td>DWORD ：零表示可继续异常。反之，则值为 EXCEPTION_NONCONTINUABLE</td>
+</tr>
+<tr>
+<td>ExceptionRecord</td>
+<td>指向 _EXCEPTION_RECORD 结构的指针。</td>
+</tr>
+<tr>
+<td>ExceptionAddress</td>
+<td>PVOID ：异常发生的地址。</td>
+</tr>
+<tr>
+<td>NumberParameters</td>
+<td>DWORD ： ExceptionInformation 队列中定义的 32 位参数的数目。</td>
+</tr>
+<tr>
+<td>ExceptionInformation</td>
+<td>额外的 32 位消息队列，主要在嵌套异常时使用，对多数异常情况，它没有定义。</td>
+</tr>
+</tbody>
+</table>
 <p>从这些结构中可找到需要的一切，比如可以发现：发生异常的类型、是否可以继续执行、异常发生的地址等信息。</p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2012-01-13-Win32%e8%b0%83%e8%af%95API%e5%8e%9f%e7%90%86/image014.jpg">
-            <img class="mx-auto" alt="" src="../assets/2012-01-13-Win32%e8%b0%83%e8%af%95API%e5%8e%9f%e7%90%86/image014.jpg" />
-        </a>
-    </p>
 <p>注意：
 在发生一个
 EXCEPTION_NONCONTINUABLE
@@ -638,99 +466,79 @@ EXCEPTION_NONCONTINUABLE_EXCEPTION
 异常。</p>
 <p>最常见的异常情况是EXCEPTION_BREAKPOINT和EXCEPTION_SINGLE_ STEP。当执行时遇到一个INT 3断点时会产生EXCEPTION_BREAKPOINT异常，如果设置了单步执行标志，那么执行完一条指令后会发生一个EXCEPTION_SINGLE_ STEP异常。关于异常还有一点要知道，当以调试的方式创建一个进程的时候，在进入进程之前，系统会先执行一次DebugBreak函数，这样会产生一个EXCEPTION_BREAKPOINT异常，如果一切正常，那么这应该是第一个遇到的也是必定会遇到的异常。</p>
 <p>可以调用ContinueDebugEvent函数来继续线程的运行，ContinueDebugEvent函数的dwContinueStatus参数有两个取值，分别是DBG_EXCEPTION_NOT_HANDLED和DBG_CONTINUE。对于大多数调试事件，这两个值没有什么区别，都是恢复线程。惟一的例外是EXCEPTION_DEBUG_EVENT，如果线程报告发生了一个异常调试事件，就意味着在被调试的线程中发生了一个异常。如果指定了DBG_CONTINUE，线程将忽略它自己的异常处理部分并继续执行。在这种情况下，程序必须在以DBG_CONTINUE恢复线程之前检查并处理异常，否则异常将不断地发生，直至程序被系统终止。如果指定了 DBG_EXCEPTION_NOT_HANDLED值，就是告诉Windows：程序并不处理异常。Windows将使用被调试线程的默认异常处理函数来处理异常。这一般发生在什么时候呢？在进程被载入后发生的第一个EXCEPTION_DEBUG_EVENT，我们必须以DBG_CONTINUE为标志继续，在程序中如果调用了DebugBreak函数，或者插入INT3设置断点成功，并将内存恢复后，都应该使用DBG_CONTINUE为标志继续。如果在程序中发生了不确定的异常，特别是调试带壳程序的时候，多半是由于外壳的SEH引起的，此时应该以DBG_EXCEPTION_NOT_HANDLED为标志继续，以便让被调试程序本身的异常处理机制来处理。</p>
-<p>在发生其他调试事件时，可以利用类似的结构取得线程、进程所调用的DLL或其他一些事物的信息集合。
- </p>
-<p><strong>3.1.6  线程环境详解</strong></p>
+<p>在发生其他调试事件时，可以利用类似的结构取得线程、进程所调用的DLL或其他一些事物的信息集合。</p>
+<p><strong>3.1.6 线程环境详解</strong></p>
 <p>在WIN32系统中，进程的概念实际包含了它的私有地址空间、代码、数据和一个主线程。每个进程都有一个最初的主线程，通过这个主线程可以在以后创建在同一地址空间中运行的其他线程。和一般说法不同的是进程并不执行代码，真正执行代码的是线程。每个线程共同分享相同的地址空间和相同的系统资源，但是它们各自又有不同的执行环境，这到底如何理解呢？Windows是一个多任务多线程的操作系统，在系统的同一时间里看似运行着多个线程，但事实并非如此。Windows分配给每个线程一小段时间片，这段时间结束后，Windows将冻结当前线程并切换到下一个具有最高优先级的线程。在切换之前，Windows将把当前线程执行状态保存到一个名为CONTEXT的结构中。这个环境包含下面几部分：</p>
-<p>●
-       线程执行所用寄存器</p>
-<p>●
-       系统堆栈和用户堆栈</p>
-<p>●
-       线程所用的描述符表等其他状态信息</p>
+<ul>
+<li>线程执行所用寄存器</li>
+<li>系统堆栈和用户堆栈</li>
+<li>线程所用的描述符表等其他状态信息</li>
+</ul>
 <p>这样当该线程再次恢复运行时，Windows就可以恢复最近一次线程运行的“环境”，好像中间什么都没有发生一样。</p>
 <p>CONTEXT结构包含了特定处理器的寄存器数据，系统使用CONTEXT结构执行各种内部操作。由于此结构是依赖于硬件的，所以在X86，Alpha等不同的系统上，此结构是不同的。下面是X86系统中此结构的构成情况：</p>
-<p><strong>[cpp]</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span> <span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _CONTEXT {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> DWORD ContextFlags;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> DWORD Dr0;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> DWORD Dr1;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> DWORD Dr2;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> DWORD Dr3;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> DWORD Dr6;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> DWORD Dr7;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> FLOATING_SAVE_AREA FloatSave;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> DWORD SegGs;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> DWORD SegFs;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> DWORD SegEs;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> DWORD SegDs;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> DWORD Edi;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span> DWORD Esi;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span> DWORD Ebx;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span> DWORD Edx;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span> DWORD Ecx;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span> DWORD Eax;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span> DWORD Ebp;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span> DWORD Eip;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span> DWORD SegCs;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span> DWORD EFlags;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span> DWORD Esp;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span> DWORD SegSs;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span> } CONTEXT;
+</span></span></code></pre></div><p>其中的FloatSave是指向FLOATING_SAVE_AREA结构的指针，FLOATING_ SAVE_AREA结构定义如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> _FLOATING_SAVE_AREA {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>DWORD ControlWord;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>DWORD StatusWord;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>DWORD TagWord;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>DWORD ErrorOffset;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>DWORD ErrorSelector;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>DWORD DataOffset;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>DWORD DataSelector;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>BYTE RegisterArea[SIZE_OF_80387_REGISTERS];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>DWORD Cr0NpxState;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>}FLOATING_SAVE_AREA;
+</span></span></code></pre></div><p>另外，其中的ContextFlags字段用于控制GetThreadContext和SetThreadContext处理那些环境信息。它的定义如下：</p>
+<pre><code>  CONTEXT_CONTROL ContextFlags 
+  包含此标志时处理 Ebp,Eip,Cs, Flages,Esp,Ss 
 
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#"> view plain</a>
 
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#">copy</a></p>
-<ul>
-<li>typedef struct _CONTEXT {  </li>
-<li>    DWORD ContextFlags;        </li>
-<li>    DWORD   Dr0;  </li>
-<li>    DWORD   Dr1;  </li>
-<li>    DWORD   Dr2;  </li>
-<li>    DWORD   Dr3;  </li>
-<li>    DWORD   Dr6;  </li>
-<li>    DWORD   Dr7;  </li>
-<li>    FLOATING_SAVE_AREA FloatSave;  </li>
-<li>    DWORD   SegGs;  </li>
-<li>    DWORD   SegFs;  </li>
-<li>    DWORD   SegEs;  </li>
-<li>    DWORD   SegDs;  </li>
-<li>    DWORD   Edi;  </li>
-<li>    DWORD   Esi;  </li>
-<li>    DWORD   Ebx;  </li>
-<li>    DWORD   Edx;  </li>
-<li>    DWORD   Ecx;  </li>
-<li>    DWORD   Eax;  </li>
-<li>    DWORD   Ebp;  </li>
-<li>    DWORD   Eip;  </li>
-<li>    DWORD   SegCs;               </li>
-<li>    DWORD   EFlags;              </li>
-<li>    DWORD   Esp;  </li>
-<li>    DWORD   SegSs;  </li>
-<li>} CONTEXT;  </li>
-</ul>
-<p> </p>
-<pre><code>     
-</code></pre>
-<p>其中的FloatSave是指向FLOATING_SAVE_AREA结构的指针，FLOATING_ SAVE_AREA结构定义如下：</p>
-<p><strong>[cpp]</strong>
 
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#"> view plain</a>
+  CONTEXT_INTEGER ContextFlags 
+  包含此标志时处理 Edi,Esi,Ebx,Edx,Ecx,Eax 
 
-  <a href="http://blog.csdn.net/b2b160/article/details/4242894#">copy</a></p>
-<ul>
-<li>typedef struct _FLOATING_SAVE_AREA {  </li>
-<li>    DWORD   ControlWord;  </li>
-<li>    DWORD   StatusWord;  </li>
-<li>    DWORD   TagWord;  </li>
-<li>    DWORD   ErrorOffset;  </li>
-<li>    DWORD   ErrorSelector;  </li>
-<li>    DWORD   DataOffset;  </li>
-<li>    DWORD   DataSelector;  </li>
-<li>    BYTE     RegisterArea[SIZE_OF_80387_REGISTERS];  </li>
-<li>    DWORD   Cr0NpxState;  </li>
-<li>} FLOATING_SAVE_AREA;  </li>
-</ul>
-<p> </p>
-<p>另外，其中的ContextFlags字段用于控制GetThreadContext和SetThreadContext处理那些环境信息。它的定义如下：</p>
-<pre><code>  CONTEXT_CONTROL                      ContextFlags 
-  包含此标志时处理 
-  Ebp,Eip,Cs, Flages,Esp,Ss 
- 
 
-  CONTEXT_INTEGER                        ContextFlags 
-  包含此标志时处理 
-   Edi,Esi,Ebx,Edx,Ecx,Eax 
- 
 
-  CONTEXT_SEGMENTS                    ContextFlags 
-  包含此标志时处理 
-   GS,FS,ES,DS 
- 
+  CONTEXT_SEGMENTS ContextFlags 
+  包含此标志时处理 GS,FS,ES,DS 
 
-  CONTEXT_FLOATING_POINT          ContextFlags 
-  包含此标志时处理 
-   FLOATING_SAVE_AREA FloatSave 
- 
 
-  CONTEXT_DEBUG_REGISTERS       ContextFlags 
-  包含此标志时处理 
-   Dr0,Dr1,Dr2,Dr3,Dr6,Dr7 
- 
+
+  CONTEXT_FLOATING_POINT ContextFlags 
+  包含此标志时处理 FLOATING_SAVE_AREA FloatSave 
+
+
+
+  CONTEXT_DEBUG_REGISTERS ContextFlags 
+  包含此标志时处理 Dr0,Dr1,Dr2,Dr3,Dr6,Dr7 
+
+
 
   CONTEXT_FULL = (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_SEGMENTS) 
 </code></pre>
@@ -739,17 +547,20 @@ EXCEPTION_NONCONTINUABLE_EXCEPTION
 <p>GetThreadContext用来获取指定线程的执行环境，语法如下：</p>
 <pre><code>  语法： 
   **BOOL GetThreadContext** 
-  (**HANDLE*** hThread*, **LPCONTEXT*** lpContext *) 
- 
+  (**HANDLE** *hThread*, **LPCONTEXT** *lpContext *) 
+
+
 
   参数： 
- 
 
-  hThread                    HANDLE 
+
+
+  hThread HANDLE 
   ：欲获取执行环境的线程的句柄 
- 
 
-  lpContext                 LPCONTEXT 
+
+
+  lpContext LPCONTEXT 
   ：指向 
   CONTEXT 
   结构的指针 
@@ -757,17 +568,20 @@ EXCEPTION_NONCONTINUABLE_EXCEPTION
 <p>要注意的是，在使用GetThreadContext函数之前，必须先将ContextFlags初始化为适当的标志，指明想要收回哪些寄存器，并将该结构的地址传递给GetThreadContext函数。例如设置的标志是CONTEXT_CONTROL，只返回Ebp，Eip，Cs，Flages，Esp，Ss这些值。</p>
 <p>SetThreadContext用来设置指定线程的执行环境，语法如下：</p>
 <pre><code>  语法： 
-  BOOL SetThreadContext(HANDLE hThread,      LPCONTEXT lpContext ) 
- 
+  BOOL SetThreadContext(HANDLE hThread, LPCONTEXT lpContext ) 
+
+
 
   参数： 
- 
 
-  hThread                    HANDLE 
+
+
+  hThread HANDLE 
   ：欲设置执行环境的线程的句柄 
- 
 
-  lpContext                 LPCONTEXT 
+
+
+  lpContext LPCONTEXT 
   ：指向 
   CONTEXT 
   结构的指针 
@@ -781,123 +595,27 @@ SuspendThread
 ResumeThread
 函数来恢复它。但要注意的是：
 ResumeThread
-函数并不能保证线程真地继续执行，为什么呢？每一个线程都有一个线程暂停计数器，当线程正在运行时计数器为
-0
-，当其他线程对此线程使用
-SuspendThread
-函数时计数器会增加
-1
-，调用
-ResumeThread
-会使计数器减小
-1
-，所以当调用
-SuspendThread
-函数后计数器变为
-1
-。但是
-Windows
-是一个多线程操作系统，所以很有可能某个其他的线程也对此线程调用了
-SuspendThread
-，这时计数器就会变为
-2
-，这时再调用
-ResumeThread
-只会使计数器变回为
-1
-，线程将继续暂停，直到计数器变为
-0
-。那么，如何确定线程是否真地被继续执行了呢？很简单，检查函数返回值就可以了。如果返回值为
-0
-，则表示线程已经恢复执行了，如果不为
-0
-，则表示线程继续被暂停，如果为
-0xffffffff
-，则说明函数调用失败了。</p>
+函数并不能保证线程真地继续执行，为什么呢？每一个线程都有一个线程暂停计数器，当线程正在运行时计数器为 0 ，当其他线程对此线程使用 SuspendThread 函数时计数器会增加 1 ，调用 ResumeThread 会使计数器减小 1 ，所以当调用 SuspendThread  函数后计数器变为 1 。但是 Windows 是一个多线程操作系统，所以很有可能某个其他的线程也对此线程调用了 SuspendThread ，这时计数器就会变为 2 ,这时再调用 ResumeThread 只会使计数器变回为 1 ，线程将继续暂停，直到计数器变为 0 。那么，如何确定线程是否真地被继续执行了呢？很简单，检查函数返回值就可以了。如果返回值为 0 ，则表示线程已经恢复执行了，如果不为 0 ，则表示线程继续被暂停，如果为 0xffffffff   ，则说明函数调用失败了。</p>
 <p>同样，在调用SetThreadContext函数之前，必须暂停，否则结果将无法预测。</p>
-<p><strong>3.1.7  如何在另一个进程中注入代码</strong></p>
+<p><strong>3.1.7 如何在另一个进程中注入代码</strong></p>
 <p>现在让我们更深入一些来讨论，有时候需要将一段代码注入到某个进程的地址空间中，实际上这并不非常复杂，但在真正开始做之前先得解决一个小小的麻烦：首先得需要一小段地址空间来存放补丁代码。这似乎很简单，有的读者会说，利用VirtualAllocEx不就可以了吗？遗憾的是，VirtualAllocEx只在Windows NT内核下被支持，在Windows 9X内核下不被支持，那怎么办呢？如果注入的代码很短小，那么可以利用原进程的各个区块之间的间隙，甚至可以把代码注入到原进程文件头中的DOS stub部分，当然这样的话执行之前先得更改目标进程文件头的读写属性。如果要注入的部分比较大呢？只能先将目标进程中的某个代码页保存，然后注入新的代码，执行完后再将原始的代码写回。具体的步骤如下：</p>
-<p>（
-1
-）利用
-CreateProcess
-函数创建一个供调试的进程。</p>
-<p>（
-2
-）建立
-WaitForDebugEvent
-和
-ContinueDebugEvent
-构成的调试循环体。</p>
-<p>（
-3
-）利用
-SuspendThread
-函数挂起目标线程。</p>
-<p>（
-4
-）利用
-VirtualProtectEx
-函数修改目标页的读写权限。</p>
-<p>（
-5
-）利用
-ReadProcessMemory
-函数读取目标页。</p>
-<p>（
-6
-）利用
-GetThreadContext
-函数保存线程环境。</p>
-<p>（
-7
-）利用
-WriteProcessMemory
-函数写入新代码页。</p>
-<p>（
-8
-）确认在新指令中的最后一个代码是
-INT 3
-，我们需要利用它在指令执行完成后获得系统控制权。
-INT 3
-产生的异常将会被我们的程序捕获，要注意的是必须确认这是一个
-breakpoint
-异常，并且是在我们放置
-INT 3
-的位置。</p>
-<p>（
-9
-）保存一份
-CONTEXT
-结构的临时拷贝。</p>
-<p>（
-10
-）在这份临时拷贝中设置新的
-EIP
-值。</p>
-<p>（
-11
-）恢复原线程的执行，它将执行我们的代码，直到
-INT 3
-被执行，当它被执行时会被我们的程序捕获，目标线程再次被挂起。</p>
-<p>（
-12
-）利用
-WriteProcessMemory
-函数恢复原始代码页。</p>
-<p>（
-13
-）恢复原始代码页的读写属性。</p>
-<p>（
-14
-）利用
-SetThreadContext
-恢复线程原始的环境。</p>
-<p>（
-15
-）恢复原线程执行。</p>
-<p>如果需要让注入的代码和进程原始的代码同时存在于进程空间中，而且准备注入的代码比较大，则必须为目标进程分配一些地址空间。调用VirtuallAlloc的代码是非常短小的，可以先在目标进程中注入调用VirtuallAlloc的代码，利用它可以获取一些额外的地址空间，一般来说几个KB就足够了，不要试图去申请比如10MB的空间，那样很容易导致执行失败。当然还有另一个办法，可以在自己的进程中调用VirtualAllocEx，这也可以为目标进程分配一定的地址空间，可惜的是它只能运行在Windows NT内核下。</p>
-<p>如果为了某些工作，需要将某个区块的相对地址转换为线性虚拟地址，就可以使用函数GetThreadSelectorEntry。</p>
+<p>（ 1 ）利用 CreateProcess 函数创建一个供调试的进程。
+（ 2 ）建立 WaitForDebugEvent 和 ContinueDebugEvent 构成的调试循环体。
+（ 3 ）利用 SuspendThread 函数挂起目标线程。
+（ 4 ）利用 VirtualProtectEx 函数修改目标页的读写权限。
+（ 5 ）利用 ReadProcessMemory 函数读取目标页。
+（ 6 ）利用 GetThreadContext 函数保存线程环境。
+（ 7 ）利用 WriteProcessMemory 函数写入新代码页。
+（ 8 ）确认在新指令中的最后一个代码是 INT 3 ，我们需要利用它在指令执行完成后获得系统控制权。 INT 3 产生的异常将会被我们的程序捕获，要注意的是必须确认这是一个 breakpoint 异常，并且是在我们放置 INT 3 的位置。
+（ 9 ）保存一份 CONTEXT 结构的临时拷贝。
+（ 10 ）在这份临时拷贝中设置新的 EIP 值。
+（ 11 ）恢复原线程的执行，它将执行我们的代码，直到 INT 3 被执行，当它被执行时会被我们的程序捕获，目标线程再次被挂起。
+（ 12 ）利用 WriteProcessMemory 函数恢复原始代码页。
+（ 13 ）恢复原始代码页的读写属性。
+（ 14 ）利用 SetThreadContext 恢复线程原始的环境。
+（ 15 ）恢复原线程执行。</p>
+<p>如果需要让注入的代码和进程原始的代码同时存在于进程空间中，而且准备注入的代码比较大，则必须为目标进程分配一些地址空间。调用VirtuallAlloc的代码是非常短小的，可以先在目标进程中注入调用VirtuallAlloc的代码，利用它可以获取一些额外的地址空间，一般来说几个KB就足够了，不要试图去申请比如10MB的空间，那样很容易导致执行失败。当然还有另一个办法，可以在自己的进程中调用VirtualAllocEx，这也可以为目标进程分配一定的地址空间，可惜的是它只能运行在Windows NT内核下。
+如果为了某些工作，需要将某个区块的相对地址转换为线性虚拟地址，就可以使用函数GetThreadSelectorEntry。</p>
 <p>最后提醒一下，向其他线程注入代码时，千万要注意堆栈的平衡问题，如果不注意，可能会产生非常严重的错误。</p>
 
         </div>
@@ -1014,7 +732,7 @@ SetThreadContext
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

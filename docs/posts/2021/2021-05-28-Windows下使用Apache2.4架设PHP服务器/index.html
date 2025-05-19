@@ -215,8 +215,8 @@
 <div class="post-meta meta-category">
   <span>&nbsp;|&nbsp;</span><a href="/categories/Windows/" class="category-link p-category" target="_blank">Windows</a>
 </div>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 963 字</span>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 2&nbsp;分钟</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 1529 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 4&nbsp;分钟</span>
 
         <div class="post-meta">
             <span id="busuanzi_container_page_pv">&nbsp;|
@@ -314,7 +314,7 @@ VC14是VS2015编译的、VC15是VS2017编译的、VS16是VS2019编译的，目�
 再将PHP压缩包解压出来，放到Apache24目录同级的目录，笔者的为D:\httpd-2.4.48-Win64\php</p>
 <h3 id="2配置httpd">2.配置httpd</h3>
 <p>httpd的配置在Apache24\conf\httpd.conf中。
-SRVROOT“D:/httpd-2.4.48-Win64/Apache24”配置服务的根目录Listen81根据自己系统情况配置监听端口，笔者的80端口已经被使用，所以配置为81ServerNamelocalhost:81这里的端口同上DocumentRoot“c:\test”默认配置为“<span class="math inline">\({SRVROOT}/htdocs”，如果想改为其它地方，比如“c:\test”则直接填写路径。如果修改了DocumentRoot，则需要把下面一行<Directory “\)</span>{SRVROOT}/htdocs”&gt;中的配置也一同修改了</p>
+SRVROOT“D:/httpd-2.4.48-Win64/Apache24”配置服务的根目录Listen81根据自己系统情况配置监听端口，笔者的80端口已经被使用，所以配置为81ServerNamelocalhost:81这里的端口同上DocumentRoot“c:\test”默认配置为“${SRVROOT}/htdocs”，如果想改为其它地方，比如“c:\test”则直接填写路径。如果修改了DocumentRoot，则需要把下面一行&lt;Directory “${SRVROOT}/htdocs”&gt;中的配置也一同修改了</p>
 <p>然后在最后添加上对PHP的支持：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">#php8 support</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>LoadModule php_module <span style="color:#e6db74">&#34;D:/httpd-2.4.48-Win64/php/php8apache2_4.dll&#34;</span>
@@ -443,7 +443,7 @@ extension_dir“…/php/ext”指定扩展所在目录，网上资料多为绝�
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

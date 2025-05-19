@@ -121,12 +121,18 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>我们看一下VisualGDB自动生成的Makefile编译规则部分：
 </span></span></code></pre></div><p>#VisualGDB: FileSpecificTemplates		#&lt;&mdash; VisualGDB will use the following lines to define rules for source files in subdirectories
-<span class="math inline">\((BINARYDIR)/%.o : %.cpp \)</span>(all_make_files) |<span class="math inline">\((BINARYDIR)\)</span>(CXX) <span class="math inline">\((CXXFLAGS) -c \)</span>&lt; -o <span class="math inline">\(@ -MD -MF \)</span>(@:.o=.dep)</p>
-<p><span class="math inline">\((BINARYDIR)/%.o : %.c \)</span>(all_make_files) |<span class="math inline">\((BINARYDIR)\)</span>(CC) <span class="math inline">\((CFLAGS) -c \)</span>&lt; -o <span class="math inline">\(@ -MD -MF \)</span>(@:.o=.dep)</p>
-<p><span class="math inline">\((BINARYDIR)/%.o : %.S \)</span>(all_make_files) |<span class="math inline">\((BINARYDIR)\)</span>(CC) <span class="math inline">\((CFLAGS) \)</span>(ASFLAGS) -c <span class="math inline">\(< -o \)</span>@ -MD -MF $(@:.o=.dep)</p>
-<p><span class="math inline">\((BINARYDIR)/%.o : %.s \)</span>(all_make_files) |<span class="math inline">\((BINARYDIR)\)</span>(CC) <span class="math inline">\((CFLAGS) \)</span>(ASFLAGS) -c <span class="math inline">\(< -o \)</span>@ -MD -MF $(@:.o=.dep)</p>
-<p><span class="math inline">\((BINARYDIR)/%.o : %.cc \)</span>(all_make_files) |<span class="math inline">\((BINARYDIR)\)</span>(CC) <span class="math inline">\((CFLAGS) \)</span>(CXXFLAGS) -c <span class="math inline">\(< -o \)</span>@ -MD -MF $(@:.o=.dep)</p>
-<p><span class="math inline">\((BINARYDIR)/%.o : %.cxx \)</span>(all_make_files) |<span class="math inline">\((BINARYDIR)\)</span>(CC) <span class="math inline">\((CFLAGS) \)</span>(CXXFLAGS) -c <span class="math inline">\(< -o \)</span>@ -MD -MF $(@:.o=.dep)</p>
+$(BINARYDIR)/%.o : %.cpp $(all_make_files) |$(BINARYDIR)
+$(CXX) $(CXXFLAGS) -c $&lt; -o $@ -MD -MF $(@:.o=.dep)</p>
+<p>$(BINARYDIR)/%.o : %.c $(all_make_files) |$(BINARYDIR)
+$(CC) $(CFLAGS) -c $&lt; -o $@ -MD -MF $(@:.o=.dep)</p>
+<p>$(BINARYDIR)/%.o : %.S $(all_make_files) |$(BINARYDIR)
+$(CC) $(CFLAGS) $(ASFLAGS) -c $&lt; -o $@ -MD -MF $(@:.o=.dep)</p>
+<p>$(BINARYDIR)/%.o : %.s $(all_make_files) |$(BINARYDIR)
+$(CC) $(CFLAGS) $(ASFLAGS) -c $&lt; -o $@ -MD -MF $(@:.o=.dep)</p>
+<p>$(BINARYDIR)/%.o : %.cc $(all_make_files) |$(BINARYDIR)
+$(CC) $(CFLAGS) $(CXXFLAGS) -c $&lt; -o $@ -MD -MF $(@:.o=.dep)</p>
+<p>$(BINARYDIR)/%.o : %.cxx $(all_make_files) |$(BINARYDIR)
+$(CC) $(CFLAGS) $(CXXFLAGS) -c $&lt; -o $@ -MD -MF $(@:.o=.dep)</p>
 <p>#VisualGDB: GeneratedRules				#&lt;&mdash; All lines below are auto-generated```</p>
 <p>这里列出了以下几种源文件的编译规则：</p>
 <p>1.扩展名为cpp、cc、cxx的C++源文件</p>
@@ -318,7 +324,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

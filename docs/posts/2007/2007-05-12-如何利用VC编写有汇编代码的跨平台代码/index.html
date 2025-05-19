@@ -91,7 +91,7 @@
 <div class="post-meta meta-category">
   <span>&nbsp;|&nbsp;</span><a href="/categories/C/C&#43;&#43;/" class="category-link p-category" target="_blank">C/C&#43;&#43;</a>/<a href="/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/" class="category-link p-category" target="_blank">跨平台</a>/<a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-link p-category" target="_blank">编程语言</a>
 </div>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 624 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 621 字</span>
 <span class="post-meta meta-category">&nbsp;|&nbsp; 2&nbsp;分钟</span>
 
         <div class="post-meta">
@@ -104,7 +104,7 @@
 <p>1.下载一个nasm并安装到你希望的目录中,如果你下载的是nasm的源文件,请编译成可执行文件.
 2.设置nasm可执行文件路径添加到PATH环境变量中.
 3.将写好的nasm汇编程序添加到项目中.
-4.设置该汇编程序文件的自定义生成步骤:在命令行一栏中添加如nasm -fwin32 <span class="math inline">\((InputFileName) -g -o \)</span>(OutDir)/<span class="math inline">\((InputName).obj所示命令;在输出一栏中添加\)</span>(OutDir)/$(InputName).obj</p>
+4.设置该汇编程序文件的自定义生成步骤:在命令行一栏中添加如nasm -fwin32 $(InputFileName) -g -o $(OutDir)/$(InputName).obj所示命令;在输出一栏中添加$(OutDir)/$(InputName).obj</p>
 <p>如果你没有作第二个步骤,那就需要在第四步的命令行一栏的添加上nasm命令的绝对路径.</p>
 <p>OK,至此,当我们在VC中编译连接我们的源文件的时候,我们添加的外联汇编源程序也会被编译连接.</p>
 
@@ -218,7 +218,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

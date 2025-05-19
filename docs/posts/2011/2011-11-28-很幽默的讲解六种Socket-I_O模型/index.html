@@ -82,157 +82,6 @@
                 <div class="col-8" id="main">
                     <div class="res-cons">
 
-<style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 300px;
-        margin-left: -310px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 1px 0;
-        list-style:none;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 1px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-        list-style:none;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#mainsock">len
-, i : 
-Integer
-;
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-begin
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-MainSock :</a></li>
-    <li><a href="#addrsin_family"> socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-addr.sin_family :</a></li>
-    <li><a href="#addrsin_port"> AF_INET;
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-addr.sin_port :</a></li>
-    <li><a href="#addrsin_addrs_addr"> htons(
-5678
-);
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-addr.sin_addr.S_addr :</a></li>
-    <li><a href="#timeouttv_sec"><img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-begin
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-FD_ZERO( fd_read );
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-FD_SET( MainSock, fd_read );
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-timeout.tv_sec :</a></li>
-    <li><a href="#timeouttv_usec"> 
-0
-;
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-timeout.tv_usec :</a></li>
-    <li><a href="#i">for
- i:</a>
-      <ul>
-        <li><a href="#fd_readfd_count">0
- 
-to
- fd_read.fd_count</a></li>
-      </ul>
-    </li>
-    <li><a href="#heading">len
- :</a></li>
-    <li><a href="#asock"> sizeof(addr);
-<img src="../assets/2011-11-28-%E5%BE%88%E5%B9%BD%E9%BB%98%E7%9A%84%E8%AE%B2%E8%A7%A3%E5%85%AD%E7%A7%8DSocket-I_O%E6%A8%A1%E5%9E%8B/2325230.gif" alt="">
-ASock :</a></li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if (leftPos < 220) {
-                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-
-        if ($("#TableOfContents").children().length < 1) {
-            $(".post-toc").remove();
-        }
-    })
-</script>
-
 <article class="post">
         <header>
             <h1 class="post-title">很幽默的讲解六种Socket I/O模型</h1>
@@ -242,7 +91,7 @@ ASock :</a></li>
 <div class="post-meta meta-category">
   <span>&nbsp;|&nbsp;</span><a href="/categories/Windows/" class="category-link p-category" target="_blank">Windows</a>/<a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-link p-category" target="_blank">网络</a>
 </div>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 3606 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 3775 字</span>
 <span class="post-meta meta-category">&nbsp;|&nbsp; 8&nbsp;分钟</span>
 
         <div class="post-meta">
@@ -251,570 +100,263 @@ ASock :</a></li>
             </span>
         </div>
         <div class="post-content">
-            <pre><code>                本文简单介绍了当前 
-</code></pre>
-<p>Windows
-支持的各种
-Socket I/O
-模型，如果你发现其中存在什么错误请务必赐教。</p>
-<p>一：
-select
-模型</p>
-<p>二：
-WSAAsyncSelect
-模型</p>
-<p>三：
-WSAEventSelect
-模型</p>
-<p>四：
-Overlapped I/O
-事件通知模型</p>
-<p>五：
-Overlapped I/O
-完成例程模型</p>
-<p>六：
-IOCP
-模型</p>
-<p>老陈有一个在外地工作的女儿，不能经常回来，老陈和她通过信件联系。他们的信会被邮递员投递到他们的信箱里。</p>
-<p>这和
-Socket
-模型非常类似。下面我就以老陈接收信件为例讲解
-Socket I/O
-模型</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>一： 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>select 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>模型 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>老陈非常想看到女儿的信。以至于他每隔 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>10 
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>分钟就下楼检查信箱，看是否有女儿的信 
-</span></span></code></pre></div><p>在这种情况下，
-&quot;
-下楼检查信箱
-&quot;
-然后回到楼上耽误了老陈太多的时间，以至于老陈无法做其他工作。</p>
-<p>select
-模型和老陈的这种情况非常相似：周而复始地去检查
-&hellip;&hellip;
-如果有数据
-&hellip;&hellip;
-接收
-/
-发送
-&hellip;&hellip;.</p>
-<p>使用线程来
-select
-应该是通用的做法：</p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>procedure TListenThread.Execute;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-var
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-addr : TSockAddrIn;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-fd_read : TFDSet;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-timeout : TTimeVal;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-ASock,
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-MainSock : TSocket;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<h1 id="mainsock">len
-, i : 
-Integer
-;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-begin
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-MainSock :</h1>
-<h1 id="addrsin_family"> socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-addr.sin_family :</h1>
-<h1 id="addrsin_port"> AF_INET;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-addr.sin_port :</h1>
-<h1 id="addrsin_addrs_addr"> htons(
-5678
-);
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-addr.sin_addr.S_addr :</h1>
-<p> htonl(INADDR_ANY);
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-bind( MainSock, @addr, sizeof(addr) );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-listen( MainSock, 
-5
- );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>while
- (
-not
- Terminated) 
-do</p>
-<h1 id="timeouttv_sec">
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-begin
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-FD_ZERO( fd_read );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-FD_SET( MainSock, fd_read );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-timeout.tv_sec :</h1>
-<h1 id="timeouttv_usec"> 
-0
-;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-timeout.tv_usec :</h1>
-<p> 
-500
-;
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>if
- 
-select
-( 
-0
-, @fd_read, nil, nil, @timeout ) </p>
-<blockquote>
-</blockquote>
-<p> 
-0
- 
-then
- 
-//
-至少有1个等待Accept的connection
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-begin
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>if
- FD_ISSET( MainSock, fd_read ) 
-then</p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-begin
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<h1 id="i">for
- i:</h1>
-<h2 id="fd_readfd_count">0
- 
-to
- fd_read.fd_count</h2>
-<p>1
- 
-do
- 
-//
-注意，fd_count 
-&lt;=
- 
-64
-，也就是说select只能同时管理最多64个连接
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-begin
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<h1 id="heading">len
- :</h1>
-<h1 id="asock"> sizeof(addr);
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-ASock :</h1>
-<p> accept( MainSock, addr, 
-len
- );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>if
- ASock 
-&lt;&gt;
- INVALID_SOCKET 
-then</p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-&hellip;.
-//
-为ASock创建一个新的线程，在新的线程中再不停地select
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>end
-; 
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>end
-; 
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>end
-; 
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>end
-; 
-//
-while
- (
-not
- self.Terminated)
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-shutdown( MainSock, SD_BOTH );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    
-closesocket( MainSock );
-
-        <a data-fancybox="gallery" href="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif">
-            <img class="mx-auto" alt="" src="../assets/2011-11-28-%e5%be%88%e5%b9%bd%e9%bb%98%e7%9a%84%e8%ae%b2%e8%a7%a3%e5%85%ad%e7%a7%8dSocket-I_O%e6%a8%a1%e5%9e%8b/2325230.gif" />
-        </a>
-    </p>
-<p>end
-;</p>
-<p>二：WSAAsyncSelect模型</p>
+            <p>本文简单介绍了当前 Windows 支持的各种 Socket I/O 模型，如果你发现其中存在什么错误请务必赐教。</p>
+<p>一： select 模型
+二： WSAAsyncSelect 模型
+三： WSAEventSelect 模型
+四： Overlapped I/O 事件通知模型
+五： Overlapped I/O 完成例程模型
+六： IOCP 模型</p>
+<p>老陈有一个在外地工作的女儿，不能经常回来，老陈和她通过信件联系。他们的信会被邮递员投递到他们的信箱里。
+这和 Socket 模型非常类似。下面我就以老陈接收信件为例讲解 Socket I/O 模型 ~~~</p>
+<p>一： select 模型</p>
+<p>老陈非常想看到女儿的信。以至于他每隔 10 分钟就下楼检查信箱，看是否有女儿的信 ~~~~~
+在这种情况下， &quot; 下楼检查信箱 &quot; 然后回到楼上耽误了老陈太多的时间，以至于老陈无法做其他工作。
+select 模型和老陈的这种情况非常相似：周而复始地去检查 &hellip;&hellip; 如果有数据 &hellip;&hellip; 接收 / 发送 &hellip;&hellip;.</p>
+<p>使用线程来 select 应该是通用的做法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>procedure TListenThread<span style="color:#f92672">.</span>Execute;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>addr : TSockAddrIn;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>fd_read : TFDSet;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>timeout : TTimeVal;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>ASock,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>MainSock : TSocket;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> len , i :  Integer ;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>MainSock : <span style="color:#f92672">=</span>  socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>addr<span style="color:#f92672">.</span>sin_family : <span style="color:#f92672">=</span>  AF_INET;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>addr<span style="color:#f92672">.</span>sin_port : <span style="color:#f92672">=</span>  htons( <span style="color:#ae81ff">5678</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>addr<span style="color:#f92672">.</span>sin_addr<span style="color:#f92672">.</span>S_addr : <span style="color:#f92672">=</span>  htonl(INADDR_ANY);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>bind( MainSock, <span style="color:#960050;background-color:#1e0010">@</span>addr, sizeof(addr) );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>listen( MainSock,  <span style="color:#ae81ff">5</span>  );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span> <span style="color:#66d9ef">while</span>  ( <span style="color:#f92672">not</span>  Terminated)  <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>FD_ZERO( fd_read );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>FD_SET( MainSock, fd_read );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>timeout<span style="color:#f92672">.</span>tv_sec : <span style="color:#f92672">=</span>   <span style="color:#ae81ff">0</span> ;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>timeout<span style="color:#f92672">.</span>tv_usec : <span style="color:#f92672">=</span>   <span style="color:#ae81ff">500</span> ;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span> <span style="color:#66d9ef">if</span>   select (  <span style="color:#ae81ff">0</span> , <span style="color:#960050;background-color:#1e0010">@</span>fd_read, nil, nil, <span style="color:#960050;background-color:#1e0010">@</span>timeout )  <span style="color:#f92672">&gt;</span>   <span style="color:#ae81ff">0</span>   then   <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">至少有</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">个等待</span>Accept的connection
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span> <span style="color:#66d9ef">if</span>  FD_ISSET( MainSock, fd_read )  then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span> <span style="color:#66d9ef">for</span>  i: <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>   to  fd_read<span style="color:#f92672">.</span>fd_count <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>   <span style="color:#66d9ef">do</span>   <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">注意，</span>fd_count  <span style="color:#f92672">&lt;=</span>   <span style="color:#ae81ff">64</span> <span style="color:#960050;background-color:#1e0010">，也就是说</span>select只能同时管理最多64个连接
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span> len  : <span style="color:#f92672">=</span>  sizeof(addr);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>ASock : <span style="color:#f92672">=</span>  accept( MainSock, addr,  len  );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span> <span style="color:#66d9ef">if</span>  ASock  <span style="color:#f92672">&lt;&gt;</span>  INVALID_SOCKET  then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span><span style="color:#f92672">....</span> <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">为</span>ASock创建一个新的线程<span style="color:#960050;background-color:#1e0010">，在新的线程中再不停地</span>select
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span> end ; 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span> end ; 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span> end ; 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span> end ;  <span style="color:#f92672">//</span> <span style="color:#66d9ef">while</span>  ( <span style="color:#f92672">not</span>  self<span style="color:#f92672">.</span>Terminated)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>shutdown( MainSock, SD_BOTH );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>closesocket( MainSock );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span> end ;
+</span></span></code></pre></div><p>二：WSAAsyncSelect模型</p>
 <p>后来，老陈使用了微软公司的新式信箱。这种信箱非常先进，一旦信箱里有新的信件，盖茨就会给老陈打电话：喂，大爷，你有新的信件了！从此，老陈再也不必频繁上下楼检查信箱了，牙也不疼了，你瞅准了，蓝天 &hellip;&hellip;不是，微软~~~~~~~~
 微软提供的WSAAsyncSelect模型就是这个意思。</p>
 <p>WSAAsyncSelect模型是Windows 下最简单易用的一种Socket I/O模型。使用这种模型时，Windows会把网络事件以消息的形势通知应用程序。
-首先定义一个消息标示常量：
-const WM_SOCKET = WM_USER + 55;
-再在主Form的private 域添加一个处理此消息的函数声明：
-private
-procedure WMSocket(var Msg: TMessage); message WM_SOCKET;
-然后就可以使用WSAAsyncSelect了：
-var
-addr : TSockAddr;
-sock : TSocket;</p>
-<p>sock := socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
-addr.sin_family := AF_INET;
-addr.sin_port := htons(5678);
-addr.sin_addr.S_addr := htonl(INADDR_ANY);
-bind( m_sock, @addr, sizeof(SOCKADDR) );</p>
-<p>WSAAsyncSelect( m_sock, Handle, WM_SOCKET, FD_ACCEPT or FD_CLOSE );</p>
-<p>listen( m_sock, 5 );
-&hellip;.</p>
-<p>应用程序可以对收到WM_SOCKET消息进行分析，判断是哪一个 socket产生了网络事件以及事件类型：</p>
-<p>procedure TfmMain.WMSocket(var Msg: TMessage);
-var
-sock : TSocket;
-addr : TSockAddrIn;
-addrlen : Integer;
-buf : Array [0..4095] of Char;
-begin
-//Msg的WParam是产生了网络事件的 socket句柄，LParam则包含了事件类型
-case WSAGetSelectEvent( Msg.LParam ) of
-FD_ACCEPT :
-begin
-addrlen := sizeof(addr);
-sock := accept( Msg.WParam, addr, addrlen );
-if sock &lt;&gt; INVALID_SOCKET then
-WSAAsyncSelect( sock, Handle, WM_SOCKET, FD_READ or FD_WRITE or FD_CLOSE );
-end;</p>
-<p>FD_CLOSE : closesocket( Msg.WParam );
-FD_READ : recv( Msg.WParam, buf[0], 4096, 0 );
-FD_WRITE : ;
-end;
-end;</p>
-<p>三：WSAEventSelect模型</p>
+首先定义一个消息标示常量：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> <span style="color:#66d9ef">const</span> WM_SOCKET <span style="color:#f92672">=</span> WM_USER <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>;
+</span></span></code></pre></div><p>再在主Form的private 域添加一个处理此消息的函数声明：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>private
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> procedure WMSocket(<span style="color:#66d9ef">var</span> Msg: TMessage); message WM_SOCKET;
+</span></span></code></pre></div><p>然后就可以使用WSAAsyncSelect了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span> <span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> addr : TSockAddr;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> sock : TSocket;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> sock :<span style="color:#f92672">=</span> socket( AF_INET, SOCK_STREAM, IPPROTO_TCP );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> addr<span style="color:#f92672">.</span>sin_family :<span style="color:#f92672">=</span> AF_INET;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> addr<span style="color:#f92672">.</span>sin_port :<span style="color:#f92672">=</span> htons(<span style="color:#ae81ff">5678</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> addr<span style="color:#f92672">.</span>sin_addr<span style="color:#f92672">.</span>S_addr :<span style="color:#f92672">=</span> htonl(INADDR_ANY);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> bind( m_sock, <span style="color:#960050;background-color:#1e0010">@</span>addr, sizeof(SOCKADDR) );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> WSAAsyncSelect( m_sock, Handle, WM_SOCKET, FD_ACCEPT <span style="color:#f92672">or</span> FD_CLOSE );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> listen( m_sock, <span style="color:#ae81ff">5</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> <span style="color:#f92672">....</span>
+</span></span></code></pre></div><p>应用程序可以对收到WM_SOCKET消息进行分析，判断是哪一个 socket产生了网络事件以及事件类型：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>procedure TfmMain<span style="color:#f92672">.</span>WMSocket(<span style="color:#66d9ef">var</span> Msg: TMessage);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> <span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> sock : TSocket;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> addr : TSockAddrIn;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> addrlen : Integer;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> buf : <span style="color:#a6e22e">Array</span> [<span style="color:#ae81ff">0.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">4095</span>] of Char;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> <span style="color:#f92672">//</span>Msg的WParam是产生了网络事件的 socket句柄<span style="color:#960050;background-color:#1e0010">，</span>LParam则包含了事件类型
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> <span style="color:#66d9ef">case</span> WSAGetSelectEvent( Msg<span style="color:#f92672">.</span>LParam ) of
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> FD_ACCEPT :
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> addrlen :<span style="color:#f92672">=</span> sizeof(addr);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> sock :<span style="color:#f92672">=</span> accept( Msg<span style="color:#f92672">.</span>WParam, addr, addrlen );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> <span style="color:#66d9ef">if</span> sock <span style="color:#f92672">&lt;&gt;</span> INVALID_SOCKET then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span> WSAAsyncSelect( sock, Handle, WM_SOCKET, FD_READ <span style="color:#f92672">or</span> FD_WRITE <span style="color:#f92672">or</span> FD_CLOSE );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span> FD_CLOSE : closesocket( Msg<span style="color:#f92672">.</span>WParam );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span> FD_READ : recv( Msg<span style="color:#f92672">.</span>WParam, buf[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">4096</span>, <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span> FD_WRITE : ;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span> end;
+</span></span></code></pre></div><p>三：WSAEventSelect模型</p>
 <p>后来，微软的信箱非常畅销，购买微软信箱的人以百万计数&hellip;&hellip;以至于盖茨每天 24小时给客户打电话，累得腰酸背痛，喝蚁力神都不好使~~~~~~
 微软改进了他们的信箱：在客户的家中添加一个附加装置，这个装置会监视客户的信箱，每当新的信件来临，此装置会发出 &ldquo;新信件到达&quot;声，提醒老陈去收信。盖茨终于可以睡觉了。</p>
-<p>同样要使用线程：
-procedure TListenThread.Execute;
-var
-hEvent : WSAEvent;
-ret : Integer;
-ne : TWSANetworkEvents;
-sock : TSocket;
-adr : TSockAddrIn;
-sMsg : String;
-Index,
-EventTotal : DWORD;
-EventArray : Array [0..WSA_MAXIMUM_WAIT_EVENTS-1] of WSAEVENT;
-begin
-&hellip;socket&hellip;bind&hellip;
-hEvent := WSACreateEvent();
-WSAEventSelect( ListenSock, hEvent, FD_ACCEPT or FD_CLOSE );
-&hellip;listen&hellip;</p>
-<p>while ( not Terminated ) do
-begin
-Index := WSAWaitForMultipleEvents( EventTotal, @EventArray[0], FALSE, WSA_INFINITE, FALSE );
-FillChar( ne, sizeof(ne), 0 );
-WSAEnumNetworkEvents( SockArray[Index-WSA_WAIT_EVENT_0], EventArray[Index-WSA_WAIT_EVENT_0], @ne );</p>
-<p>if ( ne.lNetworkEvents and FD_ACCEPT ) &gt; 0 then
-begin
-if ne.iErrorCode[FD_ACCEPT_BIT] &lt;&gt; 0 then
-continue;</p>
-<p>ret := sizeof(adr);
-sock := accept( SockArray[Index-WSA_WAIT_EVENT_0], adr, ret );
-if EventTotal &gt; WSA_MAXIMUM_WAIT_EVENTS-1 then//这里WSA_MAXIMUM_WAIT_EVENTS 同样是64
-begin
-closesocket( sock );
-continue;
-end;</p>
-<p>hEvent := WSACreateEvent();
-WSAEventSelect( sock, hEvent, FD_READ or FD_WRITE or FD_CLOSE );
-SockArray[EventTotal] := sock;
-EventArray[EventTotal] := hEvent;
-Inc( EventTotal );
-end;</p>
-<p>if ( ne.lNetworkEvents and FD_READ ) &gt; 0 then
-begin
-if ne.iErrorCode[FD_READ_BIT] &lt;&gt; 0 then
-continue;
-FillChar( RecvBuf[0], PACK_SIZE_RECEIVE, 0 );
-ret := recv( SockArray[Index-WSA_WAIT_EVENT_0], RecvBuf[0], PACK_SIZE_RECEIVE, 0 );
-&hellip;&hellip;
-end;
-end;
-end;</p>
-<p>四：Overlapped I/O 事件通知模型</p>
+<p>同样要使用线程：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>procedure TListenThread<span style="color:#f92672">.</span>Execute;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> <span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> hEvent : WSAEvent;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> ret : Integer;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> ne : TWSANetworkEvents;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> sock : TSocket;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> adr : TSockAddrIn;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> sMsg : <span style="color:#a6e22e">String</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> Index,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> EventTotal : DWORD;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> EventArray : <span style="color:#a6e22e">Array</span> [<span style="color:#ae81ff">0.</span><span style="color:#f92672">.</span>WSA_MAXIMUM_WAIT_EVENTS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] of WSAEVENT;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> <span style="color:#f92672">...</span>socket<span style="color:#f92672">...</span>bind<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> hEvent :<span style="color:#f92672">=</span> WSACreateEvent();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span> WSAEventSelect( ListenSock, hEvent, FD_ACCEPT <span style="color:#f92672">or</span> FD_CLOSE );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span> <span style="color:#f92672">...</span>listen<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span> <span style="color:#66d9ef">while</span> ( <span style="color:#f92672">not</span> Terminated ) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span> Index :<span style="color:#f92672">=</span> WSAWaitForMultipleEvents( EventTotal, <span style="color:#960050;background-color:#1e0010">@</span>EventArray[<span style="color:#ae81ff">0</span>], FALSE, WSA_INFINITE, FALSE );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span> FillChar( ne, sizeof(ne), <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span> WSAEnumNetworkEvents( SockArray[Index<span style="color:#f92672">-</span>WSA_WAIT_EVENT_0], EventArray[Index<span style="color:#f92672">-</span>WSA_WAIT_EVENT_0], <span style="color:#960050;background-color:#1e0010">@</span>ne );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span> <span style="color:#66d9ef">if</span> ( ne<span style="color:#f92672">.</span>lNetworkEvents <span style="color:#f92672">and</span> FD_ACCEPT ) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span> <span style="color:#66d9ef">if</span> ne<span style="color:#f92672">.</span>iErrorCode[FD_ACCEPT_BIT] <span style="color:#f92672">&lt;&gt;</span> <span style="color:#ae81ff">0</span> then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span> <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span> ret :<span style="color:#f92672">=</span> sizeof(adr);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span> sock :<span style="color:#f92672">=</span> accept( SockArray[Index<span style="color:#f92672">-</span>WSA_WAIT_EVENT_0], adr, ret );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span> <span style="color:#66d9ef">if</span> EventTotal <span style="color:#f92672">&gt;</span> WSA_MAXIMUM_WAIT_EVENTS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> then<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">这里</span>WSA_MAXIMUM_WAIT_EVENTS <span style="color:#960050;background-color:#1e0010">同样是</span><span style="color:#ae81ff">64</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span> closesocket( sock );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span> <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span> hEvent :<span style="color:#f92672">=</span> WSACreateEvent();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span> WSAEventSelect( sock, hEvent, FD_READ <span style="color:#f92672">or</span> FD_WRITE <span style="color:#f92672">or</span> FD_CLOSE );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span> SockArray[EventTotal] :<span style="color:#f92672">=</span> sock;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span> EventArray[EventTotal] :<span style="color:#f92672">=</span> hEvent;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span> Inc( EventTotal );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span> <span style="color:#66d9ef">if</span> ( ne<span style="color:#f92672">.</span>lNetworkEvents <span style="color:#f92672">and</span> FD_READ ) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span> <span style="color:#66d9ef">if</span> ne<span style="color:#f92672">.</span>iErrorCode[FD_READ_BIT] <span style="color:#f92672">&lt;&gt;</span> <span style="color:#ae81ff">0</span> then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span> <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span> FillChar( RecvBuf[<span style="color:#ae81ff">0</span>], PACK_SIZE_RECEIVE, <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span> ret :<span style="color:#f92672">=</span> recv( SockArray[Index<span style="color:#f92672">-</span>WSA_WAIT_EVENT_0], RecvBuf[<span style="color:#ae81ff">0</span>], PACK_SIZE_RECEIVE, <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span> <span style="color:#f92672">......</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span> end;
+</span></span></code></pre></div><p>四：Overlapped I/O 事件通知模型</p>
 <p>后来，微软通过调查发现，老陈不喜欢上下楼收发信件，因为上下楼其实很浪费时间。于是微软再次改进他们的信箱。新式的信箱采用了更为先进的技术，只要用户告诉微软自己的家在几楼几号，新式信箱会把信件直接传送到用户的家中，然后告诉用户，你的信件已经放到你的家中了！老陈很高兴，因为他不必再亲自收发信件了！</p>
 <p>Overlapped I/O 事件通知模型和WSAEventSelect模型在实现上非常相似，主要区别在 &ldquo;Overlapped&rdquo;，Overlapped 模型是让应用程序使用重叠数据结构(WSAOVERLAPPED)，一次投递一个或多个 Winsock I/O请求。这些提交的请求完成后，应用程序会收到通知。什么意思呢？就是说，如果你想从 socket上接收数据，只需要告诉系统，由系统为你接收数据，而你需要做的只是为系统提供一个缓冲区 ~~~~~
-Listen线程和WSAEventSelect 模型一模一样，Recv/Send线程则完全不同：
-procedure TOverlapThread.Execute;
-var
-dwTemp : DWORD;
-ret : Integer;
-Index : DWORD;
-begin
-&hellip;&hellip;</p>
-<p>while ( not Terminated ) do
-begin
-Index := WSAWaitForMultipleEvents( FLinks.Count, @FLinks.Events[0], FALSE, RECV_TIME_OUT, FALSE );
-Dec( Index, WSA_WAIT_EVENT_0 );
-if Index &gt; WSA_MAXIMUM_WAIT_EVENTS-1 then //超时或者其他错误
-continue;</p>
-<p>WSAResetEvent( FLinks.Events[Index] );
-WSAGetOverlappedResult( FLinks.Sockets[Index], FLinks.pOverlaps[Index], @dwTemp, FALSE, FLinks.pdwFlags[Index]^ );</p>
-<p>if dwTemp = 0 then //连接已经关闭
-begin
-&hellip;&hellip;
-continue;
-end else
-begin
-fmMain.ListBox1.Items.Add( FLinks.pBufs[Index]^.buf );
-end;</p>
-<p>//初始化缓冲区
-FLinks.pdwFlags[Index]^ := 0;
-FillChar( FLinks.pOverlaps[Index]^, sizeof(WSAOVERLAPPED), 0 );
-FLinks.pOverlaps[Index]^.hEvent := FLinks.Events[Index];
-FillChar( FLinks.pBufs[Index]^.buf^, BUFFER_SIZE, 0 );</p>
-<p>//递一个接收数据请求
-WSARecv( FLinks.Sockets[Index], FLinks.pBufs[Index], 1, FLinks.pdwRecvd[Index]^, FLinks.pdwFlags[Index]^, FLinks.pOverlaps[Index], nil );
-end;
-end;</p>
-<p>五：Overlapped I/O 完成例程模型</p>
+Listen线程和WSAEventSelect 模型一模一样，Recv/Send线程则完全不同：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>procedure TOverlapThread<span style="color:#f92672">.</span>Execute;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> <span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> dwTemp : DWORD;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> ret : Integer;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> Index : DWORD;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> <span style="color:#f92672">......</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> <span style="color:#66d9ef">while</span> ( <span style="color:#f92672">not</span> Terminated ) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> Index :<span style="color:#f92672">=</span> WSAWaitForMultipleEvents( FLinks<span style="color:#f92672">.</span>Count, <span style="color:#960050;background-color:#1e0010">@</span>FLinks<span style="color:#f92672">.</span>Events[<span style="color:#ae81ff">0</span>], FALSE, RECV_TIME_OUT, FALSE );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> Dec( Index, WSA_WAIT_EVENT_0 );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> <span style="color:#66d9ef">if</span> Index <span style="color:#f92672">&gt;</span> WSA_MAXIMUM_WAIT_EVENTS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> then <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">超时或者其他错误</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span> WSAResetEvent( FLinks<span style="color:#f92672">.</span>Events[Index] );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span> WSAGetOverlappedResult( FLinks<span style="color:#f92672">.</span>Sockets[Index], FLinks<span style="color:#f92672">.</span>pOverlaps[Index], <span style="color:#960050;background-color:#1e0010">@</span>dwTemp, FALSE, FLinks<span style="color:#f92672">.</span>pdwFlags[Index]<span style="color:#f92672">^</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span> <span style="color:#66d9ef">if</span> dwTemp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> then <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">连接已经关闭</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span> <span style="color:#f92672">......</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span> <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span> end <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span> fmMain<span style="color:#f92672">.</span>ListBox1<span style="color:#f92672">.</span>Items<span style="color:#f92672">.</span>Add( FLinks<span style="color:#f92672">.</span>pBufs[Index]<span style="color:#f92672">^.</span>buf );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span> <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">初始化缓冲区</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span> FLinks<span style="color:#f92672">.</span>pdwFlags[Index]<span style="color:#f92672">^</span> :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span> FillChar( FLinks<span style="color:#f92672">.</span>pOverlaps[Index]<span style="color:#f92672">^</span>, sizeof(WSAOVERLAPPED), <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span> FLinks<span style="color:#f92672">.</span>pOverlaps[Index]<span style="color:#f92672">^.</span>hEvent :<span style="color:#f92672">=</span> FLinks<span style="color:#f92672">.</span>Events[Index];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span> FillChar( FLinks<span style="color:#f92672">.</span>pBufs[Index]<span style="color:#f92672">^.</span>buf<span style="color:#f92672">^</span>, BUFFER_SIZE, <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span> <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">递一个接收数据请求</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span> WSARecv( FLinks<span style="color:#f92672">.</span>Sockets[Index], FLinks<span style="color:#f92672">.</span>pBufs[Index], <span style="color:#ae81ff">1</span>, FLinks<span style="color:#f92672">.</span>pdwRecvd[Index]<span style="color:#f92672">^</span>, FLinks<span style="color:#f92672">.</span>pdwFlags[Index]<span style="color:#f92672">^</span>, FLinks<span style="color:#f92672">.</span>pOverlaps[Index], nil );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span> end;
+</span></span></code></pre></div><p>五：Overlapped I/O 完成例程模型</p>
 <p>老陈接收到新的信件后，一般的程序是：打开信封&mdash;-掏出信纸 &mdash;-阅读信件&mdash;-回复信件 &hellip;&hellip;为了进一步减轻用户负担，微软又开发了一种新的技术：用户只要告诉微软对信件的操作步骤，微软信箱将按照这些步骤去处理信件，不再需要用户亲自拆信 /阅读/回复了！老陈终于过上了小资生活！</p>
-<p>Overlapped I/O 完成例程要求用户提供一个回调函数，发生新的网络事件的时候系统将执行这个函数：
-procedure WorkerRoutine( const dwError, cbTransferred : DWORD; const
-lpOverlapped : LPWSAOVERLAPPED; const dwFlags : DWORD ); stdcall;
-然后告诉系统用WorkerRoutine函数处理接收到的数据：
-WSARecv( m_socket, @FBuf, 1, dwTemp, dwFlag, @m_overlap, WorkerRoutine );
-然后&hellip;&hellip;没有什么然后了，系统什么都给你做了！微软真实体贴！
-while ( not Terminated ) do//这就是一个Recv/Send线程要做的事情 &hellip;&hellip;什么都不用做啊！！！
-begin
-if SleepEx( RECV_TIME_OUT, True ) = WAIT_IO_COMPLETION then //
-begin
-;
-end else
-begin
-continue;
-end;
-end;</p>
-<p>六：IOCP模型</p>
+<p>Overlapped I/O 完成例程要求用户提供一个回调函数，发生新的网络事件的时候系统将执行这个函数：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>procedure WorkerRoutine( <span style="color:#66d9ef">const</span> dwError, cbTransferred : DWORD; <span style="color:#66d9ef">const</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> lpOverlapped : LPWSAOVERLAPPED; <span style="color:#66d9ef">const</span> dwFlags : DWORD ); stdcall;
+</span></span></code></pre></div><p>然后告诉系统用WorkerRoutine函数处理接收到的数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>WSARecv( m_socket, @FBuf, 1, dwTemp, dwFlag, @m_overlap, WorkerRoutine );
+</span></span></code></pre></div><p>然后&hellip;&hellip;没有什么然后了，系统什么都给你做了！微软真实体贴！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span> while ( not Terminated ) do//这就是一个Recv/Send线程要做的事情 ......什么都不用做啊！！！
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> if SleepEx( RECV_TIME_OUT, True ) = WAIT_IO_COMPLETION then //
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> ;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> end else
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> continue;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> end;
+</span></span></code></pre></div><p>六：IOCP模型</p>
 <p>微软信箱似乎很完美，老陈也很满意。但是在一些大公司情况却完全不同！这些大公司有数以万计的信箱，每秒钟都有数以百计的信件需要处理，以至于微软信箱经常因超负荷运转而崩溃！需要重新启动！微软不得不使出杀手锏 &hellip;&hellip;
 微软给每个大公司派了一名名叫&quot;Completion Port&quot;的超级机器人，让这个机器人去处理那些信件！</p>
 <p>&ldquo;Windows NT小组注意到这些应用程序的性能没有预料的那么高。特别的，处理很多同时的客户请求意味着很多线程并发地运行在系统中。因为所有这些线程都是可运行的 [没有被挂起和等待发生什么事]， Microsoft意识到NT内核花费了太多的时间来转换运行线程的上下文 [Context]，线程就没有得到很多CPU时间来做它们的工作。大家可能也都感觉到并行模型的瓶颈在于它为每一个客户请求都创建了一个新线程。创建线程比起创建进程开销要小，但也远不是没有开销的。我们不妨设想一下：如果事先开好 N个线程，让它们在那hold[堵塞 ]，然后可以将所有用户的请求都投递到一个消息队列中去。然后那N 个线程逐一从消息队列中去取出消息并加以处理。就可以避免针对每一个用户请求都开线程。不仅减少了线程的资源，也提高了线程的利用率。理论上很不错，你想我等泛泛之辈都能想出来的问题， Microsoft又怎会没有考虑到呢?&rdquo;&mdash;&ndash; 摘自nonocast的《理解I/O Completion Port》</p>
 <p>先看一下IOCP模型的实现：</p>
-<p>//创建一个完成端口
-FCompletPort := CreateIoCompletionPort( INVALID_HANDLE_VALUE, 0,0,0 );</p>
-<p>//接受远程连接，并把这个连接的socket句柄绑定到刚才创建的 IOCP上
-AConnect := accept( FListenSock, addr, len);
-CreateIoCompletionPort( AConnect, FCompletPort, nil, 0 );</p>
-<p>//创建CPU数<em>2 + 2个线程
-for i:=1 to si.dwNumberOfProcessors</em>2+2 do
-begin
-AThread := TRecvSendThread.Create( false );
-AThread.CompletPort := FCompletPort;//告诉这个线程，你要去这个IOCP 去访问数据
-end;</p>
-<p>OK，就这么简单，我们要做的就是建立一个IOCP，把远程连接的 socket句柄绑定到刚才创建的IOCP上，最后创建 n个线程，并告诉这n个线程到这个 IOCP上去访问数据就可以了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span> //创建一个完成端口
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> FCompletPort := CreateIoCompletionPort( INVALID_HANDLE_VALUE, 0,0,0 );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> //接受远程连接，并把这个连接的socket句柄绑定到刚才创建的 IOCP上
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> AConnect := accept( FListenSock, addr, len);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> CreateIoCompletionPort( AConnect, FCompletPort, nil, 0 );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> //创建CPU数*2 + 2个线程
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span> for i:=1 to si.dwNumberOfProcessors*2+2 do
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> AThread := TRecvSendThread.Create( false );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> AThread.CompletPort := FCompletPort;//告诉这个线程，你要去这个IOCP 去访问数据
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> end;
+</span></span></code></pre></div><p>OK，就这么简单，我们要做的就是建立一个IOCP，把远程连接的 socket句柄绑定到刚才创建的IOCP上，最后创建 n个线程，并告诉这n个线程到这个 IOCP上去访问数据就可以了。</p>
 <p>再看一下TRecvSendThread线程都干些什么：</p>
-<p>procedure TRecvSendThread.Execute;
-var
-&hellip;&hellip;
-begin
-while (not self.Terminated) do
-begin
-//查询IOCP状态（数据读写操作是否完成）
-GetQueuedCompletionStatus( CompletPort, BytesTransd, CompletKey, POVERLAPPED(pPerIoDat), TIME_OUT );</p>
-<p>if BytesTransd &lt;&gt; 0 then
-&hellip;.;//数据读写操作完成</p>
-<p>//再投递一个读数据请求
-WSARecv( CompletKey, @(pPerIoDat^.BufData), 1, BytesRecv, Flags, @(pPerIoDat^.Overlap), nil );
-end;
-end;</p>
-<p>读写线程只是简单地检查IOCP是否完成了我们投递的读写操作，如果完成了则再投递一个新的读写请求。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>procedure TRecvSendThread<span style="color:#f92672">.</span>Execute;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> <span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> <span style="color:#f92672">......</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> <span style="color:#66d9ef">while</span> (<span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>Terminated) <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> begin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">查询</span>IOCP状态<span style="color:#960050;background-color:#1e0010">（数据读写操作是否完成）</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> GetQueuedCompletionStatus( CompletPort, BytesTransd, CompletKey, POVERLAPPED(pPerIoDat), TIME_OUT );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span> <span style="color:#66d9ef">if</span> BytesTransd <span style="color:#f92672">&lt;&gt;</span> <span style="color:#ae81ff">0</span> then
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span> <span style="color:#f92672">....</span>;<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">数据读写操作完成</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span> <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">再投递一个读数据请求</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span> WSARecv( CompletKey, <span style="color:#960050;background-color:#1e0010">@</span>(pPerIoDat<span style="color:#f92672">^.</span>BufData), <span style="color:#ae81ff">1</span>, BytesRecv, Flags, <span style="color:#960050;background-color:#1e0010">@</span>(pPerIoDat<span style="color:#f92672">^.</span>Overlap), nil );
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span> end;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span> end;
+</span></span></code></pre></div><p>读写线程只是简单地检查IOCP是否完成了我们投递的读写操作，如果完成了则再投递一个新的读写请求。
 应该注意到，我们创建的所有TRecvSendThread都在访问同一个 IOCP（因为我们只创建了一个IOCP），并且我们没有使用临界区！难道不会产生冲突吗？不用考虑同步问题吗？</p>
-<p>呵呵，这正是
-IOCP
-的奥妙所在。
-IOCP
-不是一个普通的对象，不需要考虑线程安全问题。它会自动调配访问它的线程：如果某个
-socket
-上有一个线程
-A
-正在访问，那么线程
-B
-的访问请求会被分配到另外一个
-socket
-。这一切都是由系统自动调配的，我们无需过问</p>
+<p>呵呵，这正是 IOCP 的奥妙所在。
+IOCP  不是一个普通的对象，不需要考虑线程安全问题。它会自动调配访问它的线程：如果某个 socket  上有一个线程 A 正在访问，那么线程 B  的访问请求会被分配到另外一个 socket 。这一切都是由系统自动调配的，我们无需过问。</p>
 
         </div>
 
@@ -930,7 +472,7 @@ socket
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

@@ -126,11 +126,11 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>insert tmp(name, desc) values(&#39;witton&#39;, &#39;&#39;hello&#39;)
 </span></span></code></pre></div><p>可以看到由于没有进行转义desc中的单引号，所以导致SQL出现语法错误。</p>
 <p>MySQL的C API提供了两个函数来进行字符串转义：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>unsigned long	STDCALL mysql_escape_string(char *to,const char *from,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>unsigned long	STDCALL mysql_escape_string(char <span style="color:#f92672">*</span>to,<span style="color:#66d9ef">const</span> char <span style="color:#f92672">*</span>from,
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>					    unsigned long from_length);
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>					    
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>unsigned long STDCALL mysql_real_escape_string(MYSQL *mysql,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>					       char *to,const char *from,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>unsigned long STDCALL mysql_real_escape_string(MYSQL <span style="color:#f92672">*</span>mysql,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>					       char <span style="color:#f92672">*</span>to,<span style="color:#66d9ef">const</span> char <span style="color:#f92672">*</span>from,
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>					       unsigned long length);
 </span></span></code></pre></div><p>这两个函数推荐使用mysql_real_escape_string来进行转义，因为mysql_real_escape_string会要求传入MYSQL指针，该数据结构中有相应的字符集编码，转义时可以根据设定的字符集编码来进行转义。</p>
 <p>回到前面的FormatSQL函数，它是使用的标准C的方式来格式化的，如果有很多字符串参数，就需要对每一个字符串参数写一行代码进行转义，比如前面的testSQL函数，就需要写成如下所示代码：</p>
@@ -393,7 +393,7 @@
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

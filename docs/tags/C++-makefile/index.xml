@@ -6,15 +6,14 @@
     <description>Recent content in C&#43;&#43; makefile on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Feb 2017 14:14:40 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/C++-makefile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2017 14:14:40 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/C++-makefile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C/C&#43;&#43;通用Makefile</title>
       <link>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</link>
       <pubDate>Thu, 23 Feb 2017 14:14:40 +0800</pubDate>
-      
       <guid>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</guid>
       <description>最近的项目又回到了Linux上运行，这就需要在Linux下编译项目，写Makefile针对习惯了Windows的程序员来</description>
     </item>
-    
   </channel>
 </rss>

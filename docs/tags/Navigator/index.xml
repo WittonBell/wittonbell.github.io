@@ -6,15 +6,14 @@
     <description>Recent content in Navigator on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Sep 2021 22:26:13 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/Navigator/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Sep 2021 22:26:13 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/Navigator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 8使用Cockpit管理Linux——文件管理器</title>
       <link>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</link>
       <pubDate>Thu, 09 Sep 2021 22:26:13 +0800</pubDate>
-      
       <guid>https://wittonbell.github.io/posts/2021/2021-09-09-CentOS-8%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
       <description>CentOS 8使用Cockpit管理Linux系列文章列表： CentOS 8使用Cockpit管理Linux——简介 CentOS 8使用Cockpit管理</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,15 +6,14 @@
     <description>Recent content in podman-compose on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 Dec 2021 11:46:32 +0800</lastBuildDate><atom:link href="https://wittonbell.github.io/tags/podman-compose/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 11:46:32 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/podman-compose/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ubuntu安装podman-compose</title>
       <link>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</link>
       <pubDate>Tue, 28 Dec 2021 11:46:32 +0800</pubDate>
-      
       <guid>https://wittonbell.github.io/posts/2021/2021-12-28-ubuntu%E5%AE%89%E8%A3%85podman-compose/</guid>
       <description>用过docker-compose的一定不会对podman-compose陌生，podman作为docker的替代品，自然</description>
     </item>
-    
   </channel>
 </rss>

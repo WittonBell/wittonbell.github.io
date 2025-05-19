@@ -274,14 +274,14 @@
 <h2 id="二常规工程">二、常规工程</h2>
 <p>在任意地方新建一个目录，假设为test，然后使用VSCode打开。我们创建如下3个文件：
 main.go</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>package main
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>import (
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	<span style="color:#e6db74">&#34;test/libDemo&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	<span style="color:#a6e22e">libDemo</span>.<span style="color:#a6e22e">CallMe</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#66d9ef">func</span> main() {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	libDemo<span style="color:#f92672">.</span>CallMe()
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>}
 </span></span></code></pre></div><p>go.mod</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>module test
@@ -339,10 +339,10 @@ main.go</p>
     </p>
 <h4 id="4-编译maingo">4. 编译main.go</h4>
 <p>进入main.go所在目录，编译main.go：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>go tool compile -I &#34;C:\Program Files\Go\pkg\windows_amd64&#34; main.go
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>go <span style="color:#66d9ef">tool</span> compile <span style="color:#f92672">-</span>I <span style="color:#e6db74">&#34;C:\Program Files\Go\pkg\windows_amd64&#34;</span> main<span style="color:#f92672">.</span>go
 </span></span></code></pre></div><p>在编译时需要加入-I选项包含目录路径&quot;C:\Program Files\Go\pkg\windows_amd64&quot;，路径中有空格需要加引号，编译成功后会生成main.o</p>
 <h4 id="5-链接maino">5. 链接main.o</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>go tool link -o test.exe -L &#34;C:\Program Files\Go\pkg\windows_amd64&#34; main.o
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>go <span style="color:#66d9ef">tool</span> link <span style="color:#f92672">-</span>o test<span style="color:#f92672">.</span>exe <span style="color:#f92672">-</span>L <span style="color:#e6db74">&#34;C:\Program Files\Go\pkg\windows_amd64&#34;</span> main<span style="color:#f92672">.</span>o
 </span></span></code></pre></div><p>-L选项指定链接时搜索的库路径，链接成功会生成test.exe</p>
 <p>
         <a data-fancybox="gallery" href="../assets/2021-07-09-Go%e8%af%ad%e8%a8%80%e9%9d%9emain%e5%8c%85%e7%bc%96%e8%af%91%e4%b8%ba%e9%9d%99%e6%80%81%e5%ba%93%e5%b9%b6%e4%bd%bf%e7%94%a8/20210709184747319.png">
@@ -359,7 +359,7 @@ main.go</p>
         </a>
     </p>
 <p>如果我们把C:\Program Files\Go\pkg\windows_amd64\libDemo.a删除，再链接就会报错：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>C:\Program Files\Go\pkg\tool\windows_amd64\link.exe: cannot open file C:\Program Files\Go\pkg\windows_amd64\libDemo.a: open C:\Program Files\Go\pkg\windows_amd64\libDemo.a: The system cannot find the file specified.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>C:\Program Files\Go\pkg\<span style="color:#66d9ef">tool</span>\windows_amd64\link<span style="color:#f92672">.</span>exe: cannot open file C:\Program Files\Go\pkg\windows_amd64\libDemo<span style="color:#f92672">.</span>a: open C:\Program Files\Go\pkg\windows_amd64\libDemo<span style="color:#f92672">.</span>a: The system cannot find the file specified<span style="color:#f92672">.</span>
 </span></span></code></pre></div><p>
         <a data-fancybox="gallery" href="../assets/2021-07-09-Go%e8%af%ad%e8%a8%80%e9%9d%9emain%e5%8c%85%e7%bc%96%e8%af%91%e4%b8%ba%e9%9d%99%e6%80%81%e5%ba%93%e5%b9%b6%e4%bd%bf%e7%94%a8/20210709185129668.png">
             <img class="mx-auto" alt="" src="../assets/2021-07-09-Go%e8%af%ad%e8%a8%80%e9%9d%9emain%e5%8c%85%e7%bc%96%e8%af%91%e4%b8%ba%e9%9d%99%e6%80%81%e5%ba%93%e5%b9%b6%e4%bd%bf%e7%94%a8/20210709185129668.png" />
@@ -479,7 +479,7 @@ main.go</p>
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />

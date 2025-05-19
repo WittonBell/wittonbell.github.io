@@ -108,38 +108,36 @@
 <p>P.S. Back up autoexp.dat before proceeding.</p>
 <p><strong>Basic structure</strong></p>
 <p>A visualizer&rsquo;s basic structure is as follows:</p>
-<p><em>typename[</em>
-|<em>typename&hellip;]</em>
-{
-preview (
-<em>preview-string-expression</em></p>
-<pre><code>)
-stringview (
-    *text-visualizer-expression*
-
-)
-children (
-    *expanded-contents-expression*
-
-)
-</code></pre>
-<p>}</p>
+<p><em>typename[</em></p>
+<p>|<em>typename&hellip;]</em></p>
+<p>{</p>
+<p>preview (</p>
+<p><em>preview-string-expression</em>
+)</p>
+<p>stringview (</p>
+<p><em>text-visualizer-expression</em>
+)</p>
+<p>children (</p>
+<p><em>expanded-contents-expression</em>
+)
+}</p>
 <p>All three of these expressions are optional.</p>
-<p>Like the AutoExpand templates, it is possible to match templates by using <em>type&lt;</em>&gt;* syntax, and also possible to do partial template matches, i.e. *Foo&lt;Bar, <em>&gt;</em> . The template parameters will show up as *<span class="math inline">\(T1, \)</span>T2, * etc. You can also supply multiple types using <em>Foo|Bar</em> syntax.</p>
+<p>Like the AutoExpand templates, it is possible to match templates by using <em>type&lt;</em>&gt;* syntax, and also possible to do partial template matches, i.e. *Foo&lt;Bar, <em>&gt;</em> . The template parameters will show up as *$T1, $T2, * etc. You can also supply multiple types using <em>Foo|Bar</em> syntax.</p>
 <p><em>autoexp.dat</em> is reloaded every time the debugger starts. It is not necessary to restart Visual Studio to see changes; restarting the debugger, or detaching and reattaching to the target, is sufficient to effect changes.</p>
 <p><strong>The preview expression</strong></p>
 <p>The preview expression consists of a single expression to display in the one-line preview of a variable in Watch, QuickWatch, or the Command Window. This can either be a literal string or an expression, which is surrounded in brackets if it contains a formatting specifier. Unlike AutoExpand, however, the expression must dereference the current object using the <em>$c</em> variable. Since a single expression isn&rsquo;t usually useful, you will want to use <em>#(</em> and <em>)</em> to bracket a comma-delimited list of strings and expressions.</p>
 <p>Example:</p>
-<p>// code
-template<!-- raw HTML omitted --> struct MyType {
-T *start, <em>end;
-};
-// autoexp.dat
-MyType&lt;</em>&gt; {
-preview (
-#(
-&ldquo;ptr=&rdquo;, (void *)<span class="math inline">\(c.start, ", size=", [\)</span>c.end-$c.start, i]
-)
+<p>// code</p>
+<p>template<!-- raw HTML omitted --> struct MyType {</p>
+<p>T *start, *end;
+};</p>
+<p>// autoexp.dat</p>
+<p>MyType&lt;*&gt; {</p>
+<p>preview (</p>
+<p>#(</p>
+<pre><code>&quot;ptr=&quot;, (void *)$c.start, &quot;, size=&quot;, [$c.end-$c.start, i]
+</code></pre>
+<p>)
 )
 }</p>
 <p>The parser isn&rsquo;t very robust and you&rsquo;ll often get weird results if you make mistakes. So don&rsquo;t do that. Another downer with regard to expressions here is that the <em>sizeof()</em> keyword doesn&rsquo;t work, which is unfortunate for template visualizers. Finally, colons, parens, and brackets within string and character literals can confuse the parser and give you inexplicable mismatch failures.</p>
@@ -147,23 +145,36 @@ preview (
 <p>Now, for the real meat of the visualizer: showing children.</p>
 <p>The <em>children</em> block also expects either a single item or a <em>#()</em> delimited list of items; when present, the object will have a [+] next to it and the expanded view will show the contents produced by this block. Each expression will show up as ascending indices, i.e. [0], [1], [2], etc. You can also name specific elements using <em>name : expr</em> syntax; the rules for the name are a little looser than C identifiers, with brackets in particular being accepted. The order of named fields is irrelevant; the contents are always sorted.</p>
 <p>Example:</p>
-<p>MyType&lt;*&gt; {
-children (
-#(
-ptr: (void *)<span class="math inline">\(c.start, [size]: [\)</span>c.end-$c.start, i]
-)
+<p>MyType&lt;*&gt; {</p>
+<p>children (</p>
+<p>#(</p>
+<pre><code>ptr: (void *)$c.start,
+
+[size]: [$c.end-$c.start, i]
+</code></pre>
+<p>)
 )
 }</p>
 <p>The ability of a visualizer to construct hierarchies in the watch window is limited. For the most part, you can only add items immediately below the item being visualized; the only ways available to add expandable objects is either to reference an aggregate or other object with a visualizer, or to use an array expression, i.e. <em>[$c.start, 4x]</em> .</p>
 <p>Note that the contents of the children block will replace the struct fields that would normally be displayed. It&rsquo;s a good idea to leave yourself an escape hatch by including a field with the value <em>[$c,!]</em> , whose expanded view re-evaluates the current object without any visualizers or AutoExpand expressions.</p>
 <p><strong>Arrays</strong></p>
 <p>Being able to plop new fields in is neat, but the above doesn&rsquo;t allow you to view the contents of the data structure, which is hidden between those two pointers. Enter the <em>#array</em> statement:</p>
-<p>MyType&lt;*&gt; {
-children (
-#(
-[raw members]: [<span class="math inline">\(c,!], [size]: [\)</span>c.end-<span class="math inline">\(c.start, i], #array ( expr: \)</span>c.start[<span class="math inline">\(i], size: \)</span>c.end - $c.start
+<p>MyType&lt;*&gt; {</p>
+<p>children (</p>
+<p>#(</p>
+<pre><code>[raw members]: [$c,!],
+
+[size]: [$c.end-$c.start, i],
+
+#array (
+
+    expr: $c.start[$i],
+
+    size: $c.end - $c.start
+
 )
-)
+</code></pre>
+<p>)
 )
 }</p>
 <p>Here&rsquo;s what it looks like in the debugger:</p>
@@ -174,75 +185,85 @@ children (
     </p>
 <p>The <em>#array</em> statement looks like it evaluates an array. Actually, it doesn&rsquo;t &ndash; all it does is count the <em>$i</em> variable up from 0 to <em>size-1</em> , which you can then use in the <em>expr</em> field. This is actually better, because you can use it to evaluate chunked or triangular arrays. You don&rsquo;t even have to evaluate fields at all; you could generate a table with it if you were sufficiently bored. Any fields generated from <em>#array</em> are unnamed and will appear as ascending indices.</p>
 <p>It is also possible to customize the value display for the array, by supplying an expression after the <em>#array</em> statement. The <em>$e</em> variable is set to the value produced by <em>expr</em> for that element. For instance, to display the address of each element in the data structure:</p>
-<p>MyType&lt;*&gt; {
-    children (
-        #(
-            [size]: [<span class="math inline">\(c.end-\)</span>c.start, i],
-            #array (
-                expr: <span class="math inline">\(c.start[\)</span>i],
-                size: <span class="math inline">\(c.end - \)</span>c.start
-            ) : &amp;$e
-        )
-    )
-}</p>
+<p>MyType&lt;*&gt; {</p>
+<p>    children (</p>
+<p>        #(</p>
+<p>            [size]: [$c.end-$c.start, i],</p>
+<p>            #array (</p>
+<p>                expr: $c.start[$i],</p>
+<p>                size: $c.end - $c.start</p>
+<p>            ) : &amp;$e</p>
+<p>        )</p>
+<p>    )</p>
+<p>}</p>
 <p>The bummer about doing this is that any other fields that you include will bump the indices produced by the array. I haven&rsquo;t found a way around this, yet. If you wrap the value expression in a nested <em>#()</em> it is possible to override the name for each element, although the name will be same for all elements. Also, if you supply multiple items per element, all of them will show up. If they&rsquo;re unnamed they&rsquo;ll get successive indices, so the first element will produce [0] and [1], the second [2] and [3], etc. One use for this is to display a packed array of 4-bit fields.</p>
-<p>There are two additional options for <em>#array</em> : the <em>base</em> and <em>rank</em>  fields. The <em>base</em> field allows you to change the starting array index. It doesn&rsquo;t change <em><span class="math inline">\(i* , but it does offset the array indices shown. (This only works if you don't override the display for *\)</span>e</em> , in which case single incrementing indices are always used.) The <em>rank</em> field allows you to do regular multi-dimensional arrays; when it is present and evaluates to greater than one, the <em>size</em> and* base* expressions are evaluated multiple times with <em><span class="math inline">\(r* indicating the zero-based dimension, and *expr* is then evaluated once for (product of all *size* ) times with *\)</span>i</em> counting up contiguously. Thus:</p>
-<p>// code
-struct MyArray2D {
-    T *start;
-int innerSize;
-int outerSize;
+<p>There are two additional options for <em>#array</em> : the <em>base</em> and <em>rank</em>  fields. The <em>base</em> field allows you to change the starting array index. It doesn&rsquo;t change <em>$i</em> , but it does offset the array indices shown. (This only works if you don&rsquo;t override the display for <em>$e</em> , in which case single incrementing indices are always used.) The <em>rank</em> field allows you to do regular multi-dimensional arrays; when it is present and evaluates to greater than one, the <em>size</em> and* base* expressions are evaluated multiple times with <em>$r</em> indicating the zero-based dimension, and <em>expr</em> is then evaluated once for (product of all <em>size</em> ) times with <em>$i</em> counting up contiguously. Thus:</p>
+<p>// code</p>
+<p>struct MyArray2D {</p>
+<p>    T *start;</p>
+<p>int innerSize;</p>
+<p>int outerSize;
 };
-// autoexp.dat
-MyArray2D {
-    children (
-#array (
-expr: <span class="math inline">\(c.start[\)</span>i],
+// autoexp.dat</p>
+<p>MyArray2D {</p>
+<p>    children (</p>
+<p>#array (</p>
+<pre><code>expr: $c.start[$i],
+
 rank: 2,
-size: (<span class="math inline">\(r==1)*\)</span>c.outerSize+(<span class="math inline">\(r==0)*\)</span>c.innerSize,
+
+size: ($r==1)*$c.outerSize+($r==0)*$c.innerSize,
+
 base: 1
-)
-    )
-}</p>
+</code></pre>
+<p>)
+    )</p>
+<p>}</p>
 <p>Sadly, the order of indices is reversed in the names produced, i.e [1,1], [2,1], [3,1], etc. If you don&rsquo;t mind the wonked ordering, you could fix this by doing some division and modulus on the index.</p>
 <p><strong>Conditionals</strong></p>
 <p>The <em>#if()</em> statement allows you to conditionally include expressions in your visualizer:</p>
-<p>MyType {
-    preview (
-#if ((<span class="math inline">\(c.end - \)</span>c.start) &gt; 0) (
-#(&ldquo;size=&rdquo;, <span class="math inline">\(c.end - \)</span>c.start)
-) #else (
-&ldquo;empty&rdquo;
-)
-    )
-}</p>
+<p>MyType {</p>
+<p>    preview (</p>
+<p>#if (($c.end - $c.start) &gt; 0) (</p>
+<pre><code>#(&quot;size=&quot;, $c.end - $c.start)
+</code></pre>
+<p>) #else (</p>
+<pre><code>&quot;empty&quot;
+</code></pre>
+<p>)
+    )</p>
+<p>}</p>
 <p>There are also <em>#else</em> and <em>#elif()</em> statements to do more complex if statements; these are analogous to the C equivalents.</p>
 <p>The <em>#switch()</em> statement lets you&hellip; well, switch. <em>#case</em> and <em>#default</em> are present, except that there are no fall-throughs and no <em>break</em> . You can do some nice hacks using a <em>#switch</em> :</p>
-<p>MyType {
-children (
-#switch(<span class="math inline">\(c.start[0].flags & 0xf000) #case 0x0000 ( #( freed: \)</span>c.start[0].value ) )
-#case 0x2000 ( #( alloc: <span class="math inline">\(c.start[0].value ) ) #case 0x3000 ( #( active: \)</span>c.start[0].value ) )
-#default ( #( huh: $c.start[0].value ) )
-    )
-}</p>
+<p>MyType {</p>
+<p>children (</p>
+<p>#switch($c.start[0].flags &amp; 0xf000)</p>
+<p>#case 0x0000 ( #( freed: $c.start[0].value ) )</p>
+<p>#case 0x2000 ( #( alloc: $c.start[0].value ) )</p>
+<p>#case 0x3000 ( #( active: $c.start[0].value ) )</p>
+<p>#default ( #( huh: $c.start[0].value ) )
+    )</p>
+<p>}</p>
 <p>Two things to note here. One, the <em>#switch</em> statement doesn&rsquo;t have a scope around its <em>#case</em> statements. Two, it doesn&rsquo;t work within an <em>#array</em> . If you try it, devenv will hang at 100% CPU. For those cases, use <em>#if</em> instead.</p>
 <p><strong>Lists</strong></p>
 <p>Arrays are fine, but sometimes you want to use a linked list. Well, the visualizer supports that:</p>
-<p>// cpp file
-struct MyNode {
-MyNode *prev, *next;
-int value;
-};
-struct MyList {
-MyList *head;
-};
-// autoexp.dat
-MyList {
-children (
-#list (
-head: $c.head,
+<p>// cpp file</p>
+<p>struct MyNode {</p>
+<p>MyNode *prev, *next;</p>
+<p>int value;
+};</p>
+<p>struct MyList {</p>
+<p>MyList *head;
+};</p>
+<p>// autoexp.dat</p>
+<p>MyList {</p>
+<p>children (</p>
+<p>#list (</p>
+<pre><code>head: $c.head,
+
 next: next
-)
+</code></pre>
+<p>)
 )
 }</p>
 <p>The visualizer will then proceed to follow the singly-linked list and place each element in the output. Note that the <em>next</em>  portion denotes a field name in the child node and not an expression. Like <em>#array</em> , you can use <em>#list() : <!-- raw HTML omitted --></em> syntax to change the way each <em>$e</em> is displayed.</p>
@@ -250,68 +271,93 @@ next: next
 <p>You can also supply a <em>size:</em> expression to limit the number of elements displayed.</p>
 <p><strong>Trees</strong></p>
 <p>Ah, now for the really evil stuff: trees.</p>
-<p>struct TreeNode {
-TreeNode *left, *right;
-int value;
-};
-struct TreeTest {
-TreeNode *head;
-int size;
-};
-TreeTest {
-children
-(
-#(
-#tree (
-head : <span class="math inline">\(c.head, left : left, right : right, size : \)</span>c.size
+<p>struct TreeNode {</p>
+<p>TreeNode *left, *right;</p>
+<p>int value;
+};</p>
+<p>struct TreeTest {</p>
+<p>TreeNode *head;</p>
+<p>int size;
+};</p>
+<p>TreeTest {</p>
+<p>children</p>
+<p>(</p>
+<p>#(</p>
+<pre><code>#tree (
+
+    head : $c.head,
+
+    left : left,
+
+    right : right,
+
+    size : $c.size
+
 ) : &amp;$e
-)
+</code></pre>
+<p>)
 )
 }</p>
 <p>In this case, Visual Studio trawls the tree using in-order traversal: that is, left, then current, then right. As with #list, <em>size:</em> can be an expression limiting the node count, <em>skip:</em> can avoid sentinels, and a value expression is possible.</p>
 <p>There is a nasty bug with the <em>#list</em> and <em>#tree</em> statements you should be aware of: they do not work if the nodes exist in static storage in a module. The traversal will work OK, but the <em>$e</em> variable will point to an invalid offset instead of the actual item, and you won&rsquo;t be able to see any of the elements. I got burned by this when I tried to write a visualizer to dump the list of critical sections in the process, which turns out to reside in a static block in ntdll.dll, and I don&rsquo;t have a workaround yet. This bug does not affect the <em>#array</em> primitive.</p>
 <p><strong>The string view expression</strong></p>
 <p><em>stringview</em> is an odd one: it sets the string that is displayed in the Text, XML, or HTML visualizer. This is what shows up when you click the little magnifying glass on the right side of some entries, like strings. Sadly, this is not terribly useful as all of the text visualizers are modal, but otherwise, it has the same syntax as the regular <em>preview</em> block.</p>
-<p>StringTest {
-stringview ( &ldquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->HTML output!!<!-- raw HTML omitted -->&rdquo; )
+<p>StringTest {</p>
+<p>stringview ( &ldquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->HTML output!!<!-- raw HTML omitted -->&rdquo; )
 }</p>
 <p>The usefulness of this is unfortunately damped by two limitations: you can&rsquo;t escape HTML symbols in strings you output, and you can&rsquo;t put literal strings in the value expressions evaluated by, say, <em>#array</em> or <em>#list</em> , as they evaluate to NULL. You can&rsquo;t generate an XML or HTML report from a data structure. It&rsquo;s really only useful if you already have HTML or XML somewhere in memory.</p>
 <p><strong>Real examples</strong></p>
 <p>One common container that you might write yourself, and want to view, is a hash table: a nice hash table, consisting of a prime number of buckets, and a linked list at each one. Good luck finding anything in a hash table that has 500 buckets, though, so it&rsquo;s perfect for a visualizer. Unfortunately, if you look at the visualizer for <em>stdext::hash_set</em> , you&rsquo;ll discover that the VC guys cheated &ndash; the Dinkumware STL has a single linked list binding all nodes in the hash_set, and just trawled it with a <em>#list</em> . We have an array of singly linked lists to elements.</p>
 <p>Can we crawl such a structure? You bet!</p>
-<p>struct Node {
-Node *next;
-int value;
-};
-struct HashSet {
-Node **buckets;
-int bucketCount;
-};
-// autoexp.dat
-HashSet {
-children (
-#(
-#array (
-expr : (<span class="math inline">\(c.buckets)[\)</span>i],
-size : <span class="math inline">\(c.bucketCount ) : #( #list ( head : \)</span>e,
-next : next
-) : $e.value
+<p>struct Node {</p>
+<p>Node *next;</p>
+<p>int value;
+};</p>
+<p>struct HashSet {</p>
+<p>Node **buckets;</p>
+<p>int bucketCount;
+};</p>
+<p>// autoexp.dat</p>
+<p>HashSet {</p>
+<p>children (</p>
+<p>#(</p>
+<pre><code>#array (
+
+    expr : ($c.buckets)[$i],
+
+    size : $c.bucketCount
+
+) : #(
+
+    #list (
+
+        head : $e,
+
+        next : next
+
+    ) : $e.value
+
 )
-)
+</code></pre>
+<p>)
 )
 }</p>
 <p>Another tricky example: say you have an array of pointers, but want to skip the entries that are NULL. Can we do it? Sure!</p>
-<p>struct SparseArray {
-void **start, **end;
-};
-// autoexp.dat
-SparseArray {
-children(
-#array (
-expr: <span class="math inline">\(c.start[\)</span>i],
-size: <span class="math inline">\(c.end - \)</span>c.start
-) : #if (<span class="math inline">\(e != 0) (\)</span>e
-)
+<p>struct SparseArray {</p>
+<p>void **start, **end;
+};</p>
+<p>// autoexp.dat</p>
+<p>SparseArray {</p>
+<p>children(</p>
+<p>#array (</p>
+<pre><code>expr: $c.start[$i],
+
+size: $c.end - $c.start
+</code></pre>
+<p>) : #if ($e != 0) (</p>
+<pre><code>$e
+</code></pre>
+<p>)
 )
 }</p>
 <p>And here it is in the debugger:</p>
@@ -321,18 +367,28 @@ size: <span class="math inline">\(c.end - \)</span>c.start
         </a>
     </p>
 <p>Ehh&hellip; hmmm. Well, as it turns out, doing an asymmetric <em>#if</em> within an <em>#array</em> causes the debugger to blow up. It is possible to do this, but only with a big hack:</p>
-<p>SparseArray {
-children(
-#(
-#array (
-expr: &amp;<span class="math inline">\(c.start[\)</span>i],
-size: <span class="math inline">\(c.end - \)</span>c.start
+<p>SparseArray {</p>
+<p>children(</p>
+<p>#(</p>
+<pre><code>#array (
+
+    expr: &amp;$c.start[$i],
+
+    size: $c.end - $c.start
+
 ) : #(
-#array (
-expr: &amp;<span class="math inline">\(e, size: \)</span>e != 0
-) : $e
+
+    #array (
+
+        expr: &amp;$e,
+
+        size: $e != 0
+
+    ) : $e
+
 )
-)
+</code></pre>
+<p>)
 )
 }</p>
 <p>Hee-haw!</p>
@@ -456,7 +512,7 @@ expr: &amp;<span class="math inline">\(e, size: \)</span>e != 0
 </div>
 <footer id="footer">
     <div>
-        &copy; 2006 - 2023 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
         
     </div>
     <br />
