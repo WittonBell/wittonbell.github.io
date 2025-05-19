@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.netcore on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/.netcore/</link>
+    <description>Recent content in .netcore on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 08 Jan 2024 23:06:00 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/.netcore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode搭建 .netcore 开发环境</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、MacOS 笔者笔记本电脑上安装的是macOS High Sierra(10.13)，想要尝试一下新版本的.netcore，之前</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ide on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/ide/</link>
+    <description>Recent content in ide on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Nov 2023 18:33:00 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/ide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode使用MinGW中的go并支持CGO</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</link>
+      <pubDate>Wed, 15 Nov 2023 18:33:00 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</guid>
+      <description>在Windows中，如果想使用Linux下的一些命令或者开发工具，可以安装Cygwin或者MinGW，MinGW相比Cy</description>
+    </item>
+  </channel>
+</rss>

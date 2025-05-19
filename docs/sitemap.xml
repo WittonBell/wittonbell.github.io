@@ -2,31 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wittonbell.github.io/categories/</loc>
-    <lastmod>2023-09-15T18:28:34+08:00</lastmod>
+    <loc>https://wittonbell.github.io/tags/.net/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
   </url><url>
-    <loc>https://wittonbell.github.io/tags/dlv/</loc>
-    <lastmod>2023-09-15T18:28:34+08:00</lastmod>
+    <loc>https://wittonbell.github.io/tags/.netcore/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/categories/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/categories/IDE/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/categories/macOS/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/posts/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/tags/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/tags/VSCode/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
+    <lastmod>2024-01-08T23:06:00+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/categories/GO/</loc>
-    <lastmod>2023-09-15T18:28:34+08:00</lastmod>
+    <lastmod>2023-11-15T18:33:00+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/golang/</loc>
+    <lastmod>2023-11-15T18:33:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/tags/ide/</loc>
+    <lastmod>2023-11-15T18:33:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</loc>
+    <lastmod>2023-11-15T18:33:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wittonbell.github.io/tags/dlv/</loc>
     <lastmod>2023-09-15T18:28:34+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/go%E8%B0%83%E8%AF%95%E5%99%A8/</loc>
     <lastmod>2023-09-15T18:28:34+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/podman/</loc>
-    <lastmod>2023-09-15T18:28:34+08:00</lastmod>
-  </url><url>
-    <loc>https://wittonbell.github.io/posts/</loc>
-    <lastmod>2023-09-15T18:28:34+08:00</lastmod>
-  </url><url>
-    <loc>https://wittonbell.github.io/tags/</loc>
-    <lastmod>2023-09-15T18:28:34+08:00</lastmod>
-  </url><url>
-    <loc>https://wittonbell.github.io/</loc>
     <lastmod>2023-09-15T18:28:34+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/%E5%90%8E%E7%AB%AF/</loc>
@@ -164,9 +191,6 @@
     <loc>https://wittonbell.github.io/tags/compiler/</loc>
     <lastmod>2023-08-21T14:40:47+08:00</lastmod>
   </url><url>
-    <loc>https://wittonbell.github.io/categories/IDE/</loc>
-    <lastmod>2023-08-21T14:40:47+08:00</lastmod>
-  </url><url>
     <loc>https://wittonbell.github.io/tags/match-library/</loc>
     <lastmod>2023-08-21T14:40:47+08:00</lastmod>
   </url><url>
@@ -204,9 +228,6 @@
     <lastmod>2023-08-15T18:32:46+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/lldb-mi/</loc>
-    <lastmod>2023-08-15T18:32:46+08:00</lastmod>
-  </url><url>
-    <loc>https://wittonbell.github.io/categories/macOS/</loc>
     <lastmod>2023-08-15T18:32:46+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</loc>
@@ -267,9 +288,6 @@
     <lastmod>2023-08-04T10:22:20+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/task/</loc>
-    <lastmod>2023-08-04T10:22:20+08:00</lastmod>
-  </url><url>
-    <loc>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2023-08-04T10:22:20+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/%E4%BB%BB%E5%8A%A1/</loc>
@@ -375,9 +393,6 @@
     <lastmod>2023-06-06T17:15:13+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/tags/msys/</loc>
-    <lastmod>2023-06-06T17:15:13+08:00</lastmod>
-  </url><url>
-    <loc>https://wittonbell.github.io/tags/VSCode/</loc>
     <lastmod>2023-06-06T17:15:13+08:00</lastmod>
   </url><url>
     <loc>https://wittonbell.github.io/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/</loc>

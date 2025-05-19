@@ -6,8 +6,15 @@
     <description>Recent content in macOS on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Aug 2023 18:32:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jan 2024 23:06:00 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/macOS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode搭建 .netcore 开发环境</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>一、MacOS 笔者笔记本电脑上安装的是macOS High Sierra(10.13)，想要尝试一下新版本的.netcore，之前</description>
+    </item>
     <item>
       <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
       <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
