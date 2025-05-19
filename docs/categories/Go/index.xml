@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GO on Witton的博客</title>
-    <link>https://wittonbell.github.io/categories/GO/</link>
-    <description>Recent content in GO on Witton的博客</description>
+    <title>Go on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/Go/</link>
+    <description>Recent content in Go on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 15 Nov 2023 18:33:00 +0800</lastBuildDate>
-    <atom:link href="https://wittonbell.github.io/categories/GO/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wittonbell.github.io/categories/Go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode使用MinGW中的go并支持CGO</title>
+      <link>https://wittonbell.github.io/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</link>
+      <pubDate>Wed, 15 Nov 2023 18:33:00 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</guid>
+      <description>在Windows中，如果想使用Linux下的一些命令或者开发工具，可以安装Cygwin或者MinGW，MinGW相比Cy</description>
+    </item>
     <item>
       <title>制作带Go调试器的容器</title>
       <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/</link>
