@@ -100,18 +100,18 @@
             </span>
         </div>
         <div class="post-content">
-            <p>      在Unreal引擎中大量使用了自定义的数据类型如：FName，FString，TArray等等，对于这些自定义的数据类型，我们无法直接查看到这些数据的值，但是我们可以编写VS中的autoexp.dat文件中的脚本，来达到我们需要在调试器中显示的方式。</p>
-<p>      由于在VS2003中的autoexp.dat脚本不支持表达式，而无法全部满足我们对Unreal引擎中自定义的数据类型的调试显示。经过研究，笔者实现了FColor，FNameEntry，FString的直接显示，但是对于FName的显示，通过调整FName的代码，也实现了其调试显示的需求。</p>
-<p>      而VS2005、VS2008、VS2010中的autoexp.dat脚本实现了对表达式的支持，基本上可以把Unreal引擎中的所有自定义数据类型直观的显示在调试器中。</p>
-<p>     VS2003中的方法如下：</p>
-<p>     打开VS安装目录下的Common7/Packages/Debugger/autoexp.dat文件，在[AutoExpand]下添加如下脚本：</p>
+            <p>在Unreal引擎中大量使用了自定义的数据类型如：FName，FString，TArray等等，对于这些自定义的数据类型，我们无法直接查看到这些数据的值，但是我们可以编写VS中的autoexp.dat文件中的脚本，来达到我们需要在调试器中显示的方式。</p>
+<p>由于在VS2003中的autoexp.dat脚本不支持表达式，而无法全部满足我们对Unreal引擎中自定义的数据类型的调试显示。经过研究，笔者实现了FColor，FNameEntry，FString的直接显示，但是对于FName的显示，通过调整FName的代码，也实现了其调试显示的需求。</p>
+<p>而VS2005、VS2008、VS2010中的autoexp.dat脚本实现了对表达式的支持，基本上可以把Unreal引擎中的所有自定义数据类型直观的显示在调试器中。</p>
+<p>VS2003中的方法如下：</p>
+<p>打开VS安装目录下的Common7/Packages/Debugger/autoexp.dat文件，在[AutoExpand]下添加如下脚本：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>FNameEntry=&lt;Name,su&gt;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>;Unreal的FColor
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>FColor = R=&lt;R,u&gt; G=&lt;G,u&gt; B=&lt;B,u&gt; A=&lt;A,u&gt;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>FString = &lt;Data,su&gt;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>FName = &lt;operator*(),su&gt; ;注意：调用operator*()函数需要把代码中的断言去掉，否则在查看未初始化的FName变量时会出现异常。
-</span></span></code></pre></div><p>    VS2005、VS2008、VS2010中的方法如下：</p>
-<p>    同上打开autoexp.dat文件，在[AutoExpand]下添加如下脚本：</p>
+</span></span></code></pre></div><p>VS2005、VS2008、VS2010中的方法如下：</p>
+<p>同上打开autoexp.dat文件，在[AutoExpand]下添加如下脚本：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>FNameEntry=&lt;Name,su&gt;
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>;Unreal的FColor
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>FColor = R=&lt;R,u&gt; G=&lt;G,u&gt; B=&lt;B,u&gt; A=&lt;A,u&gt;
@@ -374,22 +374,18 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256</span><span>}
 </span></span></code></pre></div><p>然后就可以在调试中尽情查看以上自定义数据类型的值了。</p>
 <p>显示效果如下：</p>
-<p> </p>
 <p>
-        <a data-fancybox="gallery" href="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_128851625944Sw.gif">
-            <img class="mx-auto" alt="" src="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_128851625944Sw.gif" />
+        <a data-fancybox="gallery" href="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_128851625944Sw.png">
+            <img class="mx-auto" alt="" src="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_128851625944Sw.png" />
         </a>
     </p>
 <p>Tips显示方式</p>
 <p>
-        <a data-fancybox="gallery" href="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_1288516426jVte.gif">
-            <img class="mx-auto" alt="" src="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_1288516426jVte.gif" />
+        <a data-fancybox="gallery" href="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_1288516426jVte.png">
+            <img class="mx-auto" alt="" src="../assets/2010-10-31-%e5%9c%a8Visual-Studio%e8%b0%83%e8%af%95%e5%99%a8%e4%b8%ad%e6%98%be%e7%a4%baUnreal%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%80%bc/0_1288516426jVte.png" />
         </a>
     </p>
 <p>快速监视显示</p>
-<p> </p>
-<p> </p>
-<p> </p>
 
         </div>
 
