@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43;abi on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/c&#43;&#43;abi/</link>
+    <description>Recent content in c&#43;&#43;abi on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 23 Feb 2024 18:01:30 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/c++abi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决ubuntu系统cannot find -lc&#43;&#43;abi: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</guid>
+      <description>随着CentOS的没落，使用ubuntu的越来越多，而且国外貌似也比较流行使用ubuntu，像LLVM/Clang就有专</description>
+    </item>
+  </channel>
+</rss>

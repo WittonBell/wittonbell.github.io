@@ -6,8 +6,15 @@
     <description>Recent content in Windows on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Jun 2023 18:00:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jan 2024 17:23:20 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>提起Makefile，可能有人会觉得它已经过时了，毕竟现在有比它更好的工具，比如CMake，XMake，Meson等等，</description>
+    </item>
     <item>
       <title>将MSYS2 MinGW集成到Windows终端</title>
       <link>https://wittonbell.github.io/posts/2023/2023-06-05-%E5%B0%86MSYS2-MinGW%E9%9B%86%E6%88%90%E5%88%B0Windows%E7%BB%88%E7%AB%AF/</link>

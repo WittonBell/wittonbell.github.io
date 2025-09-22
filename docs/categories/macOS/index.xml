@@ -10,9 +10,9 @@
     <atom:link href="https://wittonbell.github.io/categories/macOS/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VSCode搭建 .netcore 开发环境</title>
-      <link>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA.netcore%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA.netcore%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>一、MacOS 笔者笔记本电脑上安装的是macOS High Sierra(10.13)，想要尝试一下新版本的.netcore，之前</description>
     </item>
     <item>

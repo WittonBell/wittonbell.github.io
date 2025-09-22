@@ -6,13 +6,27 @@
     <description>Recent content in IDE on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jan 2024 23:06:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jan 2024 17:23:20 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/IDE/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>提起Makefile，可能有人会觉得它已经过时了，毕竟现在有比它更好的工具，比如CMake，XMake，Meson等等，</description>
+    </item>
+    <item>
+      <title>VSCode搭建Java开发环境</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-12-VSCode%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 12 Jan 2024 22:27:33 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-12-VSCode%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>笔者使用最多的语言是C++，也使用过不少其它语言，像Erlang，Python，Lua，C#等等，目前项目中在使用Go，</description>
+    </item>
+    <item>
       <title>VSCode搭建 .netcore 开发环境</title>
-      <link>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA.netcore%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA.netcore%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>一、MacOS 笔者笔记本电脑上安装的是macOS High Sierra(10.13)，想要尝试一下新版本的.netcore，之前</description>
     </item>
     <item>
@@ -98,13 +112,6 @@
       <pubDate>Fri, 20 Dec 2013 17:25:57 +0800</pubDate>
       <guid>https://wittonbell.github.io/posts/2013/2013-12-20-sublime%E9%85%8D%E7%BD%AE%E5%85%A8%E6%94%BB%E7%95%A5/</guid>
       <description>大家好，今天给大家分享一款编辑器：sublime text2 我用过很多编辑器， EditPlus、EmEditor、Notepad+</description>
-    </item>
-    <item>
-      <title>VSCode搭建Java开发环境</title>
-      <link>https://wittonbell.github.io/posts/2024/2024-01-12-VSCode-%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://wittonbell.github.io/posts/2024/2024-01-12-VSCode-%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
-      <description>笔者使用最多的语言是C++，也使用过不少其它语言，像Erlang，Python，Lua，C#等等，目前项目中在使用Go，</description>
     </item>
   </channel>
 </rss>

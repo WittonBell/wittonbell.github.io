@@ -6,13 +6,34 @@
     <description>Recent content in Categories on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jan 2024 23:06:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2024 18:01:30 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://wittonbell.github.io/categories/Linux/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/Linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>IDE</title>
       <link>https://wittonbell.github.io/categories/IDE/</link>
-      <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/IDE/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://wittonbell.github.io/categories/Windows/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/Windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>编程语言</title>
+      <link>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
@@ -20,13 +41,6 @@
       <link>https://wittonbell.github.io/categories/macOS/</link>
       <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/macOS/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>编程语言</title>
-      <link>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
@@ -41,13 +55,6 @@
       <link>https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://wittonbell.github.io/categories/Linux/</link>
-      <pubDate>Fri, 15 Sep 2023 16:15:27 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/Linux/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +83,6 @@
       <link>https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
       <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>https://wittonbell.github.io/categories/Windows/</link>
-      <pubDate>Mon, 05 Jun 2023 18:00:24 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/Windows/</guid>
       <description></description>
     </item>
     <item>

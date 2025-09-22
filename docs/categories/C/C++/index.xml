@@ -8,6 +8,20 @@
     <language>zh-CN</language>
     <atom:link href="https://wittonbell.github.io/categories/C/C++/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>解决ubuntu系统cannot find -lc&#43;&#43;abi: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</guid>
+      <description>随着CentOS的没落，使用ubuntu的越来越多，而且国外貌似也比较流行使用ubuntu，像LLVM/Clang就有专</description>
+    </item>
+    <item>
+      <title>VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</guid>
+      <description>提起Makefile，可能有人会觉得它已经过时了，毕竟现在有比它更好的工具，比如CMake，XMake，Meson等等，</description>
+    </item>
+    <item>
       <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
       <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>
       <pubDate>Mon, 21 Aug 2023 14:40:47 +0800</pubDate>

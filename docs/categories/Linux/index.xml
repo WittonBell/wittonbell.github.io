@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 Sep 2023 16:15:27 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2024 18:01:30 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决ubuntu系统cannot find -lc&#43;&#43;abi: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</guid>
+      <description>随着CentOS的没落，使用ubuntu的越来越多，而且国外貌似也比较流行使用ubuntu，像LLVM/Clang就有专</description>
+    </item>
     <item>
       <title>复制远程连接到Linux使用VIM打开的内容到Windows</title>
       <link>https://wittonbell.github.io/posts/2023/2023-09-15-%E5%A4%8D%E5%88%B6%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%88%B0Linux%E4%BD%BF%E7%94%A8VIM%E6%89%93%E5%BC%80%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0Windows/</link>

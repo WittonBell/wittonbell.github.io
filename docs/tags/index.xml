@@ -6,8 +6,155 @@
     <description>Recent content in Tags on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jan 2024 23:06:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2024 18:01:30 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c&#43;&#43;</title>
+      <link>https://wittonbell.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>c&#43;&#43;abi</title>
+      <link>https://wittonbell.github.io/tags/c&#43;&#43;abi/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/c&#43;&#43;abi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clang</title>
+      <link>https://wittonbell.github.io/tags/Clang/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/Clang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>libc&#43;&#43;</title>
+      <link>https://wittonbell.github.io/tags/libc&#43;&#43;/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/libc&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>linux</title>
+      <link>https://wittonbell.github.io/tags/linux/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>No such file</title>
+      <link>https://wittonbell.github.io/tags/No-such-file/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/No-such-file/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ubuntu</title>
+      <link>https://wittonbell.github.io/tags/ubuntu/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C语言</title>
+      <link>https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>makefile</title>
+      <link>https://wittonbell.github.io/tags/makefile/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/makefile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Module</title>
+      <link>https://wittonbell.github.io/tags/Module/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/Module/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://wittonbell.github.io/tags/Tools/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/Tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VSCode</title>
+      <link>https://wittonbell.github.io/tags/VSCode/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/VSCode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>乱码</title>
+      <link>https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/</link>
+      <pubDate>Thu, 18 Jan 2024 17:23:20 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C#</title>
+      <link>https://wittonbell.github.io/tags/C#/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/C#/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>erlang</title>
+      <link>https://wittonbell.github.io/tags/erlang/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/erlang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fibonacci</title>
+      <link>https://wittonbell.github.io/tags/Fibonacci/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/Fibonacci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>go</title>
+      <link>https://wittonbell.github.io/tags/go/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>java</title>
+      <link>https://wittonbell.github.io/tags/java/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>python</title>
+      <link>https://wittonbell.github.io/tags/python/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>语言性能</title>
+      <link>https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/</link>
+      <pubDate>Sat, 13 Jan 2024 15:56:51 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ide</title>
+      <link>https://wittonbell.github.io/tags/ide/</link>
+      <pubDate>Fri, 12 Jan 2024 22:27:33 +0800</pubDate>
+      <guid>https://wittonbell.github.io/tags/ide/</guid>
+      <description></description>
+    </item>
     <item>
       <title>.net</title>
       <link>https://wittonbell.github.io/tags/.net/</link>
@@ -20,27 +167,6 @@
       <link>https://wittonbell.github.io/tags/.netcore/</link>
       <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/.netcore/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VSCode</title>
-      <link>https://wittonbell.github.io/tags/VSCode/</link>
-      <pubDate>Mon, 08 Jan 2024 23:06:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/VSCode/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>go</title>
-      <link>https://wittonbell.github.io/tags/go/</link>
-      <pubDate>Wed, 15 Nov 2023 18:33:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ide</title>
-      <link>https://wittonbell.github.io/tags/ide/</link>
-      <pubDate>Wed, 15 Nov 2023 18:33:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/ide/</guid>
       <description></description>
     </item>
     <item>
@@ -83,13 +209,6 @@
       <link>https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Fri, 15 Sep 2023 18:28:34 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>linux</title>
-      <link>https://wittonbell.github.io/tags/linux/</link>
-      <pubDate>Fri, 15 Sep 2023 16:15:27 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -352,20 +471,6 @@
       <description></description>
     </item>
     <item>
-      <title>c&#43;&#43;</title>
-      <link>https://wittonbell.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Clang</title>
-      <link>https://wittonbell.github.io/tags/Clang/</link>
-      <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/Clang/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>gcc</title>
       <link>https://wittonbell.github.io/tags/gcc/</link>
       <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>
@@ -468,13 +573,6 @@
       <link>https://wittonbell.github.io/tags/set-failed/</link>
       <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/set-failed/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ubuntu</title>
-      <link>https://wittonbell.github.io/tags/ubuntu/</link>
-      <pubDate>Sun, 13 Aug 2023 19:47:46 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
@@ -1416,13 +1514,6 @@
       <description></description>
     </item>
     <item>
-      <title>python</title>
-      <link>https://wittonbell.github.io/tags/python/</link>
-      <pubDate>Tue, 28 Dec 2021 11:46:32 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>data</title>
       <link>https://wittonbell.github.io/tags/data/</link>
       <pubDate>Mon, 27 Dec 2021 10:56:23 +0800</pubDate>
@@ -2004,13 +2095,6 @@
       <description></description>
     </item>
     <item>
-      <title>No such file</title>
-      <link>https://wittonbell.github.io/tags/No-such-file/</link>
-      <pubDate>Fri, 30 Oct 2020 16:09:05 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/No-such-file/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>checkinstall</title>
       <link>https://wittonbell.github.io/tags/checkinstall/</link>
       <pubDate>Thu, 29 Oct 2020 16:20:32 +0800</pubDate>
@@ -2120,13 +2204,6 @@
       <link>https://wittonbell.github.io/tags/%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Wed, 21 Oct 2020 17:53:45 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/%E9%A1%B9%E7%9B%AE/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>C语言</title>
-      <link>https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Wed, 21 Oct 2020 11:58:01 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
@@ -2298,13 +2375,6 @@
       <description></description>
     </item>
     <item>
-      <title>乱码</title>
-      <link>https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/</link>
-      <pubDate>Tue, 18 Aug 2020 22:32:24 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>进入当前目录</title>
       <link>https://wittonbell.github.io/tags/%E8%BF%9B%E5%85%A5%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Sat, 15 Aug 2020 20:12:11 +0800</pubDate>
@@ -2316,13 +2386,6 @@
       <link>https://wittonbell.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
       <pubDate>Sat, 15 Aug 2020 20:12:11 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>erlang</title>
-      <link>https://wittonbell.github.io/tags/erlang/</link>
-      <pubDate>Thu, 13 Aug 2020 16:43:35 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/erlang/</guid>
       <description></description>
     </item>
     <item>
@@ -2603,13 +2666,6 @@
       <link>https://wittonbell.github.io/tags/%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Wed, 04 Dec 2019 17:03:58 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>libc&#43;&#43;</title>
-      <link>https://wittonbell.github.io/tags/libc&#43;&#43;/</link>
-      <pubDate>Thu, 21 Nov 2019 18:43:23 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/libc&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
@@ -2897,13 +2953,6 @@
       <link>https://wittonbell.github.io/tags/C&#43;&#43;-makefile/</link>
       <pubDate>Thu, 23 Feb 2017 14:14:40 +0800</pubDate>
       <guid>https://wittonbell.github.io/tags/C&#43;&#43;-makefile/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>makefile</title>
-      <link>https://wittonbell.github.io/tags/makefile/</link>
-      <pubDate>Thu, 23 Feb 2017 14:14:40 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/makefile/</guid>
       <description></description>
     </item>
     <item>
@@ -3439,13 +3488,6 @@
       <description></description>
     </item>
     <item>
-      <title>java</title>
-      <link>https://wittonbell.github.io/tags/java/</link>
-      <pubDate>Wed, 19 Dec 2007 10:17:00 +0800</pubDate>
-      <guid>https://wittonbell.github.io/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>path</title>
       <link>https://wittonbell.github.io/tags/path/</link>
       <pubDate>Wed, 19 Dec 2007 10:17:00 +0800</pubDate>
@@ -3537,31 +3579,10 @@
       <description></description>
     </item>
     <item>
-      <title>C#</title>
-      <link>https://wittonbell.github.io/tags/C#/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://wittonbell.github.io/tags/C#/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Fibonacci</title>
-      <link>https://wittonbell.github.io/tags/Fibonacci/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://wittonbell.github.io/tags/Fibonacci/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>TLS/SSL</title>
       <link>https://wittonbell.github.io/tags/TLS/SSL/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://wittonbell.github.io/tags/TLS/SSL/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>语言性能</title>
-      <link>https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/</guid>
       <description></description>
     </item>
   </channel>

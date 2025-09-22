@@ -6,8 +6,15 @@
     <description>Recent content in libc&#43;&#43; on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 21 Nov 2019 18:43:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2024 18:01:30 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/libc++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决ubuntu系统cannot find -lc&#43;&#43;abi: No such file or directory</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</link>
+      <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</guid>
+      <description>随着CentOS的没落，使用ubuntu的越来越多，而且国外貌似也比较流行使用ubuntu，像LLVM/Clang就有专</description>
+    </item>
     <item>
       <title>GDB直观调试STL</title>
       <link>https://wittonbell.github.io/posts/2019/2019-11-21-GDB%E7%9B%B4%E8%A7%82%E8%B0%83%E8%AF%95STL/</link>

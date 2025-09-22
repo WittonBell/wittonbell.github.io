@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer">
 
-    <title>VSCode搭建 .netcore 开发环境 | Witton的博客</title>
-    <meta property="og:title" content="VSCode搭建 .netcore 开发环境 - Witton的博客">
+    <title>语言性能 | Witton的博客</title>
+    <meta property="og:title" content="语言性能 - Witton的博客">
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content='2024-01-08T23:06:00&#43;08:00'>
-    <meta property="article:modified_time" content='2024-01-08T23:06:00&#43;08:00'>
-    <meta name="Keywords" content="vscode,.netcore,.net,博客,笔记,游戏开发,Witton,WittonBell,Bell">
-    <meta name="description" content="VSCode搭建 .netcore 开发环境">
-    <meta name="author" content="Witton Bell">
-    <meta property="og:url" content="https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+    <meta name="Keywords" content="博客,笔记,游戏开发,Witton,WittonBell,Bell">
+    <meta name="description" content="语言性能">
+    <meta name="author" content="Witton">
+    <meta property="og:url" content="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/">
     <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/post-nav.css'>
+    <link rel="alternate" type="application/rss+xml" href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/index.xml" title="Witton的博客" />
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
@@ -67,7 +67,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a class="" href="https://wittonbell.github.io/" title="首页">首页</a>
                     <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
                     <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
                     <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
@@ -80,335 +80,39 @@
         <div class="container">
             <div class="col-group">
                 <div class="col-8" id="main">
-                    <div class="res-cons">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        标签
+        <span class="keyword">语言性能</span>
+        中的文章
+    </h3>
+    
 
-<style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 300px;
-        margin-left: -310px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 1px 0;
-        list-style:none;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 1px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-        list-style:none;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一macos">一、MacOS</a></li>
-    <li><a href="#二windows">二、Windows</a></li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if (leftPos < 220) {
-                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-
-        if ($("#TableOfContents").children().length < 1) {
-            $(".post-toc").remove();
-        }
-    })
-</script>
-
-<article class="post">
+    
+    <article class="post">
         <header>
-            <h1 class="post-title">VSCode搭建 .netcore 开发环境</h1>
+            <h1 class="post-title">
+                <a href="https://wittonbell.github.io/posts/2024/2024-01-13-%E4%BD%BF%E7%94%A8%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91Fibonacci%E6%95%B0%E5%88%97%E6%9D%A5%E6%B5%8B%E8%AF%95%E5%90%84%E5%A4%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E6%80%A7%E8%83%BD/" target="_blank">使用斐波那契（Fibonacci）数列来测试各大语言的性能</a>
+            </h1>
         </header>
-        <time datetime="2024-01-08T15:06:00Z" class="post-meta meta-date dt-published">2024年1月8日</time>
+        <time datetime="2024-01-13T07:56:51Z" class="post-meta meta-date dt-published">2024年1月13日</time>
 <span class="post-meta meta-category">&nbsp;|&nbsp; 作者: Witton Bell</span>
 <div class="post-meta meta-category">
-  <span>&nbsp;|&nbsp;</span><a href="/categories/macOS/" class="category-link p-category" target="_blank">macOS</a>/<a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-link p-category" target="_blank">编程语言</a>/<a href="/categories/IDE/" class="category-link p-category" target="_blank">IDE</a>
+  <span>&nbsp;|&nbsp;</span><a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-link p-category" target="_blank">编程语言</a>
 </div>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 1803 字</span>
-<span class="post-meta meta-category">&nbsp;|&nbsp; 4&nbsp;分钟</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 1319 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 3&nbsp;分钟</span>
 
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">&nbsp;|
-                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
-            </span>
-        </div>
         <div class="post-content">
-            <h1 id="一macos">一、MacOS</h1>
-<p>笔者笔记本电脑上安装的是macOS High Sierra(10.13)，想要尝试一下新版本的.netcore，之前系统是10.12时，.netcore 3.1刚出来时安装过3.1版本，很久没更新了，最近.net8出来了，想试一下，但是需要更新系统，于是安装了
-  <a href="https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-7.0.404-macos-x64-installer">.netcore7</a>，它的支持时间到2024年5月14日。</p>
-<p>下载了
-  <a href="https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-7.0.404-macos-x64-installer">.netcore7</a>后，直接双击安装即可。安装后的路径为：<code>/usr/local/share/dotnet</code></p>
-<p>笔者VSCode的版本为1.85.1，需要安装<code>C#</code>插件，目前最新版本为2.14.8，但macOS 10.13目前最高只能安装v1.26.0版本的C#插件，不能安装更高的版本，否则不能调试。</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/924dc8987d18a33cd41bbbc7c37f5385.png)</p>
-<p>另外还需要安装一个<code>.NET Install Tool</code>插件：</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/f9cc78d85d4719a3e2b516e376fc283a.png)
-这样就可以在终端使用dotnet命令创建项目了，比如创建一个控制台应用：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ dotnet new console
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>已成功创建模板“控制台应用”。
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>正在处理创建后操作...
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>正在还原 /Users/witton/Projects/cc/cc.csproj:
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>  正在确定要还原的项目…
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>  已还原 /Users/witton/Projects/cc/cc.csproj <span style="color:#f92672">(</span>用时 <span style="color:#ae81ff">120</span> ms<span style="color:#f92672">)</span>。
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>已成功还原。
-</span></span></code></pre></div><p>此时打开生成的<code>Program.cs</code>，并打上断点，切换到<code>运行和调试</code>工具栏，执行<code>Generate C# Assets for Build and Debug</code>，插件会自动生成<code>launch.json</code>和<code>tasks.json</code>两个文件：</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/df70e93eb1dc006d1229ebc18c474ade.png)
-<code>launch.json</code>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.2.0&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#f92672">&#34;configurations&#34;</span>: [
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>			<span style="color:#75715e">// Use IntelliSense to find out which attributes exist for C# debugging
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#75715e"></span>			<span style="color:#75715e">// Use hover for the description of the existing attributes
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#75715e"></span>			<span style="color:#75715e">// For further information visit https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#75715e"></span>			<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;.NET Core Launch (console)&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>			<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;coreclr&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>			<span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>			<span style="color:#f92672">&#34;preLaunchTask&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>			<span style="color:#75715e">// If you have changed target frameworks, make sure to update the program path.
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#75715e"></span>			<span style="color:#f92672">&#34;program&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}/bin/Debug/net7.0/cc.dll&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>			<span style="color:#f92672">&#34;args&#34;</span>: [],
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>			<span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>			<span style="color:#75715e">// For more information about the &#39;console&#39; field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#75715e"></span>			<span style="color:#f92672">&#34;console&#34;</span>: <span style="color:#e6db74">&#34;internalConsole&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>			<span style="color:#f92672">&#34;stopAtEntry&#34;</span>: <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>		},
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>		{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>			<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;.NET Core Attach&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>			<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;coreclr&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>			<span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;attach&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>		}
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>	]
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>}
-</span></span></code></pre></div><p><code>tasks.json</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0.0&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#f92672">&#34;tasks&#34;</span>: [
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>			<span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;build&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>			<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;dotnet&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>			<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;process&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>			<span style="color:#f92672">&#34;args&#34;</span>: [
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>				<span style="color:#e6db74">&#34;build&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				<span style="color:#e6db74">&#34;${workspaceFolder}/cc.csproj&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>				<span style="color:#e6db74">&#34;/property:GenerateFullPaths=true&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>				<span style="color:#e6db74">&#34;/consoleloggerparameters:NoSummary&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>			],
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>			<span style="color:#f92672">&#34;problemMatcher&#34;</span>: <span style="color:#e6db74">&#34;$msCompile&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>		},
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>		{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>			<span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;publish&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>			<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;dotnet&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>			<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;process&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>			<span style="color:#f92672">&#34;args&#34;</span>: [
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>				<span style="color:#e6db74">&#34;publish&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>				<span style="color:#e6db74">&#34;${workspaceFolder}/cc.csproj&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>				<span style="color:#e6db74">&#34;/property:GenerateFullPaths=true&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>				<span style="color:#e6db74">&#34;/consoleloggerparameters:NoSummary&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>			],
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>			<span style="color:#f92672">&#34;problemMatcher&#34;</span>: <span style="color:#e6db74">&#34;$msCompile&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>		},
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>		{
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>			<span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;watch&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>			<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;dotnet&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>			<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;process&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>			<span style="color:#f92672">&#34;args&#34;</span>: [
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>				<span style="color:#e6db74">&#34;watch&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>				<span style="color:#e6db74">&#34;run&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>				<span style="color:#e6db74">&#34;--project&#34;</span>,
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>				<span style="color:#e6db74">&#34;${workspaceFolder}/cc.csproj&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>			],
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>			<span style="color:#f92672">&#34;problemMatcher&#34;</span>: <span style="color:#e6db74">&#34;$msCompile&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>		}
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>	]
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>}
-</span></span></code></pre></div><p>此时按<code>F5</code>运行<code>启动调试</code>即可开始调试C#程序：</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/fbd090be83a89376bc19b6a4e5c5c8bd.png)
-微软开发了一个新的插件<code>C# Dev Kit</code>，它提供了更加强大的功能，并且可以像VS那样使用<code>解决方案资源管理器</code>来管理项目。该插件需要<code>C#</code>插件为2.0及以上版本，但由于笔者的MacOS系统比较老了，<code>C#</code>插件2.0及以上版本不能进行调试，所以只能使用1.X来将就使用了。</p>
-<p>如果是macOS 10.15及以上版本，就可以直接安装
-  <a href="https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.100-macos-x64-installer">.net8</a>了，VSCode插件也可以直接安装<code>C# Dev Kit</code>以及<code>IntelliCode for C# Dev Kit</code>插件了。但是由于<code>.NET Install Tool</code>插件目前仅支持7.x版本的.net，所以还需要安装<code>.net 7</code>的<code>runtime</code>:
-  <a href="https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-7.0.14-macos-x64-installer">runtime-7.0.14-macos-x64-installer</a></p>
-<p>安装好后就可以使用<code>F1</code>调出<code>.NET：新建项目...</code>命令，来新建.net项目了：</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/11d8f5140db3dbb95ac1610f13a69452.png)</p>
-<p>选择项目模板：</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/82525ad552fa03272be46387e2d3ccd4.png)</p>
-<p>比如选择<code>控制台应用</code>，创建好项目后，可以看到<code>解决方案资源管理器</code>：</p>
-<p>![在这里插入图片描述](../assets/2024-01-08-VSCode搭建 .netcore 开发环境/a08c6d822f22d95f53aa1efaae0d0827.png)</p>
-<h1 id="二windows">二、Windows</h1>
-<p>如果是Windows10，则可以直接安装最新的<code>.net 8</code>，并且安装上<code>C# Dev Kit</code>以及<code>IntelliCode for C# Dev Kit</code>，也<strong>不需要</strong>像macOS那样还需要安装<code>.net 7</code>的<code>runtime</code></p>
-
+            笔者使用最多的语言是C++，目前项目中在使用Go，也使用过不少其它语言，像Erlang，Python，Lua，C#等等。 ……
         </div>
-
-
-
-
-
-
-
-	<ul class="post-nav">
-		
-		
-			<li class="post-nav-next">
-				<a href="/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/" rel="next">VSCode使用MinGW中的go并支持CGO &gt;</a>
-			</li>
-		
-	</ul>
-
-
-
-<div class="post-archive">
-    <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
-        
-        
-        
-        
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">https://wittonbell.github.io/posts/2024/2024-01-08-VSCode搭建-.netcore-开发环境/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
-    </ul>
-</div>
-<br/>
-
-
-
-
-<div class="post-archive">
-    <h2>相关文章</h2>
-    <ul class="listing">
-        
-        <li><a href="/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/">VSCode使用MinGW中的go并支持CGO</a></li>
-        
-        <li><a href="/posts/2023/2023-06-06-VSCode%E8%B0%83%E8%AF%95mintty%E6%97%B6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%A4%9A%E4%BA%862CON-1CON-CON%E7%9A%84%E9%97%AE%E9%A2%98/">VSCode调试mintty时命令行参数多了2＞CON 1＞CON ＜CON的问题</a></li>
-        
-        <li><a href="/posts/2023/2023-05-30-VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Ubuntu%E4%BD%BF%E7%94%A8LLDB%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/">VSCode远程连接Ubuntu使用LLDB调试程序</a></li>
-        
-        <li><a href="/posts/2024/2024-01-12-VSCode-%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">VSCode搭建Java开发环境</a></li>
-        
-        <li><a href="/posts/2023/2023-09-15-%E5%88%B6%E4%BD%9C%E5%B8%A6Go%E8%B0%83%E8%AF%95%E5%99%A8%E7%9A%84%E5%AE%B9%E5%99%A8/">制作带Go调试器的容器</a></li>
-        
-    </ul>
-</div>
-
-
-<div class="post-meta meta-tags">
-            
-            <ul class="clearfix">
-                
-                <li><a href='/tags/vscode/' target="_blank">vscode</a></li>
-                
-                <li><a href='/tags/.netcore/' target="_blank">.netcore</a></li>
-                
-                <li><a href='/tags/.net/' target="_blank">.net</a></li>
-                
-            </ul>
-            
-        </div>
+        <p class="readmore"><a href="https://wittonbell.github.io/posts/2024/2024-01-13-%E4%BD%BF%E7%94%A8%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91Fibonacci%E6%95%B0%E5%88%97%E6%9D%A5%E6%B5%8B%E8%AF%95%E5%90%84%E5%A4%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E6%80%A7%E8%83%BD/" target="_blank">阅读全文</a></p>
     </article>
     
 
     
-<div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
-    const ID = "2024-01-08-VSCode搭建 .netcore 开发环境" 
-    const Title = "2024-01-08-VSCode搭建 .netcore 开发环境"
-    const gitalk = new Gitalk({
-        clientID: '118c70fe27b7246dfb76',
-        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
-        repo: 'comment',
-        owner: 'WittonBell',
-        admin: ['WittonBell'],
-        id: ID, 
-        title: Title,
-        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
-        pagerDirection: "last",
-        createIssueManually:  false ,
-        distractionFreeMode:  false  
-    });
-    (function () {
-        
-        
-        
-        
-        gitalk.render('gitalk-container');
-    })();
-</script>
-
 
 </div>
 <footer id="footer">
@@ -428,84 +132,10 @@
             <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
         </div>
     </div>
-</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</footer>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
-<style type="text/css">
-div.highlight {
-    position: relative;
-    margin: 1em 0px;
-}
-
-.copy-code {
-    display: none;
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(78, 78, 78, 0.8);
-    border-radius: var(--radius);
-    padding: 0 5px;
-    font: inherit;
-    user-select: none;
-    cursor: pointer;
-    border: 0;
-    --radius: 8px;
-}
-
-div.highlight:hover .copy-code,pre:hover .copy-code {
-    display: block;
-}
-
-</style>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = '复制';
-
-        function copyingDone() {
-            copybutton.innerHTML = '已复制';
-            setTimeout(() => {
-                copybutton.innerHTML = '复制';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 </div>
@@ -524,7 +154,19 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
     <li>
-        <a href="https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA-.netcore-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="VSCode搭建 .netcore 开发环境" target="_blank">VSCode搭建 .netcore 开发环境</a>
+        <a href="https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/" title="解决ubuntu系统cannot find -lc&#43;&#43;abi: No such file or directory" target="_blank">解决ubuntu系统cannot find -lc&#43;&#43;abi: No such file or directory</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/" title="VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序" target="_blank">VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2024/2024-01-13-%E4%BD%BF%E7%94%A8%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91Fibonacci%E6%95%B0%E5%88%97%E6%9D%A5%E6%B5%8B%E8%AF%95%E5%90%84%E5%A4%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E6%80%A7%E8%83%BD/" title="使用斐波那契（Fibonacci）数列来测试各大语言的性能" target="_blank">使用斐波那契（Fibonacci）数列来测试各大语言的性能</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2024/2024-01-12-VSCode%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="VSCode搭建Java开发环境" target="_blank">VSCode搭建Java开发环境</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2024/2024-01-08-VSCode%E6%90%AD%E5%BB%BA.netcore%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="VSCode搭建 .netcore 开发环境" target="_blank">VSCode搭建 .netcore 开发环境</a>
     </li>
     <li>
         <a href="https://wittonbell.github.io/posts/2023/2023-11-05-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/" title="VSCode使用MinGW中的go并支持CGO" target="_blank">VSCode使用MinGW中的go并支持CGO</a>
@@ -541,28 +183,16 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     <li>
         <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/" title="使用docker-compose命令行向远程主机编排容器" target="_blank">使用docker-compose命令行向远程主机编排容器</a>
     </li>
-    <li>
-        <a href="https://wittonbell.github.io/posts/2023/2023-09-14-%E8%A7%A3%E5%86%B3Error-validating-CNI-config-fileplugin-bridge-does-not-support-config-version-1.0.0/" title="解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]" target="_blank">解决Error validating CNI config file:[plugin bridge does not support config version “1.0.0“]</a>
-    </li>
-    <li>
-        <a href="https://wittonbell.github.io/posts/2023/2023-09-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/" title="解决nexus3登录x509: certificate has expired or is not yet valid" target="_blank">解决nexus3登录x509: certificate has expired or is not yet valid</a>
-    </li>
-    <li>
-        <a href="https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/" title="VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4" target="_blank">VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</a>
-    </li>
-    <li>
-        <a href="https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/" title="Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发" target="_blank">Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</a>
-    </li>
 </ul>
 </section><section class="widget">
     <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
-    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (36)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (38)</a></li>
     <li><a href="https://wittonbell.github.io/categories/Erlang/">Erlang (6)</a></li>
     <li><a href="https://wittonbell.github.io/categories/Go/">Go (10)</a></li>
-    <li><a href="https://wittonbell.github.io/categories/IDE/">IDE (14)</a></li>
-    <li><a href="https://wittonbell.github.io/categories/LLVM/Clang/">LLVM/Clang (8)</a></li>
-    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (73)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/IDE/">IDE (15)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/Clang/">LLVM/Clang (9)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (74)</a></li>
     <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (6)</a></li>
     <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (19)</a></li>
     <li><a href="https://wittonbell.github.io/categories/Mysql/">Mysql (2)</a></li>
@@ -572,7 +202,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     <li><a href="https://wittonbell.github.io/categories/Unity/">Unity (1)</a></li>
     <li><a href="https://wittonbell.github.io/categories/Unreal/">Unreal (2)</a></li>
     <li><a href="https://wittonbell.github.io/categories/VisualGDB/">VisualGDB (5)</a></li>
-    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (43)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (44)</a></li>
     <li><a href="https://wittonbell.github.io/categories/macOS/">macOS (6)</a></li>
     <li><a href="https://wittonbell.github.io/categories/nginx/">nginx (5)</a></li>
     <li><a href="https://wittonbell.github.io/categories/%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux/">使用Cockpit管理Linux (8)</a></li>
@@ -654,6 +284,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     <a href="https://wittonbell.github.io/tags/Mac/">Mac</a>
     <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
     <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/Module/">Module</a>
     <a href="https://wittonbell.github.io/tags/ModuleNotFound/">ModuleNotFound</a>
     <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
     <a href="https://wittonbell.github.io/tags/NO-QML/">NO QML</a>
@@ -670,6 +301,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     <a href="https://wittonbell.github.io/tags/Segmentation/">Segmentation</a>
     <a href="https://wittonbell.github.io/tags/TLS/SSL/">TLS/SSL</a>
     <a href="https://wittonbell.github.io/tags/Terminal/">Terminal</a>
+    <a href="https://wittonbell.github.io/tags/Tools/">Tools</a>
     <a href="https://wittonbell.github.io/tags/Unable-to-load/">Unable to load</a>
     <a href="https://wittonbell.github.io/tags/Unity/">Unity</a>
     <a href="https://wittonbell.github.io/tags/VLAN/">VLAN</a>
@@ -701,6 +333,7 @@ div.highlight:hover .copy-code,pre:hover .copy-code {
     <a href="https://wittonbell.github.io/tags/build/">build</a>
     <a href="https://wittonbell.github.io/tags/c/">c</a>
     <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;abi/">c&#43;&#43;abi</a>
     <a href="https://wittonbell.github.io/tags/c/">c</a>
     <a href="https://wittonbell.github.io/tags/callback/">callback</a>
     <a href="https://wittonbell.github.io/tags/can/">can</a>
