@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>missing on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/missing/</link>
+    <description>Recent content in missing on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Feb 2024 22:59:45 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/missing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go语言魔法技能go:linkname</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-02-29-go%E8%AF%AD%E8%A8%80%E9%AD%94%E6%B3%95%E6%8A%80%E8%83%BDgolinkname/</link>
+      <pubDate>Thu, 29 Feb 2024 22:59:45 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-02-29-go%E8%AF%AD%E8%A8%80%E9%AD%94%E6%B3%95%E6%8A%80%E8%83%BDgolinkname/</guid>
+      <description>我们在看Go语言的源码时，经常会看到一些特别的注释，比如： 1//go:build 2//go:linkname 3//go:nosplit 4//go:noescape 5//go:uintptrescapes 6//go:noinline 7//go:nowritebarrierrec 等等，这些特别的注释其实是Go编译器的指示指令。</description>
+    </item>
+  </channel>
+</rss>
