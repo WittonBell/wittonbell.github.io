@@ -29,5 +29,12 @@
       <guid>https://wittonbell.github.io/posts/2016/2016-01-20-%E4%BD%BF%E7%94%A8IntelliJ-IDEA%E9%85%8D%E7%BD%AEErlang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>Idea工具是目前我使用过的开发Erlang最好用的IDE，但其Erlang插件的官方教程太简陋，我就想自己做一个相对详</description>
     </item>
+    <item>
+      <title>使用斐波那契（Fibonacci）数列来测试各大语言的性能</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-13-%E4%BD%BF%E7%94%A8%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91Fibonacci%E6%95%B0%E5%88%97%E6%9D%A5%E6%B5%8B%E8%AF%95%E5%90%84%E5%A4%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E6%80%A7%E8%83%BD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-13-%E4%BD%BF%E7%94%A8%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91Fibonacci%E6%95%B0%E5%88%97%E6%9D%A5%E6%B5%8B%E8%AF%95%E5%90%84%E5%A4%A7%E8%AF%AD%E8%A8%80%E7%9A%84%E6%80%A7%E8%83%BD/</guid>
+      <description>笔者使用最多的语言是C++，目前项目中在使用Go，也使用过不少其它语言，像Erlang，Python，Lua，C#等等。</description>
+    </item>
   </channel>
 </rss>
