@@ -6,8 +6,29 @@
     <description>Recent content in protobuf on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Aug 2023 14:40:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2024 10:46:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 05 Dec 2024 10:46:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前面笔者的博文 MSYS2 MinGW64使用Protobuf新版本踩坑，有提到使用最新的Clang 19.1.4版本在MinGW下无</description>
+    </item>
+    <item>
+      <title>MSYS2 MinGW64使用Protobuf新版本踩坑</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-02-MSYS2-MinGW64%E4%BD%BF%E7%94%A8Protobuf%E6%96%B0%E7%89%88%E6%9C%AC%E8%B8%A9%E5%9D%91/</link>
+      <pubDate>Mon, 02 Dec 2024 11:32:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-02-MSYS2-MinGW64%E4%BD%BF%E7%94%A8Protobuf%E6%96%B0%E7%89%88%E6%9C%AC%E8%B8%A9%E5%9D%91/</guid>
+      <description>Protobuf作为序列化中常见的功能模块，相信很多项目都在使用它，但是随着它的版本不断升级，也给开发者带来了一些问题，</description>
+    </item>
+    <item>
+      <title>go语言中protobuf使用message名字构建PB实例</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-15-go%E8%AF%AD%E8%A8%80%E4%B8%ADprotobuf%E4%BD%BF%E7%94%A8message%E5%90%8D%E5%AD%97%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Wed, 15 May 2024 16:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-15-go%E8%AF%AD%E8%A8%80%E4%B8%ADprotobuf%E4%BD%BF%E7%94%A8message%E5%90%8D%E5%AD%97%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/</guid>
+      <description>在使用Protobuf通信或者存储过程中，可能会有这样一个需求，根据PB的message名字来构建一个PB结构的实例，然</description>
+    </item>
     <item>
       <title>VS2022解决Protobuf compiler version 23.4 doesn‘t match library version 4.23.4</title>
       <link>https://wittonbell.github.io/posts/2023/2023-08-21-VS2022%E8%A7%A3%E5%86%B3Protobuf-compiler-version-23.4-doesnt-match-library-version-4.23.4/</link>

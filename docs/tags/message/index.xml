@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>message on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/message/</link>
+    <description>Recent content in message on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 May 2024 16:39:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/message/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go语言中protobuf使用message名字构建PB实例</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-15-go%E8%AF%AD%E8%A8%80%E4%B8%ADprotobuf%E4%BD%BF%E7%94%A8message%E5%90%8D%E5%AD%97%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Wed, 15 May 2024 16:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-15-go%E8%AF%AD%E8%A8%80%E4%B8%ADprotobuf%E4%BD%BF%E7%94%A8message%E5%90%8D%E5%AD%97%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/</guid>
+      <description>在使用Protobuf通信或者存储过程中，可能会有这样一个需求，根据PB的message名字来构建一个PB结构的实例，然</description>
+    </item>
+  </channel>
+</rss>

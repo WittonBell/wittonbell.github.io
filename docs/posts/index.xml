@@ -6,14 +6,133 @@
     <description>Recent content in Posts on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 31 Mar 2024 19:46:38 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2024 10:46:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 05 Dec 2024 10:46:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前面笔者的博文 MSYS2 MinGW64使用Protobuf新版本踩坑，有提到使用最新的Clang 19.1.4版本在MinGW下无</description>
+    </item>
+    <item>
+      <title>MSYS2 MinGW64使用Protobuf新版本踩坑</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-02-MSYS2-MinGW64%E4%BD%BF%E7%94%A8Protobuf%E6%96%B0%E7%89%88%E6%9C%AC%E8%B8%A9%E5%9D%91/</link>
+      <pubDate>Mon, 02 Dec 2024 11:32:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-02-MSYS2-MinGW64%E4%BD%BF%E7%94%A8Protobuf%E6%96%B0%E7%89%88%E6%9C%AC%E8%B8%A9%E5%9D%91/</guid>
+      <description>Protobuf作为序列化中常见的功能模块，相信很多项目都在使用它，但是随着它的版本不断升级，也给开发者带来了一些问题，</description>
+    </item>
+    <item>
+      <title>KMP模式匹配算法</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 28 Oct 2024 22:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</guid>
+      <description>笔者在网上看到一介绍KMP模式匹配算法的博文，讲得比较详细易懂，特转载分享记录一下，全文如下： KMP 算法，全称 Knuth-Morris-Pratt 算法，根据三</description>
+    </item>
+    <item>
+      <title>C语言实现Go的defer功能</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-10-26-C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sat, 26 Oct 2024 14:19:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-10-26-C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
+      <description>之前笔者写了一篇博文 C++实现Go的defer功能，介绍了如何在C++语言中实现Go的defer功能，那在C语言中是否也</description>
+    </item>
+    <item>
+      <title>IDM 6.42 Build 22激活</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-10-12-IDM-6.42-Build-22%E6%BF%80%E6%B4%BB/</link>
+      <pubDate>Sat, 12 Oct 2024 15:47:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-10-12-IDM-6.42-Build-22%E6%BF%80%E6%B4%BB/</guid>
+      <description>IDM是Windows下的下载利器，之前使用的6.41版本，今天在下载一个Github的zip文件时，报错说不支持，需要</description>
+    </item>
+    <item>
+      <title>容器中的centos7解决failed to get d-bus connection operation not permitted</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-09-19-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84centos7%E8%A7%A3%E5%86%B3failed-to-get-d-bus-connection-operation-not-permitted/</link>
+      <pubDate>Thu, 19 Sep 2024 18:12:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-09-19-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84centos7%E8%A7%A3%E5%86%B3failed-to-get-d-bus-connection-operation-not-permitted/</guid>
+      <description>在容器中安装了centos7，但是在运行systemctl命令时，会报错： 1Failed to get D-Bus connection: Operation not permitted 在网上找了很多资料，基本上都是</description>
+    </item>
+    <item>
+      <title>VSCode调试使用`vite-plugin-mock`写的Mock代码</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-08-19-VSCode%E8%B0%83%E8%AF%95%E4%BD%BF%E7%94%A8vite-plugin-mock%E5%86%99%E7%9A%84Mock%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Mon, 19 Aug 2024 18:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-08-19-VSCode%E8%B0%83%E8%AF%95%E4%BD%BF%E7%94%A8vite-plugin-mock%E5%86%99%E7%9A%84Mock%E4%BB%A3%E7%A0%81/</guid>
+      <description>想使用Go+Vue3来写一个后台管理系统，所以最近抽空研究学习了一下Vue3，由于是前后端分离开发的，前端使用Mock来</description>
+    </item>
+    <item>
+      <title>修改podman容器内wordpress连接的数据库地址</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-07-14-%E4%BF%AE%E6%94%B9podman%E5%AE%B9%E5%99%A8%E5%86%85wordpress%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Sun, 14 Jul 2024 16:15:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-07-14-%E4%BF%AE%E6%94%B9podman%E5%AE%B9%E5%99%A8%E5%86%85wordpress%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9C%B0%E5%9D%80/</guid>
+      <description>之前在博文 容器中搭建WordPress中介绍了如何在容器中搭建WordPress，后面虚拟中调整了IP地址，原来连接的数</description>
+    </item>
+    <item>
+      <title>Go语言直接使用Windows的IOCP API写一个echo服务器</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-24-Go%E8%AF%AD%E8%A8%80%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8Windows%E7%9A%84IOCP-API%E5%86%99%E4%B8%80%E4%B8%AAecho%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Fri, 24 May 2024 18:59:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-24-Go%E8%AF%AD%E8%A8%80%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8Windows%E7%9A%84IOCP-API%E5%86%99%E4%B8%80%E4%B8%AAecho%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>Go的标准库中Windows下的网络是使用了IOCP的，参见go源码go/src/runtime/netpoll_win</description>
+    </item>
+    <item>
+      <title>浅析网络编程之Socket模型</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-22-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 22 May 2024 21:59:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-22-%E6%B5%85%E6%9E%90%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B9%8BSocket%E6%A8%A1%E5%9E%8B/</guid>
+      <description>Winsock 的I/O操作 两种I/O模式 阻塞模式：执行I/O操作完成前会一直进行等待，不会将控制权交给程序。套接字 默认为阻塞模式。可</description>
+    </item>
+    <item>
+      <title>unreal engine 5.3.2 创建游戏项目</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-18-unreal-engine-5.3.2-%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sat, 18 May 2024 18:07:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-18-unreal-engine-5.3.2-%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</guid>
+      <description>前面介绍了一下[unreal engine 5.0.3 创建游戏项目](2024-05-18-unreal engine 5.0.3 创建游戏项目.md)，这个源码包比</description>
+    </item>
+    <item>
+      <title>unreal engine 5.0.3 创建游戏项目</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-18-unreal-engine-5.0.3-%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sat, 18 May 2024 15:26:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-18-unreal-engine-5.0.3-%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</guid>
+      <description>根据虚幻官网介绍，虚幻引擎5可免费用于创建线性内容、定制项目和内部项目。你可以免费用它开发游戏，只有当你的产品营收超过1</description>
+    </item>
+    <item>
+      <title>go语言中protobuf使用message名字构建PB实例</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-15-go%E8%AF%AD%E8%A8%80%E4%B8%ADprotobuf%E4%BD%BF%E7%94%A8message%E5%90%8D%E5%AD%97%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Wed, 15 May 2024 16:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-15-go%E8%AF%AD%E8%A8%80%E4%B8%ADprotobuf%E4%BD%BF%E7%94%A8message%E5%90%8D%E5%AD%97%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/</guid>
+      <description>在使用Protobuf通信或者存储过程中，可能会有这样一个需求，根据PB的message名字来构建一个PB结构的实例，然</description>
+    </item>
+    <item>
+      <title>使用Beego创建API项目并自动化文档</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-06-%E4%BD%BF%E7%94%A8Beego%E5%88%9B%E5%BB%BAAPI%E9%A1%B9%E7%9B%AE%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Mon, 06 May 2024 15:22:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-06-%E4%BD%BF%E7%94%A8Beego%E5%88%9B%E5%BB%BAAPI%E9%A1%B9%E7%9B%AE%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E6%96%87%E6%A1%A3/</guid>
+      <description>最近需要使用Go写一个Web API项目，可以使用Beego与Gin来写此类项目，还是非常方便的，这里就介绍一下使用Bee</description>
+    </item>
+    <item>
+      <title>使用Gin编写Web API项目并自动化文档</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-05-06-%E4%BD%BF%E7%94%A8Gin%E7%BC%96%E5%86%99Web-API%E9%A1%B9%E7%9B%AE%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Mon, 06 May 2024 15:22:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-05-06-%E4%BD%BF%E7%94%A8Gin%E7%BC%96%E5%86%99Web-API%E9%A1%B9%E7%9B%AE%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E6%96%87%E6%A1%A3/</guid>
+      <description>最近需要使用Go写一个Web API项目，可以使用Beego与Gin来写此类项目，前文 使用Beego创建API项目并自动化</description>
+    </item>
+    <item>
+      <title>MacOS下Qt 5开发环境安装与配置</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-04-10-MacOS%E4%B8%8BQt-5%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 10 Apr 2024 08:05:38 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-04-10-MacOS%E4%B8%8BQt-5%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>最近笔者在MacOS中使用Qt Creator开发Qt程序时遇到了一些问题，在网上查了不少资料，都没有找到解决方案，只有自</description>
+    </item>
+    <item>
+      <title>VSCode&#43;clangd让写C/C&#43;&#43;代码更丝滑</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-03-31-VSCode&#43;clangd%E8%AE%A9%E5%86%99C_C&#43;&#43;%E4%BB%A3%E7%A0%81%E6%9B%B4%E4%B8%9D%E6%BB%91/</link>
+      <pubDate>Sun, 31 Mar 2024 19:46:38 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-03-31-VSCode&#43;clangd%E8%AE%A9%E5%86%99C_C&#43;&#43;%E4%BB%A3%E7%A0%81%E6%9B%B4%E4%B8%9D%E6%BB%91/</guid>
+      <description>使用C/C++写了十几二十年的代码了，这两年做的项目都是使用Go语言来写的代码了，主要使用Goland来写Go，写起来是</description>
+    </item>
     <item>
       <title>虚拟机中安装Win98</title>
       <link>https://wittonbell.github.io/posts/2024/2024-03-10-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85Win98/</link>
-      <pubDate>Sun, 31 Mar 2024 19:46:38 +0800</pubDate>
+      <pubDate>Sun, 10 Mar 2024 19:46:38 +0800</pubDate>
       <guid>https://wittonbell.github.io/posts/2024/2024-03-10-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85Win98/</guid>
-      <description>@[TOC] Win98是微软于1998年发布的16位与32位混合的操作系统，也是一代经典的操作系统，期间出现了不少经典的软件与游戏</description>
+      <description>Win98是微软于1998年发布的16位与32位混合的操作系统，也是一代经典的操作系统，期间出现了不少经典的软件与游戏，</description>
     </item>
     <item>
       <title>ubuntu使用LLVM官方发布的tar.xz来安装Clang编译器</title>

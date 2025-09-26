@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>systemctl on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/systemctl/</link>
+    <description>Recent content in systemctl on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Sep 2024 18:12:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/systemctl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>容器中的centos7解决failed to get d-bus connection operation not permitted</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-09-19-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84centos7%E8%A7%A3%E5%86%B3failed-to-get-d-bus-connection-operation-not-permitted/</link>
+      <pubDate>Thu, 19 Sep 2024 18:12:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-09-19-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84centos7%E8%A7%A3%E5%86%B3failed-to-get-d-bus-connection-operation-not-permitted/</guid>
+      <description>在容器中安装了centos7，但是在运行systemctl命令时，会报错： 1Failed to get D-Bus connection: Operation not permitted 在网上找了很多资料，基本上都是</description>
+    </item>
+  </channel>
+</rss>

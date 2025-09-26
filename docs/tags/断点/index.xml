@@ -6,8 +6,15 @@
     <description>Recent content in 断点 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Dec 2021 15:53:15 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Aug 2024 18:39:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode调试使用`vite-plugin-mock`写的Mock代码</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-08-19-VSCode%E8%B0%83%E8%AF%95%E4%BD%BF%E7%94%A8vite-plugin-mock%E5%86%99%E7%9A%84Mock%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Mon, 19 Aug 2024 18:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-08-19-VSCode%E8%B0%83%E8%AF%95%E4%BD%BF%E7%94%A8vite-plugin-mock%E5%86%99%E7%9A%84Mock%E4%BB%A3%E7%A0%81/</guid>
+      <description>想使用Go+Vue3来写一个后台管理系统，所以最近抽空研究学习了一下Vue3，由于是前后端分离开发的，前端使用Mock来</description>
+    </item>
     <item>
       <title>Goland使用远程容器进行go开发调试</title>
       <link>https://wittonbell.github.io/posts/2021/2021-12-21-Goland%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E8%A1%8Cgo%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95/</link>

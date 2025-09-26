@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>abi on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/abi/</link>
+    <description>Recent content in abi on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 05 Dec 2024 10:46:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/abi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 05 Dec 2024 10:46:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>前面笔者的博文 MSYS2 MinGW64使用Protobuf新版本踩坑，有提到使用最新的Clang 19.1.4版本在MinGW下无</description>
+    </item>
+  </channel>
+</rss>

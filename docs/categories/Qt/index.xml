@@ -6,8 +6,15 @@
     <description>Recent content in Qt on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 11 May 2023 21:19:39 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2024 08:05:38 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/Qt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacOS下Qt 5开发环境安装与配置</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-04-10-MacOS%E4%B8%8BQt-5%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 10 Apr 2024 08:05:38 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-04-10-MacOS%E4%B8%8BQt-5%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>最近笔者在MacOS中使用Qt Creator开发Qt程序时遇到了一些问题，在网上查了不少资料，都没有找到解决方案，只有自</description>
+    </item>
     <item>
       <title>VS2022编译安装Qt6.5源码</title>
       <link>https://wittonbell.github.io/posts/2023/2023-05-11-VS2022%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Qt6.5%E6%BA%90%E7%A0%81/</link>

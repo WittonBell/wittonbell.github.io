@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on Witton的博客</title>
+    <link>https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 28 Oct 2024 22:01:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KMP模式匹配算法</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 28 Oct 2024 22:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</guid>
+      <description>笔者在网上看到一介绍KMP模式匹配算法的博文，讲得比较详细易懂，特转载分享记录一下，全文如下： KMP 算法，全称 Knuth-Morris-Pratt 算法，根据三</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,22 @@
     <description>Recent content in C语言 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Jan 2024 17:23:20 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2024 22:01:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KMP模式匹配算法</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 28 Oct 2024 22:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</guid>
+      <description>笔者在网上看到一介绍KMP模式匹配算法的博文，讲得比较详细易懂，特转载分享记录一下，全文如下： KMP 算法，全称 Knuth-Morris-Pratt 算法，根据三</description>
+    </item>
+    <item>
+      <title>C语言实现Go的defer功能</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-10-26-C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sat, 26 Oct 2024 14:19:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-10-26-C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0Go%E7%9A%84defer%E5%8A%9F%E8%83%BD/</guid>
+      <description>之前笔者写了一篇博文 C++实现Go的defer功能，介绍了如何在C++语言中实现Go的defer功能，那在C语言中是否也</description>
+    </item>
     <item>
       <title>VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序</title>
       <link>https://wittonbell.github.io/posts/2024/2024-01-18-VSCode%E4%BD%BF%E7%94%A8Makefile-Tools%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91CC&#43;&#43;%E7%A8%8B%E5%BA%8F/</link>
