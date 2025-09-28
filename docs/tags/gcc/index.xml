@@ -30,6 +30,13 @@
       <description>之前笔者写了一篇博文 C++实现Go的defer功能，介绍了如何在C++语言中实现Go的defer功能，那在C语言中是否也</description>
     </item>
     <item>
+      <title>C&#43;&#43; 20 Module</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</link>
+      <pubDate>Tue, 23 Jan 2024 00:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</guid>
+      <description>头文件包含一直是C/C++的传统，它使代码声明与实现分离，但它有一个非常大的问题就是会被重复编译，拖累编译速度。 通常一个</description>
+    </item>
+    <item>
       <title>Visual Studio 2022连接远程系统进行C/C&#43;&#43;开发</title>
       <link>https://wittonbell.github.io/posts/2023/2023-08-15-Visual-Studio-2022%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CC_C&#43;&#43;%E5%BC%80%E5%8F%91/</link>
       <pubDate>Tue, 15 Aug 2023 18:32:46 +0800</pubDate>

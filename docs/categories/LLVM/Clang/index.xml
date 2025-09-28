@@ -8,6 +8,20 @@
     <language>zh-CN</language>
     <atom:link href="https://wittonbell.github.io/categories/LLVM/Clang/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>MinGW下编译ffmpeg源码时生成compile_commands.json</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/</link>
+      <pubDate>Fri, 28 Mar 2025 18:44:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/</guid>
+      <description>在前面的博文 MinGW下编译nginx源码中，有介绍到使用compiledb工具在MinGW环境中生成compile_c</description>
+    </item>
+    <item>
+      <title>macOS使用LLVM官方发布的tar.xz来安装Clang编译器</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Wed, 22 Jan 2025 23:21:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description>之前笔者写过一篇博文 ubuntu使用LLVM官方发布的tar.xz来安装Clang编译器介绍了Ubuntu下使用官方发布</description>
+    </item>
+    <item>
       <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
       <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 05 Dec 2024 10:46:58 +0800</pubDate>

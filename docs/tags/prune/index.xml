@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>prune on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/prune/</link>
+    <description>Recent content in prune on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 14 Feb 2025 14:46:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/prune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>清理docker/podman的存储空间</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-02-14-%E6%B8%85%E7%90%86dockerpodman%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Fri, 14 Feb 2025 14:46:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-02-14-%E6%B8%85%E7%90%86dockerpodman%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/</guid>
+      <description>最近服务器上的Linux系统盘磁盘空间耗尽，导致不能正常工作，需要清理磁盘空间。由于系统上的软件基本上都是使用的容器，所</description>
+    </item>
+  </channel>
+</rss>

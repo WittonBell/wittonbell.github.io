@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pkg on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/pkg/</link>
+    <description>Recent content in pkg on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 Jan 2025 17:15:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/pkg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMake使用CPack制作安装程序</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-23-CMake%E4%BD%BF%E7%94%A8CPack%E5%88%B6%E4%BD%9C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Thu, 23 Jan 2025 17:15:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-23-CMake%E4%BD%BF%E7%94%A8CPack%E5%88%B6%E4%BD%9C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/</guid>
+      <description>CPack的功能很强大，笔者前面有一博文 使用CMake的CPack工具打包项目介绍了一下使用CPack来打包成7z压缩文</description>
+    </item>
+  </channel>
+</rss>

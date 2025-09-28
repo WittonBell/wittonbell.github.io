@@ -6,8 +6,22 @@
     <description>Recent content in 容器 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Sep 2024 18:12:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 14:46:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>清理docker/podman的存储空间</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-02-14-%E6%B8%85%E7%90%86dockerpodman%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Fri, 14 Feb 2025 14:46:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-02-14-%E6%B8%85%E7%90%86dockerpodman%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/</guid>
+      <description>最近服务器上的Linux系统盘磁盘空间耗尽，导致不能正常工作，需要清理磁盘空间。由于系统上的软件基本上都是使用的容器，所</description>
+    </item>
+    <item>
+      <title>解决nexus3登录x509: certificate has expired or is not yet valid</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</link>
+      <pubDate>Thu, 12 Dec 2024 12:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</guid>
+      <description>笔者前面的博文 使用nexus3作为Docker镜像仓库介绍了如何使用nexus3来作为容器的镜像仓库，在生成证书时，使用</description>
+    </item>
     <item>
       <title>容器中的centos7解决failed to get d-bus connection operation not permitted</title>
       <link>https://wittonbell.github.io/posts/2024/2024-09-19-%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84centos7%E8%A7%A3%E5%86%B3failed-to-get-d-bus-connection-operation-not-permitted/</link>

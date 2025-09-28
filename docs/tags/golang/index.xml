@@ -6,8 +6,15 @@
     <description>Recent content in golang on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 24 May 2024 18:59:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Dec 2024 18:33:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode使用MinGW中的go并支持CGO</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-09-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</link>
+      <pubDate>Mon, 09 Dec 2024 18:33:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-09-VSCode%E4%BD%BF%E7%94%A8MinGW%E4%B8%AD%E7%9A%84go%E5%B9%B6%E6%94%AF%E6%8C%81CGO/</guid>
+      <description>在Windows中，如果想使用Linux下的一些命令或者开发工具，可以安装Cygwin或者MinGW，MinGW相比Cy</description>
+    </item>
     <item>
       <title>Go语言直接使用Windows的IOCP API写一个echo服务器</title>
       <link>https://wittonbell.github.io/posts/2024/2024-05-24-Go%E8%AF%AD%E8%A8%80%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8Windows%E7%9A%84IOCP-API%E5%86%99%E4%B8%80%E4%B8%AAecho%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>

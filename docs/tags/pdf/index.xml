@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pdf on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/pdf/</link>
+    <description>Recent content in pdf on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 28 Apr 2025 16:38:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记一次pdf转Word的技术经历</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-04-28-%E8%AE%B0%E4%B8%80%E6%AC%A1pdf%E8%BD%ACWord%E7%9A%84%E6%8A%80%E6%9C%AF%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Mon, 28 Apr 2025 16:38:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-04-28-%E8%AE%B0%E4%B8%80%E6%AC%A1pdf%E8%BD%ACWord%E7%9A%84%E6%8A%80%E6%9C%AF%E7%BB%8F%E5%8E%86/</guid>
+      <description>一、发现问题 前几天在打开一个pdf文件时，遇到了一些问题，在Win10下使用WPS PDF、万兴PDF、Adobe Acro</description>
+    </item>
+  </channel>
+</rss>

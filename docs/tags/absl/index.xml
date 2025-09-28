@@ -6,8 +6,15 @@
     <description>Recent content in absl on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Dec 2024 10:46:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2025 13:08:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/absl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SwissTable详解</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Wed, 15 Jan 2025 13:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/</guid>
+      <description>最近在看到一文说Go 1.24有一项重大的性能改进，就是将默认的Map由原来的拉链式HashTable改为使用开放式的Sw</description>
+    </item>
     <item>
       <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
       <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>

@@ -1,0 +1,1685 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>SwissTable详解 | Witton的博客</title>
+    <meta property="og:title" content="SwissTable详解 - Witton的博客">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content='2025-01-15T13:08:58&#43;08:00'>
+    <meta property="article:modified_time" content='2025-01-15T13:08:58&#43;08:00'>
+    <meta name="Keywords" content="absl,swisstable,swiss,hash,hash_set,C&#43;&#43;,博客,笔记,游戏开发,Witton,WittonBell,Bell">
+    <meta name="description" content="SwissTable详解">
+    <meta name="author" content="Witton Bell">
+    <meta property="og:url" content="https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="stylesheet" href='/css/post-nav.css'><script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.8/dist/katex.min.css"
+    integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://unpkg.com/katex@0.16.8/dist/katex.min.js"
+    integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+    crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/katex@0.16.8/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/mhchem.min.js"
+    integrity="sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/copy-tex.min.js"
+    integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+    
+    </head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                    <a id="logo" href="https://wittonbell.github.io/">
+                        Witton的博客
+                    </a>
+                <p class="description">游戏服务器开发、技术笔记、博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wittonbell.github.io/" title="首页">首页</a>
+                    <a  href="https://wittonbell.github.io/archives/" title="归档">归档</a>
+                    <a  href="https://wittonbell.github.io/tags/" title="标签">标签</a>
+                    <a  href="https://wittonbell.github.io/about/" title="关于">关于</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="body">
+        <div class="container">
+            <div class="col-group">
+                <div class="col-8" id="main">
+                    <div class="res-cons">
+
+<style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 300px;
+        margin-left: -310px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 1px 0;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 1px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+        list-style:none;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一hashtable">一、HashTable</a>
+      <ul>
+        <li><a href="#1-链式">1. 链式</a></li>
+        <li><a href="#2-开放定址式">2. 开放定址式</a></li>
+      </ul>
+    </li>
+    <li><a href="#二swisstable">二、SwissTable</a>
+      <ul>
+        <li><a href="#1-swisstable的内存布局">1. SwissTable的内存布局</a>
+          <ul>
+            <li><a href="#11-控制字节">1.1 控制字节</a></li>
+            <li><a href="#12-有效控制字节区">1.2 有效控制字节区</a></li>
+            <li><a href="#13-控制字节克隆区">1.3 控制字节克隆区</a></li>
+            <li><a href="#14-slots区">1.4 Slots区</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-swisstable的查找">2. SwissTable的查找</a>
+          <ul>
+            <li><a href="#21-通过h1计算索引">2.1 通过H1计算索引</a></li>
+            <li><a href="#22-匹配控制字节">2.2 匹配控制字节</a></li>
+            <li><a href="#23-比较key值">2.3 比较Key值</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-swisstable的插入扩展替换">3. SwissTable的插入、扩展、替换</a></li>
+      </ul>
+    </li>
+    <li><a href="#三swissmap的c实现">三、SwissMap的C++实现</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+
+<article class="post">
+        <header>
+            <h1 class="post-title">SwissTable详解</h1>
+        </header>
+        <time datetime="2025-01-15T05:08:58Z" class="post-meta meta-date dt-published">2025年1月15日</time>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 作者: Witton Bell</span>
+<div class="post-meta meta-category">
+  <span>&nbsp;|&nbsp;</span><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-link p-category" target="_blank">数据结构</a>/<a href="/categories/C/C&#43;&#43;/" class="category-link p-category" target="_blank">C/C&#43;&#43;</a>
+</div>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 6254 字</span>
+<span class="post-meta meta-category">&nbsp;|&nbsp; 13&nbsp;分钟</span>
+
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        <div class="post-content">
+            <p>最近在看到一文说Go 1.24有一项重大的性能改进，就是将默认的Map由原来的拉链式HashTable改为使用开放式的SwissTable，实现了性能的大幅提升。于是就查了一下SwissTable相关资料，它是由Google工程师在开源库absl中实现的一种Hash算法。</p>
+<p>本文就与大家一起来研究一下它。</p>
+<h1 id="一hashtable">一、HashTable</h1>
+<p><code>HashTable</code>是通过将<code>Key</code>进行<code>Hash</code>计算映射到<code>HashTable</code>中的某个<code>位置</code>，并将值存储到指定位置，以达到从键到值的映射的。</p>
+<h2 id="1-链式">1. 链式</h2>
+<p>链式法就是当经过Hash函数映射到了相同的位置时，使用链表的方式将它们存储起来，如下图所示：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/f1a4a66240fe48058d174f067032ae9a.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/f1a4a66240fe48058d174f067032ae9a.png" />
+        </a>
+    </p>
+<p>在查找的时候，先找到Hash桶的位置，再遍历链表，一个Key一个Key地查找。</p>
+<p>链式法的添加与删除都比较高效，添加直接在链表头添加即可，删除就改几个指针。但是查询相对缓慢，需要遍历链表，一个个比较Key；由于存储比较分散，对缓存不友好。</p>
+<h2 id="2-开放定址式">2. 开放定址式</h2>
+<p>开放定址式是将所有数据存放在一块连续的内存中，这样集中存储，对缓存比较友好。这就需要在分配内存时一次性分配一定量的<code>Hash桶</code>用来存储，如果<code>Hash桶</code>不足以存放时，就需要重新分配<code>Hash桶</code>。</p>
+<p>开放定址式与链式不一样，它是在发生冲突时，按一定规则（定址方式）在<code>Hash桶</code>上查到，而不是在另外的地方查找，如果找到了<code>Hash桶</code>的末尾，则从头开始查找，形成一个循环查找的过程，如下图所示：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/fcb3bc46c0784028bab8400b2de38571.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/fcb3bc46c0784028bab8400b2de38571.png" />
+        </a>
+    </p>
+<p>开放定址式的定址方式又有以下几种常见的做法：</p>
+<ol>
+<li>线性探测法
+线性探测法就是定位到索引<code>i</code>时，如果<code>i</code>位置已经有元素了，则依次查<code>i+1</code>，<code>i+2</code>，<code>……</code>，直到查到一个空位置，如果遇到数组末尾，则从头开始查找。</li>
+<li>二次探测法
+二次探测法就是定准到索引<code>i</code>时，如果<code>i</code>位置已经有元素了，则依次查i+1^2^，i-1^2^，i+2^2^，i-2^2^，……</li>
+<li>随机法
+随机法就是使用伪随机数来解决冲突。</li>
+</ol>
+<p>开放定址法虽然解决了链式法对缓存不友好的问题，添加与删除也要快一些（直接定位到Hash桶添加、删除即可），但查找（定位）时如果有冲突，依旧<strong>需要依次比较Key</strong>。</p>
+<h1 id="二swisstable">二、SwissTable</h1>
+<p>SwissTable是传统开放定址式的HashTable，使用线性探测法的一种改进，<strong>有效减少了Key的比较</strong>。它的中心思想是在<code>Hash桶</code>上存储Key的Hash特征码，在使用线性探测法定位时，利用CPU的SIMD指令，一次性读取、比较一组特征码，找到特征码相同的索引，再在与<code>Hash桶</code>数量完全一致的<code>数据槽区</code>去比较Key值，这样就<strong>减少了Key的比较次数</strong>，同时利用<code>Hash桶</code>的索引直接在数据槽区取数据是非常高效的。</p>
+<h2 id="1-swisstable的内存布局">1. SwissTable的内存布局</h2>
+<p>SwissTable的整个内存布局为<strong>控制字节区</strong> （包含有效控制字节区+结束标志+控制字节克隆区+内存对齐字节区）<strong>加Slots区</strong>，在进行内存分配的时候就把它们一起分配。如下图所示：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/7a4678ef04c449748e8cf3eb156ab198.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/7a4678ef04c449748e8cf3eb156ab198.png" />
+        </a>
+    </p>
+<p>可以看看absl代码的内存布局：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/d249b74a4f5c4b7fbcd7318c6338d4d7.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/d249b74a4f5c4b7fbcd7318c6338d4d7.png" />
+        </a>
+    </p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/2d43673340af4598924e22466f86064c.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/2d43673340af4598924e22466f86064c.png" />
+        </a>
+    </p>
+<p>其中的<code>control</code>就是<code>控制字节</code>的指针，<code>slot_array</code>为<code>Hash桶的槽位数组</code>，即<strong>数据的实际存储区</strong>。</p>
+<h3 id="11-控制字节">1.1 控制字节</h3>
+<p>控制字节也被称为<code>元信息</code>，它有以下几种状态：</p>
+<ul>
+<li><code>空</code>，用0x80表示，二进制为0b10000000</li>
+<li><code>已删除元素</code>，用0xFE表示，二进制为0b11111110</li>
+<li><code>结束标志</code>，用0xFF表示，二进制为0b11111111</li>
+<li><code>有效元素</code>，最高位始终为0，低7位为Hash值的低7位</li>
+</ul>
+<p><strong>控制字节的有效元素值是如何来的？</strong>
+根据Key，计算出一个64位的<code>Hash值</code>，它的高57位为<code>H1</code>，低7位为<code>H2</code>，<code>H1</code>的值来定位<code>有效控制字节区</code>的索引，索引位置存放的即是<code>H2</code>的值，也被称为该<code>Key的特征值</code>。
+
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/8f0eb816e20f4fb49e5ad15cc0336683.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/8f0eb816e20f4fb49e5ad15cc0336683.png" />
+        </a>
+    </p>
+<p><strong>控制字节的非有效元素为什么最高位为1？</strong></p>
+<p>在<code>absl</code>的实现中，将控制字节定义有一个有符号数，类型为<code>int8_t</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">enum</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ctrl_t</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">int8_t</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  kEmpty <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">128</span>,   <span style="color:#75715e">// 0b10000000
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#75715e"></span>  kDeleted <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,   <span style="color:#75715e">// 0b11111110
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#75715e"></span>  kSentinel <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// 0b11111111
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p>这样在判断是否为有效元素时，只需要<strong>判断是否大于等于0即可</strong>；同时，在查找可用槽位时，只需要与结束标志作比较即可，比<strong>结束标志小的标志槽位都是可用的</strong>（已使用的槽位，控制字节都比结束标志大），非常高效！</p>
+<h3 id="12-有效控制字节区">1.2 有效控制字节区</h3>
+<p>为了方便讲解，我把结束标志前面的控制字节区域称为<code>有效控制字节区</code>。<code>有效控制字节区</code>大小始终为2^N^-1，这样的设计非常巧妙，便于提升性能，因为2^N^-1的二进制表示中每位都为1，在计算Slot索引的时候，可以直接按位与即可直接定位，而且不会越界。相比之下，如果使用其它数，则为了在计算索引时不越界，需要进行模运算，是非常耗时的。</p>
+<h3 id="13-控制字节克隆区">1.3 控制字节克隆区</h3>
+<p>为什么要有控制字节克隆区？
+前面有介绍开放定址方式存取时查地址是一个循环的过程，如果查到尾部了，则需要从头开始查，由于SwissTable是按组查找，一次性读取一组的数组，如果组是从最后一个有效控制字节开始的，则需要循环读取前面的数据，所以需要把前面的<code>有效控制字节</code>复制到后面方便直接读取。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/34eefabb68c44453b36e2d824f68bebf.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/34eefabb68c44453b36e2d824f68bebf.png" />
+        </a>
+    </p>
+<p>控制字节克隆区为<code>15个字节</code>，克隆控制字节的<code>头部有效字节</code>，比如3个控制字节，就克隆3个，后面的填充为空（0x80)，如果超过15个字节，则<strong>只克隆15个字节</strong>。</p>
+<p>控制字节克隆区为15个字节的设计也是经过精心设计的，它是根据SIMD（单指令多数据）指令（x86就是SSE2中的指令）中的数据大小（16字节）来设计的，结束标志加上15个字节刚好是16个字节。在查找时，则是按16字节为一组（Group）进行查找。</p>
+<h3 id="14-slots区">1.4 Slots区</h3>
+<p><code>Slots区</code>紧跟前面的<code>控制字节区</code>，<strong>Slot的个数与有效控制字节区的大小完全一致</strong>，定位时可以直接使用索引进行关联。每个Slot的大小为要存储的元素的大小，比如<code>int32_t</code>为4个字节，则一个<code>Slot</code>的大小为4字节，如果是<code>Map</code>，则为<code>Key</code>与<code>Value</code>的大小和。</p>
+<h2 id="2-swisstable的查找">2. SwissTable的查找</h2>
+<p>根据前面的介绍，<code>H1</code>决定索引，在查找时根据索引位置，<strong>一次取16个字节作为一组进行匹配</strong>，看这16个字节中有哪些是与特征值<code>H2</code>相同的，再在这些<code>H2</code>相同的索引所对应的<code>Slot</code>中去查找<code>Key</code>，如果Key相同，则找到了，如果没有找到，则<strong>取下一组控制字节进行特征值比较</strong>，如此循环，直到找到或者找完所有控制字节。如下图所示，如果<code>Group1</code>没找到则继续按<code>Group2</code>查找：
+
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/afa9801556cf4e0ca0c41e22cbcc640b.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/afa9801556cf4e0ca0c41e22cbcc640b.png" />
+        </a>
+    </p>
+<h3 id="21-通过h1计算索引">2.1 通过H1计算索引</h3>
+<p>前面有说到有效控制字节区的大小<code>cap</code>始终为<code>2的N次方减1</code>，是方便通过位运算直接定位索引，减少计算，即<code>H1&amp;cap</code>，它的取值范围为<code>[0,   cap]</code></p>
+<p>这里举例来说明：
+假如有效控制字节区的大小<code>cap</code>为<code>3</code>，则<code>H1</code>决定的索引取值范围为<code>[0,3]</code>。如果当前<code>Key</code>计算的<code>H1</code>值为<code>0x43</code>，<code>0x43&amp;3</code>值为<code>3</code>，直接定位在结束标志上，结束标志后面还有<code>15</code>个字节，存储的是有效控制字节的头部克隆，这<code>16</code>个字节刚好是一个SIMD指令数据大小，则可以按下图所示的<code>Group4</code>进行查找，<strong>相当于是从头查找了</strong>。
+同样地，如果<code>H1&amp;3</code>为0，则按<code>Group1</code>进行查找，<code>H1&amp;3</code>为1，则按<code>Group2</code>查找，以此类推，如下图所示：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/edf86085db3b4760972fb3e077bd320a.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/edf86085db3b4760972fb3e077bd320a.png" />
+        </a>
+    </p>
+<h3 id="22-匹配控制字节">2.2 匹配控制字节</h3>
+<p>在按组查找的过程中，使用<code>SIMD</code>指令一次比较16个字节，比较的结果也是一个16字节的值，再使用<code>SIMD</code>指令将之压缩成32位的值，其实有效位就是16位，直接转成16位的整数，如下图所示：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/0c8aaa7d479944719c32a7e2374b8b31.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/0c8aaa7d479944719c32a7e2374b8b31.png" />
+        </a>
+    </p>
+<p>如果有多个相等的值，则最终值是按压缩后各位表示的值相加。</p>
+<p>压缩后各位表示的值是一个特殊的值，它是<code>2的索引次方</code>，即N号位置为2^n^，而2^n^的二进制正好是尾部有<code>n个0</code>，这为通过值来计算索引提供了一个简便的方法，即<code>计算尾部0的个数</code>。</p>
+<h3 id="23-比较key值">2.3 比较Key值</h3>
+<p>前面通过一组控制字节的比较，得到了一个匹配的16位值。通过这个值，可以得到其索引，即计算这个16位值的尾部有多少个0，再与之前线性探测到的索引进行计算，公式为：<code>（探测到的索引+尾部0的个数）&amp; 控制字节大小</code>，得到槽slot的实际的索引。有了slot的索引，即可取Key进行比较了。</p>
+<p>举个例子：
+假设目前控制字节的大小为7，数据如下图所示：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/c287fab97c8f443c856b64dd1715f48a.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/c287fab97c8f443c856b64dd1715f48a.png" />
+        </a>
+    </p>
+<p>在线性探测时，根据H1得到索引为2，即<code>0x0d</code>所在位置，根据H2得到特征值为<code>0x14</code>，在匹配时一次性读取的数据是从索引为2的位置开始后的16个字节，即<code>0x0d</code>,<code>0x27</code>,<code>0x14</code>,<code>0x1a</code>，……，然后与<code>0x14</code> ，<code>0x14</code>，<code>0x14</code>，<code>0x14</code>，……进行比较，根据前面的压缩位表示的值相加，得到一个压缩后的最终值：4+1024＝<code>1028</code>（如下图所示），十六进制为<code>0x0404</code>，这个值尾部有2个0，即索引为2，加上之前H1的索引2，则最终索引为4，即是Slot中的索引。</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/96887418b94b4061815eddb048f6fb6d.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/96887418b94b4061815eddb048f6fb6d.png" />
+        </a>
+    </p>
+<h2 id="3-swisstable的插入扩展替换">3. SwissTable的插入、扩展、替换</h2>
+<p>在插入之前，需要自行查找，如果找到了，则替换；如果没找到，且没有可使用的空间，则需要扩展SwissTable，有使用空间则写入找到的位置。</p>
+<p>SwissTable的空间扩展一定是按2^n^-1的规则来扩展的。</p>
+<p>absl的实现中在控制字节前面有一个<code>GrowthInfo</code>，用来记录，SwissTable还有多少空间。</p>
+<h1 id="三swissmap的c实现">三、SwissMap的C++实现</h1>
+<p>如果对C++模板不是很熟悉，为了学习SwissTable，直接去看absl的实现，可能会觉得云里雾里，有太多额外的东西干扰视线了，不便于快速掌握核心，笔者根据absl源码，实现了一个简单的SwissMap，并且写上了详细注释，方便快速掌握SwissTable的核心。经过简单测试，完全可用，附上源码：</p>
+<p><code>swissmap.h</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cassert&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cstddef&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cstdint&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bit&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;emmintrin.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;random&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span><span style="color:#66d9ef">template</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> K, <span style="color:#66d9ef">typename</span> V<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CSwissMap</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> kWidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span>    <span style="color:#66d9ef">enum</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Ctrl</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">int8_t</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span>        kEmpty <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">128</span>,   <span style="color:#75715e">// 0b10000000
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span><span style="color:#75715e"></span>        kDeleted <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,   <span style="color:#75715e">// 0b11111110
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span><span style="color:#75715e"></span>        kSentinel <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// 0b11111111
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span><span style="color:#75715e"></span>    };
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Slot</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span>        K k;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span>        V v;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span>    };
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span>    Ctrl<span style="color:#f92672">*</span> m_ctrl;               <span style="color:#75715e">// 控制字节数组
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span><span style="color:#75715e"></span>    Slot<span style="color:#f92672">*</span> m_slot;               <span style="color:#75715e">// 槽数组
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span><span style="color:#75715e"></span>    size_t m_cap <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;           <span style="color:#75715e">// 控制字节容量
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span><span style="color:#75715e"></span>    size_t m_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;           <span style="color:#75715e">// 控制字节使用量
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span><span style="color:#75715e"></span>    size_t m_growthInfo <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;    <span style="color:#75715e">// 在rehash前，可以存储的数量，变量名遵循absl中的命名
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span><span style="color:#75715e"></span>    size_t m_salt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;          <span style="color:#75715e">// hash 盐
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span>    CSwissMap() {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span><span>        <span style="color:#75715e">// 使用random_device生成一个随机数种子，
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 再梅森旋转算法生成一个64位的随机数作为hash盐
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span><span style="color:#75715e"></span>        std<span style="color:#f92672">::</span>random_device rd;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span>        std<span style="color:#f92672">::</span>mt19937_64 gen(rd());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span>        m_salt <span style="color:#f92672">=</span> gen();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span>        init(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span>    CSwissMap(<span style="color:#66d9ef">const</span> CSwissMap<span style="color:#f92672">&amp;</span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span>    CSwissMap(<span style="color:#66d9ef">const</span> CSwissMap<span style="color:#f92672">&amp;&amp;</span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span>    CSwissMap<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">=</span>(<span style="color:#66d9ef">const</span> CSwissMap<span style="color:#f92672">&amp;</span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span>    CSwissMap<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">=</span>(<span style="color:#66d9ef">const</span> CSwissMap<span style="color:#f92672">&amp;&amp;</span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>CSwissMap() {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span><span>        <span style="color:#66d9ef">if</span> (m_ctrl <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nullptr</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span>            <span style="color:#66d9ef">delete</span>[] m_ctrl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span><span>            m_ctrl <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span>        m_cap <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span>        m_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span>        m_growthInfo <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span><span>        m_salt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span><span>    V<span style="color:#f92672">*</span> <span style="color:#66d9ef">operator</span>[](K key) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">find</span>(key, false);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">insert</span>(<span style="color:#66d9ef">const</span> K<span style="color:#f92672">&amp;</span> key, <span style="color:#66d9ef">const</span> V<span style="color:#f92672">&amp;</span> v) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span>        V<span style="color:#f92672">*</span> x <span style="color:#f92672">=</span> find(key, true);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span><span>        <span style="color:#66d9ef">new</span>(x) V(v);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span><span>    <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">erase</span>(<span style="color:#66d9ef">const</span> K<span style="color:#f92672">&amp;</span> key) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span>        <span style="color:#66d9ef">uint64_t</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span>        <span style="color:#66d9ef">int8_t</span> h2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span>        <span style="color:#66d9ef">if</span> (findIndex(key, index, h2)) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span><span>            <span style="color:#75715e">// 设置删除标志
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span><span><span style="color:#75715e"></span>            setCtrl(index, (<span style="color:#66d9ef">int8_t</span>)Ctrl<span style="color:#f92672">::</span>kDeleted);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span><span>            <span style="color:#75715e">// 销毁Slot
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span><span style="color:#75715e"></span>            destorySlot(m_slot[index]);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span><span>            <span style="color:#75715e">// 已使用的控制字节数量减1
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span><span style="color:#75715e"></span>            m_num<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span><span>            <span style="color:#75715e">// 可存储槽数量加1
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span><span style="color:#75715e"></span>            m_growthInfo<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span><span>            <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span><span>        <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span><span>    <span style="color:#66d9ef">constexpr</span> size_t align(size_t x, size_t a) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span>        <span style="color:#66d9ef">return</span> (x <span style="color:#f92672">+</span> a <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span> (<span style="color:#f92672">~</span>(a <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>(size_t n) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span>        <span style="color:#75715e">// 控制字节总大小需要加上结束标志（1个字节）与克隆大小（15个字节）
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span><span style="color:#75715e"></span>        size_t ctrlSize <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(Ctrl) <span style="color:#f92672">*</span> (n <span style="color:#f92672">+</span> kWidth);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span><span>        <span style="color:#75715e">// 按16字节对齐
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span><span style="color:#75715e"></span>        size_t alignCtrlSize <span style="color:#f92672">=</span> align(ctrlSize, <span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span><span>        <span style="color:#75715e">// 槽大小
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span><span style="color:#75715e"></span>        size_t slotSize <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(Slot) <span style="color:#f92672">*</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span>        <span style="color:#75715e">// 总大小
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span><span style="color:#75715e"></span>        size_t size <span style="color:#f92672">=</span> alignCtrlSize <span style="color:#f92672">+</span> align(slotSize, <span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span>        <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> p <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span>[size];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span><span>        m_ctrl <span style="color:#f92672">=</span> (Ctrl<span style="color:#f92672">*</span>)p;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span><span>        m_slot <span style="color:#f92672">=</span> (Slot<span style="color:#f92672">*</span>)(p <span style="color:#f92672">+</span> alignCtrlSize);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span>        <span style="color:#75715e">// 将所有控制字节设置为空
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span><span style="color:#75715e"></span>        memset(m_ctrl, (<span style="color:#66d9ef">int</span>)Ctrl<span style="color:#f92672">::</span>kEmpty, ctrlSize);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span>        <span style="color:#75715e">// 设置控制字节结束标志
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span><span style="color:#75715e"></span>        m_ctrl[n] <span style="color:#f92672">=</span> Ctrl<span style="color:#f92672">::</span>kSentinel;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span><span>        m_cap <span style="color:#f92672">=</span> n;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span><span>        <span style="color:#75715e">// 根据控制字节容量以及使用情况设置增长信息
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span><span><span style="color:#75715e"></span>        m_growthInfo <span style="color:#f92672">=</span> (n <span style="color:#f92672">-</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">8</span>) <span style="color:#f92672">-</span> m_num;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">rehash</span>(size_t n) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span><span>        <span style="color:#75715e">// 先保存之前的控制字节、槽以及容量信息
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">auto</span> ctrl <span style="color:#f92672">=</span> m_ctrl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span>        <span style="color:#66d9ef">auto</span> slot <span style="color:#f92672">=</span> m_slot;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span><span>        <span style="color:#66d9ef">auto</span> cap <span style="color:#f92672">=</span> m_cap;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span><span>        <span style="color:#75715e">// 使用新的容量分配内存
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span><span><span style="color:#75715e"></span>        init(n);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span><span>        <span style="color:#75715e">// 重置已经使用的数量
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span><span><span style="color:#75715e"></span>        m_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span><span>        <span style="color:#75715e">// 将之前已经存在的数量，按新的内存重新分配
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> cap; <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span><span>            <span style="color:#75715e">// 只处理有效控制字节
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">int</span>(ctrl[i]) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span><span>                Slot<span style="color:#f92672">&amp;</span> s <span style="color:#f92672">=</span> slot[i];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span><span>                V<span style="color:#f92672">*</span> x <span style="color:#f92672">=</span> find(s.k, true);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span><span>                <span style="color:#75715e">// 使用指定内存调用V的构造函数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">new</span>(x) V(s.v);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span><span>                <span style="color:#75715e">// 销毁原来的Slot
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span><span><span style="color:#75715e"></span>                destorySlot(s);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span><span>        <span style="color:#75715e">// 释放原来的内存
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">delete</span>[] ctrl;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">destorySlot</span>(Slot<span style="color:#f92672">&amp;</span> slot) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span><span>        <span style="color:#75715e">// 由于Slot所在内存是与ctrl一起分配的，
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 所以不能单独释放内存，这里只能调用析构函数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 调用Key的析构函数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span><span><span style="color:#75715e"></span>        slot.k.<span style="color:#f92672">~</span>K();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span><span>        <span style="color:#75715e">// 调用Value的析构函数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span><span><span style="color:#75715e"></span>        slot.v.<span style="color:#f92672">~</span>V();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span><span>    <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">IsValidCapacity</span>(size_t n) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span><span>        <span style="color:#66d9ef">return</span> ((n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span> n) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span><span>    <span style="color:#75715e">// 下一次分配控制字节内存所需要的容量
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 控制字节的容量始终为2的N次方减1
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span><span><span style="color:#75715e"></span>    size_t <span style="color:#a6e22e">nextCap</span>() {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span><span>        assert(IsValidCapacity((m_cap <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span><span>        <span style="color:#66d9ef">return</span> (m_cap <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152</span><span>    <span style="color:#75715e">// 获取槽的索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153</span><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">getSlotIndex</span>(<span style="color:#66d9ef">uint64_t</span> index, <span style="color:#66d9ef">uint16_t</span> mask) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154</span><span>        <span style="color:#75715e">// 根据H1计算的索引index加上匹配的mask索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155</span><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 为了避免越界，需要限制在m_cap范围内
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156</span><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 由于m_cap的二进制位全部是1，所以直接位与即可
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157</span><span><span style="color:#75715e"></span>        assert(m_cap <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> IsValidCapacity(m_cap));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158</span><span>        <span style="color:#66d9ef">return</span> (index <span style="color:#f92672">+</span> std<span style="color:#f92672">::</span>countr_zero(mask)) <span style="color:#f92672">&amp;</span> m_cap;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161</span><span>    <span style="color:#75715e">// 根据key查找槽的索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162</span><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 成功找到返回true，retIndex为该key所对应的槽索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163</span><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 未找到返回false，retIndex为该key所对应的空槽索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164</span><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">findIndex</span>(<span style="color:#66d9ef">const</span> K<span style="color:#f92672">&amp;</span> key, <span style="color:#66d9ef">uint64_t</span><span style="color:#f92672">&amp;</span> retIndex, <span style="color:#66d9ef">int8_t</span><span style="color:#f92672">&amp;</span> h2) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165</span><span>        std<span style="color:#f92672">::</span>hash<span style="color:#f92672">&lt;</span>K<span style="color:#f92672">&gt;</span> h;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166</span><span>        <span style="color:#75715e">// 计算key的hash值
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">uint64_t</span> k <span style="color:#f92672">=</span> h(key);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168</span><span>        <span style="color:#75715e">// 给hash值加盐
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169</span><span><span style="color:#75715e"></span>        k <span style="color:#f92672">^=</span> m_salt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170</span><span>        h2 <span style="color:#f92672">=</span> H2(k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171</span><span>        <span style="color:#75715e">// 一次性填充16字节的特征值h2
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">__m128i</span> match <span style="color:#f92672">=</span> _mm_set1_epi8(<span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>(h2));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173</span><span>        <span style="color:#66d9ef">uint64_t</span> h1 <span style="color:#f92672">=</span> H1(k);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174</span><span>        <span style="color:#75715e">// 根据h1计算控制字节的索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">auto</span> index <span style="color:#f92672">=</span> h1 <span style="color:#f92672">&amp;</span> m_cap;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176</span><span>        <span style="color:#66d9ef">while</span> (true) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177</span><span>            <span style="color:#75715e">// 从index开始的位置，一次性读取16字节数据
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">__m128i</span> ctrl <span style="color:#f92672">=</span> _mm_loadu_si128((<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">__m128i</span><span style="color:#f92672">*</span>)(<span style="color:#f92672">&amp;</span>m_ctrl[index]));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179</span><span>            <span style="color:#75715e">// 与填充的特征值进行“相等”比较，即：match == ctrl
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">auto</span> x <span style="color:#f92672">=</span> _mm_cmpeq_epi8(match, ctrl);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181</span><span>            <span style="color:#75715e">// 将比较的结果进行压缩
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">auto</span> mask <span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint16_t</span><span style="color:#f92672">&gt;</span>(_mm_movemask_epi8(x));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183</span><span>            <span style="color:#66d9ef">while</span> (mask <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) { <span style="color:#75715e">// 压缩的结果不为0，则表示有匹配的特征值
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184</span><span><span style="color:#75715e"></span>                <span style="color:#75715e">// 计算槽相对m_ctrl的索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185</span><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">auto</span> slotIndex <span style="color:#f92672">=</span> getSlotIndex(index, mask);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186</span><span>                assert((<span style="color:#66d9ef">uint64_t</span>)m_ctrl[slotIndex] <span style="color:#f92672">==</span> h2);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187</span><span>                <span style="color:#75715e">// 如果是指定的Key则返回
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188</span><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (m_slot[slotIndex].k <span style="color:#f92672">==</span> key) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189</span><span>                    retIndex <span style="color:#f92672">=</span> slotIndex;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190</span><span>                    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191</span><span>                }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192</span><span>                <span style="color:#75715e">// 由于处理时是计算的尾部有多少个0，
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193</span><span><span style="color:#75715e"></span>                <span style="color:#75715e">// 所以之前处理的是低位的第一个1，现在将其置为0
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194</span><span><span style="color:#75715e"></span>                mask <span style="color:#f92672">&amp;=</span> mask <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196</span><span>            <span style="color:#75715e">// 压缩结果为0，则没有匹配的特征值，检查空槽
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">__m128i</span> matchEmpty <span style="color:#f92672">=</span> _mm_set1_epi8(<span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>(Ctrl<span style="color:#f92672">::</span>kEmpty));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198</span><span>            x <span style="color:#f92672">=</span> _mm_cmpeq_epi8(matchEmpty, ctrl);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span><span>            mask <span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint16_t</span><span style="color:#f92672">&gt;</span>(_mm_movemask_epi8(x));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span><span>            <span style="color:#66d9ef">if</span> (mask <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span><span>                <span style="color:#75715e">// 计算槽相对m_ctrl的索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span><span><span style="color:#75715e"></span>                retIndex <span style="color:#f92672">=</span> getSlotIndex(index, mask);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203</span><span>                <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205</span><span>            <span style="color:#75715e">// 当前group没有找到，定位到下一group，继续查找
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206</span><span><span style="color:#75715e"></span>            index <span style="color:#f92672">+=</span> kWidth;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207</span><span>            <span style="color:#75715e">// 索引不能越界
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208</span><span><span style="color:#75715e"></span>            index <span style="color:#f92672">&amp;=</span> m_cap;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212</span><span>    V<span style="color:#f92672">*</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">const</span> K<span style="color:#f92672">&amp;</span> key, <span style="color:#66d9ef">bool</span> isAdd) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213</span><span>    refind:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214</span><span>        <span style="color:#66d9ef">uint64_t</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215</span><span>        <span style="color:#66d9ef">int8_t</span> h2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216</span><span>        <span style="color:#66d9ef">if</span> (findIndex(key, index, h2)) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217</span><span>            <span style="color:#75715e">// 如果成功找到，返回Value的地址
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span>m_slot[index].v;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220</span><span>        <span style="color:#75715e">// 没有找到，需要添加
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (isAdd) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222</span><span>            <span style="color:#75715e">// 一次性读取16个字节
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">__m128i</span> ctrl <span style="color:#f92672">=</span> _mm_loadu_si128((<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">__m128i</span><span style="color:#f92672">*</span>)(<span style="color:#f92672">&amp;</span>m_ctrl[index]));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224</span><span>            <span style="color:#75715e">// 填充16个字节的结束标志
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">__m128i</span> specail <span style="color:#f92672">=</span> _mm_set1_epi8(<span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>(Ctrl<span style="color:#f92672">::</span>kSentinel));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226</span><span>            <span style="color:#75715e">// 与specail进行“大于”比较，即：specail &gt; ctrl，筛选出所有空及已删除的标志
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227</span><span><span style="color:#75715e"></span>            <span style="color:#75715e">// specail中填写的是-1，所以大于空（-128）以及删除标志（-2），
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228</span><span><span style="color:#75715e"></span>            <span style="color:#75715e">// 但不大于有效控制字节，因为有效控制字节是非负数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">auto</span> x <span style="color:#f92672">=</span> _mm_cmpgt_epi8(specail, ctrl);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230</span><span>            <span style="color:#66d9ef">uint16_t</span> mask <span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint16_t</span><span style="color:#f92672">&gt;</span>(_mm_movemask_epi8(x));
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231</span><span>            <span style="color:#66d9ef">if</span> (mask <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232</span><span>                <span style="color:#75715e">// 如果还可以存储，直接存储
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233</span><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (m_growthInfo <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234</span><span>                    <span style="color:#75715e">// 这里需要根据mask重新计算索引
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235</span><span><span style="color:#75715e"></span>                    index <span style="color:#f92672">=</span> getSlotIndex(index, mask);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236</span><span>                    assert(m_ctrl[index] <span style="color:#f92672">==</span> Ctrl<span style="color:#f92672">::</span>kEmpty <span style="color:#f92672">||</span> m_ctrl[index] <span style="color:#f92672">==</span> Ctrl<span style="color:#f92672">::</span>kDeleted);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237</span><span>                    <span style="color:#75715e">// 在控制字节中设置特征值h2
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238</span><span><span style="color:#75715e"></span>                    setCtrl(index, h2);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239</span><span>                    <span style="color:#75715e">// 在设置对应槽的Key
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240</span><span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">new</span>(<span style="color:#f92672">&amp;</span>m_slot[index].k) K(key);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241</span><span>                    <span style="color:#75715e">// 增加控制字节使用数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242</span><span><span style="color:#75715e"></span>                    m_num<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243</span><span>                    <span style="color:#75715e">// 减少可存储数
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244</span><span><span style="color:#75715e"></span>                    m_growthInfo<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245</span><span>                    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span>m_slot[index].v;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246</span><span>                }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247</span><span>            }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248</span><span>            <span style="color:#75715e">// 不能再存储了，需要rehash重新分配空间了
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249</span><span><span style="color:#75715e"></span>            rehash(nextCap());
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250</span><span>            <span style="color:#75715e">// 重新分配了空间，需要重新查找
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251</span><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">goto</span> refind;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253</span><span>        <span style="color:#75715e">// 只查找，没找到
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nullptr</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257</span><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCtrl</span>(<span style="color:#66d9ef">uint64_t</span> index, <span style="color:#66d9ef">int8_t</span> h) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258</span><span>        m_ctrl[index] <span style="color:#f92672">=</span> (Ctrl)h;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259</span><span>        <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">&lt;</span> kWidth <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260</span><span>            <span style="color:#75715e">// 如果index小于克隆字节大小，则需要同时设置克隆区的控制字节
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261</span><span><span style="color:#75715e"></span>            m_ctrl[index <span style="color:#f92672">+</span> m_cap <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> (Ctrl)h;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265</span><span>    <span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">H1</span>(<span style="color:#66d9ef">uint64_t</span> hash) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266</span><span>        <span style="color:#75715e">// 取hash值的高57位，并加盐，
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267</span><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 盐是根据当前控制字节的首地址右移12位，12位刚好是一个内存页大小
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> (hash <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">7</span>) <span style="color:#f92672">^</span> ((uintptr_t)(m_ctrl) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">12</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271</span><span>    <span style="color:#66d9ef">int8_t</span> <span style="color:#a6e22e">H2</span>(<span style="color:#66d9ef">uint64_t</span> hash) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272</span><span>        <span style="color:#75715e">// 取hash值的低7位
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273</span><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">int8_t</span>)(hash <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x7F</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275</span><span>};
+</span></span></code></pre></div><p>测试代码：</p>
+<p><code>main.cc</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;windows.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;swissmap.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]) {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	<span style="color:#66d9ef">auto</span> t1 <span style="color:#f92672">=</span> timeGetTime();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#66d9ef">char</span> buf[<span style="color:#ae81ff">32</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	CSwissMap<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, std<span style="color:#f92672">::</span>string<span style="color:#f92672">&gt;</span> m;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000&#39;0000</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> num; <span style="color:#f92672">++</span>i){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>		sprintf(buf, <span style="color:#e6db74">&#34;str%d&#34;</span>, i);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>		m.insert(i, buf);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> num; <span style="color:#f92672">++</span>i){
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>		m.erase(i);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>	<span style="color:#66d9ef">auto</span> t2 <span style="color:#f92672">=</span> timeGetTime();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>	printf(<span style="color:#e6db74">&#34;swissMap %d次，耗时:%lu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num, t2 <span style="color:#f92672">-</span> t1);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>}
+</span></span></code></pre></div><p><code>CMakeLists.txt</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>cmake_minimum_required<span style="color:#f92672">(</span>VERSION 3.25.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>project<span style="color:#f92672">(</span>swissmap VERSION 0.1.0 LANGUAGES C CXX<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>set<span style="color:#f92672">(</span>CMAKE_CXX_STANDARD 20<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>MSVC<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>add_compile_options<span style="color:#f92672">(</span>/source-charset:utf-8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>endif<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>add_executable<span style="color:#f92672">(</span><span style="color:#e6db74">${</span>PROJECT_NAME<span style="color:#e6db74">}</span> main.cc<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>CMAKE_HOST_WIN32<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>target_link_libraries<span style="color:#f92672">(</span><span style="color:#e6db74">${</span>PROJECT_NAME<span style="color:#e6db74">}</span> PRIVATE winmm.lib<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>endif<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>include<span style="color:#f92672">(</span>CTest<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>enable_testing<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>set<span style="color:#f92672">(</span>CPACK_PROJECT_NAME <span style="color:#e6db74">${</span>PROJECT_NAME<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>set<span style="color:#f92672">(</span>CPACK_PROJECT_VERSION <span style="color:#e6db74">${</span>PROJECT_VERSION<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>include<span style="color:#f92672">(</span>CPack<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>笔者将之与absl中的<code>flat_hash_map</code>进行测试对比，这是Debug版本的对比：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/c08f692869644ecd86d7f2e4f6f80d99.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/c08f692869644ecd86d7f2e4f6f80d99.png" />
+        </a>
+    </p>
+<p>这是Release版本的对比：</p>
+<p>
+        <a data-fancybox="gallery" href="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/6bcf697b5757489b8d062890635371c3.png">
+            <img class="mx-auto" alt="在这里插入图片描述" src="../assets/2025-01-15-SwissTable%e8%af%a6%e8%a7%a3/6bcf697b5757489b8d062890635371c3.png" />
+        </a>
+    </p>
+<p>针对本测试用例，笔者的实现在Debug版本下性能是absl的2倍多，在Release版本下也要快一些。</p>
+<p>以上代码在Windows下使用<code>VS2022</code>以及<code>MinGW</code>的<code>Clang 19.1</code>、<code>GCC 14.2</code>编译测试通过！</p>
+<p>如果对你有帮助，欢迎点赞收藏！</p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+	<ul class="post-nav">
+		
+			<li class="post-nav-prev">
+				<a href="/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/" rel="prev">&lt; C++ lambda表达式转成普通的函数指针</a>
+			</li>
+		
+		
+			<li class="post-nav-next">
+				<a href="/posts/2025/2025-01-02-C%E8%AF%AD%E8%A8%80%E9%9D%A2%E7%9A%84%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8BOOP/" rel="next">C语言面的向对象编程（OOP） &gt;</a>
+			</li>
+		
+	</ul>
+
+
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://wittonbell.github.io/">Witton</a></li>
+        
+        
+        
+        
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/">https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable详解/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/2025/2025-01-02-C%E8%AF%AD%E8%A8%80%E9%9D%A2%E7%9A%84%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8BOOP/">C语言面的向对象编程（OOP）</a></li>
+        
+        <li><a href="/posts/2024/2024-12-20-%E5%B0%86VSCode%E9%85%8D%E7%BD%AE%E6%88%90Goland%E7%9A%84%E8%A7%86%E8%A7%89%E6%95%88%E6%9E%9C/">将VSCode配置成Goland的视觉效果</a></li>
+        
+        <li><a href="/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/">解决Clang 18&#43;不能链接GCC14编译的库的问题</a></li>
+        
+        <li><a href="/posts/2024/2024-12-02-MSYS2-MinGW64%E4%BD%BF%E7%94%A8Protobuf%E6%96%B0%E7%89%88%E6%9C%AC%E8%B8%A9%E5%9D%91/">MSYS2 MinGW64使用Protobuf新版本踩坑</a></li>
+        
+        <li><a href="/posts/2024/2024-11-28-KMP%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/">KMP模式匹配算法</a></li>
+        
+    </ul>
+</div>
+
+
+<div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/absl/' target="_blank">absl</a></li>
+                
+                <li><a href='/tags/swisstable/' target="_blank">swisstable</a></li>
+                
+                <li><a href='/tags/swiss/' target="_blank">swiss</a></li>
+                
+                <li><a href='/tags/hash/' target="_blank">hash</a></li>
+                
+                <li><a href='/tags/hash_set/' target="_blank">hash_set</a></li>
+                
+                <li><a href='/tags/C&#43;&#43;/' target="_blank">C&#43;&#43;</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const ID = "2025-01-15-SwissTable详解" 
+    const Title = "2025-01-15-SwissTable详解"
+    const gitalk = new Gitalk({
+        clientID: '118c70fe27b7246dfb76',
+        clientSecret: '7b3780db9b53dacb307bf191a4293374933c7a37',
+        repo: 'comment',
+        owner: 'WittonBell',
+        admin: ['WittonBell'],
+        id: ID, 
+        title: Title,
+        proxy: 'https:\/\/proxy.cors.sh\/https:\/\/github.com\/login\/oauth\/access_token',
+        pagerDirection: "last",
+        createIssueManually:  false ,
+        distractionFreeMode:  false  
+    });
+    (function () {
+        
+        
+        
+        
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+</div>
+<footer id="footer">
+    <div>
+        &copy; 2006 - 2025 <a href="https://wittonbell.github.io/">Witton的博客 By Witton</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://wittonbell.github.io/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">Witton</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/WittonBell/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+</div>
+
+            <div id="secondary">
+    <section class="widget">
+    <form id="search" action='https://wittonbell.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder=搜索>
+      <input type="hidden" name="sitesearch" value="https://wittonbell.github.io/">
+      <button type="submit" class="submit icon-search" title=搜索></button>
+</form>
+    </section>
+
+    <section class="widget">
+    <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-04-28-%E8%AE%B0%E4%B8%80%E6%AC%A1pdf%E8%BD%ACWord%E7%9A%84%E6%8A%80%E6%9C%AF%E7%BB%8F%E5%8E%86/" title="记一次pdf转Word的技术经历" target="_blank">记一次pdf转Word的技术经历</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/" title="MinGW下编译ffmpeg源码时生成compile_commands.json" target="_blank">MinGW下编译ffmpeg源码时生成compile_commands.json</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-03-17-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91nginx%E6%BA%90%E7%A0%81/" title="MinGW下编译nginx源码" target="_blank">MinGW下编译nginx源码</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-03-17-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%AE%8C%E7%BE%8E%E8%BD%AC%E5%8F%91/" title="nginx反向代理的完美转发" target="_blank">nginx反向代理的完美转发</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-02-28-%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2DeepSeek-R1%E8%AF%A6%E7%BB%86%E6%94%BB%E7%95%A5/" title="本地化部署DeepSeek R1详细攻略" target="_blank">本地化部署DeepSeek R1详细攻略</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-02-14-%E6%B8%85%E7%90%86dockerpodman%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/" title="清理docker/podman的存储空间" target="_blank">清理docker/podman的存储空间</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-01-23-CMake%E4%BD%BF%E7%94%A8CPack%E5%88%B6%E4%BD%9C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/" title="CMake使用CPack制作安装程序" target="_blank">CMake使用CPack制作安装程序</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/" title="macOS使用LLVM官方发布的tar.xz来安装Clang编译器" target="_blank">macOS使用LLVM官方发布的tar.xz来安装Clang编译器</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/" title="C&#43;&#43; lambda表达式转成普通的函数指针" target="_blank">C&#43;&#43; lambda表达式转成普通的函数指针</a>
+    </li>
+    <li>
+        <a href="https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/" title="SwissTable详解" target="_blank">SwissTable详解</a>
+    </li>
+</ul>
+</section><section class="widget">
+    <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    <li><a href="https://wittonbell.github.io/categories/AI/">AI (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/C/C&#43;&#43;/">C/C&#43;&#43; (50)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Erlang/">Erlang (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Go/">Go (16)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/IDE/">IDE (20)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/LLVM/Clang/">LLVM/Clang (15)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Linux/">Linux (78)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Lua/">Lua (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/MSYS2/">MSYS2 (21)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Mysql/">Mysql (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Python/">Python (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Qt/">Qt (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Redis/">Redis (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unity/">Unity (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Unreal/">Unreal (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/VisualGDB/">VisualGDB (5)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/Windows/">Windows (47)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/cmake/">cmake (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/glib/">glib (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/macOS/">macOS (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/nginx/">nginx (7)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/pdf/">pdf (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/qemu/">qemu (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E4%BD%BF%E7%94%A8Cockpit%E7%AE%A1%E7%90%86Linux/">使用Cockpit管理Linux (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统 (1)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/">容器 (33)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/">操作系统开发 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%9D%82%E8%AE%B0/">杂记 (8)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/">汇编 (3)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/">游戏 (6)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/">研发管理 (11)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B/">编程 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (50)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BC%96%E8%BE%91%E8%AF%AD%E8%A8%80/">编辑语言 (2)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/">网络 (7)</a></li>
+    <li><a href="https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台 (17)</a></li>
+</ul>
+</section>
+
+    <section class="widget">
+    <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    <a href="https://wittonbell.github.io/tags/-failed/">- failed</a>
+    <a href="https://wittonbell.github.io/tags/.a/">.a</a>
+    <a href="https://wittonbell.github.io/tags/.net/">.net</a>
+    <a href="https://wittonbell.github.io/tags/.net-6/">.net 6</a>
+    <a href="https://wittonbell.github.io/tags/.netcore/">.netcore</a>
+    <a href="https://wittonbell.github.io/tags/0%E5%AD%97%E8%8A%82/">0字节</a>
+    <a href="https://wittonbell.github.io/tags/2010/">2010</a>
+    <a href="https://wittonbell.github.io/tags/5.0.3/">5.0.3</a>
+    <a href="https://wittonbell.github.io/tags/5.3.2/">5.3.2</a>
+    <a href="https://wittonbell.github.io/tags/6.42/">6.42</a>
+    <a href="https://wittonbell.github.io/tags/6.x/">6.x</a>
+    <a href="https://wittonbell.github.io/tags/ABI-info/">ABI info</a>
+    <a href="https://wittonbell.github.io/tags/AC97/">AC97</a>
+    <a href="https://wittonbell.github.io/tags/Apache/">Apache</a>
+    <a href="https://wittonbell.github.io/tags/BUG/">BUG</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/C#/">C#</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-11/">C&#43;&#43; 11</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;-makefile/">C&#43;&#43; makefile</a>
+    <a href="https://wittonbell.github.io/tags/C&#43;&#43;11/">C&#43;&#43;11</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/CC&#43;&#43;/">CC&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/CNI-config/">CNI config</a>
+    <a href="https://wittonbell.github.io/tags/CNI-network/">CNI network</a>
+    <a href="https://wittonbell.github.io/tags/CORS/">CORS</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/CentOS6/">CentOS6</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2D/">Cocos2D</a>
+    <a href="https://wittonbell.github.io/tags/Cocos2d-x/">Cocos2d-x</a>
+    <a href="https://wittonbell.github.io/tags/Code/">Code</a>
+    <a href="https://wittonbell.github.io/tags/Code-Runner/">Code Runner</a>
+    <a href="https://wittonbell.github.io/tags/Console/">Console</a>
+    <a href="https://wittonbell.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/DNS/">DNS</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/Erlang%E4%BD%BF%E7%94%A8ProtoBuffer/">Erlang使用ProtoBuffer</a>
+    <a href="https://wittonbell.github.io/tags/Error/">Error</a>
+    <a href="https://wittonbell.github.io/tags/Fibonacci/">Fibonacci</a>
+    <a href="https://wittonbell.github.io/tags/Free-Heap-block/">Free Heap block</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/Githuber-MD/">Githuber MD</a>
+    <a href="https://wittonbell.github.io/tags/Git%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/">Git版本信息</a>
+    <a href="https://wittonbell.github.io/tags/Google-Protocol-Buffers/">Google Protocol Buffers</a>
+    <a href="https://wittonbell.github.io/tags/HD-Audio/">HD Audio</a>
+    <a href="https://wittonbell.github.io/tags/Homebrew/">Homebrew</a>
+    <a href="https://wittonbell.github.io/tags/INCLUDE_PATH/">INCLUDE_PATH</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/IPV6/">IPV6</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/KMP/">KMP</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/Lua%E8%A7%A3%E5%AF%86/">Lua解密</a>
+    <a href="https://wittonbell.github.io/tags/MOTD/">MOTD</a>
+    <a href="https://wittonbell.github.io/tags/msys2/">msys2</a>
+    <a href="https://wittonbell.github.io/tags/Mac/">Mac</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/Module/">Module</a>
+    <a href="https://wittonbell.github.io/tags/ModuleNotFound/">ModuleNotFound</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/NO-QML/">NO QML</a>
+    <a href="https://wittonbell.github.io/tags/Navigator/">Navigator</a>
+    <a href="https://wittonbell.github.io/tags/No-moudule/">No moudule</a>
+    <a href="https://wittonbell.github.io/tags/No-such-file/">No such file</a>
+    <a href="https://wittonbell.github.io/tags/OOP/">OOP</a>
+    <a href="https://wittonbell.github.io/tags/Ollama/">Ollama</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/QEMU/">QEMU</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/SFINAE/">SFINAE</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/Segmentation/">Segmentation</a>
+    <a href="https://wittonbell.github.io/tags/TLS/SSL/">TLS/SSL</a>
+    <a href="https://wittonbell.github.io/tags/Terminal/">Terminal</a>
+    <a href="https://wittonbell.github.io/tags/Tools/">Tools</a>
+    <a href="https://wittonbell.github.io/tags/Unable-to-load/">Unable to load</a>
+    <a href="https://wittonbell.github.io/tags/Unity/">Unity</a>
+    <a href="https://wittonbell.github.io/tags/VLAN/">VLAN</a>
+    <a href="https://wittonbell.github.io/tags/VMware/">VMware</a>
+    <a href="https://wittonbell.github.io/tags/VS2015/">VS2015</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/Visual-C&#43;&#43;/">Visual C&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio-2015/">Visual Studio 2015</a>
+    <a href="https://wittonbell.github.io/tags/VisualGDB/">VisualGDB</a>
+    <a href="https://wittonbell.github.io/tags/Web-API/">Web API</a>
+    <a href="https://wittonbell.github.io/tags/WinAnsiEncoding/">WinAnsiEncoding</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/XDebug/">XDebug</a>
+    <a href="https://wittonbell.github.io/tags/abi/">abi</a>
+    <a href="https://wittonbell.github.io/tags/absl/">absl</a>
+    <a href="https://wittonbell.github.io/tags/after-it-was-freed/">after it was freed</a>
+    <a href="https://wittonbell.github.io/tags/api/">api</a>
+    <a href="https://wittonbell.github.io/tags/array/">array</a>
+    <a href="https://wittonbell.github.io/tags/asp.net/">asp.net</a>
+    <a href="https://wittonbell.github.io/tags/attribute/">attribute</a>
+    <a href="https://wittonbell.github.io/tags/autoindex/">autoindex</a>
+    <a href="https://wittonbell.github.io/tags/backspace/">backspace</a>
+    <a href="https://wittonbell.github.io/tags/backup/">backup</a>
+    <a href="https://wittonbell.github.io/tags/bash/">bash</a>
+    <a href="https://wittonbell.github.io/tags/bear/">bear</a>
+    <a href="https://wittonbell.github.io/tags/bee/">bee</a>
+    <a href="https://wittonbell.github.io/tags/beego/">beego</a>
+    <a href="https://wittonbell.github.io/tags/binary/">binary</a>
+    <a href="https://wittonbell.github.io/tags/bind/">bind</a>
+    <a href="https://wittonbell.github.io/tags/block-type/">block type</a>
+    <a href="https://wittonbell.github.io/tags/blog/">blog</a>
+    <a href="https://wittonbell.github.io/tags/bochs/">bochs</a>
+    <a href="https://wittonbell.github.io/tags/bolt/">bolt</a>
+    <a href="https://wittonbell.github.io/tags/bolt_sate.db/">bolt_sate.db</a>
+    <a href="https://wittonbell.github.io/tags/bolt_state.db/">bolt_state.db</a>
+    <a href="https://wittonbell.github.io/tags/brew/">brew</a>
+    <a href="https://wittonbell.github.io/tags/bridge/">bridge</a>
+    <a href="https://wittonbell.github.io/tags/build/">build</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/c&#43;&#43;abi/">c&#43;&#43;abi</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/c/">c</a>
+    <a href="https://wittonbell.github.io/tags/callback/">callback</a>
+    <a href="https://wittonbell.github.io/tags/can/">can</a>
+    <a href="https://wittonbell.github.io/tags/catalina/">catalina</a>
+    <a href="https://wittonbell.github.io/tags/cd/">cd</a>
+    <a href="https://wittonbell.github.io/tags/centos/">centos</a>
+    <a href="https://wittonbell.github.io/tags/centos-6/">centos 6</a>
+    <a href="https://wittonbell.github.io/tags/CentOS-8/">CentOS 8</a>
+    <a href="https://wittonbell.github.io/tags/centos7/">centos7</a>
+    <a href="https://wittonbell.github.io/tags/centos8/">centos8</a>
+    <a href="https://wittonbell.github.io/tags/certificate/">certificate</a>
+    <a href="https://wittonbell.github.io/tags/chatbox/">chatbox</a>
+    <a href="https://wittonbell.github.io/tags/checkinstall/">checkinstall</a>
+    <a href="https://wittonbell.github.io/tags/chrome/">chrome</a>
+    <a href="https://wittonbell.github.io/tags/ci/">ci</a>
+    <a href="https://wittonbell.github.io/tags/Clang/">Clang</a>
+    <a href="https://wittonbell.github.io/tags/clang&#43;&#43;/">clang&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/clang-tidy/">clang-tidy</a>
+    <a href="https://wittonbell.github.io/tags/clangd/">clangd</a>
+    <a href="https://wittonbell.github.io/tags/class/">class</a>
+    <a href="https://wittonbell.github.io/tags/cleanup/">cleanup</a>
+    <a href="https://wittonbell.github.io/tags/cmake/">cmake</a>
+    <a href="https://wittonbell.github.io/tags/cmd/">cmd</a>
+    <a href="https://wittonbell.github.io/tags/Cockpit/">Cockpit</a>
+    <a href="https://wittonbell.github.io/tags/code-mode-could-not-parse-an-include-file/">code mode could not parse an include file</a>
+    <a href="https://wittonbell.github.io/tags/command/">command</a>
+    <a href="https://wittonbell.github.io/tags/compatible-with/">compatible with</a>
+    <a href="https://wittonbell.github.io/tags/compile/">compile</a>
+    <a href="https://wittonbell.github.io/tags/compile_commands/">compile_commands</a>
+    <a href="https://wittonbell.github.io/tags/compiledb/">compiledb</a>
+    <a href="https://wittonbell.github.io/tags/compiler/">compiler</a>
+    <a href="https://wittonbell.github.io/tags/Console/">Console</a>
+    <a href="https://wittonbell.github.io/tags/constructor/">constructor</a>
+    <a href="https://wittonbell.github.io/tags/containers/">containers</a>
+    <a href="https://wittonbell.github.io/tags/core-dumped/">core dumped</a>
+    <a href="https://wittonbell.github.io/tags/cpack/">cpack</a>
+    <a href="https://wittonbell.github.io/tags/crash/">crash</a>
+    <a href="https://wittonbell.github.io/tags/cross/">cross</a>
+    <a href="https://wittonbell.github.io/tags/crtbegin.o/">crtbegin.o</a>
+    <a href="https://wittonbell.github.io/tags/ctest/">ctest</a>
+    <a href="https://wittonbell.github.io/tags/ctr.log/">ctr.log</a>
+    <a href="https://wittonbell.github.io/tags/curl/">curl</a>
+    <a href="https://wittonbell.github.io/tags/current-user/">current user</a>
+    <a href="https://wittonbell.github.io/tags/cygwin/">cygwin</a>
+    <a href="https://wittonbell.github.io/tags/data/">data</a>
+    <a href="https://wittonbell.github.io/tags/database/">database</a>
+    <a href="https://wittonbell.github.io/tags/deb/">deb</a>
+    <a href="https://wittonbell.github.io/tags/debian/">debian</a>
+    <a href="https://wittonbell.github.io/tags/Debug/">Debug</a>
+    <a href="https://wittonbell.github.io/tags/deepseek/">deepseek</a>
+    <a href="https://wittonbell.github.io/tags/defer/">defer</a>
+    <a href="https://wittonbell.github.io/tags/device-is/">device is</a>
+    <a href="https://wittonbell.github.io/tags/dll/">dll</a>
+    <a href="https://wittonbell.github.io/tags/dlv/">dlv</a>
+    <a href="https://wittonbell.github.io/tags/dmg/">dmg</a>
+    <a href="https://wittonbell.github.io/tags/docisfy/">docisfy</a>
+    <a href="https://wittonbell.github.io/tags/docker/">docker</a>
+    <a href="https://wittonbell.github.io/tags/docker-compose/">docker-compose</a>
+    <a href="https://wittonbell.github.io/tags/docsify/">docsify</a>
+    <a href="https://wittonbell.github.io/tags/dos/">dos</a>
+    <a href="https://wittonbell.github.io/tags/echarts/">echarts</a>
+    <a href="https://wittonbell.github.io/tags/ecmascript/">ecmascript</a>
+    <a href="https://wittonbell.github.io/tags/encoding/">encoding</a>
+    <a href="https://wittonbell.github.io/tags/enum-class/">enum class</a>
+    <a href="https://wittonbell.github.io/tags/epoll/">epoll</a>
+    <a href="https://wittonbell.github.io/tags/erlang/">erlang</a>
+    <a href="https://wittonbell.github.io/tags/excel/">excel</a>
+    <a href="https://wittonbell.github.io/tags/exception/">exception</a>
+    <a href="https://wittonbell.github.io/tags/exe/">exe</a>
+    <a href="https://wittonbell.github.io/tags/expired/">expired</a>
+    <a href="https://wittonbell.github.io/tags/export/">export</a>
+    <a href="https://wittonbell.github.io/tags/ext/">ext</a>
+    <a href="https://wittonbell.github.io/tags/failed-to/">failed to</a>
+    <a href="https://wittonbell.github.io/tags/fetch/">fetch</a>
+    <a href="https://wittonbell.github.io/tags/ffmpeg/">ffmpeg</a>
+    <a href="https://wittonbell.github.io/tags/file/">file</a>
+    <a href="https://wittonbell.github.io/tags/find/">find</a>
+    <a href="https://wittonbell.github.io/tags/firefox/">firefox</a>
+    <a href="https://wittonbell.github.io/tags/float/">float</a>
+    <a href="https://wittonbell.github.io/tags/fortran/">fortran</a>
+    <a href="https://wittonbell.github.io/tags/freebsd/">freebsd</a>
+    <a href="https://wittonbell.github.io/tags/function/">function</a>
+    <a href="https://wittonbell.github.io/tags/function-body/">function body</a>
+    <a href="https://wittonbell.github.io/tags/g_test/">g_test</a>
+    <a href="https://wittonbell.github.io/tags/gc/">gc</a>
+    <a href="https://wittonbell.github.io/tags/gcc/">gcc</a>
+    <a href="https://wittonbell.github.io/tags/gcc%E6%BA%90%E7%A0%81/">gcc源码</a>
+    <a href="https://wittonbell.github.io/tags/gdb/">gdb</a>
+    <a href="https://wittonbell.github.io/tags/get-d-bus/">get d-bus</a>
+    <a href="https://wittonbell.github.io/tags/gin/">gin</a>
+    <a href="https://wittonbell.github.io/tags/git/">git</a>
+    <a href="https://wittonbell.github.io/tags/github/">github</a>
+    <a href="https://wittonbell.github.io/tags/gitlab/">gitlab</a>
+    <a href="https://wittonbell.github.io/tags/gitlab-pages/">gitlab pages</a>
+    <a href="https://wittonbell.github.io/tags/glib/">glib</a>
+    <a href="https://wittonbell.github.io/tags/go/">go</a>
+    <a href="https://wittonbell.github.io/tags/goland/">goland</a>
+    <a href="https://wittonbell.github.io/tags/golang/">golang</a>
+    <a href="https://wittonbell.github.io/tags/go%E8%B0%83%E8%AF%95%E5%99%A8/">go调试器</a>
+    <a href="https://wittonbell.github.io/tags/gpb/">gpb</a>
+    <a href="https://wittonbell.github.io/tags/gtest/">gtest</a>
+    <a href="https://wittonbell.github.io/tags/has-expired/">has expired</a>
+    <a href="https://wittonbell.github.io/tags/hash/">hash</a>
+    <a href="https://wittonbell.github.io/tags/hash_set/">hash_set</a>
+    <a href="https://wittonbell.github.io/tags/heap/">heap</a>
+    <a href="https://wittonbell.github.io/tags/hp/">hp</a>
+    <a href="https://wittonbell.github.io/tags/httpd/">httpd</a>
+    <a href="https://wittonbell.github.io/tags/https/">https</a>
+    <a href="https://wittonbell.github.io/tags/ide/">ide</a>
+    <a href="https://wittonbell.github.io/tags/idea/">idea</a>
+    <a href="https://wittonbell.github.io/tags/idm/">idm</a>
+    <a href="https://wittonbell.github.io/tags/ie/">ie</a>
+    <a href="https://wittonbell.github.io/tags/installed/">installed</a>
+    <a href="https://wittonbell.github.io/tags/integer/">integer</a>
+    <a href="https://wittonbell.github.io/tags/intel/">intel</a>
+    <a href="https://wittonbell.github.io/tags/intellij-idea/">intellij idea</a>
+    <a href="https://wittonbell.github.io/tags/interface/">interface</a>
+    <a href="https://wittonbell.github.io/tags/internet/">internet</a>
+    <a href="https://wittonbell.github.io/tags/IOCP/">IOCP</a>
+    <a href="https://wittonbell.github.io/tags/iostream/">iostream</a>
+    <a href="https://wittonbell.github.io/tags/io%E6%A8%A1%E5%9E%8B/">io模型</a>
+    <a href="https://wittonbell.github.io/tags/ip/">ip</a>
+    <a href="https://wittonbell.github.io/tags/java/">java</a>
+    <a href="https://wittonbell.github.io/tags/javascript/">javascript</a>
+    <a href="https://wittonbell.github.io/tags/jekyll/">jekyll</a>
+    <a href="https://wittonbell.github.io/tags/jenkins/">jenkins</a>
+    <a href="https://wittonbell.github.io/tags/JIRA/">JIRA</a>
+    <a href="https://wittonbell.github.io/tags/js/">js</a>
+    <a href="https://wittonbell.github.io/tags/json/">json</a>
+    <a href="https://wittonbell.github.io/tags/k8s/">k8s</a>
+    <a href="https://wittonbell.github.io/tags/katex/">katex</a>
+    <a href="https://wittonbell.github.io/tags/kubernetes/">kubernetes</a>
+    <a href="https://wittonbell.github.io/tags/lambda/">lambda</a>
+    <a href="https://wittonbell.github.io/tags/lib/">lib</a>
+    <a href="https://wittonbell.github.io/tags/libSSH2/">libSSH2</a>
+    <a href="https://wittonbell.github.io/tags/libXss/">libXss</a>
+    <a href="https://wittonbell.github.io/tags/libc&#43;&#43;/">libc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libevent/">libevent</a>
+    <a href="https://wittonbell.github.io/tags/libstdc&#43;&#43;/">libstdc&#43;&#43;</a>
+    <a href="https://wittonbell.github.io/tags/libvirt/">libvirt</a>
+    <a href="https://wittonbell.github.io/tags/linkname/">linkname</a>
+    <a href="https://wittonbell.github.io/tags/linux/">linux</a>
+    <a href="https://wittonbell.github.io/tags/lldb/">lldb</a>
+    <a href="https://wittonbell.github.io/tags/lldb-mi/">lldb-mi</a>
+    <a href="https://wittonbell.github.io/tags/LLVM/">LLVM</a>
+    <a href="https://wittonbell.github.io/tags/llvm.sh/">llvm.sh</a>
+    <a href="https://wittonbell.github.io/tags/log/">log</a>
+    <a href="https://wittonbell.github.io/tags/ls/">ls</a>
+    <a href="https://wittonbell.github.io/tags/lua/">lua</a>
+    <a href="https://wittonbell.github.io/tags/macos/">macos</a>
+    <a href="https://wittonbell.github.io/tags/macos/">macos</a>
+    <a href="https://wittonbell.github.io/tags/makefile/">makefile</a>
+    <a href="https://wittonbell.github.io/tags/makefiles/">makefiles</a>
+    <a href="https://wittonbell.github.io/tags/markdown/">markdown</a>
+    <a href="https://wittonbell.github.io/tags/match-library/">match library</a>
+    <a href="https://wittonbell.github.io/tags/max-size/">max-size</a>
+    <a href="https://wittonbell.github.io/tags/may-not/">may not</a>
+    <a href="https://wittonbell.github.io/tags/mermaid/">mermaid</a>
+    <a href="https://wittonbell.github.io/tags/meson/">meson</a>
+    <a href="https://wittonbell.github.io/tags/message/">message</a>
+    <a href="https://wittonbell.github.io/tags/mfc/">mfc</a>
+    <a href="https://wittonbell.github.io/tags/mhchem/">mhchem</a>
+    <a href="https://wittonbell.github.io/tags/microsoft/">microsoft</a>
+    <a href="https://wittonbell.github.io/tags/mingw/">mingw</a>
+    <a href="https://wittonbell.github.io/tags/minidump/">minidump</a>
+    <a href="https://wittonbell.github.io/tags/missing/">missing</a>
+    <a href="https://wittonbell.github.io/tags/mock/">mock</a>
+    <a href="https://wittonbell.github.io/tags/modified-at/">modified at</a>
+    <a href="https://wittonbell.github.io/tags/Module/">Module</a>
+    <a href="https://wittonbell.github.io/tags/msvc/">msvc</a>
+    <a href="https://wittonbell.github.io/tags/msys/">msys</a>
+    <a href="https://wittonbell.github.io/tags/msys2/">msys2</a>
+    <a href="https://wittonbell.github.io/tags/mupdf/">mupdf</a>
+    <a href="https://wittonbell.github.io/tags/mysql/">mysql</a>
+    <a href="https://wittonbell.github.io/tags/NASM/">NASM</a>
+    <a href="https://wittonbell.github.io/tags/natvis/">natvis</a>
+    <a href="https://wittonbell.github.io/tags/new-project/">new project</a>
+    <a href="https://wittonbell.github.io/tags/nexus/">nexus</a>
+    <a href="https://wittonbell.github.io/tags/nexus3/">nexus3</a>
+    <a href="https://wittonbell.github.io/tags/nginx/">nginx</a>
+    <a href="https://wittonbell.github.io/tags/ninja/">ninja</a>
+    <a href="https://wittonbell.github.io/tags/not-found/">not found</a>
+    <a href="https://wittonbell.github.io/tags/not-implemented/">not implemented</a>
+    <a href="https://wittonbell.github.io/tags/not-in-the/">not in the</a>
+    <a href="https://wittonbell.github.io/tags/not-owned/">not owned</a>
+    <a href="https://wittonbell.github.io/tags/not-permitted/">not permitted</a>
+    <a href="https://wittonbell.github.io/tags/not-support/">not support</a>
+    <a href="https://wittonbell.github.io/tags/null/">null</a>
+    <a href="https://wittonbell.github.io/tags/object/">object</a>
+    <a href="https://wittonbell.github.io/tags/open-files/">open files</a>
+    <a href="https://wittonbell.github.io/tags/open-vSwitch/">open vSwitch</a>
+    <a href="https://wittonbell.github.io/tags/open-vm-tools/">open-vm-tools</a>
+    <a href="https://wittonbell.github.io/tags/or-is-not/">or is not</a>
+    <a href="https://wittonbell.github.io/tags/os/">os</a>
+    <a href="https://wittonbell.github.io/tags/output/">output</a>
+    <a href="https://wittonbell.github.io/tags/overlay/">overlay</a>
+    <a href="https://wittonbell.github.io/tags/pacman/">pacman</a>
+    <a href="https://wittonbell.github.io/tags/path/">path</a>
+    <a href="https://wittonbell.github.io/tags/pdf/">pdf</a>
+    <a href="https://wittonbell.github.io/tags/personality/">personality</a>
+    <a href="https://wittonbell.github.io/tags/php/">php</a>
+    <a href="https://wittonbell.github.io/tags/pie/">pie</a>
+    <a href="https://wittonbell.github.io/tags/pip/">pip</a>
+    <a href="https://wittonbell.github.io/tags/pkg/">pkg</a>
+    <a href="https://wittonbell.github.io/tags/pkg-config/">pkg-config</a>
+    <a href="https://wittonbell.github.io/tags/pkg_resources/">pkg_resources</a>
+    <a href="https://wittonbell.github.io/tags/placeholders_1/">placeholders::_1</a>
+    <a href="https://wittonbell.github.io/tags/plugin/">plugin</a>
+    <a href="https://wittonbell.github.io/tags/podman/">podman</a>
+    <a href="https://wittonbell.github.io/tags/podman-compose/">podman-compose</a>
+    <a href="https://wittonbell.github.io/tags/postfix/">postfix</a>
+    <a href="https://wittonbell.github.io/tags/produce-code/">produce code</a>
+    <a href="https://wittonbell.github.io/tags/proto/">proto</a>
+    <a href="https://wittonbell.github.io/tags/protobuf/">protobuf</a>
+    <a href="https://wittonbell.github.io/tags/protobuffer/">protobuffer</a>
+    <a href="https://wittonbell.github.io/tags/proxy_pass/">proxy_pass</a>
+    <a href="https://wittonbell.github.io/tags/prune/">prune</a>
+    <a href="https://wittonbell.github.io/tags/pymupdf/">pymupdf</a>
+    <a href="https://wittonbell.github.io/tags/python/">python</a>
+    <a href="https://wittonbell.github.io/tags/python3/">python3</a>
+    <a href="https://wittonbell.github.io/tags/QEMU/">QEMU</a>
+    <a href="https://wittonbell.github.io/tags/qmake/">qmake</a>
+    <a href="https://wittonbell.github.io/tags/qt/">qt</a>
+    <a href="https://wittonbell.github.io/tags/qt6/">qt6</a>
+    <a href="https://wittonbell.github.io/tags/qtcreator/">qtcreator</a>
+    <a href="https://wittonbell.github.io/tags/r1/">r1</a>
+    <a href="https://wittonbell.github.io/tags/rand/">rand</a>
+    <a href="https://wittonbell.github.io/tags/reflect/">reflect</a>
+    <a href="https://wittonbell.github.io/tags/registry/">registry</a>
+    <a href="https://wittonbell.github.io/tags/remake/">remake</a>
+    <a href="https://wittonbell.github.io/tags/repository/">repository</a>
+    <a href="https://wittonbell.github.io/tags/require/">require</a>
+    <a href="https://wittonbell.github.io/tags/reset/">reset</a>
+    <a href="https://wittonbell.github.io/tags/rpath/">rpath</a>
+    <a href="https://wittonbell.github.io/tags/RPM/">RPM</a>
+    <a href="https://wittonbell.github.io/tags/safe.directory/">safe.directory</a>
+    <a href="https://wittonbell.github.io/tags/select/">select</a>
+    <a href="https://wittonbell.github.io/tags/set-failed/">set failed</a>
+    <a href="https://wittonbell.github.io/tags/sftp/">sftp</a>
+    <a href="https://wittonbell.github.io/tags/shell/">shell</a>
+    <a href="https://wittonbell.github.io/tags/socket/">socket</a>
+    <a href="https://wittonbell.github.io/tags/sockets/">sockets</a>
+    <a href="https://wittonbell.github.io/tags/socket%E6%A8%A1%E5%9E%8B/">socket模型</a>
+    <a href="https://wittonbell.github.io/tags/srand/">srand</a>
+    <a href="https://wittonbell.github.io/tags/ssh/">ssh</a>
+    <a href="https://wittonbell.github.io/tags/SSL/">SSL</a>
+    <a href="https://wittonbell.github.io/tags/ssl%E8%AF%81%E4%B9%A6/">ssl证书</a>
+    <a href="https://wittonbell.github.io/tags/static/">static</a>
+    <a href="https://wittonbell.github.io/tags/STL/">STL</a>
+    <a href="https://wittonbell.github.io/tags/storage/">storage</a>
+    <a href="https://wittonbell.github.io/tags/stream/">stream</a>
+    <a href="https://wittonbell.github.io/tags/strictly/">strictly</a>
+    <a href="https://wittonbell.github.io/tags/string/">string</a>
+    <a href="https://wittonbell.github.io/tags/struct/">struct</a>
+    <a href="https://wittonbell.github.io/tags/structure/">structure</a>
+    <a href="https://wittonbell.github.io/tags/sudo/">sudo</a>
+    <a href="https://wittonbell.github.io/tags/sudoers-file/">sudoers file</a>
+    <a href="https://wittonbell.github.io/tags/swagger/">swagger</a>
+    <a href="https://wittonbell.github.io/tags/swiss/">swiss</a>
+    <a href="https://wittonbell.github.io/tags/swisstable/">swisstable</a>
+    <a href="https://wittonbell.github.io/tags/systemctl/">systemctl</a>
+    <a href="https://wittonbell.github.io/tags/tar.xz/">tar.xz</a>
+    <a href="https://wittonbell.github.io/tags/task/">task</a>
+    <a href="https://wittonbell.github.io/tags/templates/">templates</a>
+    <a href="https://wittonbell.github.io/tags/the-Qt-version/">the Qt version</a>
+    <a href="https://wittonbell.github.io/tags/thread/">thread</a>
+    <a href="https://wittonbell.github.io/tags/token/">token</a>
+    <a href="https://wittonbell.github.io/tags/too-many/">too many</a>
+    <a href="https://wittonbell.github.io/tags/traversal/">traversal</a>
+    <a href="https://wittonbell.github.io/tags/ubuntu/">ubuntu</a>
+    <a href="https://wittonbell.github.io/tags/ue5/">ue5</a>
+    <a href="https://wittonbell.github.io/tags/unmanaged/">unmanaged</a>
+    <a href="https://wittonbell.github.io/tags/unreal-engine/">unreal engine</a>
+    <a href="https://wittonbell.github.io/tags/upload/">upload</a>
+    <a href="https://wittonbell.github.io/tags/utf8-codec-cant-deco/">utf8 codec cant deco</a>
+    <a href="https://wittonbell.github.io/tags/utility/">utility</a>
+    <a href="https://wittonbell.github.io/tags/validating/">validating</a>
+    <a href="https://wittonbell.github.io/tags/vditor/">vditor</a>
+    <a href="https://wittonbell.github.io/tags/version/">version</a>
+    <a href="https://wittonbell.github.io/tags/vim/">vim</a>
+    <a href="https://wittonbell.github.io/tags/Visual-Studio/">Visual Studio</a>
+    <a href="https://wittonbell.github.io/tags/visualstudio/">visualstudio</a>
+    <a href="https://wittonbell.github.io/tags/vite/">vite</a>
+    <a href="https://wittonbell.github.io/tags/vite-plugin/">vite-plugin</a>
+    <a href="https://wittonbell.github.io/tags/VMware/">VMware</a>
+    <a href="https://wittonbell.github.io/tags/volume/">volume</a>
+    <a href="https://wittonbell.github.io/tags/vs2022/">vs2022</a>
+    <a href="https://wittonbell.github.io/tags/VSCode/">VSCode</a>
+    <a href="https://wittonbell.github.io/tags/vss/">vss</a>
+    <a href="https://wittonbell.github.io/tags/warnings/">warnings</a>
+    <a href="https://wittonbell.github.io/tags/watcher/">watcher</a>
+    <a href="https://wittonbell.github.io/tags/websocket/">websocket</a>
+    <a href="https://wittonbell.github.io/tags/win10/">win10</a>
+    <a href="https://wittonbell.github.io/tags/win98/">win98</a>
+    <a href="https://wittonbell.github.io/tags/windows/">windows</a>
+    <a href="https://wittonbell.github.io/tags/windows-7/">windows 7</a>
+    <a href="https://wittonbell.github.io/tags/windows-xp/">windows xp</a>
+    <a href="https://wittonbell.github.io/tags/winsock/">winsock</a>
+    <a href="https://wittonbell.github.io/tags/word/">word</a>
+    <a href="https://wittonbell.github.io/tags/wordpress/">wordpress</a>
+    <a href="https://wittonbell.github.io/tags/wsl2/">wsl2</a>
+    <a href="https://wittonbell.github.io/tags/x509/">x509</a>
+    <a href="https://wittonbell.github.io/tags/x86/">x86</a>
+    <a href="https://wittonbell.github.io/tags/xls/">xls</a>
+    <a href="https://wittonbell.github.io/tags/xlsx/">xlsx</a>
+    <a href="https://wittonbell.github.io/tags/xml/">xml</a>
+    <a href="https://wittonbell.github.io/tags/xml%E8%BD%ACexcel/">xml转excel</a>
+    <a href="https://wittonbell.github.io/tags/xp/">xp</a>
+    <a href="https://wittonbell.github.io/tags/yet-valid/">yet valid</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E4%B8%AA%E7%AB%AF%E5%8F%A3/">一个端口</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%80%E5%88%97/">一列</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0/">上传</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/">上传文件</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">不升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E6%98%BE%E7%A4%BA/">不显示</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%8D%E8%B6%B3/">不足</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%A4%E5%88%97%E6%95%B0%E6%8D%AE/">两列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B8%AD%E6%96%87/">中文</a>
+    <a href="https://wittonbell.github.io/tags/%E4%B9%B1%E7%A0%81/">乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/">二进制</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95/">五笔输入法</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E4%BA%92/">交互</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BA%A4%E5%8F%89/">交叉</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%90%86/">代理</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%A3%E7%A0%81/">代码</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BB%BB%E5%8A%A1/">任务</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BC%81%E4%B8%9A%E7%89%88/">企业版</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BD%BF%E7%94%A8/">使用</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BE%9D%E8%B5%96/">依赖</a>
+    <a href="https://wittonbell.github.io/tags/%E4%BF%AE%E6%94%B9/">修改</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%8D%E8%B4%B9/">免费</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">共享文件夹</a>
+    <a href="https://wittonbell.github.io/tags/%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/">共享目录</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E5%AE%B9/">内容</a>
+    <a href="https://wittonbell.github.io/tags/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">内联汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E5%87%BA%E7%89%88/">出版</a>
+    <a href="https://wittonbell.github.io/tags/%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/">函数指针</a>
+    <a href="https://wittonbell.github.io/tags/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/">函数调用</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%87%E6%8D%A2/">切换</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%A4%E6%96%AD/">判断</a>
+    <a href="https://wittonbell.github.io/tags/%E5%88%B6%E4%BD%9C/">制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%89%8D%E7%BD%AE%E9%9D%A2%E6%9D%BF/">前置面板</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/">加快编译速度</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A0%E8%BD%BD%E6%85%A2/">加载慢</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C/">动画制作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7/">升级</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/">升级内核</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%A0%E4%BD%8D/">占位</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8D%B3%E5%B0%86%E5%85%B3%E9%97%AD/">即将关闭</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">参数传递</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">反向代理</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/">右键菜单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+    <a href="https://wittonbell.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E5%BD%A2/">图形</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9B%BE%E6%A0%87/">图标</a>
+    <a href="https://wittonbell.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/">垃圾回收器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A3%B0%E9%9F%B3/">声音</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%84%E7%90%86%E5%8F%98%E9%95%BF%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0/">处理变长模板参数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%87%E4%BB%BD/">备份</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%8D%E5%88%B6/">复制</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E4%B8%AA%E7%AB%99%E7%82%B9/">多个站点</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E5%88%97%E6%95%B0%E6%8D%AE/">多列数据</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    <a href="https://wittonbell.github.io/tags/%E5%A4%A7%E9%9A%8F%E6%9C%BA%E6%95%B0/">大随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E4%BD%93/">字体</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/">字符串乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8/">存储</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/">存储路径</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85/">安装</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">安装与配置</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+    <a href="https://wittonbell.github.io/tags/%E5%AF%BC%E5%87%BA/">导出</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E4%BD%9C/">工作</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%A5%E5%8D%95/">工单</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B7%AE%E5%88%AB/">差别</a>
+    <a href="https://wittonbell.github.io/tags/%E5%B9%B3%E5%8F%B0/">平台</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/">序列化</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BB%B6%E8%BF%9F%E8%B0%83%E7%94%A8/">延迟调用</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/">开机启动</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BC%95%E6%93%8E/">引擎</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BD%A9%E8%89%B2/">彩色</a>
+    <a href="https://wittonbell.github.io/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+    <a href="https://wittonbell.github.io/tags/%E6%81%A2%E5%A4%8D/">恢复</a>
+    <a href="https://wittonbell.github.io/tags/%E6%85%A2/">慢</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%8C%85/">打包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%93%E5%BC%80/">打开</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%A9%E5%B1%95/">扩展</a>
+    <a href="https://wittonbell.github.io/tags/%E6%89%BE%E5%9B%9E/">找回</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">持续集成</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8D%95%E8%8E%B7/">捕获</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/">控制台</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/">控制台乱码</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E5%8F%96/">提取</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF/">提示信息</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/">提示符</a>
+    <a href="https://wittonbell.github.io/tags/%E6%8F%92%E4%BB%B6/">插件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    <a href="https://wittonbell.github.io/tags/%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/">收发邮件</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">数学公式</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E5%90%88/">整合</a>
+    <a href="https://wittonbell.github.io/tags/%E6%95%B4%E6%95%B0/">整数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%87%E4%BB%B6%E6%9C%8D/">文件服</a>
+    <a href="https://wittonbell.github.io/tags/%E6%96%AD%E7%82%B9/">断点</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%A0%E5%B0%84/">映射</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/">显卡驱动</a>
+    <a href="https://wittonbell.github.io/tags/%E6%98%BE%E7%A4%BA%E5%88%86%E6%94%AF%E5%90%8D%E7%A7%B0/">显示分支名称</a>
+    <a href="https://wittonbell.github.io/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0glibc/">更新glibc</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%B4%E6%96%B0%E7%A0%81%E8%A1%A8/">更新码表</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9B%BF%E6%8D%A2%E5%A4%B1%E8%B4%A5%E4%B8%8D%E6%98%AF%E9%94%99%E8%AF%AF/">替换失败不是错误</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%AC%E5%9C%B0%E5%8C%85/">本地包</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">本地部署</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%81%E7%82%B9%E4%BA%94%E7%AC%94/">极点五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%84%E5%BB%BA/">构建</a>
+    <a href="https://wittonbell.github.io/tags/%E6%9E%84%E5%BB%BAPB%E5%AE%9E%E4%BE%8B/">构建PB实例</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A1%8C%E9%9D%A2/">桌面</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">模式匹配</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">模板类成员函数</a>
+    <a href="https://wittonbell.github.io/tags/%E6%A8%A1%E7%B3%8A/">模糊</a>
+    <a href="https://wittonbell.github.io/tags/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/">正向代理</a>
+    <a href="https://wittonbell.github.io/tags/%E6%AF%94%E8%BE%83/">比较</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E6%80%BB/">汇总</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B1%87%E7%BC%96/">汇编</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B5%B7%E5%B3%B0%E4%BA%94%E7%AC%94/">海峰五笔</a>
+    <a href="https://wittonbell.github.io/tags/%E6%B8%85%E7%90%86%E7%A9%BA%E9%97%B4/">清理空间</a>
+    <a href="https://wittonbell.github.io/tags/%E6%BA%90%E7%A0%81/">源码</a>
+    <a href="https://wittonbell.github.io/tags/%E6%BF%80%E6%B4%BB/">激活</a>
+    <a href="https://wittonbell.github.io/tags/%E7%85%A7%E7%89%87%E7%9B%B8%E7%9C%8B%E5%99%A8/">照片相看器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%8E%AF%E5%A2%83/">环境</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90/">生成</a>
+    <a href="https://wittonbell.github.io/tags/%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4/">生成时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%99%BB%E5%BD%95/">登录</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A3%81%E7%9B%98/">磁盘</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A4%BE%E5%8C%BA%E7%89%88/">社区版</a>
+    <a href="https://wittonbell.github.io/tags/%E7%A9%BA%E9%97%B4/">空间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AB%AF%E5%8F%A3/">端口</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    <a href="https://wittonbell.github.io/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    <a href="https://wittonbell.github.io/tags/%E7%B4%A2%E5%BC%95/">索引</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%88%E7%AB%AF/">终端</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BB%91%E5%AE%9A/">绑定</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/">编排容器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A0%81/">编码</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/">编程书籍</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91/">编译</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/">编译器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/">编译时间</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/">编辑器</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E5%8D%A1%E4%B8%8D%E5%8F%AF%E7%94%A8/">网卡不可用</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%AB%99/">网站</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE/">网络访问</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%8C%96/">美化</a>
+    <a href="https://wittonbell.github.io/tags/%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/">美式键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD/">自动下载</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E5%B8%A6/">自带</a>
+    <a href="https://wittonbell.github.io/tags/%E8%87%AA%E7%AD%BE%E5%90%8D/">自签名</a>
+    <a href="https://wittonbell.github.io/tags/%E8%8B%B1%E8%AF%AD%E9%94%AE%E7%9B%98/">英语键盘</a>
+    <a href="https://wittonbell.github.io/tags/%E8%8F%9C%E5%8D%95%E4%B8%8D%E6%98%BE%E7%A4%BA/">菜单不显示</a>
+    <a href="https://wittonbell.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%86%B3/">解决</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E5%AF%86/">解密</a>
+    <a href="https://wittonbell.github.io/tags/%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/">解析失败</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AF%A6%E7%BB%86%E6%94%BB%E7%95%A5/">详细攻略</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80/">语言</a>
+    <a href="https://wittonbell.github.io/tags/%E8%AF%AD%E8%A8%80%E6%80%A7%E8%83%BD/">语言性能</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/">调试</a>
+    <a href="https://wittonbell.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC/">转</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BD%AC%E4%B9%89/">转义</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%81%E7%A7%BB/">迁移</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%90%E8%A1%8C/">运行</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%85%A5%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">进入当前目录</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9B%E5%BA%A6/">进度</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B/">远程</a>
+    <a href="https://wittonbell.github.io/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">远程连接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%80%E6%A0%BC%E9%94%AE/">退格键</a>
+    <a href="https://wittonbell.github.io/tags/%E9%80%9A%E7%94%A8makefile/">通用makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">邮件服务器</a>
+    <a href="https://wittonbell.github.io/tags/%E9%83%A8%E7%BD%B2/">部署</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    <a href="https://wittonbell.github.io/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86/">配置与管理</a>
+    <a href="https://wittonbell.github.io/tags/%E9%87%8D%E8%BD%BD/">重载</a>
+    <a href="https://wittonbell.github.io/tags/%E9%93%BE%E6%8E%A5/">链接</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9B%86%E6%88%90/">集成</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81/">静态</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81IP/">静态IP</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%99%E6%80%81%E5%BA%93/">静态库</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%9E%E6%B3%95%E6%93%8D%E4%BD%9C/">非法操作</a>
+    <a href="https://wittonbell.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91/">预编译</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91makefile/">预编译makefile</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%84%E7%BC%96%E8%AF%91%E5%A4%B4/">预编译头</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2/">颜色</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E4%B8%8D%E6%AD%A3/">颜色不正</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A2%9C%E8%89%B2%E5%8F%91%E9%BB%84/">颜色发黄</a>
+    <a href="https://wittonbell.github.io/tags/%E9%A9%B1%E5%8A%A8/">驱动</a>
+</div>
+</section>
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/witton" title="我的CSDN">我的CSDN博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://wittonbell.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>

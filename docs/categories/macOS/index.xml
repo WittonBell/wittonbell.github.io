@@ -6,8 +6,15 @@
     <description>Recent content in macOS on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Apr 2024 08:05:38 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2025 23:21:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/macOS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS使用LLVM官方发布的tar.xz来安装Clang编译器</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Wed, 22 Jan 2025 23:21:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description>之前笔者写过一篇博文 ubuntu使用LLVM官方发布的tar.xz来安装Clang编译器介绍了Ubuntu下使用官方发布</description>
+    </item>
     <item>
       <title>MacOS下Qt 5开发环境安装与配置</title>
       <link>https://wittonbell.github.io/posts/2024/2024-04-10-MacOS%E4%B8%8BQt-5%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>

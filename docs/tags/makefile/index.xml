@@ -6,8 +6,22 @@
     <description>Recent content in makefile on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Jan 2024 17:23:20 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Mar 2025 18:44:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/makefile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MinGW下编译ffmpeg源码时生成compile_commands.json</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/</link>
+      <pubDate>Fri, 28 Mar 2025 18:44:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/</guid>
+      <description>在前面的博文 MinGW下编译nginx源码中，有介绍到使用compiledb工具在MinGW环境中生成compile_c</description>
+    </item>
+    <item>
+      <title>C&#43;&#43; 20 Module</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</link>
+      <pubDate>Tue, 23 Jan 2024 00:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</guid>
+      <description>头文件包含一直是C/C++的传统，它使代码声明与实现分离，但它有一个非常大的问题就是会被重复编译，拖累编译速度。 通常一个</description>
+    </item>
     <item>
       <title>C/C&#43;&#43;通用Makefile</title>
       <link>https://wittonbell.github.io/posts/2017/2017-02-23-C_C&#43;&#43;%E9%80%9A%E7%94%A8Makefile/</link>

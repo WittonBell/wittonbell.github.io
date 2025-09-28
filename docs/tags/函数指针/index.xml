@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>函数指针 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 函数指针 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 17 Jan 2025 11:51:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; lambda表达式转成普通的函数指针</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</link>
+      <pubDate>Fri, 17 Jan 2025 11:51:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</guid>
+      <description>C++ 在 C++11版本中引入了lambda表达式，在C++11之后的版本也有对其进行改进，这里就不再赘述了。 一、lambda</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Dec 2024 10:46:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2024 12:01:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决nexus3登录x509: certificate has expired or is not yet valid</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</link>
+      <pubDate>Thu, 12 Dec 2024 12:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-12-%E8%A7%A3%E5%86%B3nexus3%E7%99%BB%E5%BD%95x509-certificate-has-expired-or-is-not-yet-valid/</guid>
+      <description>笔者前面的博文 使用nexus3作为Docker镜像仓库介绍了如何使用nexus3来作为容器的镜像仓库，在生成证书时，使用</description>
+    </item>
     <item>
       <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
       <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>

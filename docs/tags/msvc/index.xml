@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>msvc on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/msvc/</link>
+    <description>Recent content in msvc on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 23 Jan 2024 00:08:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/msvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 20 Module</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</link>
+      <pubDate>Tue, 23 Jan 2024 00:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</guid>
+      <description>头文件包含一直是C/C++的传统，它使代码声明与实现分离，但它有一个非常大的问题就是会被重复编译，拖累编译速度。 通常一个</description>
+    </item>
+  </channel>
+</rss>

@@ -6,7 +6,7 @@
     <description>Recent content in RPM on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 30 Aug 2021 11:50:56 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2025 17:15:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/RPM/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用CheckInstall从源码制作RPM安装包</title>

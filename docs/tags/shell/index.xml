@@ -22,5 +22,12 @@
       <guid>https://wittonbell.github.io/posts/2020/2020-08-22-Shell%E4%B8%AD%E6%98%BE%E7%A4%BAGit%E5%88%86%E6%94%AF%E5%90%8D/</guid>
       <description>文章目录 一、Windows下的msys2 bash 二、Mac Bash 一、Windows下的msys2 bash 如果我们安装了git for windo</description>
     </item>
+    <item>
+      <title>解决Windows下VSCode控制台乱码问题</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-18-%E8%A7%A3%E5%86%B3Windows%E4%B8%8BVSCode%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-18-%E8%A7%A3%E5%86%B3Windows%E4%B8%8BVSCode%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
+      <description>我们在Windows使用VSCode编写C/C++程序时，如果代码中的中文字符串使用的是UTF8编码，且代码内没有设置控</description>
+    </item>
   </channel>
 </rss>

@@ -6,8 +6,15 @@
     <description>Recent content in 运维 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 Sep 2023 15:59:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Mar 2025 17:13:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nginx反向代理的完美转发</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-03-17-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%AE%8C%E7%BE%8E%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Mon, 17 Mar 2025 17:13:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-03-17-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%AE%8C%E7%BE%8E%E8%BD%AC%E5%8F%91/</guid>
+      <description>最近笔者遇到一个情况，有一个软件默认监听是localhost的端口，导致内网其它电脑无法使用，只能本机使用，除非该端口是</description>
+    </item>
     <item>
       <title>使用docker-compose命令行向远程主机编排容器</title>
       <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</link>

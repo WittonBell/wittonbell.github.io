@@ -8,6 +8,34 @@
     <language>zh-CN</language>
     <atom:link href="https://wittonbell.github.io/categories/C/C++/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>C&#43;&#43; lambda表达式转成普通的函数指针</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</link>
+      <pubDate>Fri, 17 Jan 2025 11:51:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</guid>
+      <description>C++ 在 C++11版本中引入了lambda表达式，在C++11之后的版本也有对其进行改进，这里就不再赘述了。 一、lambda</description>
+    </item>
+    <item>
+      <title>SwissTable详解</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Wed, 15 Jan 2025 13:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-15-SwissTable%E8%AF%A6%E8%A7%A3/</guid>
+      <description>最近在看到一文说Go 1.24有一项重大的性能改进，就是将默认的Map由原来的拉链式HashTable改为使用开放式的Sw</description>
+    </item>
+    <item>
+      <title>C语言面的向对象编程（OOP）</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-02-C%E8%AF%AD%E8%A8%80%E9%9D%A2%E7%9A%84%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8BOOP/</link>
+      <pubDate>Thu, 02 Jan 2025 18:38:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-02-C%E8%AF%AD%E8%A8%80%E9%9D%A2%E7%9A%84%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8BOOP/</guid>
+      <description>如果使用过C++、C#、Java语言，一定知道面向对象编程，这些语言对面向对象编程的支持是语言级别的。C语言在语言级别不</description>
+    </item>
+    <item>
+      <title>windows下glib库的编译与调试</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-25-windows%E4%B8%8Bglib%E5%BA%93%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Wed, 25 Dec 2024 17:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-25-windows%E4%B8%8Bglib%E5%BA%93%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E8%B0%83%E8%AF%95/</guid>
+      <description>glib库是一个纯C库，源于GIMP，它是GIMP、GTK/GTK+以及GNOME等的基石库，在Linux下起作举足轻重</description>
+    </item>
+    <item>
       <title>解决Clang 18&#43;不能链接GCC14编译的库的问题</title>
       <link>https://wittonbell.github.io/posts/2024/2024-12-05-%E8%A7%A3%E5%86%B3Clang-18&#43;%E4%B8%8D%E8%83%BD%E9%93%BE%E6%8E%A5GCC14%E7%BC%96%E8%AF%91%E7%9A%84%E5%BA%93%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 05 Dec 2024 10:46:58 +0800</pubDate>
@@ -55,6 +83,13 @@
       <pubDate>Fri, 23 Feb 2024 18:01:30 +0800</pubDate>
       <guid>https://wittonbell.github.io/posts/2024/2024-02-23-%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9Fcannot-find-lc&#43;&#43;abi-No-such-file-or-directory/</guid>
       <description>随着CentOS的没落，使用ubuntu的越来越多，而且国外貌似也比较流行使用ubuntu，像LLVM/Clang就有专</description>
+    </item>
+    <item>
+      <title>C&#43;&#43; 20 Module</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</link>
+      <pubDate>Tue, 23 Jan 2024 00:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</guid>
+      <description>头文件包含一直是C/C++的传统，它使代码声明与实现分离，但它有一个非常大的问题就是会被重复编译，拖累编译速度。 通常一个</description>
     </item>
     <item>
       <title>VSCode使用Makefile Tools插件开发C/C&#43;&#43;程序</title>
@@ -314,6 +349,13 @@
       <pubDate>Thu, 10 May 2007 13:13:00 +0800</pubDate>
       <guid>https://wittonbell.github.io/posts/2007/2007-05-10-MFC%E4%B8%AD%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%90%88%E6%A1%86%E7%9A%84%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E9%AB%98%E5%BA%A6/</guid>
       <description>(若转载，请注明原出处与作者，作者：Witton) 今天，在用MFC写一个工具软件的时候，用到了一个动态创建的组合框，当组</description>
+    </item>
+    <item>
+      <title>解决Windows下VSCode控制台乱码问题</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-18-%E8%A7%A3%E5%86%B3Windows%E4%B8%8BVSCode%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-18-%E8%A7%A3%E5%86%B3Windows%E4%B8%8BVSCode%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
+      <description>我们在Windows使用VSCode编写C/C++程序时，如果代码中的中文字符串使用的是UTF8编码，且代码内没有设置控</description>
     </item>
   </channel>
 </rss>

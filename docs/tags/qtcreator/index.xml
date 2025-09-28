@@ -6,8 +6,15 @@
     <description>Recent content in qtcreator on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 05 Apr 2023 15:52:50 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2025 23:21:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/qtcreator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS使用LLVM官方发布的tar.xz来安装Clang编译器</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Wed, 22 Jan 2025 23:21:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-22-macOS%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description>之前笔者写过一篇博文 ubuntu使用LLVM官方发布的tar.xz来安装Clang编译器介绍了Ubuntu下使用官方发布</description>
+    </item>
     <item>
       <title>MSYS2中mingw-w64-x86_64-qt-creator-10.0.0-2不能新建项目</title>
       <link>https://wittonbell.github.io/posts/2023/2023-04-05-MSYS2%E4%B8%ADmingw-w64-x86_64-qt-creator-10.0.0-2%E4%B8%8D%E8%83%BD%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>

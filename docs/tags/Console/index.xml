@@ -13,7 +13,7 @@
       <link>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Tue, 18 Aug 2020 22:32:24 +0800</pubDate>
       <guid>https://wittonbell.github.io/posts/2020/2020-08-18-Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E5%86%B3/</guid>
-      <description>文章目录 一、测试 A、Win10系统 B、Win7 SP1系统 1.VSCode+GCC 2. VS2015 二、分析与总结 1. VS2015 2. MinGW 三、解决UTF8的乱码问题 1. 设置参数</description>
+      <description>随着Visual Studio占用的空间的越来越大，有很多东西也许我们根本就用不上。而VSCode + msys2 + Mingw也许是一</description>
     </item>
   </channel>
 </rss>

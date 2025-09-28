@@ -6,8 +6,22 @@
     <description>Recent content in 调试 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 19 Aug 2024 18:39:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Mar 2025 18:44:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/%E8%B0%83%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MinGW下编译ffmpeg源码时生成compile_commands.json</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/</link>
+      <pubDate>Fri, 28 Mar 2025 18:44:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-03-28-MinGW%E4%B8%8B%E7%BC%96%E8%AF%91ffmpeg%E6%BA%90%E7%A0%81%E6%97%B6%E7%94%9F%E6%88%90compile_commands.json/</guid>
+      <description>在前面的博文 MinGW下编译nginx源码中，有介绍到使用compiledb工具在MinGW环境中生成compile_c</description>
+    </item>
+    <item>
+      <title>windows下glib库的编译与调试</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-12-25-windows%E4%B8%8Bglib%E5%BA%93%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Wed, 25 Dec 2024 17:01:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-12-25-windows%E4%B8%8Bglib%E5%BA%93%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E8%B0%83%E8%AF%95/</guid>
+      <description>glib库是一个纯C库，源于GIMP，它是GIMP、GTK/GTK+以及GNOME等的基石库，在Linux下起作举足轻重</description>
+    </item>
     <item>
       <title>VSCode调试使用`vite-plugin-mock`写的Mock代码</title>
       <link>https://wittonbell.github.io/posts/2024/2024-08-19-VSCode%E8%B0%83%E8%AF%95%E4%BD%BF%E7%94%A8vite-plugin-mock%E5%86%99%E7%9A%84Mock%E4%BB%A3%E7%A0%81/</link>
