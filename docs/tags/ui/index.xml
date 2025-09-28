@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ui on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/ui/</link>
+    <description>Recent content in ui on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 13 Jun 2025 18:43:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美化显示MSVC调试的数据结构</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-06-13-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAMSVC%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 13 Jun 2025 18:43:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-06-13-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAMSVC%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>笔者在前面博文 美化显示GDB调试的数据结构中有提到：打算以mupdf库为例，介绍GDB、LLDB和MS Debugger这</description>
+    </item>
+  </channel>
+</rss>

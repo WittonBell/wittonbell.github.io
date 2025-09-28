@@ -6,8 +6,22 @@
     <description>Recent content in 游戏 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 18 May 2024 18:07:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jul 2025 18:32:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言使用Protobuf进行网络通信</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-08-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8Protobuf%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Tue, 08 Jul 2025 18:32:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-08-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8Protobuf%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</guid>
+      <description>笔者前面博文 Go语言网络游戏服务器模块化编程介绍了Go语言在开发网络游戏时如何进行模块化编程，在其中使用了Protobu</description>
+    </item>
+    <item>
+      <title>Go语言网络游戏服务器模块化编程</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-08-Go%E8%AF%AD%E8%A8%80%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Tue, 08 Jul 2025 16:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-08-Go%E8%AF%AD%E8%A8%80%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/</guid>
+      <description>本文以使用 origin框架（一款使用Go语言写的开源游戏服务器框架）为例进行说明，当然也可以使用其它的框架或者自己写。 在</description>
+    </item>
     <item>
       <title>unreal engine 5.3.2 创建游戏项目</title>
       <link>https://wittonbell.github.io/posts/2024/2024-05-18-unreal-engine-5.3.2-%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</link>

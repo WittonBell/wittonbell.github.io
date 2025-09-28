@@ -6,8 +6,22 @@
     <description>Recent content in msvc on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 23 Jan 2024 00:08:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Aug 2025 17:55:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/msvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决MinGW下NASM汇编代码无调试信息的问题</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-08-26-%E8%A7%A3%E5%86%B3MinGW%E4%B8%8BNASM%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E6%97%A0%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 26 Aug 2025 17:55:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-08-26-%E8%A7%A3%E5%86%B3MinGW%E4%B8%8BNASM%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E6%97%A0%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>最近笔者在MinGW下使用GCC+NASM组合时，遇到一个问题，就是在使用GDB调试时，NASM汇编代码没有调试信息。 在</description>
+    </item>
+    <item>
+      <title>美化显示MSVC调试的数据结构</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-06-13-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAMSVC%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 13 Jun 2025 18:43:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-06-13-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAMSVC%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>笔者在前面博文 美化显示GDB调试的数据结构中有提到：打算以mupdf库为例，介绍GDB、LLDB和MS Debugger这</description>
+    </item>
     <item>
       <title>C&#43;&#43; 20 Module</title>
       <link>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</link>

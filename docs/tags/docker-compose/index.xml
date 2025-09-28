@@ -6,8 +6,15 @@
     <description>Recent content in docker-compose on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 Sep 2023 15:59:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jul 2025 16:23:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode中使用容器及容器编排docker-compose</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-14-VSCode%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8F%8A%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92docker-compose/</link>
+      <pubDate>Mon, 14 Jul 2025 16:23:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-14-VSCode%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8F%8A%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92docker-compose/</guid>
+      <description>前面笔者写了一篇博文： 使用容器编排对go项目进行部署、调试，介绍了在Goland中如何使用容器，由于Goland的容器配</description>
+    </item>
     <item>
       <title>使用docker-compose命令行向远程主机编排容器</title>
       <link>https://wittonbell.github.io/posts/2023/2023-09-14-%E4%BD%BF%E7%94%A8docker-compose%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%91%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E7%BC%96%E6%8E%92%E5%AE%B9%E5%99%A8/</link>

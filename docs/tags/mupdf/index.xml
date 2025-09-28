@@ -6,8 +6,29 @@
     <description>Recent content in mupdf on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Apr 2025 16:38:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jun 2025 18:43:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/mupdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美化显示MSVC调试的数据结构</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-06-13-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAMSVC%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 13 Jun 2025 18:43:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-06-13-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAMSVC%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>笔者在前面博文 美化显示GDB调试的数据结构中有提到：打算以mupdf库为例，介绍GDB、LLDB和MS Debugger这</description>
+    </item>
+    <item>
+      <title>美化显示LLDB调试的数据结构</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-06-05-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BALLDB%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Thu, 05 Jun 2025 18:28:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-06-05-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BALLDB%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>前面的博文 美化显示GDB调试的数据结构介绍了如何美化显示GDB中调试的数据结构，本文将还是以mupdf库为例介绍如何美化</description>
+    </item>
+    <item>
+      <title>美化显示GDB调试的数据结构</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-05-29-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAGDB%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Thu, 29 May 2025 16:38:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-05-29-%E7%BE%8E%E5%8C%96%E6%98%BE%E7%A4%BAGDB%E8%B0%83%E8%AF%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>笔者在前面的博文 记一次pdf转Word的技术经历中有使用到mupdf库，该库是使用C语言写的一个操作PDF文件的库，同时</description>
+    </item>
     <item>
       <title>记一次pdf转Word的技术经历</title>
       <link>https://wittonbell.github.io/posts/2025/2025-04-28-%E8%AE%B0%E4%B8%80%E6%AC%A1pdf%E8%BD%ACWord%E7%9A%84%E6%8A%80%E6%9C%AF%E7%BB%8F%E5%8E%86/</link>

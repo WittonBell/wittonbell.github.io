@@ -6,8 +6,22 @@
     <description>Recent content in 编程语言 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 17 Jan 2025 11:51:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Sep 2025 11:58:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMake 3.30中使用import std引入C&#43;&#43;标准库</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-09-17-CMake-3.30%E4%B8%AD%E4%BD%BF%E7%94%A8import-std%E5%BC%95%E5%85%A5C&#43;&#43;%E6%A0%87%E5%87%86%E5%BA%93/</link>
+      <pubDate>Wed, 17 Sep 2025 11:58:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-09-17-CMake-3.30%E4%B8%AD%E4%BD%BF%E7%94%A8import-std%E5%BC%95%E5%85%A5C&#43;&#43;%E6%A0%87%E5%87%86%E5%BA%93/</guid>
+      <description>自C++20引入module，我们可以按模块写自己的C++代码了，但标准库还没模块化，想要使用import std来写C+</description>
+    </item>
+    <item>
+      <title>C语言使用Protobuf进行网络通信</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-08-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8Protobuf%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Tue, 08 Jul 2025 18:32:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-08-C%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8Protobuf%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</guid>
+      <description>笔者前面博文 Go语言网络游戏服务器模块化编程介绍了Go语言在开发网络游戏时如何进行模块化编程，在其中使用了Protobu</description>
+    </item>
     <item>
       <title>C&#43;&#43; lambda表达式转成普通的函数指针</title>
       <link>https://wittonbell.github.io/posts/2025/2025-01-17-C&#43;&#43;-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%88%90%E6%99%AE%E9%80%9A%E7%9A%84%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/</link>
@@ -16,11 +30,25 @@
       <description>C++ 在 C++11版本中引入了lambda表达式，在C++11之后的版本也有对其进行改进，这里就不再赘述了。 一、lambda</description>
     </item>
     <item>
+      <title>C语言面的向对象编程（OOP）</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-01-02-C%E8%AF%AD%E8%A8%80%E9%9D%A2%E7%9A%84%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8BOOP/</link>
+      <pubDate>Thu, 02 Jan 2025 18:38:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-01-02-C%E8%AF%AD%E8%A8%80%E9%9D%A2%E7%9A%84%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8BOOP/</guid>
+      <description>如果使用过C++、C#、Java语言，一定知道面向对象编程，这些语言对面向对象编程的支持是语言级别的。C语言在语言级别不</description>
+    </item>
+    <item>
       <title>go语言魔法技能go:linkname</title>
       <link>https://wittonbell.github.io/posts/2024/2024-02-29-go%E8%AF%AD%E8%A8%80%E9%AD%94%E6%B3%95%E6%8A%80%E8%83%BDgolinkname/</link>
       <pubDate>Thu, 29 Feb 2024 22:59:45 +0800</pubDate>
       <guid>https://wittonbell.github.io/posts/2024/2024-02-29-go%E8%AF%AD%E8%A8%80%E9%AD%94%E6%B3%95%E6%8A%80%E8%83%BDgolinkname/</guid>
       <description>我们在看Go语言的源码时，经常会看到一些特别的注释，比如： 1//go:build 2//go:linkname 3//go:nosplit 4//go:noescape 5//go:uintptrescapes 6//go:noinline 7//go:nowritebarrierrec 等等，这些特别的注释其实是Go编译器的指示指令。</description>
+    </item>
+    <item>
+      <title>C&#43;&#43; 20 Module</title>
+      <link>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</link>
+      <pubDate>Tue, 23 Jan 2024 00:08:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2024/2024-01-23-C&#43;&#43;-20-Module/</guid>
+      <description>头文件包含一直是C/C++的传统，它使代码声明与实现分离，但它有一个非常大的问题就是会被重复编译，拖累编译速度。 通常一个</description>
     </item>
     <item>
       <title>使用斐波那契（Fibonacci）数列来测试各大语言的性能</title>

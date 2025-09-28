@@ -6,8 +6,15 @@
     <description>Recent content in 汇编 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 09 Dec 2019 11:11:37 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Aug 2025 17:55:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决MinGW下NASM汇编代码无调试信息的问题</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-08-26-%E8%A7%A3%E5%86%B3MinGW%E4%B8%8BNASM%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E6%97%A0%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 26 Aug 2025 17:55:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-08-26-%E8%A7%A3%E5%86%B3MinGW%E4%B8%8BNASM%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E6%97%A0%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>最近笔者在MinGW下使用GCC+NASM组合时，遇到一个问题，就是在使用GDB调试时，NASM汇编代码没有调试信息。 在</description>
+    </item>
     <item>
       <title>使用Clang编译内联intel语法汇编的C/C&#43;&#43;项目</title>
       <link>https://wittonbell.github.io/posts/2019/2019-12-09-%E4%BD%BF%E7%94%A8Clang%E7%BC%96%E8%AF%91%E5%86%85%E8%81%94intel%E8%AF%AD%E6%B3%95%E6%B1%87%E7%BC%96%E7%9A%84C_C&#43;&#43;%E9%A1%B9%E7%9B%AE/</link>

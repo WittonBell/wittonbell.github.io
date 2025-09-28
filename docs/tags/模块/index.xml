@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模块 on Witton的博客</title>
+    <link>https://wittonbell.github.io/tags/%E6%A8%A1%E5%9D%97/</link>
+    <description>Recent content in 模块 on Witton的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Sep 2025 11:58:58 +0800</lastBuildDate>
+    <atom:link href="https://wittonbell.github.io/tags/%E6%A8%A1%E5%9D%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMake 3.30中使用import std引入C&#43;&#43;标准库</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-09-17-CMake-3.30%E4%B8%AD%E4%BD%BF%E7%94%A8import-std%E5%BC%95%E5%85%A5C&#43;&#43;%E6%A0%87%E5%87%86%E5%BA%93/</link>
+      <pubDate>Wed, 17 Sep 2025 11:58:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-09-17-CMake-3.30%E4%B8%AD%E4%BD%BF%E7%94%A8import-std%E5%BC%95%E5%85%A5C&#43;&#43;%E6%A0%87%E5%87%86%E5%BA%93/</guid>
+      <description>自C++20引入module，我们可以按模块写自己的C++代码了，但标准库还没模块化，想要使用import std来写C+</description>
+    </item>
+  </channel>
+</rss>

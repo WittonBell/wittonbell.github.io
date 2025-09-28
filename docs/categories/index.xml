@@ -6,20 +6,90 @@
     <description>Recent content in Categories on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Apr 2025 16:38:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Sep 2025 11:58:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>pdf</title>
-      <link>https://wittonbell.github.io/categories/pdf/</link>
-      <pubDate>Mon, 28 Apr 2025 16:38:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/pdf/</guid>
+      <title>编程语言</title>
+      <link>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 17 Sep 2025 11:58:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
       <title>MSYS2</title>
       <link>https://wittonbell.github.io/categories/MSYS2/</link>
-      <pubDate>Fri, 28 Mar 2025 18:44:58 +0800</pubDate>
+      <pubDate>Tue, 26 Aug 2025 17:55:58 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/MSYS2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>汇编</title>
+      <link>https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/</link>
+      <pubDate>Tue, 26 Aug 2025 17:55:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://wittonbell.github.io/categories/Linux/</link>
+      <pubDate>Wed, 16 Jul 2025 17:18:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/Linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>qemu</title>
+      <link>https://wittonbell.github.io/categories/qemu/</link>
+      <pubDate>Wed, 16 Jul 2025 17:18:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/qemu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>跨平台</title>
+      <link>https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Tue, 15 Jul 2025 18:36:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IDE</title>
+      <link>https://wittonbell.github.io/categories/IDE/</link>
+      <pubDate>Mon, 14 Jul 2025 16:23:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/IDE/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>容器</title>
+      <link>https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Mon, 14 Jul 2025 16:23:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>游戏</title>
+      <link>https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Tue, 08 Jul 2025 18:32:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://wittonbell.github.io/categories/Go/</link>
+      <pubDate>Tue, 08 Jul 2025 16:39:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/Go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://wittonbell.github.io/categories/Python/</link>
+      <pubDate>Thu, 05 Jun 2025 18:28:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/Python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pdf</title>
+      <link>https://wittonbell.github.io/categories/pdf/</link>
+      <pubDate>Mon, 28 Apr 2025 16:38:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/categories/pdf/</guid>
       <description></description>
     </item>
     <item>
@@ -37,13 +107,6 @@
       <description></description>
     </item>
     <item>
-      <title>容器</title>
-      <link>https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/</link>
-      <pubDate>Fri, 14 Feb 2025 14:46:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E5%AE%B9%E5%99%A8/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>cmake</title>
       <link>https://wittonbell.github.io/categories/cmake/</link>
       <pubDate>Thu, 23 Jan 2025 17:15:58 +0800</pubDate>
@@ -58,24 +121,10 @@
       <description></description>
     </item>
     <item>
-      <title>编程语言</title>
-      <link>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Fri, 17 Jan 2025 11:51:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>数据结构</title>
       <link>https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
       <pubDate>Wed, 15 Jan 2025 13:08:58 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>编辑语言</title>
-      <link>https://wittonbell.github.io/categories/%E7%BC%96%E8%BE%91%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Thu, 02 Jan 2025 18:38:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E7%BC%96%E8%BE%91%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     <item>
@@ -86,31 +135,10 @@
       <description></description>
     </item>
     <item>
-      <title>IDE</title>
-      <link>https://wittonbell.github.io/categories/IDE/</link>
-      <pubDate>Fri, 20 Dec 2024 17:05:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/IDE/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>网络</title>
       <link>https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Thu, 12 Dec 2024 16:50:58 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/%E7%BD%91%E7%BB%9C/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://wittonbell.github.io/categories/Linux/</link>
-      <pubDate>Thu, 12 Dec 2024 12:01:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/Linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Go</title>
-      <link>https://wittonbell.github.io/categories/Go/</link>
-      <pubDate>Mon, 09 Dec 2024 18:33:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/Go/</guid>
       <description></description>
     </item>
     <item>
@@ -128,13 +156,6 @@
       <description></description>
     </item>
     <item>
-      <title>游戏</title>
-      <link>https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/</link>
-      <pubDate>Sat, 18 May 2024 18:07:58 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E6%B8%B8%E6%88%8F/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Qt</title>
       <link>https://wittonbell.github.io/categories/Qt/</link>
       <pubDate>Wed, 10 Apr 2024 08:05:38 +0800</pubDate>
@@ -142,24 +163,10 @@
       <description></description>
     </item>
     <item>
-      <title>qemu</title>
-      <link>https://wittonbell.github.io/categories/qemu/</link>
-      <pubDate>Sun, 10 Mar 2024 19:46:38 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/qemu/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>研发管理</title>
       <link>https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</link>
       <pubDate>Tue, 13 Jun 2023 15:58:43 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/%E7%A0%94%E5%8F%91%E7%AE%A1%E7%90%86/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>跨平台</title>
-      <link>https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
-      <pubDate>Fri, 21 Apr 2023 18:26:27 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</guid>
       <description></description>
     </item>
     <item>
@@ -198,13 +205,6 @@
       <description></description>
     </item>
     <item>
-      <title>Python</title>
-      <link>https://wittonbell.github.io/categories/Python/</link>
-      <pubDate>Wed, 25 Aug 2021 10:24:50 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/Python/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Redis</title>
       <link>https://wittonbell.github.io/categories/Redis/</link>
       <pubDate>Sun, 25 Apr 2021 17:23:13 +0800</pubDate>
@@ -230,13 +230,6 @@
       <link>https://wittonbell.github.io/categories/Unity/</link>
       <pubDate>Tue, 10 Mar 2020 14:01:03 +0800</pubDate>
       <guid>https://wittonbell.github.io/categories/Unity/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>汇编</title>
-      <link>https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/</link>
-      <pubDate>Mon, 09 Dec 2019 11:11:37 +0800</pubDate>
-      <guid>https://wittonbell.github.io/categories/%E6%B1%87%E7%BC%96/</guid>
       <description></description>
     </item>
     <item>

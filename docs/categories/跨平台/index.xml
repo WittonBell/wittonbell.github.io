@@ -6,8 +6,15 @@
     <description>Recent content in 跨平台 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 21 Apr 2023 18:26:27 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jul 2025 18:36:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>x86版的ubuntu上使用qemu运行arm版ubuntu</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-15-x86%E7%89%88%E7%9A%84ubuntu%E4%B8%8A%E4%BD%BF%E7%94%A8qemu%E8%BF%90%E8%A1%8Carm%E7%89%88ubuntu/</link>
+      <pubDate>Tue, 15 Jul 2025 18:36:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-15-x86%E7%89%88%E7%9A%84ubuntu%E4%B8%8A%E4%BD%BF%E7%94%A8qemu%E8%BF%90%E8%A1%8Carm%E7%89%88ubuntu/</guid>
+      <description>一直以来接触的都是X86系列的CPU架构，从来没接触过ARM的CPU架构，今天抽空尝试一下安装一个ARM版本的Linux</description>
+    </item>
     <item>
       <title>使用Glib中测试框架对C代码进行单元测试</title>
       <link>https://wittonbell.github.io/posts/2023/2023-04-21-%E4%BD%BF%E7%94%A8Glib%E4%B8%AD%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AF%B9C%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>

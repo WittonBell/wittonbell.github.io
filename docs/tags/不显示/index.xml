@@ -6,8 +6,15 @@
     <description>Recent content in 不显示 on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Jul 2023 22:48:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2025 18:31:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/%E4%B8%8D%E6%98%BE%E7%A4%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决CLion控制台不能及时显示输出的问题</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-05-16-%E8%A7%A3%E5%86%B3CLion%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%8D%E8%83%BD%E5%8F%8A%E6%97%B6%E6%98%BE%E7%A4%BA%E8%BE%93%E5%87%BA%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 16 May 2025 18:31:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-05-16-%E8%A7%A3%E5%86%B3CLion%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%8D%E8%83%BD%E5%8F%8A%E6%97%B6%E6%98%BE%E7%A4%BA%E8%BE%93%E5%87%BA%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>CLion 2025版本可以免费用于非商业用途了，下载来试用了一下，与JB的其它 IDE一样的资源占用比较大，流畅度不及VSCode</description>
+    </item>
     <item>
       <title>VMware 17虚拟Ubuntu 22.04设置共享目录</title>
       <link>https://wittonbell.github.io/posts/2023/2023-07-07-VMware-17%E8%99%9A%E6%8B%9FUbuntu-22.04%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</link>

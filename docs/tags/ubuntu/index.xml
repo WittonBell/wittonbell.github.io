@@ -6,8 +6,22 @@
     <description>Recent content in ubuntu on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 01 Mar 2024 21:32:27 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jul 2025 17:18:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>x86版Ubuntu的容器中运行ARM版Ubuntu</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-16-x86%E7%89%88Ubuntu%E7%9A%84%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%BF%90%E8%A1%8CARM%E7%89%88Ubuntu/</link>
+      <pubDate>Wed, 16 Jul 2025 17:18:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-16-x86%E7%89%88Ubuntu%E7%9A%84%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%BF%90%E8%A1%8CARM%E7%89%88Ubuntu/</guid>
+      <description>昨天尝试了一下 x86版的ubuntu上使用qemu运行arm版ubuntu，使用起来感觉比较慢，毕竟是需要qemu模拟运</description>
+    </item>
+    <item>
+      <title>x86版的ubuntu上使用qemu运行arm版ubuntu</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-07-15-x86%E7%89%88%E7%9A%84ubuntu%E4%B8%8A%E4%BD%BF%E7%94%A8qemu%E8%BF%90%E8%A1%8Carm%E7%89%88ubuntu/</link>
+      <pubDate>Tue, 15 Jul 2025 18:36:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-07-15-x86%E7%89%88%E7%9A%84ubuntu%E4%B8%8A%E4%BD%BF%E7%94%A8qemu%E8%BF%90%E8%A1%8Carm%E7%89%88ubuntu/</guid>
+      <description>一直以来接触的都是X86系列的CPU架构，从来没接触过ARM的CPU架构，今天抽空尝试一下安装一个ARM版本的Linux</description>
+    </item>
     <item>
       <title>ubuntu使用LLVM官方发布的tar.xz来安装Clang编译器</title>
       <link>https://wittonbell.github.io/posts/2024/2024-03-01-ubuntu%E4%BD%BF%E7%94%A8LLVM%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E7%9A%84tar.xz%E6%9D%A5%E5%AE%89%E8%A3%85Clang%E7%BC%96%E8%AF%91%E5%99%A8/</link>
