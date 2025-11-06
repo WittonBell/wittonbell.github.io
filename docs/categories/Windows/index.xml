@@ -6,8 +6,15 @@
     <description>Recent content in Windows on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 12 Oct 2024 15:47:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Nov 2025 11:58:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows下禁用ClearType改善文字视觉效果</title>
+      <link>https://wittonbell.github.io/posts/2025/2025-11-06-Windows%E4%B8%8B%E7%A6%81%E7%94%A8ClearType%E6%94%B9%E5%96%84%E6%96%87%E5%AD%97%E8%A7%86%E8%A7%89%E6%95%88%E6%9E%9C/</link>
+      <pubDate>Thu, 06 Nov 2025 11:58:58 +0800</pubDate>
+      <guid>https://wittonbell.github.io/posts/2025/2025-11-06-Windows%E4%B8%8B%E7%A6%81%E7%94%A8ClearType%E6%94%B9%E5%96%84%E6%96%87%E5%AD%97%E8%A7%86%E8%A7%89%E6%95%88%E6%9E%9C/</guid>
+      <description>Windows的文字显示效果一直被用户所诟病，Windows从XP起引入了一种叫ClearType的文字显示技术，可以让</description>
+    </item>
     <item>
       <title>IDM 6.42 Build 22激活</title>
       <link>https://wittonbell.github.io/posts/2024/2024-10-12-IDM-6.42-Build-22%E6%BF%80%E6%B4%BB/</link>
