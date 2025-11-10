@@ -6,7 +6,7 @@
     <description>Recent content in macOS on Witton的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 22 Jan 2025 23:21:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Nov 2025 23:35:58 +0800</lastBuildDate>
     <atom:link href="https://wittonbell.github.io/categories/macOS/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>macOS使用LLVM官方发布的tar.xz来安装Clang编译器</title>
